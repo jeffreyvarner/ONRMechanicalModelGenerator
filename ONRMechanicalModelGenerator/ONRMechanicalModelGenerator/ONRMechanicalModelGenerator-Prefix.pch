@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'ONRMechanicalModelGenerator' target in the 'ONRMechanicalModelGenerator' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
