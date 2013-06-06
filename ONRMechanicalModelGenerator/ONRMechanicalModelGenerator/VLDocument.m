@@ -8,7 +8,30 @@
 
 #import "VLDocument.h"
 
+@interface VLDocument ()
+
+// private methods -
+-(void)cleanMyMemory;
+
+// private props and outlets -
+@property (retain) IBOutlet NSTextField *myBlueprintFileTextField;
+@property (retain) IBOutlet NSProgressIndicator *myProgressIndicator;
+@property (retain) IBOutlet NSTextField *myProgressUpdateTextField;
+@property (retain) NSWindowController *myWindowController;
+@property (retain) NSURL *myBlueprintFileURL;
+
+
+@end
+
+
 @implementation VLDocument
+
+// synthesize -
+@synthesize myBlueprintFileTextField = _myBlueprintFileTextField;
+@synthesize myProgressUpdateTextField = _myProgressUpdateTextField;
+@synthesize myProgressIndicator = _myProgressIndicator;
+@synthesize myWindowController = _myWindowController;
+@synthesize myBlueprintFileURL = _myBlueprintFileURL;
 
 - (id)init
 {
@@ -27,9 +50,13 @@
 }
 
 - (void)windowControllerDidLoadNib:(NSWindowController *)aController
-{
+{    
+    // Ok, call the super -
     [super windowControllerDidLoadNib:aController];
-    // Add any code here that needs to be executed once the windowController has loaded the document's window.
+    
+    // grab the controller -
+    self.myWindowController = aController;
+
 }
 
 + (BOOL)autosavesInPlace
@@ -54,6 +81,63 @@
     NSException *exception = [NSException exceptionWithName:@"UnimplementedMethod" reason:[NSString stringWithFormat:@"%@ is unimplemented", NSStringFromSelector(_cmd)] userInfo:nil];
     @throw exception;
     return YES;
+}
+
+#pragma mark - actions
+-(IBAction)loadSimulationBlueprintFileButtonWasPushed:(NSButton *)button
+{
+    // Launch the NSOpenPanel logic, capture the user filename and present the path in the text fld
+    NSOpenPanel *openPanel = [NSOpenPanel openPanel];
+    
+    // Configure the panel -
+    [openPanel setAllowsMultipleSelection:NO];
+    [openPanel setCanChooseFiles:YES];
+    [openPanel setCanCreateDirectories:YES];
+    
+    // Run the panel as a sheet -
+    __weak VLDocument *weak_self = self;
+    [openPanel beginSheetModalForWindow:[[self myWindowController] window]
+                      completionHandler:^(NSInteger resultIndex){
+                          
+                          // Ok, so this block gets executed *after* we have selected a file
+                          if (resultIndex == NSFileHandlingPanelOKButton)
+                          {
+                              // Ok, so when I get here the user has hit the OK button
+                              NSURL *mySelectedURL = [openPanel URL];
+                              
+                              // grab this URL for later -
+                              weak_self.myBlueprintFileURL = mySelectedURL;
+                              
+                              // Create a file path string -
+                              NSString *pathString = [mySelectedURL absoluteString];
+                              
+                              // Set the value in the text fld -
+                              [[weak_self myBlueprintFileTextField] setStringValue:pathString];
+                          }
+                          else if (resultIndex == NSFileHandlingPanelCancelButton)
+                          {
+                              // Ok, so when I get here the user has hit the cancel button
+                              // for now, do nothing.
+                          }
+                          
+                      }];
+    
+}
+
+-(IBAction)launchCodeGenerationProcessButtonWasTapped:(NSButton *)button
+{
+    
+}
+
+-(IBAction)cancelSimulationProcessGenerationButtonWasTapped:(NSButton *)button
+{
+    
+}
+
+#pragma mark - private lifecycle
+-(void)cleanMyMemory
+{
+    
 }
 
 @end

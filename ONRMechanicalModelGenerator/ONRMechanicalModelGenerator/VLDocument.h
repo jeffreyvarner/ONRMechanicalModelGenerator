@@ -9,5 +9,18 @@
 #import <Cocoa/Cocoa.h>
 
 @interface VLDocument : NSDocument
+{
+    @private
+    NSTextField *_myBlueprintFileTextField;
+    NSTextField *_myProgressUpdateTextField;
+    NSProgressIndicator *_myProgressIndicator;
+    NSWindowController *_myWindowController;
+    NSURL *_myBlueprintFileURL;
+}
+
+// Actions -
+-(IBAction)loadSimulationBlueprintFileButtonWasPushed:(NSButton *)button;
+-(IBAction)launchCodeGenerationProcessButtonWasTapped:(NSButton *)button;
+-(IBAction)cancelSimulationProcessGenerationButtonWasTapped:(NSButton *)button;
 
 @end
