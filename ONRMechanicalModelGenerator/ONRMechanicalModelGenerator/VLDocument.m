@@ -56,6 +56,40 @@
     
     // grab the controller -
     self.myWindowController = aController;
+    
+    // Start the foundation server -
+    [VLCodeGenerationFoundationServer sharedFoundationServer];
+    
+    // Setup completion notification -
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
+    
+    // VLTransformationJobUpdateNotification -
+    [center addObserverForName:VLTransformationJobProgressUpdateNotification
+                        object:nil
+                         queue:mainQueue
+                    usingBlock:^(NSNotification *notification){
+                        
+                        // Get the message from the notification -
+                        NSString *message = [notification object];
+                        
+                        // update the label -
+                        [[self myProgressUpdateTextField] setStringValue:message];
+                    }];
+    
+    // VLTransformationJobCompletedNotification -
+    [center addObserverForName:VLTransformationJobDidCompleteNotification
+                        object:nil
+                         queue:mainQueue
+                    usingBlock:^(NSNotification *notification){
+                        
+                        // shutdown the progress bar animation -
+                        [[self myProgressIndicator] stopAnimation:nil];
+                        
+                        // Set the completed text -
+                        [[self myProgressUpdateTextField] setStringValue:@"Status: Transformation completed."];
+                    }];
+
 
 }
 
