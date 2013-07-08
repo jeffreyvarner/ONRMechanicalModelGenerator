@@ -7,6 +7,7 @@
 //
 
 #import "VLDocument.h"
+#import "VLTransformationServiceVendor.h"
 
 @interface VLDocument ()
 
@@ -160,7 +161,80 @@
 
 -(IBAction)launchCodeGenerationProcessButtonWasTapped:(NSButton *)button
 {
-    
+    // ok, so check to make sure we have a URL - if we do then begin the generation
+    // process. If not, then open the open panel -
+    if ([self myBlueprintFileURL]!=nil)
+    {
+        // start the progress bar animation -
+        [[self myProgressIndicator] startAnimation:nil];
+        
+        // Ok, so when I get here I have the blueprint file URL.
+        // We need to start the code generation process for this blueprint file.
+        // Get the blueprint URL -
+        NSURL *localBlueprintURL = [self myBlueprintFileURL];
+        
+        // Load the blueprint file -
+        NSXMLDocument *blueprintTree = [VLCoreUtilitiesLib createXMLDocumentFromFile:localBlueprintURL];
+        
+        // do we have a blueprint tree?
+        if (blueprintTree != nil)
+        {
+            // Get the transformation xml blocks -
+            NSArray *transformBlockNames = [VLCoreUtilitiesLib executeXPathQuery:@"//Transformation/@name"
+                                                                     withXMLTree:blueprintTree];
+            // Process the transformations -
+            for (NSXMLElement *node in transformBlockNames)
+            {
+                // Get the name of this transformation -
+                NSString *transformationName = [node stringValue];
+                
+                // update the progress text label -
+                NSString *progressText = [NSString stringWithFormat:@"Status: Loaded %@ block",transformationName];
+                [[self myProgressUpdateTextField] setStringValue:progressText];
+                
+                // Get the input and output classname -
+                NSString *inputClassNameXPath = [NSString stringWithFormat:@"//Transformation[@name='%@']/@classname",transformationName];
+                NSString *languageXPath = [NSString stringWithFormat:@"//Transformation[@name='%@']/@language",transformationName];
+                
+                // execute the query -
+                NSString *inputClassName = [[[VLCoreUtilitiesLib executeXPathQuery:inputClassNameXPath
+                                                                       withXMLTree:blueprintTree] lastObject] stringValue];
+                
+                NSString *languageClassName = [[[VLCoreUtilitiesLib executeXPathQuery:languageXPath
+                                                                          withXMLTree:blueprintTree] lastObject] stringValue];
+                
+                // Build the input and output handlers -
+                VLTransformationServiceVendor *vendor = [[NSClassFromString(inputClassName) alloc] init];
+                VLAbstractLanguageAdaptor *language = [[NSClassFromString(languageClassName) alloc] init];
+                
+                // set the blueprint tree -
+                [vendor setMyBlueprintTree:blueprintTree];
+                [vendor setMyLanguageAdaptor:language];
+                
+                // execute the transformations -
+                [vendor startTransformationWithName:transformationName];
+            }
+        }
+        else
+        {
+            // stop progress bar
+            [[self myProgressIndicator] stopAnimation:nil];
+            
+            // ok, we don't have a blueprint file ... through up a error view
+            NSAlert *alert = [[NSAlert alloc] init];
+            [alert addButtonWithTitle:@"Try again"];
+            [alert setMessageText:@"Ooops! Are you sure you want to load this transformation file?"];
+            [alert setInformativeText:@"This file does not appear to be the correct format."];
+            [alert setAlertStyle:NSCriticalAlertStyle];
+            
+            [alert beginSheetModalForWindow:[[self myWindowController] window]
+                              modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:) contextInfo:nil];
+        }
+    }
+    else
+    {
+        [self loadSimulationBlueprintFileButtonWasPushed:nil];
+    }
 }
 
 -(IBAction)cancelSimulationProcessGenerationButtonWasTapped:(NSButton *)button

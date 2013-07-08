@@ -18,6 +18,10 @@
 		AD6B78321760E6720087EA0C /* VLCodeGenerationOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6B78301760E6720087EA0C /* VLCodeGenerationOperation.m */; };
 		AD6B78381760E6A20087EA0C /* VLBlocksAndConstanStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6B78351760E6A20087EA0C /* VLBlocksAndConstanStrings.m */; };
 		AD6B78391760E6A20087EA0C /* VLCoreUtilitiesLib.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6B78371760E6A20087EA0C /* VLCoreUtilitiesLib.m */; };
+		ADCE5679178B58DC004C3D76 /* VLAbstractLanguageAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCE5678178B58DC004C3D76 /* VLAbstractLanguageAdaptor.m */; };
+		ADCE567D178B5953004C3D76 /* VLOctaveLanguageAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCE567C178B5953004C3D76 /* VLOctaveLanguageAdaptor.m */; };
+		ADCE5681178B5A0D004C3D76 /* VLTransformationServiceVendor.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCE5680178B5A0D004C3D76 /* VLTransformationServiceVendor.m */; };
+		ADCE5684178B5AE5004C3D76 /* VLDataFileTransformationServiceVendor.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCE5683178B5AE5004C3D76 /* VLDataFileTransformationServiceVendor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +47,14 @@
 		AD6B78351760E6A20087EA0C /* VLBlocksAndConstanStrings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLBlocksAndConstanStrings.m; sourceTree = "<group>"; };
 		AD6B78361760E6A20087EA0C /* VLCoreUtilitiesLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLCoreUtilitiesLib.h; sourceTree = "<group>"; };
 		AD6B78371760E6A20087EA0C /* VLCoreUtilitiesLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLCoreUtilitiesLib.m; sourceTree = "<group>"; };
+		ADCE5677178B58DC004C3D76 /* VLAbstractLanguageAdaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLAbstractLanguageAdaptor.h; sourceTree = "<group>"; };
+		ADCE5678178B58DC004C3D76 /* VLAbstractLanguageAdaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLAbstractLanguageAdaptor.m; sourceTree = "<group>"; };
+		ADCE567B178B5953004C3D76 /* VLOctaveLanguageAdaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLOctaveLanguageAdaptor.h; sourceTree = "<group>"; };
+		ADCE567C178B5953004C3D76 /* VLOctaveLanguageAdaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLOctaveLanguageAdaptor.m; sourceTree = "<group>"; };
+		ADCE567F178B5A0D004C3D76 /* VLTransformationServiceVendor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLTransformationServiceVendor.h; sourceTree = "<group>"; };
+		ADCE5680178B5A0D004C3D76 /* VLTransformationServiceVendor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLTransformationServiceVendor.m; sourceTree = "<group>"; };
+		ADCE5682178B5AE5004C3D76 /* VLDataFileTransformationServiceVendor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLDataFileTransformationServiceVendor.h; sourceTree = "<group>"; };
+		ADCE5683178B5AE5004C3D76 /* VLDataFileTransformationServiceVendor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLDataFileTransformationServiceVendor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +108,7 @@
 		AD1428A6174E461A00072769 /* ONRMechanicalModelGenerator */ = {
 			isa = PBXGroup;
 			children = (
+				ADCE567E178B59F6004C3D76 /* services */,
 				AD6B78331760E68A0087EA0C /* utilities */,
 				AD6B782C1760E65A0087EA0C /* foundation */,
 				AD6B782B1760E6280087EA0C /* engine */,
@@ -123,6 +136,9 @@
 		AD6B782B1760E6280087EA0C /* engine */ = {
 			isa = PBXGroup;
 			children = (
+				ADCE567A178B58E7004C3D76 /* octave */,
+				ADCE5677178B58DC004C3D76 /* VLAbstractLanguageAdaptor.h */,
+				ADCE5678178B58DC004C3D76 /* VLAbstractLanguageAdaptor.m */,
 			);
 			name = engine;
 			sourceTree = "<group>";
@@ -147,6 +163,26 @@
 				AD6B78371760E6A20087EA0C /* VLCoreUtilitiesLib.m */,
 			);
 			name = utilities;
+			sourceTree = "<group>";
+		};
+		ADCE567A178B58E7004C3D76 /* octave */ = {
+			isa = PBXGroup;
+			children = (
+				ADCE567B178B5953004C3D76 /* VLOctaveLanguageAdaptor.h */,
+				ADCE567C178B5953004C3D76 /* VLOctaveLanguageAdaptor.m */,
+			);
+			name = octave;
+			sourceTree = "<group>";
+		};
+		ADCE567E178B59F6004C3D76 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				ADCE567F178B5A0D004C3D76 /* VLTransformationServiceVendor.h */,
+				ADCE5680178B5A0D004C3D76 /* VLTransformationServiceVendor.m */,
+				ADCE5682178B5AE5004C3D76 /* VLDataFileTransformationServiceVendor.h */,
+				ADCE5683178B5AE5004C3D76 /* VLDataFileTransformationServiceVendor.m */,
+			);
+			name = services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +257,10 @@
 				AD6B78321760E6720087EA0C /* VLCodeGenerationOperation.m in Sources */,
 				AD6B78381760E6A20087EA0C /* VLBlocksAndConstanStrings.m in Sources */,
 				AD6B78391760E6A20087EA0C /* VLCoreUtilitiesLib.m in Sources */,
+				ADCE5679178B58DC004C3D76 /* VLAbstractLanguageAdaptor.m in Sources */,
+				ADCE567D178B5953004C3D76 /* VLOctaveLanguageAdaptor.m in Sources */,
+				ADCE5681178B5A0D004C3D76 /* VLTransformationServiceVendor.m in Sources */,
+				ADCE5684178B5AE5004C3D76 /* VLDataFileTransformationServiceVendor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
