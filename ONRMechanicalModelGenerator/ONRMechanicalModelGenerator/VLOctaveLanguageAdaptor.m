@@ -138,7 +138,12 @@
         {
             // get the end_node -
             NSString *end_state_symbol = [edge stringValue];
-            [buffer appendFormat:@"k*ALPHA_MATRIX(%@,%@)*(x(%lu,1) - x(%lu,1))",state_symbol,end_state_symbol,node_counter,node_counter];
+            
+            // ok, so we need to calculate the index for the x_coordinate point at end_point_symbol
+            NSInteger local_number = [end_state_symbol integerValue];
+            NSInteger end_x_coordinate = 2*local_number - 1 + node_counter;
+            
+            [buffer appendFormat:@"k*ALPHA_MATRIX(%@,%@)*(x(%lu,1) - x(%lu,1))",state_symbol,end_state_symbol,node_counter,end_x_coordinate];
             
             if (plus_counter<NUMBER_OF_EDGES - 1)
             {
@@ -163,7 +168,12 @@
         {
             // get the end_node -
             NSString *end_state_symbol = [edge stringValue];
-            [buffer appendFormat:@"k*ALPHA_MATRIX(%@,%@)*(x(%lu,1) - x(%lu,1))",state_symbol,end_state_symbol,node_counter,node_counter];
+            
+            // ok, so we need to calculate the index for the x_coordinate point at end_point_symbol
+            NSInteger local_number = [end_state_symbol integerValue];
+            NSInteger end_y_coordinate = 2*local_number + node_counter;
+            
+            [buffer appendFormat:@"k*ALPHA_MATRIX(%@,%@)*(x(%lu,1) - x(%lu,1))",state_symbol,end_state_symbol,node_counter,end_y_coordinate];
             
             if (plus_counter<NUMBER_OF_EDGES - 1)
             {
