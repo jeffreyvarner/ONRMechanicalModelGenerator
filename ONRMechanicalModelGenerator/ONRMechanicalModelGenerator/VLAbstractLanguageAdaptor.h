@@ -15,6 +15,7 @@
 
 // public methods -
 -(NSString *)generateDataFileBufferWithOptions:(NSDictionary *)options;
+-(NSString *)generateBalanceEquationsBufferWithOptions:(NSDictionary *)options;
 
 
 

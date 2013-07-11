@@ -6,4 +6,9 @@
 		<property key="OUTPUT_FILE_PATH" value="/Users/jeffreyvarner/Desktop/MyUniversalProjects/ONRMechanicalModelGenerator_v1/conf/DataFile.m"/>
 	</Transformation>
 	
+	<Transformation name="GEOMETRY-2-BALANCES" classname="VLBalanceEquationsTransformationServiceVendor" language="VLOctaveLanguageAdaptor">
+		<property key="INPUT_FILE_PATH" value="/Users/jeffreyvarner/Desktop/MyUniversalProjects/ONRMechanicalModelGenerator_v1/conf/Geometry.xml"/>
+		<property key="OUTPUT_FILE_PATH" value="/Users/jeffreyvarner/Desktop/MyUniversalProjects/ONRMechanicalModelGenerator_v1/conf/BalanceEquations.m"/>
+	</Transformation>
+	
 </Model>
