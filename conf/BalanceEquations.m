@@ -38,13 +38,16 @@ LAMBDA_MATRIX = DF.LAMBDA_PARAMETER_MATRIX;
 % Calculate the ALPHA matrix - 
 ALPHA_MATRIX = CalculateAlphaMatrix(x,LAMBDA_MATRIX,DF);
 
+% Testing -
+EXT_FORCING = CalculateExternalForcing(t,x,DF);
+
 % Velocity balances - 
-delta_state_array(1,1) = SPRING_MATRIX(1,2)*ALPHA_MATRIX(1,2)*(x(7,1) - x(9,1)) + DAMPING_MATRIX(1,2)*(x(3,1) - x(1,1));
-delta_state_array(2,1) = SPRING_MATRIX(1,2)*ALPHA_MATRIX(1,2)*(x(8,1) - x(10,1)) + DAMPING_MATRIX(1,2)*(x(4,1) - x(2,1));
-delta_state_array(3,1) = SPRING_MATRIX(2,3)*ALPHA_MATRIX(2,3)*(x(9,1) - x(11,1)) + DAMPING_MATRIX(2,3)*(x(5,1) - x(3,1));
-delta_state_array(4,1) = SPRING_MATRIX(2,3)*ALPHA_MATRIX(2,3)*(x(10,1) - x(12,1)) + DAMPING_MATRIX(2,3)*(x(6,1) - x(4,1));
-delta_state_array(5,1) = SPRING_MATRIX(3,1)*ALPHA_MATRIX(3,1)*(x(11,1) - x(7,1)) + DAMPING_MATRIX(3,1)*(x(1,1) - x(5,1));
-delta_state_array(6,1) = SPRING_MATRIX(3,1)*ALPHA_MATRIX(3,1)*(x(12,1) - x(8,1)) + DAMPING_MATRIX(3,1)*(x(2,1) - x(6,1));
+delta_state_vector(1,1) = -1*SPRING_MATRIX(1,2)*ALPHA_MATRIX(1,2)*(x(7,1) - x(9,1)) + DAMPING_MATRIX(1,2)*(x(3,1) - x(1,1)) + EXT_FORCING(1,1);
+delta_state_vector(2,1) = -1*SPRING_MATRIX(1,2)*ALPHA_MATRIX(1,2)*(x(8,1) - x(10,1)) + DAMPING_MATRIX(1,2)*(x(4,1) - x(2,1)) + EXT_FORCING(2,1);
+delta_state_vector(3,1) = -1*SPRING_MATRIX(2,3)*ALPHA_MATRIX(2,3)*(x(9,1) - x(11,1)) + DAMPING_MATRIX(2,3)*(x(5,1) - x(3,1)) + EXT_FORCING(3,1);
+delta_state_vector(4,1) = -1*SPRING_MATRIX(2,3)*ALPHA_MATRIX(2,3)*(x(10,1) - x(12,1)) + DAMPING_MATRIX(2,3)*(x(6,1) - x(4,1)) + EXT_FORCING(4,1);
+delta_state_vector(5,1) = -1*SPRING_MATRIX(3,1)*ALPHA_MATRIX(3,1)*(x(11,1) - x(7,1)) + DAMPING_MATRIX(3,1)*(x(1,1) - x(5,1)) + EXT_FORCING(5,1);
+delta_state_vector(6,1) = -1*SPRING_MATRIX(3,1)*ALPHA_MATRIX(3,1)*(x(12,1) - x(8,1)) + DAMPING_MATRIX(3,1)*(x(2,1) - x(6,1)) + EXT_FORCING(6,1);
 
 % Node balances - 
 delta_state_vector(7,1) = x(1,1);
@@ -53,5 +56,10 @@ delta_state_vector(9,1) = x(3,1);
 delta_state_vector(10,1) = x(4,1);
 delta_state_vector(11,1) = x(5,1);
 delta_state_vector(12,1) = x(6,1);
+
+delta_state_vector(9,1) = 0;
+delta_state_vector(10,1) = 0;
+delta_state_vector(11,1) = 0;
+delta_state_vector(12,1) = 0;
 
 return

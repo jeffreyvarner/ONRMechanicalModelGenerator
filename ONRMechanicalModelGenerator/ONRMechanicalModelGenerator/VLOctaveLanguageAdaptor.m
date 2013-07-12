@@ -422,7 +422,7 @@
         NSInteger NUMBER_OF_EDGES = [edge_array count];
         
         // x-coordinate for spring term -
-        [buffer appendFormat:@"delta_state_array(%lu,1) = ",velocity_counter];
+        [buffer appendFormat:@"delta_state_vector(%lu,1) = ",velocity_counter];
         NSInteger plus_counter = 0;
         for (NSXMLElement *edge in edge_array)
         {
@@ -455,7 +455,7 @@
        // node_counter = node_counter + 1;
         
         // y-coordinate for spring term
-        [buffer appendFormat:@"delta_state_array(%lu,1) = ",velocity_counter];
+        [buffer appendFormat:@"delta_state_vector(%lu,1) = ",velocity_counter];
         plus_counter = 0;
         for (NSXMLElement *edge in edge_array)
         {
