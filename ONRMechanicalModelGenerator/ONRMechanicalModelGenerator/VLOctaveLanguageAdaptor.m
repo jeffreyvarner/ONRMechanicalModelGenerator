@@ -136,7 +136,7 @@
         NSArray *edge_array = [sbmlTree nodesForXPath:edge_xpath error:nil];
         NSInteger NUMBER_OF_EDGES = [edge_array count];
         
-        // x-coordinate
+        // x-coordinate for spring term -
         [buffer appendFormat:@"delta_state_array(%lu,1) = ",velocity_counter];
         NSInteger plus_counter = 0;
         for (NSXMLElement *edge in edge_array)
@@ -146,9 +146,10 @@
             
             // ok, so we need to calculate the index for the x_coordinate point at end_point_symbol
             NSInteger local_number = [end_state_symbol integerValue];
-            NSInteger end_x_coordinate = 2*local_number - 1 + node_counter;
+            NSInteger end_x_coordinate = 2*local_number + (2*[node_not_unique_array count] + 1) - 2;
+            NSInteger velocity_end_x_coordinate = 2*local_number - 1;
             
-            [buffer appendFormat:@"k*ALPHA_MATRIX(%@,%@)*(x(%lu,1) - x(%lu,1))",state_symbol,end_state_symbol,node_counter,end_x_coordinate];
+            [buffer appendFormat:@"SPRING_MATRIX(%@,%@)*ALPHA_MATRIX(%@,%@)*(x(%lu,1) - x(%lu,1)) + DAMPING_MATRIX(%@,%@)*(x(%lu,1) - x(%lu,1))",state_symbol,end_state_symbol,state_symbol,end_state_symbol,node_counter,end_x_coordinate,state_symbol,end_state_symbol,velocity_end_x_coordinate,velocity_counter];
             
             if (plus_counter<NUMBER_OF_EDGES - 1)
             {
@@ -157,7 +158,6 @@
             
             plus_counter = plus_counter + 1;
         }
-        
         
         
         // new line -
@@ -169,7 +169,7 @@
         // update the node counter -
        // node_counter = node_counter + 1;
         
-        // y-coordinate
+        // y-coordinate for spring term
         [buffer appendFormat:@"delta_state_array(%lu,1) = ",velocity_counter];
         plus_counter = 0;
         for (NSXMLElement *edge in edge_array)
@@ -179,9 +179,10 @@
             
             // ok, so we need to calculate the index for the x_coordinate point at end_point_symbol
             NSInteger local_number = [end_state_symbol integerValue];
-            NSInteger end_y_coordinate = 2*local_number + node_counter;
+            NSInteger end_y_coordinate = 2*local_number + (2*[node_not_unique_array count] + 1) - 1;
+            NSInteger velocity_end_y_coordinate = 2*local_number;
             
-            [buffer appendFormat:@"k*ALPHA_MATRIX(%@,%@)*(x(%lu,1) - x(%lu,1))",state_symbol,end_state_symbol,(node_counter + 1),end_y_coordinate];
+            [buffer appendFormat:@"SPRING_MATRIX(%@,%@)*ALPHA_MATRIX(%@,%@)*(x(%lu,1) - x(%lu,1)) + DAMPING_MATRIX(%@,%@)*(x(%lu,1) - x(%lu,1))",state_symbol,end_state_symbol,state_symbol,end_state_symbol,(node_counter + 1),end_y_coordinate,state_symbol,end_state_symbol,velocity_end_y_coordinate,velocity_counter];
             
             if (plus_counter<NUMBER_OF_EDGES - 1)
             {

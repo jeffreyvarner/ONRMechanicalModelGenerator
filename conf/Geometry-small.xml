@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="yes"?>
+<geometry>
+
+	<listOfNodes>
+		<node index='1' x_value='-1.0000000e+00' y_value='-1.0000000e+00'/>
+		<node index='2' x_value='-1.0000000e+00' y_value='1.0000000e+00'/>
+		<node index='3' x_value='-1.0000000e+00' y_value='4.7666026e-01'/>
+	</listOfNodes>
+	
+	<listOfTriangles>
+		<triangle index='1' node_index_1='1' node_index_2='2' node_index_3='3'/>
+	</listOfTriangles>
+	
+	<listOfEdges>
+		<edge index='1' spring_constant='0.5' damping_constant='0.1' start_node='1' end_node='2'/>
+		<edge index='2' spring_constant='0.5' damping_constant='0.1' start_node='2' end_node='3'/>
+		<edge index='3' spring_constant='0.5' damping_constant='0.1' start_node='3' end_node='1'/>
+	</listOfEdges>
+
+</geometry>
