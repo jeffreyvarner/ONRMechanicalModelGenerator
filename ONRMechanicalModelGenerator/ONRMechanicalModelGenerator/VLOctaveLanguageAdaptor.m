@@ -66,8 +66,13 @@
     [buffer appendString:@"\n"];
     
     // alpha's
-    [buffer appendString:@"% Calculate the alpha_matrix - \n"];
+    [buffer appendString:@"% Get the parameter matricies - \n"];
+    [buffer appendString:@"SPRING_MATRIX = DF.SPRING_PARAMETER_MATRIX;\n"];
+    [buffer appendString:@"DAMPING_MATRIX = DF.DAMPING_PARAMETER_MATRIX;\n"];
+    [buffer appendString:@"\n"];
+    [buffer appendString:@"% Calculate the ALPHA matrix - \n"];
     [buffer appendString:@"ALPHA_MATRIX = CalculateAlphaMatrix(x,DF);\n"];
+    [buffer appendString:@"\n"];
     
     // write velocity balances -
     [buffer appendString:@"% Velocity balances - \n"];
@@ -161,6 +166,9 @@
         // update velocity counter -
         velocity_counter = velocity_counter + 1;
         
+        // update the node counter -
+       // node_counter = node_counter + 1;
+        
         // y-coordinate
         [buffer appendFormat:@"delta_state_array(%lu,1) = ",velocity_counter];
         plus_counter = 0;
@@ -173,7 +181,7 @@
             NSInteger local_number = [end_state_symbol integerValue];
             NSInteger end_y_coordinate = 2*local_number + node_counter;
             
-            [buffer appendFormat:@"k*ALPHA_MATRIX(%@,%@)*(x(%lu,1) - x(%lu,1))",state_symbol,end_state_symbol,node_counter,end_y_coordinate];
+            [buffer appendFormat:@"k*ALPHA_MATRIX(%@,%@)*(x(%lu,1) - x(%lu,1))",state_symbol,end_state_symbol,(node_counter + 1),end_y_coordinate];
             
             if (plus_counter<NUMBER_OF_EDGES - 1)
             {
@@ -185,6 +193,9 @@
 
         // update velocity counter -
         velocity_counter = velocity_counter + 1;
+        
+        // update the node counter -
+        node_counter = node_counter + 2;
         
         // new line -
         [buffer appendString:@";\n"];
