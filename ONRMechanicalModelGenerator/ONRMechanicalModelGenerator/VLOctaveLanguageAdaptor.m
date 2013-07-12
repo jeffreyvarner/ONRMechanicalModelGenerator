@@ -157,6 +157,11 @@
     [buffer appendFormat:@"\n"];
     [buffer appendString:@"% Define the system - \n"];
     
+    // get the number of nodes -
+    NSArray *node_not_unique_array = [model_tree nodesForXPath:@".//listOfNodes/node/@index" error:nil];
+    NSInteger total_node_counter = 2*[node_not_unique_array count] + 1;
+
+    // get the edges -
     NSString *edge_xpath = @".//listOfEdges/edge/@index";
     NSArray *edge_array = [model_tree nodesForXPath:edge_xpath error:nil];
     NSInteger NUMBER_OF_EDGES = [edge_array count];
@@ -177,9 +182,22 @@
             // get the end_node -
             NSString *end_node_symbol = [edge stringValue];
             NSString *start_node_symbol = [NSString stringWithFormat:@"%lu",local_counter];
+            NSInteger end_index = [end_node_symbol integerValue];
+            
+            // from the node counters, I need to calculate the index -
+            NSInteger start_x_coordinate = 2*local_counter + total_node_counter - 2;
+            NSInteger start_y_coordinate = 2*local_counter + total_node_counter - 1;
+            NSInteger end_x_coordinate = 2*end_index + total_node_counter - 2;
+            NSInteger end_y_coordinate = 2*end_index + total_node_counter - 1;
+
+            // write the NUM -
+            [buffer appendFormat:@"DISTANCE = sqrt((x(%lu,1) - x(%lu,1))^2 + (x(%lu,1) - x(%lu,1))^2);\n",start_x_coordinate,end_x_coordinate,start_y_coordinate,end_y_coordinate];
+            [buffer appendFormat:@"NUM = DISTANCE - LAMBDA_MATRIX(%@,%@);\n",start_node_symbol,end_node_symbol];
+            [buffer appendFormat:@"DENOM = DISTANCE;\n"];
             
             // write the line -
-            [buffer appendFormat:@"ALPHA_MATRIX(%@,%@) = ;\n",start_node_symbol,end_node_symbol];
+            [buffer appendFormat:@"ALPHA_MATRIX(%@,%@) = NUM/DENOM;\n",start_node_symbol,end_node_symbol];
+            [buffer appendFormat:@"\n"];
         }
         
         // update the counter -
