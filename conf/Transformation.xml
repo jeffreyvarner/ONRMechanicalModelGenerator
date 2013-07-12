@@ -11,9 +11,24 @@
 		<property key="OUTPUT_FILE_PATH" value="/Users/jeffreyvarner/Desktop/MyUniversalProjects/ONRMechanicalModelGenerator_v1/conf/BalanceEquations.m"/>
 	</Transformation>
 	
-	<Transformation name="GEOMETRY-2-BALANCES" classname="VLCalculateAlphaMatrixFunctionServiceVendor" language="VLOctaveLanguageAdaptor">
+	<Transformation name="GEOMETRY-2-ALPHAMATRIX" classname="VLCalculateAlphaMatrixFunctionServiceVendor" language="VLOctaveLanguageAdaptor">
 		<property key="INPUT_FILE_PATH" value="/Users/jeffreyvarner/Desktop/MyUniversalProjects/ONRMechanicalModelGenerator_v1/conf/Geometry-small.xml"/>
 		<property key="OUTPUT_FILE_PATH" value="/Users/jeffreyvarner/Desktop/MyUniversalProjects/ONRMechanicalModelGenerator_v1/conf/CalculateAlphaMatrix.m"/>
+	</Transformation>
+	
+	<Transformation name="GEOMETRY-2-LAMBDAMATRIX" classname="VLCalculateLambdaMatrixFunctionServiceVendor" language="VLOctaveLanguageAdaptor">
+		<property key="INPUT_FILE_PATH" value="/Users/jeffreyvarner/Desktop/MyUniversalProjects/ONRMechanicalModelGenerator_v1/conf/Geometry-small.xml"/>
+		<property key="OUTPUT_FILE_PATH" value="/Users/jeffreyvarner/Desktop/MyUniversalProjects/ONRMechanicalModelGenerator_v1/conf/CalculateLambdaMatrix.m"/>
+	</Transformation>
+	
+	<Transformation name="GEOMETRY-2-SPRINGMATRIX" classname="VLWriteMySpringConstantMatrixServiceVendor" language="VLOctaveLanguageAdaptor">
+		<property key="INPUT_FILE_PATH" value="/Users/jeffreyvarner/Desktop/MyUniversalProjects/ONRMechanicalModelGenerator_v1/conf/Geometry-small.xml"/>
+		<property key="OUTPUT_FILE_PATH" value="/Users/jeffreyvarner/Desktop/MyUniversalProjects/ONRMechanicalModelGenerator_v1/conf/SPRING_MATRIX.dat"/>
+	</Transformation>
+	
+	<Transformation name="GEOMETRY-2-DAMPINGMATRIX" classname="VLWriteMyDampingConstantMatrixServiceVendor" language="VLOctaveLanguageAdaptor">
+		<property key="INPUT_FILE_PATH" value="/Users/jeffreyvarner/Desktop/MyUniversalProjects/ONRMechanicalModelGenerator_v1/conf/Geometry-small.xml"/>
+		<property key="OUTPUT_FILE_PATH" value="/Users/jeffreyvarner/Desktop/MyUniversalProjects/ONRMechanicalModelGenerator_v1/conf/DAMPING_MATRIX.dat"/>
 	</Transformation>
 	
 </Model>

@@ -20,6 +20,9 @@
 		AD6B78391760E6A20087EA0C /* VLCoreUtilitiesLib.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6B78371760E6A20087EA0C /* VLCoreUtilitiesLib.m */; };
 		AD8970A6178F522B00815851 /* VLBalanceEquationsTransformationServiceVendor.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8970A5178F522B00815851 /* VLBalanceEquationsTransformationServiceVendor.m */; };
 		AD8970A9179077CD00815851 /* VLCalculateAlphaMatrixFunctionServiceVendor.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8970A8179077CD00815851 /* VLCalculateAlphaMatrixFunctionServiceVendor.m */; };
+		AD8970AC179094D000815851 /* VLCalculateLambdaMatrixFunctionServiceVendor.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8970AB179094D000815851 /* VLCalculateLambdaMatrixFunctionServiceVendor.m */; };
+		AD8970AF179099F900815851 /* VLWriteMySpringConstantMatrixServiceVendor.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8970AE179099F900815851 /* VLWriteMySpringConstantMatrixServiceVendor.m */; };
+		AD8970B21790A44E00815851 /* VLWriteMyDampingConstantMatrixServiceVendor.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8970B11790A44E00815851 /* VLWriteMyDampingConstantMatrixServiceVendor.m */; };
 		ADCE5679178B58DC004C3D76 /* VLAbstractLanguageAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCE5678178B58DC004C3D76 /* VLAbstractLanguageAdaptor.m */; };
 		ADCE567D178B5953004C3D76 /* VLOctaveLanguageAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCE567C178B5953004C3D76 /* VLOctaveLanguageAdaptor.m */; };
 		ADCE5681178B5A0D004C3D76 /* VLTransformationServiceVendor.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCE5680178B5A0D004C3D76 /* VLTransformationServiceVendor.m */; };
@@ -53,6 +56,12 @@
 		AD8970A5178F522B00815851 /* VLBalanceEquationsTransformationServiceVendor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLBalanceEquationsTransformationServiceVendor.m; sourceTree = "<group>"; };
 		AD8970A7179077CD00815851 /* VLCalculateAlphaMatrixFunctionServiceVendor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLCalculateAlphaMatrixFunctionServiceVendor.h; sourceTree = "<group>"; };
 		AD8970A8179077CD00815851 /* VLCalculateAlphaMatrixFunctionServiceVendor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLCalculateAlphaMatrixFunctionServiceVendor.m; sourceTree = "<group>"; };
+		AD8970AA179094D000815851 /* VLCalculateLambdaMatrixFunctionServiceVendor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLCalculateLambdaMatrixFunctionServiceVendor.h; sourceTree = "<group>"; };
+		AD8970AB179094D000815851 /* VLCalculateLambdaMatrixFunctionServiceVendor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLCalculateLambdaMatrixFunctionServiceVendor.m; sourceTree = "<group>"; };
+		AD8970AD179099F900815851 /* VLWriteMySpringConstantMatrixServiceVendor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLWriteMySpringConstantMatrixServiceVendor.h; sourceTree = "<group>"; };
+		AD8970AE179099F900815851 /* VLWriteMySpringConstantMatrixServiceVendor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLWriteMySpringConstantMatrixServiceVendor.m; sourceTree = "<group>"; };
+		AD8970B01790A44E00815851 /* VLWriteMyDampingConstantMatrixServiceVendor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLWriteMyDampingConstantMatrixServiceVendor.h; sourceTree = "<group>"; };
+		AD8970B11790A44E00815851 /* VLWriteMyDampingConstantMatrixServiceVendor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLWriteMyDampingConstantMatrixServiceVendor.m; sourceTree = "<group>"; };
 		ADCE5677178B58DC004C3D76 /* VLAbstractLanguageAdaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLAbstractLanguageAdaptor.h; sourceTree = "<group>"; };
 		ADCE5678178B58DC004C3D76 /* VLAbstractLanguageAdaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLAbstractLanguageAdaptor.m; sourceTree = "<group>"; };
 		ADCE567B178B5953004C3D76 /* VLOctaveLanguageAdaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLOctaveLanguageAdaptor.h; sourceTree = "<group>"; };
@@ -191,6 +200,12 @@
 				AD8970A5178F522B00815851 /* VLBalanceEquationsTransformationServiceVendor.m */,
 				AD8970A7179077CD00815851 /* VLCalculateAlphaMatrixFunctionServiceVendor.h */,
 				AD8970A8179077CD00815851 /* VLCalculateAlphaMatrixFunctionServiceVendor.m */,
+				AD8970AA179094D000815851 /* VLCalculateLambdaMatrixFunctionServiceVendor.h */,
+				AD8970AB179094D000815851 /* VLCalculateLambdaMatrixFunctionServiceVendor.m */,
+				AD8970AD179099F900815851 /* VLWriteMySpringConstantMatrixServiceVendor.h */,
+				AD8970AE179099F900815851 /* VLWriteMySpringConstantMatrixServiceVendor.m */,
+				AD8970B01790A44E00815851 /* VLWriteMyDampingConstantMatrixServiceVendor.h */,
+				AD8970B11790A44E00815851 /* VLWriteMyDampingConstantMatrixServiceVendor.m */,
 			);
 			name = services;
 			sourceTree = "<group>";
@@ -273,6 +288,9 @@
 				ADCE5684178B5AE5004C3D76 /* VLDataFileTransformationServiceVendor.m in Sources */,
 				AD8970A6178F522B00815851 /* VLBalanceEquationsTransformationServiceVendor.m in Sources */,
 				AD8970A9179077CD00815851 /* VLCalculateAlphaMatrixFunctionServiceVendor.m in Sources */,
+				AD8970AC179094D000815851 /* VLCalculateLambdaMatrixFunctionServiceVendor.m in Sources */,
+				AD8970AF179099F900815851 /* VLWriteMySpringConstantMatrixServiceVendor.m in Sources */,
+				AD8970B21790A44E00815851 /* VLWriteMyDampingConstantMatrixServiceVendor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

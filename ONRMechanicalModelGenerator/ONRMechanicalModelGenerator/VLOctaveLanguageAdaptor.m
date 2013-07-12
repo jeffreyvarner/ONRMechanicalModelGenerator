@@ -22,11 +22,114 @@
 
 @implementation VLOctaveLanguageAdaptor
 
+#pragma mark - main methods
+-(NSString *)generateDampingConstantMatrixBufferWithOptions:(NSDictionary *)options
+{
+    // get the options from the dictionary -
+    NSXMLDocument *model_tree = [options objectForKey:kXMLModelTree];
+    __unused NSXMLDocument *transformation_tree = [options objectForKey:kXMLTransformationTree];
+    
+    // build the buffer -
+    NSMutableString *buffer = [NSMutableString string];
+    
+    // get the edges -
+    NSString *edge_xpath = @".//listOfEdges/edge/@index";
+    NSArray *edge_array = [model_tree nodesForXPath:edge_xpath error:nil];
+    NSInteger NUMBER_OF_EDGES = [edge_array count];
+    NSInteger local_row_counter = 1;
+    for (NSInteger edge_index_row = 0;edge_index_row<NUMBER_OF_EDGES;edge_index_row++)
+    {
+        NSInteger local_col_counter = 1;
+        for (NSInteger edge_index_col = 0;edge_index_col<NUMBER_OF_EDGES;edge_index_col++)
+        {
+            // look up the spring constant -
+            NSString *spring_xpath = [NSString stringWithFormat:@".//listOfEdges/edge[@start_node='%lu' and @end_node='%lu']/@damping_constant",local_row_counter,local_col_counter];
+            NSArray *spring_constant_array = [model_tree nodesForXPath:spring_xpath error:nil];
+            if (spring_constant_array != nil && [spring_constant_array count]>0)
+            {
+                // Get the value -
+                NSString *value = [[spring_constant_array lastObject] stringValue];
+                [buffer appendFormat:@"%@",value];
+            }
+            else
+            {
+                [buffer appendString:@"0.0"];
+            }
+            
+            // update -
+            [buffer appendString:@"\t"];
+            
+            // update the col counter -
+            local_col_counter = local_col_counter + 1;
+        }
+        
+        // new line -
+        [buffer appendString:@"\n"];
+        
+        // update the row counter -
+        local_row_counter = local_row_counter + 1;
+    }
+    
+    // return -
+    return [NSString stringWithString:buffer];
+}
+
+-(NSString *)generateSpringConstantMatrixBufferWithOptions:(NSDictionary *)options
+{
+    // get the options from the dictionary -
+    NSXMLDocument *model_tree = [options objectForKey:kXMLModelTree];
+    __unused NSXMLDocument *transformation_tree = [options objectForKey:kXMLTransformationTree];
+    
+    // build the buffer -
+    NSMutableString *buffer = [NSMutableString string];
+    
+    // get the edges -
+    NSString *edge_xpath = @".//listOfEdges/edge/@index";
+    NSArray *edge_array = [model_tree nodesForXPath:edge_xpath error:nil];
+    NSInteger NUMBER_OF_EDGES = [edge_array count];
+    NSInteger local_row_counter = 1;
+    for (NSInteger edge_index_row = 0;edge_index_row<NUMBER_OF_EDGES;edge_index_row++)
+    {
+        NSInteger local_col_counter = 1;
+        for (NSInteger edge_index_col = 0;edge_index_col<NUMBER_OF_EDGES;edge_index_col++)
+        {
+            // look up the spring constant -
+            NSString *spring_xpath = [NSString stringWithFormat:@".//listOfEdges/edge[@start_node='%lu' and @end_node='%lu']/@spring_constant",local_row_counter,local_col_counter];
+            NSArray *spring_constant_array = [model_tree nodesForXPath:spring_xpath error:nil];
+            if (spring_constant_array != nil && [spring_constant_array count]>0)
+            {
+                // Get the value -
+                NSString *value = [[spring_constant_array lastObject] stringValue];
+                [buffer appendFormat:@"%@",value];
+            }
+            else
+            {
+                [buffer appendString:@"0.0"];
+            }
+            
+            // update -
+            [buffer appendString:@"\t"];
+            
+            // update the col counter -
+            local_col_counter = local_col_counter + 1;
+        }
+        
+        // new line -
+        [buffer appendString:@"\n"];
+        
+        // update the row counter -
+        local_row_counter = local_row_counter + 1;
+    }
+    
+    // return -
+    return [NSString stringWithString:buffer];
+}
+
 -(NSString *)generateBalanceEquationsBufferWithOptions:(NSDictionary *)options
 {
     // get the options from the dictionary -
     NSXMLDocument *model_tree = [options objectForKey:kXMLModelTree];
-    NSXMLDocument *transformation_tree = [options objectForKey:kXMLTransformationTree];
+    __unused NSXMLDocument *transformation_tree = [options objectForKey:kXMLTransformationTree];
 
     // build the buffer -
     NSMutableString *buffer = [NSMutableString string];
@@ -72,7 +175,7 @@
     [buffer appendString:@"LAMBDA_MATRIX = DF.LAMBDA_PARAMETER_MATRIX;\n"];
     [buffer appendString:@"\n"];
     [buffer appendString:@"% Calculate the ALPHA matrix - \n"];
-    [buffer appendString:@"ALPHA_MATRIX = CalculateAlphaMatrix(x,LAMBDA_MATRIX);\n"];
+    [buffer appendString:@"ALPHA_MATRIX = CalculateAlphaMatrix(x,LAMBDA_MATRIX,DF);\n"];
     [buffer appendString:@"\n"];
     
     // write velocity balances -
@@ -113,6 +216,94 @@
     //[buffer appendString:epsilon_block];
     [buffer appendString:footer_block];
     
+    // return -
+    return [NSString stringWithString:buffer];
+}
+
+-(NSString *)generateLambdaMatrixFunctionBufferWithOptions:(NSDictionary *)options
+{
+    // Get option and model tree's
+    NSXMLDocument *model_tree = [options objectForKey:kXMLModelTree];
+    __unused NSXMLDocument *transformation_tree = [options objectForKey:kXMLTransformationTree];
+    
+    // Initialize the buffer -
+    NSMutableString *buffer = [NSMutableString string];
+    
+    // DataFile function -
+    [buffer appendString:@"function [LAMBDA_MATRIX] = CalculateLambdaMatrix(x,NUMBER_OF_EDGES);\n"];
+    [buffer appendString:@"% ------------------------------------------------------------------------------------- %\n"];
+    [buffer appendString:@"% Copyright (c) 2013 Varnerlab,\n"];
+    [buffer appendString:@"% School of Chemical and Biomolecular Engineering,\n"];
+    [buffer appendString:@"% Cornell University, Ithaca NY 14853 USA.\n"];
+    [buffer appendString:@"%\n"];
+    [buffer appendString:@"% Permission is hereby granted, free of charge, to any person obtaining a copy\n"];
+    [buffer appendString:@"% of this software and associated documentation files (the \"Software\"), to deal\n"];
+    [buffer appendString:@"% in the Software without restriction, including without limitation the rights\n"];
+    [buffer appendString:@"% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n"];
+    [buffer appendString:@"% copies of the Software, and to permit persons to whom the Software is\n"];
+    [buffer appendString:@"% furnished to do so, subject to the following conditions:\n"];
+    [buffer appendString:@"% The above copyright notice and this permission notice shall be included in\n"];
+    [buffer appendString:@"% all copies or substantial portions of the Software.\n"];
+    [buffer appendString:@"%\n"];
+    [buffer appendString:@"% THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n"];
+    [buffer appendString:@"% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n"];
+    [buffer appendString:@"% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n"];
+    [buffer appendString:@"% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n"];
+    [buffer appendString:@"% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n"];
+    [buffer appendString:@"% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n"];
+    [buffer appendString:@"% THE SOFTWARE.\n"];
+    [buffer appendString:@"%\n"];
+    [buffer appendString:@"% CalculateLambdaMatrix.m \n"];
+    [buffer appendString:@"% CalculateLambdaMatrix calculates the lambda matrix given a state and a native length\n"];
+    [buffer appendString:@"% matrix. \n"];
+    [buffer appendString:@"% ------------------------------------------------------------------------------------- %\n"];
+    [buffer appendFormat:@"\n"];
+    [buffer appendString:@"% Define the system - \n"];
+    
+    // get the number of nodes -
+    NSArray *node_not_unique_array = [model_tree nodesForXPath:@".//listOfNodes/node/@index" error:nil];
+    NSInteger total_node_counter = 2*[node_not_unique_array count] + 1;
+    
+    // get the edges -
+    NSString *edge_xpath = @".//listOfEdges/edge/@index";
+    NSArray *edge_array = [model_tree nodesForXPath:edge_xpath error:nil];
+    NSInteger NUMBER_OF_EDGES = [edge_array count];
+    
+    // write -
+    [buffer appendString:@"% Populate the lambda matrix - \n"];
+    [buffer appendString:@"LAMBDA_MATRIX = zeros(NUMBER_OF_EDGES,NUMBER_OF_EDGES);\n"];
+    [buffer appendFormat:@"\n"];
+    NSInteger local_counter = 1;
+    for (NSInteger edge_index = 0;edge_index<NUMBER_OF_EDGES;edge_index++)
+    {
+        NSString *local_edge_xpath = [NSString stringWithFormat:@".//listOfEdges/edge[@index='%lu']/@end_node",local_counter];
+        NSArray *local_edge_array = [model_tree nodesForXPath:local_edge_xpath error:nil];
+        for (NSXMLElement *edge in local_edge_array)
+        {
+            // get the end_node -
+            NSString *end_node_symbol = [edge stringValue];
+            NSString *start_node_symbol = [NSString stringWithFormat:@"%lu",local_counter];
+            NSInteger end_index = [end_node_symbol integerValue];
+            
+            // from the node counters, I need to calculate the index -
+            NSInteger start_x_coordinate = 2*local_counter + total_node_counter - 2;
+            NSInteger start_y_coordinate = 2*local_counter + total_node_counter - 1;
+            NSInteger end_x_coordinate = 2*end_index + total_node_counter - 2;
+            NSInteger end_y_coordinate = 2*end_index + total_node_counter - 1;
+            
+            // write the line -
+            [buffer appendFormat:@"DISTANCE = sqrt((x(%lu,1) - x(%lu,1))^2 + (x(%lu,1) - x(%lu,1))^2);\n",start_x_coordinate,end_x_coordinate,start_y_coordinate,end_y_coordinate];
+            [buffer appendFormat:@"LAMBDA_MATRIX(%@,%@) = DISTANCE;\n",start_node_symbol,end_node_symbol];
+            [buffer appendFormat:@"\n"];
+        }
+        
+        // update the counter -
+        local_counter = local_counter + 1;
+    }
+    
+    // footer line -
+    [buffer appendString:@"return;\n"];
+
     // return -
     return [NSString stringWithString:buffer];
 }
@@ -462,6 +653,11 @@
     // put the dimension -
     [buffer appendFormat:@"NUMBER_OF_STATES = %ld;\n",4*[node_vector count]];
     [buffer appendFormat:@"NUMBER_OF_EDGES = %ld;\n",[edges count]];
+    [buffer appendString:@"\n"];
+    [buffer appendString:@"% Load the spring and damping constant array - \n"];
+    [buffer appendString:@"SPRING_MATRIX = load('SPRING_MATRIX.dat');\n"];
+    [buffer appendString:@"DAMPING_MATRIX = load('DAMPING_MATRIX.dat');\n"];
+    [buffer appendString:@"\n"];
     
     // return buffer
     return [NSString stringWithString:buffer];
@@ -476,8 +672,14 @@
     // Footer block -
     // open -
     [buffer appendString:@"\n"];
+    [buffer appendString:@"% Calculate LAMBDA_MATRIX - \n"];
+    [buffer appendString:@"LAMBDA_MATRIX = CalculateLambdaMatrix(INITIAL_CONDITION_VECTOR,NUMBER_OF_EDGES);\n"];
+    [buffer appendString:@"\n"];
+    [buffer appendString:@"\n"];
     [buffer appendString:@"% =========== DO NOT EDIT BELOW THIS LINE ================ %\n"];
-    [buffer appendString:@"DF.RATE_CONSTANT_VECTOR = RATE_CONSTANT_VECTOR;\n"];
+    [buffer appendString:@"DF.SPRING_PARAMETER_MATRIX = SPRING_MATRIX;\n"];
+    [buffer appendString:@"DF.DAMPING_PARAMETER_MATRIX = DAMPING_MATRIX;\n"];
+    [buffer appendString:@"DF.LAMBDA_PARAMETER_MATRIX = LAMBDA_MATRIX;\n"];
     [buffer appendString:@"DF.INITIAL_CONDITION_VECTOR = INITIAL_CONDITION_VECTOR;\n"];
     [buffer appendString:@"DF.NUMBER_OF_EDGES = NUMBER_OF_EDGES;\n"];
     [buffer appendString:@"DF.NUMBER_OF_STATES = NUMBER_OF_STATES;\n"];

@@ -33,9 +33,10 @@ delta_state_vector = zeros(NUMBER_OF_STATES,1);
 % Get the parameter matricies - 
 SPRING_MATRIX = DF.SPRING_PARAMETER_MATRIX;
 DAMPING_MATRIX = DF.DAMPING_PARAMETER_MATRIX;
+LAMBDA_MATRIX = DF.LAMBDA_PARAMETER_MATRIX;
 
 % Calculate the ALPHA matrix - 
-ALPHA_MATRIX = CalculateAlphaMatrix(x,DF);
+ALPHA_MATRIX = CalculateAlphaMatrix(x,LAMBDA_MATRIX,DF);
 
 % Velocity balances - 
 delta_state_array(1,1) = SPRING_MATRIX(1,2)*ALPHA_MATRIX(1,2)*(x(7,1) - x(9,1)) + DAMPING_MATRIX(1,2)*(x(3,1) - x(1,1));

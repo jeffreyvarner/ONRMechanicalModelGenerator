@@ -17,8 +17,9 @@
 -(NSString *)generateDataFileBufferWithOptions:(NSDictionary *)options;
 -(NSString *)generateBalanceEquationsBufferWithOptions:(NSDictionary *)options;
 -(NSString *)generateAlphaMatrixFunctionBufferWithOptions:(NSDictionary *)options;
-
-
+-(NSString *)generateLambdaMatrixFunctionBufferWithOptions:(NSDictionary *)options;
+-(NSString *)generateSpringConstantMatrixBufferWithOptions:(NSDictionary *)options;
+-(NSString *)generateDampingConstantMatrixBufferWithOptions:(NSDictionary *)options;
 
 
 @end
