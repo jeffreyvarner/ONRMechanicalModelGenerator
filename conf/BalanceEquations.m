@@ -57,4 +57,10 @@ delta_state_vector(10,1) = x(4,1);
 delta_state_vector(11,1) = x(5,1);
 delta_state_vector(12,1) = x(6,1);
 
+% Correct the fixed balances - 
+delta_state_vector(9,1) = 0.0;
+delta_state_vector(10,1) = 0.0;
+delta_state_vector(11,1) = 0.0;
+delta_state_vector(12,1) = 0.0;
+
 return

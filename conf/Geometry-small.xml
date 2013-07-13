@@ -2,9 +2,9 @@
 <geometry>
 
 	<listOfNodes>
-		<node index='1' x_value='-1.0000000e+00' y_value='-1.0000000e+00'/>
-		<node index='2' x_value='-1.0000000e+00' y_value='1.0000000e+00'/>
-		<node index='3' x_value='-1.0000000e+00' y_value='4.7666026e-01'/>
+		<node index='1' x_value='-1.0000000e+00' y_value='-1.0000000e+00' constant="NO"/>
+		<node index='2' x_value='-1.0000000e+00' y_value='1.0000000e+00' constant="YES"/>
+		<node index='3' x_value='-1.0000000e+00' y_value='4.7666026e-01' constant="YES"/>
 	</listOfNodes>
 	
 	<listOfTriangles>

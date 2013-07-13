@@ -31,7 +31,7 @@ NUMBER_OF_STATES = 0.5*(DF.NUMBER_OF_STATES);
 EXT_FORCING = zeros(NUMBER_OF_STATES,1);
 
 % Your problem specific force profile goes here. 
-if (t>10 && t<20)
+if (t>20 && t<30)
 	EXT_FORCING(1,1) = 1e-2;
 end;
 

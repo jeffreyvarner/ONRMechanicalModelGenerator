@@ -188,7 +188,7 @@
     NSMutableString *buffer = [NSMutableString string];
     
     // header -
-    [buffer appendString:@"function [delta_state_vector] = BalanceEquations(t,x,DF)\n"];
+    [buffer appendString:@"function [delta_state_vector] = BalanceEquations(x,t,DF)\n"];
     [buffer appendString:@"% ------------------------------------------------------------------------------------- %\n"];
     [buffer appendString:@"% Copyright (c) 2013 Varnerlab,\n"];
     [buffer appendString:@"% School of Chemical and Biomolecular Engineering,\n"];
@@ -244,6 +244,12 @@
     [buffer appendString:@"% Node balances - \n"];
     NSString *node_balances = [self buildNodeBalancesFromSBMLTree:model_tree];
     [buffer appendString:node_balances];
+    [buffer appendString:@"\n"];
+    
+    // correct for fixed nodes -
+    [buffer appendString:@"% Correct the fixed balances - \n"];
+    NSString *node_corrections = [self buildFixedNodeBalancesFromSBMLTree:model_tree];
+    [buffer appendString:node_corrections];
     [buffer appendString:@"\n"];
     
     // footer -
@@ -580,6 +586,50 @@
         // update the counter -
         node_counter = node_counter + 1;
         velocity_counter = velocity_counter + 1;
+    }
+    
+    // return -
+    return buffer;
+}
+
+-(NSString *)buildFixedNodeBalancesFromSBMLTree:(NSXMLDocument *)sbmlTree
+{
+    // Initialize the buffer -
+    NSMutableString *buffer = [NSMutableString string];
+    
+    NSArray *node_not_unique_array = [sbmlTree nodesForXPath:@".//listOfNodes/node/@index" error:nil];
+    NSInteger node_counter = 2*[node_not_unique_array count] + 1;
+    NSInteger velocity_counter = 1;
+    for (NSXMLElement *node in node_not_unique_array)
+    {
+        // node index -
+        NSString *index = [node stringValue];
+        
+        // is this node constant?
+        NSString *xpath_fixed_node = [NSString stringWithFormat:@".//listOfNodes/node[@index = '%@']/@constant",index];
+        NSString *fixed_node = [[[sbmlTree nodesForXPath:xpath_fixed_node error:nil] lastObject] stringValue];
+        if ([fixed_node isEqualToString:@"YES"]==YES)
+        {
+            // write the x line -
+            [buffer appendFormat:@"delta_state_vector(%lu,1) = 0.0;\n",node_counter];
+            
+            // update the counter -
+            node_counter = node_counter + 1;
+            velocity_counter = velocity_counter + 1;
+            
+            // write the y line -
+            [buffer appendFormat:@"delta_state_vector(%lu,1) = 0.0;\n",node_counter];
+            
+            // update the counter -
+            node_counter = node_counter + 1;
+            velocity_counter = velocity_counter + 1;
+        }
+        else
+        {
+            // update the counter -
+            node_counter = node_counter + 2;
+            velocity_counter = velocity_counter + 2;
+        }
     }
     
     // return -
