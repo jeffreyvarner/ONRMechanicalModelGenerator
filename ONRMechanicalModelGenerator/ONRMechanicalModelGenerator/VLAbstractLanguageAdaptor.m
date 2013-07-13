@@ -13,6 +13,13 @@
 
 
 #pragma mark - subclasses need to override these to use
+-(NSString *)generateExternalForcingBufferWithOptions:(NSDictionary *)options
+{
+    // force the user to overide -
+    [self doesNotRecognizeSelector:_cmd];
+    return @"u_need_2_override_me";
+}
+
 -(NSString *)generateDampingConstantMatrixBufferWithOptions:(NSDictionary *)options
 {
     // force the user to overide -

@@ -10,5 +10,5 @@ DF = DataFile(TSTART,TSTOP,Ts,[]);
 % Get the initial condition -
 IC = DF.INITIAL_CONDITION_VECTOR;
 
-pFunc = @(t,x)BalanceEquations(t,x,DF);
-[T,X] = ode15s(pFunc,TSIM,IC);
+pFunc = @(x,t)BalanceEquations(x,t,DF);
+[X] = lsode(pFunc,IC,TSIM);

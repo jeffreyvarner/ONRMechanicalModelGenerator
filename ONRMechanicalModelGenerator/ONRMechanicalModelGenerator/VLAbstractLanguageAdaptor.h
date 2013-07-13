@@ -20,6 +20,6 @@
 -(NSString *)generateLambdaMatrixFunctionBufferWithOptions:(NSDictionary *)options;
 -(NSString *)generateSpringConstantMatrixBufferWithOptions:(NSDictionary *)options;
 -(NSString *)generateDampingConstantMatrixBufferWithOptions:(NSDictionary *)options;
-
+-(NSString *)generateExternalForcingBufferWithOptions:(NSDictionary *)options;
 
 @end

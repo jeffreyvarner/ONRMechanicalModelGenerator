@@ -23,6 +23,59 @@
 @implementation VLOctaveLanguageAdaptor
 
 #pragma mark - main methods
+-(NSString *)generateExternalForcingBufferWithOptions:(NSDictionary *)options
+{
+    // get the options from the dictionary -
+    NSXMLDocument *model_tree = [options objectForKey:kXMLModelTree];
+    __unused NSXMLDocument *transformation_tree = [options objectForKey:kXMLTransformationTree];
+    
+    // build the buffer -
+    NSMutableString *buffer = [NSMutableString string];
+    
+    // header -
+    [buffer appendString:@"function [EXT_FORCING] = CalculateExternalForcing(t,x,DF)\n"];
+    [buffer appendString:@"% ------------------------------------------------------------------------------------- %\n"];
+    [buffer appendString:@"% Copyright (c) 2013 Varnerlab,\n"];
+    [buffer appendString:@"% School of Chemical and Biomolecular Engineering,\n"];
+    [buffer appendString:@"% Cornell University, Ithaca NY 14853 USA.\n"];
+    [buffer appendString:@"%\n"];
+    [buffer appendString:@"% Permission is hereby granted, free of charge, to any person obtaining a copy\n"];
+    [buffer appendString:@"% of this software and associated documentation files (the \"Software\"), to deal\n"];
+    [buffer appendString:@"% in the Software without restriction, including without limitation the rights\n"];
+    [buffer appendString:@"% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n"];
+    [buffer appendString:@"% copies of the Software, and to permit persons to whom the Software is\n"];
+    [buffer appendString:@"% furnished to do so, subject to the following conditions:\n"];
+    [buffer appendString:@"% The above copyright notice and this permission notice shall be included in\n"];
+    [buffer appendString:@"% all copies or substantial portions of the Software.\n"];
+    [buffer appendString:@"%\n"];
+    [buffer appendString:@"% THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n"];
+    [buffer appendString:@"% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n"];
+    [buffer appendString:@"% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n"];
+    [buffer appendString:@"% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n"];
+    [buffer appendString:@"% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n"];
+    [buffer appendString:@"% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n"];
+    [buffer appendString:@"% THE SOFTWARE.\n"];
+    [buffer appendString:@"%\n"];
+    [buffer appendString:@"% CalculateExternalForcing.m \n"];
+    [buffer appendString:@"% CalculateExternalForcing external forces added to the ssystem.\n"];
+    [buffer appendString:@"% Time, state and DF are passed in, external force vector is returned. \n"];
+    [buffer appendString:@"% ------------------------------------------------------------------------------------- %\n"];
+    [buffer appendString:@"\n"];
+    [buffer appendString:@"% Define the default forcing vector - \n"];
+    [buffer appendString:@"NUMBER_OF_STATES = 0.5*(DF.NUMBER_OF_STATES);\n"];
+    [buffer appendString:@"EXT_FORCING = zeros(NUMBER_OF_STATES,1);\n"];
+    [buffer appendString:@"\n"];
+    [buffer appendString:@"% Your problem specific force profile goes here. \n"];
+    [buffer appendString:@"% ... \n"];
+    [buffer appendString:@"\n"];
+    
+    // footer -
+    [buffer appendString:@"return;\n"];
+
+    // return -
+    return [NSString stringWithString:buffer];
+}
+
 -(NSString *)generateDampingConstantMatrixBufferWithOptions:(NSDictionary *)options
 {
     // get the options from the dictionary -
@@ -176,6 +229,9 @@
     [buffer appendString:@"\n"];
     [buffer appendString:@"% Calculate the ALPHA matrix - \n"];
     [buffer appendString:@"ALPHA_MATRIX = CalculateAlphaMatrix(x,LAMBDA_MATRIX,DF);\n"];
+    [buffer appendString:@"\n"];
+    [buffer appendString:@"% Calculate external forces (input) - \n"];
+    [buffer appendString:@"EXT_FORCING = CalculateExternalForcing(t,x,DF);\n"];
     [buffer appendString:@"\n"];
     
     // write velocity balances -
@@ -434,11 +490,16 @@
             NSInteger end_x_coordinate = 2*local_number + (2*[node_not_unique_array count] + 1) - 2;
             NSInteger velocity_end_x_coordinate = 2*local_number - 1;
             
-            [buffer appendFormat:@"SPRING_MATRIX(%@,%@)*ALPHA_MATRIX(%@,%@)*(x(%lu,1) - x(%lu,1)) + DAMPING_MATRIX(%@,%@)*(x(%lu,1) - x(%lu,1))",state_symbol,end_state_symbol,state_symbol,end_state_symbol,node_counter,end_x_coordinate,state_symbol,end_state_symbol,velocity_end_x_coordinate,velocity_counter];
+            [buffer appendFormat:@"-1*SPRING_MATRIX(%@,%@)*ALPHA_MATRIX(%@,%@)*(x(%lu,1) - x(%lu,1)) + DAMPING_MATRIX(%@,%@)*(x(%lu,1) - x(%lu,1))",state_symbol,end_state_symbol,state_symbol,end_state_symbol,node_counter,end_x_coordinate,state_symbol,end_state_symbol,velocity_end_x_coordinate,velocity_counter];
             
             if (plus_counter<NUMBER_OF_EDGES - 1)
             {
                 [buffer appendString:@" + "];
+            }
+            else
+            {
+                // last item - external forcing
+                [buffer appendFormat:@" + EXT_FORCING(%lu,1)",velocity_counter];
             }
             
             plus_counter = plus_counter + 1;
@@ -467,11 +528,16 @@
             NSInteger end_y_coordinate = 2*local_number + (2*[node_not_unique_array count] + 1) - 1;
             NSInteger velocity_end_y_coordinate = 2*local_number;
             
-            [buffer appendFormat:@"SPRING_MATRIX(%@,%@)*ALPHA_MATRIX(%@,%@)*(x(%lu,1) - x(%lu,1)) + DAMPING_MATRIX(%@,%@)*(x(%lu,1) - x(%lu,1))",state_symbol,end_state_symbol,state_symbol,end_state_symbol,(node_counter + 1),end_y_coordinate,state_symbol,end_state_symbol,velocity_end_y_coordinate,velocity_counter];
+            [buffer appendFormat:@"-1*SPRING_MATRIX(%@,%@)*ALPHA_MATRIX(%@,%@)*(x(%lu,1) - x(%lu,1)) + DAMPING_MATRIX(%@,%@)*(x(%lu,1) - x(%lu,1))",state_symbol,end_state_symbol,state_symbol,end_state_symbol,(node_counter + 1),end_y_coordinate,state_symbol,end_state_symbol,velocity_end_y_coordinate,velocity_counter];
             
             if (plus_counter<NUMBER_OF_EDGES - 1)
             {
                 [buffer appendString:@" + "];
+            }
+            else
+            {
+                // last item - external forcing
+                [buffer appendFormat:@" + EXT_FORCING(%lu,1)",velocity_counter];
             }
             
             plus_counter = plus_counter + 1;

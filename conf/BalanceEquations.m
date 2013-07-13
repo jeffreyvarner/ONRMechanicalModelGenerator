@@ -1,4 +1,4 @@
-function [delta_state_vector] = BalanceEquations(t,x,DF)
+function [delta_state_vector] = BalanceEquations(x,t,DF)
 % ------------------------------------------------------------------------------------- %
 % Copyright (c) 2013 Varnerlab,
 % School of Chemical and Biomolecular Engineering,
@@ -38,7 +38,7 @@ LAMBDA_MATRIX = DF.LAMBDA_PARAMETER_MATRIX;
 % Calculate the ALPHA matrix - 
 ALPHA_MATRIX = CalculateAlphaMatrix(x,LAMBDA_MATRIX,DF);
 
-% Testing -
+% Calculate external forces (input) - 
 EXT_FORCING = CalculateExternalForcing(t,x,DF);
 
 % Velocity balances - 
@@ -56,10 +56,5 @@ delta_state_vector(9,1) = x(3,1);
 delta_state_vector(10,1) = x(4,1);
 delta_state_vector(11,1) = x(5,1);
 delta_state_vector(12,1) = x(6,1);
-
-delta_state_vector(9,1) = 0;
-delta_state_vector(10,1) = 0;
-delta_state_vector(11,1) = 0;
-delta_state_vector(12,1) = 0;
 
 return
