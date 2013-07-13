@@ -292,7 +292,7 @@
     NSMutableString *buffer = [NSMutableString string];
     
     // DataFile function -
-    [buffer appendString:@"function [LAMBDA_MATRIX] = CalculateLambdaMatrix(x,NUMBER_OF_EDGES);\n"];
+    [buffer appendString:@"function [LAMBDA_MATRIX] = CalculateLambdaMatrix(x,NUMBER_OF_NODES);\n"];
     [buffer appendString:@"% ------------------------------------------------------------------------------------- %\n"];
     [buffer appendString:@"% Copyright (c) 2013 Varnerlab,\n"];
     [buffer appendString:@"% School of Chemical and Biomolecular Engineering,\n"];
@@ -333,29 +333,28 @@
     
     // write -
     [buffer appendString:@"% Populate the lambda matrix - \n"];
-    [buffer appendString:@"LAMBDA_MATRIX = zeros(NUMBER_OF_EDGES,NUMBER_OF_EDGES);\n"];
+    [buffer appendString:@"LAMBDA_MATRIX = zeros(NUMBER_OF_NODES,NUMBER_OF_NODES);\n"];
     [buffer appendFormat:@"\n"];
     NSInteger local_counter = 1;
     for (NSInteger edge_index = 0;edge_index<NUMBER_OF_EDGES;edge_index++)
     {
-        NSString *local_edge_xpath = [NSString stringWithFormat:@".//listOfEdges/edge[@index='%lu']/@end_node",local_counter];
+        NSString *local_edge_xpath = [NSString stringWithFormat:@".//listOfEdges/edge[@index = '%lu']",local_counter];
         NSArray *local_edge_array = [model_tree nodesForXPath:local_edge_xpath error:nil];
         for (NSXMLElement *edge in local_edge_array)
         {
-            // get the end_node -
-            NSString *end_node_symbol = [edge stringValue];
-            NSString *start_node_symbol = [NSString stringWithFormat:@"%lu",local_counter];
-            NSInteger end_index = [end_node_symbol integerValue];
+            // get the node -
+            NSInteger start_node_index = [[[edge attributeForName:@"start_node"] stringValue] integerValue];
+            NSInteger end_node_index = [[[edge attributeForName:@"end_node"] stringValue] integerValue];
             
             // from the node counters, I need to calculate the index -
-            NSInteger start_x_coordinate = 2*local_counter + total_node_counter - 2;
-            NSInteger start_y_coordinate = 2*local_counter + total_node_counter - 1;
-            NSInteger end_x_coordinate = 2*end_index + total_node_counter - 2;
-            NSInteger end_y_coordinate = 2*end_index + total_node_counter - 1;
+            NSInteger start_x_coordinate = 2*start_node_index + total_node_counter - 2;
+            NSInteger start_y_coordinate = 2*start_node_index + total_node_counter - 1;
+            NSInteger end_x_coordinate = 2*end_node_index + total_node_counter - 2;
+            NSInteger end_y_coordinate = 2*end_node_index + total_node_counter - 1;
             
             // write the line -
             [buffer appendFormat:@"DISTANCE = sqrt((x(%lu,1) - x(%lu,1))^2 + (x(%lu,1) - x(%lu,1))^2);\n",start_x_coordinate,end_x_coordinate,start_y_coordinate,end_y_coordinate];
-            [buffer appendFormat:@"LAMBDA_MATRIX(%@,%@) = DISTANCE;\n",start_node_symbol,end_node_symbol];
+            [buffer appendFormat:@"LAMBDA_MATRIX(%lu,%lu) = DISTANCE;\n",start_node_index,end_node_index];
             [buffer appendFormat:@"\n"];
         }
         
@@ -374,7 +373,7 @@
 {
     // Get option and model tree's
     NSXMLDocument *model_tree = [options objectForKey:kXMLModelTree];
-    NSXMLDocument *transformation_tree = [options objectForKey:kXMLTransformationTree];
+    __unused NSXMLDocument *transformation_tree = [options objectForKey:kXMLTransformationTree];
     
     // Initialize the buffer -
     NSMutableString *buffer = [NSMutableString string];
@@ -766,9 +765,11 @@
     
     // how many triangles do we have?
     
+    
     // put the dimension -
-    [buffer appendFormat:@"NUMBER_OF_STATES = %ld;\n",4*[node_vector count]];
+    [buffer appendFormat:@"NUMBER_OF_NODES = %ld;\n",1*[node_vector count]];
     [buffer appendFormat:@"NUMBER_OF_EDGES = %ld;\n",[edges count]];
+    [buffer appendFormat:@"NUMBER_OF_STATES = %ld;\n",4*[node_vector count]];
     [buffer appendString:@"\n"];
     [buffer appendString:@"% Load the spring and damping constant array - \n"];
     [buffer appendString:@"SPRING_MATRIX = load('SPRING_MATRIX.dat');\n"];
@@ -789,7 +790,7 @@
     // open -
     [buffer appendString:@"\n"];
     [buffer appendString:@"% Calculate LAMBDA_MATRIX - \n"];
-    [buffer appendString:@"LAMBDA_MATRIX = CalculateLambdaMatrix(INITIAL_CONDITION_VECTOR,NUMBER_OF_EDGES);\n"];
+    [buffer appendString:@"LAMBDA_MATRIX = CalculateLambdaMatrix(INITIAL_CONDITION_VECTOR,NUMBER_OF_NODES);\n"];
     [buffer appendString:@"\n"];
     [buffer appendString:@"\n"];
     [buffer appendString:@"% =========== DO NOT EDIT BELOW THIS LINE ================ %\n"];
@@ -798,6 +799,7 @@
     [buffer appendString:@"DF.LAMBDA_PARAMETER_MATRIX = LAMBDA_MATRIX;\n"];
     [buffer appendString:@"DF.INITIAL_CONDITION_VECTOR = INITIAL_CONDITION_VECTOR;\n"];
     [buffer appendString:@"DF.NUMBER_OF_EDGES = NUMBER_OF_EDGES;\n"];
+    [buffer appendString:@"DF.NUMBER_OF_NODES = NUMBER_OF_NODES;\n"];
     [buffer appendString:@"DF.NUMBER_OF_STATES = NUMBER_OF_STATES;\n"];
     
     // close -

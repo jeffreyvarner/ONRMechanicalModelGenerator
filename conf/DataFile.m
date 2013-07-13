@@ -27,8 +27,9 @@ function DF = DataFile(TSTART,TSTOP,Ts,INDEX)
 % ------------------------------------------------------------------------------------- %
 
 % Dimension of the system - 
-NUMBER_OF_STATES = 12;
-NUMBER_OF_EDGES = 3;
+NUMBER_OF_NODES = 9;
+NUMBER_OF_EDGES = 24;
+NUMBER_OF_STATES = 36;
 
 % Load the spring and damping constant array - 
 SPRING_MATRIX = load('SPRING_MATRIX.dat');
@@ -43,17 +44,42 @@ INITIAL_CONDITION_VECTOR = [
 	0.000000	;% 	 4 	 y_value_velocity_node_2
 	0.000000	;% 	 5 	 x_value_velocity_node_3
 	0.000000	;% 	 6 	 y_value_velocity_node_3
-	-1.0000000e+00	;% 	 7 	 x_value_node_1
-	-1.0000000e+00	;% 	 8 	 y_value_node_1
-	-1.0000000e+00	;% 	 9 	 x_value_node_2
-	1.0000000e+00	;% 	 10 	 y_value_node_2
-	-1.0000000e+00	;% 	 11 	 x_value_node_3
-	4.7666026e-01	;% 	 12 	 y_value_node_3
+	0.000000	;% 	 7 	 x_value_velocity_node_4
+	0.000000	;% 	 8 	 y_value_velocity_node_4
+	0.000000	;% 	 9 	 x_value_velocity_node_5
+	0.000000	;% 	 10 	 y_value_velocity_node_5
+	0.000000	;% 	 11 	 x_value_velocity_node_6
+	0.000000	;% 	 12 	 y_value_velocity_node_6
+	0.000000	;% 	 13 	 x_value_velocity_node_7
+	0.000000	;% 	 14 	 y_value_velocity_node_7
+	0.000000	;% 	 15 	 x_value_velocity_node_8
+	0.000000	;% 	 16 	 y_value_velocity_node_8
+	0.000000	;% 	 17 	 x_value_velocity_node_9
+	0.000000	;% 	 18 	 y_value_velocity_node_9
+	0.0	;% 	 19 	 x_value_node_1
+	1.0	;% 	 20 	 y_value_node_1
+	0.5	;% 	 21 	 x_value_node_2
+	1.0	;% 	 22 	 y_value_node_2
+	1.0	;% 	 23 	 x_value_node_3
+	1.0	;% 	 24 	 y_value_node_3
+	0.0	;% 	 25 	 x_value_node_4
+	0.5	;% 	 26 	 y_value_node_4
+	0.5	;% 	 27 	 x_value_node_5
+	0.5	;% 	 28 	 y_value_node_5
+	1.0	;% 	 29 	 x_value_node_6
+	0.5	;% 	 30 	 y_value_node_6
+	0.0	;% 	 31 	 x_value_node_7
+	0.0	;% 	 32 	 y_value_node_7
+	0.5	;% 	 33 	 x_value_node_8
+	0.0	;% 	 34 	 y_value_node_8
+	1.0	;% 	 35 	 x_value_node_9
+	0.0	;% 	 36 	 y_value_node_9
 ];
 
 % Calculate LAMBDA_MATRIX - 
-LAMBDA_MATRIX = CalculateLambdaMatrix(INITIAL_CONDITION_VECTOR,NUMBER_OF_EDGES);
+LAMBDA_MATRIX = CalculateLambdaMatrix(INITIAL_CONDITION_VECTOR,NUMBER_OF_NODES);
 
+keyboard;
 
 % =========== DO NOT EDIT BELOW THIS LINE ================ %
 DF.SPRING_PARAMETER_MATRIX = SPRING_MATRIX;
@@ -61,6 +87,7 @@ DF.DAMPING_PARAMETER_MATRIX = DAMPING_MATRIX;
 DF.LAMBDA_PARAMETER_MATRIX = LAMBDA_MATRIX;
 DF.INITIAL_CONDITION_VECTOR = INITIAL_CONDITION_VECTOR;
 DF.NUMBER_OF_EDGES = NUMBER_OF_EDGES;
+DF.NUMBER_OF_NODES = NUMBER_OF_NODES;
 DF.NUMBER_OF_STATES = NUMBER_OF_STATES;
 % ======================================================== %
 return;

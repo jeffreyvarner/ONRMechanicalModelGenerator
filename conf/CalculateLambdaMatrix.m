@@ -1,4 +1,4 @@
-function [LAMBDA_MATRIX] = CalculateLambdaMatrix(x,NUMBER_OF_EDGES);
+function [LAMBDA_MATRIX] = CalculateLambdaMatrix(x,NUMBER_OF_NODES);
 % ------------------------------------------------------------------------------------- %
 % Copyright (c) 2013 Varnerlab,
 % School of Chemical and Biomolecular Engineering,
@@ -28,15 +28,78 @@ function [LAMBDA_MATRIX] = CalculateLambdaMatrix(x,NUMBER_OF_EDGES);
 
 % Define the system - 
 % Populate the lambda matrix - 
-LAMBDA_MATRIX = zeros(NUMBER_OF_EDGES,NUMBER_OF_EDGES);
+LAMBDA_MATRIX = zeros(NUMBER_OF_NODES,NUMBER_OF_NODES);
 
-DISTANCE = sqrt((x(7,1) - x(9,1))^2 + (x(8,1) - x(10,1))^2);
-LAMBDA_MATRIX(1,2) = DISTANCE;
+DISTANCE = sqrt((x(19,1) - x(27,1))^2 + (x(20,1) - x(28,1))^2);
+LAMBDA_MATRIX(1,5) = DISTANCE;
 
-DISTANCE = sqrt((x(9,1) - x(11,1))^2 + (x(10,1) - x(12,1))^2);
-LAMBDA_MATRIX(2,3) = DISTANCE;
+DISTANCE = sqrt((x(27,1) - x(25,1))^2 + (x(28,1) - x(26,1))^2);
+LAMBDA_MATRIX(5,4) = DISTANCE;
 
-DISTANCE = sqrt((x(11,1) - x(7,1))^2 + (x(12,1) - x(8,1))^2);
-LAMBDA_MATRIX(3,1) = DISTANCE;
+DISTANCE = sqrt((x(25,1) - x(19,1))^2 + (x(26,1) - x(20,1))^2);
+LAMBDA_MATRIX(4,1) = DISTANCE;
+
+DISTANCE = sqrt((x(19,1) - x(27,1))^2 + (x(20,1) - x(28,1))^2);
+LAMBDA_MATRIX(1,5) = DISTANCE;
+
+DISTANCE = sqrt((x(27,1) - x(21,1))^2 + (x(28,1) - x(22,1))^2);
+LAMBDA_MATRIX(5,2) = DISTANCE;
+
+DISTANCE = sqrt((x(21,1) - x(19,1))^2 + (x(22,1) - x(20,1))^2);
+LAMBDA_MATRIX(2,1) = DISTANCE;
+
+DISTANCE = sqrt((x(21,1) - x(27,1))^2 + (x(22,1) - x(28,1))^2);
+LAMBDA_MATRIX(2,5) = DISTANCE;
+
+DISTANCE = sqrt((x(27,1) - x(23,1))^2 + (x(28,1) - x(24,1))^2);
+LAMBDA_MATRIX(5,3) = DISTANCE;
+
+DISTANCE = sqrt((x(23,1) - x(21,1))^2 + (x(24,1) - x(22,1))^2);
+LAMBDA_MATRIX(3,2) = DISTANCE;
+
+DISTANCE = sqrt((x(23,1) - x(27,1))^2 + (x(24,1) - x(28,1))^2);
+LAMBDA_MATRIX(3,5) = DISTANCE;
+
+DISTANCE = sqrt((x(27,1) - x(29,1))^2 + (x(28,1) - x(30,1))^2);
+LAMBDA_MATRIX(5,6) = DISTANCE;
+
+DISTANCE = sqrt((x(29,1) - x(23,1))^2 + (x(30,1) - x(24,1))^2);
+LAMBDA_MATRIX(6,3) = DISTANCE;
+
+DISTANCE = sqrt((x(25,1) - x(27,1))^2 + (x(26,1) - x(28,1))^2);
+LAMBDA_MATRIX(4,5) = DISTANCE;
+
+DISTANCE = sqrt((x(27,1) - x(31,1))^2 + (x(28,1) - x(32,1))^2);
+LAMBDA_MATRIX(5,7) = DISTANCE;
+
+DISTANCE = sqrt((x(31,1) - x(25,1))^2 + (x(32,1) - x(26,1))^2);
+LAMBDA_MATRIX(7,4) = DISTANCE;
+
+DISTANCE = sqrt((x(31,1) - x(27,1))^2 + (x(32,1) - x(28,1))^2);
+LAMBDA_MATRIX(7,5) = DISTANCE;
+
+DISTANCE = sqrt((x(27,1) - x(33,1))^2 + (x(28,1) - x(34,1))^2);
+LAMBDA_MATRIX(5,8) = DISTANCE;
+
+DISTANCE = sqrt((x(33,1) - x(31,1))^2 + (x(34,1) - x(32,1))^2);
+LAMBDA_MATRIX(8,7) = DISTANCE;
+
+DISTANCE = sqrt((x(33,1) - x(27,1))^2 + (x(34,1) - x(28,1))^2);
+LAMBDA_MATRIX(8,5) = DISTANCE;
+
+DISTANCE = sqrt((x(27,1) - x(35,1))^2 + (x(28,1) - x(36,1))^2);
+LAMBDA_MATRIX(5,9) = DISTANCE;
+
+DISTANCE = sqrt((x(35,1) - x(33,1))^2 + (x(36,1) - x(34,1))^2);
+LAMBDA_MATRIX(9,8) = DISTANCE;
+
+DISTANCE = sqrt((x(35,1) - x(27,1))^2 + (x(36,1) - x(28,1))^2);
+LAMBDA_MATRIX(9,5) = DISTANCE;
+
+DISTANCE = sqrt((x(27,1) - x(29,1))^2 + (x(28,1) - x(30,1))^2);
+LAMBDA_MATRIX(5,6) = DISTANCE;
+
+DISTANCE = sqrt((x(29,1) - x(35,1))^2 + (x(30,1) - x(36,1))^2);
+LAMBDA_MATRIX(6,9) = DISTANCE;
 
 return;

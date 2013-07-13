@@ -1,6 +1,6 @@
 % Script to test the code -
 TSTART = 0.0;
-TSTOP = 100.0;
+TSTOP = 1000.0;
 Ts = 1.0;
 TSIM = TSTART:Ts:TSTOP;
 
