@@ -16,50 +16,36 @@
 	</listOfNodes>
 	
 	<listOfTriangles>
-		<triangle index='1' node_index_1='1' node_index_2='5' node_index_3='4'/>
-		<triangle index='2' node_index_1='1' node_index_2='2' node_index_3='5'/>
-		<triangle index='3' node_index_1='2' node_index_2='3' node_index_3='5'/>
-		<triangle index='4' node_index_1='3' node_index_2='5' node_index_3='6'/>
-		
-		<triangle index='5' node_index_1='4' node_index_2='5' node_index_3='7'/>
-		<triangle index='6' node_index_1='7' node_index_2='8' node_index_3='5'/>
-		<triangle index='7' node_index_1='8' node_index_2='9' node_index_3='5'/>
-		<triangle index='8' node_index_1='9' node_index_2='5' node_index_3='6'/>
 		
 	</listOfTriangles>
 	
 	<listOfEdges>
-		<edge index='1' spring_constant='0.5' damping_constant='0.1' start_node='1' end_node='5'/>
-		<edge index='2' spring_constant='0.5' damping_constant='0.1' start_node='5' end_node='4'/>
-		<edge index='3' spring_constant='0.5' damping_constant='0.1' start_node='4' end_node='1'/>
+		<edge index='1' spring_constant='0.5' damping_constant='0.1' start_node='1' end_node='2'/>
+		<edge index='2' spring_constant='0.5' damping_constant='0.1' start_node='1' end_node='4'/>
+		<edge index='3' spring_constant='0.5' damping_constant='0.1' start_node='4' end_node='7'/>
+		<edge index='4' spring_constant='0.5' damping_constant='0.1' start_node='4' end_node='5'/>
+		<edge index='5' spring_constant='0.5' damping_constant='0.1' start_node='2' end_node='3'/>
+		<edge index='6' spring_constant='0.5' damping_constant='0.1' start_node='2' end_node='5'/>
+		<edge index='7' spring_constant='0.5' damping_constant='0.1' start_node='5' end_node='6'/>
+		<edge index='8' spring_constant='0.5' damping_constant='0.1' start_node='5' end_node='8'/>
+		<edge index='9' spring_constant='0.5' damping_constant='0.1' start_node='3' end_node='6'/>
+		<edge index='10' spring_constant='0.5' damping_constant='0.1' start_node='6' end_node='9'/>
+		<edge index='11' spring_constant='0.5' damping_constant='0.1' start_node='7' end_node='8'/>
+		<edge index='12' spring_constant='0.5' damping_constant='0.1' start_node='8' end_node='9'/>
 		
-		<edge index='4' spring_constant='0.5' damping_constant='0.1' start_node='1' end_node='5'/>
-		<edge index='5' spring_constant='0.5' damping_constant='0.1' start_node='5' end_node='2'/>
-		<edge index='6' spring_constant='0.5' damping_constant='0.1' start_node='2' end_node='1'/>
-		
-		<edge index='7' spring_constant='0.5' damping_constant='0.1' start_node='2' end_node='5'/>
-		<edge index='8' spring_constant='0.5' damping_constant='0.1' start_node='5' end_node='3'/>
-		<edge index='9' spring_constant='0.5' damping_constant='0.1' start_node='3' end_node='2'/>
-		
-		<edge index='10' spring_constant='0.5' damping_constant='0.1' start_node='3' end_node='5'/>
-		<edge index='11' spring_constant='0.5' damping_constant='0.1' start_node='5' end_node='6'/>
-		<edge index='12' spring_constant='0.5' damping_constant='0.1' start_node='6' end_node='3'/>
-		
-		<edge index='13' spring_constant='0.5' damping_constant='0.1' start_node='4' end_node='5'/>
-		<edge index='14' spring_constant='0.5' damping_constant='0.1' start_node='5' end_node='7'/>
+		<edge index='13' spring_constant='0.5' damping_constant='0.1' start_node='2' end_node='1'/>
+		<edge index='14' spring_constant='0.5' damping_constant='0.1' start_node='4' end_node='1'/>
 		<edge index='15' spring_constant='0.5' damping_constant='0.1' start_node='7' end_node='4'/>
+		<edge index='16' spring_constant='0.5' damping_constant='0.1' start_node='5' end_node='4'/>
+		<edge index='17' spring_constant='0.5' damping_constant='0.1' start_node='3' end_node='2'/>
+		<edge index='18' spring_constant='0.5' damping_constant='0.1' start_node='5' end_node='2'/>
+		<edge index='19' spring_constant='0.5' damping_constant='0.1' start_node='6' end_node='5'/>
+		<edge index='20' spring_constant='0.5' damping_constant='0.1' start_node='8' end_node='5'/>
+		<edge index='21' spring_constant='0.5' damping_constant='0.1' start_node='6' end_node='3'/>
+		<edge index='21' spring_constant='0.5' damping_constant='0.1' start_node='9' end_node='6'/>
+		<edge index='23' spring_constant='0.5' damping_constant='0.1' start_node='8' end_node='7'/>
+		<edge index='24' spring_constant='0.5' damping_constant='0.1' start_node='9' end_node='8'/>
 		
-		<edge index='16' spring_constant='0.5' damping_constant='0.1' start_node='7' end_node='5'/>
-		<edge index='17' spring_constant='0.5' damping_constant='0.1' start_node='5' end_node='8'/>
-		<edge index='18' spring_constant='0.5' damping_constant='0.1' start_node='8' end_node='7'/>
-		
-		<edge index='19' spring_constant='0.5' damping_constant='0.1' start_node='8' end_node='5'/>
-		<edge index='20' spring_constant='0.5' damping_constant='0.1' start_node='5' end_node='9'/>
-		<edge index='21' spring_constant='0.5' damping_constant='0.1' start_node='9' end_node='8'/>
-		
-		<edge index='22' spring_constant='0.5' damping_constant='0.1' start_node='9' end_node='5'/>
-		<edge index='23' spring_constant='0.5' damping_constant='0.1' start_node='5' end_node='6'/>
-		<edge index='24' spring_constant='0.5' damping_constant='0.1' start_node='6' end_node='9'/>
 		
 	</listOfEdges>
 

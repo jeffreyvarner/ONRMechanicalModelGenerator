@@ -31,10 +31,6 @@ NUMBER_OF_NODES = 9;
 NUMBER_OF_EDGES = 24;
 NUMBER_OF_STATES = 36;
 
-% Load the spring and damping constant array - 
-SPRING_MATRIX = load('SPRING_MATRIX.dat');
-DAMPING_MATRIX = load('DAMPING_MATRIX.dat');
-
 
 % Initial condition vector (velocity | node positions)
 INITIAL_CONDITION_VECTOR = [
@@ -76,10 +72,13 @@ INITIAL_CONDITION_VECTOR = [
 	0.0	;% 	 36 	 y_value_node_9
 ];
 
-% Calculate LAMBDA_MATRIX - 
+% Calculate LAMBDA_MATRIX, SPRING_MATRIX and DAMPING_MATRIX - 
 LAMBDA_MATRIX = CalculateLambdaMatrix(INITIAL_CONDITION_VECTOR,NUMBER_OF_NODES);
+SPRING_MATRIX = CalculateSpringConstantMatrix(INITIAL_CONDITION_VECTOR,NUMBER_OF_NODES);
+DAMPING_MATRIX = CalculateDampingConstantMatrix(INITIAL_CONDITION_VECTOR,NUMBER_OF_NODES);
 
-keyboard;
+%INITIAL_CONDITION_VECTOR(21,1) = 0.75;
+%INITIAL_CONDITION_VECTOR(22,1) = 1.25;
 
 % =========== DO NOT EDIT BELOW THIS LINE ================ %
 DF.SPRING_PARAMETER_MATRIX = SPRING_MATRIX;
