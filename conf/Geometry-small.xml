@@ -46,7 +46,6 @@
 		<edge index='23' spring_constant='0.5' damping_constant='0.1' start_node='8' end_node='7'/>
 		<edge index='24' spring_constant='0.5' damping_constant='0.1' start_node='9' end_node='8'/>
 		
-		
 	</listOfEdges>
 
 </geometry>

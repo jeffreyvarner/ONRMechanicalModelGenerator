@@ -280,7 +280,7 @@
     
     // write velocity balances -
     [buffer appendString:@"% Velocity balances - \n"];
-    NSString *velocity_balances = [self buildVelocityBalancesFromSBMLTree:model_tree];
+    NSString *velocity_balances = [self buildVelocityBalancesFromModelTree:model_tree];
     [buffer appendString:velocity_balances];
     [buffer appendString:@"\n"];
     
@@ -507,6 +507,102 @@
 }
 
 #pragma mark - private helper methods
+-(NSString *)buildVelocityBalancesFromModelTree:(NSXMLDocument *)sbmlTree
+{
+    // Initialize the buffer -
+    NSMutableString *buffer = [NSMutableString string];
+    
+    NSArray *node_not_unique_array = [sbmlTree nodesForXPath:@".//listOfNodes/node/@index" error:nil];
+    NSInteger NUMBER_OF_NODES = [node_not_unique_array count];
+    NSInteger index_start_position_balances = 2*[node_not_unique_array count] + 1;
+    for (NSInteger start_node_index = 1;start_node_index<=NUMBER_OF_NODES;start_node_index++)
+    {
+        // What are my index's?
+        NSInteger velocity_start_x_component_index = 2*start_node_index - 1;
+        NSInteger velocity_start_y_component_index = 2*start_node_index;
+        
+        // build the x-component
+        [buffer appendFormat:@"delta_state_vector(%lu,1) = ",velocity_start_x_component_index];
+        
+        // what are my *outgoing* connections for this node?
+        NSString *edge_xpath = [NSString stringWithFormat:@".//listOfEdges/edge[@start_node='%lu']/@end_node",start_node_index];
+        NSArray *edge_array = [sbmlTree nodesForXPath:edge_xpath error:nil];
+        NSInteger NUMBER_OF_EDGES = [edge_array count];
+        NSInteger plus_counter = 0;
+        for (NSXMLElement *edge_node in edge_array)
+        {
+            // ok, what is the end node index and other coordinates?
+            NSInteger end_node_index = [[edge_node stringValue] integerValue];
+            NSInteger start_node_x_component_index = 2*start_node_index + index_start_position_balances - 2;
+            NSInteger end_node_x_component_index = 2*end_node_index + index_start_position_balances - 2;
+            NSInteger velocity_end_x_coordinate = 2*end_node_index - 1;
+            
+            // write the *outgoing* spring buffer line -
+            [buffer appendFormat:@"SPRING_MATRIX(%lu,%lu)*",start_node_index,end_node_index];
+            [buffer appendFormat:@"ALPHA_MATRIX(%lu,%lu)*",start_node_index,end_node_index];
+            [buffer appendFormat:@"(x(%lu,1) - x(%lu,1)) + ",end_node_x_component_index,start_node_x_component_index];
+            
+            // write the *outgoing* damping buffer line -
+            [buffer appendFormat:@"DAMPING_MATRIX(%lu,%lu)*",start_node_index,end_node_index];
+            [buffer appendFormat:@"(x(%lu,1) - x(%lu,1))",velocity_end_x_coordinate,velocity_start_x_component_index];
+            
+            if (plus_counter<NUMBER_OF_EDGES - 1)
+            {
+                [buffer appendString:@" + "];
+            }
+            else
+            {
+                // last item - external forcing
+                [buffer appendFormat:@" + EXT_FORCING(%lu,1)",velocity_start_x_component_index];
+            }
+            
+            plus_counter = plus_counter + 1;
+        }
+        
+        // new line -
+        [buffer appendString:@";\n"];
+        
+        // build the y-component
+        [buffer appendFormat:@"delta_state_vector(%lu,1) = ",velocity_start_y_component_index];
+        plus_counter = 0;
+        for (NSXMLElement *edge_node in edge_array)
+        {
+            // ok, what is the end node index and other coordinates?
+            NSInteger end_node_index = [[edge_node stringValue] integerValue];
+            NSInteger start_node_y_component_index = 2*start_node_index + index_start_position_balances - 1;
+            NSInteger end_node_y_component_index = 2*end_node_index + index_start_position_balances - 1;
+            NSInteger velocity_end_y_coordinate = 2*end_node_index;
+            
+            // write the *outgoing* spring buffer line -
+            [buffer appendFormat:@"SPRING_MATRIX(%lu,%lu)*",start_node_index,end_node_index];
+            [buffer appendFormat:@"ALPHA_MATRIX(%lu,%lu)*",start_node_index,end_node_index];
+            [buffer appendFormat:@"(x(%lu,1) - x(%lu,1)) + ",end_node_y_component_index,start_node_y_component_index];
+            
+            // write the *outgoing* damping buffer line -
+            [buffer appendFormat:@"DAMPING_MATRIX(%lu,%lu)*",start_node_index,end_node_index];
+            [buffer appendFormat:@"(x(%lu,1) - x(%lu,1))",velocity_end_y_coordinate,velocity_start_y_component_index];
+            
+            if (plus_counter<NUMBER_OF_EDGES - 1)
+            {
+                [buffer appendString:@" + "];
+            }
+            else
+            {
+                // last item - external forcing
+                [buffer appendFormat:@" + EXT_FORCING(%lu,1)",velocity_start_y_component_index];
+            }
+            
+            plus_counter = plus_counter + 1;
+        }
+        
+        [buffer appendString:@";\n"];
+    }
+    
+    // return -
+    return buffer;
+}
+
+
 -(NSString *)buildVelocityBalancesFromSBMLTree:(NSXMLDocument *)sbmlTree
 {
     // Initialize the buffer -
