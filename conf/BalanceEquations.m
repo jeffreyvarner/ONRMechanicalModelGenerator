@@ -26,6 +26,8 @@ function [delta_state_vector] = BalanceEquations(x,t,DF)
 % Time and state is passed in along with an instance of the DataFile. 
 % ------------------------------------------------------------------------------------- %
 
+t
+
 % Define the state vector - 
 NUMBER_OF_STATES = DF.NUMBER_OF_STATES;
 delta_state_vector = zeros(NUMBER_OF_STATES,1);

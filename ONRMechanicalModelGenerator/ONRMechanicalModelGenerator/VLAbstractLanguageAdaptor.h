@@ -21,5 +21,6 @@
 -(NSString *)generateSpringConstantMatrixBufferWithOptions:(NSDictionary *)options;
 -(NSString *)generateDampingConstantMatrixBufferWithOptions:(NSDictionary *)options;
 -(NSString *)generateExternalForcingBufferWithOptions:(NSDictionary *)options;
+-(NSString *)generatePositionConstraintFunctionBufferWithOptions:(NSDictionary *)options;
 
 @end

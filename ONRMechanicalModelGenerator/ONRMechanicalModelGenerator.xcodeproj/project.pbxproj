@@ -24,6 +24,7 @@
 		AD8970AF179099F900815851 /* VLWriteMySpringConstantMatrixServiceVendor.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8970AE179099F900815851 /* VLWriteMySpringConstantMatrixServiceVendor.m */; };
 		AD8970B21790A44E00815851 /* VLWriteMyDampingConstantMatrixServiceVendor.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8970B11790A44E00815851 /* VLWriteMyDampingConstantMatrixServiceVendor.m */; };
 		AD8970B517916F0800815851 /* VLCalculateExternalForcingFunctionServiceVendor.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8970B417916F0700815851 /* VLCalculateExternalForcingFunctionServiceVendor.m */; };
+		AD8970B81792C84C00815851 /* VLMyPositionConstraintFunctionServiceVendor.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8970B71792C84C00815851 /* VLMyPositionConstraintFunctionServiceVendor.m */; };
 		ADCE5679178B58DC004C3D76 /* VLAbstractLanguageAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCE5678178B58DC004C3D76 /* VLAbstractLanguageAdaptor.m */; };
 		ADCE567D178B5953004C3D76 /* VLOctaveLanguageAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCE567C178B5953004C3D76 /* VLOctaveLanguageAdaptor.m */; };
 		ADCE5681178B5A0D004C3D76 /* VLTransformationServiceVendor.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCE5680178B5A0D004C3D76 /* VLTransformationServiceVendor.m */; };
@@ -65,6 +66,8 @@
 		AD8970B11790A44E00815851 /* VLWriteMyDampingConstantMatrixServiceVendor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLWriteMyDampingConstantMatrixServiceVendor.m; sourceTree = "<group>"; };
 		AD8970B317916F0700815851 /* VLCalculateExternalForcingFunctionServiceVendor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLCalculateExternalForcingFunctionServiceVendor.h; sourceTree = "<group>"; };
 		AD8970B417916F0700815851 /* VLCalculateExternalForcingFunctionServiceVendor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLCalculateExternalForcingFunctionServiceVendor.m; sourceTree = "<group>"; };
+		AD8970B61792C84C00815851 /* VLMyPositionConstraintFunctionServiceVendor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLMyPositionConstraintFunctionServiceVendor.h; sourceTree = "<group>"; };
+		AD8970B71792C84C00815851 /* VLMyPositionConstraintFunctionServiceVendor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLMyPositionConstraintFunctionServiceVendor.m; sourceTree = "<group>"; };
 		ADCE5677178B58DC004C3D76 /* VLAbstractLanguageAdaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLAbstractLanguageAdaptor.h; sourceTree = "<group>"; };
 		ADCE5678178B58DC004C3D76 /* VLAbstractLanguageAdaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLAbstractLanguageAdaptor.m; sourceTree = "<group>"; };
 		ADCE567B178B5953004C3D76 /* VLOctaveLanguageAdaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLOctaveLanguageAdaptor.h; sourceTree = "<group>"; };
@@ -211,6 +214,8 @@
 				AD8970B11790A44E00815851 /* VLWriteMyDampingConstantMatrixServiceVendor.m */,
 				AD8970B317916F0700815851 /* VLCalculateExternalForcingFunctionServiceVendor.h */,
 				AD8970B417916F0700815851 /* VLCalculateExternalForcingFunctionServiceVendor.m */,
+				AD8970B61792C84C00815851 /* VLMyPositionConstraintFunctionServiceVendor.h */,
+				AD8970B71792C84C00815851 /* VLMyPositionConstraintFunctionServiceVendor.m */,
 			);
 			name = services;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 				AD8970AF179099F900815851 /* VLWriteMySpringConstantMatrixServiceVendor.m in Sources */,
 				AD8970B21790A44E00815851 /* VLWriteMyDampingConstantMatrixServiceVendor.m in Sources */,
 				AD8970B517916F0800815851 /* VLCalculateExternalForcingFunctionServiceVendor.m in Sources */,
+				AD8970B81792C84C00815851 /* VLMyPositionConstraintFunctionServiceVendor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

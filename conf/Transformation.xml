@@ -36,4 +36,9 @@
 		<property key="OUTPUT_FILE_PATH" value="/Users/jeffreyvarner/Desktop/MyUniversalProjects/ONRMechanicalModelGenerator_v1/conf/CalculateExternalForcing.m"/>
 	</Transformation>
 	
+	<Transformation name="GEOMETRY-2-CONSTRAINTS" classname="VLMyPositionConstraintFunctionServiceVendor" language="VLOctaveLanguageAdaptor">
+		<property key="INPUT_FILE_PATH" value="/Users/jeffreyvarner/Desktop/MyUniversalProjects/ONRMechanicalModelGenerator_v1/conf/Geometry-small.xml"/>
+		<property key="OUTPUT_FILE_PATH" value="/Users/jeffreyvarner/Desktop/MyUniversalProjects/ONRMechanicalModelGenerator_v1/conf/CalculatePositionConstraints.m"/>
+	</Transformation>
+	
 </Model>
