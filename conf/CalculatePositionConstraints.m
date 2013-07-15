@@ -37,7 +37,7 @@ IC = DF.INITIAL_CONDITION_VECTOR;
 % Width of window - 
 ALPHA = 0.5;
 BETA = 10.0;
-GAMMA = 0.51;
+GAMMA = 0.55;
 
 % Enforce MIN and MAX length constraints on connections - 
 DISTANCE = sqrt((x(19,1) - x(21,1))^2 + (x(20,1) - x(22,1))^2);
@@ -81,7 +81,6 @@ if (DISTANCE<ALPHA*REST_LENGTH)
 	new_state_vector(21,1) = (1-GAMMA)*IC(21,1)+GAMMA*IC(27,1);
 	new_state_vector(22,1) = (1-GAMMA)*IC(22,1)+GAMMA*IC(28,1);
 end;
-
 
 DISTANCE = sqrt((x(27,1) - x(29,1))^2 + (x(28,1) - x(30,1))^2);
 REST_LENGTH = LAMBDA_MATRIX(5,6);
