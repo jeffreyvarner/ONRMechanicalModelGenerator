@@ -75,8 +75,11 @@
     [buffer appendString:@"% Enforce MIN and MAX length constraints on connections - \n"];
     
     // get the number of nodes -
-    NSArray *node_not_unique_array = [model_tree nodesForXPath:@".//listOfNodes/node/@index" error:nil];
-    NSInteger total_node_counter = 2*[node_not_unique_array count] + 1;
+    NSInteger total_node_counter;
+    @autoreleasepool {
+        NSArray *node_not_unique_array = [model_tree nodesForXPath:@".//listOfNodes/node/@index" error:nil];
+        total_node_counter = 2*[node_not_unique_array count] + 1;
+    }
     
     // process each edge -
     NSString *edge_xpath = @".//listOfEdges/edge/@index";
@@ -85,28 +88,31 @@
     NSInteger local_counter = 1;
     for (NSInteger edge_index_row = 0;edge_index_row<NUMBER_OF_EDGES;edge_index_row++)
     {
-        NSString *local_edge_xpath = [NSString stringWithFormat:@".//listOfEdges/edge[@index = '%lu']",local_counter];
-        NSArray *local_edge_array = [model_tree nodesForXPath:local_edge_xpath error:nil];
-        for (NSXMLElement *edge in local_edge_array)
-        {
-            // get the node -
-            NSInteger start_node_index = [[[edge attributeForName:@"start_node"] stringValue] integerValue];
-            NSInteger end_node_index = [[[edge attributeForName:@"end_node"] stringValue] integerValue];
+        @autoreleasepool {
             
-            // calculate the distance between these points -
-            NSInteger start_x_coordinate = 2*start_node_index + total_node_counter - 2;
-            NSInteger start_y_coordinate = 2*start_node_index + total_node_counter - 1;
-            NSInteger end_x_coordinate = 2*end_node_index + total_node_counter - 2;
-            NSInteger end_y_coordinate = 2*end_node_index + total_node_counter - 1;
-            
-            // write the line -
-            [buffer appendFormat:@"DISTANCE = sqrt((x(%lu,1) - x(%lu,1))^2 + (x(%lu,1) - x(%lu,1))^2);\n",start_x_coordinate,end_x_coordinate,start_y_coordinate,end_y_coordinate];
-            [buffer appendFormat:@"REST_LENGTH = LAMBDA_MATRIX(%lu,%lu);\n",start_node_index,end_node_index];
-            [buffer appendString:@"if (DISTANCE<ALPHA*REST_LENGTH)\n"];
-            [buffer appendFormat:@"\tnew_state_vector(%lu,1) = (1-GAMMA)*IC(%lu,1)+GAMMA*IC(%lu,1);\n",start_x_coordinate,start_x_coordinate,end_x_coordinate];
-            [buffer appendFormat:@"\tnew_state_vector(%lu,1) = (1-GAMMA)*IC(%lu,1)+GAMMA*IC(%lu,1);\n",start_y_coordinate,start_y_coordinate,end_y_coordinate];
-            [buffer appendString:@"end;\n"];
-            [buffer appendString:@"\n"];
+            NSString *local_edge_xpath = [NSString stringWithFormat:@".//listOfEdges/edge[@index = '%lu']",local_counter];
+            NSArray *local_edge_array = [model_tree nodesForXPath:local_edge_xpath error:nil];
+            for (NSXMLElement *edge in local_edge_array)
+            {
+                // get the node -
+                NSInteger start_node_index = [[[edge attributeForName:@"start_node"] stringValue] integerValue];
+                NSInteger end_node_index = [[[edge attributeForName:@"end_node"] stringValue] integerValue];
+                
+                // calculate the distance between these points -
+                NSInteger start_x_coordinate = 2*start_node_index + total_node_counter - 2;
+                NSInteger start_y_coordinate = 2*start_node_index + total_node_counter - 1;
+                NSInteger end_x_coordinate = 2*end_node_index + total_node_counter - 2;
+                NSInteger end_y_coordinate = 2*end_node_index + total_node_counter - 1;
+                
+                // write the line -
+                [buffer appendFormat:@"DISTANCE = sqrt((x(%lu,1) - x(%lu,1))^2 + (x(%lu,1) - x(%lu,1))^2);\n",start_x_coordinate,end_x_coordinate,start_y_coordinate,end_y_coordinate];
+                [buffer appendFormat:@"REST_LENGTH = LAMBDA_MATRIX(%lu,%lu);\n",start_node_index,end_node_index];
+                [buffer appendString:@"if (DISTANCE<ALPHA*REST_LENGTH)\n"];
+                [buffer appendFormat:@"\tnew_state_vector(%lu,1) = (1-GAMMA)*IC(%lu,1)+GAMMA*IC(%lu,1);\n",start_x_coordinate,start_x_coordinate,end_x_coordinate];
+                [buffer appendFormat:@"\tnew_state_vector(%lu,1) = (1-GAMMA)*IC(%lu,1)+GAMMA*IC(%lu,1);\n",start_y_coordinate,start_y_coordinate,end_y_coordinate];
+                [buffer appendString:@"end;\n"];
+                [buffer appendString:@"\n"];
+            }
         }
         
         // update the counter -
@@ -123,7 +129,7 @@
 -(NSString *)generateExternalForcingBufferWithOptions:(NSDictionary *)options
 {
     // get the options from the dictionary -
-    NSXMLDocument *model_tree = [options objectForKey:kXMLModelTree];
+    __unused NSXMLDocument *model_tree = [options objectForKey:kXMLModelTree];
     __unused NSXMLDocument *transformation_tree = [options objectForKey:kXMLTransformationTree];
     
     // build the buffer -
@@ -217,22 +223,29 @@
     
     // get the edges -
     NSString *edge_xpath = @".//listOfEdges/edge/@index";
-    NSArray *edge_array = [model_tree nodesForXPath:edge_xpath error:nil];
-    NSInteger NUMBER_OF_EDGES = [edge_array count];
+    
+    NSInteger NUMBER_OF_EDGES;
+    @autoreleasepool {
+        NSArray *edge_array = [model_tree nodesForXPath:edge_xpath error:nil];
+        NUMBER_OF_EDGES = [edge_array count];
+    }
+    
     NSInteger local_counter = 1;
     for (NSInteger edge_index_row = 0;edge_index_row<NUMBER_OF_EDGES;edge_index_row++)
     {
-        NSString *local_edge_xpath = [NSString stringWithFormat:@".//listOfEdges/edge[@index = '%lu']",local_counter];
-        NSArray *local_edge_array = [model_tree nodesForXPath:local_edge_xpath error:nil];
-        for (NSXMLElement *edge in local_edge_array)
-        {
-            // get the node -
-            NSInteger start_node_index = [[[edge attributeForName:@"start_node"] stringValue] integerValue];
-            NSInteger end_node_index = [[[edge attributeForName:@"end_node"] stringValue] integerValue];
-            CGFloat damping_constant_value = [[[edge attributeForName:@"damping_constant"] stringValue] floatValue];
-            
-            [buffer appendFormat:@"DAMPING_MATRIX(%lu,%lu) = %f;\n",start_node_index,end_node_index,damping_constant_value];
-            [buffer appendFormat:@"\n"];
+        @autoreleasepool {
+            NSString *local_edge_xpath = [NSString stringWithFormat:@".//listOfEdges/edge[@index = '%lu']",local_counter];
+            NSArray *local_edge_array = [model_tree nodesForXPath:local_edge_xpath error:nil];
+            for (NSXMLElement *edge in local_edge_array)
+            {
+                // get the node -
+                NSInteger start_node_index = [[[edge attributeForName:@"start_node"] stringValue] integerValue];
+                NSInteger end_node_index = [[[edge attributeForName:@"end_node"] stringValue] integerValue];
+                CGFloat damping_constant_value = [[[edge attributeForName:@"damping_constant"] stringValue] floatValue];
+                
+                [buffer appendFormat:@"DAMPING_MATRIX(%lu,%lu) = %f;\n",start_node_index,end_node_index,damping_constant_value];
+                [buffer appendFormat:@"\n"];
+            }
         }
         
         // update the counter -
@@ -288,24 +301,33 @@
     [buffer appendFormat:@"\n"];
 
     
-    // get the edges -
-    NSString *edge_xpath = @".//listOfEdges/edge/@index";
-    NSArray *edge_array = [model_tree nodesForXPath:edge_xpath error:nil];
-    NSInteger NUMBER_OF_EDGES = [edge_array count];
+    
+    NSInteger NUMBER_OF_EDGES;
+    @autoreleasepool {
+        
+        // get the edges -
+        NSString *edge_xpath = @".//listOfEdges/edge/@index";
+        NSArray *edge_array = [model_tree nodesForXPath:edge_xpath error:nil];
+        NUMBER_OF_EDGES = [edge_array count];
+    }
+    
+    
     NSInteger local_counter = 1;
     for (NSInteger edge_index_row = 0;edge_index_row<NUMBER_OF_EDGES;edge_index_row++)
     {
-        NSString *local_edge_xpath = [NSString stringWithFormat:@".//listOfEdges/edge[@index = '%lu']",local_counter];
-        NSArray *local_edge_array = [model_tree nodesForXPath:local_edge_xpath error:nil];
-        for (NSXMLElement *edge in local_edge_array)
-        {
-            // get the node -
-            NSInteger start_node_index = [[[edge attributeForName:@"start_node"] stringValue] integerValue];
-            NSInteger end_node_index = [[[edge attributeForName:@"end_node"] stringValue] integerValue];
-            CGFloat spring_constant_value = [[[edge attributeForName:@"spring_constant"] stringValue] floatValue];
-            
-            [buffer appendFormat:@"SPRING_MATRIX(%lu,%lu) = %f;\n",start_node_index,end_node_index,spring_constant_value];
-            [buffer appendFormat:@"\n"];
+        @autoreleasepool {
+            NSString *local_edge_xpath = [NSString stringWithFormat:@".//listOfEdges/edge[@index = '%lu']",local_counter];
+            NSArray *local_edge_array = [model_tree nodesForXPath:local_edge_xpath error:nil];
+            for (NSXMLElement *edge in local_edge_array)
+            {
+                // get the node -
+                NSInteger start_node_index = [[[edge attributeForName:@"start_node"] stringValue] integerValue];
+                NSInteger end_node_index = [[[edge attributeForName:@"end_node"] stringValue] integerValue];
+                CGFloat spring_constant_value = [[[edge attributeForName:@"spring_constant"] stringValue] floatValue];
+                
+                [buffer appendFormat:@"SPRING_MATRIX(%lu,%lu) = %f;\n",start_node_index,end_node_index,spring_constant_value];
+                [buffer appendFormat:@"\n"];
+            }
         }
         
         // update the counter -
@@ -409,14 +431,13 @@
     // build the buffer -
     NSMutableString *buffer = [NSMutableString string];
     NSString *header_block = [self buildHeaderBlockFromBlueprintTree:transformation_tree andSBMLTree:model_tree];
-    //NSString *parameter_block = [self buildRateConstantListFromSBMLTree:model_tree];
     NSString *ic_block = [self buildInitialConditionListFromSBMLTree:model_tree];
-    //NSString *epsilon_block = [self buildEpsilonArrayFromSBMLTree:model_tree];
     NSString *footer_block = [self buildFooterBlockFromBlueprintTree:transformation_tree andSBMLTree:model_tree];
+    NSString *mesh_block = [self buildMeshStructBlockFromBlueprintTree:transformation_tree andSBMLTree:model_tree];
+    
     [buffer appendString:header_block];
-    //[buffer appendString:parameter_block];
     [buffer appendString:ic_block];
-    //[buffer appendString:epsilon_block];
+    [buffer appendString:mesh_block];
     [buffer appendString:footer_block];
     
     // return -
@@ -463,9 +484,14 @@
     [buffer appendFormat:@"\n"];
     [buffer appendString:@"% Define the system - \n"];
     
+    
+    
     // get the number of nodes -
-    NSArray *node_not_unique_array = [model_tree nodesForXPath:@".//listOfNodes/node/@index" error:nil];
-    NSInteger total_node_counter = 2*[node_not_unique_array count] + 1;
+    NSInteger total_node_counter = 0;
+    @autoreleasepool {
+        NSArray *node_not_unique_array = [model_tree nodesForXPath:@".//listOfNodes/node/@index" error:nil];
+        total_node_counter = 2*[node_not_unique_array count] + 1;
+    }
     
     // get the edges -
     NSString *edge_xpath = @".//listOfEdges/edge/@index";
@@ -479,25 +505,29 @@
     NSInteger local_counter = 1;
     for (NSInteger edge_index = 0;edge_index<NUMBER_OF_EDGES;edge_index++)
     {
-        NSString *local_edge_xpath = [NSString stringWithFormat:@".//listOfEdges/edge[@index = '%lu']",local_counter];
-        NSArray *local_edge_array = [model_tree nodesForXPath:local_edge_xpath error:nil];
-        for (NSXMLElement *edge in local_edge_array)
-        {
-            // get the node -
-            NSInteger start_node_index = [[[edge attributeForName:@"start_node"] stringValue] integerValue];
-            NSInteger end_node_index = [[[edge attributeForName:@"end_node"] stringValue] integerValue];
-            
-            // from the node counters, I need to calculate the index -
-            NSInteger start_x_coordinate = 2*start_node_index + total_node_counter - 2;
-            NSInteger start_y_coordinate = 2*start_node_index + total_node_counter - 1;
-            NSInteger end_x_coordinate = 2*end_node_index + total_node_counter - 2;
-            NSInteger end_y_coordinate = 2*end_node_index + total_node_counter - 1;
-            
-            // write the line -
-            [buffer appendFormat:@"DISTANCE = sqrt((x(%lu,1) - x(%lu,1))^2 + (x(%lu,1) - x(%lu,1))^2);\n",start_x_coordinate,end_x_coordinate,start_y_coordinate,end_y_coordinate];
-            [buffer appendFormat:@"LAMBDA_MATRIX(%lu,%lu) = DISTANCE;\n",start_node_index,end_node_index];
-            [buffer appendFormat:@"\n"];
+        
+        @autoreleasepool {
+            NSString *local_edge_xpath = [NSString stringWithFormat:@".//listOfEdges/edge[@index = '%lu']",local_counter];
+            NSArray *local_edge_array = [model_tree nodesForXPath:local_edge_xpath error:nil];
+            for (NSXMLElement *edge in local_edge_array)
+            {
+                // get the node -
+                NSInteger start_node_index = [[[edge attributeForName:@"start_node"] stringValue] integerValue];
+                NSInteger end_node_index = [[[edge attributeForName:@"end_node"] stringValue] integerValue];
+                
+                // from the node counters, I need to calculate the index -
+                NSInteger start_x_coordinate = 2*start_node_index + total_node_counter - 2;
+                NSInteger start_y_coordinate = 2*start_node_index + total_node_counter - 1;
+                NSInteger end_x_coordinate = 2*end_node_index + total_node_counter - 2;
+                NSInteger end_y_coordinate = 2*end_node_index + total_node_counter - 1;
+                
+                // write the line -
+                [buffer appendFormat:@"DISTANCE = sqrt((x(%lu,1) - x(%lu,1))^2 + (x(%lu,1) - x(%lu,1))^2);\n",start_x_coordinate,end_x_coordinate,start_y_coordinate,end_y_coordinate];
+                [buffer appendFormat:@"LAMBDA_MATRIX(%lu,%lu) = DISTANCE;\n",start_node_index,end_node_index];
+                [buffer appendFormat:@"\n"];
+            }
         }
+        
         
         // update the counter -
         local_counter = local_counter + 1;
@@ -550,14 +580,14 @@
     [buffer appendFormat:@"\n"];
     [buffer appendString:@"% Define the system - \n"];
     
-    // get the number of nodes -
-    NSArray *node_not_unique_array = [model_tree nodesForXPath:@".//listOfNodes/node/@index" error:nil];
-    NSInteger total_node_counter = 2*[node_not_unique_array count] + 1;
-
+    
     // get the edges -
-    NSString *edge_xpath = @".//listOfEdges/edge/@index";
-    NSArray *edge_array = [model_tree nodesForXPath:edge_xpath error:nil];
-    NSInteger NUMBER_OF_EDGES = [edge_array count];
+    NSInteger NUMBER_OF_EDGES;
+    @autoreleasepool {
+        NSString *edge_xpath = @".//listOfEdges/edge/@index";
+        NSArray *edge_array = [model_tree nodesForXPath:edge_xpath error:nil];
+        NUMBER_OF_EDGES = [edge_array count];
+    }
     
     // write -
     [buffer appendString:@"NUMBER_OF_NODES = DF.NUMBER_OF_NODES;\n"];
@@ -567,31 +597,40 @@
     NSInteger local_counter = 1;
     for (NSInteger edge_index_row = 0;edge_index_row<NUMBER_OF_EDGES;edge_index_row++)
     {
-        // xpath -
-        NSString *local_edge_xpath = [NSString stringWithFormat:@".//listOfEdges/edge[@index='%lu']",local_counter];
-        NSArray *local_edge_array = [model_tree nodesForXPath:local_edge_xpath error:nil];
-        for (NSXMLElement *edge in local_edge_array)
-        {
-            // get the node -
-            NSInteger start_node_index = [[[edge attributeForName:@"start_node"] stringValue] integerValue];
-            NSInteger end_node_index = [[[edge attributeForName:@"end_node"] stringValue] integerValue];
-            
-            // from the node counters, I need to calculate the index -
-            NSInteger start_x_coordinate = 2*start_node_index + total_node_counter - 2;
-            NSInteger start_y_coordinate = 2*start_node_index + total_node_counter - 1;
-            NSInteger end_x_coordinate = 2*end_node_index + total_node_counter - 2;
-            NSInteger end_y_coordinate = 2*end_node_index + total_node_counter - 1;
-
-            // write the NUM -
-            [buffer appendFormat:@"DISTANCE = sqrt((x(%lu,1) - x(%lu,1))^2 + (x(%lu,1) - x(%lu,1))^2);\n",start_x_coordinate,end_x_coordinate,start_y_coordinate,end_y_coordinate];
-            [buffer appendFormat:@"NUM = DISTANCE - LAMBDA_MATRIX(%lu,%lu);\n",start_node_index,end_node_index];
-            [buffer appendFormat:@"DENOM = DISTANCE;\n"];
-            
-            // write the line -
-            [buffer appendFormat:@"ALPHA_MATRIX(%lu,%lu) = NUM/DENOM;\n",start_node_index,end_node_index];
-            [buffer appendFormat:@"\n"];
-        }
         
+        @autoreleasepool {
+            
+            // get the number of nodes -
+            NSArray *node_not_unique_array = [model_tree nodesForXPath:@".//listOfNodes/node/@index" error:nil];
+            NSInteger total_node_counter = 2*[node_not_unique_array count] + 1;
+            
+            // xpath -
+            NSString *local_edge_xpath = [NSString stringWithFormat:@".//listOfEdges/edge[@index='%lu']",local_counter];
+            NSArray *local_edge_array = [model_tree nodesForXPath:local_edge_xpath error:nil];
+            for (NSXMLElement *edge in local_edge_array)
+            {
+                
+                // get the node -
+                NSInteger start_node_index = [[[edge attributeForName:@"start_node"] stringValue] integerValue];
+                NSInteger end_node_index = [[[edge attributeForName:@"end_node"] stringValue] integerValue];
+                
+                // from the node counters, I need to calculate the index -
+                NSInteger start_x_coordinate = 2*start_node_index + total_node_counter - 2;
+                NSInteger start_y_coordinate = 2*start_node_index + total_node_counter - 1;
+                NSInteger end_x_coordinate = 2*end_node_index + total_node_counter - 2;
+                NSInteger end_y_coordinate = 2*end_node_index + total_node_counter - 1;
+                
+                // write the NUM -
+                [buffer appendFormat:@"DISTANCE = sqrt((x(%lu,1) - x(%lu,1))^2 + (x(%lu,1) - x(%lu,1))^2);\n",start_x_coordinate,end_x_coordinate,start_y_coordinate,end_y_coordinate];
+                [buffer appendFormat:@"NUM = DISTANCE - LAMBDA_MATRIX(%lu,%lu);\n",start_node_index,end_node_index];
+                [buffer appendFormat:@"DENOM = DISTANCE;\n"];
+                
+                // write the line -
+                [buffer appendFormat:@"ALPHA_MATRIX(%lu,%lu) = NUM/DENOM;\n",start_node_index,end_node_index];
+                [buffer appendFormat:@"\n"];
+            }
+        }
+    
         // update the counter -
         local_counter = local_counter + 1;
     }
@@ -609,90 +648,99 @@
     // Initialize the buffer -
     NSMutableString *buffer = [NSMutableString string];
     
-    NSArray *node_not_unique_array = [sbmlTree nodesForXPath:@".//listOfNodes/node/@index" error:nil];
-    NSInteger NUMBER_OF_NODES = [node_not_unique_array count];
-    NSInteger index_start_position_balances = 2*[node_not_unique_array count] + 1;
+    NSInteger NUMBER_OF_NODES;
+    NSInteger index_start_position_balances;
+    @autoreleasepool {
+        NSArray *node_not_unique_array = [sbmlTree nodesForXPath:@".//listOfNodes/node/@index" error:nil];
+        NUMBER_OF_NODES = [node_not_unique_array count];
+        index_start_position_balances = 2*[node_not_unique_array count] + 1;
+    }
+    
     for (NSInteger start_node_index = 1;start_node_index<=NUMBER_OF_NODES;start_node_index++)
     {
-        // What are my index's?
-        NSInteger velocity_start_x_component_index = 2*start_node_index - 1;
-        NSInteger velocity_start_y_component_index = 2*start_node_index;
         
-        // build the x-component
-        [buffer appendFormat:@"delta_state_vector(%lu,1) = ",velocity_start_x_component_index];
+        @autoreleasepool {
         
-        // what are my *outgoing* connections for this node?
-        NSString *edge_xpath = [NSString stringWithFormat:@".//listOfEdges/edge[@start_node='%lu']/@end_node",start_node_index];
-        NSArray *edge_array = [sbmlTree nodesForXPath:edge_xpath error:nil];
-        NSInteger NUMBER_OF_EDGES = [edge_array count];
-        NSInteger plus_counter = 0;
-        for (NSXMLElement *edge_node in edge_array)
-        {
-            // ok, what is the end node index and other coordinates?
-            NSInteger end_node_index = [[edge_node stringValue] integerValue];
-            NSInteger start_node_x_component_index = 2*start_node_index + index_start_position_balances - 2;
-            NSInteger end_node_x_component_index = 2*end_node_index + index_start_position_balances - 2;
-            NSInteger velocity_end_x_coordinate = 2*end_node_index - 1;
+            // What are my index's?
+            NSInteger velocity_start_x_component_index = 2*start_node_index - 1;
+            NSInteger velocity_start_y_component_index = 2*start_node_index;
             
-            // write the *outgoing* spring buffer line -
-            [buffer appendFormat:@"SPRING_MATRIX(%lu,%lu)*",start_node_index,end_node_index];
-            [buffer appendFormat:@"ALPHA_MATRIX(%lu,%lu)*",start_node_index,end_node_index];
-            [buffer appendFormat:@"(x(%lu,1) - x(%lu,1)) + ",end_node_x_component_index,start_node_x_component_index];
+            // build the x-component
+            [buffer appendFormat:@"delta_state_vector(%lu,1) = ",velocity_start_x_component_index];
             
-            // write the *outgoing* damping buffer line -
-            [buffer appendFormat:@"DAMPING_MATRIX(%lu,%lu)*",start_node_index,end_node_index];
-            [buffer appendFormat:@"(x(%lu,1) - x(%lu,1))",velocity_end_x_coordinate,velocity_start_x_component_index];
-            
-            if (plus_counter<NUMBER_OF_EDGES - 1)
+            // what are my *outgoing* connections for this node?
+            NSString *edge_xpath = [NSString stringWithFormat:@".//listOfEdges/edge[@start_node='%lu']/@end_node",start_node_index];
+            NSArray *edge_array = [sbmlTree nodesForXPath:edge_xpath error:nil];
+            NSInteger NUMBER_OF_EDGES = [edge_array count];
+            NSInteger plus_counter = 0;
+            for (NSXMLElement *edge_node in edge_array)
             {
-                [buffer appendString:@" + "];
-            }
-            else
-            {
-                // last item - external forcing
-                [buffer appendFormat:@" + EXT_FORCING(%lu,1)",velocity_start_x_component_index];
+                // ok, what is the end node index and other coordinates?
+                NSInteger end_node_index = [[edge_node stringValue] integerValue];
+                NSInteger start_node_x_component_index = 2*start_node_index + index_start_position_balances - 2;
+                NSInteger end_node_x_component_index = 2*end_node_index + index_start_position_balances - 2;
+                NSInteger velocity_end_x_coordinate = 2*end_node_index - 1;
+                
+                // write the *outgoing* spring buffer line -
+                [buffer appendFormat:@"SPRING_MATRIX(%lu,%lu)*",start_node_index,end_node_index];
+                [buffer appendFormat:@"ALPHA_MATRIX(%lu,%lu)*",start_node_index,end_node_index];
+                [buffer appendFormat:@"(x(%lu,1) - x(%lu,1)) + ",end_node_x_component_index,start_node_x_component_index];
+                
+                // write the *outgoing* damping buffer line -
+                [buffer appendFormat:@"DAMPING_MATRIX(%lu,%lu)*",start_node_index,end_node_index];
+                [buffer appendFormat:@"(x(%lu,1) - x(%lu,1))",velocity_end_x_coordinate,velocity_start_x_component_index];
+                
+                if (plus_counter<NUMBER_OF_EDGES - 1)
+                {
+                    [buffer appendString:@" + "];
+                }
+                else
+                {
+                    // last item - external forcing
+                    [buffer appendFormat:@" + EXT_FORCING(%lu,1)",velocity_start_x_component_index];
+                }
+                
+                plus_counter = plus_counter + 1;
             }
             
-            plus_counter = plus_counter + 1;
+            // new line -
+            [buffer appendString:@";\n"];
+            
+            // build the y-component
+            [buffer appendFormat:@"delta_state_vector(%lu,1) = ",velocity_start_y_component_index];
+            plus_counter = 0;
+            for (NSXMLElement *edge_node in edge_array)
+            {
+                // ok, what is the end node index and other coordinates?
+                NSInteger end_node_index = [[edge_node stringValue] integerValue];
+                NSInteger start_node_y_component_index = 2*start_node_index + index_start_position_balances - 1;
+                NSInteger end_node_y_component_index = 2*end_node_index + index_start_position_balances - 1;
+                NSInteger velocity_end_y_coordinate = 2*end_node_index;
+                
+                // write the *outgoing* spring buffer line -
+                [buffer appendFormat:@"SPRING_MATRIX(%lu,%lu)*",start_node_index,end_node_index];
+                [buffer appendFormat:@"ALPHA_MATRIX(%lu,%lu)*",start_node_index,end_node_index];
+                [buffer appendFormat:@"(x(%lu,1) - x(%lu,1)) + ",end_node_y_component_index,start_node_y_component_index];
+                
+                // write the *outgoing* damping buffer line -
+                [buffer appendFormat:@"DAMPING_MATRIX(%lu,%lu)*",start_node_index,end_node_index];
+                [buffer appendFormat:@"(x(%lu,1) - x(%lu,1))",velocity_end_y_coordinate,velocity_start_y_component_index];
+                
+                if (plus_counter<NUMBER_OF_EDGES - 1)
+                {
+                    [buffer appendString:@" + "];
+                }
+                else
+                {
+                    // last item - external forcing
+                    [buffer appendFormat:@" + EXT_FORCING(%lu,1)",velocity_start_y_component_index];
+                }
+                
+                plus_counter = plus_counter + 1;
+            }
+            
+            [buffer appendString:@";\n"];
         }
-        
-        // new line -
-        [buffer appendString:@";\n"];
-        
-        // build the y-component
-        [buffer appendFormat:@"delta_state_vector(%lu,1) = ",velocity_start_y_component_index];
-        plus_counter = 0;
-        for (NSXMLElement *edge_node in edge_array)
-        {
-            // ok, what is the end node index and other coordinates?
-            NSInteger end_node_index = [[edge_node stringValue] integerValue];
-            NSInteger start_node_y_component_index = 2*start_node_index + index_start_position_balances - 1;
-            NSInteger end_node_y_component_index = 2*end_node_index + index_start_position_balances - 1;
-            NSInteger velocity_end_y_coordinate = 2*end_node_index;
-            
-            // write the *outgoing* spring buffer line -
-            [buffer appendFormat:@"SPRING_MATRIX(%lu,%lu)*",start_node_index,end_node_index];
-            [buffer appendFormat:@"ALPHA_MATRIX(%lu,%lu)*",start_node_index,end_node_index];
-            [buffer appendFormat:@"(x(%lu,1) - x(%lu,1)) + ",end_node_y_component_index,start_node_y_component_index];
-            
-            // write the *outgoing* damping buffer line -
-            [buffer appendFormat:@"DAMPING_MATRIX(%lu,%lu)*",start_node_index,end_node_index];
-            [buffer appendFormat:@"(x(%lu,1) - x(%lu,1))",velocity_end_y_coordinate,velocity_start_y_component_index];
-            
-            if (plus_counter<NUMBER_OF_EDGES - 1)
-            {
-                [buffer appendString:@" + "];
-            }
-            else
-            {
-                // last item - external forcing
-                [buffer appendFormat:@" + EXT_FORCING(%lu,1)",velocity_start_y_component_index];
-            }
-            
-            plus_counter = plus_counter + 1;
-        }
-        
-        [buffer appendString:@";\n"];
     }
     
     // return -
@@ -710,88 +758,90 @@
     NSInteger velocity_counter = 1;
     for (NSXMLElement *node in node_not_unique_array)
     {
-        // Get the state -
-        NSString *state_symbol = [node stringValue];
-        
-        // find all edges associated with this node -
-        NSString *edge_xpath = [NSString stringWithFormat:@".//listOfEdges/edge[@start_node='%@']/@end_node",state_symbol];
-        NSArray *edge_array = [sbmlTree nodesForXPath:edge_xpath error:nil];
-        NSInteger NUMBER_OF_EDGES = [edge_array count];
-        
-        // x-coordinate for spring term -
-        [buffer appendFormat:@"delta_state_vector(%lu,1) = ",velocity_counter];
-        NSInteger plus_counter = 0;
-        for (NSXMLElement *edge in edge_array)
-        {
-            // get the end_node -
-            NSString *end_state_symbol = [edge stringValue];
+        @autoreleasepool {
+            // Get the state -
+            NSString *state_symbol = [node stringValue];
             
-            // ok, so we need to calculate the index for the x_coordinate point at end_point_symbol
-            NSInteger local_number = [end_state_symbol integerValue];
-            NSInteger end_x_coordinate = 2*local_number + (2*[node_not_unique_array count] + 1) - 2;
-            NSInteger velocity_end_x_coordinate = 2*local_number - 1;
+            // find all edges associated with this node -
+            NSString *edge_xpath = [NSString stringWithFormat:@".//listOfEdges/edge[@start_node='%@']/@end_node",state_symbol];
+            NSArray *edge_array = [sbmlTree nodesForXPath:edge_xpath error:nil];
+            NSInteger NUMBER_OF_EDGES = [edge_array count];
             
-            [buffer appendFormat:@"-1*SPRING_MATRIX(%@,%@)*ALPHA_MATRIX(%@,%@)*(x(%lu,1) - x(%lu,1)) + DAMPING_MATRIX(%@,%@)*(x(%lu,1) - x(%lu,1))",state_symbol,end_state_symbol,state_symbol,end_state_symbol,node_counter,end_x_coordinate,state_symbol,end_state_symbol,velocity_end_x_coordinate,velocity_counter];
-            
-            if (plus_counter<NUMBER_OF_EDGES - 1)
+            // x-coordinate for spring term -
+            [buffer appendFormat:@"delta_state_vector(%lu,1) = ",velocity_counter];
+            NSInteger plus_counter = 0;
+            for (NSXMLElement *edge in edge_array)
             {
-                [buffer appendString:@" + "];
-            }
-            else
-            {
-                // last item - external forcing
-                [buffer appendFormat:@" + EXT_FORCING(%lu,1)",velocity_counter];
+                // get the end_node -
+                NSString *end_state_symbol = [edge stringValue];
+                
+                // ok, so we need to calculate the index for the x_coordinate point at end_point_symbol
+                NSInteger local_number = [end_state_symbol integerValue];
+                NSInteger end_x_coordinate = 2*local_number + (2*[node_not_unique_array count] + 1) - 2;
+                NSInteger velocity_end_x_coordinate = 2*local_number - 1;
+                
+                [buffer appendFormat:@"-1*SPRING_MATRIX(%@,%@)*ALPHA_MATRIX(%@,%@)*(x(%lu,1) - x(%lu,1)) + DAMPING_MATRIX(%@,%@)*(x(%lu,1) - x(%lu,1))",state_symbol,end_state_symbol,state_symbol,end_state_symbol,node_counter,end_x_coordinate,state_symbol,end_state_symbol,velocity_end_x_coordinate,velocity_counter];
+                
+                if (plus_counter<NUMBER_OF_EDGES - 1)
+                {
+                    [buffer appendString:@" + "];
+                }
+                else
+                {
+                    // last item - external forcing
+                    [buffer appendFormat:@" + EXT_FORCING(%lu,1)",velocity_counter];
+                }
+                
+                plus_counter = plus_counter + 1;
             }
             
-            plus_counter = plus_counter + 1;
+            
+            // new line -
+            [buffer appendString:@";\n"];
+            
+            // update velocity counter -
+            velocity_counter = velocity_counter + 1;
+            
+            // update the node counter -
+            // node_counter = node_counter + 1;
+            
+            // y-coordinate for spring term
+            [buffer appendFormat:@"delta_state_vector(%lu,1) = ",velocity_counter];
+            plus_counter = 0;
+            for (NSXMLElement *edge in edge_array)
+            {
+                // get the end_node -
+                NSString *end_state_symbol = [edge stringValue];
+                
+                // ok, so we need to calculate the index for the x_coordinate point at end_point_symbol
+                NSInteger local_number = [end_state_symbol integerValue];
+                NSInteger end_y_coordinate = 2*local_number + (2*[node_not_unique_array count] + 1) - 1;
+                NSInteger velocity_end_y_coordinate = 2*local_number;
+                
+                [buffer appendFormat:@"-1*SPRING_MATRIX(%@,%@)*ALPHA_MATRIX(%@,%@)*(x(%lu,1) - x(%lu,1)) + DAMPING_MATRIX(%@,%@)*(x(%lu,1) - x(%lu,1))",state_symbol,end_state_symbol,state_symbol,end_state_symbol,(node_counter + 1),end_y_coordinate,state_symbol,end_state_symbol,velocity_end_y_coordinate,velocity_counter];
+                
+                if (plus_counter<NUMBER_OF_EDGES - 1)
+                {
+                    [buffer appendString:@" + "];
+                }
+                else
+                {
+                    // last item - external forcing
+                    [buffer appendFormat:@" + EXT_FORCING(%lu,1)",velocity_counter];
+                }
+                
+                plus_counter = plus_counter + 1;
+            }
+            
+            // update velocity counter -
+            velocity_counter = velocity_counter + 1;
+            
+            // update the node counter -
+            node_counter = node_counter + 2;
+            
+            // new line -
+            [buffer appendString:@";\n"];
         }
-        
-        
-        // new line -
-        [buffer appendString:@";\n"];
-        
-        // update velocity counter -
-        velocity_counter = velocity_counter + 1;
-        
-        // update the node counter -
-       // node_counter = node_counter + 1;
-        
-        // y-coordinate for spring term
-        [buffer appendFormat:@"delta_state_vector(%lu,1) = ",velocity_counter];
-        plus_counter = 0;
-        for (NSXMLElement *edge in edge_array)
-        {
-            // get the end_node -
-            NSString *end_state_symbol = [edge stringValue];
-            
-            // ok, so we need to calculate the index for the x_coordinate point at end_point_symbol
-            NSInteger local_number = [end_state_symbol integerValue];
-            NSInteger end_y_coordinate = 2*local_number + (2*[node_not_unique_array count] + 1) - 1;
-            NSInteger velocity_end_y_coordinate = 2*local_number;
-            
-            [buffer appendFormat:@"-1*SPRING_MATRIX(%@,%@)*ALPHA_MATRIX(%@,%@)*(x(%lu,1) - x(%lu,1)) + DAMPING_MATRIX(%@,%@)*(x(%lu,1) - x(%lu,1))",state_symbol,end_state_symbol,state_symbol,end_state_symbol,(node_counter + 1),end_y_coordinate,state_symbol,end_state_symbol,velocity_end_y_coordinate,velocity_counter];
-            
-            if (plus_counter<NUMBER_OF_EDGES - 1)
-            {
-                [buffer appendString:@" + "];
-            }
-            else
-            {
-                // last item - external forcing
-                [buffer appendFormat:@" + EXT_FORCING(%lu,1)",velocity_counter];
-            }
-            
-            plus_counter = plus_counter + 1;
-        }
-
-        // update velocity counter -
-        velocity_counter = velocity_counter + 1;
-        
-        // update the node counter -
-        node_counter = node_counter + 2;
-        
-        // new line -
-        [buffer appendString:@";\n"];
     }
     
     // return -
@@ -803,25 +853,28 @@
     // Initialize the buffer -
     NSMutableString *buffer = [NSMutableString string];
     
-    NSArray *node_not_unique_array = [sbmlTree nodesForXPath:@".//listOfNodes/node/@index" error:nil];
-    NSInteger node_counter = 2*[node_not_unique_array count] + 1;
-    NSInteger velocity_counter = 1;
-    for (NSXMLElement *node in node_not_unique_array)
-    {
-        // write the x line -
-        [buffer appendFormat:@"delta_state_vector(%lu,1) = x(%lu,1);\n",node_counter,velocity_counter];
-        
-        // update the counter -
-        node_counter = node_counter + 1;
-        velocity_counter = velocity_counter + 1;
-        
-        // write the y line -
-        [buffer appendFormat:@"delta_state_vector(%lu,1) = x(%lu,1);\n",node_counter,velocity_counter];
-        
-        // update the counter -
-        node_counter = node_counter + 1;
-        velocity_counter = velocity_counter + 1;
+    @autoreleasepool {
+        NSArray *node_not_unique_array = [sbmlTree nodesForXPath:@".//listOfNodes/node/@index" error:nil];
+        NSInteger node_counter = 2*[node_not_unique_array count] + 1;
+        NSInteger velocity_counter = 1;
+        for (NSXMLElement *node in node_not_unique_array)
+        {
+            // write the x line -
+            [buffer appendFormat:@"delta_state_vector(%lu,1) = x(%lu,1);\n",node_counter,velocity_counter];
+            
+            // update the counter -
+            node_counter = node_counter + 1;
+            velocity_counter = velocity_counter + 1;
+            
+            // write the y line -
+            [buffer appendFormat:@"delta_state_vector(%lu,1) = x(%lu,1);\n",node_counter,velocity_counter];
+            
+            // update the counter -
+            node_counter = node_counter + 1;
+            velocity_counter = velocity_counter + 1;
+        }
     }
+    
     
     // return -
     return buffer;
@@ -832,38 +885,42 @@
     // Initialize the buffer -
     NSMutableString *buffer = [NSMutableString string];
     
-    NSArray *node_not_unique_array = [sbmlTree nodesForXPath:@".//listOfNodes/node/@index" error:nil];
-    NSInteger node_counter = 2*[node_not_unique_array count] + 1;
-    NSInteger velocity_counter = 1;
-    for (NSXMLElement *node in node_not_unique_array)
-    {
-        // node index -
-        NSString *index = [node stringValue];
+    
+    @autoreleasepool {
         
-        // is this node constant?
-        NSString *xpath_fixed_node = [NSString stringWithFormat:@".//listOfNodes/node[@index = '%@']/@constant",index];
-        NSString *fixed_node = [[[sbmlTree nodesForXPath:xpath_fixed_node error:nil] lastObject] stringValue];
-        if ([fixed_node isEqualToString:@"YES"]==YES)
+        NSArray *node_not_unique_array = [sbmlTree nodesForXPath:@".//listOfNodes/node/@index" error:nil];
+        NSInteger node_counter = 2*[node_not_unique_array count] + 1;
+        NSInteger velocity_counter = 1;
+        for (NSXMLElement *node in node_not_unique_array)
         {
-            // write the x line -
-            [buffer appendFormat:@"delta_state_vector(%lu,1) = 0.0;\n",node_counter];
+            // node index -
+            NSString *index = [node stringValue];
             
-            // update the counter -
-            node_counter = node_counter + 1;
-            velocity_counter = velocity_counter + 1;
-            
-            // write the y line -
-            [buffer appendFormat:@"delta_state_vector(%lu,1) = 0.0;\n",node_counter];
-            
-            // update the counter -
-            node_counter = node_counter + 1;
-            velocity_counter = velocity_counter + 1;
-        }
-        else
-        {
-            // update the counter -
-            node_counter = node_counter + 2;
-            velocity_counter = velocity_counter + 2;
+            // is this node constant?
+            NSString *xpath_fixed_node = [NSString stringWithFormat:@".//listOfNodes/node[@index = '%@']/@constant",index];
+            NSString *fixed_node = [[[sbmlTree nodesForXPath:xpath_fixed_node error:nil] lastObject] stringValue];
+            if ([fixed_node isEqualToString:@"YES"]==YES)
+            {
+                // write the x line -
+                [buffer appendFormat:@"delta_state_vector(%lu,1) = 0.0;\n",node_counter];
+                
+                // update the counter -
+                node_counter = node_counter + 1;
+                velocity_counter = velocity_counter + 1;
+                
+                // write the y line -
+                [buffer appendFormat:@"delta_state_vector(%lu,1) = 0.0;\n",node_counter];
+                
+                // update the counter -
+                node_counter = node_counter + 1;
+                velocity_counter = velocity_counter + 1;
+            }
+            else
+            {
+                // update the counter -
+                node_counter = node_counter + 2;
+                velocity_counter = velocity_counter + 2;
+            }
         }
     }
     
@@ -876,29 +933,28 @@
     // Initialize the buffer -
     NSMutableString *buffer = [NSMutableString string];
     
-    NSArray *node_not_unique_array = [sbmlTree nodesForXPath:@".//listOfNodes/node/@index" error:nil];
-    NSMutableArray *node_vector = [NSMutableArray array];
-    for (NSXMLElement *node in node_not_unique_array)
-    {
-        // Get the state -
-        NSString *state_symbol = [node stringValue];
-        
-        // add -
-        [node_vector addObject:state_symbol];
-    }
-    
-    // Formulate rate constant buffer -
-    // open -
-    [buffer appendString:@"\n"];
-    [buffer appendString:@"% Initial condition vector (velocity | node positions)\n"];
-    [buffer appendString:@"INITIAL_CONDITION_VECTOR = [\n"];
-    
-    // setup ICs -
-    NSInteger counter = 1;
-    for (NSString *symbol_string in node_vector)
-    {
-        @autoreleasepool {
+    @autoreleasepool {
+        NSArray *node_not_unique_array = [sbmlTree nodesForXPath:@".//listOfNodes/node/@index" error:nil];
+        NSMutableArray *node_vector = [NSMutableArray array];
+        for (NSXMLElement *node in node_not_unique_array)
+        {
+            // Get the state -
+            NSString *state_symbol = [node stringValue];
             
+            // add -
+            [node_vector addObject:state_symbol];
+        }
+        
+        // Formulate rate constant buffer -
+        // open -
+        [buffer appendString:@"\n"];
+        [buffer appendString:@"% Initial condition vector (velocity | node positions)\n"];
+        [buffer appendString:@"INITIAL_CONDITION_VECTOR = [\n"];
+        
+        // setup ICs -
+        NSInteger counter = 1;
+        for (NSString *symbol_string in node_vector)
+        {
             // Get the x and y position -
             // x value velocity
             [buffer appendFormat:@"\t%f\t;%% \t %lu \t x_value_velocity_node_%@\n",0.0,counter,symbol_string];
@@ -912,12 +968,9 @@
             // update counter -
             counter = counter + 1;
         }
-    }
-    
-    for (NSString *symbol_string in node_vector)
-    {
-        @autoreleasepool {
-            
+        
+        for (NSString *symbol_string in node_vector)
+        {
             // Get the x and y position -
             // x value
             NSString *xpath_x_value = [NSString stringWithFormat:@".//listOfNodes/node[@index = '%@']/@x_value",symbol_string];
@@ -940,7 +993,6 @@
             counter = counter + 1;
         }
     }
-
     
     // close -
     [buffer appendString:@"];\n"];
@@ -1012,6 +1064,60 @@
     return [NSString stringWithString:buffer];
 }
 
+-(NSString *)buildMeshStructBlockFromBlueprintTree:(NSXMLDocument *)blueprintTree
+                                       andSBMLTree:(NSXMLDocument *)sbmlTree
+{
+    // Initialize the buffer -
+    NSMutableString *buffer = [NSMutableString string];
+    
+    @autoreleasepool {
+        
+        // get the node list -
+        NSArray *node_array = [sbmlTree nodesForXPath:@".//listOfNodes/node/@index" error:nil];
+        
+        // write the mesh struct
+        [buffer appendString:@"\n"];
+        [buffer appendString:@"% Calculate MESH struct - \n"];
+        
+         
+        for (NSXMLElement *node in node_array)
+        {
+            // Get the index -
+            NSString *node_symbol = [node stringValue];
+            NSString *edge_xpath = [NSString stringWithFormat:@".//listOfEdges/edge[@start_node='%@']/@end_node",node_symbol];
+            NSArray *edge_array = [sbmlTree nodesForXPath:edge_xpath error:nil];
+            
+            // write mesh record -
+            [buffer appendFormat:@"MESH.NODE(%@).edge_array = [ ",node_symbol];
+            for (NSXMLElement *edge in edge_array)
+            {
+                NSString *edge_index = [edge stringValue];
+                [buffer appendFormat:@"%@ ",edge_index];
+            }
+            [buffer appendString:@"];\n"];
+            
+            // write the fixed -or- free
+            [buffer appendFormat:@"MESH.NODE(%@).fixed = ",node_symbol];
+            NSString *xpath_fixed_edge = [NSString stringWithFormat:@".//listOfNodes/node[@index='%@']/@constant",node_symbol];
+            NSString *fixed_value = [[[sbmlTree nodesForXPath:xpath_fixed_edge error:nil] lastObject] stringValue];
+            if ([fixed_value isEqualToString:@"NO"] == 0)
+            {
+                [buffer appendString:@"1;\n"];
+            }
+            else
+            {
+                [buffer appendString:@"0;\n"];
+            }
+        }
+        
+        [buffer appendString:@"\n"];
+    }
+    
+
+    // return buffer
+    return [NSString stringWithString:buffer];
+}
+
 -(NSString *)buildFooterBlockFromBlueprintTree:(NSXMLDocument *)blueprintTree
                                    andSBMLTree:(NSXMLDocument *)sbmlTree
 {
@@ -1035,6 +1141,7 @@
     [buffer appendString:@"DF.NUMBER_OF_EDGES = NUMBER_OF_EDGES;\n"];
     [buffer appendString:@"DF.NUMBER_OF_NODES = NUMBER_OF_NODES;\n"];
     [buffer appendString:@"DF.NUMBER_OF_STATES = NUMBER_OF_STATES;\n"];
+    [buffer appendString:@"DF.MESH_ADJANCEY_STRUCT = MESH;\n"];
     
     // close -
     [buffer appendString:@"% ======================================================== %\n"];

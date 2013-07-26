@@ -72,6 +72,27 @@ INITIAL_CONDITION_VECTOR = [
 	0.0	;% 	 36 	 y_value_node_9
 ];
 
+% Calculate MESH struct - 
+MESH.NODE(1).edge_array = [ 2 4 ];
+MESH.NODE(1).fixed = 0;
+MESH.NODE(2).edge_array = [ 3 5 1 ];
+MESH.NODE(2).fixed = 0;
+MESH.NODE(3).edge_array = [ 6 2 ];
+MESH.NODE(3).fixed = 0;
+MESH.NODE(4).edge_array = [ 7 5 1 ];
+MESH.NODE(4).fixed = 0;
+MESH.NODE(5).edge_array = [ 6 8 4 2 ];
+MESH.NODE(5).fixed = 0;
+MESH.NODE(6).edge_array = [ 9 5 3 ];
+MESH.NODE(6).fixed = 0;
+MESH.NODE(7).edge_array = [ 8 4 ];
+MESH.NODE(7).fixed = 1;
+MESH.NODE(8).edge_array = [ 9 5 7 ];
+MESH.NODE(8).fixed = 1;
+MESH.NODE(9).edge_array = [ 6 8 ];
+MESH.NODE(9).fixed = 1;
+
+
 % Calculate LAMBDA_MATRIX, SPRING_MATRIX and DAMPING_MATRIX - 
 LAMBDA_MATRIX = CalculateLambdaMatrix(INITIAL_CONDITION_VECTOR,NUMBER_OF_NODES);
 SPRING_MATRIX = CalculateSpringConstantMatrix(INITIAL_CONDITION_VECTOR,NUMBER_OF_NODES);
@@ -86,5 +107,6 @@ DF.INITIAL_CONDITION_VECTOR = INITIAL_CONDITION_VECTOR;
 DF.NUMBER_OF_EDGES = NUMBER_OF_EDGES;
 DF.NUMBER_OF_NODES = NUMBER_OF_NODES;
 DF.NUMBER_OF_STATES = NUMBER_OF_STATES;
+DF.MESH_ADJANCEY_STRUCT = MESH;
 % ======================================================== %
 return;
