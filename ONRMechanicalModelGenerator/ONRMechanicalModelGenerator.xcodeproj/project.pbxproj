@@ -25,6 +25,7 @@
 		AD8970B21790A44E00815851 /* VLWriteMyDampingConstantMatrixServiceVendor.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8970B11790A44E00815851 /* VLWriteMyDampingConstantMatrixServiceVendor.m */; };
 		AD8970B517916F0800815851 /* VLCalculateExternalForcingFunctionServiceVendor.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8970B417916F0700815851 /* VLCalculateExternalForcingFunctionServiceVendor.m */; };
 		AD8970B81792C84C00815851 /* VLMyPositionConstraintFunctionServiceVendor.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8970B71792C84C00815851 /* VLMyPositionConstraintFunctionServiceVendor.m */; };
+		ADC553A317A3187A00A7699B /* VLCGSLLanguageAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC553A217A3187A00A7699B /* VLCGSLLanguageAdaptor.m */; };
 		ADCE5679178B58DC004C3D76 /* VLAbstractLanguageAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCE5678178B58DC004C3D76 /* VLAbstractLanguageAdaptor.m */; };
 		ADCE567D178B5953004C3D76 /* VLOctaveLanguageAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCE567C178B5953004C3D76 /* VLOctaveLanguageAdaptor.m */; };
 		ADCE5681178B5A0D004C3D76 /* VLTransformationServiceVendor.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCE5680178B5A0D004C3D76 /* VLTransformationServiceVendor.m */; };
@@ -68,6 +69,8 @@
 		AD8970B417916F0700815851 /* VLCalculateExternalForcingFunctionServiceVendor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLCalculateExternalForcingFunctionServiceVendor.m; sourceTree = "<group>"; };
 		AD8970B61792C84C00815851 /* VLMyPositionConstraintFunctionServiceVendor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLMyPositionConstraintFunctionServiceVendor.h; sourceTree = "<group>"; };
 		AD8970B71792C84C00815851 /* VLMyPositionConstraintFunctionServiceVendor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLMyPositionConstraintFunctionServiceVendor.m; sourceTree = "<group>"; };
+		ADC553A117A3187A00A7699B /* VLCGSLLanguageAdaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLCGSLLanguageAdaptor.h; sourceTree = "<group>"; };
+		ADC553A217A3187A00A7699B /* VLCGSLLanguageAdaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLCGSLLanguageAdaptor.m; sourceTree = "<group>"; };
 		ADCE5677178B58DC004C3D76 /* VLAbstractLanguageAdaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLAbstractLanguageAdaptor.h; sourceTree = "<group>"; };
 		ADCE5678178B58DC004C3D76 /* VLAbstractLanguageAdaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLAbstractLanguageAdaptor.m; sourceTree = "<group>"; };
 		ADCE567B178B5953004C3D76 /* VLOctaveLanguageAdaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLOctaveLanguageAdaptor.h; sourceTree = "<group>"; };
@@ -157,6 +160,7 @@
 		AD6B782B1760E6280087EA0C /* engine */ = {
 			isa = PBXGroup;
 			children = (
+				ADC553A017A317A700A7699B /* cgsl */,
 				ADCE567A178B58E7004C3D76 /* octave */,
 				ADCE5677178B58DC004C3D76 /* VLAbstractLanguageAdaptor.h */,
 				ADCE5678178B58DC004C3D76 /* VLAbstractLanguageAdaptor.m */,
@@ -184,6 +188,15 @@
 				AD6B78371760E6A20087EA0C /* VLCoreUtilitiesLib.m */,
 			);
 			name = utilities;
+			sourceTree = "<group>";
+		};
+		ADC553A017A317A700A7699B /* cgsl */ = {
+			isa = PBXGroup;
+			children = (
+				ADC553A117A3187A00A7699B /* VLCGSLLanguageAdaptor.h */,
+				ADC553A217A3187A00A7699B /* VLCGSLLanguageAdaptor.m */,
+			);
+			name = cgsl;
 			sourceTree = "<group>";
 		};
 		ADCE567A178B58E7004C3D76 /* octave */ = {
@@ -292,6 +305,7 @@
 				AD6B78321760E6720087EA0C /* VLCodeGenerationOperation.m in Sources */,
 				AD6B78381760E6A20087EA0C /* VLBlocksAndConstanStrings.m in Sources */,
 				AD6B78391760E6A20087EA0C /* VLCoreUtilitiesLib.m in Sources */,
+				ADC553A317A3187A00A7699B /* VLCGSLLanguageAdaptor.m in Sources */,
 				ADCE5679178B58DC004C3D76 /* VLAbstractLanguageAdaptor.m in Sources */,
 				ADCE567D178B5953004C3D76 /* VLOctaveLanguageAdaptor.m in Sources */,
 				ADCE5681178B5A0D004C3D76 /* VLTransformationServiceVendor.m in Sources */,

@@ -1,0 +1,39 @@
+<?xml version="1.0" standalone="yes"?>
+<Model name="TEST_ONRMMG">
+	
+	<Transformation name="GEOMETRY-2-DATAFILE" classname="VLDataFileTransformationServiceVendor" language="VLOctaveLanguageAdaptor">
+		<property key="INPUT_FILE_PATH" value="/Users/jeffreyvarner/Desktop/MyUniversalProjects/ONRMechanicalModelGenerator_v1/conf/example_1/Geometry.xml"/>
+		<property key="OUTPUT_FILE_PATH" value="/Users/jeffreyvarner/Desktop/MyUniversalProjects/ONRMechanicalModelGenerator_v1/conf/example_1/DataFile.m"/>
+	</Transformation>
+	
+	<Transformation name="GEOMETRY-2-BALANCES" classname="VLBalanceEquationsTransformationServiceVendor" language="VLOctaveLanguageAdaptor">
+		<property key="INPUT_FILE_PATH" value="/Users/jeffreyvarner/Desktop/MyUniversalProjects/ONRMechanicalModelGenerator_v1/conf/example_1/Geometry.xml"/>
+		<property key="OUTPUT_FILE_PATH" value="/Users/jeffreyvarner/Desktop/MyUniversalProjects/ONRMechanicalModelGenerator_v1/conf/example_1/BalanceEquations.m"/>
+	</Transformation>
+	
+	<Transformation name="GEOMETRY-2-ALPHAMATRIX" classname="VLCalculateAlphaMatrixFunctionServiceVendor" language="VLOctaveLanguageAdaptor">
+		<property key="INPUT_FILE_PATH" value="/Users/jeffreyvarner/Desktop/MyUniversalProjects/ONRMechanicalModelGenerator_v1/conf/example_1/Geometry.xml"/>
+		<property key="OUTPUT_FILE_PATH" value="/Users/jeffreyvarner/Desktop/MyUniversalProjects/ONRMechanicalModelGenerator_v1/conf/example_1/CalculateAlphaMatrix.m"/>
+	</Transformation>
+	
+	<Transformation name="GEOMETRY-2-LAMBDAMATRIX" classname="VLCalculateLambdaMatrixFunctionServiceVendor" language="VLOctaveLanguageAdaptor">
+		<property key="INPUT_FILE_PATH" value="/Users/jeffreyvarner/Desktop/MyUniversalProjects/ONRMechanicalModelGenerator_v1/conf/example_1/Geometry.xml"/>
+		<property key="OUTPUT_FILE_PATH" value="/Users/jeffreyvarner/Desktop/MyUniversalProjects/ONRMechanicalModelGenerator_v1/conf/example_1/CalculateLambdaMatrix.m"/>
+	</Transformation>
+	
+	<Transformation name="GEOMETRY-2-SPRINGMATRIX" classname="VLWriteMySpringConstantMatrixServiceVendor" language="VLOctaveLanguageAdaptor">
+		<property key="INPUT_FILE_PATH" value="/Users/jeffreyvarner/Desktop/MyUniversalProjects/ONRMechanicalModelGenerator_v1/conf/example_1/Geometry.xml"/>
+		<property key="OUTPUT_FILE_PATH" value="/Users/jeffreyvarner/Desktop/MyUniversalProjects/ONRMechanicalModelGenerator_v1/conf/example_1/CalculateSpringConstantMatrix.m"/>
+	</Transformation>
+	
+	<Transformation name="GEOMETRY-2-DAMPINGMATRIX" classname="VLWriteMyDampingConstantMatrixServiceVendor" language="VLOctaveLanguageAdaptor">
+		<property key="INPUT_FILE_PATH" value="/Users/jeffreyvarner/Desktop/MyUniversalProjects/ONRMechanicalModelGenerator_v1/conf/example_1/Geometry.xml"/>
+		<property key="OUTPUT_FILE_PATH" value="/Users/jeffreyvarner/Desktop/MyUniversalProjects/ONRMechanicalModelGenerator_v1/conf/example_1/CalculateDampingConstantMatrix.m"/>
+	</Transformation>
+	
+	<Transformation name="GEOMETRY-2-EXTFORCE" classname="VLCalculateExternalForcingFunctionServiceVendor" language="VLOctaveLanguageAdaptor">
+		<property key="INPUT_FILE_PATH" value="/Users/jeffreyvarner/Desktop/MyUniversalProjects/ONRMechanicalModelGenerator_v1/conf/example_1/Geometry.xml"/>
+		<property key="OUTPUT_FILE_PATH" value="/Users/jeffreyvarner/Desktop/MyUniversalProjects/ONRMechanicalModelGenerator_v1/conf/example_1/CalculateExternalForcing.m"/>
+	</Transformation>
+	
+</Model>

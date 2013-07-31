@@ -1,0 +1,16557 @@
+function [LAMBDA_MATRIX] = CalculateLambdaMatrix(x,NUMBER_OF_NODES);
+% ------------------------------------------------------------------------------------- %
+% Copyright (c) 2013 Varnerlab,
+% School of Chemical and Biomolecular Engineering,
+% Cornell University, Ithaca NY 14853 USA.
+%
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the "Software"), to deal
+% in the Software without restriction, including without limitation the rights
+% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+% copies of the Software, and to permit persons to whom the Software is
+% furnished to do so, subject to the following conditions:
+% The above copyright notice and this permission notice shall be included in
+% all copies or substantial portions of the Software.
+%
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+% THE SOFTWARE.
+%
+% CalculateLambdaMatrix.m 
+% CalculateLambdaMatrix calculates the lambda matrix given a state and a native length
+% matrix. 
+% ------------------------------------------------------------------------------------- %
+
+% Define the system - 
+% Populate the lambda matrix - 
+LAMBDA_MATRIX = zeros(NUMBER_OF_NODES,NUMBER_OF_NODES);
+
+DISTANCE = sqrt((x(1159,1) - x(1121,1))^2 + (x(1160,1) - x(1122,1))^2);
+LAMBDA_MATRIX(64,45) = DISTANCE;
+
+DISTANCE = sqrt((x(1121,1) - x(1159,1))^2 + (x(1122,1) - x(1160,1))^2);
+LAMBDA_MATRIX(45,64) = DISTANCE;
+
+DISTANCE = sqrt((x(1121,1) - x(1109,1))^2 + (x(1122,1) - x(1110,1))^2);
+LAMBDA_MATRIX(45,39) = DISTANCE;
+
+DISTANCE = sqrt((x(1109,1) - x(1121,1))^2 + (x(1110,1) - x(1122,1))^2);
+LAMBDA_MATRIX(39,45) = DISTANCE;
+
+DISTANCE = sqrt((x(1109,1) - x(1159,1))^2 + (x(1110,1) - x(1160,1))^2);
+LAMBDA_MATRIX(39,64) = DISTANCE;
+
+DISTANCE = sqrt((x(1159,1) - x(1109,1))^2 + (x(1160,1) - x(1110,1))^2);
+LAMBDA_MATRIX(64,39) = DISTANCE;
+
+DISTANCE = sqrt((x(1109,1) - x(1075,1))^2 + (x(1110,1) - x(1076,1))^2);
+LAMBDA_MATRIX(39,22) = DISTANCE;
+
+DISTANCE = sqrt((x(1075,1) - x(1109,1))^2 + (x(1076,1) - x(1110,1))^2);
+LAMBDA_MATRIX(22,39) = DISTANCE;
+
+DISTANCE = sqrt((x(1075,1) - x(1071,1))^2 + (x(1076,1) - x(1072,1))^2);
+LAMBDA_MATRIX(22,20) = DISTANCE;
+
+DISTANCE = sqrt((x(1071,1) - x(1075,1))^2 + (x(1072,1) - x(1076,1))^2);
+LAMBDA_MATRIX(20,22) = DISTANCE;
+
+DISTANCE = sqrt((x(1071,1) - x(1109,1))^2 + (x(1072,1) - x(1110,1))^2);
+LAMBDA_MATRIX(20,39) = DISTANCE;
+
+DISTANCE = sqrt((x(1109,1) - x(1071,1))^2 + (x(1110,1) - x(1072,1))^2);
+LAMBDA_MATRIX(39,20) = DISTANCE;
+
+DISTANCE = sqrt((x(1121,1) - x(1075,1))^2 + (x(1122,1) - x(1076,1))^2);
+LAMBDA_MATRIX(45,22) = DISTANCE;
+
+DISTANCE = sqrt((x(1075,1) - x(1121,1))^2 + (x(1076,1) - x(1122,1))^2);
+LAMBDA_MATRIX(22,45) = DISTANCE;
+
+DISTANCE = sqrt((x(1075,1) - x(1109,1))^2 + (x(1076,1) - x(1110,1))^2);
+LAMBDA_MATRIX(22,39) = DISTANCE;
+
+DISTANCE = sqrt((x(1109,1) - x(1075,1))^2 + (x(1110,1) - x(1076,1))^2);
+LAMBDA_MATRIX(39,22) = DISTANCE;
+
+DISTANCE = sqrt((x(1109,1) - x(1121,1))^2 + (x(1110,1) - x(1122,1))^2);
+LAMBDA_MATRIX(39,45) = DISTANCE;
+
+DISTANCE = sqrt((x(1121,1) - x(1109,1))^2 + (x(1122,1) - x(1110,1))^2);
+LAMBDA_MATRIX(45,39) = DISTANCE;
+
+DISTANCE = sqrt((x(2047,1) - x(2007,1))^2 + (x(2048,1) - x(2008,1))^2);
+LAMBDA_MATRIX(508,488) = DISTANCE;
+
+DISTANCE = sqrt((x(2007,1) - x(2047,1))^2 + (x(2008,1) - x(2048,1))^2);
+LAMBDA_MATRIX(488,508) = DISTANCE;
+
+DISTANCE = sqrt((x(2007,1) - x(2037,1))^2 + (x(2008,1) - x(2038,1))^2);
+LAMBDA_MATRIX(488,503) = DISTANCE;
+
+DISTANCE = sqrt((x(2037,1) - x(2007,1))^2 + (x(2038,1) - x(2008,1))^2);
+LAMBDA_MATRIX(503,488) = DISTANCE;
+
+DISTANCE = sqrt((x(2037,1) - x(2047,1))^2 + (x(2038,1) - x(2048,1))^2);
+LAMBDA_MATRIX(503,508) = DISTANCE;
+
+DISTANCE = sqrt((x(2047,1) - x(2037,1))^2 + (x(2048,1) - x(2038,1))^2);
+LAMBDA_MATRIX(508,503) = DISTANCE;
+
+DISTANCE = sqrt((x(2005,1) - x(2007,1))^2 + (x(2006,1) - x(2008,1))^2);
+LAMBDA_MATRIX(487,488) = DISTANCE;
+
+DISTANCE = sqrt((x(2007,1) - x(2005,1))^2 + (x(2008,1) - x(2006,1))^2);
+LAMBDA_MATRIX(488,487) = DISTANCE;
+
+DISTANCE = sqrt((x(2007,1) - x(2047,1))^2 + (x(2008,1) - x(2048,1))^2);
+LAMBDA_MATRIX(488,508) = DISTANCE;
+
+DISTANCE = sqrt((x(2047,1) - x(2007,1))^2 + (x(2048,1) - x(2008,1))^2);
+LAMBDA_MATRIX(508,488) = DISTANCE;
+
+DISTANCE = sqrt((x(2047,1) - x(2005,1))^2 + (x(2048,1) - x(2006,1))^2);
+LAMBDA_MATRIX(508,487) = DISTANCE;
+
+DISTANCE = sqrt((x(2005,1) - x(2047,1))^2 + (x(2006,1) - x(2048,1))^2);
+LAMBDA_MATRIX(487,508) = DISTANCE;
+
+DISTANCE = sqrt((x(2003,1) - x(2059,1))^2 + (x(2004,1) - x(2060,1))^2);
+LAMBDA_MATRIX(486,514) = DISTANCE;
+
+DISTANCE = sqrt((x(2059,1) - x(2003,1))^2 + (x(2060,1) - x(2004,1))^2);
+LAMBDA_MATRIX(514,486) = DISTANCE;
+
+DISTANCE = sqrt((x(2059,1) - x(2013,1))^2 + (x(2060,1) - x(2014,1))^2);
+LAMBDA_MATRIX(514,491) = DISTANCE;
+
+DISTANCE = sqrt((x(2013,1) - x(2059,1))^2 + (x(2014,1) - x(2060,1))^2);
+LAMBDA_MATRIX(491,514) = DISTANCE;
+
+DISTANCE = sqrt((x(2013,1) - x(2003,1))^2 + (x(2014,1) - x(2004,1))^2);
+LAMBDA_MATRIX(491,486) = DISTANCE;
+
+DISTANCE = sqrt((x(2003,1) - x(2013,1))^2 + (x(2004,1) - x(2014,1))^2);
+LAMBDA_MATRIX(486,491) = DISTANCE;
+
+DISTANCE = sqrt((x(1119,1) - x(1151,1))^2 + (x(1120,1) - x(1152,1))^2);
+LAMBDA_MATRIX(44,60) = DISTANCE;
+
+DISTANCE = sqrt((x(1151,1) - x(1119,1))^2 + (x(1152,1) - x(1120,1))^2);
+LAMBDA_MATRIX(60,44) = DISTANCE;
+
+DISTANCE = sqrt((x(1151,1) - x(1105,1))^2 + (x(1152,1) - x(1106,1))^2);
+LAMBDA_MATRIX(60,37) = DISTANCE;
+
+DISTANCE = sqrt((x(1105,1) - x(1151,1))^2 + (x(1106,1) - x(1152,1))^2);
+LAMBDA_MATRIX(37,60) = DISTANCE;
+
+DISTANCE = sqrt((x(1105,1) - x(1119,1))^2 + (x(1106,1) - x(1120,1))^2);
+LAMBDA_MATRIX(37,44) = DISTANCE;
+
+DISTANCE = sqrt((x(1119,1) - x(1105,1))^2 + (x(1120,1) - x(1106,1))^2);
+LAMBDA_MATRIX(44,37) = DISTANCE;
+
+DISTANCE = sqrt((x(1077,1) - x(1067,1))^2 + (x(1078,1) - x(1068,1))^2);
+LAMBDA_MATRIX(23,18) = DISTANCE;
+
+DISTANCE = sqrt((x(1067,1) - x(1077,1))^2 + (x(1068,1) - x(1078,1))^2);
+LAMBDA_MATRIX(18,23) = DISTANCE;
+
+DISTANCE = sqrt((x(1067,1) - x(1119,1))^2 + (x(1068,1) - x(1120,1))^2);
+LAMBDA_MATRIX(18,44) = DISTANCE;
+
+DISTANCE = sqrt((x(1119,1) - x(1067,1))^2 + (x(1120,1) - x(1068,1))^2);
+LAMBDA_MATRIX(44,18) = DISTANCE;
+
+DISTANCE = sqrt((x(1119,1) - x(1077,1))^2 + (x(1120,1) - x(1078,1))^2);
+LAMBDA_MATRIX(44,23) = DISTANCE;
+
+DISTANCE = sqrt((x(1077,1) - x(1119,1))^2 + (x(1078,1) - x(1120,1))^2);
+LAMBDA_MATRIX(23,44) = DISTANCE;
+
+DISTANCE = sqrt((x(1077,1) - x(1105,1))^2 + (x(1078,1) - x(1106,1))^2);
+LAMBDA_MATRIX(23,37) = DISTANCE;
+
+DISTANCE = sqrt((x(1105,1) - x(1077,1))^2 + (x(1106,1) - x(1078,1))^2);
+LAMBDA_MATRIX(37,23) = DISTANCE;
+
+DISTANCE = sqrt((x(1105,1) - x(1073,1))^2 + (x(1106,1) - x(1074,1))^2);
+LAMBDA_MATRIX(37,21) = DISTANCE;
+
+DISTANCE = sqrt((x(1073,1) - x(1105,1))^2 + (x(1074,1) - x(1106,1))^2);
+LAMBDA_MATRIX(21,37) = DISTANCE;
+
+DISTANCE = sqrt((x(1073,1) - x(1077,1))^2 + (x(1074,1) - x(1078,1))^2);
+LAMBDA_MATRIX(21,23) = DISTANCE;
+
+DISTANCE = sqrt((x(1077,1) - x(1073,1))^2 + (x(1078,1) - x(1074,1))^2);
+LAMBDA_MATRIX(23,21) = DISTANCE;
+
+DISTANCE = sqrt((x(1119,1) - x(1105,1))^2 + (x(1120,1) - x(1106,1))^2);
+LAMBDA_MATRIX(44,37) = DISTANCE;
+
+DISTANCE = sqrt((x(1105,1) - x(1119,1))^2 + (x(1106,1) - x(1120,1))^2);
+LAMBDA_MATRIX(37,44) = DISTANCE;
+
+DISTANCE = sqrt((x(1105,1) - x(1077,1))^2 + (x(1106,1) - x(1078,1))^2);
+LAMBDA_MATRIX(37,23) = DISTANCE;
+
+DISTANCE = sqrt((x(1077,1) - x(1105,1))^2 + (x(1078,1) - x(1106,1))^2);
+LAMBDA_MATRIX(23,37) = DISTANCE;
+
+DISTANCE = sqrt((x(1077,1) - x(1119,1))^2 + (x(1078,1) - x(1120,1))^2);
+LAMBDA_MATRIX(23,44) = DISTANCE;
+
+DISTANCE = sqrt((x(1119,1) - x(1077,1))^2 + (x(1120,1) - x(1078,1))^2);
+LAMBDA_MATRIX(44,23) = DISTANCE;
+
+DISTANCE = sqrt((x(1079,1) - x(1041,1))^2 + (x(1080,1) - x(1042,1))^2);
+LAMBDA_MATRIX(24,5) = DISTANCE;
+
+DISTANCE = sqrt((x(1041,1) - x(1079,1))^2 + (x(1042,1) - x(1080,1))^2);
+LAMBDA_MATRIX(5,24) = DISTANCE;
+
+DISTANCE = sqrt((x(1041,1) - x(1039,1))^2 + (x(1042,1) - x(1040,1))^2);
+LAMBDA_MATRIX(5,4) = DISTANCE;
+
+DISTANCE = sqrt((x(1039,1) - x(1041,1))^2 + (x(1040,1) - x(1042,1))^2);
+LAMBDA_MATRIX(4,5) = DISTANCE;
+
+DISTANCE = sqrt((x(1039,1) - x(1079,1))^2 + (x(1040,1) - x(1080,1))^2);
+LAMBDA_MATRIX(4,24) = DISTANCE;
+
+DISTANCE = sqrt((x(1079,1) - x(1039,1))^2 + (x(1080,1) - x(1040,1))^2);
+LAMBDA_MATRIX(24,4) = DISTANCE;
+
+DISTANCE = sqrt((x(1629,1) - x(1647,1))^2 + (x(1630,1) - x(1648,1))^2);
+LAMBDA_MATRIX(299,308) = DISTANCE;
+
+DISTANCE = sqrt((x(1647,1) - x(1629,1))^2 + (x(1648,1) - x(1630,1))^2);
+LAMBDA_MATRIX(308,299) = DISTANCE;
+
+DISTANCE = sqrt((x(1647,1) - x(1609,1))^2 + (x(1648,1) - x(1610,1))^2);
+LAMBDA_MATRIX(308,289) = DISTANCE;
+
+DISTANCE = sqrt((x(1609,1) - x(1647,1))^2 + (x(1610,1) - x(1648,1))^2);
+LAMBDA_MATRIX(289,308) = DISTANCE;
+
+DISTANCE = sqrt((x(1609,1) - x(1629,1))^2 + (x(1610,1) - x(1630,1))^2);
+LAMBDA_MATRIX(289,299) = DISTANCE;
+
+DISTANCE = sqrt((x(1629,1) - x(1609,1))^2 + (x(1630,1) - x(1610,1))^2);
+LAMBDA_MATRIX(299,289) = DISTANCE;
+
+DISTANCE = sqrt((x(1167,1) - x(1159,1))^2 + (x(1168,1) - x(1160,1))^2);
+LAMBDA_MATRIX(68,64) = DISTANCE;
+
+DISTANCE = sqrt((x(1159,1) - x(1167,1))^2 + (x(1160,1) - x(1168,1))^2);
+LAMBDA_MATRIX(64,68) = DISTANCE;
+
+DISTANCE = sqrt((x(1159,1) - x(1209,1))^2 + (x(1160,1) - x(1210,1))^2);
+LAMBDA_MATRIX(64,89) = DISTANCE;
+
+DISTANCE = sqrt((x(1209,1) - x(1159,1))^2 + (x(1210,1) - x(1160,1))^2);
+LAMBDA_MATRIX(89,64) = DISTANCE;
+
+DISTANCE = sqrt((x(1209,1) - x(1167,1))^2 + (x(1210,1) - x(1168,1))^2);
+LAMBDA_MATRIX(89,68) = DISTANCE;
+
+DISTANCE = sqrt((x(1167,1) - x(1209,1))^2 + (x(1168,1) - x(1210,1))^2);
+LAMBDA_MATRIX(68,89) = DISTANCE;
+
+DISTANCE = sqrt((x(1167,1) - x(1121,1))^2 + (x(1168,1) - x(1122,1))^2);
+LAMBDA_MATRIX(68,45) = DISTANCE;
+
+DISTANCE = sqrt((x(1121,1) - x(1167,1))^2 + (x(1122,1) - x(1168,1))^2);
+LAMBDA_MATRIX(45,68) = DISTANCE;
+
+DISTANCE = sqrt((x(1121,1) - x(1159,1))^2 + (x(1122,1) - x(1160,1))^2);
+LAMBDA_MATRIX(45,64) = DISTANCE;
+
+DISTANCE = sqrt((x(1159,1) - x(1121,1))^2 + (x(1160,1) - x(1122,1))^2);
+LAMBDA_MATRIX(64,45) = DISTANCE;
+
+DISTANCE = sqrt((x(1159,1) - x(1167,1))^2 + (x(1160,1) - x(1168,1))^2);
+LAMBDA_MATRIX(64,68) = DISTANCE;
+
+DISTANCE = sqrt((x(1167,1) - x(1159,1))^2 + (x(1168,1) - x(1160,1))^2);
+LAMBDA_MATRIX(68,64) = DISTANCE;
+
+DISTANCE = sqrt((x(1235,1) - x(1167,1))^2 + (x(1236,1) - x(1168,1))^2);
+LAMBDA_MATRIX(102,68) = DISTANCE;
+
+DISTANCE = sqrt((x(1167,1) - x(1235,1))^2 + (x(1168,1) - x(1236,1))^2);
+LAMBDA_MATRIX(68,102) = DISTANCE;
+
+DISTANCE = sqrt((x(1167,1) - x(1209,1))^2 + (x(1168,1) - x(1210,1))^2);
+LAMBDA_MATRIX(68,89) = DISTANCE;
+
+DISTANCE = sqrt((x(1209,1) - x(1167,1))^2 + (x(1210,1) - x(1168,1))^2);
+LAMBDA_MATRIX(89,68) = DISTANCE;
+
+DISTANCE = sqrt((x(1209,1) - x(1235,1))^2 + (x(1210,1) - x(1236,1))^2);
+LAMBDA_MATRIX(89,102) = DISTANCE;
+
+DISTANCE = sqrt((x(1235,1) - x(1209,1))^2 + (x(1236,1) - x(1210,1))^2);
+LAMBDA_MATRIX(102,89) = DISTANCE;
+
+DISTANCE = sqrt((x(1211,1) - x(1167,1))^2 + (x(1212,1) - x(1168,1))^2);
+LAMBDA_MATRIX(90,68) = DISTANCE;
+
+DISTANCE = sqrt((x(1167,1) - x(1211,1))^2 + (x(1168,1) - x(1212,1))^2);
+LAMBDA_MATRIX(68,90) = DISTANCE;
+
+DISTANCE = sqrt((x(1167,1) - x(1235,1))^2 + (x(1168,1) - x(1236,1))^2);
+LAMBDA_MATRIX(68,102) = DISTANCE;
+
+DISTANCE = sqrt((x(1235,1) - x(1167,1))^2 + (x(1236,1) - x(1168,1))^2);
+LAMBDA_MATRIX(102,68) = DISTANCE;
+
+DISTANCE = sqrt((x(1235,1) - x(1211,1))^2 + (x(1236,1) - x(1212,1))^2);
+LAMBDA_MATRIX(102,90) = DISTANCE;
+
+DISTANCE = sqrt((x(1211,1) - x(1235,1))^2 + (x(1212,1) - x(1236,1))^2);
+LAMBDA_MATRIX(90,102) = DISTANCE;
+
+DISTANCE = sqrt((x(2005,1) - x(2047,1))^2 + (x(2006,1) - x(2048,1))^2);
+LAMBDA_MATRIX(487,508) = DISTANCE;
+
+DISTANCE = sqrt((x(2047,1) - x(2005,1))^2 + (x(2048,1) - x(2006,1))^2);
+LAMBDA_MATRIX(508,487) = DISTANCE;
+
+DISTANCE = sqrt((x(2047,1) - x(2049,1))^2 + (x(2048,1) - x(2050,1))^2);
+LAMBDA_MATRIX(508,509) = DISTANCE;
+
+DISTANCE = sqrt((x(2049,1) - x(2047,1))^2 + (x(2050,1) - x(2048,1))^2);
+LAMBDA_MATRIX(509,508) = DISTANCE;
+
+DISTANCE = sqrt((x(2049,1) - x(2005,1))^2 + (x(2050,1) - x(2006,1))^2);
+LAMBDA_MATRIX(509,487) = DISTANCE;
+
+DISTANCE = sqrt((x(2005,1) - x(2049,1))^2 + (x(2006,1) - x(2050,1))^2);
+LAMBDA_MATRIX(487,509) = DISTANCE;
+
+DISTANCE = sqrt((x(2029,1) - x(2059,1))^2 + (x(2030,1) - x(2060,1))^2);
+LAMBDA_MATRIX(499,514) = DISTANCE;
+
+DISTANCE = sqrt((x(2059,1) - x(2029,1))^2 + (x(2060,1) - x(2030,1))^2);
+LAMBDA_MATRIX(514,499) = DISTANCE;
+
+DISTANCE = sqrt((x(2059,1) - x(2003,1))^2 + (x(2060,1) - x(2004,1))^2);
+LAMBDA_MATRIX(514,486) = DISTANCE;
+
+DISTANCE = sqrt((x(2003,1) - x(2059,1))^2 + (x(2004,1) - x(2060,1))^2);
+LAMBDA_MATRIX(486,514) = DISTANCE;
+
+DISTANCE = sqrt((x(2003,1) - x(2029,1))^2 + (x(2004,1) - x(2030,1))^2);
+LAMBDA_MATRIX(486,499) = DISTANCE;
+
+DISTANCE = sqrt((x(2029,1) - x(2003,1))^2 + (x(2030,1) - x(2004,1))^2);
+LAMBDA_MATRIX(499,486) = DISTANCE;
+
+DISTANCE = sqrt((x(2043,1) - x(2013,1))^2 + (x(2044,1) - x(2014,1))^2);
+LAMBDA_MATRIX(506,491) = DISTANCE;
+
+DISTANCE = sqrt((x(2013,1) - x(2043,1))^2 + (x(2014,1) - x(2044,1))^2);
+LAMBDA_MATRIX(491,506) = DISTANCE;
+
+DISTANCE = sqrt((x(2013,1) - x(2059,1))^2 + (x(2014,1) - x(2060,1))^2);
+LAMBDA_MATRIX(491,514) = DISTANCE;
+
+DISTANCE = sqrt((x(2059,1) - x(2013,1))^2 + (x(2060,1) - x(2014,1))^2);
+LAMBDA_MATRIX(514,491) = DISTANCE;
+
+DISTANCE = sqrt((x(2059,1) - x(2043,1))^2 + (x(2060,1) - x(2044,1))^2);
+LAMBDA_MATRIX(514,506) = DISTANCE;
+
+DISTANCE = sqrt((x(2043,1) - x(2059,1))^2 + (x(2044,1) - x(2060,1))^2);
+LAMBDA_MATRIX(506,514) = DISTANCE;
+
+DISTANCE = sqrt((x(1967,1) - x(2007,1))^2 + (x(1968,1) - x(2008,1))^2);
+LAMBDA_MATRIX(468,488) = DISTANCE;
+
+DISTANCE = sqrt((x(2007,1) - x(1967,1))^2 + (x(2008,1) - x(1968,1))^2);
+LAMBDA_MATRIX(488,468) = DISTANCE;
+
+DISTANCE = sqrt((x(2007,1) - x(2005,1))^2 + (x(2008,1) - x(2006,1))^2);
+LAMBDA_MATRIX(488,487) = DISTANCE;
+
+DISTANCE = sqrt((x(2005,1) - x(2007,1))^2 + (x(2006,1) - x(2008,1))^2);
+LAMBDA_MATRIX(487,488) = DISTANCE;
+
+DISTANCE = sqrt((x(2005,1) - x(1967,1))^2 + (x(2006,1) - x(1968,1))^2);
+LAMBDA_MATRIX(487,468) = DISTANCE;
+
+DISTANCE = sqrt((x(1967,1) - x(2005,1))^2 + (x(1968,1) - x(2006,1))^2);
+LAMBDA_MATRIX(468,487) = DISTANCE;
+
+DISTANCE = sqrt((x(1759,1) - x(1725,1))^2 + (x(1760,1) - x(1726,1))^2);
+LAMBDA_MATRIX(364,347) = DISTANCE;
+
+DISTANCE = sqrt((x(1725,1) - x(1759,1))^2 + (x(1726,1) - x(1760,1))^2);
+LAMBDA_MATRIX(347,364) = DISTANCE;
+
+DISTANCE = sqrt((x(1725,1) - x(1769,1))^2 + (x(1726,1) - x(1770,1))^2);
+LAMBDA_MATRIX(347,369) = DISTANCE;
+
+DISTANCE = sqrt((x(1769,1) - x(1725,1))^2 + (x(1770,1) - x(1726,1))^2);
+LAMBDA_MATRIX(369,347) = DISTANCE;
+
+DISTANCE = sqrt((x(1769,1) - x(1759,1))^2 + (x(1770,1) - x(1760,1))^2);
+LAMBDA_MATRIX(369,364) = DISTANCE;
+
+DISTANCE = sqrt((x(1759,1) - x(1769,1))^2 + (x(1760,1) - x(1770,1))^2);
+LAMBDA_MATRIX(364,369) = DISTANCE;
+
+DISTANCE = sqrt((x(1759,1) - x(1713,1))^2 + (x(1760,1) - x(1714,1))^2);
+LAMBDA_MATRIX(364,341) = DISTANCE;
+
+DISTANCE = sqrt((x(1713,1) - x(1759,1))^2 + (x(1714,1) - x(1760,1))^2);
+LAMBDA_MATRIX(341,364) = DISTANCE;
+
+DISTANCE = sqrt((x(1713,1) - x(1725,1))^2 + (x(1714,1) - x(1726,1))^2);
+LAMBDA_MATRIX(341,347) = DISTANCE;
+
+DISTANCE = sqrt((x(1725,1) - x(1713,1))^2 + (x(1726,1) - x(1714,1))^2);
+LAMBDA_MATRIX(347,341) = DISTANCE;
+
+DISTANCE = sqrt((x(1725,1) - x(1759,1))^2 + (x(1726,1) - x(1760,1))^2);
+LAMBDA_MATRIX(347,364) = DISTANCE;
+
+DISTANCE = sqrt((x(1759,1) - x(1725,1))^2 + (x(1760,1) - x(1726,1))^2);
+LAMBDA_MATRIX(364,347) = DISTANCE;
+
+DISTANCE = sqrt((x(1165,1) - x(1151,1))^2 + (x(1166,1) - x(1152,1))^2);
+LAMBDA_MATRIX(67,60) = DISTANCE;
+
+DISTANCE = sqrt((x(1151,1) - x(1165,1))^2 + (x(1152,1) - x(1166,1))^2);
+LAMBDA_MATRIX(60,67) = DISTANCE;
+
+DISTANCE = sqrt((x(1151,1) - x(1119,1))^2 + (x(1152,1) - x(1120,1))^2);
+LAMBDA_MATRIX(60,44) = DISTANCE;
+
+DISTANCE = sqrt((x(1119,1) - x(1151,1))^2 + (x(1120,1) - x(1152,1))^2);
+LAMBDA_MATRIX(44,60) = DISTANCE;
+
+DISTANCE = sqrt((x(1119,1) - x(1165,1))^2 + (x(1120,1) - x(1166,1))^2);
+LAMBDA_MATRIX(44,67) = DISTANCE;
+
+DISTANCE = sqrt((x(1165,1) - x(1119,1))^2 + (x(1166,1) - x(1120,1))^2);
+LAMBDA_MATRIX(67,44) = DISTANCE;
+
+DISTANCE = sqrt((x(1165,1) - x(1203,1))^2 + (x(1166,1) - x(1204,1))^2);
+LAMBDA_MATRIX(67,86) = DISTANCE;
+
+DISTANCE = sqrt((x(1203,1) - x(1165,1))^2 + (x(1204,1) - x(1166,1))^2);
+LAMBDA_MATRIX(86,67) = DISTANCE;
+
+DISTANCE = sqrt((x(1203,1) - x(1151,1))^2 + (x(1204,1) - x(1152,1))^2);
+LAMBDA_MATRIX(86,60) = DISTANCE;
+
+DISTANCE = sqrt((x(1151,1) - x(1203,1))^2 + (x(1152,1) - x(1204,1))^2);
+LAMBDA_MATRIX(60,86) = DISTANCE;
+
+DISTANCE = sqrt((x(1151,1) - x(1165,1))^2 + (x(1152,1) - x(1166,1))^2);
+LAMBDA_MATRIX(60,67) = DISTANCE;
+
+DISTANCE = sqrt((x(1165,1) - x(1151,1))^2 + (x(1166,1) - x(1152,1))^2);
+LAMBDA_MATRIX(67,60) = DISTANCE;
+
+DISTANCE = sqrt((x(1601,1) - x(1629,1))^2 + (x(1602,1) - x(1630,1))^2);
+LAMBDA_MATRIX(285,299) = DISTANCE;
+
+DISTANCE = sqrt((x(1629,1) - x(1601,1))^2 + (x(1630,1) - x(1602,1))^2);
+LAMBDA_MATRIX(299,285) = DISTANCE;
+
+DISTANCE = sqrt((x(1629,1) - x(1609,1))^2 + (x(1630,1) - x(1610,1))^2);
+LAMBDA_MATRIX(299,289) = DISTANCE;
+
+DISTANCE = sqrt((x(1609,1) - x(1629,1))^2 + (x(1610,1) - x(1630,1))^2);
+LAMBDA_MATRIX(289,299) = DISTANCE;
+
+DISTANCE = sqrt((x(1609,1) - x(1601,1))^2 + (x(1610,1) - x(1602,1))^2);
+LAMBDA_MATRIX(289,285) = DISTANCE;
+
+DISTANCE = sqrt((x(1601,1) - x(1609,1))^2 + (x(1602,1) - x(1610,1))^2);
+LAMBDA_MATRIX(285,289) = DISTANCE;
+
+DISTANCE = sqrt((x(1635,1) - x(1603,1))^2 + (x(1636,1) - x(1604,1))^2);
+LAMBDA_MATRIX(302,286) = DISTANCE;
+
+DISTANCE = sqrt((x(1603,1) - x(1635,1))^2 + (x(1604,1) - x(1636,1))^2);
+LAMBDA_MATRIX(286,302) = DISTANCE;
+
+DISTANCE = sqrt((x(1603,1) - x(1639,1))^2 + (x(1604,1) - x(1640,1))^2);
+LAMBDA_MATRIX(286,304) = DISTANCE;
+
+DISTANCE = sqrt((x(1639,1) - x(1603,1))^2 + (x(1640,1) - x(1604,1))^2);
+LAMBDA_MATRIX(304,286) = DISTANCE;
+
+DISTANCE = sqrt((x(1639,1) - x(1635,1))^2 + (x(1640,1) - x(1636,1))^2);
+LAMBDA_MATRIX(304,302) = DISTANCE;
+
+DISTANCE = sqrt((x(1635,1) - x(1639,1))^2 + (x(1636,1) - x(1640,1))^2);
+LAMBDA_MATRIX(302,304) = DISTANCE;
+
+DISTANCE = sqrt((x(1689,1) - x(1673,1))^2 + (x(1690,1) - x(1674,1))^2);
+LAMBDA_MATRIX(329,321) = DISTANCE;
+
+DISTANCE = sqrt((x(1673,1) - x(1689,1))^2 + (x(1674,1) - x(1690,1))^2);
+LAMBDA_MATRIX(321,329) = DISTANCE;
+
+DISTANCE = sqrt((x(1673,1) - x(1647,1))^2 + (x(1674,1) - x(1648,1))^2);
+LAMBDA_MATRIX(321,308) = DISTANCE;
+
+DISTANCE = sqrt((x(1647,1) - x(1673,1))^2 + (x(1648,1) - x(1674,1))^2);
+LAMBDA_MATRIX(308,321) = DISTANCE;
+
+DISTANCE = sqrt((x(1647,1) - x(1689,1))^2 + (x(1648,1) - x(1690,1))^2);
+LAMBDA_MATRIX(308,329) = DISTANCE;
+
+DISTANCE = sqrt((x(1689,1) - x(1647,1))^2 + (x(1690,1) - x(1648,1))^2);
+LAMBDA_MATRIX(329,308) = DISTANCE;
+
+DISTANCE = sqrt((x(1033,1) - x(1075,1))^2 + (x(1034,1) - x(1076,1))^2);
+LAMBDA_MATRIX(1,22) = DISTANCE;
+
+DISTANCE = sqrt((x(1075,1) - x(1033,1))^2 + (x(1076,1) - x(1034,1))^2);
+LAMBDA_MATRIX(22,1) = DISTANCE;
+
+DISTANCE = sqrt((x(1075,1) - x(1093,1))^2 + (x(1076,1) - x(1094,1))^2);
+LAMBDA_MATRIX(22,31) = DISTANCE;
+
+DISTANCE = sqrt((x(1093,1) - x(1075,1))^2 + (x(1094,1) - x(1076,1))^2);
+LAMBDA_MATRIX(31,22) = DISTANCE;
+
+DISTANCE = sqrt((x(1093,1) - x(1033,1))^2 + (x(1094,1) - x(1034,1))^2);
+LAMBDA_MATRIX(31,1) = DISTANCE;
+
+DISTANCE = sqrt((x(1033,1) - x(1093,1))^2 + (x(1034,1) - x(1094,1))^2);
+LAMBDA_MATRIX(1,31) = DISTANCE;
+
+DISTANCE = sqrt((x(1093,1) - x(1075,1))^2 + (x(1094,1) - x(1076,1))^2);
+LAMBDA_MATRIX(31,22) = DISTANCE;
+
+DISTANCE = sqrt((x(1075,1) - x(1093,1))^2 + (x(1076,1) - x(1094,1))^2);
+LAMBDA_MATRIX(22,31) = DISTANCE;
+
+DISTANCE = sqrt((x(1075,1) - x(1121,1))^2 + (x(1076,1) - x(1122,1))^2);
+LAMBDA_MATRIX(22,45) = DISTANCE;
+
+DISTANCE = sqrt((x(1121,1) - x(1075,1))^2 + (x(1122,1) - x(1076,1))^2);
+LAMBDA_MATRIX(45,22) = DISTANCE;
+
+DISTANCE = sqrt((x(1121,1) - x(1093,1))^2 + (x(1122,1) - x(1094,1))^2);
+LAMBDA_MATRIX(45,31) = DISTANCE;
+
+DISTANCE = sqrt((x(1093,1) - x(1121,1))^2 + (x(1094,1) - x(1122,1))^2);
+LAMBDA_MATRIX(31,45) = DISTANCE;
+
+DISTANCE = sqrt((x(1163,1) - x(1167,1))^2 + (x(1164,1) - x(1168,1))^2);
+LAMBDA_MATRIX(66,68) = DISTANCE;
+
+DISTANCE = sqrt((x(1167,1) - x(1163,1))^2 + (x(1168,1) - x(1164,1))^2);
+LAMBDA_MATRIX(68,66) = DISTANCE;
+
+DISTANCE = sqrt((x(1167,1) - x(1211,1))^2 + (x(1168,1) - x(1212,1))^2);
+LAMBDA_MATRIX(68,90) = DISTANCE;
+
+DISTANCE = sqrt((x(1211,1) - x(1167,1))^2 + (x(1212,1) - x(1168,1))^2);
+LAMBDA_MATRIX(90,68) = DISTANCE;
+
+DISTANCE = sqrt((x(1211,1) - x(1163,1))^2 + (x(1212,1) - x(1164,1))^2);
+LAMBDA_MATRIX(90,66) = DISTANCE;
+
+DISTANCE = sqrt((x(1163,1) - x(1211,1))^2 + (x(1164,1) - x(1212,1))^2);
+LAMBDA_MATRIX(66,90) = DISTANCE;
+
+DISTANCE = sqrt((x(1121,1) - x(1167,1))^2 + (x(1122,1) - x(1168,1))^2);
+LAMBDA_MATRIX(45,68) = DISTANCE;
+
+DISTANCE = sqrt((x(1167,1) - x(1121,1))^2 + (x(1168,1) - x(1122,1))^2);
+LAMBDA_MATRIX(68,45) = DISTANCE;
+
+DISTANCE = sqrt((x(1167,1) - x(1163,1))^2 + (x(1168,1) - x(1164,1))^2);
+LAMBDA_MATRIX(68,66) = DISTANCE;
+
+DISTANCE = sqrt((x(1163,1) - x(1167,1))^2 + (x(1164,1) - x(1168,1))^2);
+LAMBDA_MATRIX(66,68) = DISTANCE;
+
+DISTANCE = sqrt((x(1163,1) - x(1121,1))^2 + (x(1164,1) - x(1122,1))^2);
+LAMBDA_MATRIX(66,45) = DISTANCE;
+
+DISTANCE = sqrt((x(1121,1) - x(1163,1))^2 + (x(1122,1) - x(1164,1))^2);
+LAMBDA_MATRIX(45,66) = DISTANCE;
+
+DISTANCE = sqrt((x(1163,1) - x(1093,1))^2 + (x(1164,1) - x(1094,1))^2);
+LAMBDA_MATRIX(66,31) = DISTANCE;
+
+DISTANCE = sqrt((x(1093,1) - x(1163,1))^2 + (x(1094,1) - x(1164,1))^2);
+LAMBDA_MATRIX(31,66) = DISTANCE;
+
+DISTANCE = sqrt((x(1093,1) - x(1121,1))^2 + (x(1094,1) - x(1122,1))^2);
+LAMBDA_MATRIX(31,45) = DISTANCE;
+
+DISTANCE = sqrt((x(1121,1) - x(1093,1))^2 + (x(1122,1) - x(1094,1))^2);
+LAMBDA_MATRIX(45,31) = DISTANCE;
+
+DISTANCE = sqrt((x(1121,1) - x(1163,1))^2 + (x(1122,1) - x(1164,1))^2);
+LAMBDA_MATRIX(45,66) = DISTANCE;
+
+DISTANCE = sqrt((x(1163,1) - x(1121,1))^2 + (x(1164,1) - x(1122,1))^2);
+LAMBDA_MATRIX(66,45) = DISTANCE;
+
+DISTANCE = sqrt((x(1127,1) - x(1093,1))^2 + (x(1128,1) - x(1094,1))^2);
+LAMBDA_MATRIX(48,31) = DISTANCE;
+
+DISTANCE = sqrt((x(1093,1) - x(1127,1))^2 + (x(1094,1) - x(1128,1))^2);
+LAMBDA_MATRIX(31,48) = DISTANCE;
+
+DISTANCE = sqrt((x(1093,1) - x(1163,1))^2 + (x(1094,1) - x(1164,1))^2);
+LAMBDA_MATRIX(31,66) = DISTANCE;
+
+DISTANCE = sqrt((x(1163,1) - x(1093,1))^2 + (x(1164,1) - x(1094,1))^2);
+LAMBDA_MATRIX(66,31) = DISTANCE;
+
+DISTANCE = sqrt((x(1163,1) - x(1127,1))^2 + (x(1164,1) - x(1128,1))^2);
+LAMBDA_MATRIX(66,48) = DISTANCE;
+
+DISTANCE = sqrt((x(1127,1) - x(1163,1))^2 + (x(1128,1) - x(1164,1))^2);
+LAMBDA_MATRIX(48,66) = DISTANCE;
+
+DISTANCE = sqrt((x(1179,1) - x(1211,1))^2 + (x(1180,1) - x(1212,1))^2);
+LAMBDA_MATRIX(74,90) = DISTANCE;
+
+DISTANCE = sqrt((x(1211,1) - x(1179,1))^2 + (x(1212,1) - x(1180,1))^2);
+LAMBDA_MATRIX(90,74) = DISTANCE;
+
+DISTANCE = sqrt((x(1211,1) - x(1239,1))^2 + (x(1212,1) - x(1240,1))^2);
+LAMBDA_MATRIX(90,104) = DISTANCE;
+
+DISTANCE = sqrt((x(1239,1) - x(1211,1))^2 + (x(1240,1) - x(1212,1))^2);
+LAMBDA_MATRIX(104,90) = DISTANCE;
+
+DISTANCE = sqrt((x(1239,1) - x(1179,1))^2 + (x(1240,1) - x(1180,1))^2);
+LAMBDA_MATRIX(104,74) = DISTANCE;
+
+DISTANCE = sqrt((x(1179,1) - x(1239,1))^2 + (x(1180,1) - x(1240,1))^2);
+LAMBDA_MATRIX(74,104) = DISTANCE;
+
+DISTANCE = sqrt((x(1179,1) - x(1161,1))^2 + (x(1180,1) - x(1162,1))^2);
+LAMBDA_MATRIX(74,65) = DISTANCE;
+
+DISTANCE = sqrt((x(1161,1) - x(1179,1))^2 + (x(1162,1) - x(1180,1))^2);
+LAMBDA_MATRIX(65,74) = DISTANCE;
+
+DISTANCE = sqrt((x(1161,1) - x(1127,1))^2 + (x(1162,1) - x(1128,1))^2);
+LAMBDA_MATRIX(65,48) = DISTANCE;
+
+DISTANCE = sqrt((x(1127,1) - x(1161,1))^2 + (x(1128,1) - x(1162,1))^2);
+LAMBDA_MATRIX(48,65) = DISTANCE;
+
+DISTANCE = sqrt((x(1127,1) - x(1179,1))^2 + (x(1128,1) - x(1180,1))^2);
+LAMBDA_MATRIX(48,74) = DISTANCE;
+
+DISTANCE = sqrt((x(1179,1) - x(1127,1))^2 + (x(1180,1) - x(1128,1))^2);
+LAMBDA_MATRIX(74,48) = DISTANCE;
+
+DISTANCE = sqrt((x(1179,1) - x(1163,1))^2 + (x(1180,1) - x(1164,1))^2);
+LAMBDA_MATRIX(74,66) = DISTANCE;
+
+DISTANCE = sqrt((x(1163,1) - x(1179,1))^2 + (x(1164,1) - x(1180,1))^2);
+LAMBDA_MATRIX(66,74) = DISTANCE;
+
+DISTANCE = sqrt((x(1163,1) - x(1211,1))^2 + (x(1164,1) - x(1212,1))^2);
+LAMBDA_MATRIX(66,90) = DISTANCE;
+
+DISTANCE = sqrt((x(1211,1) - x(1163,1))^2 + (x(1212,1) - x(1164,1))^2);
+LAMBDA_MATRIX(90,66) = DISTANCE;
+
+DISTANCE = sqrt((x(1211,1) - x(1179,1))^2 + (x(1212,1) - x(1180,1))^2);
+LAMBDA_MATRIX(90,74) = DISTANCE;
+
+DISTANCE = sqrt((x(1179,1) - x(1211,1))^2 + (x(1180,1) - x(1212,1))^2);
+LAMBDA_MATRIX(74,90) = DISTANCE;
+
+DISTANCE = sqrt((x(1127,1) - x(1163,1))^2 + (x(1128,1) - x(1164,1))^2);
+LAMBDA_MATRIX(48,66) = DISTANCE;
+
+DISTANCE = sqrt((x(1163,1) - x(1127,1))^2 + (x(1164,1) - x(1128,1))^2);
+LAMBDA_MATRIX(66,48) = DISTANCE;
+
+DISTANCE = sqrt((x(1163,1) - x(1179,1))^2 + (x(1164,1) - x(1180,1))^2);
+LAMBDA_MATRIX(66,74) = DISTANCE;
+
+DISTANCE = sqrt((x(1179,1) - x(1163,1))^2 + (x(1180,1) - x(1164,1))^2);
+LAMBDA_MATRIX(74,66) = DISTANCE;
+
+DISTANCE = sqrt((x(1179,1) - x(1127,1))^2 + (x(1180,1) - x(1128,1))^2);
+LAMBDA_MATRIX(74,48) = DISTANCE;
+
+DISTANCE = sqrt((x(1127,1) - x(1179,1))^2 + (x(1128,1) - x(1180,1))^2);
+LAMBDA_MATRIX(48,74) = DISTANCE;
+
+DISTANCE = sqrt((x(1239,1) - x(1211,1))^2 + (x(1240,1) - x(1212,1))^2);
+LAMBDA_MATRIX(104,90) = DISTANCE;
+
+DISTANCE = sqrt((x(1211,1) - x(1239,1))^2 + (x(1212,1) - x(1240,1))^2);
+LAMBDA_MATRIX(90,104) = DISTANCE;
+
+DISTANCE = sqrt((x(1211,1) - x(1265,1))^2 + (x(1212,1) - x(1266,1))^2);
+LAMBDA_MATRIX(90,117) = DISTANCE;
+
+DISTANCE = sqrt((x(1265,1) - x(1211,1))^2 + (x(1266,1) - x(1212,1))^2);
+LAMBDA_MATRIX(117,90) = DISTANCE;
+
+DISTANCE = sqrt((x(1265,1) - x(1239,1))^2 + (x(1266,1) - x(1240,1))^2);
+LAMBDA_MATRIX(117,104) = DISTANCE;
+
+DISTANCE = sqrt((x(1239,1) - x(1265,1))^2 + (x(1240,1) - x(1266,1))^2);
+LAMBDA_MATRIX(104,117) = DISTANCE;
+
+DISTANCE = sqrt((x(1211,1) - x(1235,1))^2 + (x(1212,1) - x(1236,1))^2);
+LAMBDA_MATRIX(90,102) = DISTANCE;
+
+DISTANCE = sqrt((x(1235,1) - x(1211,1))^2 + (x(1236,1) - x(1212,1))^2);
+LAMBDA_MATRIX(102,90) = DISTANCE;
+
+DISTANCE = sqrt((x(1235,1) - x(1265,1))^2 + (x(1236,1) - x(1266,1))^2);
+LAMBDA_MATRIX(102,117) = DISTANCE;
+
+DISTANCE = sqrt((x(1265,1) - x(1235,1))^2 + (x(1266,1) - x(1236,1))^2);
+LAMBDA_MATRIX(117,102) = DISTANCE;
+
+DISTANCE = sqrt((x(1265,1) - x(1211,1))^2 + (x(1266,1) - x(1212,1))^2);
+LAMBDA_MATRIX(117,90) = DISTANCE;
+
+DISTANCE = sqrt((x(1211,1) - x(1265,1))^2 + (x(1212,1) - x(1266,1))^2);
+LAMBDA_MATRIX(90,117) = DISTANCE;
+
+DISTANCE = sqrt((x(1239,1) - x(1265,1))^2 + (x(1240,1) - x(1266,1))^2);
+LAMBDA_MATRIX(104,117) = DISTANCE;
+
+DISTANCE = sqrt((x(1265,1) - x(1239,1))^2 + (x(1266,1) - x(1240,1))^2);
+LAMBDA_MATRIX(117,104) = DISTANCE;
+
+DISTANCE = sqrt((x(1265,1) - x(1301,1))^2 + (x(1266,1) - x(1302,1))^2);
+LAMBDA_MATRIX(117,135) = DISTANCE;
+
+DISTANCE = sqrt((x(1301,1) - x(1265,1))^2 + (x(1302,1) - x(1266,1))^2);
+LAMBDA_MATRIX(135,117) = DISTANCE;
+
+DISTANCE = sqrt((x(1301,1) - x(1239,1))^2 + (x(1302,1) - x(1240,1))^2);
+LAMBDA_MATRIX(135,104) = DISTANCE;
+
+DISTANCE = sqrt((x(1239,1) - x(1301,1))^2 + (x(1240,1) - x(1302,1))^2);
+LAMBDA_MATRIX(104,135) = DISTANCE;
+
+DISTANCE = sqrt((x(1301,1) - x(1265,1))^2 + (x(1302,1) - x(1266,1))^2);
+LAMBDA_MATRIX(135,117) = DISTANCE;
+
+DISTANCE = sqrt((x(1265,1) - x(1301,1))^2 + (x(1266,1) - x(1302,1))^2);
+LAMBDA_MATRIX(117,135) = DISTANCE;
+
+DISTANCE = sqrt((x(1265,1) - x(1325,1))^2 + (x(1266,1) - x(1326,1))^2);
+LAMBDA_MATRIX(117,147) = DISTANCE;
+
+DISTANCE = sqrt((x(1325,1) - x(1265,1))^2 + (x(1326,1) - x(1266,1))^2);
+LAMBDA_MATRIX(147,117) = DISTANCE;
+
+DISTANCE = sqrt((x(1325,1) - x(1301,1))^2 + (x(1326,1) - x(1302,1))^2);
+LAMBDA_MATRIX(147,135) = DISTANCE;
+
+DISTANCE = sqrt((x(1301,1) - x(1325,1))^2 + (x(1302,1) - x(1326,1))^2);
+LAMBDA_MATRIX(135,147) = DISTANCE;
+
+DISTANCE = sqrt((x(1241,1) - x(1295,1))^2 + (x(1242,1) - x(1296,1))^2);
+LAMBDA_MATRIX(105,132) = DISTANCE;
+
+DISTANCE = sqrt((x(1295,1) - x(1241,1))^2 + (x(1296,1) - x(1242,1))^2);
+LAMBDA_MATRIX(132,105) = DISTANCE;
+
+DISTANCE = sqrt((x(1295,1) - x(1275,1))^2 + (x(1296,1) - x(1276,1))^2);
+LAMBDA_MATRIX(132,122) = DISTANCE;
+
+DISTANCE = sqrt((x(1275,1) - x(1295,1))^2 + (x(1276,1) - x(1296,1))^2);
+LAMBDA_MATRIX(122,132) = DISTANCE;
+
+DISTANCE = sqrt((x(1275,1) - x(1241,1))^2 + (x(1276,1) - x(1242,1))^2);
+LAMBDA_MATRIX(122,105) = DISTANCE;
+
+DISTANCE = sqrt((x(1241,1) - x(1275,1))^2 + (x(1242,1) - x(1276,1))^2);
+LAMBDA_MATRIX(105,122) = DISTANCE;
+
+DISTANCE = sqrt((x(1253,1) - x(1215,1))^2 + (x(1254,1) - x(1216,1))^2);
+LAMBDA_MATRIX(111,92) = DISTANCE;
+
+DISTANCE = sqrt((x(1215,1) - x(1253,1))^2 + (x(1216,1) - x(1254,1))^2);
+LAMBDA_MATRIX(92,111) = DISTANCE;
+
+DISTANCE = sqrt((x(1215,1) - x(1275,1))^2 + (x(1216,1) - x(1276,1))^2);
+LAMBDA_MATRIX(92,122) = DISTANCE;
+
+DISTANCE = sqrt((x(1275,1) - x(1215,1))^2 + (x(1276,1) - x(1216,1))^2);
+LAMBDA_MATRIX(122,92) = DISTANCE;
+
+DISTANCE = sqrt((x(1275,1) - x(1253,1))^2 + (x(1276,1) - x(1254,1))^2);
+LAMBDA_MATRIX(122,111) = DISTANCE;
+
+DISTANCE = sqrt((x(1253,1) - x(1275,1))^2 + (x(1254,1) - x(1276,1))^2);
+LAMBDA_MATRIX(111,122) = DISTANCE;
+
+DISTANCE = sqrt((x(1275,1) - x(1215,1))^2 + (x(1276,1) - x(1216,1))^2);
+LAMBDA_MATRIX(122,92) = DISTANCE;
+
+DISTANCE = sqrt((x(1215,1) - x(1275,1))^2 + (x(1216,1) - x(1276,1))^2);
+LAMBDA_MATRIX(92,122) = DISTANCE;
+
+DISTANCE = sqrt((x(1215,1) - x(1241,1))^2 + (x(1216,1) - x(1242,1))^2);
+LAMBDA_MATRIX(92,105) = DISTANCE;
+
+DISTANCE = sqrt((x(1241,1) - x(1215,1))^2 + (x(1242,1) - x(1216,1))^2);
+LAMBDA_MATRIX(105,92) = DISTANCE;
+
+DISTANCE = sqrt((x(1241,1) - x(1275,1))^2 + (x(1242,1) - x(1276,1))^2);
+LAMBDA_MATRIX(105,122) = DISTANCE;
+
+DISTANCE = sqrt((x(1275,1) - x(1241,1))^2 + (x(1276,1) - x(1242,1))^2);
+LAMBDA_MATRIX(122,105) = DISTANCE;
+
+DISTANCE = sqrt((x(2037,1) - x(2007,1))^2 + (x(2038,1) - x(2008,1))^2);
+LAMBDA_MATRIX(503,488) = DISTANCE;
+
+DISTANCE = sqrt((x(2007,1) - x(2037,1))^2 + (x(2008,1) - x(2038,1))^2);
+LAMBDA_MATRIX(488,503) = DISTANCE;
+
+DISTANCE = sqrt((x(2007,1) - x(1989,1))^2 + (x(2008,1) - x(1990,1))^2);
+LAMBDA_MATRIX(488,479) = DISTANCE;
+
+DISTANCE = sqrt((x(1989,1) - x(2007,1))^2 + (x(1990,1) - x(2008,1))^2);
+LAMBDA_MATRIX(479,488) = DISTANCE;
+
+DISTANCE = sqrt((x(1989,1) - x(2037,1))^2 + (x(1990,1) - x(2038,1))^2);
+LAMBDA_MATRIX(479,503) = DISTANCE;
+
+DISTANCE = sqrt((x(2037,1) - x(1989,1))^2 + (x(2038,1) - x(1990,1))^2);
+LAMBDA_MATRIX(503,479) = DISTANCE;
+
+DISTANCE = sqrt((x(1993,1) - x(2031,1))^2 + (x(1994,1) - x(2032,1))^2);
+LAMBDA_MATRIX(481,500) = DISTANCE;
+
+DISTANCE = sqrt((x(2031,1) - x(1993,1))^2 + (x(2032,1) - x(1994,1))^2);
+LAMBDA_MATRIX(500,481) = DISTANCE;
+
+DISTANCE = sqrt((x(2031,1) - x(2035,1))^2 + (x(2032,1) - x(2036,1))^2);
+LAMBDA_MATRIX(500,502) = DISTANCE;
+
+DISTANCE = sqrt((x(2035,1) - x(2031,1))^2 + (x(2036,1) - x(2032,1))^2);
+LAMBDA_MATRIX(502,500) = DISTANCE;
+
+DISTANCE = sqrt((x(2035,1) - x(1993,1))^2 + (x(2036,1) - x(1994,1))^2);
+LAMBDA_MATRIX(502,481) = DISTANCE;
+
+DISTANCE = sqrt((x(1993,1) - x(2035,1))^2 + (x(1994,1) - x(2036,1))^2);
+LAMBDA_MATRIX(481,502) = DISTANCE;
+
+DISTANCE = sqrt((x(2035,1) - x(1997,1))^2 + (x(2036,1) - x(1998,1))^2);
+LAMBDA_MATRIX(502,483) = DISTANCE;
+
+DISTANCE = sqrt((x(1997,1) - x(2035,1))^2 + (x(1998,1) - x(2036,1))^2);
+LAMBDA_MATRIX(483,502) = DISTANCE;
+
+DISTANCE = sqrt((x(1997,1) - x(1993,1))^2 + (x(1998,1) - x(1994,1))^2);
+LAMBDA_MATRIX(483,481) = DISTANCE;
+
+DISTANCE = sqrt((x(1993,1) - x(1997,1))^2 + (x(1994,1) - x(1998,1))^2);
+LAMBDA_MATRIX(481,483) = DISTANCE;
+
+DISTANCE = sqrt((x(1993,1) - x(2035,1))^2 + (x(1994,1) - x(2036,1))^2);
+LAMBDA_MATRIX(481,502) = DISTANCE;
+
+DISTANCE = sqrt((x(2035,1) - x(1993,1))^2 + (x(2036,1) - x(1994,1))^2);
+LAMBDA_MATRIX(502,481) = DISTANCE;
+
+DISTANCE = sqrt((x(1991,1) - x(2049,1))^2 + (x(1992,1) - x(2050,1))^2);
+LAMBDA_MATRIX(480,509) = DISTANCE;
+
+DISTANCE = sqrt((x(2049,1) - x(1991,1))^2 + (x(2050,1) - x(1992,1))^2);
+LAMBDA_MATRIX(509,480) = DISTANCE;
+
+DISTANCE = sqrt((x(2049,1) - x(2039,1))^2 + (x(2050,1) - x(2040,1))^2);
+LAMBDA_MATRIX(509,504) = DISTANCE;
+
+DISTANCE = sqrt((x(2039,1) - x(2049,1))^2 + (x(2040,1) - x(2050,1))^2);
+LAMBDA_MATRIX(504,509) = DISTANCE;
+
+DISTANCE = sqrt((x(2039,1) - x(1991,1))^2 + (x(2040,1) - x(1992,1))^2);
+LAMBDA_MATRIX(504,480) = DISTANCE;
+
+DISTANCE = sqrt((x(1991,1) - x(2039,1))^2 + (x(1992,1) - x(2040,1))^2);
+LAMBDA_MATRIX(480,504) = DISTANCE;
+
+DISTANCE = sqrt((x(2005,1) - x(2049,1))^2 + (x(2006,1) - x(2050,1))^2);
+LAMBDA_MATRIX(487,509) = DISTANCE;
+
+DISTANCE = sqrt((x(2049,1) - x(2005,1))^2 + (x(2050,1) - x(2006,1))^2);
+LAMBDA_MATRIX(509,487) = DISTANCE;
+
+DISTANCE = sqrt((x(2049,1) - x(1991,1))^2 + (x(2050,1) - x(1992,1))^2);
+LAMBDA_MATRIX(509,480) = DISTANCE;
+
+DISTANCE = sqrt((x(1991,1) - x(2049,1))^2 + (x(1992,1) - x(2050,1))^2);
+LAMBDA_MATRIX(480,509) = DISTANCE;
+
+DISTANCE = sqrt((x(1991,1) - x(2005,1))^2 + (x(1992,1) - x(2006,1))^2);
+LAMBDA_MATRIX(480,487) = DISTANCE;
+
+DISTANCE = sqrt((x(2005,1) - x(1991,1))^2 + (x(2006,1) - x(1992,1))^2);
+LAMBDA_MATRIX(487,480) = DISTANCE;
+
+DISTANCE = sqrt((x(1809,1) - x(1841,1))^2 + (x(1810,1) - x(1842,1))^2);
+LAMBDA_MATRIX(389,405) = DISTANCE;
+
+DISTANCE = sqrt((x(1841,1) - x(1809,1))^2 + (x(1842,1) - x(1810,1))^2);
+LAMBDA_MATRIX(405,389) = DISTANCE;
+
+DISTANCE = sqrt((x(1841,1) - x(1859,1))^2 + (x(1842,1) - x(1860,1))^2);
+LAMBDA_MATRIX(405,414) = DISTANCE;
+
+DISTANCE = sqrt((x(1859,1) - x(1841,1))^2 + (x(1860,1) - x(1842,1))^2);
+LAMBDA_MATRIX(414,405) = DISTANCE;
+
+DISTANCE = sqrt((x(1859,1) - x(1809,1))^2 + (x(1860,1) - x(1810,1))^2);
+LAMBDA_MATRIX(414,389) = DISTANCE;
+
+DISTANCE = sqrt((x(1809,1) - x(1859,1))^2 + (x(1810,1) - x(1860,1))^2);
+LAMBDA_MATRIX(389,414) = DISTANCE;
+
+DISTANCE = sqrt((x(1763,1) - x(1759,1))^2 + (x(1764,1) - x(1760,1))^2);
+LAMBDA_MATRIX(366,364) = DISTANCE;
+
+DISTANCE = sqrt((x(1759,1) - x(1763,1))^2 + (x(1760,1) - x(1764,1))^2);
+LAMBDA_MATRIX(364,366) = DISTANCE;
+
+DISTANCE = sqrt((x(1759,1) - x(1809,1))^2 + (x(1760,1) - x(1810,1))^2);
+LAMBDA_MATRIX(364,389) = DISTANCE;
+
+DISTANCE = sqrt((x(1809,1) - x(1759,1))^2 + (x(1810,1) - x(1760,1))^2);
+LAMBDA_MATRIX(389,364) = DISTANCE;
+
+DISTANCE = sqrt((x(1809,1) - x(1763,1))^2 + (x(1810,1) - x(1764,1))^2);
+LAMBDA_MATRIX(389,366) = DISTANCE;
+
+DISTANCE = sqrt((x(1763,1) - x(1809,1))^2 + (x(1764,1) - x(1810,1))^2);
+LAMBDA_MATRIX(366,389) = DISTANCE;
+
+DISTANCE = sqrt((x(1713,1) - x(1759,1))^2 + (x(1714,1) - x(1760,1))^2);
+LAMBDA_MATRIX(341,364) = DISTANCE;
+
+DISTANCE = sqrt((x(1759,1) - x(1713,1))^2 + (x(1760,1) - x(1714,1))^2);
+LAMBDA_MATRIX(364,341) = DISTANCE;
+
+DISTANCE = sqrt((x(1759,1) - x(1763,1))^2 + (x(1760,1) - x(1764,1))^2);
+LAMBDA_MATRIX(364,366) = DISTANCE;
+
+DISTANCE = sqrt((x(1763,1) - x(1759,1))^2 + (x(1764,1) - x(1760,1))^2);
+LAMBDA_MATRIX(366,364) = DISTANCE;
+
+DISTANCE = sqrt((x(1763,1) - x(1713,1))^2 + (x(1764,1) - x(1714,1))^2);
+LAMBDA_MATRIX(366,341) = DISTANCE;
+
+DISTANCE = sqrt((x(1713,1) - x(1763,1))^2 + (x(1714,1) - x(1764,1))^2);
+LAMBDA_MATRIX(341,366) = DISTANCE;
+
+DISTANCE = sqrt((x(1809,1) - x(1759,1))^2 + (x(1810,1) - x(1760,1))^2);
+LAMBDA_MATRIX(389,364) = DISTANCE;
+
+DISTANCE = sqrt((x(1759,1) - x(1809,1))^2 + (x(1760,1) - x(1810,1))^2);
+LAMBDA_MATRIX(364,389) = DISTANCE;
+
+DISTANCE = sqrt((x(1759,1) - x(1797,1))^2 + (x(1760,1) - x(1798,1))^2);
+LAMBDA_MATRIX(364,383) = DISTANCE;
+
+DISTANCE = sqrt((x(1797,1) - x(1759,1))^2 + (x(1798,1) - x(1760,1))^2);
+LAMBDA_MATRIX(383,364) = DISTANCE;
+
+DISTANCE = sqrt((x(1797,1) - x(1809,1))^2 + (x(1798,1) - x(1810,1))^2);
+LAMBDA_MATRIX(383,389) = DISTANCE;
+
+DISTANCE = sqrt((x(1809,1) - x(1797,1))^2 + (x(1810,1) - x(1798,1))^2);
+LAMBDA_MATRIX(389,383) = DISTANCE;
+
+DISTANCE = sqrt((x(1797,1) - x(1841,1))^2 + (x(1798,1) - x(1842,1))^2);
+LAMBDA_MATRIX(383,405) = DISTANCE;
+
+DISTANCE = sqrt((x(1841,1) - x(1797,1))^2 + (x(1842,1) - x(1798,1))^2);
+LAMBDA_MATRIX(405,383) = DISTANCE;
+
+DISTANCE = sqrt((x(1841,1) - x(1809,1))^2 + (x(1842,1) - x(1810,1))^2);
+LAMBDA_MATRIX(405,389) = DISTANCE;
+
+DISTANCE = sqrt((x(1809,1) - x(1841,1))^2 + (x(1810,1) - x(1842,1))^2);
+LAMBDA_MATRIX(389,405) = DISTANCE;
+
+DISTANCE = sqrt((x(1809,1) - x(1797,1))^2 + (x(1810,1) - x(1798,1))^2);
+LAMBDA_MATRIX(389,383) = DISTANCE;
+
+DISTANCE = sqrt((x(1797,1) - x(1809,1))^2 + (x(1798,1) - x(1810,1))^2);
+LAMBDA_MATRIX(383,389) = DISTANCE;
+
+DISTANCE = sqrt((x(1797,1) - x(1759,1))^2 + (x(1798,1) - x(1760,1))^2);
+LAMBDA_MATRIX(383,364) = DISTANCE;
+
+DISTANCE = sqrt((x(1759,1) - x(1797,1))^2 + (x(1760,1) - x(1798,1))^2);
+LAMBDA_MATRIX(364,383) = DISTANCE;
+
+DISTANCE = sqrt((x(1759,1) - x(1769,1))^2 + (x(1760,1) - x(1770,1))^2);
+LAMBDA_MATRIX(364,369) = DISTANCE;
+
+DISTANCE = sqrt((x(1769,1) - x(1759,1))^2 + (x(1770,1) - x(1760,1))^2);
+LAMBDA_MATRIX(369,364) = DISTANCE;
+
+DISTANCE = sqrt((x(1769,1) - x(1797,1))^2 + (x(1770,1) - x(1798,1))^2);
+LAMBDA_MATRIX(369,383) = DISTANCE;
+
+DISTANCE = sqrt((x(1797,1) - x(1769,1))^2 + (x(1798,1) - x(1770,1))^2);
+LAMBDA_MATRIX(383,369) = DISTANCE;
+
+DISTANCE = sqrt((x(1769,1) - x(1821,1))^2 + (x(1770,1) - x(1822,1))^2);
+LAMBDA_MATRIX(369,395) = DISTANCE;
+
+DISTANCE = sqrt((x(1821,1) - x(1769,1))^2 + (x(1822,1) - x(1770,1))^2);
+LAMBDA_MATRIX(395,369) = DISTANCE;
+
+DISTANCE = sqrt((x(1821,1) - x(1797,1))^2 + (x(1822,1) - x(1798,1))^2);
+LAMBDA_MATRIX(395,383) = DISTANCE;
+
+DISTANCE = sqrt((x(1797,1) - x(1821,1))^2 + (x(1798,1) - x(1822,1))^2);
+LAMBDA_MATRIX(383,395) = DISTANCE;
+
+DISTANCE = sqrt((x(1797,1) - x(1769,1))^2 + (x(1798,1) - x(1770,1))^2);
+LAMBDA_MATRIX(383,369) = DISTANCE;
+
+DISTANCE = sqrt((x(1769,1) - x(1797,1))^2 + (x(1770,1) - x(1798,1))^2);
+LAMBDA_MATRIX(369,383) = DISTANCE;
+
+DISTANCE = sqrt((x(1797,1) - x(1821,1))^2 + (x(1798,1) - x(1822,1))^2);
+LAMBDA_MATRIX(383,395) = DISTANCE;
+
+DISTANCE = sqrt((x(1821,1) - x(1797,1))^2 + (x(1822,1) - x(1798,1))^2);
+LAMBDA_MATRIX(395,383) = DISTANCE;
+
+DISTANCE = sqrt((x(1821,1) - x(1841,1))^2 + (x(1822,1) - x(1842,1))^2);
+LAMBDA_MATRIX(395,405) = DISTANCE;
+
+DISTANCE = sqrt((x(1841,1) - x(1821,1))^2 + (x(1842,1) - x(1822,1))^2);
+LAMBDA_MATRIX(405,395) = DISTANCE;
+
+DISTANCE = sqrt((x(1841,1) - x(1797,1))^2 + (x(1842,1) - x(1798,1))^2);
+LAMBDA_MATRIX(405,383) = DISTANCE;
+
+DISTANCE = sqrt((x(1797,1) - x(1841,1))^2 + (x(1798,1) - x(1842,1))^2);
+LAMBDA_MATRIX(383,405) = DISTANCE;
+
+DISTANCE = sqrt((x(1993,1) - x(1939,1))^2 + (x(1994,1) - x(1940,1))^2);
+LAMBDA_MATRIX(481,454) = DISTANCE;
+
+DISTANCE = sqrt((x(1939,1) - x(1993,1))^2 + (x(1940,1) - x(1994,1))^2);
+LAMBDA_MATRIX(454,481) = DISTANCE;
+
+DISTANCE = sqrt((x(1939,1) - x(1983,1))^2 + (x(1940,1) - x(1984,1))^2);
+LAMBDA_MATRIX(454,476) = DISTANCE;
+
+DISTANCE = sqrt((x(1983,1) - x(1939,1))^2 + (x(1984,1) - x(1940,1))^2);
+LAMBDA_MATRIX(476,454) = DISTANCE;
+
+DISTANCE = sqrt((x(1983,1) - x(1993,1))^2 + (x(1984,1) - x(1994,1))^2);
+LAMBDA_MATRIX(476,481) = DISTANCE;
+
+DISTANCE = sqrt((x(1993,1) - x(1983,1))^2 + (x(1994,1) - x(1984,1))^2);
+LAMBDA_MATRIX(481,476) = DISTANCE;
+
+DISTANCE = sqrt((x(2013,1) - x(2043,1))^2 + (x(2014,1) - x(2044,1))^2);
+LAMBDA_MATRIX(491,506) = DISTANCE;
+
+DISTANCE = sqrt((x(2043,1) - x(2013,1))^2 + (x(2044,1) - x(2014,1))^2);
+LAMBDA_MATRIX(506,491) = DISTANCE;
+
+DISTANCE = sqrt((x(2043,1) - x(1983,1))^2 + (x(2044,1) - x(1984,1))^2);
+LAMBDA_MATRIX(506,476) = DISTANCE;
+
+DISTANCE = sqrt((x(1983,1) - x(2043,1))^2 + (x(1984,1) - x(2044,1))^2);
+LAMBDA_MATRIX(476,506) = DISTANCE;
+
+DISTANCE = sqrt((x(1983,1) - x(2013,1))^2 + (x(1984,1) - x(2014,1))^2);
+LAMBDA_MATRIX(476,491) = DISTANCE;
+
+DISTANCE = sqrt((x(2013,1) - x(1983,1))^2 + (x(2014,1) - x(1984,1))^2);
+LAMBDA_MATRIX(491,476) = DISTANCE;
+
+DISTANCE = sqrt((x(1983,1) - x(2031,1))^2 + (x(1984,1) - x(2032,1))^2);
+LAMBDA_MATRIX(476,500) = DISTANCE;
+
+DISTANCE = sqrt((x(2031,1) - x(1983,1))^2 + (x(2032,1) - x(1984,1))^2);
+LAMBDA_MATRIX(500,476) = DISTANCE;
+
+DISTANCE = sqrt((x(2031,1) - x(1993,1))^2 + (x(2032,1) - x(1994,1))^2);
+LAMBDA_MATRIX(500,481) = DISTANCE;
+
+DISTANCE = sqrt((x(1993,1) - x(2031,1))^2 + (x(1994,1) - x(2032,1))^2);
+LAMBDA_MATRIX(481,500) = DISTANCE;
+
+DISTANCE = sqrt((x(1993,1) - x(1983,1))^2 + (x(1994,1) - x(1984,1))^2);
+LAMBDA_MATRIX(481,476) = DISTANCE;
+
+DISTANCE = sqrt((x(1983,1) - x(1993,1))^2 + (x(1984,1) - x(1994,1))^2);
+LAMBDA_MATRIX(476,481) = DISTANCE;
+
+DISTANCE = sqrt((x(1983,1) - x(2043,1))^2 + (x(1984,1) - x(2044,1))^2);
+LAMBDA_MATRIX(476,506) = DISTANCE;
+
+DISTANCE = sqrt((x(2043,1) - x(1983,1))^2 + (x(2044,1) - x(1984,1))^2);
+LAMBDA_MATRIX(506,476) = DISTANCE;
+
+DISTANCE = sqrt((x(2043,1) - x(2031,1))^2 + (x(2044,1) - x(2032,1))^2);
+LAMBDA_MATRIX(506,500) = DISTANCE;
+
+DISTANCE = sqrt((x(2031,1) - x(2043,1))^2 + (x(2032,1) - x(2044,1))^2);
+LAMBDA_MATRIX(500,506) = DISTANCE;
+
+DISTANCE = sqrt((x(2031,1) - x(1983,1))^2 + (x(2032,1) - x(1984,1))^2);
+LAMBDA_MATRIX(500,476) = DISTANCE;
+
+DISTANCE = sqrt((x(1983,1) - x(2031,1))^2 + (x(1984,1) - x(2032,1))^2);
+LAMBDA_MATRIX(476,500) = DISTANCE;
+
+DISTANCE = sqrt((x(1993,1) - x(1997,1))^2 + (x(1994,1) - x(1998,1))^2);
+LAMBDA_MATRIX(481,483) = DISTANCE;
+
+DISTANCE = sqrt((x(1997,1) - x(1993,1))^2 + (x(1998,1) - x(1994,1))^2);
+LAMBDA_MATRIX(483,481) = DISTANCE;
+
+DISTANCE = sqrt((x(1997,1) - x(1971,1))^2 + (x(1998,1) - x(1972,1))^2);
+LAMBDA_MATRIX(483,470) = DISTANCE;
+
+DISTANCE = sqrt((x(1971,1) - x(1997,1))^2 + (x(1972,1) - x(1998,1))^2);
+LAMBDA_MATRIX(470,483) = DISTANCE;
+
+DISTANCE = sqrt((x(1971,1) - x(1993,1))^2 + (x(1972,1) - x(1994,1))^2);
+LAMBDA_MATRIX(470,481) = DISTANCE;
+
+DISTANCE = sqrt((x(1993,1) - x(1971,1))^2 + (x(1994,1) - x(1972,1))^2);
+LAMBDA_MATRIX(481,470) = DISTANCE;
+
+DISTANCE = sqrt((x(1971,1) - x(1939,1))^2 + (x(1972,1) - x(1940,1))^2);
+LAMBDA_MATRIX(470,454) = DISTANCE;
+
+DISTANCE = sqrt((x(1939,1) - x(1971,1))^2 + (x(1940,1) - x(1972,1))^2);
+LAMBDA_MATRIX(454,470) = DISTANCE;
+
+DISTANCE = sqrt((x(1939,1) - x(1993,1))^2 + (x(1940,1) - x(1994,1))^2);
+LAMBDA_MATRIX(454,481) = DISTANCE;
+
+DISTANCE = sqrt((x(1993,1) - x(1939,1))^2 + (x(1994,1) - x(1940,1))^2);
+LAMBDA_MATRIX(481,454) = DISTANCE;
+
+DISTANCE = sqrt((x(1993,1) - x(1971,1))^2 + (x(1994,1) - x(1972,1))^2);
+LAMBDA_MATRIX(481,470) = DISTANCE;
+
+DISTANCE = sqrt((x(1971,1) - x(1993,1))^2 + (x(1972,1) - x(1994,1))^2);
+LAMBDA_MATRIX(470,481) = DISTANCE;
+
+DISTANCE = sqrt((x(1231,1) - x(1283,1))^2 + (x(1232,1) - x(1284,1))^2);
+LAMBDA_MATRIX(100,126) = DISTANCE;
+
+DISTANCE = sqrt((x(1283,1) - x(1231,1))^2 + (x(1284,1) - x(1232,1))^2);
+LAMBDA_MATRIX(126,100) = DISTANCE;
+
+DISTANCE = sqrt((x(1283,1) - x(1245,1))^2 + (x(1284,1) - x(1246,1))^2);
+LAMBDA_MATRIX(126,107) = DISTANCE;
+
+DISTANCE = sqrt((x(1245,1) - x(1283,1))^2 + (x(1246,1) - x(1284,1))^2);
+LAMBDA_MATRIX(107,126) = DISTANCE;
+
+DISTANCE = sqrt((x(1245,1) - x(1231,1))^2 + (x(1246,1) - x(1232,1))^2);
+LAMBDA_MATRIX(107,100) = DISTANCE;
+
+DISTANCE = sqrt((x(1231,1) - x(1245,1))^2 + (x(1232,1) - x(1246,1))^2);
+LAMBDA_MATRIX(100,107) = DISTANCE;
+
+DISTANCE = sqrt((x(1245,1) - x(1283,1))^2 + (x(1246,1) - x(1284,1))^2);
+LAMBDA_MATRIX(107,126) = DISTANCE;
+
+DISTANCE = sqrt((x(1283,1) - x(1245,1))^2 + (x(1284,1) - x(1246,1))^2);
+LAMBDA_MATRIX(126,107) = DISTANCE;
+
+DISTANCE = sqrt((x(1283,1) - x(1297,1))^2 + (x(1284,1) - x(1298,1))^2);
+LAMBDA_MATRIX(126,133) = DISTANCE;
+
+DISTANCE = sqrt((x(1297,1) - x(1283,1))^2 + (x(1298,1) - x(1284,1))^2);
+LAMBDA_MATRIX(133,126) = DISTANCE;
+
+DISTANCE = sqrt((x(1297,1) - x(1245,1))^2 + (x(1298,1) - x(1246,1))^2);
+LAMBDA_MATRIX(133,107) = DISTANCE;
+
+DISTANCE = sqrt((x(1245,1) - x(1297,1))^2 + (x(1246,1) - x(1298,1))^2);
+LAMBDA_MATRIX(107,133) = DISTANCE;
+
+DISTANCE = sqrt((x(1157,1) - x(1165,1))^2 + (x(1158,1) - x(1166,1))^2);
+LAMBDA_MATRIX(63,67) = DISTANCE;
+
+DISTANCE = sqrt((x(1165,1) - x(1157,1))^2 + (x(1166,1) - x(1158,1))^2);
+LAMBDA_MATRIX(67,63) = DISTANCE;
+
+DISTANCE = sqrt((x(1165,1) - x(1119,1))^2 + (x(1166,1) - x(1120,1))^2);
+LAMBDA_MATRIX(67,44) = DISTANCE;
+
+DISTANCE = sqrt((x(1119,1) - x(1165,1))^2 + (x(1120,1) - x(1166,1))^2);
+LAMBDA_MATRIX(44,67) = DISTANCE;
+
+DISTANCE = sqrt((x(1119,1) - x(1157,1))^2 + (x(1120,1) - x(1158,1))^2);
+LAMBDA_MATRIX(44,63) = DISTANCE;
+
+DISTANCE = sqrt((x(1157,1) - x(1119,1))^2 + (x(1158,1) - x(1120,1))^2);
+LAMBDA_MATRIX(63,44) = DISTANCE;
+
+DISTANCE = sqrt((x(1087,1) - x(1065,1))^2 + (x(1088,1) - x(1066,1))^2);
+LAMBDA_MATRIX(28,17) = DISTANCE;
+
+DISTANCE = sqrt((x(1065,1) - x(1087,1))^2 + (x(1066,1) - x(1088,1))^2);
+LAMBDA_MATRIX(17,28) = DISTANCE;
+
+DISTANCE = sqrt((x(1065,1) - x(1063,1))^2 + (x(1066,1) - x(1064,1))^2);
+LAMBDA_MATRIX(17,16) = DISTANCE;
+
+DISTANCE = sqrt((x(1063,1) - x(1065,1))^2 + (x(1064,1) - x(1066,1))^2);
+LAMBDA_MATRIX(16,17) = DISTANCE;
+
+DISTANCE = sqrt((x(1063,1) - x(1087,1))^2 + (x(1064,1) - x(1088,1))^2);
+LAMBDA_MATRIX(16,28) = DISTANCE;
+
+DISTANCE = sqrt((x(1087,1) - x(1063,1))^2 + (x(1088,1) - x(1064,1))^2);
+LAMBDA_MATRIX(28,16) = DISTANCE;
+
+DISTANCE = sqrt((x(1599,1) - x(1633,1))^2 + (x(1600,1) - x(1634,1))^2);
+LAMBDA_MATRIX(284,301) = DISTANCE;
+
+DISTANCE = sqrt((x(1633,1) - x(1599,1))^2 + (x(1634,1) - x(1600,1))^2);
+LAMBDA_MATRIX(301,284) = DISTANCE;
+
+DISTANCE = sqrt((x(1633,1) - x(1615,1))^2 + (x(1634,1) - x(1616,1))^2);
+LAMBDA_MATRIX(301,292) = DISTANCE;
+
+DISTANCE = sqrt((x(1615,1) - x(1633,1))^2 + (x(1616,1) - x(1634,1))^2);
+LAMBDA_MATRIX(292,301) = DISTANCE;
+
+DISTANCE = sqrt((x(1615,1) - x(1599,1))^2 + (x(1616,1) - x(1600,1))^2);
+LAMBDA_MATRIX(292,284) = DISTANCE;
+
+DISTANCE = sqrt((x(1599,1) - x(1615,1))^2 + (x(1600,1) - x(1616,1))^2);
+LAMBDA_MATRIX(284,292) = DISTANCE;
+
+DISTANCE = sqrt((x(1611,1) - x(1633,1))^2 + (x(1612,1) - x(1634,1))^2);
+LAMBDA_MATRIX(290,301) = DISTANCE;
+
+DISTANCE = sqrt((x(1633,1) - x(1611,1))^2 + (x(1634,1) - x(1612,1))^2);
+LAMBDA_MATRIX(301,290) = DISTANCE;
+
+DISTANCE = sqrt((x(1633,1) - x(1599,1))^2 + (x(1634,1) - x(1600,1))^2);
+LAMBDA_MATRIX(301,284) = DISTANCE;
+
+DISTANCE = sqrt((x(1599,1) - x(1633,1))^2 + (x(1600,1) - x(1634,1))^2);
+LAMBDA_MATRIX(284,301) = DISTANCE;
+
+DISTANCE = sqrt((x(1599,1) - x(1611,1))^2 + (x(1600,1) - x(1612,1))^2);
+LAMBDA_MATRIX(284,290) = DISTANCE;
+
+DISTANCE = sqrt((x(1611,1) - x(1599,1))^2 + (x(1612,1) - x(1600,1))^2);
+LAMBDA_MATRIX(290,284) = DISTANCE;
+
+DISTANCE = sqrt((x(1297,1) - x(1353,1))^2 + (x(1298,1) - x(1354,1))^2);
+LAMBDA_MATRIX(133,161) = DISTANCE;
+
+DISTANCE = sqrt((x(1353,1) - x(1297,1))^2 + (x(1354,1) - x(1298,1))^2);
+LAMBDA_MATRIX(161,133) = DISTANCE;
+
+DISTANCE = sqrt((x(1353,1) - x(1317,1))^2 + (x(1354,1) - x(1318,1))^2);
+LAMBDA_MATRIX(161,143) = DISTANCE;
+
+DISTANCE = sqrt((x(1317,1) - x(1353,1))^2 + (x(1318,1) - x(1354,1))^2);
+LAMBDA_MATRIX(143,161) = DISTANCE;
+
+DISTANCE = sqrt((x(1317,1) - x(1297,1))^2 + (x(1318,1) - x(1298,1))^2);
+LAMBDA_MATRIX(143,133) = DISTANCE;
+
+DISTANCE = sqrt((x(1297,1) - x(1317,1))^2 + (x(1298,1) - x(1318,1))^2);
+LAMBDA_MATRIX(133,143) = DISTANCE;
+
+DISTANCE = sqrt((x(1299,1) - x(1249,1))^2 + (x(1300,1) - x(1250,1))^2);
+LAMBDA_MATRIX(134,109) = DISTANCE;
+
+DISTANCE = sqrt((x(1249,1) - x(1299,1))^2 + (x(1250,1) - x(1300,1))^2);
+LAMBDA_MATRIX(109,134) = DISTANCE;
+
+DISTANCE = sqrt((x(1249,1) - x(1273,1))^2 + (x(1250,1) - x(1274,1))^2);
+LAMBDA_MATRIX(109,121) = DISTANCE;
+
+DISTANCE = sqrt((x(1273,1) - x(1249,1))^2 + (x(1274,1) - x(1250,1))^2);
+LAMBDA_MATRIX(121,109) = DISTANCE;
+
+DISTANCE = sqrt((x(1273,1) - x(1299,1))^2 + (x(1274,1) - x(1300,1))^2);
+LAMBDA_MATRIX(121,134) = DISTANCE;
+
+DISTANCE = sqrt((x(1299,1) - x(1273,1))^2 + (x(1300,1) - x(1274,1))^2);
+LAMBDA_MATRIX(134,121) = DISTANCE;
+
+DISTANCE = sqrt((x(1277,1) - x(1249,1))^2 + (x(1278,1) - x(1250,1))^2);
+LAMBDA_MATRIX(123,109) = DISTANCE;
+
+DISTANCE = sqrt((x(1249,1) - x(1277,1))^2 + (x(1250,1) - x(1278,1))^2);
+LAMBDA_MATRIX(109,123) = DISTANCE;
+
+DISTANCE = sqrt((x(1249,1) - x(1299,1))^2 + (x(1250,1) - x(1300,1))^2);
+LAMBDA_MATRIX(109,134) = DISTANCE;
+
+DISTANCE = sqrt((x(1299,1) - x(1249,1))^2 + (x(1300,1) - x(1250,1))^2);
+LAMBDA_MATRIX(134,109) = DISTANCE;
+
+DISTANCE = sqrt((x(1299,1) - x(1277,1))^2 + (x(1300,1) - x(1278,1))^2);
+LAMBDA_MATRIX(134,123) = DISTANCE;
+
+DISTANCE = sqrt((x(1277,1) - x(1299,1))^2 + (x(1278,1) - x(1300,1))^2);
+LAMBDA_MATRIX(123,134) = DISTANCE;
+
+DISTANCE = sqrt((x(1223,1) - x(1249,1))^2 + (x(1224,1) - x(1250,1))^2);
+LAMBDA_MATRIX(96,109) = DISTANCE;
+
+DISTANCE = sqrt((x(1249,1) - x(1223,1))^2 + (x(1250,1) - x(1224,1))^2);
+LAMBDA_MATRIX(109,96) = DISTANCE;
+
+DISTANCE = sqrt((x(1249,1) - x(1277,1))^2 + (x(1250,1) - x(1278,1))^2);
+LAMBDA_MATRIX(109,123) = DISTANCE;
+
+DISTANCE = sqrt((x(1277,1) - x(1249,1))^2 + (x(1278,1) - x(1250,1))^2);
+LAMBDA_MATRIX(123,109) = DISTANCE;
+
+DISTANCE = sqrt((x(1277,1) - x(1223,1))^2 + (x(1278,1) - x(1224,1))^2);
+LAMBDA_MATRIX(123,96) = DISTANCE;
+
+DISTANCE = sqrt((x(1223,1) - x(1277,1))^2 + (x(1224,1) - x(1278,1))^2);
+LAMBDA_MATRIX(96,123) = DISTANCE;
+
+DISTANCE = sqrt((x(1337,1) - x(1353,1))^2 + (x(1338,1) - x(1354,1))^2);
+LAMBDA_MATRIX(153,161) = DISTANCE;
+
+DISTANCE = sqrt((x(1353,1) - x(1337,1))^2 + (x(1354,1) - x(1338,1))^2);
+LAMBDA_MATRIX(161,153) = DISTANCE;
+
+DISTANCE = sqrt((x(1353,1) - x(1297,1))^2 + (x(1354,1) - x(1298,1))^2);
+LAMBDA_MATRIX(161,133) = DISTANCE;
+
+DISTANCE = sqrt((x(1297,1) - x(1353,1))^2 + (x(1298,1) - x(1354,1))^2);
+LAMBDA_MATRIX(133,161) = DISTANCE;
+
+DISTANCE = sqrt((x(1297,1) - x(1337,1))^2 + (x(1298,1) - x(1338,1))^2);
+LAMBDA_MATRIX(133,153) = DISTANCE;
+
+DISTANCE = sqrt((x(1337,1) - x(1297,1))^2 + (x(1338,1) - x(1298,1))^2);
+LAMBDA_MATRIX(153,133) = DISTANCE;
+
+DISTANCE = sqrt((x(1297,1) - x(1283,1))^2 + (x(1298,1) - x(1284,1))^2);
+LAMBDA_MATRIX(133,126) = DISTANCE;
+
+DISTANCE = sqrt((x(1283,1) - x(1297,1))^2 + (x(1284,1) - x(1298,1))^2);
+LAMBDA_MATRIX(126,133) = DISTANCE;
+
+DISTANCE = sqrt((x(1283,1) - x(1337,1))^2 + (x(1284,1) - x(1338,1))^2);
+LAMBDA_MATRIX(126,153) = DISTANCE;
+
+DISTANCE = sqrt((x(1337,1) - x(1283,1))^2 + (x(1338,1) - x(1284,1))^2);
+LAMBDA_MATRIX(153,126) = DISTANCE;
+
+DISTANCE = sqrt((x(1337,1) - x(1297,1))^2 + (x(1338,1) - x(1298,1))^2);
+LAMBDA_MATRIX(153,133) = DISTANCE;
+
+DISTANCE = sqrt((x(1297,1) - x(1337,1))^2 + (x(1298,1) - x(1338,1))^2);
+LAMBDA_MATRIX(133,153) = DISTANCE;
+
+DISTANCE = sqrt((x(1335,1) - x(1303,1))^2 + (x(1336,1) - x(1304,1))^2);
+LAMBDA_MATRIX(152,136) = DISTANCE;
+
+DISTANCE = sqrt((x(1303,1) - x(1335,1))^2 + (x(1304,1) - x(1336,1))^2);
+LAMBDA_MATRIX(136,152) = DISTANCE;
+
+DISTANCE = sqrt((x(1303,1) - x(1281,1))^2 + (x(1304,1) - x(1282,1))^2);
+LAMBDA_MATRIX(136,125) = DISTANCE;
+
+DISTANCE = sqrt((x(1281,1) - x(1303,1))^2 + (x(1282,1) - x(1304,1))^2);
+LAMBDA_MATRIX(125,136) = DISTANCE;
+
+DISTANCE = sqrt((x(1281,1) - x(1335,1))^2 + (x(1282,1) - x(1336,1))^2);
+LAMBDA_MATRIX(125,152) = DISTANCE;
+
+DISTANCE = sqrt((x(1335,1) - x(1281,1))^2 + (x(1336,1) - x(1282,1))^2);
+LAMBDA_MATRIX(152,125) = DISTANCE;
+
+DISTANCE = sqrt((x(1251,1) - x(1281,1))^2 + (x(1252,1) - x(1282,1))^2);
+LAMBDA_MATRIX(110,125) = DISTANCE;
+
+DISTANCE = sqrt((x(1281,1) - x(1251,1))^2 + (x(1282,1) - x(1252,1))^2);
+LAMBDA_MATRIX(125,110) = DISTANCE;
+
+DISTANCE = sqrt((x(1281,1) - x(1303,1))^2 + (x(1282,1) - x(1304,1))^2);
+LAMBDA_MATRIX(125,136) = DISTANCE;
+
+DISTANCE = sqrt((x(1303,1) - x(1281,1))^2 + (x(1304,1) - x(1282,1))^2);
+LAMBDA_MATRIX(136,125) = DISTANCE;
+
+DISTANCE = sqrt((x(1303,1) - x(1251,1))^2 + (x(1304,1) - x(1252,1))^2);
+LAMBDA_MATRIX(136,110) = DISTANCE;
+
+DISTANCE = sqrt((x(1251,1) - x(1303,1))^2 + (x(1252,1) - x(1304,1))^2);
+LAMBDA_MATRIX(110,136) = DISTANCE;
+
+DISTANCE = sqrt((x(1629,1) - x(1601,1))^2 + (x(1630,1) - x(1602,1))^2);
+LAMBDA_MATRIX(299,285) = DISTANCE;
+
+DISTANCE = sqrt((x(1601,1) - x(1629,1))^2 + (x(1602,1) - x(1630,1))^2);
+LAMBDA_MATRIX(285,299) = DISTANCE;
+
+DISTANCE = sqrt((x(1601,1) - x(1619,1))^2 + (x(1602,1) - x(1620,1))^2);
+LAMBDA_MATRIX(285,294) = DISTANCE;
+
+DISTANCE = sqrt((x(1619,1) - x(1601,1))^2 + (x(1620,1) - x(1602,1))^2);
+LAMBDA_MATRIX(294,285) = DISTANCE;
+
+DISTANCE = sqrt((x(1619,1) - x(1629,1))^2 + (x(1620,1) - x(1630,1))^2);
+LAMBDA_MATRIX(294,299) = DISTANCE;
+
+DISTANCE = sqrt((x(1629,1) - x(1619,1))^2 + (x(1630,1) - x(1620,1))^2);
+LAMBDA_MATRIX(299,294) = DISTANCE;
+
+DISTANCE = sqrt((x(1619,1) - x(1603,1))^2 + (x(1620,1) - x(1604,1))^2);
+LAMBDA_MATRIX(294,286) = DISTANCE;
+
+DISTANCE = sqrt((x(1603,1) - x(1619,1))^2 + (x(1604,1) - x(1620,1))^2);
+LAMBDA_MATRIX(286,294) = DISTANCE;
+
+DISTANCE = sqrt((x(1603,1) - x(1635,1))^2 + (x(1604,1) - x(1636,1))^2);
+LAMBDA_MATRIX(286,302) = DISTANCE;
+
+DISTANCE = sqrt((x(1635,1) - x(1603,1))^2 + (x(1636,1) - x(1604,1))^2);
+LAMBDA_MATRIX(302,286) = DISTANCE;
+
+DISTANCE = sqrt((x(1635,1) - x(1619,1))^2 + (x(1636,1) - x(1620,1))^2);
+LAMBDA_MATRIX(302,294) = DISTANCE;
+
+DISTANCE = sqrt((x(1619,1) - x(1635,1))^2 + (x(1620,1) - x(1636,1))^2);
+LAMBDA_MATRIX(294,302) = DISTANCE;
+
+DISTANCE = sqrt((x(1675,1) - x(1633,1))^2 + (x(1676,1) - x(1634,1))^2);
+LAMBDA_MATRIX(322,301) = DISTANCE;
+
+DISTANCE = sqrt((x(1633,1) - x(1675,1))^2 + (x(1634,1) - x(1676,1))^2);
+LAMBDA_MATRIX(301,322) = DISTANCE;
+
+DISTANCE = sqrt((x(1633,1) - x(1653,1))^2 + (x(1634,1) - x(1654,1))^2);
+LAMBDA_MATRIX(301,311) = DISTANCE;
+
+DISTANCE = sqrt((x(1653,1) - x(1633,1))^2 + (x(1654,1) - x(1634,1))^2);
+LAMBDA_MATRIX(311,301) = DISTANCE;
+
+DISTANCE = sqrt((x(1653,1) - x(1675,1))^2 + (x(1654,1) - x(1676,1))^2);
+LAMBDA_MATRIX(311,322) = DISTANCE;
+
+DISTANCE = sqrt((x(1675,1) - x(1653,1))^2 + (x(1676,1) - x(1654,1))^2);
+LAMBDA_MATRIX(322,311) = DISTANCE;
+
+DISTANCE = sqrt((x(1653,1) - x(1633,1))^2 + (x(1654,1) - x(1634,1))^2);
+LAMBDA_MATRIX(311,301) = DISTANCE;
+
+DISTANCE = sqrt((x(1633,1) - x(1653,1))^2 + (x(1634,1) - x(1654,1))^2);
+LAMBDA_MATRIX(301,311) = DISTANCE;
+
+DISTANCE = sqrt((x(1633,1) - x(1611,1))^2 + (x(1634,1) - x(1612,1))^2);
+LAMBDA_MATRIX(301,290) = DISTANCE;
+
+DISTANCE = sqrt((x(1611,1) - x(1633,1))^2 + (x(1612,1) - x(1634,1))^2);
+LAMBDA_MATRIX(290,301) = DISTANCE;
+
+DISTANCE = sqrt((x(1611,1) - x(1653,1))^2 + (x(1612,1) - x(1654,1))^2);
+LAMBDA_MATRIX(290,311) = DISTANCE;
+
+DISTANCE = sqrt((x(1653,1) - x(1611,1))^2 + (x(1654,1) - x(1612,1))^2);
+LAMBDA_MATRIX(311,290) = DISTANCE;
+
+DISTANCE = sqrt((x(1639,1) - x(1669,1))^2 + (x(1640,1) - x(1670,1))^2);
+LAMBDA_MATRIX(304,319) = DISTANCE;
+
+DISTANCE = sqrt((x(1669,1) - x(1639,1))^2 + (x(1670,1) - x(1640,1))^2);
+LAMBDA_MATRIX(319,304) = DISTANCE;
+
+DISTANCE = sqrt((x(1669,1) - x(1679,1))^2 + (x(1670,1) - x(1680,1))^2);
+LAMBDA_MATRIX(319,324) = DISTANCE;
+
+DISTANCE = sqrt((x(1679,1) - x(1669,1))^2 + (x(1680,1) - x(1670,1))^2);
+LAMBDA_MATRIX(324,319) = DISTANCE;
+
+DISTANCE = sqrt((x(1679,1) - x(1639,1))^2 + (x(1680,1) - x(1640,1))^2);
+LAMBDA_MATRIX(324,304) = DISTANCE;
+
+DISTANCE = sqrt((x(1639,1) - x(1679,1))^2 + (x(1640,1) - x(1680,1))^2);
+LAMBDA_MATRIX(304,324) = DISTANCE;
+
+DISTANCE = sqrt((x(1687,1) - x(1709,1))^2 + (x(1688,1) - x(1710,1))^2);
+LAMBDA_MATRIX(328,339) = DISTANCE;
+
+DISTANCE = sqrt((x(1709,1) - x(1687,1))^2 + (x(1710,1) - x(1688,1))^2);
+LAMBDA_MATRIX(339,328) = DISTANCE;
+
+DISTANCE = sqrt((x(1709,1) - x(1743,1))^2 + (x(1710,1) - x(1744,1))^2);
+LAMBDA_MATRIX(339,356) = DISTANCE;
+
+DISTANCE = sqrt((x(1743,1) - x(1709,1))^2 + (x(1744,1) - x(1710,1))^2);
+LAMBDA_MATRIX(356,339) = DISTANCE;
+
+DISTANCE = sqrt((x(1743,1) - x(1687,1))^2 + (x(1744,1) - x(1688,1))^2);
+LAMBDA_MATRIX(356,328) = DISTANCE;
+
+DISTANCE = sqrt((x(1687,1) - x(1743,1))^2 + (x(1688,1) - x(1744,1))^2);
+LAMBDA_MATRIX(328,356) = DISTANCE;
+
+DISTANCE = sqrt((x(1675,1) - x(1653,1))^2 + (x(1676,1) - x(1654,1))^2);
+LAMBDA_MATRIX(322,311) = DISTANCE;
+
+DISTANCE = sqrt((x(1653,1) - x(1675,1))^2 + (x(1654,1) - x(1676,1))^2);
+LAMBDA_MATRIX(311,322) = DISTANCE;
+
+DISTANCE = sqrt((x(1653,1) - x(1699,1))^2 + (x(1654,1) - x(1700,1))^2);
+LAMBDA_MATRIX(311,334) = DISTANCE;
+
+DISTANCE = sqrt((x(1699,1) - x(1653,1))^2 + (x(1700,1) - x(1654,1))^2);
+LAMBDA_MATRIX(334,311) = DISTANCE;
+
+DISTANCE = sqrt((x(1699,1) - x(1675,1))^2 + (x(1700,1) - x(1676,1))^2);
+LAMBDA_MATRIX(334,322) = DISTANCE;
+
+DISTANCE = sqrt((x(1675,1) - x(1699,1))^2 + (x(1676,1) - x(1700,1))^2);
+LAMBDA_MATRIX(322,334) = DISTANCE;
+
+DISTANCE = sqrt((x(1699,1) - x(1653,1))^2 + (x(1700,1) - x(1654,1))^2);
+LAMBDA_MATRIX(334,311) = DISTANCE;
+
+DISTANCE = sqrt((x(1653,1) - x(1699,1))^2 + (x(1654,1) - x(1700,1))^2);
+LAMBDA_MATRIX(311,334) = DISTANCE;
+
+DISTANCE = sqrt((x(1653,1) - x(1673,1))^2 + (x(1654,1) - x(1674,1))^2);
+LAMBDA_MATRIX(311,321) = DISTANCE;
+
+DISTANCE = sqrt((x(1673,1) - x(1653,1))^2 + (x(1674,1) - x(1654,1))^2);
+LAMBDA_MATRIX(321,311) = DISTANCE;
+
+DISTANCE = sqrt((x(1673,1) - x(1699,1))^2 + (x(1674,1) - x(1700,1))^2);
+LAMBDA_MATRIX(321,334) = DISTANCE;
+
+DISTANCE = sqrt((x(1699,1) - x(1673,1))^2 + (x(1700,1) - x(1674,1))^2);
+LAMBDA_MATRIX(334,321) = DISTANCE;
+
+DISTANCE = sqrt((x(1101,1) - x(1093,1))^2 + (x(1102,1) - x(1094,1))^2);
+LAMBDA_MATRIX(35,31) = DISTANCE;
+
+DISTANCE = sqrt((x(1093,1) - x(1101,1))^2 + (x(1094,1) - x(1102,1))^2);
+LAMBDA_MATRIX(31,35) = DISTANCE;
+
+DISTANCE = sqrt((x(1093,1) - x(1127,1))^2 + (x(1094,1) - x(1128,1))^2);
+LAMBDA_MATRIX(31,48) = DISTANCE;
+
+DISTANCE = sqrt((x(1127,1) - x(1093,1))^2 + (x(1128,1) - x(1094,1))^2);
+LAMBDA_MATRIX(48,31) = DISTANCE;
+
+DISTANCE = sqrt((x(1127,1) - x(1101,1))^2 + (x(1128,1) - x(1102,1))^2);
+LAMBDA_MATRIX(48,35) = DISTANCE;
+
+DISTANCE = sqrt((x(1101,1) - x(1127,1))^2 + (x(1102,1) - x(1128,1))^2);
+LAMBDA_MATRIX(35,48) = DISTANCE;
+
+DISTANCE = sqrt((x(1127,1) - x(1161,1))^2 + (x(1128,1) - x(1162,1))^2);
+LAMBDA_MATRIX(48,65) = DISTANCE;
+
+DISTANCE = sqrt((x(1161,1) - x(1127,1))^2 + (x(1162,1) - x(1128,1))^2);
+LAMBDA_MATRIX(65,48) = DISTANCE;
+
+DISTANCE = sqrt((x(1161,1) - x(1101,1))^2 + (x(1162,1) - x(1102,1))^2);
+LAMBDA_MATRIX(65,35) = DISTANCE;
+
+DISTANCE = sqrt((x(1101,1) - x(1161,1))^2 + (x(1102,1) - x(1162,1))^2);
+LAMBDA_MATRIX(35,65) = DISTANCE;
+
+DISTANCE = sqrt((x(1101,1) - x(1127,1))^2 + (x(1102,1) - x(1128,1))^2);
+LAMBDA_MATRIX(35,48) = DISTANCE;
+
+DISTANCE = sqrt((x(1127,1) - x(1101,1))^2 + (x(1128,1) - x(1102,1))^2);
+LAMBDA_MATRIX(48,35) = DISTANCE;
+
+DISTANCE = sqrt((x(1237,1) - x(1273,1))^2 + (x(1238,1) - x(1274,1))^2);
+LAMBDA_MATRIX(103,121) = DISTANCE;
+
+DISTANCE = sqrt((x(1273,1) - x(1237,1))^2 + (x(1274,1) - x(1238,1))^2);
+LAMBDA_MATRIX(121,103) = DISTANCE;
+
+DISTANCE = sqrt((x(1273,1) - x(1219,1))^2 + (x(1274,1) - x(1220,1))^2);
+LAMBDA_MATRIX(121,94) = DISTANCE;
+
+DISTANCE = sqrt((x(1219,1) - x(1273,1))^2 + (x(1220,1) - x(1274,1))^2);
+LAMBDA_MATRIX(94,121) = DISTANCE;
+
+DISTANCE = sqrt((x(1219,1) - x(1237,1))^2 + (x(1220,1) - x(1238,1))^2);
+LAMBDA_MATRIX(94,103) = DISTANCE;
+
+DISTANCE = sqrt((x(1237,1) - x(1219,1))^2 + (x(1238,1) - x(1220,1))^2);
+LAMBDA_MATRIX(103,94) = DISTANCE;
+
+DISTANCE = sqrt((x(1219,1) - x(1273,1))^2 + (x(1220,1) - x(1274,1))^2);
+LAMBDA_MATRIX(94,121) = DISTANCE;
+
+DISTANCE = sqrt((x(1273,1) - x(1219,1))^2 + (x(1274,1) - x(1220,1))^2);
+LAMBDA_MATRIX(121,94) = DISTANCE;
+
+DISTANCE = sqrt((x(1273,1) - x(1249,1))^2 + (x(1274,1) - x(1250,1))^2);
+LAMBDA_MATRIX(121,109) = DISTANCE;
+
+DISTANCE = sqrt((x(1249,1) - x(1273,1))^2 + (x(1250,1) - x(1274,1))^2);
+LAMBDA_MATRIX(109,121) = DISTANCE;
+
+DISTANCE = sqrt((x(1249,1) - x(1219,1))^2 + (x(1250,1) - x(1220,1))^2);
+LAMBDA_MATRIX(109,94) = DISTANCE;
+
+DISTANCE = sqrt((x(1219,1) - x(1249,1))^2 + (x(1220,1) - x(1250,1))^2);
+LAMBDA_MATRIX(94,109) = DISTANCE;
+
+DISTANCE = sqrt((x(2041,1) - x(1995,1))^2 + (x(2042,1) - x(1996,1))^2);
+LAMBDA_MATRIX(505,482) = DISTANCE;
+
+DISTANCE = sqrt((x(1995,1) - x(2041,1))^2 + (x(1996,1) - x(2042,1))^2);
+LAMBDA_MATRIX(482,505) = DISTANCE;
+
+DISTANCE = sqrt((x(1995,1) - x(2019,1))^2 + (x(1996,1) - x(2020,1))^2);
+LAMBDA_MATRIX(482,494) = DISTANCE;
+
+DISTANCE = sqrt((x(2019,1) - x(1995,1))^2 + (x(2020,1) - x(1996,1))^2);
+LAMBDA_MATRIX(494,482) = DISTANCE;
+
+DISTANCE = sqrt((x(2019,1) - x(2041,1))^2 + (x(2020,1) - x(2042,1))^2);
+LAMBDA_MATRIX(494,505) = DISTANCE;
+
+DISTANCE = sqrt((x(2041,1) - x(2019,1))^2 + (x(2042,1) - x(2020,1))^2);
+LAMBDA_MATRIX(505,494) = DISTANCE;
+
+DISTANCE = sqrt((x(2003,1) - x(2013,1))^2 + (x(2004,1) - x(2014,1))^2);
+LAMBDA_MATRIX(486,491) = DISTANCE;
+
+DISTANCE = sqrt((x(2013,1) - x(2003,1))^2 + (x(2014,1) - x(2004,1))^2);
+LAMBDA_MATRIX(491,486) = DISTANCE;
+
+DISTANCE = sqrt((x(2013,1) - x(1969,1))^2 + (x(2014,1) - x(1970,1))^2);
+LAMBDA_MATRIX(491,469) = DISTANCE;
+
+DISTANCE = sqrt((x(1969,1) - x(2013,1))^2 + (x(1970,1) - x(2014,1))^2);
+LAMBDA_MATRIX(469,491) = DISTANCE;
+
+DISTANCE = sqrt((x(1969,1) - x(2003,1))^2 + (x(1970,1) - x(2004,1))^2);
+LAMBDA_MATRIX(469,486) = DISTANCE;
+
+DISTANCE = sqrt((x(2003,1) - x(1969,1))^2 + (x(2004,1) - x(1970,1))^2);
+LAMBDA_MATRIX(486,469) = DISTANCE;
+
+DISTANCE = sqrt((x(1239,1) - x(1301,1))^2 + (x(1240,1) - x(1302,1))^2);
+LAMBDA_MATRIX(104,135) = DISTANCE;
+
+DISTANCE = sqrt((x(1301,1) - x(1239,1))^2 + (x(1302,1) - x(1240,1))^2);
+LAMBDA_MATRIX(135,104) = DISTANCE;
+
+DISTANCE = sqrt((x(1301,1) - x(1255,1))^2 + (x(1302,1) - x(1256,1))^2);
+LAMBDA_MATRIX(135,112) = DISTANCE;
+
+DISTANCE = sqrt((x(1255,1) - x(1301,1))^2 + (x(1256,1) - x(1302,1))^2);
+LAMBDA_MATRIX(112,135) = DISTANCE;
+
+DISTANCE = sqrt((x(1255,1) - x(1239,1))^2 + (x(1256,1) - x(1240,1))^2);
+LAMBDA_MATRIX(112,104) = DISTANCE;
+
+DISTANCE = sqrt((x(1239,1) - x(1255,1))^2 + (x(1240,1) - x(1256,1))^2);
+LAMBDA_MATRIX(104,112) = DISTANCE;
+
+DISTANCE = sqrt((x(1255,1) - x(1301,1))^2 + (x(1256,1) - x(1302,1))^2);
+LAMBDA_MATRIX(112,135) = DISTANCE;
+
+DISTANCE = sqrt((x(1301,1) - x(1255,1))^2 + (x(1302,1) - x(1256,1))^2);
+LAMBDA_MATRIX(135,112) = DISTANCE;
+
+DISTANCE = sqrt((x(1301,1) - x(1295,1))^2 + (x(1302,1) - x(1296,1))^2);
+LAMBDA_MATRIX(135,132) = DISTANCE;
+
+DISTANCE = sqrt((x(1295,1) - x(1301,1))^2 + (x(1296,1) - x(1302,1))^2);
+LAMBDA_MATRIX(132,135) = DISTANCE;
+
+DISTANCE = sqrt((x(1295,1) - x(1255,1))^2 + (x(1296,1) - x(1256,1))^2);
+LAMBDA_MATRIX(132,112) = DISTANCE;
+
+DISTANCE = sqrt((x(1255,1) - x(1295,1))^2 + (x(1256,1) - x(1296,1))^2);
+LAMBDA_MATRIX(112,132) = DISTANCE;
+
+DISTANCE = sqrt((x(1255,1) - x(1295,1))^2 + (x(1256,1) - x(1296,1))^2);
+LAMBDA_MATRIX(112,132) = DISTANCE;
+
+DISTANCE = sqrt((x(1295,1) - x(1255,1))^2 + (x(1296,1) - x(1256,1))^2);
+LAMBDA_MATRIX(132,112) = DISTANCE;
+
+DISTANCE = sqrt((x(1295,1) - x(1241,1))^2 + (x(1296,1) - x(1242,1))^2);
+LAMBDA_MATRIX(132,105) = DISTANCE;
+
+DISTANCE = sqrt((x(1241,1) - x(1295,1))^2 + (x(1242,1) - x(1296,1))^2);
+LAMBDA_MATRIX(105,132) = DISTANCE;
+
+DISTANCE = sqrt((x(1241,1) - x(1255,1))^2 + (x(1242,1) - x(1256,1))^2);
+LAMBDA_MATRIX(105,112) = DISTANCE;
+
+DISTANCE = sqrt((x(1255,1) - x(1241,1))^2 + (x(1256,1) - x(1242,1))^2);
+LAMBDA_MATRIX(112,105) = DISTANCE;
+
+DISTANCE = sqrt((x(1345,1) - x(1391,1))^2 + (x(1346,1) - x(1392,1))^2);
+LAMBDA_MATRIX(157,180) = DISTANCE;
+
+DISTANCE = sqrt((x(1391,1) - x(1345,1))^2 + (x(1392,1) - x(1346,1))^2);
+LAMBDA_MATRIX(180,157) = DISTANCE;
+
+DISTANCE = sqrt((x(1391,1) - x(1377,1))^2 + (x(1392,1) - x(1378,1))^2);
+LAMBDA_MATRIX(180,173) = DISTANCE;
+
+DISTANCE = sqrt((x(1377,1) - x(1391,1))^2 + (x(1378,1) - x(1392,1))^2);
+LAMBDA_MATRIX(173,180) = DISTANCE;
+
+DISTANCE = sqrt((x(1377,1) - x(1345,1))^2 + (x(1378,1) - x(1346,1))^2);
+LAMBDA_MATRIX(173,157) = DISTANCE;
+
+DISTANCE = sqrt((x(1345,1) - x(1377,1))^2 + (x(1346,1) - x(1378,1))^2);
+LAMBDA_MATRIX(157,173) = DISTANCE;
+
+DISTANCE = sqrt((x(1997,1) - x(2035,1))^2 + (x(1998,1) - x(2036,1))^2);
+LAMBDA_MATRIX(483,502) = DISTANCE;
+
+DISTANCE = sqrt((x(2035,1) - x(1997,1))^2 + (x(2036,1) - x(1998,1))^2);
+LAMBDA_MATRIX(502,483) = DISTANCE;
+
+DISTANCE = sqrt((x(2035,1) - x(2045,1))^2 + (x(2036,1) - x(2046,1))^2);
+LAMBDA_MATRIX(502,507) = DISTANCE;
+
+DISTANCE = sqrt((x(2045,1) - x(2035,1))^2 + (x(2046,1) - x(2036,1))^2);
+LAMBDA_MATRIX(507,502) = DISTANCE;
+
+DISTANCE = sqrt((x(2045,1) - x(1997,1))^2 + (x(2046,1) - x(1998,1))^2);
+LAMBDA_MATRIX(507,483) = DISTANCE;
+
+DISTANCE = sqrt((x(1997,1) - x(2045,1))^2 + (x(1998,1) - x(2046,1))^2);
+LAMBDA_MATRIX(483,507) = DISTANCE;
+
+DISTANCE = sqrt((x(2037,1) - x(1989,1))^2 + (x(2038,1) - x(1990,1))^2);
+LAMBDA_MATRIX(503,479) = DISTANCE;
+
+DISTANCE = sqrt((x(1989,1) - x(2037,1))^2 + (x(1990,1) - x(2038,1))^2);
+LAMBDA_MATRIX(479,503) = DISTANCE;
+
+DISTANCE = sqrt((x(1989,1) - x(2045,1))^2 + (x(1990,1) - x(2046,1))^2);
+LAMBDA_MATRIX(479,507) = DISTANCE;
+
+DISTANCE = sqrt((x(2045,1) - x(1989,1))^2 + (x(2046,1) - x(1990,1))^2);
+LAMBDA_MATRIX(507,479) = DISTANCE;
+
+DISTANCE = sqrt((x(2045,1) - x(2037,1))^2 + (x(2046,1) - x(2038,1))^2);
+LAMBDA_MATRIX(507,503) = DISTANCE;
+
+DISTANCE = sqrt((x(2037,1) - x(2045,1))^2 + (x(2038,1) - x(2046,1))^2);
+LAMBDA_MATRIX(503,507) = DISTANCE;
+
+DISTANCE = sqrt((x(2045,1) - x(1989,1))^2 + (x(2046,1) - x(1990,1))^2);
+LAMBDA_MATRIX(507,479) = DISTANCE;
+
+DISTANCE = sqrt((x(1989,1) - x(2045,1))^2 + (x(1990,1) - x(2046,1))^2);
+LAMBDA_MATRIX(479,507) = DISTANCE;
+
+DISTANCE = sqrt((x(1989,1) - x(1997,1))^2 + (x(1990,1) - x(1998,1))^2);
+LAMBDA_MATRIX(479,483) = DISTANCE;
+
+DISTANCE = sqrt((x(1997,1) - x(1989,1))^2 + (x(1998,1) - x(1990,1))^2);
+LAMBDA_MATRIX(483,479) = DISTANCE;
+
+DISTANCE = sqrt((x(1997,1) - x(2045,1))^2 + (x(1998,1) - x(2046,1))^2);
+LAMBDA_MATRIX(483,507) = DISTANCE;
+
+DISTANCE = sqrt((x(2045,1) - x(1997,1))^2 + (x(2046,1) - x(1998,1))^2);
+LAMBDA_MATRIX(507,483) = DISTANCE;
+
+DISTANCE = sqrt((x(1953,1) - x(1967,1))^2 + (x(1954,1) - x(1968,1))^2);
+LAMBDA_MATRIX(461,468) = DISTANCE;
+
+DISTANCE = sqrt((x(1967,1) - x(1953,1))^2 + (x(1968,1) - x(1954,1))^2);
+LAMBDA_MATRIX(468,461) = DISTANCE;
+
+DISTANCE = sqrt((x(1967,1) - x(2005,1))^2 + (x(1968,1) - x(2006,1))^2);
+LAMBDA_MATRIX(468,487) = DISTANCE;
+
+DISTANCE = sqrt((x(2005,1) - x(1967,1))^2 + (x(2006,1) - x(1968,1))^2);
+LAMBDA_MATRIX(487,468) = DISTANCE;
+
+DISTANCE = sqrt((x(2005,1) - x(1953,1))^2 + (x(2006,1) - x(1954,1))^2);
+LAMBDA_MATRIX(487,461) = DISTANCE;
+
+DISTANCE = sqrt((x(1953,1) - x(2005,1))^2 + (x(1954,1) - x(2006,1))^2);
+LAMBDA_MATRIX(461,487) = DISTANCE;
+
+DISTANCE = sqrt((x(2005,1) - x(1991,1))^2 + (x(2006,1) - x(1992,1))^2);
+LAMBDA_MATRIX(487,480) = DISTANCE;
+
+DISTANCE = sqrt((x(1991,1) - x(2005,1))^2 + (x(1992,1) - x(2006,1))^2);
+LAMBDA_MATRIX(480,487) = DISTANCE;
+
+DISTANCE = sqrt((x(1991,1) - x(1953,1))^2 + (x(1992,1) - x(1954,1))^2);
+LAMBDA_MATRIX(480,461) = DISTANCE;
+
+DISTANCE = sqrt((x(1953,1) - x(1991,1))^2 + (x(1954,1) - x(1992,1))^2);
+LAMBDA_MATRIX(461,480) = DISTANCE;
+
+DISTANCE = sqrt((x(1953,1) - x(2005,1))^2 + (x(1954,1) - x(2006,1))^2);
+LAMBDA_MATRIX(461,487) = DISTANCE;
+
+DISTANCE = sqrt((x(2005,1) - x(1953,1))^2 + (x(2006,1) - x(1954,1))^2);
+LAMBDA_MATRIX(487,461) = DISTANCE;
+
+DISTANCE = sqrt((x(1851,1) - x(1821,1))^2 + (x(1852,1) - x(1822,1))^2);
+LAMBDA_MATRIX(410,395) = DISTANCE;
+
+DISTANCE = sqrt((x(1821,1) - x(1851,1))^2 + (x(1822,1) - x(1852,1))^2);
+LAMBDA_MATRIX(395,410) = DISTANCE;
+
+DISTANCE = sqrt((x(1821,1) - x(1799,1))^2 + (x(1822,1) - x(1800,1))^2);
+LAMBDA_MATRIX(395,384) = DISTANCE;
+
+DISTANCE = sqrt((x(1799,1) - x(1821,1))^2 + (x(1800,1) - x(1822,1))^2);
+LAMBDA_MATRIX(384,395) = DISTANCE;
+
+DISTANCE = sqrt((x(1799,1) - x(1851,1))^2 + (x(1800,1) - x(1852,1))^2);
+LAMBDA_MATRIX(384,410) = DISTANCE;
+
+DISTANCE = sqrt((x(1851,1) - x(1799,1))^2 + (x(1852,1) - x(1800,1))^2);
+LAMBDA_MATRIX(410,384) = DISTANCE;
+
+DISTANCE = sqrt((x(1799,1) - x(1821,1))^2 + (x(1800,1) - x(1822,1))^2);
+LAMBDA_MATRIX(384,395) = DISTANCE;
+
+DISTANCE = sqrt((x(1821,1) - x(1799,1))^2 + (x(1822,1) - x(1800,1))^2);
+LAMBDA_MATRIX(395,384) = DISTANCE;
+
+DISTANCE = sqrt((x(1821,1) - x(1769,1))^2 + (x(1822,1) - x(1770,1))^2);
+LAMBDA_MATRIX(395,369) = DISTANCE;
+
+DISTANCE = sqrt((x(1769,1) - x(1821,1))^2 + (x(1770,1) - x(1822,1))^2);
+LAMBDA_MATRIX(369,395) = DISTANCE;
+
+DISTANCE = sqrt((x(1769,1) - x(1799,1))^2 + (x(1770,1) - x(1800,1))^2);
+LAMBDA_MATRIX(369,384) = DISTANCE;
+
+DISTANCE = sqrt((x(1799,1) - x(1769,1))^2 + (x(1800,1) - x(1770,1))^2);
+LAMBDA_MATRIX(384,369) = DISTANCE;
+
+DISTANCE = sqrt((x(1841,1) - x(1821,1))^2 + (x(1842,1) - x(1822,1))^2);
+LAMBDA_MATRIX(405,395) = DISTANCE;
+
+DISTANCE = sqrt((x(1821,1) - x(1841,1))^2 + (x(1822,1) - x(1842,1))^2);
+LAMBDA_MATRIX(395,405) = DISTANCE;
+
+DISTANCE = sqrt((x(1821,1) - x(1871,1))^2 + (x(1822,1) - x(1872,1))^2);
+LAMBDA_MATRIX(395,420) = DISTANCE;
+
+DISTANCE = sqrt((x(1871,1) - x(1821,1))^2 + (x(1872,1) - x(1822,1))^2);
+LAMBDA_MATRIX(420,395) = DISTANCE;
+
+DISTANCE = sqrt((x(1871,1) - x(1841,1))^2 + (x(1872,1) - x(1842,1))^2);
+LAMBDA_MATRIX(420,405) = DISTANCE;
+
+DISTANCE = sqrt((x(1841,1) - x(1871,1))^2 + (x(1842,1) - x(1872,1))^2);
+LAMBDA_MATRIX(405,420) = DISTANCE;
+
+DISTANCE = sqrt((x(1871,1) - x(1821,1))^2 + (x(1872,1) - x(1822,1))^2);
+LAMBDA_MATRIX(420,395) = DISTANCE;
+
+DISTANCE = sqrt((x(1821,1) - x(1871,1))^2 + (x(1822,1) - x(1872,1))^2);
+LAMBDA_MATRIX(395,420) = DISTANCE;
+
+DISTANCE = sqrt((x(1821,1) - x(1851,1))^2 + (x(1822,1) - x(1852,1))^2);
+LAMBDA_MATRIX(395,410) = DISTANCE;
+
+DISTANCE = sqrt((x(1851,1) - x(1821,1))^2 + (x(1852,1) - x(1822,1))^2);
+LAMBDA_MATRIX(410,395) = DISTANCE;
+
+DISTANCE = sqrt((x(1851,1) - x(1871,1))^2 + (x(1852,1) - x(1872,1))^2);
+LAMBDA_MATRIX(410,420) = DISTANCE;
+
+DISTANCE = sqrt((x(1871,1) - x(1851,1))^2 + (x(1872,1) - x(1852,1))^2);
+LAMBDA_MATRIX(420,410) = DISTANCE;
+
+DISTANCE = sqrt((x(1963,1) - x(1989,1))^2 + (x(1964,1) - x(1990,1))^2);
+LAMBDA_MATRIX(466,479) = DISTANCE;
+
+DISTANCE = sqrt((x(1989,1) - x(1963,1))^2 + (x(1990,1) - x(1964,1))^2);
+LAMBDA_MATRIX(479,466) = DISTANCE;
+
+DISTANCE = sqrt((x(1989,1) - x(2007,1))^2 + (x(1990,1) - x(2008,1))^2);
+LAMBDA_MATRIX(479,488) = DISTANCE;
+
+DISTANCE = sqrt((x(2007,1) - x(1989,1))^2 + (x(2008,1) - x(1990,1))^2);
+LAMBDA_MATRIX(488,479) = DISTANCE;
+
+DISTANCE = sqrt((x(2007,1) - x(1963,1))^2 + (x(2008,1) - x(1964,1))^2);
+LAMBDA_MATRIX(488,466) = DISTANCE;
+
+DISTANCE = sqrt((x(1963,1) - x(2007,1))^2 + (x(1964,1) - x(2008,1))^2);
+LAMBDA_MATRIX(466,488) = DISTANCE;
+
+DISTANCE = sqrt((x(1963,1) - x(1927,1))^2 + (x(1964,1) - x(1928,1))^2);
+LAMBDA_MATRIX(466,448) = DISTANCE;
+
+DISTANCE = sqrt((x(1927,1) - x(1963,1))^2 + (x(1928,1) - x(1964,1))^2);
+LAMBDA_MATRIX(448,466) = DISTANCE;
+
+DISTANCE = sqrt((x(1927,1) - x(1913,1))^2 + (x(1928,1) - x(1914,1))^2);
+LAMBDA_MATRIX(448,441) = DISTANCE;
+
+DISTANCE = sqrt((x(1913,1) - x(1927,1))^2 + (x(1914,1) - x(1928,1))^2);
+LAMBDA_MATRIX(441,448) = DISTANCE;
+
+DISTANCE = sqrt((x(1913,1) - x(1963,1))^2 + (x(1914,1) - x(1964,1))^2);
+LAMBDA_MATRIX(441,466) = DISTANCE;
+
+DISTANCE = sqrt((x(1963,1) - x(1913,1))^2 + (x(1964,1) - x(1914,1))^2);
+LAMBDA_MATRIX(466,441) = DISTANCE;
+
+DISTANCE = sqrt((x(2007,1) - x(1967,1))^2 + (x(2008,1) - x(1968,1))^2);
+LAMBDA_MATRIX(488,468) = DISTANCE;
+
+DISTANCE = sqrt((x(1967,1) - x(2007,1))^2 + (x(1968,1) - x(2008,1))^2);
+LAMBDA_MATRIX(468,488) = DISTANCE;
+
+DISTANCE = sqrt((x(1967,1) - x(1963,1))^2 + (x(1968,1) - x(1964,1))^2);
+LAMBDA_MATRIX(468,466) = DISTANCE;
+
+DISTANCE = sqrt((x(1963,1) - x(1967,1))^2 + (x(1964,1) - x(1968,1))^2);
+LAMBDA_MATRIX(466,468) = DISTANCE;
+
+DISTANCE = sqrt((x(1963,1) - x(2007,1))^2 + (x(1964,1) - x(2008,1))^2);
+LAMBDA_MATRIX(466,488) = DISTANCE;
+
+DISTANCE = sqrt((x(2007,1) - x(1963,1))^2 + (x(2008,1) - x(1964,1))^2);
+LAMBDA_MATRIX(488,466) = DISTANCE;
+
+DISTANCE = sqrt((x(1963,1) - x(1967,1))^2 + (x(1964,1) - x(1968,1))^2);
+LAMBDA_MATRIX(466,468) = DISTANCE;
+
+DISTANCE = sqrt((x(1967,1) - x(1963,1))^2 + (x(1968,1) - x(1964,1))^2);
+LAMBDA_MATRIX(468,466) = DISTANCE;
+
+DISTANCE = sqrt((x(1967,1) - x(1927,1))^2 + (x(1968,1) - x(1928,1))^2);
+LAMBDA_MATRIX(468,448) = DISTANCE;
+
+DISTANCE = sqrt((x(1927,1) - x(1967,1))^2 + (x(1928,1) - x(1968,1))^2);
+LAMBDA_MATRIX(448,468) = DISTANCE;
+
+DISTANCE = sqrt((x(1927,1) - x(1963,1))^2 + (x(1928,1) - x(1964,1))^2);
+LAMBDA_MATRIX(448,466) = DISTANCE;
+
+DISTANCE = sqrt((x(1963,1) - x(1927,1))^2 + (x(1964,1) - x(1928,1))^2);
+LAMBDA_MATRIX(466,448) = DISTANCE;
+
+DISTANCE = sqrt((x(1997,1) - x(1989,1))^2 + (x(1998,1) - x(1990,1))^2);
+LAMBDA_MATRIX(483,479) = DISTANCE;
+
+DISTANCE = sqrt((x(1989,1) - x(1997,1))^2 + (x(1990,1) - x(1998,1))^2);
+LAMBDA_MATRIX(479,483) = DISTANCE;
+
+DISTANCE = sqrt((x(1989,1) - x(1945,1))^2 + (x(1990,1) - x(1946,1))^2);
+LAMBDA_MATRIX(479,457) = DISTANCE;
+
+DISTANCE = sqrt((x(1945,1) - x(1989,1))^2 + (x(1946,1) - x(1990,1))^2);
+LAMBDA_MATRIX(457,479) = DISTANCE;
+
+DISTANCE = sqrt((x(1945,1) - x(1997,1))^2 + (x(1946,1) - x(1998,1))^2);
+LAMBDA_MATRIX(457,483) = DISTANCE;
+
+DISTANCE = sqrt((x(1997,1) - x(1945,1))^2 + (x(1998,1) - x(1946,1))^2);
+LAMBDA_MATRIX(483,457) = DISTANCE;
+
+DISTANCE = sqrt((x(1945,1) - x(1971,1))^2 + (x(1946,1) - x(1972,1))^2);
+LAMBDA_MATRIX(457,470) = DISTANCE;
+
+DISTANCE = sqrt((x(1971,1) - x(1945,1))^2 + (x(1972,1) - x(1946,1))^2);
+LAMBDA_MATRIX(470,457) = DISTANCE;
+
+DISTANCE = sqrt((x(1971,1) - x(1997,1))^2 + (x(1972,1) - x(1998,1))^2);
+LAMBDA_MATRIX(470,483) = DISTANCE;
+
+DISTANCE = sqrt((x(1997,1) - x(1971,1))^2 + (x(1998,1) - x(1972,1))^2);
+LAMBDA_MATRIX(483,470) = DISTANCE;
+
+DISTANCE = sqrt((x(1997,1) - x(1945,1))^2 + (x(1998,1) - x(1946,1))^2);
+LAMBDA_MATRIX(483,457) = DISTANCE;
+
+DISTANCE = sqrt((x(1945,1) - x(1997,1))^2 + (x(1946,1) - x(1998,1))^2);
+LAMBDA_MATRIX(457,483) = DISTANCE;
+
+DISTANCE = sqrt((x(1989,1) - x(1963,1))^2 + (x(1990,1) - x(1964,1))^2);
+LAMBDA_MATRIX(479,466) = DISTANCE;
+
+DISTANCE = sqrt((x(1963,1) - x(1989,1))^2 + (x(1964,1) - x(1990,1))^2);
+LAMBDA_MATRIX(466,479) = DISTANCE;
+
+DISTANCE = sqrt((x(1963,1) - x(1945,1))^2 + (x(1964,1) - x(1946,1))^2);
+LAMBDA_MATRIX(466,457) = DISTANCE;
+
+DISTANCE = sqrt((x(1945,1) - x(1963,1))^2 + (x(1946,1) - x(1964,1))^2);
+LAMBDA_MATRIX(457,466) = DISTANCE;
+
+DISTANCE = sqrt((x(1945,1) - x(1989,1))^2 + (x(1946,1) - x(1990,1))^2);
+LAMBDA_MATRIX(457,479) = DISTANCE;
+
+DISTANCE = sqrt((x(1989,1) - x(1945,1))^2 + (x(1990,1) - x(1946,1))^2);
+LAMBDA_MATRIX(479,457) = DISTANCE;
+
+DISTANCE = sqrt((x(1945,1) - x(1963,1))^2 + (x(1946,1) - x(1964,1))^2);
+LAMBDA_MATRIX(457,466) = DISTANCE;
+
+DISTANCE = sqrt((x(1963,1) - x(1945,1))^2 + (x(1964,1) - x(1946,1))^2);
+LAMBDA_MATRIX(466,457) = DISTANCE;
+
+DISTANCE = sqrt((x(1963,1) - x(1913,1))^2 + (x(1964,1) - x(1914,1))^2);
+LAMBDA_MATRIX(466,441) = DISTANCE;
+
+DISTANCE = sqrt((x(1913,1) - x(1963,1))^2 + (x(1914,1) - x(1964,1))^2);
+LAMBDA_MATRIX(441,466) = DISTANCE;
+
+DISTANCE = sqrt((x(1913,1) - x(1945,1))^2 + (x(1914,1) - x(1946,1))^2);
+LAMBDA_MATRIX(441,457) = DISTANCE;
+
+DISTANCE = sqrt((x(1945,1) - x(1913,1))^2 + (x(1946,1) - x(1914,1))^2);
+LAMBDA_MATRIX(457,441) = DISTANCE;
+
+DISTANCE = sqrt((x(1939,1) - x(1971,1))^2 + (x(1940,1) - x(1972,1))^2);
+LAMBDA_MATRIX(454,470) = DISTANCE;
+
+DISTANCE = sqrt((x(1971,1) - x(1939,1))^2 + (x(1972,1) - x(1940,1))^2);
+LAMBDA_MATRIX(470,454) = DISTANCE;
+
+DISTANCE = sqrt((x(1971,1) - x(1923,1))^2 + (x(1972,1) - x(1924,1))^2);
+LAMBDA_MATRIX(470,446) = DISTANCE;
+
+DISTANCE = sqrt((x(1923,1) - x(1971,1))^2 + (x(1924,1) - x(1972,1))^2);
+LAMBDA_MATRIX(446,470) = DISTANCE;
+
+DISTANCE = sqrt((x(1923,1) - x(1939,1))^2 + (x(1924,1) - x(1940,1))^2);
+LAMBDA_MATRIX(446,454) = DISTANCE;
+
+DISTANCE = sqrt((x(1939,1) - x(1923,1))^2 + (x(1940,1) - x(1924,1))^2);
+LAMBDA_MATRIX(454,446) = DISTANCE;
+
+DISTANCE = sqrt((x(1971,1) - x(1945,1))^2 + (x(1972,1) - x(1946,1))^2);
+LAMBDA_MATRIX(470,457) = DISTANCE;
+
+DISTANCE = sqrt((x(1945,1) - x(1971,1))^2 + (x(1946,1) - x(1972,1))^2);
+LAMBDA_MATRIX(457,470) = DISTANCE;
+
+DISTANCE = sqrt((x(1945,1) - x(1923,1))^2 + (x(1946,1) - x(1924,1))^2);
+LAMBDA_MATRIX(457,446) = DISTANCE;
+
+DISTANCE = sqrt((x(1923,1) - x(1945,1))^2 + (x(1924,1) - x(1946,1))^2);
+LAMBDA_MATRIX(446,457) = DISTANCE;
+
+DISTANCE = sqrt((x(1923,1) - x(1971,1))^2 + (x(1924,1) - x(1972,1))^2);
+LAMBDA_MATRIX(446,470) = DISTANCE;
+
+DISTANCE = sqrt((x(1971,1) - x(1923,1))^2 + (x(1972,1) - x(1924,1))^2);
+LAMBDA_MATRIX(470,446) = DISTANCE;
+
+DISTANCE = sqrt((x(1261,1) - x(1245,1))^2 + (x(1262,1) - x(1246,1))^2);
+LAMBDA_MATRIX(115,107) = DISTANCE;
+
+DISTANCE = sqrt((x(1245,1) - x(1261,1))^2 + (x(1246,1) - x(1262,1))^2);
+LAMBDA_MATRIX(107,115) = DISTANCE;
+
+DISTANCE = sqrt((x(1245,1) - x(1297,1))^2 + (x(1246,1) - x(1298,1))^2);
+LAMBDA_MATRIX(107,133) = DISTANCE;
+
+DISTANCE = sqrt((x(1297,1) - x(1245,1))^2 + (x(1298,1) - x(1246,1))^2);
+LAMBDA_MATRIX(133,107) = DISTANCE;
+
+DISTANCE = sqrt((x(1297,1) - x(1261,1))^2 + (x(1298,1) - x(1262,1))^2);
+LAMBDA_MATRIX(133,115) = DISTANCE;
+
+DISTANCE = sqrt((x(1261,1) - x(1297,1))^2 + (x(1262,1) - x(1298,1))^2);
+LAMBDA_MATRIX(115,133) = DISTANCE;
+
+DISTANCE = sqrt((x(1297,1) - x(1317,1))^2 + (x(1298,1) - x(1318,1))^2);
+LAMBDA_MATRIX(133,143) = DISTANCE;
+
+DISTANCE = sqrt((x(1317,1) - x(1297,1))^2 + (x(1318,1) - x(1298,1))^2);
+LAMBDA_MATRIX(143,133) = DISTANCE;
+
+DISTANCE = sqrt((x(1317,1) - x(1261,1))^2 + (x(1318,1) - x(1262,1))^2);
+LAMBDA_MATRIX(143,115) = DISTANCE;
+
+DISTANCE = sqrt((x(1261,1) - x(1317,1))^2 + (x(1262,1) - x(1318,1))^2);
+LAMBDA_MATRIX(115,143) = DISTANCE;
+
+DISTANCE = sqrt((x(1261,1) - x(1297,1))^2 + (x(1262,1) - x(1298,1))^2);
+LAMBDA_MATRIX(115,133) = DISTANCE;
+
+DISTANCE = sqrt((x(1297,1) - x(1261,1))^2 + (x(1298,1) - x(1262,1))^2);
+LAMBDA_MATRIX(133,115) = DISTANCE;
+
+DISTANCE = sqrt((x(1261,1) - x(1317,1))^2 + (x(1262,1) - x(1318,1))^2);
+LAMBDA_MATRIX(115,143) = DISTANCE;
+
+DISTANCE = sqrt((x(1317,1) - x(1261,1))^2 + (x(1318,1) - x(1262,1))^2);
+LAMBDA_MATRIX(143,115) = DISTANCE;
+
+DISTANCE = sqrt((x(1317,1) - x(1285,1))^2 + (x(1318,1) - x(1286,1))^2);
+LAMBDA_MATRIX(143,127) = DISTANCE;
+
+DISTANCE = sqrt((x(1285,1) - x(1317,1))^2 + (x(1286,1) - x(1318,1))^2);
+LAMBDA_MATRIX(127,143) = DISTANCE;
+
+DISTANCE = sqrt((x(1285,1) - x(1261,1))^2 + (x(1286,1) - x(1262,1))^2);
+LAMBDA_MATRIX(127,115) = DISTANCE;
+
+DISTANCE = sqrt((x(1261,1) - x(1285,1))^2 + (x(1262,1) - x(1286,1))^2);
+LAMBDA_MATRIX(115,127) = DISTANCE;
+
+DISTANCE = sqrt((x(1119,1) - x(1067,1))^2 + (x(1120,1) - x(1068,1))^2);
+LAMBDA_MATRIX(44,18) = DISTANCE;
+
+DISTANCE = sqrt((x(1067,1) - x(1119,1))^2 + (x(1068,1) - x(1120,1))^2);
+LAMBDA_MATRIX(18,44) = DISTANCE;
+
+DISTANCE = sqrt((x(1067,1) - x(1111,1))^2 + (x(1068,1) - x(1112,1))^2);
+LAMBDA_MATRIX(18,40) = DISTANCE;
+
+DISTANCE = sqrt((x(1111,1) - x(1067,1))^2 + (x(1112,1) - x(1068,1))^2);
+LAMBDA_MATRIX(40,18) = DISTANCE;
+
+DISTANCE = sqrt((x(1111,1) - x(1119,1))^2 + (x(1112,1) - x(1120,1))^2);
+LAMBDA_MATRIX(40,44) = DISTANCE;
+
+DISTANCE = sqrt((x(1119,1) - x(1111,1))^2 + (x(1120,1) - x(1112,1))^2);
+LAMBDA_MATRIX(44,40) = DISTANCE;
+
+DISTANCE = sqrt((x(1111,1) - x(1157,1))^2 + (x(1112,1) - x(1158,1))^2);
+LAMBDA_MATRIX(40,63) = DISTANCE;
+
+DISTANCE = sqrt((x(1157,1) - x(1111,1))^2 + (x(1158,1) - x(1112,1))^2);
+LAMBDA_MATRIX(63,40) = DISTANCE;
+
+DISTANCE = sqrt((x(1157,1) - x(1119,1))^2 + (x(1158,1) - x(1120,1))^2);
+LAMBDA_MATRIX(63,44) = DISTANCE;
+
+DISTANCE = sqrt((x(1119,1) - x(1157,1))^2 + (x(1120,1) - x(1158,1))^2);
+LAMBDA_MATRIX(44,63) = DISTANCE;
+
+DISTANCE = sqrt((x(1119,1) - x(1111,1))^2 + (x(1120,1) - x(1112,1))^2);
+LAMBDA_MATRIX(44,40) = DISTANCE;
+
+DISTANCE = sqrt((x(1111,1) - x(1119,1))^2 + (x(1112,1) - x(1120,1))^2);
+LAMBDA_MATRIX(40,44) = DISTANCE;
+
+DISTANCE = sqrt((x(1067,1) - x(1065,1))^2 + (x(1068,1) - x(1066,1))^2);
+LAMBDA_MATRIX(18,17) = DISTANCE;
+
+DISTANCE = sqrt((x(1065,1) - x(1067,1))^2 + (x(1066,1) - x(1068,1))^2);
+LAMBDA_MATRIX(17,18) = DISTANCE;
+
+DISTANCE = sqrt((x(1065,1) - x(1111,1))^2 + (x(1066,1) - x(1112,1))^2);
+LAMBDA_MATRIX(17,40) = DISTANCE;
+
+DISTANCE = sqrt((x(1111,1) - x(1065,1))^2 + (x(1112,1) - x(1066,1))^2);
+LAMBDA_MATRIX(40,17) = DISTANCE;
+
+DISTANCE = sqrt((x(1111,1) - x(1067,1))^2 + (x(1112,1) - x(1068,1))^2);
+LAMBDA_MATRIX(40,18) = DISTANCE;
+
+DISTANCE = sqrt((x(1067,1) - x(1111,1))^2 + (x(1068,1) - x(1112,1))^2);
+LAMBDA_MATRIX(18,40) = DISTANCE;
+
+DISTANCE = sqrt((x(1065,1) - x(1087,1))^2 + (x(1066,1) - x(1088,1))^2);
+LAMBDA_MATRIX(17,28) = DISTANCE;
+
+DISTANCE = sqrt((x(1087,1) - x(1065,1))^2 + (x(1088,1) - x(1066,1))^2);
+LAMBDA_MATRIX(28,17) = DISTANCE;
+
+DISTANCE = sqrt((x(1087,1) - x(1111,1))^2 + (x(1088,1) - x(1112,1))^2);
+LAMBDA_MATRIX(28,40) = DISTANCE;
+
+DISTANCE = sqrt((x(1111,1) - x(1087,1))^2 + (x(1112,1) - x(1088,1))^2);
+LAMBDA_MATRIX(40,28) = DISTANCE;
+
+DISTANCE = sqrt((x(1111,1) - x(1065,1))^2 + (x(1112,1) - x(1066,1))^2);
+LAMBDA_MATRIX(40,17) = DISTANCE;
+
+DISTANCE = sqrt((x(1065,1) - x(1111,1))^2 + (x(1066,1) - x(1112,1))^2);
+LAMBDA_MATRIX(17,40) = DISTANCE;
+
+DISTANCE = sqrt((x(1141,1) - x(1157,1))^2 + (x(1142,1) - x(1158,1))^2);
+LAMBDA_MATRIX(55,63) = DISTANCE;
+
+DISTANCE = sqrt((x(1157,1) - x(1141,1))^2 + (x(1158,1) - x(1142,1))^2);
+LAMBDA_MATRIX(63,55) = DISTANCE;
+
+DISTANCE = sqrt((x(1157,1) - x(1111,1))^2 + (x(1158,1) - x(1112,1))^2);
+LAMBDA_MATRIX(63,40) = DISTANCE;
+
+DISTANCE = sqrt((x(1111,1) - x(1157,1))^2 + (x(1112,1) - x(1158,1))^2);
+LAMBDA_MATRIX(40,63) = DISTANCE;
+
+DISTANCE = sqrt((x(1111,1) - x(1141,1))^2 + (x(1112,1) - x(1142,1))^2);
+LAMBDA_MATRIX(40,55) = DISTANCE;
+
+DISTANCE = sqrt((x(1141,1) - x(1111,1))^2 + (x(1142,1) - x(1112,1))^2);
+LAMBDA_MATRIX(55,40) = DISTANCE;
+
+DISTANCE = sqrt((x(1111,1) - x(1087,1))^2 + (x(1112,1) - x(1088,1))^2);
+LAMBDA_MATRIX(40,28) = DISTANCE;
+
+DISTANCE = sqrt((x(1087,1) - x(1111,1))^2 + (x(1088,1) - x(1112,1))^2);
+LAMBDA_MATRIX(28,40) = DISTANCE;
+
+DISTANCE = sqrt((x(1087,1) - x(1141,1))^2 + (x(1088,1) - x(1142,1))^2);
+LAMBDA_MATRIX(28,55) = DISTANCE;
+
+DISTANCE = sqrt((x(1141,1) - x(1087,1))^2 + (x(1142,1) - x(1088,1))^2);
+LAMBDA_MATRIX(55,28) = DISTANCE;
+
+DISTANCE = sqrt((x(1141,1) - x(1111,1))^2 + (x(1142,1) - x(1112,1))^2);
+LAMBDA_MATRIX(55,40) = DISTANCE;
+
+DISTANCE = sqrt((x(1111,1) - x(1141,1))^2 + (x(1112,1) - x(1142,1))^2);
+LAMBDA_MATRIX(40,55) = DISTANCE;
+
+DISTANCE = sqrt((x(1193,1) - x(1157,1))^2 + (x(1194,1) - x(1158,1))^2);
+LAMBDA_MATRIX(81,63) = DISTANCE;
+
+DISTANCE = sqrt((x(1157,1) - x(1193,1))^2 + (x(1158,1) - x(1194,1))^2);
+LAMBDA_MATRIX(63,81) = DISTANCE;
+
+DISTANCE = sqrt((x(1157,1) - x(1141,1))^2 + (x(1158,1) - x(1142,1))^2);
+LAMBDA_MATRIX(63,55) = DISTANCE;
+
+DISTANCE = sqrt((x(1141,1) - x(1157,1))^2 + (x(1142,1) - x(1158,1))^2);
+LAMBDA_MATRIX(55,63) = DISTANCE;
+
+DISTANCE = sqrt((x(1141,1) - x(1193,1))^2 + (x(1142,1) - x(1194,1))^2);
+LAMBDA_MATRIX(55,81) = DISTANCE;
+
+DISTANCE = sqrt((x(1193,1) - x(1141,1))^2 + (x(1194,1) - x(1142,1))^2);
+LAMBDA_MATRIX(81,55) = DISTANCE;
+
+DISTANCE = sqrt((x(1231,1) - x(1245,1))^2 + (x(1232,1) - x(1246,1))^2);
+LAMBDA_MATRIX(100,107) = DISTANCE;
+
+DISTANCE = sqrt((x(1245,1) - x(1231,1))^2 + (x(1246,1) - x(1232,1))^2);
+LAMBDA_MATRIX(107,100) = DISTANCE;
+
+DISTANCE = sqrt((x(1245,1) - x(1193,1))^2 + (x(1246,1) - x(1194,1))^2);
+LAMBDA_MATRIX(107,81) = DISTANCE;
+
+DISTANCE = sqrt((x(1193,1) - x(1245,1))^2 + (x(1194,1) - x(1246,1))^2);
+LAMBDA_MATRIX(81,107) = DISTANCE;
+
+DISTANCE = sqrt((x(1193,1) - x(1231,1))^2 + (x(1194,1) - x(1232,1))^2);
+LAMBDA_MATRIX(81,100) = DISTANCE;
+
+DISTANCE = sqrt((x(1231,1) - x(1193,1))^2 + (x(1232,1) - x(1194,1))^2);
+LAMBDA_MATRIX(100,81) = DISTANCE;
+
+DISTANCE = sqrt((x(1611,1) - x(1599,1))^2 + (x(1612,1) - x(1600,1))^2);
+LAMBDA_MATRIX(290,284) = DISTANCE;
+
+DISTANCE = sqrt((x(1599,1) - x(1611,1))^2 + (x(1600,1) - x(1612,1))^2);
+LAMBDA_MATRIX(284,290) = DISTANCE;
+
+DISTANCE = sqrt((x(1599,1) - x(1575,1))^2 + (x(1600,1) - x(1576,1))^2);
+LAMBDA_MATRIX(284,272) = DISTANCE;
+
+DISTANCE = sqrt((x(1575,1) - x(1599,1))^2 + (x(1576,1) - x(1600,1))^2);
+LAMBDA_MATRIX(272,284) = DISTANCE;
+
+DISTANCE = sqrt((x(1575,1) - x(1611,1))^2 + (x(1576,1) - x(1612,1))^2);
+LAMBDA_MATRIX(272,290) = DISTANCE;
+
+DISTANCE = sqrt((x(1611,1) - x(1575,1))^2 + (x(1612,1) - x(1576,1))^2);
+LAMBDA_MATRIX(290,272) = DISTANCE;
+
+DISTANCE = sqrt((x(1575,1) - x(1597,1))^2 + (x(1576,1) - x(1598,1))^2);
+LAMBDA_MATRIX(272,283) = DISTANCE;
+
+DISTANCE = sqrt((x(1597,1) - x(1575,1))^2 + (x(1598,1) - x(1576,1))^2);
+LAMBDA_MATRIX(283,272) = DISTANCE;
+
+DISTANCE = sqrt((x(1597,1) - x(1611,1))^2 + (x(1598,1) - x(1612,1))^2);
+LAMBDA_MATRIX(283,290) = DISTANCE;
+
+DISTANCE = sqrt((x(1611,1) - x(1597,1))^2 + (x(1612,1) - x(1598,1))^2);
+LAMBDA_MATRIX(290,283) = DISTANCE;
+
+DISTANCE = sqrt((x(1611,1) - x(1575,1))^2 + (x(1612,1) - x(1576,1))^2);
+LAMBDA_MATRIX(290,272) = DISTANCE;
+
+DISTANCE = sqrt((x(1575,1) - x(1611,1))^2 + (x(1576,1) - x(1612,1))^2);
+LAMBDA_MATRIX(272,290) = DISTANCE;
+
+DISTANCE = sqrt((x(1563,1) - x(1597,1))^2 + (x(1564,1) - x(1598,1))^2);
+LAMBDA_MATRIX(266,283) = DISTANCE;
+
+DISTANCE = sqrt((x(1597,1) - x(1563,1))^2 + (x(1598,1) - x(1564,1))^2);
+LAMBDA_MATRIX(283,266) = DISTANCE;
+
+DISTANCE = sqrt((x(1597,1) - x(1575,1))^2 + (x(1598,1) - x(1576,1))^2);
+LAMBDA_MATRIX(283,272) = DISTANCE;
+
+DISTANCE = sqrt((x(1575,1) - x(1597,1))^2 + (x(1576,1) - x(1598,1))^2);
+LAMBDA_MATRIX(272,283) = DISTANCE;
+
+DISTANCE = sqrt((x(1575,1) - x(1563,1))^2 + (x(1576,1) - x(1564,1))^2);
+LAMBDA_MATRIX(272,266) = DISTANCE;
+
+DISTANCE = sqrt((x(1563,1) - x(1575,1))^2 + (x(1564,1) - x(1576,1))^2);
+LAMBDA_MATRIX(266,272) = DISTANCE;
+
+DISTANCE = sqrt((x(1477,1) - x(1489,1))^2 + (x(1478,1) - x(1490,1))^2);
+LAMBDA_MATRIX(223,229) = DISTANCE;
+
+DISTANCE = sqrt((x(1489,1) - x(1477,1))^2 + (x(1490,1) - x(1478,1))^2);
+LAMBDA_MATRIX(229,223) = DISTANCE;
+
+DISTANCE = sqrt((x(1489,1) - x(1509,1))^2 + (x(1490,1) - x(1510,1))^2);
+LAMBDA_MATRIX(229,239) = DISTANCE;
+
+DISTANCE = sqrt((x(1509,1) - x(1489,1))^2 + (x(1510,1) - x(1490,1))^2);
+LAMBDA_MATRIX(239,229) = DISTANCE;
+
+DISTANCE = sqrt((x(1509,1) - x(1477,1))^2 + (x(1510,1) - x(1478,1))^2);
+LAMBDA_MATRIX(239,223) = DISTANCE;
+
+DISTANCE = sqrt((x(1477,1) - x(1509,1))^2 + (x(1478,1) - x(1510,1))^2);
+LAMBDA_MATRIX(223,239) = DISTANCE;
+
+DISTANCE = sqrt((x(1509,1) - x(1489,1))^2 + (x(1510,1) - x(1490,1))^2);
+LAMBDA_MATRIX(239,229) = DISTANCE;
+
+DISTANCE = sqrt((x(1489,1) - x(1509,1))^2 + (x(1490,1) - x(1510,1))^2);
+LAMBDA_MATRIX(229,239) = DISTANCE;
+
+DISTANCE = sqrt((x(1489,1) - x(1527,1))^2 + (x(1490,1) - x(1528,1))^2);
+LAMBDA_MATRIX(229,248) = DISTANCE;
+
+DISTANCE = sqrt((x(1527,1) - x(1489,1))^2 + (x(1528,1) - x(1490,1))^2);
+LAMBDA_MATRIX(248,229) = DISTANCE;
+
+DISTANCE = sqrt((x(1527,1) - x(1509,1))^2 + (x(1528,1) - x(1510,1))^2);
+LAMBDA_MATRIX(248,239) = DISTANCE;
+
+DISTANCE = sqrt((x(1509,1) - x(1527,1))^2 + (x(1510,1) - x(1528,1))^2);
+LAMBDA_MATRIX(239,248) = DISTANCE;
+
+DISTANCE = sqrt((x(1527,1) - x(1541,1))^2 + (x(1528,1) - x(1542,1))^2);
+LAMBDA_MATRIX(248,255) = DISTANCE;
+
+DISTANCE = sqrt((x(1541,1) - x(1527,1))^2 + (x(1542,1) - x(1528,1))^2);
+LAMBDA_MATRIX(255,248) = DISTANCE;
+
+DISTANCE = sqrt((x(1541,1) - x(1509,1))^2 + (x(1542,1) - x(1510,1))^2);
+LAMBDA_MATRIX(255,239) = DISTANCE;
+
+DISTANCE = sqrt((x(1509,1) - x(1541,1))^2 + (x(1510,1) - x(1542,1))^2);
+LAMBDA_MATRIX(239,255) = DISTANCE;
+
+DISTANCE = sqrt((x(1509,1) - x(1527,1))^2 + (x(1510,1) - x(1528,1))^2);
+LAMBDA_MATRIX(239,248) = DISTANCE;
+
+DISTANCE = sqrt((x(1527,1) - x(1509,1))^2 + (x(1528,1) - x(1510,1))^2);
+LAMBDA_MATRIX(248,239) = DISTANCE;
+
+DISTANCE = sqrt((x(1577,1) - x(1599,1))^2 + (x(1578,1) - x(1600,1))^2);
+LAMBDA_MATRIX(273,284) = DISTANCE;
+
+DISTANCE = sqrt((x(1599,1) - x(1577,1))^2 + (x(1600,1) - x(1578,1))^2);
+LAMBDA_MATRIX(284,273) = DISTANCE;
+
+DISTANCE = sqrt((x(1599,1) - x(1615,1))^2 + (x(1600,1) - x(1616,1))^2);
+LAMBDA_MATRIX(284,292) = DISTANCE;
+
+DISTANCE = sqrt((x(1615,1) - x(1599,1))^2 + (x(1616,1) - x(1600,1))^2);
+LAMBDA_MATRIX(292,284) = DISTANCE;
+
+DISTANCE = sqrt((x(1615,1) - x(1577,1))^2 + (x(1616,1) - x(1578,1))^2);
+LAMBDA_MATRIX(292,273) = DISTANCE;
+
+DISTANCE = sqrt((x(1577,1) - x(1615,1))^2 + (x(1578,1) - x(1616,1))^2);
+LAMBDA_MATRIX(273,292) = DISTANCE;
+
+DISTANCE = sqrt((x(1223,1) - x(1277,1))^2 + (x(1224,1) - x(1278,1))^2);
+LAMBDA_MATRIX(96,123) = DISTANCE;
+
+DISTANCE = sqrt((x(1277,1) - x(1223,1))^2 + (x(1278,1) - x(1224,1))^2);
+LAMBDA_MATRIX(123,96) = DISTANCE;
+
+DISTANCE = sqrt((x(1277,1) - x(1259,1))^2 + (x(1278,1) - x(1260,1))^2);
+LAMBDA_MATRIX(123,114) = DISTANCE;
+
+DISTANCE = sqrt((x(1259,1) - x(1277,1))^2 + (x(1260,1) - x(1278,1))^2);
+LAMBDA_MATRIX(114,123) = DISTANCE;
+
+DISTANCE = sqrt((x(1259,1) - x(1223,1))^2 + (x(1260,1) - x(1224,1))^2);
+LAMBDA_MATRIX(114,96) = DISTANCE;
+
+DISTANCE = sqrt((x(1223,1) - x(1259,1))^2 + (x(1224,1) - x(1260,1))^2);
+LAMBDA_MATRIX(96,114) = DISTANCE;
+
+DISTANCE = sqrt((x(1259,1) - x(1277,1))^2 + (x(1260,1) - x(1278,1))^2);
+LAMBDA_MATRIX(114,123) = DISTANCE;
+
+DISTANCE = sqrt((x(1277,1) - x(1259,1))^2 + (x(1278,1) - x(1260,1))^2);
+LAMBDA_MATRIX(123,114) = DISTANCE;
+
+DISTANCE = sqrt((x(1277,1) - x(1305,1))^2 + (x(1278,1) - x(1306,1))^2);
+LAMBDA_MATRIX(123,137) = DISTANCE;
+
+DISTANCE = sqrt((x(1305,1) - x(1277,1))^2 + (x(1306,1) - x(1278,1))^2);
+LAMBDA_MATRIX(137,123) = DISTANCE;
+
+DISTANCE = sqrt((x(1305,1) - x(1259,1))^2 + (x(1306,1) - x(1260,1))^2);
+LAMBDA_MATRIX(137,114) = DISTANCE;
+
+DISTANCE = sqrt((x(1259,1) - x(1305,1))^2 + (x(1260,1) - x(1306,1))^2);
+LAMBDA_MATRIX(114,137) = DISTANCE;
+
+DISTANCE = sqrt((x(1197,1) - x(1243,1))^2 + (x(1198,1) - x(1244,1))^2);
+LAMBDA_MATRIX(83,106) = DISTANCE;
+
+DISTANCE = sqrt((x(1243,1) - x(1197,1))^2 + (x(1244,1) - x(1198,1))^2);
+LAMBDA_MATRIX(106,83) = DISTANCE;
+
+DISTANCE = sqrt((x(1243,1) - x(1233,1))^2 + (x(1244,1) - x(1234,1))^2);
+LAMBDA_MATRIX(106,101) = DISTANCE;
+
+DISTANCE = sqrt((x(1233,1) - x(1243,1))^2 + (x(1234,1) - x(1244,1))^2);
+LAMBDA_MATRIX(101,106) = DISTANCE;
+
+DISTANCE = sqrt((x(1233,1) - x(1197,1))^2 + (x(1234,1) - x(1198,1))^2);
+LAMBDA_MATRIX(101,83) = DISTANCE;
+
+DISTANCE = sqrt((x(1197,1) - x(1233,1))^2 + (x(1198,1) - x(1234,1))^2);
+LAMBDA_MATRIX(83,101) = DISTANCE;
+
+DISTANCE = sqrt((x(1387,1) - x(1355,1))^2 + (x(1388,1) - x(1356,1))^2);
+LAMBDA_MATRIX(178,162) = DISTANCE;
+
+DISTANCE = sqrt((x(1355,1) - x(1387,1))^2 + (x(1356,1) - x(1388,1))^2);
+LAMBDA_MATRIX(162,178) = DISTANCE;
+
+DISTANCE = sqrt((x(1355,1) - x(1331,1))^2 + (x(1356,1) - x(1332,1))^2);
+LAMBDA_MATRIX(162,150) = DISTANCE;
+
+DISTANCE = sqrt((x(1331,1) - x(1355,1))^2 + (x(1332,1) - x(1356,1))^2);
+LAMBDA_MATRIX(150,162) = DISTANCE;
+
+DISTANCE = sqrt((x(1331,1) - x(1387,1))^2 + (x(1332,1) - x(1388,1))^2);
+LAMBDA_MATRIX(150,178) = DISTANCE;
+
+DISTANCE = sqrt((x(1387,1) - x(1331,1))^2 + (x(1388,1) - x(1332,1))^2);
+LAMBDA_MATRIX(178,150) = DISTANCE;
+
+DISTANCE = sqrt((x(1049,1) - x(1091,1))^2 + (x(1050,1) - x(1092,1))^2);
+LAMBDA_MATRIX(9,30) = DISTANCE;
+
+DISTANCE = sqrt((x(1091,1) - x(1049,1))^2 + (x(1092,1) - x(1050,1))^2);
+LAMBDA_MATRIX(30,9) = DISTANCE;
+
+DISTANCE = sqrt((x(1091,1) - x(1051,1))^2 + (x(1092,1) - x(1052,1))^2);
+LAMBDA_MATRIX(30,10) = DISTANCE;
+
+DISTANCE = sqrt((x(1051,1) - x(1091,1))^2 + (x(1052,1) - x(1092,1))^2);
+LAMBDA_MATRIX(10,30) = DISTANCE;
+
+DISTANCE = sqrt((x(1051,1) - x(1049,1))^2 + (x(1052,1) - x(1050,1))^2);
+LAMBDA_MATRIX(10,9) = DISTANCE;
+
+DISTANCE = sqrt((x(1049,1) - x(1051,1))^2 + (x(1050,1) - x(1052,1))^2);
+LAMBDA_MATRIX(9,10) = DISTANCE;
+
+DISTANCE = sqrt((x(1113,1) - x(1059,1))^2 + (x(1114,1) - x(1060,1))^2);
+LAMBDA_MATRIX(41,14) = DISTANCE;
+
+DISTANCE = sqrt((x(1059,1) - x(1113,1))^2 + (x(1060,1) - x(1114,1))^2);
+LAMBDA_MATRIX(14,41) = DISTANCE;
+
+DISTANCE = sqrt((x(1059,1) - x(1057,1))^2 + (x(1060,1) - x(1058,1))^2);
+LAMBDA_MATRIX(14,13) = DISTANCE;
+
+DISTANCE = sqrt((x(1057,1) - x(1059,1))^2 + (x(1058,1) - x(1060,1))^2);
+LAMBDA_MATRIX(13,14) = DISTANCE;
+
+DISTANCE = sqrt((x(1057,1) - x(1113,1))^2 + (x(1058,1) - x(1114,1))^2);
+LAMBDA_MATRIX(13,41) = DISTANCE;
+
+DISTANCE = sqrt((x(1113,1) - x(1057,1))^2 + (x(1114,1) - x(1058,1))^2);
+LAMBDA_MATRIX(41,13) = DISTANCE;
+
+DISTANCE = sqrt((x(1253,1) - x(1275,1))^2 + (x(1254,1) - x(1276,1))^2);
+LAMBDA_MATRIX(111,122) = DISTANCE;
+
+DISTANCE = sqrt((x(1275,1) - x(1253,1))^2 + (x(1276,1) - x(1254,1))^2);
+LAMBDA_MATRIX(122,111) = DISTANCE;
+
+DISTANCE = sqrt((x(1275,1) - x(1307,1))^2 + (x(1276,1) - x(1308,1))^2);
+LAMBDA_MATRIX(122,138) = DISTANCE;
+
+DISTANCE = sqrt((x(1307,1) - x(1275,1))^2 + (x(1308,1) - x(1276,1))^2);
+LAMBDA_MATRIX(138,122) = DISTANCE;
+
+DISTANCE = sqrt((x(1307,1) - x(1253,1))^2 + (x(1308,1) - x(1254,1))^2);
+LAMBDA_MATRIX(138,111) = DISTANCE;
+
+DISTANCE = sqrt((x(1253,1) - x(1307,1))^2 + (x(1254,1) - x(1308,1))^2);
+LAMBDA_MATRIX(111,138) = DISTANCE;
+
+DISTANCE = sqrt((x(1319,1) - x(1337,1))^2 + (x(1320,1) - x(1338,1))^2);
+LAMBDA_MATRIX(144,153) = DISTANCE;
+
+DISTANCE = sqrt((x(1337,1) - x(1319,1))^2 + (x(1338,1) - x(1320,1))^2);
+LAMBDA_MATRIX(153,144) = DISTANCE;
+
+DISTANCE = sqrt((x(1337,1) - x(1283,1))^2 + (x(1338,1) - x(1284,1))^2);
+LAMBDA_MATRIX(153,126) = DISTANCE;
+
+DISTANCE = sqrt((x(1283,1) - x(1337,1))^2 + (x(1284,1) - x(1338,1))^2);
+LAMBDA_MATRIX(126,153) = DISTANCE;
+
+DISTANCE = sqrt((x(1283,1) - x(1319,1))^2 + (x(1284,1) - x(1320,1))^2);
+LAMBDA_MATRIX(126,144) = DISTANCE;
+
+DISTANCE = sqrt((x(1319,1) - x(1283,1))^2 + (x(1320,1) - x(1284,1))^2);
+LAMBDA_MATRIX(144,126) = DISTANCE;
+
+DISTANCE = sqrt((x(1141,1) - x(1087,1))^2 + (x(1142,1) - x(1088,1))^2);
+LAMBDA_MATRIX(55,28) = DISTANCE;
+
+DISTANCE = sqrt((x(1087,1) - x(1141,1))^2 + (x(1088,1) - x(1142,1))^2);
+LAMBDA_MATRIX(28,55) = DISTANCE;
+
+DISTANCE = sqrt((x(1087,1) - x(1129,1))^2 + (x(1088,1) - x(1130,1))^2);
+LAMBDA_MATRIX(28,49) = DISTANCE;
+
+DISTANCE = sqrt((x(1129,1) - x(1087,1))^2 + (x(1130,1) - x(1088,1))^2);
+LAMBDA_MATRIX(49,28) = DISTANCE;
+
+DISTANCE = sqrt((x(1129,1) - x(1141,1))^2 + (x(1130,1) - x(1142,1))^2);
+LAMBDA_MATRIX(49,55) = DISTANCE;
+
+DISTANCE = sqrt((x(1141,1) - x(1129,1))^2 + (x(1142,1) - x(1130,1))^2);
+LAMBDA_MATRIX(55,49) = DISTANCE;
+
+DISTANCE = sqrt((x(1335,1) - x(1281,1))^2 + (x(1336,1) - x(1282,1))^2);
+LAMBDA_MATRIX(152,125) = DISTANCE;
+
+DISTANCE = sqrt((x(1281,1) - x(1335,1))^2 + (x(1282,1) - x(1336,1))^2);
+LAMBDA_MATRIX(125,152) = DISTANCE;
+
+DISTANCE = sqrt((x(1281,1) - x(1327,1))^2 + (x(1282,1) - x(1328,1))^2);
+LAMBDA_MATRIX(125,148) = DISTANCE;
+
+DISTANCE = sqrt((x(1327,1) - x(1281,1))^2 + (x(1328,1) - x(1282,1))^2);
+LAMBDA_MATRIX(148,125) = DISTANCE;
+
+DISTANCE = sqrt((x(1327,1) - x(1335,1))^2 + (x(1328,1) - x(1336,1))^2);
+LAMBDA_MATRIX(148,152) = DISTANCE;
+
+DISTANCE = sqrt((x(1335,1) - x(1327,1))^2 + (x(1336,1) - x(1328,1))^2);
+LAMBDA_MATRIX(152,148) = DISTANCE;
+
+DISTANCE = sqrt((x(1269,1) - x(1283,1))^2 + (x(1270,1) - x(1284,1))^2);
+LAMBDA_MATRIX(119,126) = DISTANCE;
+
+DISTANCE = sqrt((x(1283,1) - x(1269,1))^2 + (x(1284,1) - x(1270,1))^2);
+LAMBDA_MATRIX(126,119) = DISTANCE;
+
+DISTANCE = sqrt((x(1283,1) - x(1231,1))^2 + (x(1284,1) - x(1232,1))^2);
+LAMBDA_MATRIX(126,100) = DISTANCE;
+
+DISTANCE = sqrt((x(1231,1) - x(1283,1))^2 + (x(1232,1) - x(1284,1))^2);
+LAMBDA_MATRIX(100,126) = DISTANCE;
+
+DISTANCE = sqrt((x(1231,1) - x(1269,1))^2 + (x(1232,1) - x(1270,1))^2);
+LAMBDA_MATRIX(100,119) = DISTANCE;
+
+DISTANCE = sqrt((x(1269,1) - x(1231,1))^2 + (x(1270,1) - x(1232,1))^2);
+LAMBDA_MATRIX(119,100) = DISTANCE;
+
+DISTANCE = sqrt((x(1269,1) - x(1251,1))^2 + (x(1270,1) - x(1252,1))^2);
+LAMBDA_MATRIX(119,110) = DISTANCE;
+
+DISTANCE = sqrt((x(1251,1) - x(1269,1))^2 + (x(1252,1) - x(1270,1))^2);
+LAMBDA_MATRIX(110,119) = DISTANCE;
+
+DISTANCE = sqrt((x(1251,1) - x(1303,1))^2 + (x(1252,1) - x(1304,1))^2);
+LAMBDA_MATRIX(110,136) = DISTANCE;
+
+DISTANCE = sqrt((x(1303,1) - x(1251,1))^2 + (x(1304,1) - x(1252,1))^2);
+LAMBDA_MATRIX(136,110) = DISTANCE;
+
+DISTANCE = sqrt((x(1303,1) - x(1269,1))^2 + (x(1304,1) - x(1270,1))^2);
+LAMBDA_MATRIX(136,119) = DISTANCE;
+
+DISTANCE = sqrt((x(1269,1) - x(1303,1))^2 + (x(1270,1) - x(1304,1))^2);
+LAMBDA_MATRIX(119,136) = DISTANCE;
+
+DISTANCE = sqrt((x(1303,1) - x(1319,1))^2 + (x(1304,1) - x(1320,1))^2);
+LAMBDA_MATRIX(136,144) = DISTANCE;
+
+DISTANCE = sqrt((x(1319,1) - x(1303,1))^2 + (x(1320,1) - x(1304,1))^2);
+LAMBDA_MATRIX(144,136) = DISTANCE;
+
+DISTANCE = sqrt((x(1319,1) - x(1269,1))^2 + (x(1320,1) - x(1270,1))^2);
+LAMBDA_MATRIX(144,119) = DISTANCE;
+
+DISTANCE = sqrt((x(1269,1) - x(1319,1))^2 + (x(1270,1) - x(1320,1))^2);
+LAMBDA_MATRIX(119,144) = DISTANCE;
+
+DISTANCE = sqrt((x(1269,1) - x(1303,1))^2 + (x(1270,1) - x(1304,1))^2);
+LAMBDA_MATRIX(119,136) = DISTANCE;
+
+DISTANCE = sqrt((x(1303,1) - x(1269,1))^2 + (x(1304,1) - x(1270,1))^2);
+LAMBDA_MATRIX(136,119) = DISTANCE;
+
+DISTANCE = sqrt((x(1269,1) - x(1319,1))^2 + (x(1270,1) - x(1320,1))^2);
+LAMBDA_MATRIX(119,144) = DISTANCE;
+
+DISTANCE = sqrt((x(1319,1) - x(1269,1))^2 + (x(1320,1) - x(1270,1))^2);
+LAMBDA_MATRIX(144,119) = DISTANCE;
+
+DISTANCE = sqrt((x(1319,1) - x(1283,1))^2 + (x(1320,1) - x(1284,1))^2);
+LAMBDA_MATRIX(144,126) = DISTANCE;
+
+DISTANCE = sqrt((x(1283,1) - x(1319,1))^2 + (x(1284,1) - x(1320,1))^2);
+LAMBDA_MATRIX(126,144) = DISTANCE;
+
+DISTANCE = sqrt((x(1283,1) - x(1269,1))^2 + (x(1284,1) - x(1270,1))^2);
+LAMBDA_MATRIX(126,119) = DISTANCE;
+
+DISTANCE = sqrt((x(1269,1) - x(1283,1))^2 + (x(1270,1) - x(1284,1))^2);
+LAMBDA_MATRIX(119,126) = DISTANCE;
+
+DISTANCE = sqrt((x(1281,1) - x(1251,1))^2 + (x(1282,1) - x(1252,1))^2);
+LAMBDA_MATRIX(125,110) = DISTANCE;
+
+DISTANCE = sqrt((x(1251,1) - x(1281,1))^2 + (x(1252,1) - x(1282,1))^2);
+LAMBDA_MATRIX(110,125) = DISTANCE;
+
+DISTANCE = sqrt((x(1251,1) - x(1229,1))^2 + (x(1252,1) - x(1230,1))^2);
+LAMBDA_MATRIX(110,99) = DISTANCE;
+
+DISTANCE = sqrt((x(1229,1) - x(1251,1))^2 + (x(1230,1) - x(1252,1))^2);
+LAMBDA_MATRIX(99,110) = DISTANCE;
+
+DISTANCE = sqrt((x(1229,1) - x(1281,1))^2 + (x(1230,1) - x(1282,1))^2);
+LAMBDA_MATRIX(99,125) = DISTANCE;
+
+DISTANCE = sqrt((x(1281,1) - x(1229,1))^2 + (x(1282,1) - x(1230,1))^2);
+LAMBDA_MATRIX(125,99) = DISTANCE;
+
+DISTANCE = sqrt((x(1611,1) - x(1597,1))^2 + (x(1612,1) - x(1598,1))^2);
+LAMBDA_MATRIX(290,283) = DISTANCE;
+
+DISTANCE = sqrt((x(1597,1) - x(1611,1))^2 + (x(1598,1) - x(1612,1))^2);
+LAMBDA_MATRIX(283,290) = DISTANCE;
+
+DISTANCE = sqrt((x(1597,1) - x(1631,1))^2 + (x(1598,1) - x(1632,1))^2);
+LAMBDA_MATRIX(283,300) = DISTANCE;
+
+DISTANCE = sqrt((x(1631,1) - x(1597,1))^2 + (x(1632,1) - x(1598,1))^2);
+LAMBDA_MATRIX(300,283) = DISTANCE;
+
+DISTANCE = sqrt((x(1631,1) - x(1611,1))^2 + (x(1632,1) - x(1612,1))^2);
+LAMBDA_MATRIX(300,290) = DISTANCE;
+
+DISTANCE = sqrt((x(1611,1) - x(1631,1))^2 + (x(1612,1) - x(1632,1))^2);
+LAMBDA_MATRIX(290,300) = DISTANCE;
+
+DISTANCE = sqrt((x(1631,1) - x(1653,1))^2 + (x(1632,1) - x(1654,1))^2);
+LAMBDA_MATRIX(300,311) = DISTANCE;
+
+DISTANCE = sqrt((x(1653,1) - x(1631,1))^2 + (x(1654,1) - x(1632,1))^2);
+LAMBDA_MATRIX(311,300) = DISTANCE;
+
+DISTANCE = sqrt((x(1653,1) - x(1611,1))^2 + (x(1654,1) - x(1612,1))^2);
+LAMBDA_MATRIX(311,290) = DISTANCE;
+
+DISTANCE = sqrt((x(1611,1) - x(1653,1))^2 + (x(1612,1) - x(1654,1))^2);
+LAMBDA_MATRIX(290,311) = DISTANCE;
+
+DISTANCE = sqrt((x(1611,1) - x(1631,1))^2 + (x(1612,1) - x(1632,1))^2);
+LAMBDA_MATRIX(290,300) = DISTANCE;
+
+DISTANCE = sqrt((x(1631,1) - x(1611,1))^2 + (x(1632,1) - x(1612,1))^2);
+LAMBDA_MATRIX(300,290) = DISTANCE;
+
+DISTANCE = sqrt((x(1673,1) - x(1653,1))^2 + (x(1674,1) - x(1654,1))^2);
+LAMBDA_MATRIX(321,311) = DISTANCE;
+
+DISTANCE = sqrt((x(1653,1) - x(1673,1))^2 + (x(1654,1) - x(1674,1))^2);
+LAMBDA_MATRIX(311,321) = DISTANCE;
+
+DISTANCE = sqrt((x(1653,1) - x(1631,1))^2 + (x(1654,1) - x(1632,1))^2);
+LAMBDA_MATRIX(311,300) = DISTANCE;
+
+DISTANCE = sqrt((x(1631,1) - x(1653,1))^2 + (x(1632,1) - x(1654,1))^2);
+LAMBDA_MATRIX(300,311) = DISTANCE;
+
+DISTANCE = sqrt((x(1631,1) - x(1673,1))^2 + (x(1632,1) - x(1674,1))^2);
+LAMBDA_MATRIX(300,321) = DISTANCE;
+
+DISTANCE = sqrt((x(1673,1) - x(1631,1))^2 + (x(1674,1) - x(1632,1))^2);
+LAMBDA_MATRIX(321,300) = DISTANCE;
+
+DISTANCE = sqrt((x(1647,1) - x(1673,1))^2 + (x(1648,1) - x(1674,1))^2);
+LAMBDA_MATRIX(308,321) = DISTANCE;
+
+DISTANCE = sqrt((x(1673,1) - x(1647,1))^2 + (x(1674,1) - x(1648,1))^2);
+LAMBDA_MATRIX(321,308) = DISTANCE;
+
+DISTANCE = sqrt((x(1673,1) - x(1631,1))^2 + (x(1674,1) - x(1632,1))^2);
+LAMBDA_MATRIX(321,300) = DISTANCE;
+
+DISTANCE = sqrt((x(1631,1) - x(1673,1))^2 + (x(1632,1) - x(1674,1))^2);
+LAMBDA_MATRIX(300,321) = DISTANCE;
+
+DISTANCE = sqrt((x(1631,1) - x(1647,1))^2 + (x(1632,1) - x(1648,1))^2);
+LAMBDA_MATRIX(300,308) = DISTANCE;
+
+DISTANCE = sqrt((x(1647,1) - x(1631,1))^2 + (x(1648,1) - x(1632,1))^2);
+LAMBDA_MATRIX(308,300) = DISTANCE;
+
+DISTANCE = sqrt((x(1609,1) - x(1647,1))^2 + (x(1610,1) - x(1648,1))^2);
+LAMBDA_MATRIX(289,308) = DISTANCE;
+
+DISTANCE = sqrt((x(1647,1) - x(1609,1))^2 + (x(1648,1) - x(1610,1))^2);
+LAMBDA_MATRIX(308,289) = DISTANCE;
+
+DISTANCE = sqrt((x(1647,1) - x(1631,1))^2 + (x(1648,1) - x(1632,1))^2);
+LAMBDA_MATRIX(308,300) = DISTANCE;
+
+DISTANCE = sqrt((x(1631,1) - x(1647,1))^2 + (x(1632,1) - x(1648,1))^2);
+LAMBDA_MATRIX(300,308) = DISTANCE;
+
+DISTANCE = sqrt((x(1631,1) - x(1609,1))^2 + (x(1632,1) - x(1610,1))^2);
+LAMBDA_MATRIX(300,289) = DISTANCE;
+
+DISTANCE = sqrt((x(1609,1) - x(1631,1))^2 + (x(1610,1) - x(1632,1))^2);
+LAMBDA_MATRIX(289,300) = DISTANCE;
+
+DISTANCE = sqrt((x(1631,1) - x(1597,1))^2 + (x(1632,1) - x(1598,1))^2);
+LAMBDA_MATRIX(300,283) = DISTANCE;
+
+DISTANCE = sqrt((x(1597,1) - x(1631,1))^2 + (x(1598,1) - x(1632,1))^2);
+LAMBDA_MATRIX(283,300) = DISTANCE;
+
+DISTANCE = sqrt((x(1597,1) - x(1609,1))^2 + (x(1598,1) - x(1610,1))^2);
+LAMBDA_MATRIX(283,289) = DISTANCE;
+
+DISTANCE = sqrt((x(1609,1) - x(1597,1))^2 + (x(1610,1) - x(1598,1))^2);
+LAMBDA_MATRIX(289,283) = DISTANCE;
+
+DISTANCE = sqrt((x(1609,1) - x(1631,1))^2 + (x(1610,1) - x(1632,1))^2);
+LAMBDA_MATRIX(289,300) = DISTANCE;
+
+DISTANCE = sqrt((x(1631,1) - x(1609,1))^2 + (x(1632,1) - x(1610,1))^2);
+LAMBDA_MATRIX(300,289) = DISTANCE;
+
+DISTANCE = sqrt((x(1511,1) - x(1489,1))^2 + (x(1512,1) - x(1490,1))^2);
+LAMBDA_MATRIX(240,229) = DISTANCE;
+
+DISTANCE = sqrt((x(1489,1) - x(1511,1))^2 + (x(1490,1) - x(1512,1))^2);
+LAMBDA_MATRIX(229,240) = DISTANCE;
+
+DISTANCE = sqrt((x(1489,1) - x(1473,1))^2 + (x(1490,1) - x(1474,1))^2);
+LAMBDA_MATRIX(229,221) = DISTANCE;
+
+DISTANCE = sqrt((x(1473,1) - x(1489,1))^2 + (x(1474,1) - x(1490,1))^2);
+LAMBDA_MATRIX(221,229) = DISTANCE;
+
+DISTANCE = sqrt((x(1473,1) - x(1511,1))^2 + (x(1474,1) - x(1512,1))^2);
+LAMBDA_MATRIX(221,240) = DISTANCE;
+
+DISTANCE = sqrt((x(1511,1) - x(1473,1))^2 + (x(1512,1) - x(1474,1))^2);
+LAMBDA_MATRIX(240,221) = DISTANCE;
+
+DISTANCE = sqrt((x(1527,1) - x(1489,1))^2 + (x(1528,1) - x(1490,1))^2);
+LAMBDA_MATRIX(248,229) = DISTANCE;
+
+DISTANCE = sqrt((x(1489,1) - x(1527,1))^2 + (x(1490,1) - x(1528,1))^2);
+LAMBDA_MATRIX(229,248) = DISTANCE;
+
+DISTANCE = sqrt((x(1489,1) - x(1511,1))^2 + (x(1490,1) - x(1512,1))^2);
+LAMBDA_MATRIX(229,240) = DISTANCE;
+
+DISTANCE = sqrt((x(1511,1) - x(1489,1))^2 + (x(1512,1) - x(1490,1))^2);
+LAMBDA_MATRIX(240,229) = DISTANCE;
+
+DISTANCE = sqrt((x(1511,1) - x(1527,1))^2 + (x(1512,1) - x(1528,1))^2);
+LAMBDA_MATRIX(240,248) = DISTANCE;
+
+DISTANCE = sqrt((x(1527,1) - x(1511,1))^2 + (x(1528,1) - x(1512,1))^2);
+LAMBDA_MATRIX(248,240) = DISTANCE;
+
+DISTANCE = sqrt((x(1457,1) - x(1471,1))^2 + (x(1458,1) - x(1472,1))^2);
+LAMBDA_MATRIX(213,220) = DISTANCE;
+
+DISTANCE = sqrt((x(1471,1) - x(1457,1))^2 + (x(1472,1) - x(1458,1))^2);
+LAMBDA_MATRIX(220,213) = DISTANCE;
+
+DISTANCE = sqrt((x(1471,1) - x(1435,1))^2 + (x(1472,1) - x(1436,1))^2);
+LAMBDA_MATRIX(220,202) = DISTANCE;
+
+DISTANCE = sqrt((x(1435,1) - x(1471,1))^2 + (x(1436,1) - x(1472,1))^2);
+LAMBDA_MATRIX(202,220) = DISTANCE;
+
+DISTANCE = sqrt((x(1435,1) - x(1457,1))^2 + (x(1436,1) - x(1458,1))^2);
+LAMBDA_MATRIX(202,213) = DISTANCE;
+
+DISTANCE = sqrt((x(1457,1) - x(1435,1))^2 + (x(1458,1) - x(1436,1))^2);
+LAMBDA_MATRIX(213,202) = DISTANCE;
+
+DISTANCE = sqrt((x(1441,1) - x(1479,1))^2 + (x(1442,1) - x(1480,1))^2);
+LAMBDA_MATRIX(205,224) = DISTANCE;
+
+DISTANCE = sqrt((x(1479,1) - x(1441,1))^2 + (x(1480,1) - x(1442,1))^2);
+LAMBDA_MATRIX(224,205) = DISTANCE;
+
+DISTANCE = sqrt((x(1479,1) - x(1457,1))^2 + (x(1480,1) - x(1458,1))^2);
+LAMBDA_MATRIX(224,213) = DISTANCE;
+
+DISTANCE = sqrt((x(1457,1) - x(1479,1))^2 + (x(1458,1) - x(1480,1))^2);
+LAMBDA_MATRIX(213,224) = DISTANCE;
+
+DISTANCE = sqrt((x(1457,1) - x(1441,1))^2 + (x(1458,1) - x(1442,1))^2);
+LAMBDA_MATRIX(213,205) = DISTANCE;
+
+DISTANCE = sqrt((x(1441,1) - x(1457,1))^2 + (x(1442,1) - x(1458,1))^2);
+LAMBDA_MATRIX(205,213) = DISTANCE;
+
+DISTANCE = sqrt((x(1419,1) - x(1403,1))^2 + (x(1420,1) - x(1404,1))^2);
+LAMBDA_MATRIX(194,186) = DISTANCE;
+
+DISTANCE = sqrt((x(1403,1) - x(1419,1))^2 + (x(1404,1) - x(1420,1))^2);
+LAMBDA_MATRIX(186,194) = DISTANCE;
+
+DISTANCE = sqrt((x(1403,1) - x(1365,1))^2 + (x(1404,1) - x(1366,1))^2);
+LAMBDA_MATRIX(186,167) = DISTANCE;
+
+DISTANCE = sqrt((x(1365,1) - x(1403,1))^2 + (x(1366,1) - x(1404,1))^2);
+LAMBDA_MATRIX(167,186) = DISTANCE;
+
+DISTANCE = sqrt((x(1365,1) - x(1419,1))^2 + (x(1366,1) - x(1420,1))^2);
+LAMBDA_MATRIX(167,194) = DISTANCE;
+
+DISTANCE = sqrt((x(1419,1) - x(1365,1))^2 + (x(1420,1) - x(1366,1))^2);
+LAMBDA_MATRIX(194,167) = DISTANCE;
+
+DISTANCE = sqrt((x(1365,1) - x(1403,1))^2 + (x(1366,1) - x(1404,1))^2);
+LAMBDA_MATRIX(167,186) = DISTANCE;
+
+DISTANCE = sqrt((x(1403,1) - x(1365,1))^2 + (x(1404,1) - x(1366,1))^2);
+LAMBDA_MATRIX(186,167) = DISTANCE;
+
+DISTANCE = sqrt((x(1403,1) - x(1347,1))^2 + (x(1404,1) - x(1348,1))^2);
+LAMBDA_MATRIX(186,158) = DISTANCE;
+
+DISTANCE = sqrt((x(1347,1) - x(1403,1))^2 + (x(1348,1) - x(1404,1))^2);
+LAMBDA_MATRIX(158,186) = DISTANCE;
+
+DISTANCE = sqrt((x(1347,1) - x(1365,1))^2 + (x(1348,1) - x(1366,1))^2);
+LAMBDA_MATRIX(158,167) = DISTANCE;
+
+DISTANCE = sqrt((x(1365,1) - x(1347,1))^2 + (x(1366,1) - x(1348,1))^2);
+LAMBDA_MATRIX(167,158) = DISTANCE;
+
+DISTANCE = sqrt((x(1547,1) - x(1507,1))^2 + (x(1548,1) - x(1508,1))^2);
+LAMBDA_MATRIX(258,238) = DISTANCE;
+
+DISTANCE = sqrt((x(1507,1) - x(1547,1))^2 + (x(1508,1) - x(1548,1))^2);
+LAMBDA_MATRIX(238,258) = DISTANCE;
+
+DISTANCE = sqrt((x(1507,1) - x(1517,1))^2 + (x(1508,1) - x(1518,1))^2);
+LAMBDA_MATRIX(238,243) = DISTANCE;
+
+DISTANCE = sqrt((x(1517,1) - x(1507,1))^2 + (x(1518,1) - x(1508,1))^2);
+LAMBDA_MATRIX(243,238) = DISTANCE;
+
+DISTANCE = sqrt((x(1517,1) - x(1547,1))^2 + (x(1518,1) - x(1548,1))^2);
+LAMBDA_MATRIX(243,258) = DISTANCE;
+
+DISTANCE = sqrt((x(1547,1) - x(1517,1))^2 + (x(1548,1) - x(1518,1))^2);
+LAMBDA_MATRIX(258,243) = DISTANCE;
+
+DISTANCE = sqrt((x(1601,1) - x(1569,1))^2 + (x(1602,1) - x(1570,1))^2);
+LAMBDA_MATRIX(285,269) = DISTANCE;
+
+DISTANCE = sqrt((x(1569,1) - x(1601,1))^2 + (x(1570,1) - x(1602,1))^2);
+LAMBDA_MATRIX(269,285) = DISTANCE;
+
+DISTANCE = sqrt((x(1569,1) - x(1587,1))^2 + (x(1570,1) - x(1588,1))^2);
+LAMBDA_MATRIX(269,278) = DISTANCE;
+
+DISTANCE = sqrt((x(1587,1) - x(1569,1))^2 + (x(1588,1) - x(1570,1))^2);
+LAMBDA_MATRIX(278,269) = DISTANCE;
+
+DISTANCE = sqrt((x(1587,1) - x(1601,1))^2 + (x(1588,1) - x(1602,1))^2);
+LAMBDA_MATRIX(278,285) = DISTANCE;
+
+DISTANCE = sqrt((x(1601,1) - x(1587,1))^2 + (x(1602,1) - x(1588,1))^2);
+LAMBDA_MATRIX(285,278) = DISTANCE;
+
+DISTANCE = sqrt((x(1587,1) - x(1619,1))^2 + (x(1588,1) - x(1620,1))^2);
+LAMBDA_MATRIX(278,294) = DISTANCE;
+
+DISTANCE = sqrt((x(1619,1) - x(1587,1))^2 + (x(1620,1) - x(1588,1))^2);
+LAMBDA_MATRIX(294,278) = DISTANCE;
+
+DISTANCE = sqrt((x(1619,1) - x(1601,1))^2 + (x(1620,1) - x(1602,1))^2);
+LAMBDA_MATRIX(294,285) = DISTANCE;
+
+DISTANCE = sqrt((x(1601,1) - x(1619,1))^2 + (x(1602,1) - x(1620,1))^2);
+LAMBDA_MATRIX(285,294) = DISTANCE;
+
+DISTANCE = sqrt((x(1601,1) - x(1587,1))^2 + (x(1602,1) - x(1588,1))^2);
+LAMBDA_MATRIX(285,278) = DISTANCE;
+
+DISTANCE = sqrt((x(1587,1) - x(1601,1))^2 + (x(1588,1) - x(1602,1))^2);
+LAMBDA_MATRIX(278,285) = DISTANCE;
+
+DISTANCE = sqrt((x(1603,1) - x(1619,1))^2 + (x(1604,1) - x(1620,1))^2);
+LAMBDA_MATRIX(286,294) = DISTANCE;
+
+DISTANCE = sqrt((x(1619,1) - x(1603,1))^2 + (x(1620,1) - x(1604,1))^2);
+LAMBDA_MATRIX(294,286) = DISTANCE;
+
+DISTANCE = sqrt((x(1619,1) - x(1587,1))^2 + (x(1620,1) - x(1588,1))^2);
+LAMBDA_MATRIX(294,278) = DISTANCE;
+
+DISTANCE = sqrt((x(1587,1) - x(1619,1))^2 + (x(1588,1) - x(1620,1))^2);
+LAMBDA_MATRIX(278,294) = DISTANCE;
+
+DISTANCE = sqrt((x(1587,1) - x(1603,1))^2 + (x(1588,1) - x(1604,1))^2);
+LAMBDA_MATRIX(278,286) = DISTANCE;
+
+DISTANCE = sqrt((x(1603,1) - x(1587,1))^2 + (x(1604,1) - x(1588,1))^2);
+LAMBDA_MATRIX(286,278) = DISTANCE;
+
+DISTANCE = sqrt((x(1587,1) - x(1573,1))^2 + (x(1588,1) - x(1574,1))^2);
+LAMBDA_MATRIX(278,271) = DISTANCE;
+
+DISTANCE = sqrt((x(1573,1) - x(1587,1))^2 + (x(1574,1) - x(1588,1))^2);
+LAMBDA_MATRIX(271,278) = DISTANCE;
+
+DISTANCE = sqrt((x(1573,1) - x(1603,1))^2 + (x(1574,1) - x(1604,1))^2);
+LAMBDA_MATRIX(271,286) = DISTANCE;
+
+DISTANCE = sqrt((x(1603,1) - x(1573,1))^2 + (x(1604,1) - x(1574,1))^2);
+LAMBDA_MATRIX(286,271) = DISTANCE;
+
+DISTANCE = sqrt((x(1603,1) - x(1587,1))^2 + (x(1604,1) - x(1588,1))^2);
+LAMBDA_MATRIX(286,278) = DISTANCE;
+
+DISTANCE = sqrt((x(1587,1) - x(1603,1))^2 + (x(1588,1) - x(1604,1))^2);
+LAMBDA_MATRIX(278,286) = DISTANCE;
+
+DISTANCE = sqrt((x(1803,1) - x(1773,1))^2 + (x(1804,1) - x(1774,1))^2);
+LAMBDA_MATRIX(386,371) = DISTANCE;
+
+DISTANCE = sqrt((x(1773,1) - x(1803,1))^2 + (x(1774,1) - x(1804,1))^2);
+LAMBDA_MATRIX(371,386) = DISTANCE;
+
+DISTANCE = sqrt((x(1773,1) - x(1827,1))^2 + (x(1774,1) - x(1828,1))^2);
+LAMBDA_MATRIX(371,398) = DISTANCE;
+
+DISTANCE = sqrt((x(1827,1) - x(1773,1))^2 + (x(1828,1) - x(1774,1))^2);
+LAMBDA_MATRIX(398,371) = DISTANCE;
+
+DISTANCE = sqrt((x(1827,1) - x(1803,1))^2 + (x(1828,1) - x(1804,1))^2);
+LAMBDA_MATRIX(398,386) = DISTANCE;
+
+DISTANCE = sqrt((x(1803,1) - x(1827,1))^2 + (x(1804,1) - x(1828,1))^2);
+LAMBDA_MATRIX(386,398) = DISTANCE;
+
+DISTANCE = sqrt((x(2063,1) - x(2021,1))^2 + (x(2064,1) - x(2022,1))^2);
+LAMBDA_MATRIX(516,495) = DISTANCE;
+
+DISTANCE = sqrt((x(2021,1) - x(2063,1))^2 + (x(2022,1) - x(2064,1))^2);
+LAMBDA_MATRIX(495,516) = DISTANCE;
+
+DISTANCE = sqrt((x(2021,1) - x(2015,1))^2 + (x(2022,1) - x(2016,1))^2);
+LAMBDA_MATRIX(495,492) = DISTANCE;
+
+DISTANCE = sqrt((x(2015,1) - x(2021,1))^2 + (x(2016,1) - x(2022,1))^2);
+LAMBDA_MATRIX(492,495) = DISTANCE;
+
+DISTANCE = sqrt((x(2015,1) - x(2063,1))^2 + (x(2016,1) - x(2064,1))^2);
+LAMBDA_MATRIX(492,516) = DISTANCE;
+
+DISTANCE = sqrt((x(2063,1) - x(2015,1))^2 + (x(2064,1) - x(2016,1))^2);
+LAMBDA_MATRIX(516,492) = DISTANCE;
+
+DISTANCE = sqrt((x(2021,1) - x(1977,1))^2 + (x(2022,1) - x(1978,1))^2);
+LAMBDA_MATRIX(495,473) = DISTANCE;
+
+DISTANCE = sqrt((x(1977,1) - x(2021,1))^2 + (x(1978,1) - x(2022,1))^2);
+LAMBDA_MATRIX(473,495) = DISTANCE;
+
+DISTANCE = sqrt((x(1977,1) - x(2015,1))^2 + (x(1978,1) - x(2016,1))^2);
+LAMBDA_MATRIX(473,492) = DISTANCE;
+
+DISTANCE = sqrt((x(2015,1) - x(1977,1))^2 + (x(2016,1) - x(1978,1))^2);
+LAMBDA_MATRIX(492,473) = DISTANCE;
+
+DISTANCE = sqrt((x(2015,1) - x(2021,1))^2 + (x(2016,1) - x(2022,1))^2);
+LAMBDA_MATRIX(492,495) = DISTANCE;
+
+DISTANCE = sqrt((x(2021,1) - x(2015,1))^2 + (x(2022,1) - x(2016,1))^2);
+LAMBDA_MATRIX(495,492) = DISTANCE;
+
+DISTANCE = sqrt((x(2015,1) - x(2023,1))^2 + (x(2016,1) - x(2024,1))^2);
+LAMBDA_MATRIX(492,496) = DISTANCE;
+
+DISTANCE = sqrt((x(2023,1) - x(2015,1))^2 + (x(2024,1) - x(2016,1))^2);
+LAMBDA_MATRIX(496,492) = DISTANCE;
+
+DISTANCE = sqrt((x(2023,1) - x(2063,1))^2 + (x(2024,1) - x(2064,1))^2);
+LAMBDA_MATRIX(496,516) = DISTANCE;
+
+DISTANCE = sqrt((x(2063,1) - x(2023,1))^2 + (x(2064,1) - x(2024,1))^2);
+LAMBDA_MATRIX(516,496) = DISTANCE;
+
+DISTANCE = sqrt((x(2063,1) - x(2015,1))^2 + (x(2064,1) - x(2016,1))^2);
+LAMBDA_MATRIX(516,492) = DISTANCE;
+
+DISTANCE = sqrt((x(2015,1) - x(2063,1))^2 + (x(2016,1) - x(2064,1))^2);
+LAMBDA_MATRIX(492,516) = DISTANCE;
+
+DISTANCE = sqrt((x(2015,1) - x(1975,1))^2 + (x(2016,1) - x(1976,1))^2);
+LAMBDA_MATRIX(492,472) = DISTANCE;
+
+DISTANCE = sqrt((x(1975,1) - x(2015,1))^2 + (x(1976,1) - x(2016,1))^2);
+LAMBDA_MATRIX(472,492) = DISTANCE;
+
+DISTANCE = sqrt((x(1975,1) - x(2023,1))^2 + (x(1976,1) - x(2024,1))^2);
+LAMBDA_MATRIX(472,496) = DISTANCE;
+
+DISTANCE = sqrt((x(2023,1) - x(1975,1))^2 + (x(2024,1) - x(1976,1))^2);
+LAMBDA_MATRIX(496,472) = DISTANCE;
+
+DISTANCE = sqrt((x(2023,1) - x(2015,1))^2 + (x(2024,1) - x(2016,1))^2);
+LAMBDA_MATRIX(496,492) = DISTANCE;
+
+DISTANCE = sqrt((x(2015,1) - x(2023,1))^2 + (x(2016,1) - x(2024,1))^2);
+LAMBDA_MATRIX(492,496) = DISTANCE;
+
+DISTANCE = sqrt((x(1743,1) - x(1709,1))^2 + (x(1744,1) - x(1710,1))^2);
+LAMBDA_MATRIX(356,339) = DISTANCE;
+
+DISTANCE = sqrt((x(1709,1) - x(1743,1))^2 + (x(1710,1) - x(1744,1))^2);
+LAMBDA_MATRIX(339,356) = DISTANCE;
+
+DISTANCE = sqrt((x(1709,1) - x(1767,1))^2 + (x(1710,1) - x(1768,1))^2);
+LAMBDA_MATRIX(339,368) = DISTANCE;
+
+DISTANCE = sqrt((x(1767,1) - x(1709,1))^2 + (x(1768,1) - x(1710,1))^2);
+LAMBDA_MATRIX(368,339) = DISTANCE;
+
+DISTANCE = sqrt((x(1767,1) - x(1743,1))^2 + (x(1768,1) - x(1744,1))^2);
+LAMBDA_MATRIX(368,356) = DISTANCE;
+
+DISTANCE = sqrt((x(1743,1) - x(1767,1))^2 + (x(1744,1) - x(1768,1))^2);
+LAMBDA_MATRIX(356,368) = DISTANCE;
+
+DISTANCE = sqrt((x(1809,1) - x(1859,1))^2 + (x(1810,1) - x(1860,1))^2);
+LAMBDA_MATRIX(389,414) = DISTANCE;
+
+DISTANCE = sqrt((x(1859,1) - x(1809,1))^2 + (x(1860,1) - x(1810,1))^2);
+LAMBDA_MATRIX(414,389) = DISTANCE;
+
+DISTANCE = sqrt((x(1859,1) - x(1835,1))^2 + (x(1860,1) - x(1836,1))^2);
+LAMBDA_MATRIX(414,402) = DISTANCE;
+
+DISTANCE = sqrt((x(1835,1) - x(1859,1))^2 + (x(1836,1) - x(1860,1))^2);
+LAMBDA_MATRIX(402,414) = DISTANCE;
+
+DISTANCE = sqrt((x(1835,1) - x(1809,1))^2 + (x(1836,1) - x(1810,1))^2);
+LAMBDA_MATRIX(402,389) = DISTANCE;
+
+DISTANCE = sqrt((x(1809,1) - x(1835,1))^2 + (x(1810,1) - x(1836,1))^2);
+LAMBDA_MATRIX(389,402) = DISTANCE;
+
+DISTANCE = sqrt((x(1859,1) - x(1879,1))^2 + (x(1860,1) - x(1880,1))^2);
+LAMBDA_MATRIX(414,424) = DISTANCE;
+
+DISTANCE = sqrt((x(1879,1) - x(1859,1))^2 + (x(1880,1) - x(1860,1))^2);
+LAMBDA_MATRIX(424,414) = DISTANCE;
+
+DISTANCE = sqrt((x(1879,1) - x(1835,1))^2 + (x(1880,1) - x(1836,1))^2);
+LAMBDA_MATRIX(424,402) = DISTANCE;
+
+DISTANCE = sqrt((x(1835,1) - x(1879,1))^2 + (x(1836,1) - x(1880,1))^2);
+LAMBDA_MATRIX(402,424) = DISTANCE;
+
+DISTANCE = sqrt((x(1835,1) - x(1859,1))^2 + (x(1836,1) - x(1860,1))^2);
+LAMBDA_MATRIX(402,414) = DISTANCE;
+
+DISTANCE = sqrt((x(1859,1) - x(1835,1))^2 + (x(1860,1) - x(1836,1))^2);
+LAMBDA_MATRIX(414,402) = DISTANCE;
+
+DISTANCE = sqrt((x(1667,1) - x(1679,1))^2 + (x(1668,1) - x(1680,1))^2);
+LAMBDA_MATRIX(318,324) = DISTANCE;
+
+DISTANCE = sqrt((x(1679,1) - x(1667,1))^2 + (x(1680,1) - x(1668,1))^2);
+LAMBDA_MATRIX(324,318) = DISTANCE;
+
+DISTANCE = sqrt((x(1679,1) - x(1709,1))^2 + (x(1680,1) - x(1710,1))^2);
+LAMBDA_MATRIX(324,339) = DISTANCE;
+
+DISTANCE = sqrt((x(1709,1) - x(1679,1))^2 + (x(1710,1) - x(1680,1))^2);
+LAMBDA_MATRIX(339,324) = DISTANCE;
+
+DISTANCE = sqrt((x(1709,1) - x(1667,1))^2 + (x(1710,1) - x(1668,1))^2);
+LAMBDA_MATRIX(339,318) = DISTANCE;
+
+DISTANCE = sqrt((x(1667,1) - x(1709,1))^2 + (x(1668,1) - x(1710,1))^2);
+LAMBDA_MATRIX(318,339) = DISTANCE;
+
+DISTANCE = sqrt((x(1709,1) - x(1687,1))^2 + (x(1710,1) - x(1688,1))^2);
+LAMBDA_MATRIX(339,328) = DISTANCE;
+
+DISTANCE = sqrt((x(1687,1) - x(1709,1))^2 + (x(1688,1) - x(1710,1))^2);
+LAMBDA_MATRIX(328,339) = DISTANCE;
+
+DISTANCE = sqrt((x(1687,1) - x(1667,1))^2 + (x(1688,1) - x(1668,1))^2);
+LAMBDA_MATRIX(328,318) = DISTANCE;
+
+DISTANCE = sqrt((x(1667,1) - x(1687,1))^2 + (x(1668,1) - x(1688,1))^2);
+LAMBDA_MATRIX(318,328) = DISTANCE;
+
+DISTANCE = sqrt((x(1667,1) - x(1709,1))^2 + (x(1668,1) - x(1710,1))^2);
+LAMBDA_MATRIX(318,339) = DISTANCE;
+
+DISTANCE = sqrt((x(1709,1) - x(1667,1))^2 + (x(1710,1) - x(1668,1))^2);
+LAMBDA_MATRIX(339,318) = DISTANCE;
+
+DISTANCE = sqrt((x(1635,1) - x(1639,1))^2 + (x(1636,1) - x(1640,1))^2);
+LAMBDA_MATRIX(302,304) = DISTANCE;
+
+DISTANCE = sqrt((x(1639,1) - x(1635,1))^2 + (x(1640,1) - x(1636,1))^2);
+LAMBDA_MATRIX(304,302) = DISTANCE;
+
+DISTANCE = sqrt((x(1639,1) - x(1667,1))^2 + (x(1640,1) - x(1668,1))^2);
+LAMBDA_MATRIX(304,318) = DISTANCE;
+
+DISTANCE = sqrt((x(1667,1) - x(1639,1))^2 + (x(1668,1) - x(1640,1))^2);
+LAMBDA_MATRIX(318,304) = DISTANCE;
+
+DISTANCE = sqrt((x(1667,1) - x(1635,1))^2 + (x(1668,1) - x(1636,1))^2);
+LAMBDA_MATRIX(318,302) = DISTANCE;
+
+DISTANCE = sqrt((x(1635,1) - x(1667,1))^2 + (x(1636,1) - x(1668,1))^2);
+LAMBDA_MATRIX(302,318) = DISTANCE;
+
+DISTANCE = sqrt((x(1639,1) - x(1679,1))^2 + (x(1640,1) - x(1680,1))^2);
+LAMBDA_MATRIX(304,324) = DISTANCE;
+
+DISTANCE = sqrt((x(1679,1) - x(1639,1))^2 + (x(1680,1) - x(1640,1))^2);
+LAMBDA_MATRIX(324,304) = DISTANCE;
+
+DISTANCE = sqrt((x(1679,1) - x(1667,1))^2 + (x(1680,1) - x(1668,1))^2);
+LAMBDA_MATRIX(324,318) = DISTANCE;
+
+DISTANCE = sqrt((x(1667,1) - x(1679,1))^2 + (x(1668,1) - x(1680,1))^2);
+LAMBDA_MATRIX(318,324) = DISTANCE;
+
+DISTANCE = sqrt((x(1667,1) - x(1639,1))^2 + (x(1668,1) - x(1640,1))^2);
+LAMBDA_MATRIX(318,304) = DISTANCE;
+
+DISTANCE = sqrt((x(1639,1) - x(1667,1))^2 + (x(1640,1) - x(1668,1))^2);
+LAMBDA_MATRIX(304,318) = DISTANCE;
+
+DISTANCE = sqrt((x(1717,1) - x(1687,1))^2 + (x(1718,1) - x(1688,1))^2);
+LAMBDA_MATRIX(343,328) = DISTANCE;
+
+DISTANCE = sqrt((x(1687,1) - x(1717,1))^2 + (x(1688,1) - x(1718,1))^2);
+LAMBDA_MATRIX(328,343) = DISTANCE;
+
+DISTANCE = sqrt((x(1687,1) - x(1743,1))^2 + (x(1688,1) - x(1744,1))^2);
+LAMBDA_MATRIX(328,356) = DISTANCE;
+
+DISTANCE = sqrt((x(1743,1) - x(1687,1))^2 + (x(1744,1) - x(1688,1))^2);
+LAMBDA_MATRIX(356,328) = DISTANCE;
+
+DISTANCE = sqrt((x(1743,1) - x(1717,1))^2 + (x(1744,1) - x(1718,1))^2);
+LAMBDA_MATRIX(356,343) = DISTANCE;
+
+DISTANCE = sqrt((x(1717,1) - x(1743,1))^2 + (x(1718,1) - x(1744,1))^2);
+LAMBDA_MATRIX(343,356) = DISTANCE;
+
+DISTANCE = sqrt((x(1743,1) - x(1773,1))^2 + (x(1744,1) - x(1774,1))^2);
+LAMBDA_MATRIX(356,371) = DISTANCE;
+
+DISTANCE = sqrt((x(1773,1) - x(1743,1))^2 + (x(1774,1) - x(1744,1))^2);
+LAMBDA_MATRIX(371,356) = DISTANCE;
+
+DISTANCE = sqrt((x(1773,1) - x(1717,1))^2 + (x(1774,1) - x(1718,1))^2);
+LAMBDA_MATRIX(371,343) = DISTANCE;
+
+DISTANCE = sqrt((x(1717,1) - x(1773,1))^2 + (x(1718,1) - x(1774,1))^2);
+LAMBDA_MATRIX(343,371) = DISTANCE;
+
+DISTANCE = sqrt((x(1717,1) - x(1743,1))^2 + (x(1718,1) - x(1744,1))^2);
+LAMBDA_MATRIX(343,356) = DISTANCE;
+
+DISTANCE = sqrt((x(1743,1) - x(1717,1))^2 + (x(1744,1) - x(1718,1))^2);
+LAMBDA_MATRIX(356,343) = DISTANCE;
+
+DISTANCE = sqrt((x(1689,1) - x(1717,1))^2 + (x(1690,1) - x(1718,1))^2);
+LAMBDA_MATRIX(329,343) = DISTANCE;
+
+DISTANCE = sqrt((x(1717,1) - x(1689,1))^2 + (x(1718,1) - x(1690,1))^2);
+LAMBDA_MATRIX(343,329) = DISTANCE;
+
+DISTANCE = sqrt((x(1717,1) - x(1745,1))^2 + (x(1718,1) - x(1746,1))^2);
+LAMBDA_MATRIX(343,357) = DISTANCE;
+
+DISTANCE = sqrt((x(1745,1) - x(1717,1))^2 + (x(1746,1) - x(1718,1))^2);
+LAMBDA_MATRIX(357,343) = DISTANCE;
+
+DISTANCE = sqrt((x(1745,1) - x(1689,1))^2 + (x(1746,1) - x(1690,1))^2);
+LAMBDA_MATRIX(357,329) = DISTANCE;
+
+DISTANCE = sqrt((x(1689,1) - x(1745,1))^2 + (x(1690,1) - x(1746,1))^2);
+LAMBDA_MATRIX(329,357) = DISTANCE;
+
+DISTANCE = sqrt((x(1745,1) - x(1717,1))^2 + (x(1746,1) - x(1718,1))^2);
+LAMBDA_MATRIX(357,343) = DISTANCE;
+
+DISTANCE = sqrt((x(1717,1) - x(1745,1))^2 + (x(1718,1) - x(1746,1))^2);
+LAMBDA_MATRIX(343,357) = DISTANCE;
+
+DISTANCE = sqrt((x(1717,1) - x(1773,1))^2 + (x(1718,1) - x(1774,1))^2);
+LAMBDA_MATRIX(343,371) = DISTANCE;
+
+DISTANCE = sqrt((x(1773,1) - x(1717,1))^2 + (x(1774,1) - x(1718,1))^2);
+LAMBDA_MATRIX(371,343) = DISTANCE;
+
+DISTANCE = sqrt((x(1773,1) - x(1745,1))^2 + (x(1774,1) - x(1746,1))^2);
+LAMBDA_MATRIX(371,357) = DISTANCE;
+
+DISTANCE = sqrt((x(1745,1) - x(1773,1))^2 + (x(1746,1) - x(1774,1))^2);
+LAMBDA_MATRIX(357,371) = DISTANCE;
+
+DISTANCE = sqrt((x(1745,1) - x(1803,1))^2 + (x(1746,1) - x(1804,1))^2);
+LAMBDA_MATRIX(357,386) = DISTANCE;
+
+DISTANCE = sqrt((x(1803,1) - x(1745,1))^2 + (x(1804,1) - x(1746,1))^2);
+LAMBDA_MATRIX(386,357) = DISTANCE;
+
+DISTANCE = sqrt((x(1803,1) - x(1779,1))^2 + (x(1804,1) - x(1780,1))^2);
+LAMBDA_MATRIX(386,374) = DISTANCE;
+
+DISTANCE = sqrt((x(1779,1) - x(1803,1))^2 + (x(1780,1) - x(1804,1))^2);
+LAMBDA_MATRIX(374,386) = DISTANCE;
+
+DISTANCE = sqrt((x(1779,1) - x(1745,1))^2 + (x(1780,1) - x(1746,1))^2);
+LAMBDA_MATRIX(374,357) = DISTANCE;
+
+DISTANCE = sqrt((x(1745,1) - x(1779,1))^2 + (x(1746,1) - x(1780,1))^2);
+LAMBDA_MATRIX(357,374) = DISTANCE;
+
+DISTANCE = sqrt((x(1773,1) - x(1803,1))^2 + (x(1774,1) - x(1804,1))^2);
+LAMBDA_MATRIX(371,386) = DISTANCE;
+
+DISTANCE = sqrt((x(1803,1) - x(1773,1))^2 + (x(1804,1) - x(1774,1))^2);
+LAMBDA_MATRIX(386,371) = DISTANCE;
+
+DISTANCE = sqrt((x(1803,1) - x(1745,1))^2 + (x(1804,1) - x(1746,1))^2);
+LAMBDA_MATRIX(386,357) = DISTANCE;
+
+DISTANCE = sqrt((x(1745,1) - x(1803,1))^2 + (x(1746,1) - x(1804,1))^2);
+LAMBDA_MATRIX(357,386) = DISTANCE;
+
+DISTANCE = sqrt((x(1745,1) - x(1773,1))^2 + (x(1746,1) - x(1774,1))^2);
+LAMBDA_MATRIX(357,371) = DISTANCE;
+
+DISTANCE = sqrt((x(1773,1) - x(1745,1))^2 + (x(1774,1) - x(1746,1))^2);
+LAMBDA_MATRIX(371,357) = DISTANCE;
+
+DISTANCE = sqrt((x(1757,1) - x(1783,1))^2 + (x(1758,1) - x(1784,1))^2);
+LAMBDA_MATRIX(363,376) = DISTANCE;
+
+DISTANCE = sqrt((x(1783,1) - x(1757,1))^2 + (x(1784,1) - x(1758,1))^2);
+LAMBDA_MATRIX(376,363) = DISTANCE;
+
+DISTANCE = sqrt((x(1783,1) - x(1819,1))^2 + (x(1784,1) - x(1820,1))^2);
+LAMBDA_MATRIX(376,394) = DISTANCE;
+
+DISTANCE = sqrt((x(1819,1) - x(1783,1))^2 + (x(1820,1) - x(1784,1))^2);
+LAMBDA_MATRIX(394,376) = DISTANCE;
+
+DISTANCE = sqrt((x(1819,1) - x(1757,1))^2 + (x(1820,1) - x(1758,1))^2);
+LAMBDA_MATRIX(394,363) = DISTANCE;
+
+DISTANCE = sqrt((x(1757,1) - x(1819,1))^2 + (x(1758,1) - x(1820,1))^2);
+LAMBDA_MATRIX(363,394) = DISTANCE;
+
+DISTANCE = sqrt((x(1675,1) - x(1699,1))^2 + (x(1676,1) - x(1700,1))^2);
+LAMBDA_MATRIX(322,334) = DISTANCE;
+
+DISTANCE = sqrt((x(1699,1) - x(1675,1))^2 + (x(1700,1) - x(1676,1))^2);
+LAMBDA_MATRIX(334,322) = DISTANCE;
+
+DISTANCE = sqrt((x(1699,1) - x(1727,1))^2 + (x(1700,1) - x(1728,1))^2);
+LAMBDA_MATRIX(334,348) = DISTANCE;
+
+DISTANCE = sqrt((x(1727,1) - x(1699,1))^2 + (x(1728,1) - x(1700,1))^2);
+LAMBDA_MATRIX(348,334) = DISTANCE;
+
+DISTANCE = sqrt((x(1727,1) - x(1675,1))^2 + (x(1728,1) - x(1676,1))^2);
+LAMBDA_MATRIX(348,322) = DISTANCE;
+
+DISTANCE = sqrt((x(1675,1) - x(1727,1))^2 + (x(1676,1) - x(1728,1))^2);
+LAMBDA_MATRIX(322,348) = DISTANCE;
+
+DISTANCE = sqrt((x(1727,1) - x(1703,1))^2 + (x(1728,1) - x(1704,1))^2);
+LAMBDA_MATRIX(348,336) = DISTANCE;
+
+DISTANCE = sqrt((x(1703,1) - x(1727,1))^2 + (x(1704,1) - x(1728,1))^2);
+LAMBDA_MATRIX(336,348) = DISTANCE;
+
+DISTANCE = sqrt((x(1703,1) - x(1675,1))^2 + (x(1704,1) - x(1676,1))^2);
+LAMBDA_MATRIX(336,322) = DISTANCE;
+
+DISTANCE = sqrt((x(1675,1) - x(1703,1))^2 + (x(1676,1) - x(1704,1))^2);
+LAMBDA_MATRIX(322,336) = DISTANCE;
+
+DISTANCE = sqrt((x(1675,1) - x(1727,1))^2 + (x(1676,1) - x(1728,1))^2);
+LAMBDA_MATRIX(322,348) = DISTANCE;
+
+DISTANCE = sqrt((x(1727,1) - x(1675,1))^2 + (x(1728,1) - x(1676,1))^2);
+LAMBDA_MATRIX(348,322) = DISTANCE;
+
+DISTANCE = sqrt((x(1727,1) - x(1757,1))^2 + (x(1728,1) - x(1758,1))^2);
+LAMBDA_MATRIX(348,363) = DISTANCE;
+
+DISTANCE = sqrt((x(1757,1) - x(1727,1))^2 + (x(1758,1) - x(1728,1))^2);
+LAMBDA_MATRIX(363,348) = DISTANCE;
+
+DISTANCE = sqrt((x(1757,1) - x(1703,1))^2 + (x(1758,1) - x(1704,1))^2);
+LAMBDA_MATRIX(363,336) = DISTANCE;
+
+DISTANCE = sqrt((x(1703,1) - x(1757,1))^2 + (x(1704,1) - x(1758,1))^2);
+LAMBDA_MATRIX(336,363) = DISTANCE;
+
+DISTANCE = sqrt((x(1703,1) - x(1727,1))^2 + (x(1704,1) - x(1728,1))^2);
+LAMBDA_MATRIX(336,348) = DISTANCE;
+
+DISTANCE = sqrt((x(1727,1) - x(1703,1))^2 + (x(1728,1) - x(1704,1))^2);
+LAMBDA_MATRIX(348,336) = DISTANCE;
+
+DISTANCE = sqrt((x(1783,1) - x(1757,1))^2 + (x(1784,1) - x(1758,1))^2);
+LAMBDA_MATRIX(376,363) = DISTANCE;
+
+DISTANCE = sqrt((x(1757,1) - x(1783,1))^2 + (x(1758,1) - x(1784,1))^2);
+LAMBDA_MATRIX(363,376) = DISTANCE;
+
+DISTANCE = sqrt((x(1757,1) - x(1727,1))^2 + (x(1758,1) - x(1728,1))^2);
+LAMBDA_MATRIX(363,348) = DISTANCE;
+
+DISTANCE = sqrt((x(1727,1) - x(1757,1))^2 + (x(1728,1) - x(1758,1))^2);
+LAMBDA_MATRIX(348,363) = DISTANCE;
+
+DISTANCE = sqrt((x(1727,1) - x(1783,1))^2 + (x(1728,1) - x(1784,1))^2);
+LAMBDA_MATRIX(348,376) = DISTANCE;
+
+DISTANCE = sqrt((x(1783,1) - x(1727,1))^2 + (x(1784,1) - x(1728,1))^2);
+LAMBDA_MATRIX(376,348) = DISTANCE;
+
+DISTANCE = sqrt((x(1033,1) - x(1093,1))^2 + (x(1034,1) - x(1094,1))^2);
+LAMBDA_MATRIX(1,31) = DISTANCE;
+
+DISTANCE = sqrt((x(1093,1) - x(1033,1))^2 + (x(1094,1) - x(1034,1))^2);
+LAMBDA_MATRIX(31,1) = DISTANCE;
+
+DISTANCE = sqrt((x(1093,1) - x(1035,1))^2 + (x(1094,1) - x(1036,1))^2);
+LAMBDA_MATRIX(31,2) = DISTANCE;
+
+DISTANCE = sqrt((x(1035,1) - x(1093,1))^2 + (x(1036,1) - x(1094,1))^2);
+LAMBDA_MATRIX(2,31) = DISTANCE;
+
+DISTANCE = sqrt((x(1035,1) - x(1033,1))^2 + (x(1036,1) - x(1034,1))^2);
+LAMBDA_MATRIX(2,1) = DISTANCE;
+
+DISTANCE = sqrt((x(1033,1) - x(1035,1))^2 + (x(1034,1) - x(1036,1))^2);
+LAMBDA_MATRIX(1,2) = DISTANCE;
+
+DISTANCE = sqrt((x(1093,1) - x(1101,1))^2 + (x(1094,1) - x(1102,1))^2);
+LAMBDA_MATRIX(31,35) = DISTANCE;
+
+DISTANCE = sqrt((x(1101,1) - x(1093,1))^2 + (x(1102,1) - x(1094,1))^2);
+LAMBDA_MATRIX(35,31) = DISTANCE;
+
+DISTANCE = sqrt((x(1101,1) - x(1035,1))^2 + (x(1102,1) - x(1036,1))^2);
+LAMBDA_MATRIX(35,2) = DISTANCE;
+
+DISTANCE = sqrt((x(1035,1) - x(1101,1))^2 + (x(1036,1) - x(1102,1))^2);
+LAMBDA_MATRIX(2,35) = DISTANCE;
+
+DISTANCE = sqrt((x(1035,1) - x(1093,1))^2 + (x(1036,1) - x(1094,1))^2);
+LAMBDA_MATRIX(2,31) = DISTANCE;
+
+DISTANCE = sqrt((x(1093,1) - x(1035,1))^2 + (x(1094,1) - x(1036,1))^2);
+LAMBDA_MATRIX(31,2) = DISTANCE;
+
+DISTANCE = sqrt((x(1037,1) - x(1035,1))^2 + (x(1038,1) - x(1036,1))^2);
+LAMBDA_MATRIX(3,2) = DISTANCE;
+
+DISTANCE = sqrt((x(1035,1) - x(1037,1))^2 + (x(1036,1) - x(1038,1))^2);
+LAMBDA_MATRIX(2,3) = DISTANCE;
+
+DISTANCE = sqrt((x(1035,1) - x(1101,1))^2 + (x(1036,1) - x(1102,1))^2);
+LAMBDA_MATRIX(2,35) = DISTANCE;
+
+DISTANCE = sqrt((x(1101,1) - x(1035,1))^2 + (x(1102,1) - x(1036,1))^2);
+LAMBDA_MATRIX(35,2) = DISTANCE;
+
+DISTANCE = sqrt((x(1101,1) - x(1037,1))^2 + (x(1102,1) - x(1038,1))^2);
+LAMBDA_MATRIX(35,3) = DISTANCE;
+
+DISTANCE = sqrt((x(1037,1) - x(1101,1))^2 + (x(1038,1) - x(1102,1))^2);
+LAMBDA_MATRIX(3,35) = DISTANCE;
+
+DISTANCE = sqrt((x(1115,1) - x(1101,1))^2 + (x(1116,1) - x(1102,1))^2);
+LAMBDA_MATRIX(42,35) = DISTANCE;
+
+DISTANCE = sqrt((x(1101,1) - x(1115,1))^2 + (x(1102,1) - x(1116,1))^2);
+LAMBDA_MATRIX(35,42) = DISTANCE;
+
+DISTANCE = sqrt((x(1101,1) - x(1161,1))^2 + (x(1102,1) - x(1162,1))^2);
+LAMBDA_MATRIX(35,65) = DISTANCE;
+
+DISTANCE = sqrt((x(1161,1) - x(1101,1))^2 + (x(1162,1) - x(1102,1))^2);
+LAMBDA_MATRIX(65,35) = DISTANCE;
+
+DISTANCE = sqrt((x(1161,1) - x(1115,1))^2 + (x(1162,1) - x(1116,1))^2);
+LAMBDA_MATRIX(65,42) = DISTANCE;
+
+DISTANCE = sqrt((x(1115,1) - x(1161,1))^2 + (x(1116,1) - x(1162,1))^2);
+LAMBDA_MATRIX(42,65) = DISTANCE;
+
+DISTANCE = sqrt((x(1161,1) - x(1135,1))^2 + (x(1162,1) - x(1136,1))^2);
+LAMBDA_MATRIX(65,52) = DISTANCE;
+
+DISTANCE = sqrt((x(1135,1) - x(1161,1))^2 + (x(1136,1) - x(1162,1))^2);
+LAMBDA_MATRIX(52,65) = DISTANCE;
+
+DISTANCE = sqrt((x(1135,1) - x(1115,1))^2 + (x(1136,1) - x(1116,1))^2);
+LAMBDA_MATRIX(52,42) = DISTANCE;
+
+DISTANCE = sqrt((x(1115,1) - x(1135,1))^2 + (x(1116,1) - x(1136,1))^2);
+LAMBDA_MATRIX(42,52) = DISTANCE;
+
+DISTANCE = sqrt((x(1115,1) - x(1161,1))^2 + (x(1116,1) - x(1162,1))^2);
+LAMBDA_MATRIX(42,65) = DISTANCE;
+
+DISTANCE = sqrt((x(1161,1) - x(1115,1))^2 + (x(1162,1) - x(1116,1))^2);
+LAMBDA_MATRIX(65,42) = DISTANCE;
+
+DISTANCE = sqrt((x(1115,1) - x(1135,1))^2 + (x(1116,1) - x(1136,1))^2);
+LAMBDA_MATRIX(42,52) = DISTANCE;
+
+DISTANCE = sqrt((x(1135,1) - x(1115,1))^2 + (x(1136,1) - x(1116,1))^2);
+LAMBDA_MATRIX(52,42) = DISTANCE;
+
+DISTANCE = sqrt((x(1135,1) - x(1079,1))^2 + (x(1136,1) - x(1080,1))^2);
+LAMBDA_MATRIX(52,24) = DISTANCE;
+
+DISTANCE = sqrt((x(1079,1) - x(1135,1))^2 + (x(1080,1) - x(1136,1))^2);
+LAMBDA_MATRIX(24,52) = DISTANCE;
+
+DISTANCE = sqrt((x(1079,1) - x(1115,1))^2 + (x(1080,1) - x(1116,1))^2);
+LAMBDA_MATRIX(24,42) = DISTANCE;
+
+DISTANCE = sqrt((x(1115,1) - x(1079,1))^2 + (x(1116,1) - x(1080,1))^2);
+LAMBDA_MATRIX(42,24) = DISTANCE;
+
+DISTANCE = sqrt((x(1115,1) - x(1037,1))^2 + (x(1116,1) - x(1038,1))^2);
+LAMBDA_MATRIX(42,3) = DISTANCE;
+
+DISTANCE = sqrt((x(1037,1) - x(1115,1))^2 + (x(1038,1) - x(1116,1))^2);
+LAMBDA_MATRIX(3,42) = DISTANCE;
+
+DISTANCE = sqrt((x(1037,1) - x(1101,1))^2 + (x(1038,1) - x(1102,1))^2);
+LAMBDA_MATRIX(3,35) = DISTANCE;
+
+DISTANCE = sqrt((x(1101,1) - x(1037,1))^2 + (x(1102,1) - x(1038,1))^2);
+LAMBDA_MATRIX(35,3) = DISTANCE;
+
+DISTANCE = sqrt((x(1101,1) - x(1115,1))^2 + (x(1102,1) - x(1116,1))^2);
+LAMBDA_MATRIX(35,42) = DISTANCE;
+
+DISTANCE = sqrt((x(1115,1) - x(1101,1))^2 + (x(1116,1) - x(1102,1))^2);
+LAMBDA_MATRIX(42,35) = DISTANCE;
+
+DISTANCE = sqrt((x(1079,1) - x(1039,1))^2 + (x(1080,1) - x(1040,1))^2);
+LAMBDA_MATRIX(24,4) = DISTANCE;
+
+DISTANCE = sqrt((x(1039,1) - x(1079,1))^2 + (x(1040,1) - x(1080,1))^2);
+LAMBDA_MATRIX(4,24) = DISTANCE;
+
+DISTANCE = sqrt((x(1039,1) - x(1115,1))^2 + (x(1040,1) - x(1116,1))^2);
+LAMBDA_MATRIX(4,42) = DISTANCE;
+
+DISTANCE = sqrt((x(1115,1) - x(1039,1))^2 + (x(1116,1) - x(1040,1))^2);
+LAMBDA_MATRIX(42,4) = DISTANCE;
+
+DISTANCE = sqrt((x(1115,1) - x(1079,1))^2 + (x(1116,1) - x(1080,1))^2);
+LAMBDA_MATRIX(42,24) = DISTANCE;
+
+DISTANCE = sqrt((x(1079,1) - x(1115,1))^2 + (x(1080,1) - x(1116,1))^2);
+LAMBDA_MATRIX(24,42) = DISTANCE;
+
+DISTANCE = sqrt((x(1039,1) - x(1037,1))^2 + (x(1040,1) - x(1038,1))^2);
+LAMBDA_MATRIX(4,3) = DISTANCE;
+
+DISTANCE = sqrt((x(1037,1) - x(1039,1))^2 + (x(1038,1) - x(1040,1))^2);
+LAMBDA_MATRIX(3,4) = DISTANCE;
+
+DISTANCE = sqrt((x(1037,1) - x(1115,1))^2 + (x(1038,1) - x(1116,1))^2);
+LAMBDA_MATRIX(3,42) = DISTANCE;
+
+DISTANCE = sqrt((x(1115,1) - x(1037,1))^2 + (x(1116,1) - x(1038,1))^2);
+LAMBDA_MATRIX(42,3) = DISTANCE;
+
+DISTANCE = sqrt((x(1115,1) - x(1039,1))^2 + (x(1116,1) - x(1040,1))^2);
+LAMBDA_MATRIX(42,4) = DISTANCE;
+
+DISTANCE = sqrt((x(1039,1) - x(1115,1))^2 + (x(1040,1) - x(1116,1))^2);
+LAMBDA_MATRIX(4,42) = DISTANCE;
+
+DISTANCE = sqrt((x(1187,1) - x(1215,1))^2 + (x(1188,1) - x(1216,1))^2);
+LAMBDA_MATRIX(78,92) = DISTANCE;
+
+DISTANCE = sqrt((x(1215,1) - x(1187,1))^2 + (x(1216,1) - x(1188,1))^2);
+LAMBDA_MATRIX(92,78) = DISTANCE;
+
+DISTANCE = sqrt((x(1215,1) - x(1169,1))^2 + (x(1216,1) - x(1170,1))^2);
+LAMBDA_MATRIX(92,69) = DISTANCE;
+
+DISTANCE = sqrt((x(1169,1) - x(1215,1))^2 + (x(1170,1) - x(1216,1))^2);
+LAMBDA_MATRIX(69,92) = DISTANCE;
+
+DISTANCE = sqrt((x(1169,1) - x(1187,1))^2 + (x(1170,1) - x(1188,1))^2);
+LAMBDA_MATRIX(69,78) = DISTANCE;
+
+DISTANCE = sqrt((x(1187,1) - x(1169,1))^2 + (x(1188,1) - x(1170,1))^2);
+LAMBDA_MATRIX(78,69) = DISTANCE;
+
+DISTANCE = sqrt((x(1169,1) - x(1135,1))^2 + (x(1170,1) - x(1136,1))^2);
+LAMBDA_MATRIX(69,52) = DISTANCE;
+
+DISTANCE = sqrt((x(1135,1) - x(1169,1))^2 + (x(1136,1) - x(1170,1))^2);
+LAMBDA_MATRIX(52,69) = DISTANCE;
+
+DISTANCE = sqrt((x(1135,1) - x(1187,1))^2 + (x(1136,1) - x(1188,1))^2);
+LAMBDA_MATRIX(52,78) = DISTANCE;
+
+DISTANCE = sqrt((x(1187,1) - x(1135,1))^2 + (x(1188,1) - x(1136,1))^2);
+LAMBDA_MATRIX(78,52) = DISTANCE;
+
+DISTANCE = sqrt((x(1187,1) - x(1169,1))^2 + (x(1188,1) - x(1170,1))^2);
+LAMBDA_MATRIX(78,69) = DISTANCE;
+
+DISTANCE = sqrt((x(1169,1) - x(1187,1))^2 + (x(1170,1) - x(1188,1))^2);
+LAMBDA_MATRIX(69,78) = DISTANCE;
+
+DISTANCE = sqrt((x(1241,1) - x(1215,1))^2 + (x(1242,1) - x(1216,1))^2);
+LAMBDA_MATRIX(105,92) = DISTANCE;
+
+DISTANCE = sqrt((x(1215,1) - x(1241,1))^2 + (x(1216,1) - x(1242,1))^2);
+LAMBDA_MATRIX(92,105) = DISTANCE;
+
+DISTANCE = sqrt((x(1215,1) - x(1187,1))^2 + (x(1216,1) - x(1188,1))^2);
+LAMBDA_MATRIX(92,78) = DISTANCE;
+
+DISTANCE = sqrt((x(1187,1) - x(1215,1))^2 + (x(1188,1) - x(1216,1))^2);
+LAMBDA_MATRIX(78,92) = DISTANCE;
+
+DISTANCE = sqrt((x(1187,1) - x(1241,1))^2 + (x(1188,1) - x(1242,1))^2);
+LAMBDA_MATRIX(78,105) = DISTANCE;
+
+DISTANCE = sqrt((x(1241,1) - x(1187,1))^2 + (x(1242,1) - x(1188,1))^2);
+LAMBDA_MATRIX(105,78) = DISTANCE;
+
+DISTANCE = sqrt((x(1187,1) - x(1135,1))^2 + (x(1188,1) - x(1136,1))^2);
+LAMBDA_MATRIX(78,52) = DISTANCE;
+
+DISTANCE = sqrt((x(1135,1) - x(1187,1))^2 + (x(1136,1) - x(1188,1))^2);
+LAMBDA_MATRIX(52,78) = DISTANCE;
+
+DISTANCE = sqrt((x(1135,1) - x(1161,1))^2 + (x(1136,1) - x(1162,1))^2);
+LAMBDA_MATRIX(52,65) = DISTANCE;
+
+DISTANCE = sqrt((x(1161,1) - x(1135,1))^2 + (x(1162,1) - x(1136,1))^2);
+LAMBDA_MATRIX(65,52) = DISTANCE;
+
+DISTANCE = sqrt((x(1161,1) - x(1187,1))^2 + (x(1162,1) - x(1188,1))^2);
+LAMBDA_MATRIX(65,78) = DISTANCE;
+
+DISTANCE = sqrt((x(1187,1) - x(1161,1))^2 + (x(1188,1) - x(1162,1))^2);
+LAMBDA_MATRIX(78,65) = DISTANCE;
+
+DISTANCE = sqrt((x(1169,1) - x(1155,1))^2 + (x(1170,1) - x(1156,1))^2);
+LAMBDA_MATRIX(69,62) = DISTANCE;
+
+DISTANCE = sqrt((x(1155,1) - x(1169,1))^2 + (x(1156,1) - x(1170,1))^2);
+LAMBDA_MATRIX(62,69) = DISTANCE;
+
+DISTANCE = sqrt((x(1155,1) - x(1123,1))^2 + (x(1156,1) - x(1124,1))^2);
+LAMBDA_MATRIX(62,46) = DISTANCE;
+
+DISTANCE = sqrt((x(1123,1) - x(1155,1))^2 + (x(1124,1) - x(1156,1))^2);
+LAMBDA_MATRIX(46,62) = DISTANCE;
+
+DISTANCE = sqrt((x(1123,1) - x(1169,1))^2 + (x(1124,1) - x(1170,1))^2);
+LAMBDA_MATRIX(46,69) = DISTANCE;
+
+DISTANCE = sqrt((x(1169,1) - x(1123,1))^2 + (x(1170,1) - x(1124,1))^2);
+LAMBDA_MATRIX(69,46) = DISTANCE;
+
+DISTANCE = sqrt((x(1079,1) - x(1135,1))^2 + (x(1080,1) - x(1136,1))^2);
+LAMBDA_MATRIX(24,52) = DISTANCE;
+
+DISTANCE = sqrt((x(1135,1) - x(1079,1))^2 + (x(1136,1) - x(1080,1))^2);
+LAMBDA_MATRIX(52,24) = DISTANCE;
+
+DISTANCE = sqrt((x(1135,1) - x(1123,1))^2 + (x(1136,1) - x(1124,1))^2);
+LAMBDA_MATRIX(52,46) = DISTANCE;
+
+DISTANCE = sqrt((x(1123,1) - x(1135,1))^2 + (x(1124,1) - x(1136,1))^2);
+LAMBDA_MATRIX(46,52) = DISTANCE;
+
+DISTANCE = sqrt((x(1123,1) - x(1079,1))^2 + (x(1124,1) - x(1080,1))^2);
+LAMBDA_MATRIX(46,24) = DISTANCE;
+
+DISTANCE = sqrt((x(1079,1) - x(1123,1))^2 + (x(1080,1) - x(1124,1))^2);
+LAMBDA_MATRIX(24,46) = DISTANCE;
+
+DISTANCE = sqrt((x(1123,1) - x(1135,1))^2 + (x(1124,1) - x(1136,1))^2);
+LAMBDA_MATRIX(46,52) = DISTANCE;
+
+DISTANCE = sqrt((x(1135,1) - x(1123,1))^2 + (x(1136,1) - x(1124,1))^2);
+LAMBDA_MATRIX(52,46) = DISTANCE;
+
+DISTANCE = sqrt((x(1135,1) - x(1169,1))^2 + (x(1136,1) - x(1170,1))^2);
+LAMBDA_MATRIX(52,69) = DISTANCE;
+
+DISTANCE = sqrt((x(1169,1) - x(1135,1))^2 + (x(1170,1) - x(1136,1))^2);
+LAMBDA_MATRIX(69,52) = DISTANCE;
+
+DISTANCE = sqrt((x(1169,1) - x(1123,1))^2 + (x(1170,1) - x(1124,1))^2);
+LAMBDA_MATRIX(69,46) = DISTANCE;
+
+DISTANCE = sqrt((x(1123,1) - x(1169,1))^2 + (x(1124,1) - x(1170,1))^2);
+LAMBDA_MATRIX(46,69) = DISTANCE;
+
+DISTANCE = sqrt((x(1049,1) - x(1047,1))^2 + (x(1050,1) - x(1048,1))^2);
+LAMBDA_MATRIX(9,8) = DISTANCE;
+
+DISTANCE = sqrt((x(1047,1) - x(1049,1))^2 + (x(1048,1) - x(1050,1))^2);
+LAMBDA_MATRIX(8,9) = DISTANCE;
+
+DISTANCE = sqrt((x(1047,1) - x(1083,1))^2 + (x(1048,1) - x(1084,1))^2);
+LAMBDA_MATRIX(8,26) = DISTANCE;
+
+DISTANCE = sqrt((x(1083,1) - x(1047,1))^2 + (x(1084,1) - x(1048,1))^2);
+LAMBDA_MATRIX(26,8) = DISTANCE;
+
+DISTANCE = sqrt((x(1083,1) - x(1049,1))^2 + (x(1084,1) - x(1050,1))^2);
+LAMBDA_MATRIX(26,9) = DISTANCE;
+
+DISTANCE = sqrt((x(1049,1) - x(1083,1))^2 + (x(1050,1) - x(1084,1))^2);
+LAMBDA_MATRIX(9,26) = DISTANCE;
+
+DISTANCE = sqrt((x(1083,1) - x(1091,1))^2 + (x(1084,1) - x(1092,1))^2);
+LAMBDA_MATRIX(26,30) = DISTANCE;
+
+DISTANCE = sqrt((x(1091,1) - x(1083,1))^2 + (x(1092,1) - x(1084,1))^2);
+LAMBDA_MATRIX(30,26) = DISTANCE;
+
+DISTANCE = sqrt((x(1091,1) - x(1049,1))^2 + (x(1092,1) - x(1050,1))^2);
+LAMBDA_MATRIX(30,9) = DISTANCE;
+
+DISTANCE = sqrt((x(1049,1) - x(1091,1))^2 + (x(1050,1) - x(1092,1))^2);
+LAMBDA_MATRIX(9,30) = DISTANCE;
+
+DISTANCE = sqrt((x(1049,1) - x(1083,1))^2 + (x(1050,1) - x(1084,1))^2);
+LAMBDA_MATRIX(9,26) = DISTANCE;
+
+DISTANCE = sqrt((x(1083,1) - x(1049,1))^2 + (x(1084,1) - x(1050,1))^2);
+LAMBDA_MATRIX(26,9) = DISTANCE;
+
+DISTANCE = sqrt((x(1131,1) - x(1091,1))^2 + (x(1132,1) - x(1092,1))^2);
+LAMBDA_MATRIX(50,30) = DISTANCE;
+
+DISTANCE = sqrt((x(1091,1) - x(1131,1))^2 + (x(1092,1) - x(1132,1))^2);
+LAMBDA_MATRIX(30,50) = DISTANCE;
+
+DISTANCE = sqrt((x(1091,1) - x(1083,1))^2 + (x(1092,1) - x(1084,1))^2);
+LAMBDA_MATRIX(30,26) = DISTANCE;
+
+DISTANCE = sqrt((x(1083,1) - x(1091,1))^2 + (x(1084,1) - x(1092,1))^2);
+LAMBDA_MATRIX(26,30) = DISTANCE;
+
+DISTANCE = sqrt((x(1083,1) - x(1131,1))^2 + (x(1084,1) - x(1132,1))^2);
+LAMBDA_MATRIX(26,50) = DISTANCE;
+
+DISTANCE = sqrt((x(1131,1) - x(1083,1))^2 + (x(1132,1) - x(1084,1))^2);
+LAMBDA_MATRIX(50,26) = DISTANCE;
+
+DISTANCE = sqrt((x(1083,1) - x(1125,1))^2 + (x(1084,1) - x(1126,1))^2);
+LAMBDA_MATRIX(26,47) = DISTANCE;
+
+DISTANCE = sqrt((x(1125,1) - x(1083,1))^2 + (x(1126,1) - x(1084,1))^2);
+LAMBDA_MATRIX(47,26) = DISTANCE;
+
+DISTANCE = sqrt((x(1125,1) - x(1131,1))^2 + (x(1126,1) - x(1132,1))^2);
+LAMBDA_MATRIX(47,50) = DISTANCE;
+
+DISTANCE = sqrt((x(1131,1) - x(1125,1))^2 + (x(1132,1) - x(1126,1))^2);
+LAMBDA_MATRIX(50,47) = DISTANCE;
+
+DISTANCE = sqrt((x(1131,1) - x(1083,1))^2 + (x(1132,1) - x(1084,1))^2);
+LAMBDA_MATRIX(50,26) = DISTANCE;
+
+DISTANCE = sqrt((x(1083,1) - x(1131,1))^2 + (x(1084,1) - x(1132,1))^2);
+LAMBDA_MATRIX(26,50) = DISTANCE;
+
+DISTANCE = sqrt((x(1201,1) - x(1155,1))^2 + (x(1202,1) - x(1156,1))^2);
+LAMBDA_MATRIX(85,62) = DISTANCE;
+
+DISTANCE = sqrt((x(1155,1) - x(1201,1))^2 + (x(1156,1) - x(1202,1))^2);
+LAMBDA_MATRIX(62,85) = DISTANCE;
+
+DISTANCE = sqrt((x(1155,1) - x(1169,1))^2 + (x(1156,1) - x(1170,1))^2);
+LAMBDA_MATRIX(62,69) = DISTANCE;
+
+DISTANCE = sqrt((x(1169,1) - x(1155,1))^2 + (x(1170,1) - x(1156,1))^2);
+LAMBDA_MATRIX(69,62) = DISTANCE;
+
+DISTANCE = sqrt((x(1169,1) - x(1201,1))^2 + (x(1170,1) - x(1202,1))^2);
+LAMBDA_MATRIX(69,85) = DISTANCE;
+
+DISTANCE = sqrt((x(1201,1) - x(1169,1))^2 + (x(1202,1) - x(1170,1))^2);
+LAMBDA_MATRIX(85,69) = DISTANCE;
+
+DISTANCE = sqrt((x(1169,1) - x(1215,1))^2 + (x(1170,1) - x(1216,1))^2);
+LAMBDA_MATRIX(69,92) = DISTANCE;
+
+DISTANCE = sqrt((x(1215,1) - x(1169,1))^2 + (x(1216,1) - x(1170,1))^2);
+LAMBDA_MATRIX(92,69) = DISTANCE;
+
+DISTANCE = sqrt((x(1215,1) - x(1201,1))^2 + (x(1216,1) - x(1202,1))^2);
+LAMBDA_MATRIX(92,85) = DISTANCE;
+
+DISTANCE = sqrt((x(1201,1) - x(1215,1))^2 + (x(1202,1) - x(1216,1))^2);
+LAMBDA_MATRIX(85,92) = DISTANCE;
+
+DISTANCE = sqrt((x(1201,1) - x(1169,1))^2 + (x(1202,1) - x(1170,1))^2);
+LAMBDA_MATRIX(85,69) = DISTANCE;
+
+DISTANCE = sqrt((x(1169,1) - x(1201,1))^2 + (x(1170,1) - x(1202,1))^2);
+LAMBDA_MATRIX(69,85) = DISTANCE;
+
+DISTANCE = sqrt((x(1253,1) - x(1237,1))^2 + (x(1254,1) - x(1238,1))^2);
+LAMBDA_MATRIX(111,103) = DISTANCE;
+
+DISTANCE = sqrt((x(1237,1) - x(1253,1))^2 + (x(1238,1) - x(1254,1))^2);
+LAMBDA_MATRIX(103,111) = DISTANCE;
+
+DISTANCE = sqrt((x(1237,1) - x(1201,1))^2 + (x(1238,1) - x(1202,1))^2);
+LAMBDA_MATRIX(103,85) = DISTANCE;
+
+DISTANCE = sqrt((x(1201,1) - x(1237,1))^2 + (x(1202,1) - x(1238,1))^2);
+LAMBDA_MATRIX(85,103) = DISTANCE;
+
+DISTANCE = sqrt((x(1201,1) - x(1253,1))^2 + (x(1202,1) - x(1254,1))^2);
+LAMBDA_MATRIX(85,111) = DISTANCE;
+
+DISTANCE = sqrt((x(1253,1) - x(1201,1))^2 + (x(1254,1) - x(1202,1))^2);
+LAMBDA_MATRIX(111,85) = DISTANCE;
+
+DISTANCE = sqrt((x(1201,1) - x(1215,1))^2 + (x(1202,1) - x(1216,1))^2);
+LAMBDA_MATRIX(85,92) = DISTANCE;
+
+DISTANCE = sqrt((x(1215,1) - x(1201,1))^2 + (x(1216,1) - x(1202,1))^2);
+LAMBDA_MATRIX(92,85) = DISTANCE;
+
+DISTANCE = sqrt((x(1215,1) - x(1253,1))^2 + (x(1216,1) - x(1254,1))^2);
+LAMBDA_MATRIX(92,111) = DISTANCE;
+
+DISTANCE = sqrt((x(1253,1) - x(1215,1))^2 + (x(1254,1) - x(1216,1))^2);
+LAMBDA_MATRIX(111,92) = DISTANCE;
+
+DISTANCE = sqrt((x(1253,1) - x(1201,1))^2 + (x(1254,1) - x(1202,1))^2);
+LAMBDA_MATRIX(111,85) = DISTANCE;
+
+DISTANCE = sqrt((x(1201,1) - x(1253,1))^2 + (x(1202,1) - x(1254,1))^2);
+LAMBDA_MATRIX(85,111) = DISTANCE;
+
+DISTANCE = sqrt((x(1149,1) - x(1155,1))^2 + (x(1150,1) - x(1156,1))^2);
+LAMBDA_MATRIX(59,62) = DISTANCE;
+
+DISTANCE = sqrt((x(1155,1) - x(1149,1))^2 + (x(1156,1) - x(1150,1))^2);
+LAMBDA_MATRIX(62,59) = DISTANCE;
+
+DISTANCE = sqrt((x(1155,1) - x(1183,1))^2 + (x(1156,1) - x(1184,1))^2);
+LAMBDA_MATRIX(62,76) = DISTANCE;
+
+DISTANCE = sqrt((x(1183,1) - x(1155,1))^2 + (x(1184,1) - x(1156,1))^2);
+LAMBDA_MATRIX(76,62) = DISTANCE;
+
+DISTANCE = sqrt((x(1183,1) - x(1149,1))^2 + (x(1184,1) - x(1150,1))^2);
+LAMBDA_MATRIX(76,59) = DISTANCE;
+
+DISTANCE = sqrt((x(1149,1) - x(1183,1))^2 + (x(1150,1) - x(1184,1))^2);
+LAMBDA_MATRIX(59,76) = DISTANCE;
+
+DISTANCE = sqrt((x(1155,1) - x(1201,1))^2 + (x(1156,1) - x(1202,1))^2);
+LAMBDA_MATRIX(62,85) = DISTANCE;
+
+DISTANCE = sqrt((x(1201,1) - x(1155,1))^2 + (x(1202,1) - x(1156,1))^2);
+LAMBDA_MATRIX(85,62) = DISTANCE;
+
+DISTANCE = sqrt((x(1201,1) - x(1183,1))^2 + (x(1202,1) - x(1184,1))^2);
+LAMBDA_MATRIX(85,76) = DISTANCE;
+
+DISTANCE = sqrt((x(1183,1) - x(1201,1))^2 + (x(1184,1) - x(1202,1))^2);
+LAMBDA_MATRIX(76,85) = DISTANCE;
+
+DISTANCE = sqrt((x(1183,1) - x(1155,1))^2 + (x(1184,1) - x(1156,1))^2);
+LAMBDA_MATRIX(76,62) = DISTANCE;
+
+DISTANCE = sqrt((x(1155,1) - x(1183,1))^2 + (x(1156,1) - x(1184,1))^2);
+LAMBDA_MATRIX(62,76) = DISTANCE;
+
+DISTANCE = sqrt((x(1237,1) - x(1219,1))^2 + (x(1238,1) - x(1220,1))^2);
+LAMBDA_MATRIX(103,94) = DISTANCE;
+
+DISTANCE = sqrt((x(1219,1) - x(1237,1))^2 + (x(1220,1) - x(1238,1))^2);
+LAMBDA_MATRIX(94,103) = DISTANCE;
+
+DISTANCE = sqrt((x(1219,1) - x(1183,1))^2 + (x(1220,1) - x(1184,1))^2);
+LAMBDA_MATRIX(94,76) = DISTANCE;
+
+DISTANCE = sqrt((x(1183,1) - x(1219,1))^2 + (x(1184,1) - x(1220,1))^2);
+LAMBDA_MATRIX(76,94) = DISTANCE;
+
+DISTANCE = sqrt((x(1183,1) - x(1237,1))^2 + (x(1184,1) - x(1238,1))^2);
+LAMBDA_MATRIX(76,103) = DISTANCE;
+
+DISTANCE = sqrt((x(1237,1) - x(1183,1))^2 + (x(1238,1) - x(1184,1))^2);
+LAMBDA_MATRIX(103,76) = DISTANCE;
+
+DISTANCE = sqrt((x(1183,1) - x(1201,1))^2 + (x(1184,1) - x(1202,1))^2);
+LAMBDA_MATRIX(76,85) = DISTANCE;
+
+DISTANCE = sqrt((x(1201,1) - x(1183,1))^2 + (x(1202,1) - x(1184,1))^2);
+LAMBDA_MATRIX(85,76) = DISTANCE;
+
+DISTANCE = sqrt((x(1201,1) - x(1237,1))^2 + (x(1202,1) - x(1238,1))^2);
+LAMBDA_MATRIX(85,103) = DISTANCE;
+
+DISTANCE = sqrt((x(1237,1) - x(1201,1))^2 + (x(1238,1) - x(1202,1))^2);
+LAMBDA_MATRIX(103,85) = DISTANCE;
+
+DISTANCE = sqrt((x(1237,1) - x(1183,1))^2 + (x(1238,1) - x(1184,1))^2);
+LAMBDA_MATRIX(103,76) = DISTANCE;
+
+DISTANCE = sqrt((x(1183,1) - x(1237,1))^2 + (x(1184,1) - x(1238,1))^2);
+LAMBDA_MATRIX(76,103) = DISTANCE;
+
+DISTANCE = sqrt((x(1985,1) - x(2041,1))^2 + (x(1986,1) - x(2042,1))^2);
+LAMBDA_MATRIX(477,505) = DISTANCE;
+
+DISTANCE = sqrt((x(2041,1) - x(1985,1))^2 + (x(2042,1) - x(1986,1))^2);
+LAMBDA_MATRIX(505,477) = DISTANCE;
+
+DISTANCE = sqrt((x(2041,1) - x(2033,1))^2 + (x(2042,1) - x(2034,1))^2);
+LAMBDA_MATRIX(505,501) = DISTANCE;
+
+DISTANCE = sqrt((x(2033,1) - x(2041,1))^2 + (x(2034,1) - x(2042,1))^2);
+LAMBDA_MATRIX(501,505) = DISTANCE;
+
+DISTANCE = sqrt((x(2033,1) - x(1985,1))^2 + (x(2034,1) - x(1986,1))^2);
+LAMBDA_MATRIX(501,477) = DISTANCE;
+
+DISTANCE = sqrt((x(1985,1) - x(2033,1))^2 + (x(1986,1) - x(2034,1))^2);
+LAMBDA_MATRIX(477,501) = DISTANCE;
+
+DISTANCE = sqrt((x(1995,1) - x(2041,1))^2 + (x(1996,1) - x(2042,1))^2);
+LAMBDA_MATRIX(482,505) = DISTANCE;
+
+DISTANCE = sqrt((x(2041,1) - x(1995,1))^2 + (x(2042,1) - x(1996,1))^2);
+LAMBDA_MATRIX(505,482) = DISTANCE;
+
+DISTANCE = sqrt((x(2041,1) - x(1985,1))^2 + (x(2042,1) - x(1986,1))^2);
+LAMBDA_MATRIX(505,477) = DISTANCE;
+
+DISTANCE = sqrt((x(1985,1) - x(2041,1))^2 + (x(1986,1) - x(2042,1))^2);
+LAMBDA_MATRIX(477,505) = DISTANCE;
+
+DISTANCE = sqrt((x(1985,1) - x(1995,1))^2 + (x(1986,1) - x(1996,1))^2);
+LAMBDA_MATRIX(477,482) = DISTANCE;
+
+DISTANCE = sqrt((x(1995,1) - x(1985,1))^2 + (x(1996,1) - x(1986,1))^2);
+LAMBDA_MATRIX(482,477) = DISTANCE;
+
+DISTANCE = sqrt((x(1263,1) - x(1235,1))^2 + (x(1264,1) - x(1236,1))^2);
+LAMBDA_MATRIX(116,102) = DISTANCE;
+
+DISTANCE = sqrt((x(1235,1) - x(1263,1))^2 + (x(1236,1) - x(1264,1))^2);
+LAMBDA_MATRIX(102,116) = DISTANCE;
+
+DISTANCE = sqrt((x(1235,1) - x(1209,1))^2 + (x(1236,1) - x(1210,1))^2);
+LAMBDA_MATRIX(102,89) = DISTANCE;
+
+DISTANCE = sqrt((x(1209,1) - x(1235,1))^2 + (x(1210,1) - x(1236,1))^2);
+LAMBDA_MATRIX(89,102) = DISTANCE;
+
+DISTANCE = sqrt((x(1209,1) - x(1263,1))^2 + (x(1210,1) - x(1264,1))^2);
+LAMBDA_MATRIX(89,116) = DISTANCE;
+
+DISTANCE = sqrt((x(1263,1) - x(1209,1))^2 + (x(1264,1) - x(1210,1))^2);
+LAMBDA_MATRIX(116,89) = DISTANCE;
+
+DISTANCE = sqrt((x(1329,1) - x(1275,1))^2 + (x(1330,1) - x(1276,1))^2);
+LAMBDA_MATRIX(149,122) = DISTANCE;
+
+DISTANCE = sqrt((x(1275,1) - x(1329,1))^2 + (x(1276,1) - x(1330,1))^2);
+LAMBDA_MATRIX(122,149) = DISTANCE;
+
+DISTANCE = sqrt((x(1275,1) - x(1295,1))^2 + (x(1276,1) - x(1296,1))^2);
+LAMBDA_MATRIX(122,132) = DISTANCE;
+
+DISTANCE = sqrt((x(1295,1) - x(1275,1))^2 + (x(1296,1) - x(1276,1))^2);
+LAMBDA_MATRIX(132,122) = DISTANCE;
+
+DISTANCE = sqrt((x(1295,1) - x(1329,1))^2 + (x(1296,1) - x(1330,1))^2);
+LAMBDA_MATRIX(132,149) = DISTANCE;
+
+DISTANCE = sqrt((x(1329,1) - x(1295,1))^2 + (x(1330,1) - x(1296,1))^2);
+LAMBDA_MATRIX(149,132) = DISTANCE;
+
+DISTANCE = sqrt((x(1329,1) - x(1307,1))^2 + (x(1330,1) - x(1308,1))^2);
+LAMBDA_MATRIX(149,138) = DISTANCE;
+
+DISTANCE = sqrt((x(1307,1) - x(1329,1))^2 + (x(1308,1) - x(1330,1))^2);
+LAMBDA_MATRIX(138,149) = DISTANCE;
+
+DISTANCE = sqrt((x(1307,1) - x(1275,1))^2 + (x(1308,1) - x(1276,1))^2);
+LAMBDA_MATRIX(138,122) = DISTANCE;
+
+DISTANCE = sqrt((x(1275,1) - x(1307,1))^2 + (x(1276,1) - x(1308,1))^2);
+LAMBDA_MATRIX(122,138) = DISTANCE;
+
+DISTANCE = sqrt((x(1275,1) - x(1329,1))^2 + (x(1276,1) - x(1330,1))^2);
+LAMBDA_MATRIX(122,149) = DISTANCE;
+
+DISTANCE = sqrt((x(1329,1) - x(1275,1))^2 + (x(1330,1) - x(1276,1))^2);
+LAMBDA_MATRIX(149,122) = DISTANCE;
+
+DISTANCE = sqrt((x(2013,1) - x(1983,1))^2 + (x(2014,1) - x(1984,1))^2);
+LAMBDA_MATRIX(491,476) = DISTANCE;
+
+DISTANCE = sqrt((x(1983,1) - x(2013,1))^2 + (x(1984,1) - x(2014,1))^2);
+LAMBDA_MATRIX(476,491) = DISTANCE;
+
+DISTANCE = sqrt((x(1983,1) - x(1951,1))^2 + (x(1984,1) - x(1952,1))^2);
+LAMBDA_MATRIX(476,460) = DISTANCE;
+
+DISTANCE = sqrt((x(1951,1) - x(1983,1))^2 + (x(1952,1) - x(1984,1))^2);
+LAMBDA_MATRIX(460,476) = DISTANCE;
+
+DISTANCE = sqrt((x(1951,1) - x(2013,1))^2 + (x(1952,1) - x(2014,1))^2);
+LAMBDA_MATRIX(460,491) = DISTANCE;
+
+DISTANCE = sqrt((x(2013,1) - x(1951,1))^2 + (x(2014,1) - x(1952,1))^2);
+LAMBDA_MATRIX(491,460) = DISTANCE;
+
+DISTANCE = sqrt((x(1951,1) - x(1969,1))^2 + (x(1952,1) - x(1970,1))^2);
+LAMBDA_MATRIX(460,469) = DISTANCE;
+
+DISTANCE = sqrt((x(1969,1) - x(1951,1))^2 + (x(1970,1) - x(1952,1))^2);
+LAMBDA_MATRIX(469,460) = DISTANCE;
+
+DISTANCE = sqrt((x(1969,1) - x(2013,1))^2 + (x(1970,1) - x(2014,1))^2);
+LAMBDA_MATRIX(469,491) = DISTANCE;
+
+DISTANCE = sqrt((x(2013,1) - x(1969,1))^2 + (x(2014,1) - x(1970,1))^2);
+LAMBDA_MATRIX(491,469) = DISTANCE;
+
+DISTANCE = sqrt((x(2013,1) - x(1951,1))^2 + (x(2014,1) - x(1952,1))^2);
+LAMBDA_MATRIX(491,460) = DISTANCE;
+
+DISTANCE = sqrt((x(1951,1) - x(2013,1))^2 + (x(1952,1) - x(2014,1))^2);
+LAMBDA_MATRIX(460,491) = DISTANCE;
+
+DISTANCE = sqrt((x(1951,1) - x(1983,1))^2 + (x(1952,1) - x(1984,1))^2);
+LAMBDA_MATRIX(460,476) = DISTANCE;
+
+DISTANCE = sqrt((x(1983,1) - x(1951,1))^2 + (x(1984,1) - x(1952,1))^2);
+LAMBDA_MATRIX(476,460) = DISTANCE;
+
+DISTANCE = sqrt((x(1983,1) - x(1939,1))^2 + (x(1984,1) - x(1940,1))^2);
+LAMBDA_MATRIX(476,454) = DISTANCE;
+
+DISTANCE = sqrt((x(1939,1) - x(1983,1))^2 + (x(1940,1) - x(1984,1))^2);
+LAMBDA_MATRIX(454,476) = DISTANCE;
+
+DISTANCE = sqrt((x(1939,1) - x(1951,1))^2 + (x(1940,1) - x(1952,1))^2);
+LAMBDA_MATRIX(454,460) = DISTANCE;
+
+DISTANCE = sqrt((x(1951,1) - x(1939,1))^2 + (x(1952,1) - x(1940,1))^2);
+LAMBDA_MATRIX(460,454) = DISTANCE;
+
+DISTANCE = sqrt((x(1981,1) - x(2029,1))^2 + (x(1982,1) - x(2030,1))^2);
+LAMBDA_MATRIX(475,499) = DISTANCE;
+
+DISTANCE = sqrt((x(2029,1) - x(1981,1))^2 + (x(2030,1) - x(1982,1))^2);
+LAMBDA_MATRIX(499,475) = DISTANCE;
+
+DISTANCE = sqrt((x(2029,1) - x(2003,1))^2 + (x(2030,1) - x(2004,1))^2);
+LAMBDA_MATRIX(499,486) = DISTANCE;
+
+DISTANCE = sqrt((x(2003,1) - x(2029,1))^2 + (x(2004,1) - x(2030,1))^2);
+LAMBDA_MATRIX(486,499) = DISTANCE;
+
+DISTANCE = sqrt((x(2003,1) - x(1981,1))^2 + (x(2004,1) - x(1982,1))^2);
+LAMBDA_MATRIX(486,475) = DISTANCE;
+
+DISTANCE = sqrt((x(1981,1) - x(2003,1))^2 + (x(1982,1) - x(2004,1))^2);
+LAMBDA_MATRIX(475,486) = DISTANCE;
+
+DISTANCE = sqrt((x(2027,1) - x(2029,1))^2 + (x(2028,1) - x(2030,1))^2);
+LAMBDA_MATRIX(498,499) = DISTANCE;
+
+DISTANCE = sqrt((x(2029,1) - x(2027,1))^2 + (x(2030,1) - x(2028,1))^2);
+LAMBDA_MATRIX(499,498) = DISTANCE;
+
+DISTANCE = sqrt((x(2029,1) - x(1981,1))^2 + (x(2030,1) - x(1982,1))^2);
+LAMBDA_MATRIX(499,475) = DISTANCE;
+
+DISTANCE = sqrt((x(1981,1) - x(2029,1))^2 + (x(1982,1) - x(2030,1))^2);
+LAMBDA_MATRIX(475,499) = DISTANCE;
+
+DISTANCE = sqrt((x(1981,1) - x(2027,1))^2 + (x(1982,1) - x(2028,1))^2);
+LAMBDA_MATRIX(475,498) = DISTANCE;
+
+DISTANCE = sqrt((x(2027,1) - x(1981,1))^2 + (x(2028,1) - x(1982,1))^2);
+LAMBDA_MATRIX(498,475) = DISTANCE;
+
+DISTANCE = sqrt((x(1849,1) - x(1889,1))^2 + (x(1850,1) - x(1890,1))^2);
+LAMBDA_MATRIX(409,429) = DISTANCE;
+
+DISTANCE = sqrt((x(1889,1) - x(1849,1))^2 + (x(1890,1) - x(1850,1))^2);
+LAMBDA_MATRIX(429,409) = DISTANCE;
+
+DISTANCE = sqrt((x(1889,1) - x(1901,1))^2 + (x(1890,1) - x(1902,1))^2);
+LAMBDA_MATRIX(429,435) = DISTANCE;
+
+DISTANCE = sqrt((x(1901,1) - x(1889,1))^2 + (x(1902,1) - x(1890,1))^2);
+LAMBDA_MATRIX(435,429) = DISTANCE;
+
+DISTANCE = sqrt((x(1901,1) - x(1849,1))^2 + (x(1902,1) - x(1850,1))^2);
+LAMBDA_MATRIX(435,409) = DISTANCE;
+
+DISTANCE = sqrt((x(1849,1) - x(1901,1))^2 + (x(1850,1) - x(1902,1))^2);
+LAMBDA_MATRIX(409,435) = DISTANCE;
+
+DISTANCE = sqrt((x(1323,1) - x(1277,1))^2 + (x(1324,1) - x(1278,1))^2);
+LAMBDA_MATRIX(146,123) = DISTANCE;
+
+DISTANCE = sqrt((x(1277,1) - x(1323,1))^2 + (x(1278,1) - x(1324,1))^2);
+LAMBDA_MATRIX(123,146) = DISTANCE;
+
+DISTANCE = sqrt((x(1277,1) - x(1299,1))^2 + (x(1278,1) - x(1300,1))^2);
+LAMBDA_MATRIX(123,134) = DISTANCE;
+
+DISTANCE = sqrt((x(1299,1) - x(1277,1))^2 + (x(1300,1) - x(1278,1))^2);
+LAMBDA_MATRIX(134,123) = DISTANCE;
+
+DISTANCE = sqrt((x(1299,1) - x(1323,1))^2 + (x(1300,1) - x(1324,1))^2);
+LAMBDA_MATRIX(134,146) = DISTANCE;
+
+DISTANCE = sqrt((x(1323,1) - x(1299,1))^2 + (x(1324,1) - x(1300,1))^2);
+LAMBDA_MATRIX(146,134) = DISTANCE;
+
+DISTANCE = sqrt((x(1305,1) - x(1277,1))^2 + (x(1306,1) - x(1278,1))^2);
+LAMBDA_MATRIX(137,123) = DISTANCE;
+
+DISTANCE = sqrt((x(1277,1) - x(1305,1))^2 + (x(1278,1) - x(1306,1))^2);
+LAMBDA_MATRIX(123,137) = DISTANCE;
+
+DISTANCE = sqrt((x(1277,1) - x(1323,1))^2 + (x(1278,1) - x(1324,1))^2);
+LAMBDA_MATRIX(123,146) = DISTANCE;
+
+DISTANCE = sqrt((x(1323,1) - x(1277,1))^2 + (x(1324,1) - x(1278,1))^2);
+LAMBDA_MATRIX(146,123) = DISTANCE;
+
+DISTANCE = sqrt((x(1323,1) - x(1305,1))^2 + (x(1324,1) - x(1306,1))^2);
+LAMBDA_MATRIX(146,137) = DISTANCE;
+
+DISTANCE = sqrt((x(1305,1) - x(1323,1))^2 + (x(1306,1) - x(1324,1))^2);
+LAMBDA_MATRIX(137,146) = DISTANCE;
+
+DISTANCE = sqrt((x(1323,1) - x(1345,1))^2 + (x(1324,1) - x(1346,1))^2);
+LAMBDA_MATRIX(146,157) = DISTANCE;
+
+DISTANCE = sqrt((x(1345,1) - x(1323,1))^2 + (x(1346,1) - x(1324,1))^2);
+LAMBDA_MATRIX(157,146) = DISTANCE;
+
+DISTANCE = sqrt((x(1345,1) - x(1305,1))^2 + (x(1346,1) - x(1306,1))^2);
+LAMBDA_MATRIX(157,137) = DISTANCE;
+
+DISTANCE = sqrt((x(1305,1) - x(1345,1))^2 + (x(1306,1) - x(1346,1))^2);
+LAMBDA_MATRIX(137,157) = DISTANCE;
+
+DISTANCE = sqrt((x(1305,1) - x(1323,1))^2 + (x(1306,1) - x(1324,1))^2);
+LAMBDA_MATRIX(137,146) = DISTANCE;
+
+DISTANCE = sqrt((x(1323,1) - x(1305,1))^2 + (x(1324,1) - x(1306,1))^2);
+LAMBDA_MATRIX(146,137) = DISTANCE;
+
+DISTANCE = sqrt((x(1517,1) - x(1503,1))^2 + (x(1518,1) - x(1504,1))^2);
+LAMBDA_MATRIX(243,236) = DISTANCE;
+
+DISTANCE = sqrt((x(1503,1) - x(1517,1))^2 + (x(1504,1) - x(1518,1))^2);
+LAMBDA_MATRIX(236,243) = DISTANCE;
+
+DISTANCE = sqrt((x(1503,1) - x(1537,1))^2 + (x(1504,1) - x(1538,1))^2);
+LAMBDA_MATRIX(236,253) = DISTANCE;
+
+DISTANCE = sqrt((x(1537,1) - x(1503,1))^2 + (x(1538,1) - x(1504,1))^2);
+LAMBDA_MATRIX(253,236) = DISTANCE;
+
+DISTANCE = sqrt((x(1537,1) - x(1517,1))^2 + (x(1538,1) - x(1518,1))^2);
+LAMBDA_MATRIX(253,243) = DISTANCE;
+
+DISTANCE = sqrt((x(1517,1) - x(1537,1))^2 + (x(1518,1) - x(1538,1))^2);
+LAMBDA_MATRIX(243,253) = DISTANCE;
+
+DISTANCE = sqrt((x(1537,1) - x(1547,1))^2 + (x(1538,1) - x(1548,1))^2);
+LAMBDA_MATRIX(253,258) = DISTANCE;
+
+DISTANCE = sqrt((x(1547,1) - x(1537,1))^2 + (x(1548,1) - x(1538,1))^2);
+LAMBDA_MATRIX(258,253) = DISTANCE;
+
+DISTANCE = sqrt((x(1547,1) - x(1517,1))^2 + (x(1548,1) - x(1518,1))^2);
+LAMBDA_MATRIX(258,243) = DISTANCE;
+
+DISTANCE = sqrt((x(1517,1) - x(1547,1))^2 + (x(1518,1) - x(1548,1))^2);
+LAMBDA_MATRIX(243,258) = DISTANCE;
+
+DISTANCE = sqrt((x(1517,1) - x(1537,1))^2 + (x(1518,1) - x(1538,1))^2);
+LAMBDA_MATRIX(243,253) = DISTANCE;
+
+DISTANCE = sqrt((x(1537,1) - x(1517,1))^2 + (x(1538,1) - x(1518,1))^2);
+LAMBDA_MATRIX(253,243) = DISTANCE;
+
+DISTANCE = sqrt((x(1569,1) - x(1547,1))^2 + (x(1570,1) - x(1548,1))^2);
+LAMBDA_MATRIX(269,258) = DISTANCE;
+
+DISTANCE = sqrt((x(1547,1) - x(1569,1))^2 + (x(1548,1) - x(1570,1))^2);
+LAMBDA_MATRIX(258,269) = DISTANCE;
+
+DISTANCE = sqrt((x(1547,1) - x(1537,1))^2 + (x(1548,1) - x(1538,1))^2);
+LAMBDA_MATRIX(258,253) = DISTANCE;
+
+DISTANCE = sqrt((x(1537,1) - x(1547,1))^2 + (x(1538,1) - x(1548,1))^2);
+LAMBDA_MATRIX(253,258) = DISTANCE;
+
+DISTANCE = sqrt((x(1537,1) - x(1569,1))^2 + (x(1538,1) - x(1570,1))^2);
+LAMBDA_MATRIX(253,269) = DISTANCE;
+
+DISTANCE = sqrt((x(1569,1) - x(1537,1))^2 + (x(1570,1) - x(1538,1))^2);
+LAMBDA_MATRIX(269,253) = DISTANCE;
+
+DISTANCE = sqrt((x(1841,1) - x(1871,1))^2 + (x(1842,1) - x(1872,1))^2);
+LAMBDA_MATRIX(405,420) = DISTANCE;
+
+DISTANCE = sqrt((x(1871,1) - x(1841,1))^2 + (x(1872,1) - x(1842,1))^2);
+LAMBDA_MATRIX(420,405) = DISTANCE;
+
+DISTANCE = sqrt((x(1871,1) - x(1887,1))^2 + (x(1872,1) - x(1888,1))^2);
+LAMBDA_MATRIX(420,428) = DISTANCE;
+
+DISTANCE = sqrt((x(1887,1) - x(1871,1))^2 + (x(1888,1) - x(1872,1))^2);
+LAMBDA_MATRIX(428,420) = DISTANCE;
+
+DISTANCE = sqrt((x(1887,1) - x(1841,1))^2 + (x(1888,1) - x(1842,1))^2);
+LAMBDA_MATRIX(428,405) = DISTANCE;
+
+DISTANCE = sqrt((x(1841,1) - x(1887,1))^2 + (x(1842,1) - x(1888,1))^2);
+LAMBDA_MATRIX(405,428) = DISTANCE;
+
+DISTANCE = sqrt((x(1887,1) - x(1859,1))^2 + (x(1888,1) - x(1860,1))^2);
+LAMBDA_MATRIX(428,414) = DISTANCE;
+
+DISTANCE = sqrt((x(1859,1) - x(1887,1))^2 + (x(1860,1) - x(1888,1))^2);
+LAMBDA_MATRIX(414,428) = DISTANCE;
+
+DISTANCE = sqrt((x(1859,1) - x(1841,1))^2 + (x(1860,1) - x(1842,1))^2);
+LAMBDA_MATRIX(414,405) = DISTANCE;
+
+DISTANCE = sqrt((x(1841,1) - x(1859,1))^2 + (x(1842,1) - x(1860,1))^2);
+LAMBDA_MATRIX(405,414) = DISTANCE;
+
+DISTANCE = sqrt((x(1841,1) - x(1887,1))^2 + (x(1842,1) - x(1888,1))^2);
+LAMBDA_MATRIX(405,428) = DISTANCE;
+
+DISTANCE = sqrt((x(1887,1) - x(1841,1))^2 + (x(1888,1) - x(1842,1))^2);
+LAMBDA_MATRIX(428,405) = DISTANCE;
+
+DISTANCE = sqrt((x(1913,1) - x(1927,1))^2 + (x(1914,1) - x(1928,1))^2);
+LAMBDA_MATRIX(441,448) = DISTANCE;
+
+DISTANCE = sqrt((x(1927,1) - x(1913,1))^2 + (x(1928,1) - x(1914,1))^2);
+LAMBDA_MATRIX(448,441) = DISTANCE;
+
+DISTANCE = sqrt((x(1927,1) - x(1887,1))^2 + (x(1928,1) - x(1888,1))^2);
+LAMBDA_MATRIX(448,428) = DISTANCE;
+
+DISTANCE = sqrt((x(1887,1) - x(1927,1))^2 + (x(1888,1) - x(1928,1))^2);
+LAMBDA_MATRIX(428,448) = DISTANCE;
+
+DISTANCE = sqrt((x(1887,1) - x(1913,1))^2 + (x(1888,1) - x(1914,1))^2);
+LAMBDA_MATRIX(428,441) = DISTANCE;
+
+DISTANCE = sqrt((x(1913,1) - x(1887,1))^2 + (x(1914,1) - x(1888,1))^2);
+LAMBDA_MATRIX(441,428) = DISTANCE;
+
+DISTANCE = sqrt((x(1887,1) - x(1871,1))^2 + (x(1888,1) - x(1872,1))^2);
+LAMBDA_MATRIX(428,420) = DISTANCE;
+
+DISTANCE = sqrt((x(1871,1) - x(1887,1))^2 + (x(1872,1) - x(1888,1))^2);
+LAMBDA_MATRIX(420,428) = DISTANCE;
+
+DISTANCE = sqrt((x(1871,1) - x(1913,1))^2 + (x(1872,1) - x(1914,1))^2);
+LAMBDA_MATRIX(420,441) = DISTANCE;
+
+DISTANCE = sqrt((x(1913,1) - x(1871,1))^2 + (x(1914,1) - x(1872,1))^2);
+LAMBDA_MATRIX(441,420) = DISTANCE;
+
+DISTANCE = sqrt((x(1913,1) - x(1887,1))^2 + (x(1914,1) - x(1888,1))^2);
+LAMBDA_MATRIX(441,428) = DISTANCE;
+
+DISTANCE = sqrt((x(1887,1) - x(1913,1))^2 + (x(1888,1) - x(1914,1))^2);
+LAMBDA_MATRIX(428,441) = DISTANCE;
+
+DISTANCE = sqrt((x(1939,1) - x(1923,1))^2 + (x(1940,1) - x(1924,1))^2);
+LAMBDA_MATRIX(454,446) = DISTANCE;
+
+DISTANCE = sqrt((x(1923,1) - x(1939,1))^2 + (x(1924,1) - x(1940,1))^2);
+LAMBDA_MATRIX(446,454) = DISTANCE;
+
+DISTANCE = sqrt((x(1923,1) - x(1893,1))^2 + (x(1924,1) - x(1894,1))^2);
+LAMBDA_MATRIX(446,431) = DISTANCE;
+
+DISTANCE = sqrt((x(1893,1) - x(1923,1))^2 + (x(1894,1) - x(1924,1))^2);
+LAMBDA_MATRIX(431,446) = DISTANCE;
+
+DISTANCE = sqrt((x(1893,1) - x(1939,1))^2 + (x(1894,1) - x(1940,1))^2);
+LAMBDA_MATRIX(431,454) = DISTANCE;
+
+DISTANCE = sqrt((x(1939,1) - x(1893,1))^2 + (x(1940,1) - x(1894,1))^2);
+LAMBDA_MATRIX(454,431) = DISTANCE;
+
+DISTANCE = sqrt((x(1845,1) - x(1893,1))^2 + (x(1846,1) - x(1894,1))^2);
+LAMBDA_MATRIX(407,431) = DISTANCE;
+
+DISTANCE = sqrt((x(1893,1) - x(1845,1))^2 + (x(1894,1) - x(1846,1))^2);
+LAMBDA_MATRIX(431,407) = DISTANCE;
+
+DISTANCE = sqrt((x(1893,1) - x(1873,1))^2 + (x(1894,1) - x(1874,1))^2);
+LAMBDA_MATRIX(431,421) = DISTANCE;
+
+DISTANCE = sqrt((x(1873,1) - x(1893,1))^2 + (x(1874,1) - x(1894,1))^2);
+LAMBDA_MATRIX(421,431) = DISTANCE;
+
+DISTANCE = sqrt((x(1873,1) - x(1845,1))^2 + (x(1874,1) - x(1846,1))^2);
+LAMBDA_MATRIX(421,407) = DISTANCE;
+
+DISTANCE = sqrt((x(1845,1) - x(1873,1))^2 + (x(1846,1) - x(1874,1))^2);
+LAMBDA_MATRIX(407,421) = DISTANCE;
+
+DISTANCE = sqrt((x(1873,1) - x(1893,1))^2 + (x(1874,1) - x(1894,1))^2);
+LAMBDA_MATRIX(421,431) = DISTANCE;
+
+DISTANCE = sqrt((x(1893,1) - x(1873,1))^2 + (x(1894,1) - x(1874,1))^2);
+LAMBDA_MATRIX(431,421) = DISTANCE;
+
+DISTANCE = sqrt((x(1893,1) - x(1923,1))^2 + (x(1894,1) - x(1924,1))^2);
+LAMBDA_MATRIX(431,446) = DISTANCE;
+
+DISTANCE = sqrt((x(1923,1) - x(1893,1))^2 + (x(1924,1) - x(1894,1))^2);
+LAMBDA_MATRIX(446,431) = DISTANCE;
+
+DISTANCE = sqrt((x(1923,1) - x(1873,1))^2 + (x(1924,1) - x(1874,1))^2);
+LAMBDA_MATRIX(446,421) = DISTANCE;
+
+DISTANCE = sqrt((x(1873,1) - x(1923,1))^2 + (x(1874,1) - x(1924,1))^2);
+LAMBDA_MATRIX(421,446) = DISTANCE;
+
+DISTANCE = sqrt((x(1897,1) - x(1945,1))^2 + (x(1898,1) - x(1946,1))^2);
+LAMBDA_MATRIX(433,457) = DISTANCE;
+
+DISTANCE = sqrt((x(1945,1) - x(1897,1))^2 + (x(1946,1) - x(1898,1))^2);
+LAMBDA_MATRIX(457,433) = DISTANCE;
+
+DISTANCE = sqrt((x(1945,1) - x(1913,1))^2 + (x(1946,1) - x(1914,1))^2);
+LAMBDA_MATRIX(457,441) = DISTANCE;
+
+DISTANCE = sqrt((x(1913,1) - x(1945,1))^2 + (x(1914,1) - x(1946,1))^2);
+LAMBDA_MATRIX(441,457) = DISTANCE;
+
+DISTANCE = sqrt((x(1913,1) - x(1897,1))^2 + (x(1914,1) - x(1898,1))^2);
+LAMBDA_MATRIX(441,433) = DISTANCE;
+
+DISTANCE = sqrt((x(1897,1) - x(1913,1))^2 + (x(1898,1) - x(1914,1))^2);
+LAMBDA_MATRIX(433,441) = DISTANCE;
+
+DISTANCE = sqrt((x(1897,1) - x(1923,1))^2 + (x(1898,1) - x(1924,1))^2);
+LAMBDA_MATRIX(433,446) = DISTANCE;
+
+DISTANCE = sqrt((x(1923,1) - x(1897,1))^2 + (x(1924,1) - x(1898,1))^2);
+LAMBDA_MATRIX(446,433) = DISTANCE;
+
+DISTANCE = sqrt((x(1923,1) - x(1945,1))^2 + (x(1924,1) - x(1946,1))^2);
+LAMBDA_MATRIX(446,457) = DISTANCE;
+
+DISTANCE = sqrt((x(1945,1) - x(1923,1))^2 + (x(1946,1) - x(1924,1))^2);
+LAMBDA_MATRIX(457,446) = DISTANCE;
+
+DISTANCE = sqrt((x(1945,1) - x(1897,1))^2 + (x(1946,1) - x(1898,1))^2);
+LAMBDA_MATRIX(457,433) = DISTANCE;
+
+DISTANCE = sqrt((x(1897,1) - x(1945,1))^2 + (x(1898,1) - x(1946,1))^2);
+LAMBDA_MATRIX(433,457) = DISTANCE;
+
+DISTANCE = sqrt((x(1897,1) - x(1873,1))^2 + (x(1898,1) - x(1874,1))^2);
+LAMBDA_MATRIX(433,421) = DISTANCE;
+
+DISTANCE = sqrt((x(1873,1) - x(1897,1))^2 + (x(1874,1) - x(1898,1))^2);
+LAMBDA_MATRIX(421,433) = DISTANCE;
+
+DISTANCE = sqrt((x(1873,1) - x(1923,1))^2 + (x(1874,1) - x(1924,1))^2);
+LAMBDA_MATRIX(421,446) = DISTANCE;
+
+DISTANCE = sqrt((x(1923,1) - x(1873,1))^2 + (x(1924,1) - x(1874,1))^2);
+LAMBDA_MATRIX(446,421) = DISTANCE;
+
+DISTANCE = sqrt((x(1923,1) - x(1897,1))^2 + (x(1924,1) - x(1898,1))^2);
+LAMBDA_MATRIX(446,433) = DISTANCE;
+
+DISTANCE = sqrt((x(1897,1) - x(1923,1))^2 + (x(1898,1) - x(1924,1))^2);
+LAMBDA_MATRIX(433,446) = DISTANCE;
+
+DISTANCE = sqrt((x(1851,1) - x(1873,1))^2 + (x(1852,1) - x(1874,1))^2);
+LAMBDA_MATRIX(410,421) = DISTANCE;
+
+DISTANCE = sqrt((x(1873,1) - x(1851,1))^2 + (x(1874,1) - x(1852,1))^2);
+LAMBDA_MATRIX(421,410) = DISTANCE;
+
+DISTANCE = sqrt((x(1873,1) - x(1897,1))^2 + (x(1874,1) - x(1898,1))^2);
+LAMBDA_MATRIX(421,433) = DISTANCE;
+
+DISTANCE = sqrt((x(1897,1) - x(1873,1))^2 + (x(1898,1) - x(1874,1))^2);
+LAMBDA_MATRIX(433,421) = DISTANCE;
+
+DISTANCE = sqrt((x(1897,1) - x(1851,1))^2 + (x(1898,1) - x(1852,1))^2);
+LAMBDA_MATRIX(433,410) = DISTANCE;
+
+DISTANCE = sqrt((x(1851,1) - x(1897,1))^2 + (x(1852,1) - x(1898,1))^2);
+LAMBDA_MATRIX(410,433) = DISTANCE;
+
+DISTANCE = sqrt((x(1913,1) - x(1871,1))^2 + (x(1914,1) - x(1872,1))^2);
+LAMBDA_MATRIX(441,420) = DISTANCE;
+
+DISTANCE = sqrt((x(1871,1) - x(1913,1))^2 + (x(1872,1) - x(1914,1))^2);
+LAMBDA_MATRIX(420,441) = DISTANCE;
+
+DISTANCE = sqrt((x(1871,1) - x(1897,1))^2 + (x(1872,1) - x(1898,1))^2);
+LAMBDA_MATRIX(420,433) = DISTANCE;
+
+DISTANCE = sqrt((x(1897,1) - x(1871,1))^2 + (x(1898,1) - x(1872,1))^2);
+LAMBDA_MATRIX(433,420) = DISTANCE;
+
+DISTANCE = sqrt((x(1897,1) - x(1913,1))^2 + (x(1898,1) - x(1914,1))^2);
+LAMBDA_MATRIX(433,441) = DISTANCE;
+
+DISTANCE = sqrt((x(1913,1) - x(1897,1))^2 + (x(1914,1) - x(1898,1))^2);
+LAMBDA_MATRIX(441,433) = DISTANCE;
+
+DISTANCE = sqrt((x(1897,1) - x(1871,1))^2 + (x(1898,1) - x(1872,1))^2);
+LAMBDA_MATRIX(433,420) = DISTANCE;
+
+DISTANCE = sqrt((x(1871,1) - x(1897,1))^2 + (x(1872,1) - x(1898,1))^2);
+LAMBDA_MATRIX(420,433) = DISTANCE;
+
+DISTANCE = sqrt((x(1871,1) - x(1851,1))^2 + (x(1872,1) - x(1852,1))^2);
+LAMBDA_MATRIX(420,410) = DISTANCE;
+
+DISTANCE = sqrt((x(1851,1) - x(1871,1))^2 + (x(1852,1) - x(1872,1))^2);
+LAMBDA_MATRIX(410,420) = DISTANCE;
+
+DISTANCE = sqrt((x(1851,1) - x(1897,1))^2 + (x(1852,1) - x(1898,1))^2);
+LAMBDA_MATRIX(410,433) = DISTANCE;
+
+DISTANCE = sqrt((x(1897,1) - x(1851,1))^2 + (x(1898,1) - x(1852,1))^2);
+LAMBDA_MATRIX(433,410) = DISTANCE;
+
+DISTANCE = sqrt((x(1225,1) - x(1285,1))^2 + (x(1226,1) - x(1286,1))^2);
+LAMBDA_MATRIX(97,127) = DISTANCE;
+
+DISTANCE = sqrt((x(1285,1) - x(1225,1))^2 + (x(1286,1) - x(1226,1))^2);
+LAMBDA_MATRIX(127,97) = DISTANCE;
+
+DISTANCE = sqrt((x(1285,1) - x(1257,1))^2 + (x(1286,1) - x(1258,1))^2);
+LAMBDA_MATRIX(127,113) = DISTANCE;
+
+DISTANCE = sqrt((x(1257,1) - x(1285,1))^2 + (x(1258,1) - x(1286,1))^2);
+LAMBDA_MATRIX(113,127) = DISTANCE;
+
+DISTANCE = sqrt((x(1257,1) - x(1225,1))^2 + (x(1258,1) - x(1226,1))^2);
+LAMBDA_MATRIX(113,97) = DISTANCE;
+
+DISTANCE = sqrt((x(1225,1) - x(1257,1))^2 + (x(1226,1) - x(1258,1))^2);
+LAMBDA_MATRIX(97,113) = DISTANCE;
+
+DISTANCE = sqrt((x(1225,1) - x(1261,1))^2 + (x(1226,1) - x(1262,1))^2);
+LAMBDA_MATRIX(97,115) = DISTANCE;
+
+DISTANCE = sqrt((x(1261,1) - x(1225,1))^2 + (x(1262,1) - x(1226,1))^2);
+LAMBDA_MATRIX(115,97) = DISTANCE;
+
+DISTANCE = sqrt((x(1261,1) - x(1285,1))^2 + (x(1262,1) - x(1286,1))^2);
+LAMBDA_MATRIX(115,127) = DISTANCE;
+
+DISTANCE = sqrt((x(1285,1) - x(1261,1))^2 + (x(1286,1) - x(1262,1))^2);
+LAMBDA_MATRIX(127,115) = DISTANCE;
+
+DISTANCE = sqrt((x(1285,1) - x(1225,1))^2 + (x(1286,1) - x(1226,1))^2);
+LAMBDA_MATRIX(127,97) = DISTANCE;
+
+DISTANCE = sqrt((x(1225,1) - x(1285,1))^2 + (x(1226,1) - x(1286,1))^2);
+LAMBDA_MATRIX(97,127) = DISTANCE;
+
+DISTANCE = sqrt((x(1257,1) - x(1203,1))^2 + (x(1258,1) - x(1204,1))^2);
+LAMBDA_MATRIX(113,86) = DISTANCE;
+
+DISTANCE = sqrt((x(1203,1) - x(1257,1))^2 + (x(1204,1) - x(1258,1))^2);
+LAMBDA_MATRIX(86,113) = DISTANCE;
+
+DISTANCE = sqrt((x(1203,1) - x(1225,1))^2 + (x(1204,1) - x(1226,1))^2);
+LAMBDA_MATRIX(86,97) = DISTANCE;
+
+DISTANCE = sqrt((x(1225,1) - x(1203,1))^2 + (x(1226,1) - x(1204,1))^2);
+LAMBDA_MATRIX(97,86) = DISTANCE;
+
+DISTANCE = sqrt((x(1225,1) - x(1257,1))^2 + (x(1226,1) - x(1258,1))^2);
+LAMBDA_MATRIX(97,113) = DISTANCE;
+
+DISTANCE = sqrt((x(1257,1) - x(1225,1))^2 + (x(1258,1) - x(1226,1))^2);
+LAMBDA_MATRIX(113,97) = DISTANCE;
+
+DISTANCE = sqrt((x(1203,1) - x(1165,1))^2 + (x(1204,1) - x(1166,1))^2);
+LAMBDA_MATRIX(86,67) = DISTANCE;
+
+DISTANCE = sqrt((x(1165,1) - x(1203,1))^2 + (x(1166,1) - x(1204,1))^2);
+LAMBDA_MATRIX(67,86) = DISTANCE;
+
+DISTANCE = sqrt((x(1165,1) - x(1225,1))^2 + (x(1166,1) - x(1226,1))^2);
+LAMBDA_MATRIX(67,97) = DISTANCE;
+
+DISTANCE = sqrt((x(1225,1) - x(1165,1))^2 + (x(1226,1) - x(1166,1))^2);
+LAMBDA_MATRIX(97,67) = DISTANCE;
+
+DISTANCE = sqrt((x(1225,1) - x(1203,1))^2 + (x(1226,1) - x(1204,1))^2);
+LAMBDA_MATRIX(97,86) = DISTANCE;
+
+DISTANCE = sqrt((x(1203,1) - x(1225,1))^2 + (x(1204,1) - x(1226,1))^2);
+LAMBDA_MATRIX(86,97) = DISTANCE;
+
+DISTANCE = sqrt((x(1165,1) - x(1157,1))^2 + (x(1166,1) - x(1158,1))^2);
+LAMBDA_MATRIX(67,63) = DISTANCE;
+
+DISTANCE = sqrt((x(1157,1) - x(1165,1))^2 + (x(1158,1) - x(1166,1))^2);
+LAMBDA_MATRIX(63,67) = DISTANCE;
+
+DISTANCE = sqrt((x(1157,1) - x(1207,1))^2 + (x(1158,1) - x(1208,1))^2);
+LAMBDA_MATRIX(63,88) = DISTANCE;
+
+DISTANCE = sqrt((x(1207,1) - x(1157,1))^2 + (x(1208,1) - x(1158,1))^2);
+LAMBDA_MATRIX(88,63) = DISTANCE;
+
+DISTANCE = sqrt((x(1207,1) - x(1165,1))^2 + (x(1208,1) - x(1166,1))^2);
+LAMBDA_MATRIX(88,67) = DISTANCE;
+
+DISTANCE = sqrt((x(1165,1) - x(1207,1))^2 + (x(1166,1) - x(1208,1))^2);
+LAMBDA_MATRIX(67,88) = DISTANCE;
+
+DISTANCE = sqrt((x(1157,1) - x(1193,1))^2 + (x(1158,1) - x(1194,1))^2);
+LAMBDA_MATRIX(63,81) = DISTANCE;
+
+DISTANCE = sqrt((x(1193,1) - x(1157,1))^2 + (x(1194,1) - x(1158,1))^2);
+LAMBDA_MATRIX(81,63) = DISTANCE;
+
+DISTANCE = sqrt((x(1193,1) - x(1207,1))^2 + (x(1194,1) - x(1208,1))^2);
+LAMBDA_MATRIX(81,88) = DISTANCE;
+
+DISTANCE = sqrt((x(1207,1) - x(1193,1))^2 + (x(1208,1) - x(1194,1))^2);
+LAMBDA_MATRIX(88,81) = DISTANCE;
+
+DISTANCE = sqrt((x(1207,1) - x(1157,1))^2 + (x(1208,1) - x(1158,1))^2);
+LAMBDA_MATRIX(88,63) = DISTANCE;
+
+DISTANCE = sqrt((x(1157,1) - x(1207,1))^2 + (x(1158,1) - x(1208,1))^2);
+LAMBDA_MATRIX(63,88) = DISTANCE;
+
+DISTANCE = sqrt((x(1207,1) - x(1225,1))^2 + (x(1208,1) - x(1226,1))^2);
+LAMBDA_MATRIX(88,97) = DISTANCE;
+
+DISTANCE = sqrt((x(1225,1) - x(1207,1))^2 + (x(1226,1) - x(1208,1))^2);
+LAMBDA_MATRIX(97,88) = DISTANCE;
+
+DISTANCE = sqrt((x(1225,1) - x(1165,1))^2 + (x(1226,1) - x(1166,1))^2);
+LAMBDA_MATRIX(97,67) = DISTANCE;
+
+DISTANCE = sqrt((x(1165,1) - x(1225,1))^2 + (x(1166,1) - x(1226,1))^2);
+LAMBDA_MATRIX(67,97) = DISTANCE;
+
+DISTANCE = sqrt((x(1165,1) - x(1207,1))^2 + (x(1166,1) - x(1208,1))^2);
+LAMBDA_MATRIX(67,88) = DISTANCE;
+
+DISTANCE = sqrt((x(1207,1) - x(1165,1))^2 + (x(1208,1) - x(1166,1))^2);
+LAMBDA_MATRIX(88,67) = DISTANCE;
+
+DISTANCE = sqrt((x(1261,1) - x(1225,1))^2 + (x(1262,1) - x(1226,1))^2);
+LAMBDA_MATRIX(115,97) = DISTANCE;
+
+DISTANCE = sqrt((x(1225,1) - x(1261,1))^2 + (x(1226,1) - x(1262,1))^2);
+LAMBDA_MATRIX(97,115) = DISTANCE;
+
+DISTANCE = sqrt((x(1225,1) - x(1207,1))^2 + (x(1226,1) - x(1208,1))^2);
+LAMBDA_MATRIX(97,88) = DISTANCE;
+
+DISTANCE = sqrt((x(1207,1) - x(1225,1))^2 + (x(1208,1) - x(1226,1))^2);
+LAMBDA_MATRIX(88,97) = DISTANCE;
+
+DISTANCE = sqrt((x(1207,1) - x(1261,1))^2 + (x(1208,1) - x(1262,1))^2);
+LAMBDA_MATRIX(88,115) = DISTANCE;
+
+DISTANCE = sqrt((x(1261,1) - x(1207,1))^2 + (x(1262,1) - x(1208,1))^2);
+LAMBDA_MATRIX(115,88) = DISTANCE;
+
+DISTANCE = sqrt((x(1245,1) - x(1261,1))^2 + (x(1246,1) - x(1262,1))^2);
+LAMBDA_MATRIX(107,115) = DISTANCE;
+
+DISTANCE = sqrt((x(1261,1) - x(1245,1))^2 + (x(1262,1) - x(1246,1))^2);
+LAMBDA_MATRIX(115,107) = DISTANCE;
+
+DISTANCE = sqrt((x(1261,1) - x(1207,1))^2 + (x(1262,1) - x(1208,1))^2);
+LAMBDA_MATRIX(115,88) = DISTANCE;
+
+DISTANCE = sqrt((x(1207,1) - x(1261,1))^2 + (x(1208,1) - x(1262,1))^2);
+LAMBDA_MATRIX(88,115) = DISTANCE;
+
+DISTANCE = sqrt((x(1207,1) - x(1245,1))^2 + (x(1208,1) - x(1246,1))^2);
+LAMBDA_MATRIX(88,107) = DISTANCE;
+
+DISTANCE = sqrt((x(1245,1) - x(1207,1))^2 + (x(1246,1) - x(1208,1))^2);
+LAMBDA_MATRIX(107,88) = DISTANCE;
+
+DISTANCE = sqrt((x(1207,1) - x(1193,1))^2 + (x(1208,1) - x(1194,1))^2);
+LAMBDA_MATRIX(88,81) = DISTANCE;
+
+DISTANCE = sqrt((x(1193,1) - x(1207,1))^2 + (x(1194,1) - x(1208,1))^2);
+LAMBDA_MATRIX(81,88) = DISTANCE;
+
+DISTANCE = sqrt((x(1193,1) - x(1245,1))^2 + (x(1194,1) - x(1246,1))^2);
+LAMBDA_MATRIX(81,107) = DISTANCE;
+
+DISTANCE = sqrt((x(1245,1) - x(1193,1))^2 + (x(1246,1) - x(1194,1))^2);
+LAMBDA_MATRIX(107,81) = DISTANCE;
+
+DISTANCE = sqrt((x(1245,1) - x(1207,1))^2 + (x(1246,1) - x(1208,1))^2);
+LAMBDA_MATRIX(107,88) = DISTANCE;
+
+DISTANCE = sqrt((x(1207,1) - x(1245,1))^2 + (x(1208,1) - x(1246,1))^2);
+LAMBDA_MATRIX(88,107) = DISTANCE;
+
+DISTANCE = sqrt((x(1565,1) - x(1575,1))^2 + (x(1566,1) - x(1576,1))^2);
+LAMBDA_MATRIX(267,272) = DISTANCE;
+
+DISTANCE = sqrt((x(1575,1) - x(1565,1))^2 + (x(1576,1) - x(1566,1))^2);
+LAMBDA_MATRIX(272,267) = DISTANCE;
+
+DISTANCE = sqrt((x(1575,1) - x(1599,1))^2 + (x(1576,1) - x(1600,1))^2);
+LAMBDA_MATRIX(272,284) = DISTANCE;
+
+DISTANCE = sqrt((x(1599,1) - x(1575,1))^2 + (x(1600,1) - x(1576,1))^2);
+LAMBDA_MATRIX(284,272) = DISTANCE;
+
+DISTANCE = sqrt((x(1599,1) - x(1565,1))^2 + (x(1600,1) - x(1566,1))^2);
+LAMBDA_MATRIX(284,267) = DISTANCE;
+
+DISTANCE = sqrt((x(1565,1) - x(1599,1))^2 + (x(1566,1) - x(1600,1))^2);
+LAMBDA_MATRIX(267,284) = DISTANCE;
+
+DISTANCE = sqrt((x(1565,1) - x(1541,1))^2 + (x(1566,1) - x(1542,1))^2);
+LAMBDA_MATRIX(267,255) = DISTANCE;
+
+DISTANCE = sqrt((x(1541,1) - x(1565,1))^2 + (x(1542,1) - x(1566,1))^2);
+LAMBDA_MATRIX(255,267) = DISTANCE;
+
+DISTANCE = sqrt((x(1541,1) - x(1527,1))^2 + (x(1542,1) - x(1528,1))^2);
+LAMBDA_MATRIX(255,248) = DISTANCE;
+
+DISTANCE = sqrt((x(1527,1) - x(1541,1))^2 + (x(1528,1) - x(1542,1))^2);
+LAMBDA_MATRIX(248,255) = DISTANCE;
+
+DISTANCE = sqrt((x(1527,1) - x(1565,1))^2 + (x(1528,1) - x(1566,1))^2);
+LAMBDA_MATRIX(248,267) = DISTANCE;
+
+DISTANCE = sqrt((x(1565,1) - x(1527,1))^2 + (x(1566,1) - x(1528,1))^2);
+LAMBDA_MATRIX(267,248) = DISTANCE;
+
+DISTANCE = sqrt((x(1599,1) - x(1577,1))^2 + (x(1600,1) - x(1578,1))^2);
+LAMBDA_MATRIX(284,273) = DISTANCE;
+
+DISTANCE = sqrt((x(1577,1) - x(1599,1))^2 + (x(1578,1) - x(1600,1))^2);
+LAMBDA_MATRIX(273,284) = DISTANCE;
+
+DISTANCE = sqrt((x(1577,1) - x(1565,1))^2 + (x(1578,1) - x(1566,1))^2);
+LAMBDA_MATRIX(273,267) = DISTANCE;
+
+DISTANCE = sqrt((x(1565,1) - x(1577,1))^2 + (x(1566,1) - x(1578,1))^2);
+LAMBDA_MATRIX(267,273) = DISTANCE;
+
+DISTANCE = sqrt((x(1565,1) - x(1599,1))^2 + (x(1566,1) - x(1600,1))^2);
+LAMBDA_MATRIX(267,284) = DISTANCE;
+
+DISTANCE = sqrt((x(1599,1) - x(1565,1))^2 + (x(1600,1) - x(1566,1))^2);
+LAMBDA_MATRIX(284,267) = DISTANCE;
+
+DISTANCE = sqrt((x(1565,1) - x(1577,1))^2 + (x(1566,1) - x(1578,1))^2);
+LAMBDA_MATRIX(267,273) = DISTANCE;
+
+DISTANCE = sqrt((x(1577,1) - x(1565,1))^2 + (x(1578,1) - x(1566,1))^2);
+LAMBDA_MATRIX(273,267) = DISTANCE;
+
+DISTANCE = sqrt((x(1577,1) - x(1541,1))^2 + (x(1578,1) - x(1542,1))^2);
+LAMBDA_MATRIX(273,255) = DISTANCE;
+
+DISTANCE = sqrt((x(1541,1) - x(1577,1))^2 + (x(1542,1) - x(1578,1))^2);
+LAMBDA_MATRIX(255,273) = DISTANCE;
+
+DISTANCE = sqrt((x(1541,1) - x(1565,1))^2 + (x(1542,1) - x(1566,1))^2);
+LAMBDA_MATRIX(255,267) = DISTANCE;
+
+DISTANCE = sqrt((x(1565,1) - x(1541,1))^2 + (x(1566,1) - x(1542,1))^2);
+LAMBDA_MATRIX(267,255) = DISTANCE;
+
+DISTANCE = sqrt((x(1257,1) - x(1285,1))^2 + (x(1258,1) - x(1286,1))^2);
+LAMBDA_MATRIX(113,127) = DISTANCE;
+
+DISTANCE = sqrt((x(1285,1) - x(1257,1))^2 + (x(1286,1) - x(1258,1))^2);
+LAMBDA_MATRIX(127,113) = DISTANCE;
+
+DISTANCE = sqrt((x(1285,1) - x(1311,1))^2 + (x(1286,1) - x(1312,1))^2);
+LAMBDA_MATRIX(127,140) = DISTANCE;
+
+DISTANCE = sqrt((x(1311,1) - x(1285,1))^2 + (x(1312,1) - x(1286,1))^2);
+LAMBDA_MATRIX(140,127) = DISTANCE;
+
+DISTANCE = sqrt((x(1311,1) - x(1257,1))^2 + (x(1312,1) - x(1258,1))^2);
+LAMBDA_MATRIX(140,113) = DISTANCE;
+
+DISTANCE = sqrt((x(1257,1) - x(1311,1))^2 + (x(1258,1) - x(1312,1))^2);
+LAMBDA_MATRIX(113,140) = DISTANCE;
+
+DISTANCE = sqrt((x(1385,1) - x(1317,1))^2 + (x(1386,1) - x(1318,1))^2);
+LAMBDA_MATRIX(177,143) = DISTANCE;
+
+DISTANCE = sqrt((x(1317,1) - x(1385,1))^2 + (x(1318,1) - x(1386,1))^2);
+LAMBDA_MATRIX(143,177) = DISTANCE;
+
+DISTANCE = sqrt((x(1317,1) - x(1353,1))^2 + (x(1318,1) - x(1354,1))^2);
+LAMBDA_MATRIX(143,161) = DISTANCE;
+
+DISTANCE = sqrt((x(1353,1) - x(1317,1))^2 + (x(1354,1) - x(1318,1))^2);
+LAMBDA_MATRIX(161,143) = DISTANCE;
+
+DISTANCE = sqrt((x(1353,1) - x(1385,1))^2 + (x(1354,1) - x(1386,1))^2);
+LAMBDA_MATRIX(161,177) = DISTANCE;
+
+DISTANCE = sqrt((x(1385,1) - x(1353,1))^2 + (x(1386,1) - x(1354,1))^2);
+LAMBDA_MATRIX(177,161) = DISTANCE;
+
+DISTANCE = sqrt((x(1223,1) - x(1259,1))^2 + (x(1224,1) - x(1260,1))^2);
+LAMBDA_MATRIX(96,114) = DISTANCE;
+
+DISTANCE = sqrt((x(1259,1) - x(1223,1))^2 + (x(1260,1) - x(1224,1))^2);
+LAMBDA_MATRIX(114,96) = DISTANCE;
+
+DISTANCE = sqrt((x(1259,1) - x(1213,1))^2 + (x(1260,1) - x(1214,1))^2);
+LAMBDA_MATRIX(114,91) = DISTANCE;
+
+DISTANCE = sqrt((x(1213,1) - x(1259,1))^2 + (x(1214,1) - x(1260,1))^2);
+LAMBDA_MATRIX(91,114) = DISTANCE;
+
+DISTANCE = sqrt((x(1213,1) - x(1223,1))^2 + (x(1214,1) - x(1224,1))^2);
+LAMBDA_MATRIX(91,96) = DISTANCE;
+
+DISTANCE = sqrt((x(1223,1) - x(1213,1))^2 + (x(1224,1) - x(1214,1))^2);
+LAMBDA_MATRIX(96,91) = DISTANCE;
+
+DISTANCE = sqrt((x(1213,1) - x(1259,1))^2 + (x(1214,1) - x(1260,1))^2);
+LAMBDA_MATRIX(91,114) = DISTANCE;
+
+DISTANCE = sqrt((x(1259,1) - x(1213,1))^2 + (x(1260,1) - x(1214,1))^2);
+LAMBDA_MATRIX(114,91) = DISTANCE;
+
+DISTANCE = sqrt((x(1259,1) - x(1243,1))^2 + (x(1260,1) - x(1244,1))^2);
+LAMBDA_MATRIX(114,106) = DISTANCE;
+
+DISTANCE = sqrt((x(1243,1) - x(1259,1))^2 + (x(1244,1) - x(1260,1))^2);
+LAMBDA_MATRIX(106,114) = DISTANCE;
+
+DISTANCE = sqrt((x(1243,1) - x(1213,1))^2 + (x(1244,1) - x(1214,1))^2);
+LAMBDA_MATRIX(106,91) = DISTANCE;
+
+DISTANCE = sqrt((x(1213,1) - x(1243,1))^2 + (x(1214,1) - x(1244,1))^2);
+LAMBDA_MATRIX(91,106) = DISTANCE;
+
+DISTANCE = sqrt((x(1243,1) - x(1197,1))^2 + (x(1244,1) - x(1198,1))^2);
+LAMBDA_MATRIX(106,83) = DISTANCE;
+
+DISTANCE = sqrt((x(1197,1) - x(1243,1))^2 + (x(1198,1) - x(1244,1))^2);
+LAMBDA_MATRIX(83,106) = DISTANCE;
+
+DISTANCE = sqrt((x(1197,1) - x(1213,1))^2 + (x(1198,1) - x(1214,1))^2);
+LAMBDA_MATRIX(83,91) = DISTANCE;
+
+DISTANCE = sqrt((x(1213,1) - x(1197,1))^2 + (x(1214,1) - x(1198,1))^2);
+LAMBDA_MATRIX(91,83) = DISTANCE;
+
+DISTANCE = sqrt((x(1213,1) - x(1243,1))^2 + (x(1214,1) - x(1244,1))^2);
+LAMBDA_MATRIX(91,106) = DISTANCE;
+
+DISTANCE = sqrt((x(1243,1) - x(1213,1))^2 + (x(1244,1) - x(1214,1))^2);
+LAMBDA_MATRIX(106,91) = DISTANCE;
+
+DISTANCE = sqrt((x(1291,1) - x(1259,1))^2 + (x(1292,1) - x(1260,1))^2);
+LAMBDA_MATRIX(130,114) = DISTANCE;
+
+DISTANCE = sqrt((x(1259,1) - x(1291,1))^2 + (x(1260,1) - x(1292,1))^2);
+LAMBDA_MATRIX(114,130) = DISTANCE;
+
+DISTANCE = sqrt((x(1259,1) - x(1305,1))^2 + (x(1260,1) - x(1306,1))^2);
+LAMBDA_MATRIX(114,137) = DISTANCE;
+
+DISTANCE = sqrt((x(1305,1) - x(1259,1))^2 + (x(1306,1) - x(1260,1))^2);
+LAMBDA_MATRIX(137,114) = DISTANCE;
+
+DISTANCE = sqrt((x(1305,1) - x(1291,1))^2 + (x(1306,1) - x(1292,1))^2);
+LAMBDA_MATRIX(137,130) = DISTANCE;
+
+DISTANCE = sqrt((x(1291,1) - x(1305,1))^2 + (x(1292,1) - x(1306,1))^2);
+LAMBDA_MATRIX(130,137) = DISTANCE;
+
+DISTANCE = sqrt((x(1243,1) - x(1259,1))^2 + (x(1244,1) - x(1260,1))^2);
+LAMBDA_MATRIX(106,114) = DISTANCE;
+
+DISTANCE = sqrt((x(1259,1) - x(1243,1))^2 + (x(1260,1) - x(1244,1))^2);
+LAMBDA_MATRIX(114,106) = DISTANCE;
+
+DISTANCE = sqrt((x(1259,1) - x(1291,1))^2 + (x(1260,1) - x(1292,1))^2);
+LAMBDA_MATRIX(114,130) = DISTANCE;
+
+DISTANCE = sqrt((x(1291,1) - x(1259,1))^2 + (x(1292,1) - x(1260,1))^2);
+LAMBDA_MATRIX(130,114) = DISTANCE;
+
+DISTANCE = sqrt((x(1291,1) - x(1243,1))^2 + (x(1292,1) - x(1244,1))^2);
+LAMBDA_MATRIX(130,106) = DISTANCE;
+
+DISTANCE = sqrt((x(1243,1) - x(1291,1))^2 + (x(1244,1) - x(1292,1))^2);
+LAMBDA_MATRIX(106,130) = DISTANCE;
+
+DISTANCE = sqrt((x(1099,1) - x(1113,1))^2 + (x(1100,1) - x(1114,1))^2);
+LAMBDA_MATRIX(34,41) = DISTANCE;
+
+DISTANCE = sqrt((x(1113,1) - x(1099,1))^2 + (x(1114,1) - x(1100,1))^2);
+LAMBDA_MATRIX(41,34) = DISTANCE;
+
+DISTANCE = sqrt((x(1113,1) - x(1153,1))^2 + (x(1114,1) - x(1154,1))^2);
+LAMBDA_MATRIX(41,61) = DISTANCE;
+
+DISTANCE = sqrt((x(1153,1) - x(1113,1))^2 + (x(1154,1) - x(1114,1))^2);
+LAMBDA_MATRIX(61,41) = DISTANCE;
+
+DISTANCE = sqrt((x(1153,1) - x(1099,1))^2 + (x(1154,1) - x(1100,1))^2);
+LAMBDA_MATRIX(61,34) = DISTANCE;
+
+DISTANCE = sqrt((x(1099,1) - x(1153,1))^2 + (x(1100,1) - x(1154,1))^2);
+LAMBDA_MATRIX(34,61) = DISTANCE;
+
+DISTANCE = sqrt((x(1061,1) - x(1059,1))^2 + (x(1062,1) - x(1060,1))^2);
+LAMBDA_MATRIX(15,14) = DISTANCE;
+
+DISTANCE = sqrt((x(1059,1) - x(1061,1))^2 + (x(1060,1) - x(1062,1))^2);
+LAMBDA_MATRIX(14,15) = DISTANCE;
+
+DISTANCE = sqrt((x(1059,1) - x(1099,1))^2 + (x(1060,1) - x(1100,1))^2);
+LAMBDA_MATRIX(14,34) = DISTANCE;
+
+DISTANCE = sqrt((x(1099,1) - x(1059,1))^2 + (x(1100,1) - x(1060,1))^2);
+LAMBDA_MATRIX(34,14) = DISTANCE;
+
+DISTANCE = sqrt((x(1099,1) - x(1061,1))^2 + (x(1100,1) - x(1062,1))^2);
+LAMBDA_MATRIX(34,15) = DISTANCE;
+
+DISTANCE = sqrt((x(1061,1) - x(1099,1))^2 + (x(1062,1) - x(1100,1))^2);
+LAMBDA_MATRIX(15,34) = DISTANCE;
+
+DISTANCE = sqrt((x(1059,1) - x(1113,1))^2 + (x(1060,1) - x(1114,1))^2);
+LAMBDA_MATRIX(14,41) = DISTANCE;
+
+DISTANCE = sqrt((x(1113,1) - x(1059,1))^2 + (x(1114,1) - x(1060,1))^2);
+LAMBDA_MATRIX(41,14) = DISTANCE;
+
+DISTANCE = sqrt((x(1113,1) - x(1099,1))^2 + (x(1114,1) - x(1100,1))^2);
+LAMBDA_MATRIX(41,34) = DISTANCE;
+
+DISTANCE = sqrt((x(1099,1) - x(1113,1))^2 + (x(1100,1) - x(1114,1))^2);
+LAMBDA_MATRIX(34,41) = DISTANCE;
+
+DISTANCE = sqrt((x(1099,1) - x(1059,1))^2 + (x(1100,1) - x(1060,1))^2);
+LAMBDA_MATRIX(34,14) = DISTANCE;
+
+DISTANCE = sqrt((x(1059,1) - x(1099,1))^2 + (x(1060,1) - x(1100,1))^2);
+LAMBDA_MATRIX(14,34) = DISTANCE;
+
+DISTANCE = sqrt((x(1343,1) - x(1323,1))^2 + (x(1344,1) - x(1324,1))^2);
+LAMBDA_MATRIX(156,146) = DISTANCE;
+
+DISTANCE = sqrt((x(1323,1) - x(1343,1))^2 + (x(1324,1) - x(1344,1))^2);
+LAMBDA_MATRIX(146,156) = DISTANCE;
+
+DISTANCE = sqrt((x(1323,1) - x(1299,1))^2 + (x(1324,1) - x(1300,1))^2);
+LAMBDA_MATRIX(146,134) = DISTANCE;
+
+DISTANCE = sqrt((x(1299,1) - x(1323,1))^2 + (x(1300,1) - x(1324,1))^2);
+LAMBDA_MATRIX(134,146) = DISTANCE;
+
+DISTANCE = sqrt((x(1299,1) - x(1343,1))^2 + (x(1300,1) - x(1344,1))^2);
+LAMBDA_MATRIX(134,156) = DISTANCE;
+
+DISTANCE = sqrt((x(1343,1) - x(1299,1))^2 + (x(1344,1) - x(1300,1))^2);
+LAMBDA_MATRIX(156,134) = DISTANCE;
+
+DISTANCE = sqrt((x(1253,1) - x(1307,1))^2 + (x(1254,1) - x(1308,1))^2);
+LAMBDA_MATRIX(111,138) = DISTANCE;
+
+DISTANCE = sqrt((x(1307,1) - x(1253,1))^2 + (x(1308,1) - x(1254,1))^2);
+LAMBDA_MATRIX(138,111) = DISTANCE;
+
+DISTANCE = sqrt((x(1307,1) - x(1287,1))^2 + (x(1308,1) - x(1288,1))^2);
+LAMBDA_MATRIX(138,128) = DISTANCE;
+
+DISTANCE = sqrt((x(1287,1) - x(1307,1))^2 + (x(1288,1) - x(1308,1))^2);
+LAMBDA_MATRIX(128,138) = DISTANCE;
+
+DISTANCE = sqrt((x(1287,1) - x(1253,1))^2 + (x(1288,1) - x(1254,1))^2);
+LAMBDA_MATRIX(128,111) = DISTANCE;
+
+DISTANCE = sqrt((x(1253,1) - x(1287,1))^2 + (x(1254,1) - x(1288,1))^2);
+LAMBDA_MATRIX(111,128) = DISTANCE;
+
+DISTANCE = sqrt((x(1287,1) - x(1237,1))^2 + (x(1288,1) - x(1238,1))^2);
+LAMBDA_MATRIX(128,103) = DISTANCE;
+
+DISTANCE = sqrt((x(1237,1) - x(1287,1))^2 + (x(1238,1) - x(1288,1))^2);
+LAMBDA_MATRIX(103,128) = DISTANCE;
+
+DISTANCE = sqrt((x(1237,1) - x(1253,1))^2 + (x(1238,1) - x(1254,1))^2);
+LAMBDA_MATRIX(103,111) = DISTANCE;
+
+DISTANCE = sqrt((x(1253,1) - x(1237,1))^2 + (x(1254,1) - x(1238,1))^2);
+LAMBDA_MATRIX(111,103) = DISTANCE;
+
+DISTANCE = sqrt((x(1253,1) - x(1287,1))^2 + (x(1254,1) - x(1288,1))^2);
+LAMBDA_MATRIX(111,128) = DISTANCE;
+
+DISTANCE = sqrt((x(1287,1) - x(1253,1))^2 + (x(1288,1) - x(1254,1))^2);
+LAMBDA_MATRIX(128,111) = DISTANCE;
+
+DISTANCE = sqrt((x(1287,1) - x(1273,1))^2 + (x(1288,1) - x(1274,1))^2);
+LAMBDA_MATRIX(128,121) = DISTANCE;
+
+DISTANCE = sqrt((x(1273,1) - x(1287,1))^2 + (x(1274,1) - x(1288,1))^2);
+LAMBDA_MATRIX(121,128) = DISTANCE;
+
+DISTANCE = sqrt((x(1273,1) - x(1237,1))^2 + (x(1274,1) - x(1238,1))^2);
+LAMBDA_MATRIX(121,103) = DISTANCE;
+
+DISTANCE = sqrt((x(1237,1) - x(1273,1))^2 + (x(1238,1) - x(1274,1))^2);
+LAMBDA_MATRIX(103,121) = DISTANCE;
+
+DISTANCE = sqrt((x(1237,1) - x(1287,1))^2 + (x(1238,1) - x(1288,1))^2);
+LAMBDA_MATRIX(103,128) = DISTANCE;
+
+DISTANCE = sqrt((x(1287,1) - x(1237,1))^2 + (x(1288,1) - x(1238,1))^2);
+LAMBDA_MATRIX(128,103) = DISTANCE;
+
+DISTANCE = sqrt((x(1357,1) - x(1303,1))^2 + (x(1358,1) - x(1304,1))^2);
+LAMBDA_MATRIX(163,136) = DISTANCE;
+
+DISTANCE = sqrt((x(1303,1) - x(1357,1))^2 + (x(1304,1) - x(1358,1))^2);
+LAMBDA_MATRIX(136,163) = DISTANCE;
+
+DISTANCE = sqrt((x(1303,1) - x(1335,1))^2 + (x(1304,1) - x(1336,1))^2);
+LAMBDA_MATRIX(136,152) = DISTANCE;
+
+DISTANCE = sqrt((x(1335,1) - x(1303,1))^2 + (x(1336,1) - x(1304,1))^2);
+LAMBDA_MATRIX(152,136) = DISTANCE;
+
+DISTANCE = sqrt((x(1335,1) - x(1357,1))^2 + (x(1336,1) - x(1358,1))^2);
+LAMBDA_MATRIX(152,163) = DISTANCE;
+
+DISTANCE = sqrt((x(1357,1) - x(1335,1))^2 + (x(1358,1) - x(1336,1))^2);
+LAMBDA_MATRIX(163,152) = DISTANCE;
+
+DISTANCE = sqrt((x(1357,1) - x(1319,1))^2 + (x(1358,1) - x(1320,1))^2);
+LAMBDA_MATRIX(163,144) = DISTANCE;
+
+DISTANCE = sqrt((x(1319,1) - x(1357,1))^2 + (x(1320,1) - x(1358,1))^2);
+LAMBDA_MATRIX(144,163) = DISTANCE;
+
+DISTANCE = sqrt((x(1319,1) - x(1303,1))^2 + (x(1320,1) - x(1304,1))^2);
+LAMBDA_MATRIX(144,136) = DISTANCE;
+
+DISTANCE = sqrt((x(1303,1) - x(1319,1))^2 + (x(1304,1) - x(1320,1))^2);
+LAMBDA_MATRIX(136,144) = DISTANCE;
+
+DISTANCE = sqrt((x(1303,1) - x(1357,1))^2 + (x(1304,1) - x(1358,1))^2);
+LAMBDA_MATRIX(136,163) = DISTANCE;
+
+DISTANCE = sqrt((x(1357,1) - x(1303,1))^2 + (x(1358,1) - x(1304,1))^2);
+LAMBDA_MATRIX(163,136) = DISTANCE;
+
+DISTANCE = sqrt((x(1217,1) - x(1269,1))^2 + (x(1218,1) - x(1270,1))^2);
+LAMBDA_MATRIX(93,119) = DISTANCE;
+
+DISTANCE = sqrt((x(1269,1) - x(1217,1))^2 + (x(1270,1) - x(1218,1))^2);
+LAMBDA_MATRIX(119,93) = DISTANCE;
+
+DISTANCE = sqrt((x(1269,1) - x(1231,1))^2 + (x(1270,1) - x(1232,1))^2);
+LAMBDA_MATRIX(119,100) = DISTANCE;
+
+DISTANCE = sqrt((x(1231,1) - x(1269,1))^2 + (x(1232,1) - x(1270,1))^2);
+LAMBDA_MATRIX(100,119) = DISTANCE;
+
+DISTANCE = sqrt((x(1231,1) - x(1217,1))^2 + (x(1232,1) - x(1218,1))^2);
+LAMBDA_MATRIX(100,93) = DISTANCE;
+
+DISTANCE = sqrt((x(1217,1) - x(1231,1))^2 + (x(1218,1) - x(1232,1))^2);
+LAMBDA_MATRIX(93,100) = DISTANCE;
+
+DISTANCE = sqrt((x(1251,1) - x(1269,1))^2 + (x(1252,1) - x(1270,1))^2);
+LAMBDA_MATRIX(110,119) = DISTANCE;
+
+DISTANCE = sqrt((x(1269,1) - x(1251,1))^2 + (x(1270,1) - x(1252,1))^2);
+LAMBDA_MATRIX(119,110) = DISTANCE;
+
+DISTANCE = sqrt((x(1269,1) - x(1217,1))^2 + (x(1270,1) - x(1218,1))^2);
+LAMBDA_MATRIX(119,93) = DISTANCE;
+
+DISTANCE = sqrt((x(1217,1) - x(1269,1))^2 + (x(1218,1) - x(1270,1))^2);
+LAMBDA_MATRIX(93,119) = DISTANCE;
+
+DISTANCE = sqrt((x(1217,1) - x(1251,1))^2 + (x(1218,1) - x(1252,1))^2);
+LAMBDA_MATRIX(93,110) = DISTANCE;
+
+DISTANCE = sqrt((x(1251,1) - x(1217,1))^2 + (x(1252,1) - x(1218,1))^2);
+LAMBDA_MATRIX(110,93) = DISTANCE;
+
+DISTANCE = sqrt((x(1315,1) - x(1365,1))^2 + (x(1316,1) - x(1366,1))^2);
+LAMBDA_MATRIX(142,167) = DISTANCE;
+
+DISTANCE = sqrt((x(1365,1) - x(1315,1))^2 + (x(1366,1) - x(1316,1))^2);
+LAMBDA_MATRIX(167,142) = DISTANCE;
+
+DISTANCE = sqrt((x(1365,1) - x(1347,1))^2 + (x(1366,1) - x(1348,1))^2);
+LAMBDA_MATRIX(167,158) = DISTANCE;
+
+DISTANCE = sqrt((x(1347,1) - x(1365,1))^2 + (x(1348,1) - x(1366,1))^2);
+LAMBDA_MATRIX(158,167) = DISTANCE;
+
+DISTANCE = sqrt((x(1347,1) - x(1315,1))^2 + (x(1348,1) - x(1316,1))^2);
+LAMBDA_MATRIX(158,142) = DISTANCE;
+
+DISTANCE = sqrt((x(1315,1) - x(1347,1))^2 + (x(1316,1) - x(1348,1))^2);
+LAMBDA_MATRIX(142,158) = DISTANCE;
+
+DISTANCE = sqrt((x(1355,1) - x(1365,1))^2 + (x(1356,1) - x(1366,1))^2);
+LAMBDA_MATRIX(162,167) = DISTANCE;
+
+DISTANCE = sqrt((x(1365,1) - x(1355,1))^2 + (x(1366,1) - x(1356,1))^2);
+LAMBDA_MATRIX(167,162) = DISTANCE;
+
+DISTANCE = sqrt((x(1365,1) - x(1315,1))^2 + (x(1366,1) - x(1316,1))^2);
+LAMBDA_MATRIX(167,142) = DISTANCE;
+
+DISTANCE = sqrt((x(1315,1) - x(1365,1))^2 + (x(1316,1) - x(1366,1))^2);
+LAMBDA_MATRIX(142,167) = DISTANCE;
+
+DISTANCE = sqrt((x(1315,1) - x(1355,1))^2 + (x(1316,1) - x(1356,1))^2);
+LAMBDA_MATRIX(142,162) = DISTANCE;
+
+DISTANCE = sqrt((x(1355,1) - x(1315,1))^2 + (x(1356,1) - x(1316,1))^2);
+LAMBDA_MATRIX(162,142) = DISTANCE;
+
+DISTANCE = sqrt((x(1347,1) - x(1327,1))^2 + (x(1348,1) - x(1328,1))^2);
+LAMBDA_MATRIX(158,148) = DISTANCE;
+
+DISTANCE = sqrt((x(1327,1) - x(1347,1))^2 + (x(1328,1) - x(1348,1))^2);
+LAMBDA_MATRIX(148,158) = DISTANCE;
+
+DISTANCE = sqrt((x(1327,1) - x(1293,1))^2 + (x(1328,1) - x(1294,1))^2);
+LAMBDA_MATRIX(148,131) = DISTANCE;
+
+DISTANCE = sqrt((x(1293,1) - x(1327,1))^2 + (x(1294,1) - x(1328,1))^2);
+LAMBDA_MATRIX(131,148) = DISTANCE;
+
+DISTANCE = sqrt((x(1293,1) - x(1347,1))^2 + (x(1294,1) - x(1348,1))^2);
+LAMBDA_MATRIX(131,158) = DISTANCE;
+
+DISTANCE = sqrt((x(1347,1) - x(1293,1))^2 + (x(1348,1) - x(1294,1))^2);
+LAMBDA_MATRIX(158,131) = DISTANCE;
+
+DISTANCE = sqrt((x(1293,1) - x(1315,1))^2 + (x(1294,1) - x(1316,1))^2);
+LAMBDA_MATRIX(131,142) = DISTANCE;
+
+DISTANCE = sqrt((x(1315,1) - x(1293,1))^2 + (x(1316,1) - x(1294,1))^2);
+LAMBDA_MATRIX(142,131) = DISTANCE;
+
+DISTANCE = sqrt((x(1315,1) - x(1347,1))^2 + (x(1316,1) - x(1348,1))^2);
+LAMBDA_MATRIX(142,158) = DISTANCE;
+
+DISTANCE = sqrt((x(1347,1) - x(1315,1))^2 + (x(1348,1) - x(1316,1))^2);
+LAMBDA_MATRIX(158,142) = DISTANCE;
+
+DISTANCE = sqrt((x(1347,1) - x(1293,1))^2 + (x(1348,1) - x(1294,1))^2);
+LAMBDA_MATRIX(158,131) = DISTANCE;
+
+DISTANCE = sqrt((x(1293,1) - x(1347,1))^2 + (x(1294,1) - x(1348,1))^2);
+LAMBDA_MATRIX(131,158) = DISTANCE;
+
+DISTANCE = sqrt((x(1267,1) - x(1315,1))^2 + (x(1268,1) - x(1316,1))^2);
+LAMBDA_MATRIX(118,142) = DISTANCE;
+
+DISTANCE = sqrt((x(1315,1) - x(1267,1))^2 + (x(1316,1) - x(1268,1))^2);
+LAMBDA_MATRIX(142,118) = DISTANCE;
+
+DISTANCE = sqrt((x(1315,1) - x(1293,1))^2 + (x(1316,1) - x(1294,1))^2);
+LAMBDA_MATRIX(142,131) = DISTANCE;
+
+DISTANCE = sqrt((x(1293,1) - x(1315,1))^2 + (x(1294,1) - x(1316,1))^2);
+LAMBDA_MATRIX(131,142) = DISTANCE;
+
+DISTANCE = sqrt((x(1293,1) - x(1267,1))^2 + (x(1294,1) - x(1268,1))^2);
+LAMBDA_MATRIX(131,118) = DISTANCE;
+
+DISTANCE = sqrt((x(1267,1) - x(1293,1))^2 + (x(1268,1) - x(1294,1))^2);
+LAMBDA_MATRIX(118,131) = DISTANCE;
+
+DISTANCE = sqrt((x(1293,1) - x(1327,1))^2 + (x(1294,1) - x(1328,1))^2);
+LAMBDA_MATRIX(131,148) = DISTANCE;
+
+DISTANCE = sqrt((x(1327,1) - x(1293,1))^2 + (x(1328,1) - x(1294,1))^2);
+LAMBDA_MATRIX(148,131) = DISTANCE;
+
+DISTANCE = sqrt((x(1327,1) - x(1281,1))^2 + (x(1328,1) - x(1282,1))^2);
+LAMBDA_MATRIX(148,125) = DISTANCE;
+
+DISTANCE = sqrt((x(1281,1) - x(1327,1))^2 + (x(1282,1) - x(1328,1))^2);
+LAMBDA_MATRIX(125,148) = DISTANCE;
+
+DISTANCE = sqrt((x(1281,1) - x(1293,1))^2 + (x(1282,1) - x(1294,1))^2);
+LAMBDA_MATRIX(125,131) = DISTANCE;
+
+DISTANCE = sqrt((x(1293,1) - x(1281,1))^2 + (x(1294,1) - x(1282,1))^2);
+LAMBDA_MATRIX(131,125) = DISTANCE;
+
+DISTANCE = sqrt((x(1531,1) - x(1547,1))^2 + (x(1532,1) - x(1548,1))^2);
+LAMBDA_MATRIX(250,258) = DISTANCE;
+
+DISTANCE = sqrt((x(1547,1) - x(1531,1))^2 + (x(1548,1) - x(1532,1))^2);
+LAMBDA_MATRIX(258,250) = DISTANCE;
+
+DISTANCE = sqrt((x(1547,1) - x(1563,1))^2 + (x(1548,1) - x(1564,1))^2);
+LAMBDA_MATRIX(258,266) = DISTANCE;
+
+DISTANCE = sqrt((x(1563,1) - x(1547,1))^2 + (x(1564,1) - x(1548,1))^2);
+LAMBDA_MATRIX(266,258) = DISTANCE;
+
+DISTANCE = sqrt((x(1563,1) - x(1531,1))^2 + (x(1564,1) - x(1532,1))^2);
+LAMBDA_MATRIX(266,250) = DISTANCE;
+
+DISTANCE = sqrt((x(1531,1) - x(1563,1))^2 + (x(1532,1) - x(1564,1))^2);
+LAMBDA_MATRIX(250,266) = DISTANCE;
+
+DISTANCE = sqrt((x(1507,1) - x(1547,1))^2 + (x(1508,1) - x(1548,1))^2);
+LAMBDA_MATRIX(238,258) = DISTANCE;
+
+DISTANCE = sqrt((x(1547,1) - x(1507,1))^2 + (x(1548,1) - x(1508,1))^2);
+LAMBDA_MATRIX(258,238) = DISTANCE;
+
+DISTANCE = sqrt((x(1547,1) - x(1531,1))^2 + (x(1548,1) - x(1532,1))^2);
+LAMBDA_MATRIX(258,250) = DISTANCE;
+
+DISTANCE = sqrt((x(1531,1) - x(1547,1))^2 + (x(1532,1) - x(1548,1))^2);
+LAMBDA_MATRIX(250,258) = DISTANCE;
+
+DISTANCE = sqrt((x(1531,1) - x(1507,1))^2 + (x(1532,1) - x(1508,1))^2);
+LAMBDA_MATRIX(250,238) = DISTANCE;
+
+DISTANCE = sqrt((x(1507,1) - x(1531,1))^2 + (x(1508,1) - x(1532,1))^2);
+LAMBDA_MATRIX(238,250) = DISTANCE;
+
+DISTANCE = sqrt((x(1485,1) - x(1465,1))^2 + (x(1486,1) - x(1466,1))^2);
+LAMBDA_MATRIX(227,217) = DISTANCE;
+
+DISTANCE = sqrt((x(1465,1) - x(1485,1))^2 + (x(1466,1) - x(1486,1))^2);
+LAMBDA_MATRIX(217,227) = DISTANCE;
+
+DISTANCE = sqrt((x(1465,1) - x(1507,1))^2 + (x(1466,1) - x(1508,1))^2);
+LAMBDA_MATRIX(217,238) = DISTANCE;
+
+DISTANCE = sqrt((x(1507,1) - x(1465,1))^2 + (x(1508,1) - x(1466,1))^2);
+LAMBDA_MATRIX(238,217) = DISTANCE;
+
+DISTANCE = sqrt((x(1507,1) - x(1485,1))^2 + (x(1508,1) - x(1486,1))^2);
+LAMBDA_MATRIX(238,227) = DISTANCE;
+
+DISTANCE = sqrt((x(1485,1) - x(1507,1))^2 + (x(1486,1) - x(1508,1))^2);
+LAMBDA_MATRIX(227,238) = DISTANCE;
+
+DISTANCE = sqrt((x(1485,1) - x(1511,1))^2 + (x(1486,1) - x(1512,1))^2);
+LAMBDA_MATRIX(227,240) = DISTANCE;
+
+DISTANCE = sqrt((x(1511,1) - x(1485,1))^2 + (x(1512,1) - x(1486,1))^2);
+LAMBDA_MATRIX(240,227) = DISTANCE;
+
+DISTANCE = sqrt((x(1511,1) - x(1473,1))^2 + (x(1512,1) - x(1474,1))^2);
+LAMBDA_MATRIX(240,221) = DISTANCE;
+
+DISTANCE = sqrt((x(1473,1) - x(1511,1))^2 + (x(1474,1) - x(1512,1))^2);
+LAMBDA_MATRIX(221,240) = DISTANCE;
+
+DISTANCE = sqrt((x(1473,1) - x(1485,1))^2 + (x(1474,1) - x(1486,1))^2);
+LAMBDA_MATRIX(221,227) = DISTANCE;
+
+DISTANCE = sqrt((x(1485,1) - x(1473,1))^2 + (x(1486,1) - x(1474,1))^2);
+LAMBDA_MATRIX(227,221) = DISTANCE;
+
+DISTANCE = sqrt((x(1507,1) - x(1531,1))^2 + (x(1508,1) - x(1532,1))^2);
+LAMBDA_MATRIX(238,250) = DISTANCE;
+
+DISTANCE = sqrt((x(1531,1) - x(1507,1))^2 + (x(1532,1) - x(1508,1))^2);
+LAMBDA_MATRIX(250,238) = DISTANCE;
+
+DISTANCE = sqrt((x(1531,1) - x(1485,1))^2 + (x(1532,1) - x(1486,1))^2);
+LAMBDA_MATRIX(250,227) = DISTANCE;
+
+DISTANCE = sqrt((x(1485,1) - x(1531,1))^2 + (x(1486,1) - x(1532,1))^2);
+LAMBDA_MATRIX(227,250) = DISTANCE;
+
+DISTANCE = sqrt((x(1485,1) - x(1507,1))^2 + (x(1486,1) - x(1508,1))^2);
+LAMBDA_MATRIX(227,238) = DISTANCE;
+
+DISTANCE = sqrt((x(1507,1) - x(1485,1))^2 + (x(1508,1) - x(1486,1))^2);
+LAMBDA_MATRIX(238,227) = DISTANCE;
+
+DISTANCE = sqrt((x(1485,1) - x(1531,1))^2 + (x(1486,1) - x(1532,1))^2);
+LAMBDA_MATRIX(227,250) = DISTANCE;
+
+DISTANCE = sqrt((x(1531,1) - x(1485,1))^2 + (x(1532,1) - x(1486,1))^2);
+LAMBDA_MATRIX(250,227) = DISTANCE;
+
+DISTANCE = sqrt((x(1531,1) - x(1511,1))^2 + (x(1532,1) - x(1512,1))^2);
+LAMBDA_MATRIX(250,240) = DISTANCE;
+
+DISTANCE = sqrt((x(1511,1) - x(1531,1))^2 + (x(1512,1) - x(1532,1))^2);
+LAMBDA_MATRIX(240,250) = DISTANCE;
+
+DISTANCE = sqrt((x(1511,1) - x(1485,1))^2 + (x(1512,1) - x(1486,1))^2);
+LAMBDA_MATRIX(240,227) = DISTANCE;
+
+DISTANCE = sqrt((x(1485,1) - x(1511,1))^2 + (x(1486,1) - x(1512,1))^2);
+LAMBDA_MATRIX(227,240) = DISTANCE;
+
+DISTANCE = sqrt((x(1443,1) - x(1479,1))^2 + (x(1444,1) - x(1480,1))^2);
+LAMBDA_MATRIX(206,224) = DISTANCE;
+
+DISTANCE = sqrt((x(1479,1) - x(1443,1))^2 + (x(1480,1) - x(1444,1))^2);
+LAMBDA_MATRIX(224,206) = DISTANCE;
+
+DISTANCE = sqrt((x(1479,1) - x(1441,1))^2 + (x(1480,1) - x(1442,1))^2);
+LAMBDA_MATRIX(224,205) = DISTANCE;
+
+DISTANCE = sqrt((x(1441,1) - x(1479,1))^2 + (x(1442,1) - x(1480,1))^2);
+LAMBDA_MATRIX(205,224) = DISTANCE;
+
+DISTANCE = sqrt((x(1441,1) - x(1443,1))^2 + (x(1442,1) - x(1444,1))^2);
+LAMBDA_MATRIX(205,206) = DISTANCE;
+
+DISTANCE = sqrt((x(1443,1) - x(1441,1))^2 + (x(1444,1) - x(1442,1))^2);
+LAMBDA_MATRIX(206,205) = DISTANCE;
+
+DISTANCE = sqrt((x(1443,1) - x(1403,1))^2 + (x(1444,1) - x(1404,1))^2);
+LAMBDA_MATRIX(206,186) = DISTANCE;
+
+DISTANCE = sqrt((x(1403,1) - x(1443,1))^2 + (x(1404,1) - x(1444,1))^2);
+LAMBDA_MATRIX(186,206) = DISTANCE;
+
+DISTANCE = sqrt((x(1403,1) - x(1419,1))^2 + (x(1404,1) - x(1420,1))^2);
+LAMBDA_MATRIX(186,194) = DISTANCE;
+
+DISTANCE = sqrt((x(1419,1) - x(1403,1))^2 + (x(1420,1) - x(1404,1))^2);
+LAMBDA_MATRIX(194,186) = DISTANCE;
+
+DISTANCE = sqrt((x(1419,1) - x(1443,1))^2 + (x(1420,1) - x(1444,1))^2);
+LAMBDA_MATRIX(194,206) = DISTANCE;
+
+DISTANCE = sqrt((x(1443,1) - x(1419,1))^2 + (x(1444,1) - x(1420,1))^2);
+LAMBDA_MATRIX(206,194) = DISTANCE;
+
+DISTANCE = sqrt((x(1441,1) - x(1403,1))^2 + (x(1442,1) - x(1404,1))^2);
+LAMBDA_MATRIX(205,186) = DISTANCE;
+
+DISTANCE = sqrt((x(1403,1) - x(1441,1))^2 + (x(1404,1) - x(1442,1))^2);
+LAMBDA_MATRIX(186,205) = DISTANCE;
+
+DISTANCE = sqrt((x(1403,1) - x(1443,1))^2 + (x(1404,1) - x(1444,1))^2);
+LAMBDA_MATRIX(186,206) = DISTANCE;
+
+DISTANCE = sqrt((x(1443,1) - x(1403,1))^2 + (x(1444,1) - x(1404,1))^2);
+LAMBDA_MATRIX(206,186) = DISTANCE;
+
+DISTANCE = sqrt((x(1443,1) - x(1441,1))^2 + (x(1444,1) - x(1442,1))^2);
+LAMBDA_MATRIX(206,205) = DISTANCE;
+
+DISTANCE = sqrt((x(1441,1) - x(1443,1))^2 + (x(1442,1) - x(1444,1))^2);
+LAMBDA_MATRIX(205,206) = DISTANCE;
+
+DISTANCE = sqrt((x(1491,1) - x(1503,1))^2 + (x(1492,1) - x(1504,1))^2);
+LAMBDA_MATRIX(230,236) = DISTANCE;
+
+DISTANCE = sqrt((x(1503,1) - x(1491,1))^2 + (x(1504,1) - x(1492,1))^2);
+LAMBDA_MATRIX(236,230) = DISTANCE;
+
+DISTANCE = sqrt((x(1503,1) - x(1471,1))^2 + (x(1504,1) - x(1472,1))^2);
+LAMBDA_MATRIX(236,220) = DISTANCE;
+
+DISTANCE = sqrt((x(1471,1) - x(1503,1))^2 + (x(1472,1) - x(1504,1))^2);
+LAMBDA_MATRIX(220,236) = DISTANCE;
+
+DISTANCE = sqrt((x(1471,1) - x(1491,1))^2 + (x(1472,1) - x(1492,1))^2);
+LAMBDA_MATRIX(220,230) = DISTANCE;
+
+DISTANCE = sqrt((x(1491,1) - x(1471,1))^2 + (x(1492,1) - x(1472,1))^2);
+LAMBDA_MATRIX(230,220) = DISTANCE;
+
+DISTANCE = sqrt((x(1471,1) - x(1457,1))^2 + (x(1472,1) - x(1458,1))^2);
+LAMBDA_MATRIX(220,213) = DISTANCE;
+
+DISTANCE = sqrt((x(1457,1) - x(1471,1))^2 + (x(1458,1) - x(1472,1))^2);
+LAMBDA_MATRIX(213,220) = DISTANCE;
+
+DISTANCE = sqrt((x(1457,1) - x(1491,1))^2 + (x(1458,1) - x(1492,1))^2);
+LAMBDA_MATRIX(213,230) = DISTANCE;
+
+DISTANCE = sqrt((x(1491,1) - x(1457,1))^2 + (x(1492,1) - x(1458,1))^2);
+LAMBDA_MATRIX(230,213) = DISTANCE;
+
+DISTANCE = sqrt((x(1491,1) - x(1471,1))^2 + (x(1492,1) - x(1472,1))^2);
+LAMBDA_MATRIX(230,220) = DISTANCE;
+
+DISTANCE = sqrt((x(1471,1) - x(1491,1))^2 + (x(1472,1) - x(1492,1))^2);
+LAMBDA_MATRIX(220,230) = DISTANCE;
+
+DISTANCE = sqrt((x(1491,1) - x(1479,1))^2 + (x(1492,1) - x(1480,1))^2);
+LAMBDA_MATRIX(230,224) = DISTANCE;
+
+DISTANCE = sqrt((x(1479,1) - x(1491,1))^2 + (x(1480,1) - x(1492,1))^2);
+LAMBDA_MATRIX(224,230) = DISTANCE;
+
+DISTANCE = sqrt((x(1479,1) - x(1513,1))^2 + (x(1480,1) - x(1514,1))^2);
+LAMBDA_MATRIX(224,241) = DISTANCE;
+
+DISTANCE = sqrt((x(1513,1) - x(1479,1))^2 + (x(1514,1) - x(1480,1))^2);
+LAMBDA_MATRIX(241,224) = DISTANCE;
+
+DISTANCE = sqrt((x(1513,1) - x(1491,1))^2 + (x(1514,1) - x(1492,1))^2);
+LAMBDA_MATRIX(241,230) = DISTANCE;
+
+DISTANCE = sqrt((x(1491,1) - x(1513,1))^2 + (x(1492,1) - x(1514,1))^2);
+LAMBDA_MATRIX(230,241) = DISTANCE;
+
+DISTANCE = sqrt((x(1491,1) - x(1457,1))^2 + (x(1492,1) - x(1458,1))^2);
+LAMBDA_MATRIX(230,213) = DISTANCE;
+
+DISTANCE = sqrt((x(1457,1) - x(1491,1))^2 + (x(1458,1) - x(1492,1))^2);
+LAMBDA_MATRIX(213,230) = DISTANCE;
+
+DISTANCE = sqrt((x(1457,1) - x(1479,1))^2 + (x(1458,1) - x(1480,1))^2);
+LAMBDA_MATRIX(213,224) = DISTANCE;
+
+DISTANCE = sqrt((x(1479,1) - x(1457,1))^2 + (x(1480,1) - x(1458,1))^2);
+LAMBDA_MATRIX(224,213) = DISTANCE;
+
+DISTANCE = sqrt((x(1479,1) - x(1491,1))^2 + (x(1480,1) - x(1492,1))^2);
+LAMBDA_MATRIX(224,230) = DISTANCE;
+
+DISTANCE = sqrt((x(1491,1) - x(1479,1))^2 + (x(1492,1) - x(1480,1))^2);
+LAMBDA_MATRIX(230,224) = DISTANCE;
+
+DISTANCE = sqrt((x(1367,1) - x(1327,1))^2 + (x(1368,1) - x(1328,1))^2);
+LAMBDA_MATRIX(168,148) = DISTANCE;
+
+DISTANCE = sqrt((x(1327,1) - x(1367,1))^2 + (x(1328,1) - x(1368,1))^2);
+LAMBDA_MATRIX(148,168) = DISTANCE;
+
+DISTANCE = sqrt((x(1327,1) - x(1347,1))^2 + (x(1328,1) - x(1348,1))^2);
+LAMBDA_MATRIX(148,158) = DISTANCE;
+
+DISTANCE = sqrt((x(1347,1) - x(1327,1))^2 + (x(1348,1) - x(1328,1))^2);
+LAMBDA_MATRIX(158,148) = DISTANCE;
+
+DISTANCE = sqrt((x(1347,1) - x(1367,1))^2 + (x(1348,1) - x(1368,1))^2);
+LAMBDA_MATRIX(158,168) = DISTANCE;
+
+DISTANCE = sqrt((x(1367,1) - x(1347,1))^2 + (x(1368,1) - x(1348,1))^2);
+LAMBDA_MATRIX(168,158) = DISTANCE;
+
+DISTANCE = sqrt((x(1347,1) - x(1403,1))^2 + (x(1348,1) - x(1404,1))^2);
+LAMBDA_MATRIX(158,186) = DISTANCE;
+
+DISTANCE = sqrt((x(1403,1) - x(1347,1))^2 + (x(1404,1) - x(1348,1))^2);
+LAMBDA_MATRIX(186,158) = DISTANCE;
+
+DISTANCE = sqrt((x(1403,1) - x(1367,1))^2 + (x(1404,1) - x(1368,1))^2);
+LAMBDA_MATRIX(186,168) = DISTANCE;
+
+DISTANCE = sqrt((x(1367,1) - x(1403,1))^2 + (x(1368,1) - x(1404,1))^2);
+LAMBDA_MATRIX(168,186) = DISTANCE;
+
+DISTANCE = sqrt((x(1367,1) - x(1347,1))^2 + (x(1368,1) - x(1348,1))^2);
+LAMBDA_MATRIX(168,158) = DISTANCE;
+
+DISTANCE = sqrt((x(1347,1) - x(1367,1))^2 + (x(1348,1) - x(1368,1))^2);
+LAMBDA_MATRIX(158,168) = DISTANCE;
+
+DISTANCE = sqrt((x(1335,1) - x(1327,1))^2 + (x(1336,1) - x(1328,1))^2);
+LAMBDA_MATRIX(152,148) = DISTANCE;
+
+DISTANCE = sqrt((x(1327,1) - x(1335,1))^2 + (x(1328,1) - x(1336,1))^2);
+LAMBDA_MATRIX(148,152) = DISTANCE;
+
+DISTANCE = sqrt((x(1327,1) - x(1367,1))^2 + (x(1328,1) - x(1368,1))^2);
+LAMBDA_MATRIX(148,168) = DISTANCE;
+
+DISTANCE = sqrt((x(1367,1) - x(1327,1))^2 + (x(1368,1) - x(1328,1))^2);
+LAMBDA_MATRIX(168,148) = DISTANCE;
+
+DISTANCE = sqrt((x(1367,1) - x(1335,1))^2 + (x(1368,1) - x(1336,1))^2);
+LAMBDA_MATRIX(168,152) = DISTANCE;
+
+DISTANCE = sqrt((x(1335,1) - x(1367,1))^2 + (x(1336,1) - x(1368,1))^2);
+LAMBDA_MATRIX(152,168) = DISTANCE;
+
+DISTANCE = sqrt((x(1419,1) - x(1365,1))^2 + (x(1420,1) - x(1366,1))^2);
+LAMBDA_MATRIX(194,167) = DISTANCE;
+
+DISTANCE = sqrt((x(1365,1) - x(1419,1))^2 + (x(1366,1) - x(1420,1))^2);
+LAMBDA_MATRIX(167,194) = DISTANCE;
+
+DISTANCE = sqrt((x(1365,1) - x(1399,1))^2 + (x(1366,1) - x(1400,1))^2);
+LAMBDA_MATRIX(167,184) = DISTANCE;
+
+DISTANCE = sqrt((x(1399,1) - x(1365,1))^2 + (x(1400,1) - x(1366,1))^2);
+LAMBDA_MATRIX(184,167) = DISTANCE;
+
+DISTANCE = sqrt((x(1399,1) - x(1419,1))^2 + (x(1400,1) - x(1420,1))^2);
+LAMBDA_MATRIX(184,194) = DISTANCE;
+
+DISTANCE = sqrt((x(1419,1) - x(1399,1))^2 + (x(1420,1) - x(1400,1))^2);
+LAMBDA_MATRIX(194,184) = DISTANCE;
+
+DISTANCE = sqrt((x(1399,1) - x(1365,1))^2 + (x(1400,1) - x(1366,1))^2);
+LAMBDA_MATRIX(184,167) = DISTANCE;
+
+DISTANCE = sqrt((x(1365,1) - x(1399,1))^2 + (x(1366,1) - x(1400,1))^2);
+LAMBDA_MATRIX(167,184) = DISTANCE;
+
+DISTANCE = sqrt((x(1365,1) - x(1355,1))^2 + (x(1366,1) - x(1356,1))^2);
+LAMBDA_MATRIX(167,162) = DISTANCE;
+
+DISTANCE = sqrt((x(1355,1) - x(1365,1))^2 + (x(1356,1) - x(1366,1))^2);
+LAMBDA_MATRIX(162,167) = DISTANCE;
+
+DISTANCE = sqrt((x(1355,1) - x(1399,1))^2 + (x(1356,1) - x(1400,1))^2);
+LAMBDA_MATRIX(162,184) = DISTANCE;
+
+DISTANCE = sqrt((x(1399,1) - x(1355,1))^2 + (x(1400,1) - x(1356,1))^2);
+LAMBDA_MATRIX(184,162) = DISTANCE;
+
+DISTANCE = sqrt((x(1399,1) - x(1355,1))^2 + (x(1400,1) - x(1356,1))^2);
+LAMBDA_MATRIX(184,162) = DISTANCE;
+
+DISTANCE = sqrt((x(1355,1) - x(1399,1))^2 + (x(1356,1) - x(1400,1))^2);
+LAMBDA_MATRIX(162,184) = DISTANCE;
+
+DISTANCE = sqrt((x(1355,1) - x(1387,1))^2 + (x(1356,1) - x(1388,1))^2);
+LAMBDA_MATRIX(162,178) = DISTANCE;
+
+DISTANCE = sqrt((x(1387,1) - x(1355,1))^2 + (x(1388,1) - x(1356,1))^2);
+LAMBDA_MATRIX(178,162) = DISTANCE;
+
+DISTANCE = sqrt((x(1387,1) - x(1399,1))^2 + (x(1388,1) - x(1400,1))^2);
+LAMBDA_MATRIX(178,184) = DISTANCE;
+
+DISTANCE = sqrt((x(1399,1) - x(1387,1))^2 + (x(1400,1) - x(1388,1))^2);
+LAMBDA_MATRIX(184,178) = DISTANCE;
+
+DISTANCE = sqrt((x(1579,1) - x(1547,1))^2 + (x(1580,1) - x(1548,1))^2);
+LAMBDA_MATRIX(274,258) = DISTANCE;
+
+DISTANCE = sqrt((x(1547,1) - x(1579,1))^2 + (x(1548,1) - x(1580,1))^2);
+LAMBDA_MATRIX(258,274) = DISTANCE;
+
+DISTANCE = sqrt((x(1547,1) - x(1569,1))^2 + (x(1548,1) - x(1570,1))^2);
+LAMBDA_MATRIX(258,269) = DISTANCE;
+
+DISTANCE = sqrt((x(1569,1) - x(1547,1))^2 + (x(1570,1) - x(1548,1))^2);
+LAMBDA_MATRIX(269,258) = DISTANCE;
+
+DISTANCE = sqrt((x(1569,1) - x(1579,1))^2 + (x(1570,1) - x(1580,1))^2);
+LAMBDA_MATRIX(269,274) = DISTANCE;
+
+DISTANCE = sqrt((x(1579,1) - x(1569,1))^2 + (x(1580,1) - x(1570,1))^2);
+LAMBDA_MATRIX(274,269) = DISTANCE;
+
+DISTANCE = sqrt((x(1579,1) - x(1601,1))^2 + (x(1580,1) - x(1602,1))^2);
+LAMBDA_MATRIX(274,285) = DISTANCE;
+
+DISTANCE = sqrt((x(1601,1) - x(1579,1))^2 + (x(1602,1) - x(1580,1))^2);
+LAMBDA_MATRIX(285,274) = DISTANCE;
+
+DISTANCE = sqrt((x(1601,1) - x(1609,1))^2 + (x(1602,1) - x(1610,1))^2);
+LAMBDA_MATRIX(285,289) = DISTANCE;
+
+DISTANCE = sqrt((x(1609,1) - x(1601,1))^2 + (x(1610,1) - x(1602,1))^2);
+LAMBDA_MATRIX(289,285) = DISTANCE;
+
+DISTANCE = sqrt((x(1609,1) - x(1579,1))^2 + (x(1610,1) - x(1580,1))^2);
+LAMBDA_MATRIX(289,274) = DISTANCE;
+
+DISTANCE = sqrt((x(1579,1) - x(1609,1))^2 + (x(1580,1) - x(1610,1))^2);
+LAMBDA_MATRIX(274,289) = DISTANCE;
+
+DISTANCE = sqrt((x(1579,1) - x(1569,1))^2 + (x(1580,1) - x(1570,1))^2);
+LAMBDA_MATRIX(274,269) = DISTANCE;
+
+DISTANCE = sqrt((x(1569,1) - x(1579,1))^2 + (x(1570,1) - x(1580,1))^2);
+LAMBDA_MATRIX(269,274) = DISTANCE;
+
+DISTANCE = sqrt((x(1569,1) - x(1601,1))^2 + (x(1570,1) - x(1602,1))^2);
+LAMBDA_MATRIX(269,285) = DISTANCE;
+
+DISTANCE = sqrt((x(1601,1) - x(1569,1))^2 + (x(1602,1) - x(1570,1))^2);
+LAMBDA_MATRIX(285,269) = DISTANCE;
+
+DISTANCE = sqrt((x(1601,1) - x(1579,1))^2 + (x(1602,1) - x(1580,1))^2);
+LAMBDA_MATRIX(285,274) = DISTANCE;
+
+DISTANCE = sqrt((x(1579,1) - x(1601,1))^2 + (x(1580,1) - x(1602,1))^2);
+LAMBDA_MATRIX(274,285) = DISTANCE;
+
+DISTANCE = sqrt((x(1563,1) - x(1547,1))^2 + (x(1564,1) - x(1548,1))^2);
+LAMBDA_MATRIX(266,258) = DISTANCE;
+
+DISTANCE = sqrt((x(1547,1) - x(1563,1))^2 + (x(1548,1) - x(1564,1))^2);
+LAMBDA_MATRIX(258,266) = DISTANCE;
+
+DISTANCE = sqrt((x(1547,1) - x(1579,1))^2 + (x(1548,1) - x(1580,1))^2);
+LAMBDA_MATRIX(258,274) = DISTANCE;
+
+DISTANCE = sqrt((x(1579,1) - x(1547,1))^2 + (x(1580,1) - x(1548,1))^2);
+LAMBDA_MATRIX(274,258) = DISTANCE;
+
+DISTANCE = sqrt((x(1579,1) - x(1563,1))^2 + (x(1580,1) - x(1564,1))^2);
+LAMBDA_MATRIX(274,266) = DISTANCE;
+
+DISTANCE = sqrt((x(1563,1) - x(1579,1))^2 + (x(1564,1) - x(1580,1))^2);
+LAMBDA_MATRIX(266,274) = DISTANCE;
+
+DISTANCE = sqrt((x(1609,1) - x(1597,1))^2 + (x(1610,1) - x(1598,1))^2);
+LAMBDA_MATRIX(289,283) = DISTANCE;
+
+DISTANCE = sqrt((x(1597,1) - x(1609,1))^2 + (x(1598,1) - x(1610,1))^2);
+LAMBDA_MATRIX(283,289) = DISTANCE;
+
+DISTANCE = sqrt((x(1597,1) - x(1579,1))^2 + (x(1598,1) - x(1580,1))^2);
+LAMBDA_MATRIX(283,274) = DISTANCE;
+
+DISTANCE = sqrt((x(1579,1) - x(1597,1))^2 + (x(1580,1) - x(1598,1))^2);
+LAMBDA_MATRIX(274,283) = DISTANCE;
+
+DISTANCE = sqrt((x(1579,1) - x(1609,1))^2 + (x(1580,1) - x(1610,1))^2);
+LAMBDA_MATRIX(274,289) = DISTANCE;
+
+DISTANCE = sqrt((x(1609,1) - x(1579,1))^2 + (x(1610,1) - x(1580,1))^2);
+LAMBDA_MATRIX(289,274) = DISTANCE;
+
+DISTANCE = sqrt((x(1579,1) - x(1597,1))^2 + (x(1580,1) - x(1598,1))^2);
+LAMBDA_MATRIX(274,283) = DISTANCE;
+
+DISTANCE = sqrt((x(1597,1) - x(1579,1))^2 + (x(1598,1) - x(1580,1))^2);
+LAMBDA_MATRIX(283,274) = DISTANCE;
+
+DISTANCE = sqrt((x(1597,1) - x(1563,1))^2 + (x(1598,1) - x(1564,1))^2);
+LAMBDA_MATRIX(283,266) = DISTANCE;
+
+DISTANCE = sqrt((x(1563,1) - x(1597,1))^2 + (x(1564,1) - x(1598,1))^2);
+LAMBDA_MATRIX(266,283) = DISTANCE;
+
+DISTANCE = sqrt((x(1563,1) - x(1579,1))^2 + (x(1564,1) - x(1580,1))^2);
+LAMBDA_MATRIX(266,274) = DISTANCE;
+
+DISTANCE = sqrt((x(1579,1) - x(1563,1))^2 + (x(1580,1) - x(1564,1))^2);
+LAMBDA_MATRIX(274,266) = DISTANCE;
+
+DISTANCE = sqrt((x(2061,1) - x(2017,1))^2 + (x(2062,1) - x(2018,1))^2);
+LAMBDA_MATRIX(515,493) = DISTANCE;
+
+DISTANCE = sqrt((x(2017,1) - x(2061,1))^2 + (x(2018,1) - x(2062,1))^2);
+LAMBDA_MATRIX(493,515) = DISTANCE;
+
+DISTANCE = sqrt((x(2017,1) - x(2025,1))^2 + (x(2018,1) - x(2026,1))^2);
+LAMBDA_MATRIX(493,497) = DISTANCE;
+
+DISTANCE = sqrt((x(2025,1) - x(2017,1))^2 + (x(2026,1) - x(2018,1))^2);
+LAMBDA_MATRIX(497,493) = DISTANCE;
+
+DISTANCE = sqrt((x(2025,1) - x(2061,1))^2 + (x(2026,1) - x(2062,1))^2);
+LAMBDA_MATRIX(497,515) = DISTANCE;
+
+DISTANCE = sqrt((x(2061,1) - x(2025,1))^2 + (x(2062,1) - x(2026,1))^2);
+LAMBDA_MATRIX(515,497) = DISTANCE;
+
+DISTANCE = sqrt((x(2053,1) - x(2017,1))^2 + (x(2054,1) - x(2018,1))^2);
+LAMBDA_MATRIX(511,493) = DISTANCE;
+
+DISTANCE = sqrt((x(2017,1) - x(2053,1))^2 + (x(2018,1) - x(2054,1))^2);
+LAMBDA_MATRIX(493,511) = DISTANCE;
+
+DISTANCE = sqrt((x(2017,1) - x(2061,1))^2 + (x(2018,1) - x(2062,1))^2);
+LAMBDA_MATRIX(493,515) = DISTANCE;
+
+DISTANCE = sqrt((x(2061,1) - x(2017,1))^2 + (x(2062,1) - x(2018,1))^2);
+LAMBDA_MATRIX(515,493) = DISTANCE;
+
+DISTANCE = sqrt((x(2061,1) - x(2053,1))^2 + (x(2062,1) - x(2054,1))^2);
+LAMBDA_MATRIX(515,511) = DISTANCE;
+
+DISTANCE = sqrt((x(2053,1) - x(2061,1))^2 + (x(2054,1) - x(2062,1))^2);
+LAMBDA_MATRIX(511,515) = DISTANCE;
+
+DISTANCE = sqrt((x(1987,1) - x(2017,1))^2 + (x(1988,1) - x(2018,1))^2);
+LAMBDA_MATRIX(478,493) = DISTANCE;
+
+DISTANCE = sqrt((x(2017,1) - x(1987,1))^2 + (x(2018,1) - x(1988,1))^2);
+LAMBDA_MATRIX(493,478) = DISTANCE;
+
+DISTANCE = sqrt((x(2017,1) - x(2053,1))^2 + (x(2018,1) - x(2054,1))^2);
+LAMBDA_MATRIX(493,511) = DISTANCE;
+
+DISTANCE = sqrt((x(2053,1) - x(2017,1))^2 + (x(2054,1) - x(2018,1))^2);
+LAMBDA_MATRIX(511,493) = DISTANCE;
+
+DISTANCE = sqrt((x(2053,1) - x(1987,1))^2 + (x(2054,1) - x(1988,1))^2);
+LAMBDA_MATRIX(511,478) = DISTANCE;
+
+DISTANCE = sqrt((x(1987,1) - x(2053,1))^2 + (x(1988,1) - x(2054,1))^2);
+LAMBDA_MATRIX(478,511) = DISTANCE;
+
+DISTANCE = sqrt((x(1987,1) - x(2053,1))^2 + (x(1988,1) - x(2054,1))^2);
+LAMBDA_MATRIX(478,511) = DISTANCE;
+
+DISTANCE = sqrt((x(2053,1) - x(1987,1))^2 + (x(2054,1) - x(1988,1))^2);
+LAMBDA_MATRIX(511,478) = DISTANCE;
+
+DISTANCE = sqrt((x(2053,1) - x(2023,1))^2 + (x(2054,1) - x(2024,1))^2);
+LAMBDA_MATRIX(511,496) = DISTANCE;
+
+DISTANCE = sqrt((x(2023,1) - x(2053,1))^2 + (x(2024,1) - x(2054,1))^2);
+LAMBDA_MATRIX(496,511) = DISTANCE;
+
+DISTANCE = sqrt((x(2023,1) - x(1987,1))^2 + (x(2024,1) - x(1988,1))^2);
+LAMBDA_MATRIX(496,478) = DISTANCE;
+
+DISTANCE = sqrt((x(1987,1) - x(2023,1))^2 + (x(1988,1) - x(2024,1))^2);
+LAMBDA_MATRIX(478,496) = DISTANCE;
+
+DISTANCE = sqrt((x(2023,1) - x(1975,1))^2 + (x(2024,1) - x(1976,1))^2);
+LAMBDA_MATRIX(496,472) = DISTANCE;
+
+DISTANCE = sqrt((x(1975,1) - x(2023,1))^2 + (x(1976,1) - x(2024,1))^2);
+LAMBDA_MATRIX(472,496) = DISTANCE;
+
+DISTANCE = sqrt((x(1975,1) - x(1987,1))^2 + (x(1976,1) - x(1988,1))^2);
+LAMBDA_MATRIX(472,478) = DISTANCE;
+
+DISTANCE = sqrt((x(1987,1) - x(1975,1))^2 + (x(1988,1) - x(1976,1))^2);
+LAMBDA_MATRIX(478,472) = DISTANCE;
+
+DISTANCE = sqrt((x(1987,1) - x(2023,1))^2 + (x(1988,1) - x(2024,1))^2);
+LAMBDA_MATRIX(478,496) = DISTANCE;
+
+DISTANCE = sqrt((x(2023,1) - x(1987,1))^2 + (x(2024,1) - x(1988,1))^2);
+LAMBDA_MATRIX(496,478) = DISTANCE;
+
+DISTANCE = sqrt((x(1975,1) - x(1937,1))^2 + (x(1976,1) - x(1938,1))^2);
+LAMBDA_MATRIX(472,453) = DISTANCE;
+
+DISTANCE = sqrt((x(1937,1) - x(1975,1))^2 + (x(1938,1) - x(1976,1))^2);
+LAMBDA_MATRIX(453,472) = DISTANCE;
+
+DISTANCE = sqrt((x(1937,1) - x(1987,1))^2 + (x(1938,1) - x(1988,1))^2);
+LAMBDA_MATRIX(453,478) = DISTANCE;
+
+DISTANCE = sqrt((x(1987,1) - x(1937,1))^2 + (x(1988,1) - x(1938,1))^2);
+LAMBDA_MATRIX(478,453) = DISTANCE;
+
+DISTANCE = sqrt((x(1987,1) - x(1975,1))^2 + (x(1988,1) - x(1976,1))^2);
+LAMBDA_MATRIX(478,472) = DISTANCE;
+
+DISTANCE = sqrt((x(1975,1) - x(1987,1))^2 + (x(1976,1) - x(1988,1))^2);
+LAMBDA_MATRIX(472,478) = DISTANCE;
+
+DISTANCE = sqrt((x(1961,1) - x(2017,1))^2 + (x(1962,1) - x(2018,1))^2);
+LAMBDA_MATRIX(465,493) = DISTANCE;
+
+DISTANCE = sqrt((x(2017,1) - x(1961,1))^2 + (x(2018,1) - x(1962,1))^2);
+LAMBDA_MATRIX(493,465) = DISTANCE;
+
+DISTANCE = sqrt((x(2017,1) - x(1987,1))^2 + (x(2018,1) - x(1988,1))^2);
+LAMBDA_MATRIX(493,478) = DISTANCE;
+
+DISTANCE = sqrt((x(1987,1) - x(2017,1))^2 + (x(1988,1) - x(2018,1))^2);
+LAMBDA_MATRIX(478,493) = DISTANCE;
+
+DISTANCE = sqrt((x(1987,1) - x(1961,1))^2 + (x(1988,1) - x(1962,1))^2);
+LAMBDA_MATRIX(478,465) = DISTANCE;
+
+DISTANCE = sqrt((x(1961,1) - x(1987,1))^2 + (x(1962,1) - x(1988,1))^2);
+LAMBDA_MATRIX(465,478) = DISTANCE;
+
+DISTANCE = sqrt((x(1987,1) - x(1937,1))^2 + (x(1988,1) - x(1938,1))^2);
+LAMBDA_MATRIX(478,453) = DISTANCE;
+
+DISTANCE = sqrt((x(1937,1) - x(1987,1))^2 + (x(1938,1) - x(1988,1))^2);
+LAMBDA_MATRIX(453,478) = DISTANCE;
+
+DISTANCE = sqrt((x(1937,1) - x(1961,1))^2 + (x(1938,1) - x(1962,1))^2);
+LAMBDA_MATRIX(453,465) = DISTANCE;
+
+DISTANCE = sqrt((x(1961,1) - x(1937,1))^2 + (x(1962,1) - x(1938,1))^2);
+LAMBDA_MATRIX(465,453) = DISTANCE;
+
+DISTANCE = sqrt((x(1961,1) - x(1987,1))^2 + (x(1962,1) - x(1988,1))^2);
+LAMBDA_MATRIX(465,478) = DISTANCE;
+
+DISTANCE = sqrt((x(1987,1) - x(1961,1))^2 + (x(1988,1) - x(1962,1))^2);
+LAMBDA_MATRIX(478,465) = DISTANCE;
+
+DISTANCE = sqrt((x(1895,1) - x(1929,1))^2 + (x(1896,1) - x(1930,1))^2);
+LAMBDA_MATRIX(432,449) = DISTANCE;
+
+DISTANCE = sqrt((x(1929,1) - x(1895,1))^2 + (x(1930,1) - x(1896,1))^2);
+LAMBDA_MATRIX(449,432) = DISTANCE;
+
+DISTANCE = sqrt((x(1929,1) - x(1875,1))^2 + (x(1930,1) - x(1876,1))^2);
+LAMBDA_MATRIX(449,422) = DISTANCE;
+
+DISTANCE = sqrt((x(1875,1) - x(1929,1))^2 + (x(1876,1) - x(1930,1))^2);
+LAMBDA_MATRIX(422,449) = DISTANCE;
+
+DISTANCE = sqrt((x(1875,1) - x(1895,1))^2 + (x(1876,1) - x(1896,1))^2);
+LAMBDA_MATRIX(422,432) = DISTANCE;
+
+DISTANCE = sqrt((x(1895,1) - x(1875,1))^2 + (x(1896,1) - x(1876,1))^2);
+LAMBDA_MATRIX(432,422) = DISTANCE;
+
+DISTANCE = sqrt((x(1819,1) - x(1783,1))^2 + (x(1820,1) - x(1784,1))^2);
+LAMBDA_MATRIX(394,376) = DISTANCE;
+
+DISTANCE = sqrt((x(1783,1) - x(1819,1))^2 + (x(1784,1) - x(1820,1))^2);
+LAMBDA_MATRIX(376,394) = DISTANCE;
+
+DISTANCE = sqrt((x(1783,1) - x(1843,1))^2 + (x(1784,1) - x(1844,1))^2);
+LAMBDA_MATRIX(376,406) = DISTANCE;
+
+DISTANCE = sqrt((x(1843,1) - x(1783,1))^2 + (x(1844,1) - x(1784,1))^2);
+LAMBDA_MATRIX(406,376) = DISTANCE;
+
+DISTANCE = sqrt((x(1843,1) - x(1819,1))^2 + (x(1844,1) - x(1820,1))^2);
+LAMBDA_MATRIX(406,394) = DISTANCE;
+
+DISTANCE = sqrt((x(1819,1) - x(1843,1))^2 + (x(1820,1) - x(1844,1))^2);
+LAMBDA_MATRIX(394,406) = DISTANCE;
+
+DISTANCE = sqrt((x(1843,1) - x(1875,1))^2 + (x(1844,1) - x(1876,1))^2);
+LAMBDA_MATRIX(406,422) = DISTANCE;
+
+DISTANCE = sqrt((x(1875,1) - x(1843,1))^2 + (x(1876,1) - x(1844,1))^2);
+LAMBDA_MATRIX(422,406) = DISTANCE;
+
+DISTANCE = sqrt((x(1875,1) - x(1819,1))^2 + (x(1876,1) - x(1820,1))^2);
+LAMBDA_MATRIX(422,394) = DISTANCE;
+
+DISTANCE = sqrt((x(1819,1) - x(1875,1))^2 + (x(1820,1) - x(1876,1))^2);
+LAMBDA_MATRIX(394,422) = DISTANCE;
+
+DISTANCE = sqrt((x(1819,1) - x(1843,1))^2 + (x(1820,1) - x(1844,1))^2);
+LAMBDA_MATRIX(394,406) = DISTANCE;
+
+DISTANCE = sqrt((x(1843,1) - x(1819,1))^2 + (x(1844,1) - x(1820,1))^2);
+LAMBDA_MATRIX(406,394) = DISTANCE;
+
+DISTANCE = sqrt((x(1843,1) - x(1895,1))^2 + (x(1844,1) - x(1896,1))^2);
+LAMBDA_MATRIX(406,432) = DISTANCE;
+
+DISTANCE = sqrt((x(1895,1) - x(1843,1))^2 + (x(1896,1) - x(1844,1))^2);
+LAMBDA_MATRIX(432,406) = DISTANCE;
+
+DISTANCE = sqrt((x(1895,1) - x(1875,1))^2 + (x(1896,1) - x(1876,1))^2);
+LAMBDA_MATRIX(432,422) = DISTANCE;
+
+DISTANCE = sqrt((x(1875,1) - x(1895,1))^2 + (x(1876,1) - x(1896,1))^2);
+LAMBDA_MATRIX(422,432) = DISTANCE;
+
+DISTANCE = sqrt((x(1875,1) - x(1843,1))^2 + (x(1876,1) - x(1844,1))^2);
+LAMBDA_MATRIX(422,406) = DISTANCE;
+
+DISTANCE = sqrt((x(1843,1) - x(1875,1))^2 + (x(1844,1) - x(1876,1))^2);
+LAMBDA_MATRIX(406,422) = DISTANCE;
+
+DISTANCE = sqrt((x(1779,1) - x(1803,1))^2 + (x(1780,1) - x(1804,1))^2);
+LAMBDA_MATRIX(374,386) = DISTANCE;
+
+DISTANCE = sqrt((x(1803,1) - x(1779,1))^2 + (x(1804,1) - x(1780,1))^2);
+LAMBDA_MATRIX(386,374) = DISTANCE;
+
+DISTANCE = sqrt((x(1803,1) - x(1837,1))^2 + (x(1804,1) - x(1838,1))^2);
+LAMBDA_MATRIX(386,403) = DISTANCE;
+
+DISTANCE = sqrt((x(1837,1) - x(1803,1))^2 + (x(1838,1) - x(1804,1))^2);
+LAMBDA_MATRIX(403,386) = DISTANCE;
+
+DISTANCE = sqrt((x(1837,1) - x(1779,1))^2 + (x(1838,1) - x(1780,1))^2);
+LAMBDA_MATRIX(403,374) = DISTANCE;
+
+DISTANCE = sqrt((x(1779,1) - x(1837,1))^2 + (x(1780,1) - x(1838,1))^2);
+LAMBDA_MATRIX(374,403) = DISTANCE;
+
+DISTANCE = sqrt((x(1961,1) - x(1937,1))^2 + (x(1962,1) - x(1938,1))^2);
+LAMBDA_MATRIX(465,453) = DISTANCE;
+
+DISTANCE = sqrt((x(1937,1) - x(1961,1))^2 + (x(1938,1) - x(1962,1))^2);
+LAMBDA_MATRIX(453,465) = DISTANCE;
+
+DISTANCE = sqrt((x(1937,1) - x(1905,1))^2 + (x(1938,1) - x(1906,1))^2);
+LAMBDA_MATRIX(453,437) = DISTANCE;
+
+DISTANCE = sqrt((x(1905,1) - x(1937,1))^2 + (x(1906,1) - x(1938,1))^2);
+LAMBDA_MATRIX(437,453) = DISTANCE;
+
+DISTANCE = sqrt((x(1905,1) - x(1961,1))^2 + (x(1906,1) - x(1962,1))^2);
+LAMBDA_MATRIX(437,465) = DISTANCE;
+
+DISTANCE = sqrt((x(1961,1) - x(1905,1))^2 + (x(1962,1) - x(1906,1))^2);
+LAMBDA_MATRIX(465,437) = DISTANCE;
+
+DISTANCE = sqrt((x(1905,1) - x(1937,1))^2 + (x(1906,1) - x(1938,1))^2);
+LAMBDA_MATRIX(437,453) = DISTANCE;
+
+DISTANCE = sqrt((x(1937,1) - x(1905,1))^2 + (x(1938,1) - x(1906,1))^2);
+LAMBDA_MATRIX(453,437) = DISTANCE;
+
+DISTANCE = sqrt((x(1937,1) - x(1891,1))^2 + (x(1938,1) - x(1892,1))^2);
+LAMBDA_MATRIX(453,430) = DISTANCE;
+
+DISTANCE = sqrt((x(1891,1) - x(1937,1))^2 + (x(1892,1) - x(1938,1))^2);
+LAMBDA_MATRIX(430,453) = DISTANCE;
+
+DISTANCE = sqrt((x(1891,1) - x(1905,1))^2 + (x(1892,1) - x(1906,1))^2);
+LAMBDA_MATRIX(430,437) = DISTANCE;
+
+DISTANCE = sqrt((x(1905,1) - x(1891,1))^2 + (x(1906,1) - x(1892,1))^2);
+LAMBDA_MATRIX(437,430) = DISTANCE;
+
+DISTANCE = sqrt((x(2011,1) - x(2055,1))^2 + (x(2012,1) - x(2056,1))^2);
+LAMBDA_MATRIX(490,512) = DISTANCE;
+
+DISTANCE = sqrt((x(2055,1) - x(2011,1))^2 + (x(2056,1) - x(2012,1))^2);
+LAMBDA_MATRIX(512,490) = DISTANCE;
+
+DISTANCE = sqrt((x(2055,1) - x(2051,1))^2 + (x(2056,1) - x(2052,1))^2);
+LAMBDA_MATRIX(512,510) = DISTANCE;
+
+DISTANCE = sqrt((x(2051,1) - x(2055,1))^2 + (x(2052,1) - x(2056,1))^2);
+LAMBDA_MATRIX(510,512) = DISTANCE;
+
+DISTANCE = sqrt((x(2051,1) - x(2011,1))^2 + (x(2052,1) - x(2012,1))^2);
+LAMBDA_MATRIX(510,490) = DISTANCE;
+
+DISTANCE = sqrt((x(2011,1) - x(2051,1))^2 + (x(2012,1) - x(2052,1))^2);
+LAMBDA_MATRIX(490,510) = DISTANCE;
+
+DISTANCE = sqrt((x(1999,1) - x(2055,1))^2 + (x(2000,1) - x(2056,1))^2);
+LAMBDA_MATRIX(484,512) = DISTANCE;
+
+DISTANCE = sqrt((x(2055,1) - x(1999,1))^2 + (x(2056,1) - x(2000,1))^2);
+LAMBDA_MATRIX(512,484) = DISTANCE;
+
+DISTANCE = sqrt((x(2055,1) - x(2011,1))^2 + (x(2056,1) - x(2012,1))^2);
+LAMBDA_MATRIX(512,490) = DISTANCE;
+
+DISTANCE = sqrt((x(2011,1) - x(2055,1))^2 + (x(2012,1) - x(2056,1))^2);
+LAMBDA_MATRIX(490,512) = DISTANCE;
+
+DISTANCE = sqrt((x(2011,1) - x(1999,1))^2 + (x(2012,1) - x(2000,1))^2);
+LAMBDA_MATRIX(490,484) = DISTANCE;
+
+DISTANCE = sqrt((x(1999,1) - x(2011,1))^2 + (x(2000,1) - x(2012,1))^2);
+LAMBDA_MATRIX(484,490) = DISTANCE;
+
+DISTANCE = sqrt((x(1999,1) - x(2011,1))^2 + (x(2000,1) - x(2012,1))^2);
+LAMBDA_MATRIX(484,490) = DISTANCE;
+
+DISTANCE = sqrt((x(2011,1) - x(1999,1))^2 + (x(2012,1) - x(2000,1))^2);
+LAMBDA_MATRIX(490,484) = DISTANCE;
+
+DISTANCE = sqrt((x(2011,1) - x(1957,1))^2 + (x(2012,1) - x(1958,1))^2);
+LAMBDA_MATRIX(490,463) = DISTANCE;
+
+DISTANCE = sqrt((x(1957,1) - x(2011,1))^2 + (x(1958,1) - x(2012,1))^2);
+LAMBDA_MATRIX(463,490) = DISTANCE;
+
+DISTANCE = sqrt((x(1957,1) - x(1999,1))^2 + (x(1958,1) - x(2000,1))^2);
+LAMBDA_MATRIX(463,484) = DISTANCE;
+
+DISTANCE = sqrt((x(1999,1) - x(1957,1))^2 + (x(2000,1) - x(1958,1))^2);
+LAMBDA_MATRIX(484,463) = DISTANCE;
+
+DISTANCE = sqrt((x(1999,1) - x(1991,1))^2 + (x(2000,1) - x(1992,1))^2);
+LAMBDA_MATRIX(484,480) = DISTANCE;
+
+DISTANCE = sqrt((x(1991,1) - x(1999,1))^2 + (x(1992,1) - x(2000,1))^2);
+LAMBDA_MATRIX(480,484) = DISTANCE;
+
+DISTANCE = sqrt((x(1991,1) - x(2039,1))^2 + (x(1992,1) - x(2040,1))^2);
+LAMBDA_MATRIX(480,504) = DISTANCE;
+
+DISTANCE = sqrt((x(2039,1) - x(1991,1))^2 + (x(2040,1) - x(1992,1))^2);
+LAMBDA_MATRIX(504,480) = DISTANCE;
+
+DISTANCE = sqrt((x(2039,1) - x(1999,1))^2 + (x(2040,1) - x(2000,1))^2);
+LAMBDA_MATRIX(504,484) = DISTANCE;
+
+DISTANCE = sqrt((x(1999,1) - x(2039,1))^2 + (x(2000,1) - x(2040,1))^2);
+LAMBDA_MATRIX(484,504) = DISTANCE;
+
+DISTANCE = sqrt((x(2039,1) - x(2055,1))^2 + (x(2040,1) - x(2056,1))^2);
+LAMBDA_MATRIX(504,512) = DISTANCE;
+
+DISTANCE = sqrt((x(2055,1) - x(2039,1))^2 + (x(2056,1) - x(2040,1))^2);
+LAMBDA_MATRIX(512,504) = DISTANCE;
+
+DISTANCE = sqrt((x(2055,1) - x(1999,1))^2 + (x(2056,1) - x(2000,1))^2);
+LAMBDA_MATRIX(512,484) = DISTANCE;
+
+DISTANCE = sqrt((x(1999,1) - x(2055,1))^2 + (x(2000,1) - x(2056,1))^2);
+LAMBDA_MATRIX(484,512) = DISTANCE;
+
+DISTANCE = sqrt((x(1999,1) - x(2039,1))^2 + (x(2000,1) - x(2040,1))^2);
+LAMBDA_MATRIX(484,504) = DISTANCE;
+
+DISTANCE = sqrt((x(2039,1) - x(1999,1))^2 + (x(2040,1) - x(2000,1))^2);
+LAMBDA_MATRIX(504,484) = DISTANCE;
+
+DISTANCE = sqrt((x(1847,1) - x(1881,1))^2 + (x(1848,1) - x(1882,1))^2);
+LAMBDA_MATRIX(408,425) = DISTANCE;
+
+DISTANCE = sqrt((x(1881,1) - x(1847,1))^2 + (x(1882,1) - x(1848,1))^2);
+LAMBDA_MATRIX(425,408) = DISTANCE;
+
+DISTANCE = sqrt((x(1881,1) - x(1827,1))^2 + (x(1882,1) - x(1828,1))^2);
+LAMBDA_MATRIX(425,398) = DISTANCE;
+
+DISTANCE = sqrt((x(1827,1) - x(1881,1))^2 + (x(1828,1) - x(1882,1))^2);
+LAMBDA_MATRIX(398,425) = DISTANCE;
+
+DISTANCE = sqrt((x(1827,1) - x(1847,1))^2 + (x(1828,1) - x(1848,1))^2);
+LAMBDA_MATRIX(398,408) = DISTANCE;
+
+DISTANCE = sqrt((x(1847,1) - x(1827,1))^2 + (x(1848,1) - x(1828,1))^2);
+LAMBDA_MATRIX(408,398) = DISTANCE;
+
+DISTANCE = sqrt((x(1847,1) - x(1899,1))^2 + (x(1848,1) - x(1900,1))^2);
+LAMBDA_MATRIX(408,434) = DISTANCE;
+
+DISTANCE = sqrt((x(1899,1) - x(1847,1))^2 + (x(1900,1) - x(1848,1))^2);
+LAMBDA_MATRIX(434,408) = DISTANCE;
+
+DISTANCE = sqrt((x(1899,1) - x(1881,1))^2 + (x(1900,1) - x(1882,1))^2);
+LAMBDA_MATRIX(434,425) = DISTANCE;
+
+DISTANCE = sqrt((x(1881,1) - x(1899,1))^2 + (x(1882,1) - x(1900,1))^2);
+LAMBDA_MATRIX(425,434) = DISTANCE;
+
+DISTANCE = sqrt((x(1881,1) - x(1847,1))^2 + (x(1882,1) - x(1848,1))^2);
+LAMBDA_MATRIX(425,408) = DISTANCE;
+
+DISTANCE = sqrt((x(1847,1) - x(1881,1))^2 + (x(1848,1) - x(1882,1))^2);
+LAMBDA_MATRIX(408,425) = DISTANCE;
+
+DISTANCE = sqrt((x(1709,1) - x(1679,1))^2 + (x(1710,1) - x(1680,1))^2);
+LAMBDA_MATRIX(339,324) = DISTANCE;
+
+DISTANCE = sqrt((x(1679,1) - x(1709,1))^2 + (x(1680,1) - x(1710,1))^2);
+LAMBDA_MATRIX(324,339) = DISTANCE;
+
+DISTANCE = sqrt((x(1679,1) - x(1733,1))^2 + (x(1680,1) - x(1734,1))^2);
+LAMBDA_MATRIX(324,351) = DISTANCE;
+
+DISTANCE = sqrt((x(1733,1) - x(1679,1))^2 + (x(1734,1) - x(1680,1))^2);
+LAMBDA_MATRIX(351,324) = DISTANCE;
+
+DISTANCE = sqrt((x(1733,1) - x(1709,1))^2 + (x(1734,1) - x(1710,1))^2);
+LAMBDA_MATRIX(351,339) = DISTANCE;
+
+DISTANCE = sqrt((x(1709,1) - x(1733,1))^2 + (x(1710,1) - x(1734,1))^2);
+LAMBDA_MATRIX(339,351) = DISTANCE;
+
+DISTANCE = sqrt((x(1733,1) - x(1767,1))^2 + (x(1734,1) - x(1768,1))^2);
+LAMBDA_MATRIX(351,368) = DISTANCE;
+
+DISTANCE = sqrt((x(1767,1) - x(1733,1))^2 + (x(1768,1) - x(1734,1))^2);
+LAMBDA_MATRIX(368,351) = DISTANCE;
+
+DISTANCE = sqrt((x(1767,1) - x(1709,1))^2 + (x(1768,1) - x(1710,1))^2);
+LAMBDA_MATRIX(368,339) = DISTANCE;
+
+DISTANCE = sqrt((x(1709,1) - x(1767,1))^2 + (x(1710,1) - x(1768,1))^2);
+LAMBDA_MATRIX(339,368) = DISTANCE;
+
+DISTANCE = sqrt((x(1709,1) - x(1733,1))^2 + (x(1710,1) - x(1734,1))^2);
+LAMBDA_MATRIX(339,351) = DISTANCE;
+
+DISTANCE = sqrt((x(1733,1) - x(1709,1))^2 + (x(1734,1) - x(1710,1))^2);
+LAMBDA_MATRIX(351,339) = DISTANCE;
+
+DISTANCE = sqrt((x(1795,1) - x(1773,1))^2 + (x(1796,1) - x(1774,1))^2);
+LAMBDA_MATRIX(382,371) = DISTANCE;
+
+DISTANCE = sqrt((x(1773,1) - x(1795,1))^2 + (x(1774,1) - x(1796,1))^2);
+LAMBDA_MATRIX(371,382) = DISTANCE;
+
+DISTANCE = sqrt((x(1773,1) - x(1743,1))^2 + (x(1774,1) - x(1744,1))^2);
+LAMBDA_MATRIX(371,356) = DISTANCE;
+
+DISTANCE = sqrt((x(1743,1) - x(1773,1))^2 + (x(1744,1) - x(1774,1))^2);
+LAMBDA_MATRIX(356,371) = DISTANCE;
+
+DISTANCE = sqrt((x(1743,1) - x(1795,1))^2 + (x(1744,1) - x(1796,1))^2);
+LAMBDA_MATRIX(356,382) = DISTANCE;
+
+DISTANCE = sqrt((x(1795,1) - x(1743,1))^2 + (x(1796,1) - x(1744,1))^2);
+LAMBDA_MATRIX(382,356) = DISTANCE;
+
+DISTANCE = sqrt((x(1743,1) - x(1767,1))^2 + (x(1744,1) - x(1768,1))^2);
+LAMBDA_MATRIX(356,368) = DISTANCE;
+
+DISTANCE = sqrt((x(1767,1) - x(1743,1))^2 + (x(1768,1) - x(1744,1))^2);
+LAMBDA_MATRIX(368,356) = DISTANCE;
+
+DISTANCE = sqrt((x(1767,1) - x(1795,1))^2 + (x(1768,1) - x(1796,1))^2);
+LAMBDA_MATRIX(368,382) = DISTANCE;
+
+DISTANCE = sqrt((x(1795,1) - x(1767,1))^2 + (x(1796,1) - x(1768,1))^2);
+LAMBDA_MATRIX(382,368) = DISTANCE;
+
+DISTANCE = sqrt((x(1795,1) - x(1743,1))^2 + (x(1796,1) - x(1744,1))^2);
+LAMBDA_MATRIX(382,356) = DISTANCE;
+
+DISTANCE = sqrt((x(1743,1) - x(1795,1))^2 + (x(1744,1) - x(1796,1))^2);
+LAMBDA_MATRIX(356,382) = DISTANCE;
+
+DISTANCE = sqrt((x(1827,1) - x(1773,1))^2 + (x(1828,1) - x(1774,1))^2);
+LAMBDA_MATRIX(398,371) = DISTANCE;
+
+DISTANCE = sqrt((x(1773,1) - x(1827,1))^2 + (x(1774,1) - x(1828,1))^2);
+LAMBDA_MATRIX(371,398) = DISTANCE;
+
+DISTANCE = sqrt((x(1773,1) - x(1795,1))^2 + (x(1774,1) - x(1796,1))^2);
+LAMBDA_MATRIX(371,382) = DISTANCE;
+
+DISTANCE = sqrt((x(1795,1) - x(1773,1))^2 + (x(1796,1) - x(1774,1))^2);
+LAMBDA_MATRIX(382,371) = DISTANCE;
+
+DISTANCE = sqrt((x(1795,1) - x(1827,1))^2 + (x(1796,1) - x(1828,1))^2);
+LAMBDA_MATRIX(382,398) = DISTANCE;
+
+DISTANCE = sqrt((x(1827,1) - x(1795,1))^2 + (x(1828,1) - x(1796,1))^2);
+LAMBDA_MATRIX(398,382) = DISTANCE;
+
+DISTANCE = sqrt((x(1795,1) - x(1847,1))^2 + (x(1796,1) - x(1848,1))^2);
+LAMBDA_MATRIX(382,408) = DISTANCE;
+
+DISTANCE = sqrt((x(1847,1) - x(1795,1))^2 + (x(1848,1) - x(1796,1))^2);
+LAMBDA_MATRIX(408,382) = DISTANCE;
+
+DISTANCE = sqrt((x(1847,1) - x(1827,1))^2 + (x(1848,1) - x(1828,1))^2);
+LAMBDA_MATRIX(408,398) = DISTANCE;
+
+DISTANCE = sqrt((x(1827,1) - x(1847,1))^2 + (x(1828,1) - x(1848,1))^2);
+LAMBDA_MATRIX(398,408) = DISTANCE;
+
+DISTANCE = sqrt((x(1827,1) - x(1795,1))^2 + (x(1828,1) - x(1796,1))^2);
+LAMBDA_MATRIX(398,382) = DISTANCE;
+
+DISTANCE = sqrt((x(1795,1) - x(1827,1))^2 + (x(1796,1) - x(1828,1))^2);
+LAMBDA_MATRIX(382,398) = DISTANCE;
+
+DISTANCE = sqrt((x(1927,1) - x(1967,1))^2 + (x(1928,1) - x(1968,1))^2);
+LAMBDA_MATRIX(448,468) = DISTANCE;
+
+DISTANCE = sqrt((x(1967,1) - x(1927,1))^2 + (x(1968,1) - x(1928,1))^2);
+LAMBDA_MATRIX(468,448) = DISTANCE;
+
+DISTANCE = sqrt((x(1967,1) - x(1911,1))^2 + (x(1968,1) - x(1912,1))^2);
+LAMBDA_MATRIX(468,440) = DISTANCE;
+
+DISTANCE = sqrt((x(1911,1) - x(1967,1))^2 + (x(1912,1) - x(1968,1))^2);
+LAMBDA_MATRIX(440,468) = DISTANCE;
+
+DISTANCE = sqrt((x(1911,1) - x(1927,1))^2 + (x(1912,1) - x(1928,1))^2);
+LAMBDA_MATRIX(440,448) = DISTANCE;
+
+DISTANCE = sqrt((x(1927,1) - x(1911,1))^2 + (x(1928,1) - x(1912,1))^2);
+LAMBDA_MATRIX(448,440) = DISTANCE;
+
+DISTANCE = sqrt((x(1967,1) - x(1953,1))^2 + (x(1968,1) - x(1954,1))^2);
+LAMBDA_MATRIX(468,461) = DISTANCE;
+
+DISTANCE = sqrt((x(1953,1) - x(1967,1))^2 + (x(1954,1) - x(1968,1))^2);
+LAMBDA_MATRIX(461,468) = DISTANCE;
+
+DISTANCE = sqrt((x(1953,1) - x(1911,1))^2 + (x(1954,1) - x(1912,1))^2);
+LAMBDA_MATRIX(461,440) = DISTANCE;
+
+DISTANCE = sqrt((x(1911,1) - x(1953,1))^2 + (x(1912,1) - x(1954,1))^2);
+LAMBDA_MATRIX(440,461) = DISTANCE;
+
+DISTANCE = sqrt((x(1911,1) - x(1967,1))^2 + (x(1912,1) - x(1968,1))^2);
+LAMBDA_MATRIX(440,468) = DISTANCE;
+
+DISTANCE = sqrt((x(1967,1) - x(1911,1))^2 + (x(1968,1) - x(1912,1))^2);
+LAMBDA_MATRIX(468,440) = DISTANCE;
+
+DISTANCE = sqrt((x(1911,1) - x(1887,1))^2 + (x(1912,1) - x(1888,1))^2);
+LAMBDA_MATRIX(440,428) = DISTANCE;
+
+DISTANCE = sqrt((x(1887,1) - x(1911,1))^2 + (x(1888,1) - x(1912,1))^2);
+LAMBDA_MATRIX(428,440) = DISTANCE;
+
+DISTANCE = sqrt((x(1887,1) - x(1927,1))^2 + (x(1888,1) - x(1928,1))^2);
+LAMBDA_MATRIX(428,448) = DISTANCE;
+
+DISTANCE = sqrt((x(1927,1) - x(1887,1))^2 + (x(1928,1) - x(1888,1))^2);
+LAMBDA_MATRIX(448,428) = DISTANCE;
+
+DISTANCE = sqrt((x(1927,1) - x(1911,1))^2 + (x(1928,1) - x(1912,1))^2);
+LAMBDA_MATRIX(448,440) = DISTANCE;
+
+DISTANCE = sqrt((x(1911,1) - x(1927,1))^2 + (x(1912,1) - x(1928,1))^2);
+LAMBDA_MATRIX(440,448) = DISTANCE;
+
+DISTANCE = sqrt((x(1953,1) - x(1919,1))^2 + (x(1954,1) - x(1920,1))^2);
+LAMBDA_MATRIX(461,444) = DISTANCE;
+
+DISTANCE = sqrt((x(1919,1) - x(1953,1))^2 + (x(1920,1) - x(1954,1))^2);
+LAMBDA_MATRIX(444,461) = DISTANCE;
+
+DISTANCE = sqrt((x(1919,1) - x(1911,1))^2 + (x(1920,1) - x(1912,1))^2);
+LAMBDA_MATRIX(444,440) = DISTANCE;
+
+DISTANCE = sqrt((x(1911,1) - x(1919,1))^2 + (x(1912,1) - x(1920,1))^2);
+LAMBDA_MATRIX(440,444) = DISTANCE;
+
+DISTANCE = sqrt((x(1911,1) - x(1953,1))^2 + (x(1912,1) - x(1954,1))^2);
+LAMBDA_MATRIX(440,461) = DISTANCE;
+
+DISTANCE = sqrt((x(1953,1) - x(1911,1))^2 + (x(1954,1) - x(1912,1))^2);
+LAMBDA_MATRIX(461,440) = DISTANCE;
+
+DISTANCE = sqrt((x(1911,1) - x(1919,1))^2 + (x(1912,1) - x(1920,1))^2);
+LAMBDA_MATRIX(440,444) = DISTANCE;
+
+DISTANCE = sqrt((x(1919,1) - x(1911,1))^2 + (x(1920,1) - x(1912,1))^2);
+LAMBDA_MATRIX(444,440) = DISTANCE;
+
+DISTANCE = sqrt((x(1919,1) - x(1879,1))^2 + (x(1920,1) - x(1880,1))^2);
+LAMBDA_MATRIX(444,424) = DISTANCE;
+
+DISTANCE = sqrt((x(1879,1) - x(1919,1))^2 + (x(1880,1) - x(1920,1))^2);
+LAMBDA_MATRIX(424,444) = DISTANCE;
+
+DISTANCE = sqrt((x(1879,1) - x(1911,1))^2 + (x(1880,1) - x(1912,1))^2);
+LAMBDA_MATRIX(424,440) = DISTANCE;
+
+DISTANCE = sqrt((x(1911,1) - x(1879,1))^2 + (x(1912,1) - x(1880,1))^2);
+LAMBDA_MATRIX(440,424) = DISTANCE;
+
+DISTANCE = sqrt((x(1911,1) - x(1879,1))^2 + (x(1912,1) - x(1880,1))^2);
+LAMBDA_MATRIX(440,424) = DISTANCE;
+
+DISTANCE = sqrt((x(1879,1) - x(1911,1))^2 + (x(1880,1) - x(1912,1))^2);
+LAMBDA_MATRIX(424,440) = DISTANCE;
+
+DISTANCE = sqrt((x(1879,1) - x(1859,1))^2 + (x(1880,1) - x(1860,1))^2);
+LAMBDA_MATRIX(424,414) = DISTANCE;
+
+DISTANCE = sqrt((x(1859,1) - x(1879,1))^2 + (x(1860,1) - x(1880,1))^2);
+LAMBDA_MATRIX(414,424) = DISTANCE;
+
+DISTANCE = sqrt((x(1859,1) - x(1911,1))^2 + (x(1860,1) - x(1912,1))^2);
+LAMBDA_MATRIX(414,440) = DISTANCE;
+
+DISTANCE = sqrt((x(1911,1) - x(1859,1))^2 + (x(1912,1) - x(1860,1))^2);
+LAMBDA_MATRIX(440,414) = DISTANCE;
+
+DISTANCE = sqrt((x(1859,1) - x(1887,1))^2 + (x(1860,1) - x(1888,1))^2);
+LAMBDA_MATRIX(414,428) = DISTANCE;
+
+DISTANCE = sqrt((x(1887,1) - x(1859,1))^2 + (x(1888,1) - x(1860,1))^2);
+LAMBDA_MATRIX(428,414) = DISTANCE;
+
+DISTANCE = sqrt((x(1887,1) - x(1911,1))^2 + (x(1888,1) - x(1912,1))^2);
+LAMBDA_MATRIX(428,440) = DISTANCE;
+
+DISTANCE = sqrt((x(1911,1) - x(1887,1))^2 + (x(1912,1) - x(1888,1))^2);
+LAMBDA_MATRIX(440,428) = DISTANCE;
+
+DISTANCE = sqrt((x(1911,1) - x(1859,1))^2 + (x(1912,1) - x(1860,1))^2);
+LAMBDA_MATRIX(440,414) = DISTANCE;
+
+DISTANCE = sqrt((x(1859,1) - x(1911,1))^2 + (x(1860,1) - x(1912,1))^2);
+LAMBDA_MATRIX(414,440) = DISTANCE;
+
+DISTANCE = sqrt((x(1649,1) - x(1667,1))^2 + (x(1650,1) - x(1668,1))^2);
+LAMBDA_MATRIX(309,318) = DISTANCE;
+
+DISTANCE = sqrt((x(1667,1) - x(1649,1))^2 + (x(1668,1) - x(1650,1))^2);
+LAMBDA_MATRIX(318,309) = DISTANCE;
+
+DISTANCE = sqrt((x(1667,1) - x(1687,1))^2 + (x(1668,1) - x(1688,1))^2);
+LAMBDA_MATRIX(318,328) = DISTANCE;
+
+DISTANCE = sqrt((x(1687,1) - x(1667,1))^2 + (x(1688,1) - x(1668,1))^2);
+LAMBDA_MATRIX(328,318) = DISTANCE;
+
+DISTANCE = sqrt((x(1687,1) - x(1649,1))^2 + (x(1688,1) - x(1650,1))^2);
+LAMBDA_MATRIX(328,309) = DISTANCE;
+
+DISTANCE = sqrt((x(1649,1) - x(1687,1))^2 + (x(1650,1) - x(1688,1))^2);
+LAMBDA_MATRIX(309,328) = DISTANCE;
+
+DISTANCE = sqrt((x(1629,1) - x(1619,1))^2 + (x(1630,1) - x(1620,1))^2);
+LAMBDA_MATRIX(299,294) = DISTANCE;
+
+DISTANCE = sqrt((x(1619,1) - x(1629,1))^2 + (x(1620,1) - x(1630,1))^2);
+LAMBDA_MATRIX(294,299) = DISTANCE;
+
+DISTANCE = sqrt((x(1619,1) - x(1649,1))^2 + (x(1620,1) - x(1650,1))^2);
+LAMBDA_MATRIX(294,309) = DISTANCE;
+
+DISTANCE = sqrt((x(1649,1) - x(1619,1))^2 + (x(1650,1) - x(1620,1))^2);
+LAMBDA_MATRIX(309,294) = DISTANCE;
+
+DISTANCE = sqrt((x(1649,1) - x(1629,1))^2 + (x(1650,1) - x(1630,1))^2);
+LAMBDA_MATRIX(309,299) = DISTANCE;
+
+DISTANCE = sqrt((x(1629,1) - x(1649,1))^2 + (x(1630,1) - x(1650,1))^2);
+LAMBDA_MATRIX(299,309) = DISTANCE;
+
+DISTANCE = sqrt((x(1649,1) - x(1619,1))^2 + (x(1650,1) - x(1620,1))^2);
+LAMBDA_MATRIX(309,294) = DISTANCE;
+
+DISTANCE = sqrt((x(1619,1) - x(1649,1))^2 + (x(1620,1) - x(1650,1))^2);
+LAMBDA_MATRIX(294,309) = DISTANCE;
+
+DISTANCE = sqrt((x(1619,1) - x(1635,1))^2 + (x(1620,1) - x(1636,1))^2);
+LAMBDA_MATRIX(294,302) = DISTANCE;
+
+DISTANCE = sqrt((x(1635,1) - x(1619,1))^2 + (x(1636,1) - x(1620,1))^2);
+LAMBDA_MATRIX(302,294) = DISTANCE;
+
+DISTANCE = sqrt((x(1635,1) - x(1649,1))^2 + (x(1636,1) - x(1650,1))^2);
+LAMBDA_MATRIX(302,309) = DISTANCE;
+
+DISTANCE = sqrt((x(1649,1) - x(1635,1))^2 + (x(1650,1) - x(1636,1))^2);
+LAMBDA_MATRIX(309,302) = DISTANCE;
+
+DISTANCE = sqrt((x(1635,1) - x(1667,1))^2 + (x(1636,1) - x(1668,1))^2);
+LAMBDA_MATRIX(302,318) = DISTANCE;
+
+DISTANCE = sqrt((x(1667,1) - x(1635,1))^2 + (x(1668,1) - x(1636,1))^2);
+LAMBDA_MATRIX(318,302) = DISTANCE;
+
+DISTANCE = sqrt((x(1667,1) - x(1649,1))^2 + (x(1668,1) - x(1650,1))^2);
+LAMBDA_MATRIX(318,309) = DISTANCE;
+
+DISTANCE = sqrt((x(1649,1) - x(1667,1))^2 + (x(1650,1) - x(1668,1))^2);
+LAMBDA_MATRIX(309,318) = DISTANCE;
+
+DISTANCE = sqrt((x(1649,1) - x(1635,1))^2 + (x(1650,1) - x(1636,1))^2);
+LAMBDA_MATRIX(309,302) = DISTANCE;
+
+DISTANCE = sqrt((x(1635,1) - x(1649,1))^2 + (x(1636,1) - x(1650,1))^2);
+LAMBDA_MATRIX(302,309) = DISTANCE;
+
+DISTANCE = sqrt((x(1687,1) - x(1717,1))^2 + (x(1688,1) - x(1718,1))^2);
+LAMBDA_MATRIX(328,343) = DISTANCE;
+
+DISTANCE = sqrt((x(1717,1) - x(1687,1))^2 + (x(1718,1) - x(1688,1))^2);
+LAMBDA_MATRIX(343,328) = DISTANCE;
+
+DISTANCE = sqrt((x(1717,1) - x(1671,1))^2 + (x(1718,1) - x(1672,1))^2);
+LAMBDA_MATRIX(343,320) = DISTANCE;
+
+DISTANCE = sqrt((x(1671,1) - x(1717,1))^2 + (x(1672,1) - x(1718,1))^2);
+LAMBDA_MATRIX(320,343) = DISTANCE;
+
+DISTANCE = sqrt((x(1671,1) - x(1687,1))^2 + (x(1672,1) - x(1688,1))^2);
+LAMBDA_MATRIX(320,328) = DISTANCE;
+
+DISTANCE = sqrt((x(1687,1) - x(1671,1))^2 + (x(1688,1) - x(1672,1))^2);
+LAMBDA_MATRIX(328,320) = DISTANCE;
+
+DISTANCE = sqrt((x(1647,1) - x(1629,1))^2 + (x(1648,1) - x(1630,1))^2);
+LAMBDA_MATRIX(308,299) = DISTANCE;
+
+DISTANCE = sqrt((x(1629,1) - x(1647,1))^2 + (x(1630,1) - x(1648,1))^2);
+LAMBDA_MATRIX(299,308) = DISTANCE;
+
+DISTANCE = sqrt((x(1629,1) - x(1671,1))^2 + (x(1630,1) - x(1672,1))^2);
+LAMBDA_MATRIX(299,320) = DISTANCE;
+
+DISTANCE = sqrt((x(1671,1) - x(1629,1))^2 + (x(1672,1) - x(1630,1))^2);
+LAMBDA_MATRIX(320,299) = DISTANCE;
+
+DISTANCE = sqrt((x(1671,1) - x(1647,1))^2 + (x(1672,1) - x(1648,1))^2);
+LAMBDA_MATRIX(320,308) = DISTANCE;
+
+DISTANCE = sqrt((x(1647,1) - x(1671,1))^2 + (x(1648,1) - x(1672,1))^2);
+LAMBDA_MATRIX(308,320) = DISTANCE;
+
+DISTANCE = sqrt((x(1671,1) - x(1689,1))^2 + (x(1672,1) - x(1690,1))^2);
+LAMBDA_MATRIX(320,329) = DISTANCE;
+
+DISTANCE = sqrt((x(1689,1) - x(1671,1))^2 + (x(1690,1) - x(1672,1))^2);
+LAMBDA_MATRIX(329,320) = DISTANCE;
+
+DISTANCE = sqrt((x(1689,1) - x(1647,1))^2 + (x(1690,1) - x(1648,1))^2);
+LAMBDA_MATRIX(329,308) = DISTANCE;
+
+DISTANCE = sqrt((x(1647,1) - x(1689,1))^2 + (x(1648,1) - x(1690,1))^2);
+LAMBDA_MATRIX(308,329) = DISTANCE;
+
+DISTANCE = sqrt((x(1647,1) - x(1671,1))^2 + (x(1648,1) - x(1672,1))^2);
+LAMBDA_MATRIX(308,320) = DISTANCE;
+
+DISTANCE = sqrt((x(1671,1) - x(1647,1))^2 + (x(1672,1) - x(1648,1))^2);
+LAMBDA_MATRIX(320,308) = DISTANCE;
+
+DISTANCE = sqrt((x(1671,1) - x(1717,1))^2 + (x(1672,1) - x(1718,1))^2);
+LAMBDA_MATRIX(320,343) = DISTANCE;
+
+DISTANCE = sqrt((x(1717,1) - x(1671,1))^2 + (x(1718,1) - x(1672,1))^2);
+LAMBDA_MATRIX(343,320) = DISTANCE;
+
+DISTANCE = sqrt((x(1717,1) - x(1689,1))^2 + (x(1718,1) - x(1690,1))^2);
+LAMBDA_MATRIX(343,329) = DISTANCE;
+
+DISTANCE = sqrt((x(1689,1) - x(1717,1))^2 + (x(1690,1) - x(1718,1))^2);
+LAMBDA_MATRIX(329,343) = DISTANCE;
+
+DISTANCE = sqrt((x(1689,1) - x(1671,1))^2 + (x(1690,1) - x(1672,1))^2);
+LAMBDA_MATRIX(329,320) = DISTANCE;
+
+DISTANCE = sqrt((x(1671,1) - x(1689,1))^2 + (x(1672,1) - x(1690,1))^2);
+LAMBDA_MATRIX(320,329) = DISTANCE;
+
+DISTANCE = sqrt((x(1629,1) - x(1649,1))^2 + (x(1630,1) - x(1650,1))^2);
+LAMBDA_MATRIX(299,309) = DISTANCE;
+
+DISTANCE = sqrt((x(1649,1) - x(1629,1))^2 + (x(1650,1) - x(1630,1))^2);
+LAMBDA_MATRIX(309,299) = DISTANCE;
+
+DISTANCE = sqrt((x(1649,1) - x(1671,1))^2 + (x(1650,1) - x(1672,1))^2);
+LAMBDA_MATRIX(309,320) = DISTANCE;
+
+DISTANCE = sqrt((x(1671,1) - x(1649,1))^2 + (x(1672,1) - x(1650,1))^2);
+LAMBDA_MATRIX(320,309) = DISTANCE;
+
+DISTANCE = sqrt((x(1671,1) - x(1629,1))^2 + (x(1672,1) - x(1630,1))^2);
+LAMBDA_MATRIX(320,299) = DISTANCE;
+
+DISTANCE = sqrt((x(1629,1) - x(1671,1))^2 + (x(1630,1) - x(1672,1))^2);
+LAMBDA_MATRIX(299,320) = DISTANCE;
+
+DISTANCE = sqrt((x(1671,1) - x(1649,1))^2 + (x(1672,1) - x(1650,1))^2);
+LAMBDA_MATRIX(320,309) = DISTANCE;
+
+DISTANCE = sqrt((x(1649,1) - x(1671,1))^2 + (x(1650,1) - x(1672,1))^2);
+LAMBDA_MATRIX(309,320) = DISTANCE;
+
+DISTANCE = sqrt((x(1649,1) - x(1687,1))^2 + (x(1650,1) - x(1688,1))^2);
+LAMBDA_MATRIX(309,328) = DISTANCE;
+
+DISTANCE = sqrt((x(1687,1) - x(1649,1))^2 + (x(1688,1) - x(1650,1))^2);
+LAMBDA_MATRIX(328,309) = DISTANCE;
+
+DISTANCE = sqrt((x(1687,1) - x(1671,1))^2 + (x(1688,1) - x(1672,1))^2);
+LAMBDA_MATRIX(328,320) = DISTANCE;
+
+DISTANCE = sqrt((x(1671,1) - x(1687,1))^2 + (x(1672,1) - x(1688,1))^2);
+LAMBDA_MATRIX(320,328) = DISTANCE;
+
+DISTANCE = sqrt((x(1721,1) - x(1745,1))^2 + (x(1722,1) - x(1746,1))^2);
+LAMBDA_MATRIX(345,357) = DISTANCE;
+
+DISTANCE = sqrt((x(1745,1) - x(1721,1))^2 + (x(1746,1) - x(1722,1))^2);
+LAMBDA_MATRIX(357,345) = DISTANCE;
+
+DISTANCE = sqrt((x(1745,1) - x(1779,1))^2 + (x(1746,1) - x(1780,1))^2);
+LAMBDA_MATRIX(357,374) = DISTANCE;
+
+DISTANCE = sqrt((x(1779,1) - x(1745,1))^2 + (x(1780,1) - x(1746,1))^2);
+LAMBDA_MATRIX(374,357) = DISTANCE;
+
+DISTANCE = sqrt((x(1779,1) - x(1721,1))^2 + (x(1780,1) - x(1722,1))^2);
+LAMBDA_MATRIX(374,345) = DISTANCE;
+
+DISTANCE = sqrt((x(1721,1) - x(1779,1))^2 + (x(1722,1) - x(1780,1))^2);
+LAMBDA_MATRIX(345,374) = DISTANCE;
+
+DISTANCE = sqrt((x(1721,1) - x(1699,1))^2 + (x(1722,1) - x(1700,1))^2);
+LAMBDA_MATRIX(345,334) = DISTANCE;
+
+DISTANCE = sqrt((x(1699,1) - x(1721,1))^2 + (x(1700,1) - x(1722,1))^2);
+LAMBDA_MATRIX(334,345) = DISTANCE;
+
+DISTANCE = sqrt((x(1699,1) - x(1673,1))^2 + (x(1700,1) - x(1674,1))^2);
+LAMBDA_MATRIX(334,321) = DISTANCE;
+
+DISTANCE = sqrt((x(1673,1) - x(1699,1))^2 + (x(1674,1) - x(1700,1))^2);
+LAMBDA_MATRIX(321,334) = DISTANCE;
+
+DISTANCE = sqrt((x(1673,1) - x(1721,1))^2 + (x(1674,1) - x(1722,1))^2);
+LAMBDA_MATRIX(321,345) = DISTANCE;
+
+DISTANCE = sqrt((x(1721,1) - x(1673,1))^2 + (x(1722,1) - x(1674,1))^2);
+LAMBDA_MATRIX(345,321) = DISTANCE;
+
+DISTANCE = sqrt((x(1673,1) - x(1689,1))^2 + (x(1674,1) - x(1690,1))^2);
+LAMBDA_MATRIX(321,329) = DISTANCE;
+
+DISTANCE = sqrt((x(1689,1) - x(1673,1))^2 + (x(1690,1) - x(1674,1))^2);
+LAMBDA_MATRIX(329,321) = DISTANCE;
+
+DISTANCE = sqrt((x(1689,1) - x(1721,1))^2 + (x(1690,1) - x(1722,1))^2);
+LAMBDA_MATRIX(329,345) = DISTANCE;
+
+DISTANCE = sqrt((x(1721,1) - x(1689,1))^2 + (x(1722,1) - x(1690,1))^2);
+LAMBDA_MATRIX(345,329) = DISTANCE;
+
+DISTANCE = sqrt((x(1721,1) - x(1673,1))^2 + (x(1722,1) - x(1674,1))^2);
+LAMBDA_MATRIX(345,321) = DISTANCE;
+
+DISTANCE = sqrt((x(1673,1) - x(1721,1))^2 + (x(1674,1) - x(1722,1))^2);
+LAMBDA_MATRIX(321,345) = DISTANCE;
+
+DISTANCE = sqrt((x(1689,1) - x(1745,1))^2 + (x(1690,1) - x(1746,1))^2);
+LAMBDA_MATRIX(329,357) = DISTANCE;
+
+DISTANCE = sqrt((x(1745,1) - x(1689,1))^2 + (x(1746,1) - x(1690,1))^2);
+LAMBDA_MATRIX(357,329) = DISTANCE;
+
+DISTANCE = sqrt((x(1745,1) - x(1721,1))^2 + (x(1746,1) - x(1722,1))^2);
+LAMBDA_MATRIX(357,345) = DISTANCE;
+
+DISTANCE = sqrt((x(1721,1) - x(1745,1))^2 + (x(1722,1) - x(1746,1))^2);
+LAMBDA_MATRIX(345,357) = DISTANCE;
+
+DISTANCE = sqrt((x(1721,1) - x(1689,1))^2 + (x(1722,1) - x(1690,1))^2);
+LAMBDA_MATRIX(345,329) = DISTANCE;
+
+DISTANCE = sqrt((x(1689,1) - x(1721,1))^2 + (x(1690,1) - x(1722,1))^2);
+LAMBDA_MATRIX(329,345) = DISTANCE;
+
+DISTANCE = sqrt((x(1751,1) - x(1727,1))^2 + (x(1752,1) - x(1728,1))^2);
+LAMBDA_MATRIX(360,348) = DISTANCE;
+
+DISTANCE = sqrt((x(1727,1) - x(1751,1))^2 + (x(1728,1) - x(1752,1))^2);
+LAMBDA_MATRIX(348,360) = DISTANCE;
+
+DISTANCE = sqrt((x(1727,1) - x(1699,1))^2 + (x(1728,1) - x(1700,1))^2);
+LAMBDA_MATRIX(348,334) = DISTANCE;
+
+DISTANCE = sqrt((x(1699,1) - x(1727,1))^2 + (x(1700,1) - x(1728,1))^2);
+LAMBDA_MATRIX(334,348) = DISTANCE;
+
+DISTANCE = sqrt((x(1699,1) - x(1751,1))^2 + (x(1700,1) - x(1752,1))^2);
+LAMBDA_MATRIX(334,360) = DISTANCE;
+
+DISTANCE = sqrt((x(1751,1) - x(1699,1))^2 + (x(1752,1) - x(1700,1))^2);
+LAMBDA_MATRIX(360,334) = DISTANCE;
+
+DISTANCE = sqrt((x(1751,1) - x(1721,1))^2 + (x(1752,1) - x(1722,1))^2);
+LAMBDA_MATRIX(360,345) = DISTANCE;
+
+DISTANCE = sqrt((x(1721,1) - x(1751,1))^2 + (x(1722,1) - x(1752,1))^2);
+LAMBDA_MATRIX(345,360) = DISTANCE;
+
+DISTANCE = sqrt((x(1721,1) - x(1779,1))^2 + (x(1722,1) - x(1780,1))^2);
+LAMBDA_MATRIX(345,374) = DISTANCE;
+
+DISTANCE = sqrt((x(1779,1) - x(1721,1))^2 + (x(1780,1) - x(1722,1))^2);
+LAMBDA_MATRIX(374,345) = DISTANCE;
+
+DISTANCE = sqrt((x(1779,1) - x(1751,1))^2 + (x(1780,1) - x(1752,1))^2);
+LAMBDA_MATRIX(374,360) = DISTANCE;
+
+DISTANCE = sqrt((x(1751,1) - x(1779,1))^2 + (x(1752,1) - x(1780,1))^2);
+LAMBDA_MATRIX(360,374) = DISTANCE;
+
+DISTANCE = sqrt((x(1699,1) - x(1721,1))^2 + (x(1700,1) - x(1722,1))^2);
+LAMBDA_MATRIX(334,345) = DISTANCE;
+
+DISTANCE = sqrt((x(1721,1) - x(1699,1))^2 + (x(1722,1) - x(1700,1))^2);
+LAMBDA_MATRIX(345,334) = DISTANCE;
+
+DISTANCE = sqrt((x(1721,1) - x(1751,1))^2 + (x(1722,1) - x(1752,1))^2);
+LAMBDA_MATRIX(345,360) = DISTANCE;
+
+DISTANCE = sqrt((x(1751,1) - x(1721,1))^2 + (x(1752,1) - x(1722,1))^2);
+LAMBDA_MATRIX(360,345) = DISTANCE;
+
+DISTANCE = sqrt((x(1751,1) - x(1699,1))^2 + (x(1752,1) - x(1700,1))^2);
+LAMBDA_MATRIX(360,334) = DISTANCE;
+
+DISTANCE = sqrt((x(1699,1) - x(1751,1))^2 + (x(1700,1) - x(1752,1))^2);
+LAMBDA_MATRIX(334,360) = DISTANCE;
+
+DISTANCE = sqrt((x(1783,1) - x(1727,1))^2 + (x(1784,1) - x(1728,1))^2);
+LAMBDA_MATRIX(376,348) = DISTANCE;
+
+DISTANCE = sqrt((x(1727,1) - x(1783,1))^2 + (x(1728,1) - x(1784,1))^2);
+LAMBDA_MATRIX(348,376) = DISTANCE;
+
+DISTANCE = sqrt((x(1727,1) - x(1751,1))^2 + (x(1728,1) - x(1752,1))^2);
+LAMBDA_MATRIX(348,360) = DISTANCE;
+
+DISTANCE = sqrt((x(1751,1) - x(1727,1))^2 + (x(1752,1) - x(1728,1))^2);
+LAMBDA_MATRIX(360,348) = DISTANCE;
+
+DISTANCE = sqrt((x(1751,1) - x(1783,1))^2 + (x(1752,1) - x(1784,1))^2);
+LAMBDA_MATRIX(360,376) = DISTANCE;
+
+DISTANCE = sqrt((x(1783,1) - x(1751,1))^2 + (x(1784,1) - x(1752,1))^2);
+LAMBDA_MATRIX(376,360) = DISTANCE;
+
+DISTANCE = sqrt((x(1241,1) - x(1187,1))^2 + (x(1242,1) - x(1188,1))^2);
+LAMBDA_MATRIX(105,78) = DISTANCE;
+
+DISTANCE = sqrt((x(1187,1) - x(1241,1))^2 + (x(1188,1) - x(1242,1))^2);
+LAMBDA_MATRIX(78,105) = DISTANCE;
+
+DISTANCE = sqrt((x(1187,1) - x(1205,1))^2 + (x(1188,1) - x(1206,1))^2);
+LAMBDA_MATRIX(78,87) = DISTANCE;
+
+DISTANCE = sqrt((x(1205,1) - x(1187,1))^2 + (x(1206,1) - x(1188,1))^2);
+LAMBDA_MATRIX(87,78) = DISTANCE;
+
+DISTANCE = sqrt((x(1205,1) - x(1241,1))^2 + (x(1206,1) - x(1242,1))^2);
+LAMBDA_MATRIX(87,105) = DISTANCE;
+
+DISTANCE = sqrt((x(1241,1) - x(1205,1))^2 + (x(1242,1) - x(1206,1))^2);
+LAMBDA_MATRIX(105,87) = DISTANCE;
+
+DISTANCE = sqrt((x(1205,1) - x(1255,1))^2 + (x(1206,1) - x(1256,1))^2);
+LAMBDA_MATRIX(87,112) = DISTANCE;
+
+DISTANCE = sqrt((x(1255,1) - x(1205,1))^2 + (x(1256,1) - x(1206,1))^2);
+LAMBDA_MATRIX(112,87) = DISTANCE;
+
+DISTANCE = sqrt((x(1255,1) - x(1241,1))^2 + (x(1256,1) - x(1242,1))^2);
+LAMBDA_MATRIX(112,105) = DISTANCE;
+
+DISTANCE = sqrt((x(1241,1) - x(1255,1))^2 + (x(1242,1) - x(1256,1))^2);
+LAMBDA_MATRIX(105,112) = DISTANCE;
+
+DISTANCE = sqrt((x(1241,1) - x(1205,1))^2 + (x(1242,1) - x(1206,1))^2);
+LAMBDA_MATRIX(105,87) = DISTANCE;
+
+DISTANCE = sqrt((x(1205,1) - x(1241,1))^2 + (x(1206,1) - x(1242,1))^2);
+LAMBDA_MATRIX(87,105) = DISTANCE;
+
+DISTANCE = sqrt((x(1161,1) - x(1179,1))^2 + (x(1162,1) - x(1180,1))^2);
+LAMBDA_MATRIX(65,74) = DISTANCE;
+
+DISTANCE = sqrt((x(1179,1) - x(1161,1))^2 + (x(1180,1) - x(1162,1))^2);
+LAMBDA_MATRIX(74,65) = DISTANCE;
+
+DISTANCE = sqrt((x(1179,1) - x(1205,1))^2 + (x(1180,1) - x(1206,1))^2);
+LAMBDA_MATRIX(74,87) = DISTANCE;
+
+DISTANCE = sqrt((x(1205,1) - x(1179,1))^2 + (x(1206,1) - x(1180,1))^2);
+LAMBDA_MATRIX(87,74) = DISTANCE;
+
+DISTANCE = sqrt((x(1205,1) - x(1161,1))^2 + (x(1206,1) - x(1162,1))^2);
+LAMBDA_MATRIX(87,65) = DISTANCE;
+
+DISTANCE = sqrt((x(1161,1) - x(1205,1))^2 + (x(1162,1) - x(1206,1))^2);
+LAMBDA_MATRIX(65,87) = DISTANCE;
+
+DISTANCE = sqrt((x(1205,1) - x(1187,1))^2 + (x(1206,1) - x(1188,1))^2);
+LAMBDA_MATRIX(87,78) = DISTANCE;
+
+DISTANCE = sqrt((x(1187,1) - x(1205,1))^2 + (x(1188,1) - x(1206,1))^2);
+LAMBDA_MATRIX(78,87) = DISTANCE;
+
+DISTANCE = sqrt((x(1187,1) - x(1161,1))^2 + (x(1188,1) - x(1162,1))^2);
+LAMBDA_MATRIX(78,65) = DISTANCE;
+
+DISTANCE = sqrt((x(1161,1) - x(1187,1))^2 + (x(1162,1) - x(1188,1))^2);
+LAMBDA_MATRIX(65,78) = DISTANCE;
+
+DISTANCE = sqrt((x(1161,1) - x(1205,1))^2 + (x(1162,1) - x(1206,1))^2);
+LAMBDA_MATRIX(65,87) = DISTANCE;
+
+DISTANCE = sqrt((x(1205,1) - x(1161,1))^2 + (x(1206,1) - x(1162,1))^2);
+LAMBDA_MATRIX(87,65) = DISTANCE;
+
+DISTANCE = sqrt((x(1205,1) - x(1179,1))^2 + (x(1206,1) - x(1180,1))^2);
+LAMBDA_MATRIX(87,74) = DISTANCE;
+
+DISTANCE = sqrt((x(1179,1) - x(1205,1))^2 + (x(1180,1) - x(1206,1))^2);
+LAMBDA_MATRIX(74,87) = DISTANCE;
+
+DISTANCE = sqrt((x(1179,1) - x(1239,1))^2 + (x(1180,1) - x(1240,1))^2);
+LAMBDA_MATRIX(74,104) = DISTANCE;
+
+DISTANCE = sqrt((x(1239,1) - x(1179,1))^2 + (x(1240,1) - x(1180,1))^2);
+LAMBDA_MATRIX(104,74) = DISTANCE;
+
+DISTANCE = sqrt((x(1239,1) - x(1205,1))^2 + (x(1240,1) - x(1206,1))^2);
+LAMBDA_MATRIX(104,87) = DISTANCE;
+
+DISTANCE = sqrt((x(1205,1) - x(1239,1))^2 + (x(1206,1) - x(1240,1))^2);
+LAMBDA_MATRIX(87,104) = DISTANCE;
+
+DISTANCE = sqrt((x(1239,1) - x(1255,1))^2 + (x(1240,1) - x(1256,1))^2);
+LAMBDA_MATRIX(104,112) = DISTANCE;
+
+DISTANCE = sqrt((x(1255,1) - x(1239,1))^2 + (x(1256,1) - x(1240,1))^2);
+LAMBDA_MATRIX(112,104) = DISTANCE;
+
+DISTANCE = sqrt((x(1255,1) - x(1205,1))^2 + (x(1256,1) - x(1206,1))^2);
+LAMBDA_MATRIX(112,87) = DISTANCE;
+
+DISTANCE = sqrt((x(1205,1) - x(1255,1))^2 + (x(1206,1) - x(1256,1))^2);
+LAMBDA_MATRIX(87,112) = DISTANCE;
+
+DISTANCE = sqrt((x(1205,1) - x(1239,1))^2 + (x(1206,1) - x(1240,1))^2);
+LAMBDA_MATRIX(87,104) = DISTANCE;
+
+DISTANCE = sqrt((x(1239,1) - x(1205,1))^2 + (x(1240,1) - x(1206,1))^2);
+LAMBDA_MATRIX(104,87) = DISTANCE;
+
+DISTANCE = sqrt((x(1117,1) - x(1155,1))^2 + (x(1118,1) - x(1156,1))^2);
+LAMBDA_MATRIX(43,62) = DISTANCE;
+
+DISTANCE = sqrt((x(1155,1) - x(1117,1))^2 + (x(1156,1) - x(1118,1))^2);
+LAMBDA_MATRIX(62,43) = DISTANCE;
+
+DISTANCE = sqrt((x(1155,1) - x(1149,1))^2 + (x(1156,1) - x(1150,1))^2);
+LAMBDA_MATRIX(62,59) = DISTANCE;
+
+DISTANCE = sqrt((x(1149,1) - x(1155,1))^2 + (x(1150,1) - x(1156,1))^2);
+LAMBDA_MATRIX(59,62) = DISTANCE;
+
+DISTANCE = sqrt((x(1149,1) - x(1117,1))^2 + (x(1150,1) - x(1118,1))^2);
+LAMBDA_MATRIX(59,43) = DISTANCE;
+
+DISTANCE = sqrt((x(1117,1) - x(1149,1))^2 + (x(1118,1) - x(1150,1))^2);
+LAMBDA_MATRIX(43,59) = DISTANCE;
+
+DISTANCE = sqrt((x(1069,1) - x(1043,1))^2 + (x(1070,1) - x(1044,1))^2);
+LAMBDA_MATRIX(19,6) = DISTANCE;
+
+DISTANCE = sqrt((x(1043,1) - x(1069,1))^2 + (x(1044,1) - x(1070,1))^2);
+LAMBDA_MATRIX(6,19) = DISTANCE;
+
+DISTANCE = sqrt((x(1043,1) - x(1117,1))^2 + (x(1044,1) - x(1118,1))^2);
+LAMBDA_MATRIX(6,43) = DISTANCE;
+
+DISTANCE = sqrt((x(1117,1) - x(1043,1))^2 + (x(1118,1) - x(1044,1))^2);
+LAMBDA_MATRIX(43,6) = DISTANCE;
+
+DISTANCE = sqrt((x(1117,1) - x(1069,1))^2 + (x(1118,1) - x(1070,1))^2);
+LAMBDA_MATRIX(43,19) = DISTANCE;
+
+DISTANCE = sqrt((x(1069,1) - x(1117,1))^2 + (x(1070,1) - x(1118,1))^2);
+LAMBDA_MATRIX(19,43) = DISTANCE;
+
+DISTANCE = sqrt((x(1125,1) - x(1143,1))^2 + (x(1126,1) - x(1144,1))^2);
+LAMBDA_MATRIX(47,56) = DISTANCE;
+
+DISTANCE = sqrt((x(1143,1) - x(1125,1))^2 + (x(1144,1) - x(1126,1))^2);
+LAMBDA_MATRIX(56,47) = DISTANCE;
+
+DISTANCE = sqrt((x(1143,1) - x(1175,1))^2 + (x(1144,1) - x(1176,1))^2);
+LAMBDA_MATRIX(56,72) = DISTANCE;
+
+DISTANCE = sqrt((x(1175,1) - x(1143,1))^2 + (x(1176,1) - x(1144,1))^2);
+LAMBDA_MATRIX(72,56) = DISTANCE;
+
+DISTANCE = sqrt((x(1175,1) - x(1125,1))^2 + (x(1176,1) - x(1126,1))^2);
+LAMBDA_MATRIX(72,47) = DISTANCE;
+
+DISTANCE = sqrt((x(1125,1) - x(1175,1))^2 + (x(1126,1) - x(1176,1))^2);
+LAMBDA_MATRIX(47,72) = DISTANCE;
+
+DISTANCE = sqrt((x(1223,1) - x(1213,1))^2 + (x(1224,1) - x(1214,1))^2);
+LAMBDA_MATRIX(96,91) = DISTANCE;
+
+DISTANCE = sqrt((x(1213,1) - x(1223,1))^2 + (x(1214,1) - x(1224,1))^2);
+LAMBDA_MATRIX(91,96) = DISTANCE;
+
+DISTANCE = sqrt((x(1213,1) - x(1175,1))^2 + (x(1214,1) - x(1176,1))^2);
+LAMBDA_MATRIX(91,72) = DISTANCE;
+
+DISTANCE = sqrt((x(1175,1) - x(1213,1))^2 + (x(1176,1) - x(1214,1))^2);
+LAMBDA_MATRIX(72,91) = DISTANCE;
+
+DISTANCE = sqrt((x(1175,1) - x(1223,1))^2 + (x(1176,1) - x(1224,1))^2);
+LAMBDA_MATRIX(72,96) = DISTANCE;
+
+DISTANCE = sqrt((x(1223,1) - x(1175,1))^2 + (x(1224,1) - x(1176,1))^2);
+LAMBDA_MATRIX(96,72) = DISTANCE;
+
+DISTANCE = sqrt((x(1195,1) - x(1143,1))^2 + (x(1196,1) - x(1144,1))^2);
+LAMBDA_MATRIX(82,56) = DISTANCE;
+
+DISTANCE = sqrt((x(1143,1) - x(1195,1))^2 + (x(1144,1) - x(1196,1))^2);
+LAMBDA_MATRIX(56,82) = DISTANCE;
+
+DISTANCE = sqrt((x(1143,1) - x(1149,1))^2 + (x(1144,1) - x(1150,1))^2);
+LAMBDA_MATRIX(56,59) = DISTANCE;
+
+DISTANCE = sqrt((x(1149,1) - x(1143,1))^2 + (x(1150,1) - x(1144,1))^2);
+LAMBDA_MATRIX(59,56) = DISTANCE;
+
+DISTANCE = sqrt((x(1149,1) - x(1195,1))^2 + (x(1150,1) - x(1196,1))^2);
+LAMBDA_MATRIX(59,82) = DISTANCE;
+
+DISTANCE = sqrt((x(1195,1) - x(1149,1))^2 + (x(1196,1) - x(1150,1))^2);
+LAMBDA_MATRIX(82,59) = DISTANCE;
+
+DISTANCE = sqrt((x(1149,1) - x(1183,1))^2 + (x(1150,1) - x(1184,1))^2);
+LAMBDA_MATRIX(59,76) = DISTANCE;
+
+DISTANCE = sqrt((x(1183,1) - x(1149,1))^2 + (x(1184,1) - x(1150,1))^2);
+LAMBDA_MATRIX(76,59) = DISTANCE;
+
+DISTANCE = sqrt((x(1183,1) - x(1195,1))^2 + (x(1184,1) - x(1196,1))^2);
+LAMBDA_MATRIX(76,82) = DISTANCE;
+
+DISTANCE = sqrt((x(1195,1) - x(1183,1))^2 + (x(1196,1) - x(1184,1))^2);
+LAMBDA_MATRIX(82,76) = DISTANCE;
+
+DISTANCE = sqrt((x(1195,1) - x(1149,1))^2 + (x(1196,1) - x(1150,1))^2);
+LAMBDA_MATRIX(82,59) = DISTANCE;
+
+DISTANCE = sqrt((x(1149,1) - x(1195,1))^2 + (x(1150,1) - x(1196,1))^2);
+LAMBDA_MATRIX(59,82) = DISTANCE;
+
+DISTANCE = sqrt((x(1195,1) - x(1183,1))^2 + (x(1196,1) - x(1184,1))^2);
+LAMBDA_MATRIX(82,76) = DISTANCE;
+
+DISTANCE = sqrt((x(1183,1) - x(1195,1))^2 + (x(1184,1) - x(1196,1))^2);
+LAMBDA_MATRIX(76,82) = DISTANCE;
+
+DISTANCE = sqrt((x(1183,1) - x(1219,1))^2 + (x(1184,1) - x(1220,1))^2);
+LAMBDA_MATRIX(76,94) = DISTANCE;
+
+DISTANCE = sqrt((x(1219,1) - x(1183,1))^2 + (x(1220,1) - x(1184,1))^2);
+LAMBDA_MATRIX(94,76) = DISTANCE;
+
+DISTANCE = sqrt((x(1219,1) - x(1195,1))^2 + (x(1220,1) - x(1196,1))^2);
+LAMBDA_MATRIX(94,82) = DISTANCE;
+
+DISTANCE = sqrt((x(1195,1) - x(1219,1))^2 + (x(1196,1) - x(1220,1))^2);
+LAMBDA_MATRIX(82,94) = DISTANCE;
+
+DISTANCE = sqrt((x(1195,1) - x(1175,1))^2 + (x(1196,1) - x(1176,1))^2);
+LAMBDA_MATRIX(82,72) = DISTANCE;
+
+DISTANCE = sqrt((x(1175,1) - x(1195,1))^2 + (x(1176,1) - x(1196,1))^2);
+LAMBDA_MATRIX(72,82) = DISTANCE;
+
+DISTANCE = sqrt((x(1175,1) - x(1143,1))^2 + (x(1176,1) - x(1144,1))^2);
+LAMBDA_MATRIX(72,56) = DISTANCE;
+
+DISTANCE = sqrt((x(1143,1) - x(1175,1))^2 + (x(1144,1) - x(1176,1))^2);
+LAMBDA_MATRIX(56,72) = DISTANCE;
+
+DISTANCE = sqrt((x(1143,1) - x(1195,1))^2 + (x(1144,1) - x(1196,1))^2);
+LAMBDA_MATRIX(56,82) = DISTANCE;
+
+DISTANCE = sqrt((x(1195,1) - x(1143,1))^2 + (x(1196,1) - x(1144,1))^2);
+LAMBDA_MATRIX(82,56) = DISTANCE;
+
+DISTANCE = sqrt((x(1223,1) - x(1175,1))^2 + (x(1224,1) - x(1176,1))^2);
+LAMBDA_MATRIX(96,72) = DISTANCE;
+
+DISTANCE = sqrt((x(1175,1) - x(1223,1))^2 + (x(1176,1) - x(1224,1))^2);
+LAMBDA_MATRIX(72,96) = DISTANCE;
+
+DISTANCE = sqrt((x(1175,1) - x(1195,1))^2 + (x(1176,1) - x(1196,1))^2);
+LAMBDA_MATRIX(72,82) = DISTANCE;
+
+DISTANCE = sqrt((x(1195,1) - x(1175,1))^2 + (x(1196,1) - x(1176,1))^2);
+LAMBDA_MATRIX(82,72) = DISTANCE;
+
+DISTANCE = sqrt((x(1195,1) - x(1223,1))^2 + (x(1196,1) - x(1224,1))^2);
+LAMBDA_MATRIX(82,96) = DISTANCE;
+
+DISTANCE = sqrt((x(1223,1) - x(1195,1))^2 + (x(1224,1) - x(1196,1))^2);
+LAMBDA_MATRIX(96,82) = DISTANCE;
+
+DISTANCE = sqrt((x(1195,1) - x(1249,1))^2 + (x(1196,1) - x(1250,1))^2);
+LAMBDA_MATRIX(82,109) = DISTANCE;
+
+DISTANCE = sqrt((x(1249,1) - x(1195,1))^2 + (x(1250,1) - x(1196,1))^2);
+LAMBDA_MATRIX(109,82) = DISTANCE;
+
+DISTANCE = sqrt((x(1249,1) - x(1223,1))^2 + (x(1250,1) - x(1224,1))^2);
+LAMBDA_MATRIX(109,96) = DISTANCE;
+
+DISTANCE = sqrt((x(1223,1) - x(1249,1))^2 + (x(1224,1) - x(1250,1))^2);
+LAMBDA_MATRIX(96,109) = DISTANCE;
+
+DISTANCE = sqrt((x(1223,1) - x(1195,1))^2 + (x(1224,1) - x(1196,1))^2);
+LAMBDA_MATRIX(96,82) = DISTANCE;
+
+DISTANCE = sqrt((x(1195,1) - x(1223,1))^2 + (x(1196,1) - x(1224,1))^2);
+LAMBDA_MATRIX(82,96) = DISTANCE;
+
+DISTANCE = sqrt((x(1195,1) - x(1219,1))^2 + (x(1196,1) - x(1220,1))^2);
+LAMBDA_MATRIX(82,94) = DISTANCE;
+
+DISTANCE = sqrt((x(1219,1) - x(1195,1))^2 + (x(1220,1) - x(1196,1))^2);
+LAMBDA_MATRIX(94,82) = DISTANCE;
+
+DISTANCE = sqrt((x(1219,1) - x(1249,1))^2 + (x(1220,1) - x(1250,1))^2);
+LAMBDA_MATRIX(94,109) = DISTANCE;
+
+DISTANCE = sqrt((x(1249,1) - x(1219,1))^2 + (x(1250,1) - x(1220,1))^2);
+LAMBDA_MATRIX(109,94) = DISTANCE;
+
+DISTANCE = sqrt((x(1249,1) - x(1195,1))^2 + (x(1250,1) - x(1196,1))^2);
+LAMBDA_MATRIX(109,82) = DISTANCE;
+
+DISTANCE = sqrt((x(1195,1) - x(1249,1))^2 + (x(1196,1) - x(1250,1))^2);
+LAMBDA_MATRIX(82,109) = DISTANCE;
+
+DISTANCE = sqrt((x(1995,1) - x(1985,1))^2 + (x(1996,1) - x(1986,1))^2);
+LAMBDA_MATRIX(482,477) = DISTANCE;
+
+DISTANCE = sqrt((x(1985,1) - x(1995,1))^2 + (x(1986,1) - x(1996,1))^2);
+LAMBDA_MATRIX(477,482) = DISTANCE;
+
+DISTANCE = sqrt((x(1985,1) - x(1955,1))^2 + (x(1986,1) - x(1956,1))^2);
+LAMBDA_MATRIX(477,462) = DISTANCE;
+
+DISTANCE = sqrt((x(1955,1) - x(1985,1))^2 + (x(1956,1) - x(1986,1))^2);
+LAMBDA_MATRIX(462,477) = DISTANCE;
+
+DISTANCE = sqrt((x(1955,1) - x(1995,1))^2 + (x(1956,1) - x(1996,1))^2);
+LAMBDA_MATRIX(462,482) = DISTANCE;
+
+DISTANCE = sqrt((x(1995,1) - x(1955,1))^2 + (x(1996,1) - x(1956,1))^2);
+LAMBDA_MATRIX(482,462) = DISTANCE;
+
+DISTANCE = sqrt((x(1903,1) - x(1955,1))^2 + (x(1904,1) - x(1956,1))^2);
+LAMBDA_MATRIX(436,462) = DISTANCE;
+
+DISTANCE = sqrt((x(1955,1) - x(1903,1))^2 + (x(1956,1) - x(1904,1))^2);
+LAMBDA_MATRIX(462,436) = DISTANCE;
+
+DISTANCE = sqrt((x(1955,1) - x(1935,1))^2 + (x(1956,1) - x(1936,1))^2);
+LAMBDA_MATRIX(462,452) = DISTANCE;
+
+DISTANCE = sqrt((x(1935,1) - x(1955,1))^2 + (x(1936,1) - x(1956,1))^2);
+LAMBDA_MATRIX(452,462) = DISTANCE;
+
+DISTANCE = sqrt((x(1935,1) - x(1903,1))^2 + (x(1936,1) - x(1904,1))^2);
+LAMBDA_MATRIX(452,436) = DISTANCE;
+
+DISTANCE = sqrt((x(1903,1) - x(1935,1))^2 + (x(1904,1) - x(1936,1))^2);
+LAMBDA_MATRIX(436,452) = DISTANCE;
+
+DISTANCE = sqrt((x(1935,1) - x(1955,1))^2 + (x(1936,1) - x(1956,1))^2);
+LAMBDA_MATRIX(452,462) = DISTANCE;
+
+DISTANCE = sqrt((x(1955,1) - x(1935,1))^2 + (x(1956,1) - x(1936,1))^2);
+LAMBDA_MATRIX(462,452) = DISTANCE;
+
+DISTANCE = sqrt((x(1955,1) - x(1985,1))^2 + (x(1956,1) - x(1986,1))^2);
+LAMBDA_MATRIX(462,477) = DISTANCE;
+
+DISTANCE = sqrt((x(1985,1) - x(1955,1))^2 + (x(1986,1) - x(1956,1))^2);
+LAMBDA_MATRIX(477,462) = DISTANCE;
+
+DISTANCE = sqrt((x(1985,1) - x(1935,1))^2 + (x(1986,1) - x(1936,1))^2);
+LAMBDA_MATRIX(477,452) = DISTANCE;
+
+DISTANCE = sqrt((x(1935,1) - x(1985,1))^2 + (x(1936,1) - x(1986,1))^2);
+LAMBDA_MATRIX(452,477) = DISTANCE;
+
+DISTANCE = sqrt((x(1289,1) - x(1263,1))^2 + (x(1290,1) - x(1264,1))^2);
+LAMBDA_MATRIX(129,116) = DISTANCE;
+
+DISTANCE = sqrt((x(1263,1) - x(1289,1))^2 + (x(1264,1) - x(1290,1))^2);
+LAMBDA_MATRIX(116,129) = DISTANCE;
+
+DISTANCE = sqrt((x(1263,1) - x(1313,1))^2 + (x(1264,1) - x(1314,1))^2);
+LAMBDA_MATRIX(116,141) = DISTANCE;
+
+DISTANCE = sqrt((x(1313,1) - x(1263,1))^2 + (x(1314,1) - x(1264,1))^2);
+LAMBDA_MATRIX(141,116) = DISTANCE;
+
+DISTANCE = sqrt((x(1313,1) - x(1289,1))^2 + (x(1314,1) - x(1290,1))^2);
+LAMBDA_MATRIX(141,129) = DISTANCE;
+
+DISTANCE = sqrt((x(1289,1) - x(1313,1))^2 + (x(1290,1) - x(1314,1))^2);
+LAMBDA_MATRIX(129,141) = DISTANCE;
+
+DISTANCE = sqrt((x(1313,1) - x(1349,1))^2 + (x(1314,1) - x(1350,1))^2);
+LAMBDA_MATRIX(141,159) = DISTANCE;
+
+DISTANCE = sqrt((x(1349,1) - x(1313,1))^2 + (x(1350,1) - x(1314,1))^2);
+LAMBDA_MATRIX(159,141) = DISTANCE;
+
+DISTANCE = sqrt((x(1349,1) - x(1289,1))^2 + (x(1350,1) - x(1290,1))^2);
+LAMBDA_MATRIX(159,129) = DISTANCE;
+
+DISTANCE = sqrt((x(1289,1) - x(1349,1))^2 + (x(1290,1) - x(1350,1))^2);
+LAMBDA_MATRIX(129,159) = DISTANCE;
+
+DISTANCE = sqrt((x(1289,1) - x(1313,1))^2 + (x(1290,1) - x(1314,1))^2);
+LAMBDA_MATRIX(129,141) = DISTANCE;
+
+DISTANCE = sqrt((x(1313,1) - x(1289,1))^2 + (x(1314,1) - x(1290,1))^2);
+LAMBDA_MATRIX(141,129) = DISTANCE;
+
+DISTANCE = sqrt((x(1289,1) - x(1265,1))^2 + (x(1290,1) - x(1266,1))^2);
+LAMBDA_MATRIX(129,117) = DISTANCE;
+
+DISTANCE = sqrt((x(1265,1) - x(1289,1))^2 + (x(1266,1) - x(1290,1))^2);
+LAMBDA_MATRIX(117,129) = DISTANCE;
+
+DISTANCE = sqrt((x(1265,1) - x(1235,1))^2 + (x(1266,1) - x(1236,1))^2);
+LAMBDA_MATRIX(117,102) = DISTANCE;
+
+DISTANCE = sqrt((x(1235,1) - x(1265,1))^2 + (x(1236,1) - x(1266,1))^2);
+LAMBDA_MATRIX(102,117) = DISTANCE;
+
+DISTANCE = sqrt((x(1235,1) - x(1289,1))^2 + (x(1236,1) - x(1290,1))^2);
+LAMBDA_MATRIX(102,129) = DISTANCE;
+
+DISTANCE = sqrt((x(1289,1) - x(1235,1))^2 + (x(1290,1) - x(1236,1))^2);
+LAMBDA_MATRIX(129,102) = DISTANCE;
+
+DISTANCE = sqrt((x(1235,1) - x(1263,1))^2 + (x(1236,1) - x(1264,1))^2);
+LAMBDA_MATRIX(102,116) = DISTANCE;
+
+DISTANCE = sqrt((x(1263,1) - x(1235,1))^2 + (x(1264,1) - x(1236,1))^2);
+LAMBDA_MATRIX(116,102) = DISTANCE;
+
+DISTANCE = sqrt((x(1263,1) - x(1289,1))^2 + (x(1264,1) - x(1290,1))^2);
+LAMBDA_MATRIX(116,129) = DISTANCE;
+
+DISTANCE = sqrt((x(1289,1) - x(1263,1))^2 + (x(1290,1) - x(1264,1))^2);
+LAMBDA_MATRIX(129,116) = DISTANCE;
+
+DISTANCE = sqrt((x(1289,1) - x(1235,1))^2 + (x(1290,1) - x(1236,1))^2);
+LAMBDA_MATRIX(129,102) = DISTANCE;
+
+DISTANCE = sqrt((x(1235,1) - x(1289,1))^2 + (x(1236,1) - x(1290,1))^2);
+LAMBDA_MATRIX(102,129) = DISTANCE;
+
+DISTANCE = sqrt((x(1325,1) - x(1265,1))^2 + (x(1326,1) - x(1266,1))^2);
+LAMBDA_MATRIX(147,117) = DISTANCE;
+
+DISTANCE = sqrt((x(1265,1) - x(1325,1))^2 + (x(1266,1) - x(1326,1))^2);
+LAMBDA_MATRIX(117,147) = DISTANCE;
+
+DISTANCE = sqrt((x(1265,1) - x(1289,1))^2 + (x(1266,1) - x(1290,1))^2);
+LAMBDA_MATRIX(117,129) = DISTANCE;
+
+DISTANCE = sqrt((x(1289,1) - x(1265,1))^2 + (x(1290,1) - x(1266,1))^2);
+LAMBDA_MATRIX(129,117) = DISTANCE;
+
+DISTANCE = sqrt((x(1289,1) - x(1325,1))^2 + (x(1290,1) - x(1326,1))^2);
+LAMBDA_MATRIX(129,147) = DISTANCE;
+
+DISTANCE = sqrt((x(1325,1) - x(1289,1))^2 + (x(1326,1) - x(1290,1))^2);
+LAMBDA_MATRIX(147,129) = DISTANCE;
+
+DISTANCE = sqrt((x(1289,1) - x(1349,1))^2 + (x(1290,1) - x(1350,1))^2);
+LAMBDA_MATRIX(129,159) = DISTANCE;
+
+DISTANCE = sqrt((x(1349,1) - x(1289,1))^2 + (x(1350,1) - x(1290,1))^2);
+LAMBDA_MATRIX(159,129) = DISTANCE;
+
+DISTANCE = sqrt((x(1349,1) - x(1325,1))^2 + (x(1350,1) - x(1326,1))^2);
+LAMBDA_MATRIX(159,147) = DISTANCE;
+
+DISTANCE = sqrt((x(1325,1) - x(1349,1))^2 + (x(1326,1) - x(1350,1))^2);
+LAMBDA_MATRIX(147,159) = DISTANCE;
+
+DISTANCE = sqrt((x(1325,1) - x(1289,1))^2 + (x(1326,1) - x(1290,1))^2);
+LAMBDA_MATRIX(147,129) = DISTANCE;
+
+DISTANCE = sqrt((x(1289,1) - x(1325,1))^2 + (x(1290,1) - x(1326,1))^2);
+LAMBDA_MATRIX(129,147) = DISTANCE;
+
+DISTANCE = sqrt((x(1425,1) - x(1405,1))^2 + (x(1426,1) - x(1406,1))^2);
+LAMBDA_MATRIX(197,187) = DISTANCE;
+
+DISTANCE = sqrt((x(1405,1) - x(1425,1))^2 + (x(1406,1) - x(1426,1))^2);
+LAMBDA_MATRIX(187,197) = DISTANCE;
+
+DISTANCE = sqrt((x(1405,1) - x(1371,1))^2 + (x(1406,1) - x(1372,1))^2);
+LAMBDA_MATRIX(187,170) = DISTANCE;
+
+DISTANCE = sqrt((x(1371,1) - x(1405,1))^2 + (x(1372,1) - x(1406,1))^2);
+LAMBDA_MATRIX(170,187) = DISTANCE;
+
+DISTANCE = sqrt((x(1371,1) - x(1425,1))^2 + (x(1372,1) - x(1426,1))^2);
+LAMBDA_MATRIX(170,197) = DISTANCE;
+
+DISTANCE = sqrt((x(1425,1) - x(1371,1))^2 + (x(1426,1) - x(1372,1))^2);
+LAMBDA_MATRIX(197,170) = DISTANCE;
+
+DISTANCE = sqrt((x(1371,1) - x(1349,1))^2 + (x(1372,1) - x(1350,1))^2);
+LAMBDA_MATRIX(170,159) = DISTANCE;
+
+DISTANCE = sqrt((x(1349,1) - x(1371,1))^2 + (x(1350,1) - x(1372,1))^2);
+LAMBDA_MATRIX(159,170) = DISTANCE;
+
+DISTANCE = sqrt((x(1349,1) - x(1313,1))^2 + (x(1350,1) - x(1314,1))^2);
+LAMBDA_MATRIX(159,141) = DISTANCE;
+
+DISTANCE = sqrt((x(1313,1) - x(1349,1))^2 + (x(1314,1) - x(1350,1))^2);
+LAMBDA_MATRIX(141,159) = DISTANCE;
+
+DISTANCE = sqrt((x(1313,1) - x(1371,1))^2 + (x(1314,1) - x(1372,1))^2);
+LAMBDA_MATRIX(141,170) = DISTANCE;
+
+DISTANCE = sqrt((x(1371,1) - x(1313,1))^2 + (x(1372,1) - x(1314,1))^2);
+LAMBDA_MATRIX(170,141) = DISTANCE;
+
+DISTANCE = sqrt((x(1405,1) - x(1349,1))^2 + (x(1406,1) - x(1350,1))^2);
+LAMBDA_MATRIX(187,159) = DISTANCE;
+
+DISTANCE = sqrt((x(1349,1) - x(1405,1))^2 + (x(1350,1) - x(1406,1))^2);
+LAMBDA_MATRIX(159,187) = DISTANCE;
+
+DISTANCE = sqrt((x(1349,1) - x(1371,1))^2 + (x(1350,1) - x(1372,1))^2);
+LAMBDA_MATRIX(159,170) = DISTANCE;
+
+DISTANCE = sqrt((x(1371,1) - x(1349,1))^2 + (x(1372,1) - x(1350,1))^2);
+LAMBDA_MATRIX(170,159) = DISTANCE;
+
+DISTANCE = sqrt((x(1371,1) - x(1405,1))^2 + (x(1372,1) - x(1406,1))^2);
+LAMBDA_MATRIX(170,187) = DISTANCE;
+
+DISTANCE = sqrt((x(1405,1) - x(1371,1))^2 + (x(1406,1) - x(1372,1))^2);
+LAMBDA_MATRIX(187,170) = DISTANCE;
+
+DISTANCE = sqrt((x(1359,1) - x(1301,1))^2 + (x(1360,1) - x(1302,1))^2);
+LAMBDA_MATRIX(164,135) = DISTANCE;
+
+DISTANCE = sqrt((x(1301,1) - x(1359,1))^2 + (x(1302,1) - x(1360,1))^2);
+LAMBDA_MATRIX(135,164) = DISTANCE;
+
+DISTANCE = sqrt((x(1301,1) - x(1325,1))^2 + (x(1302,1) - x(1326,1))^2);
+LAMBDA_MATRIX(135,147) = DISTANCE;
+
+DISTANCE = sqrt((x(1325,1) - x(1301,1))^2 + (x(1326,1) - x(1302,1))^2);
+LAMBDA_MATRIX(147,135) = DISTANCE;
+
+DISTANCE = sqrt((x(1325,1) - x(1359,1))^2 + (x(1326,1) - x(1360,1))^2);
+LAMBDA_MATRIX(147,164) = DISTANCE;
+
+DISTANCE = sqrt((x(1359,1) - x(1325,1))^2 + (x(1360,1) - x(1326,1))^2);
+LAMBDA_MATRIX(164,147) = DISTANCE;
+
+DISTANCE = sqrt((x(1851,1) - x(1799,1))^2 + (x(1852,1) - x(1800,1))^2);
+LAMBDA_MATRIX(410,384) = DISTANCE;
+
+DISTANCE = sqrt((x(1799,1) - x(1851,1))^2 + (x(1800,1) - x(1852,1))^2);
+LAMBDA_MATRIX(384,410) = DISTANCE;
+
+DISTANCE = sqrt((x(1799,1) - x(1825,1))^2 + (x(1800,1) - x(1826,1))^2);
+LAMBDA_MATRIX(384,397) = DISTANCE;
+
+DISTANCE = sqrt((x(1825,1) - x(1799,1))^2 + (x(1826,1) - x(1800,1))^2);
+LAMBDA_MATRIX(397,384) = DISTANCE;
+
+DISTANCE = sqrt((x(1825,1) - x(1851,1))^2 + (x(1826,1) - x(1852,1))^2);
+LAMBDA_MATRIX(397,410) = DISTANCE;
+
+DISTANCE = sqrt((x(1851,1) - x(1825,1))^2 + (x(1852,1) - x(1826,1))^2);
+LAMBDA_MATRIX(410,397) = DISTANCE;
+
+DISTANCE = sqrt((x(1799,1) - x(1775,1))^2 + (x(1800,1) - x(1776,1))^2);
+LAMBDA_MATRIX(384,372) = DISTANCE;
+
+DISTANCE = sqrt((x(1775,1) - x(1799,1))^2 + (x(1776,1) - x(1800,1))^2);
+LAMBDA_MATRIX(372,384) = DISTANCE;
+
+DISTANCE = sqrt((x(1775,1) - x(1825,1))^2 + (x(1776,1) - x(1826,1))^2);
+LAMBDA_MATRIX(372,397) = DISTANCE;
+
+DISTANCE = sqrt((x(1825,1) - x(1775,1))^2 + (x(1826,1) - x(1776,1))^2);
+LAMBDA_MATRIX(397,372) = DISTANCE;
+
+DISTANCE = sqrt((x(1825,1) - x(1799,1))^2 + (x(1826,1) - x(1800,1))^2);
+LAMBDA_MATRIX(397,384) = DISTANCE;
+
+DISTANCE = sqrt((x(1799,1) - x(1825,1))^2 + (x(1800,1) - x(1826,1))^2);
+LAMBDA_MATRIX(384,397) = DISTANCE;
+
+DISTANCE = sqrt((x(1825,1) - x(1775,1))^2 + (x(1826,1) - x(1776,1))^2);
+LAMBDA_MATRIX(397,372) = DISTANCE;
+
+DISTANCE = sqrt((x(1775,1) - x(1825,1))^2 + (x(1776,1) - x(1826,1))^2);
+LAMBDA_MATRIX(372,397) = DISTANCE;
+
+DISTANCE = sqrt((x(1775,1) - x(1793,1))^2 + (x(1776,1) - x(1794,1))^2);
+LAMBDA_MATRIX(372,381) = DISTANCE;
+
+DISTANCE = sqrt((x(1793,1) - x(1775,1))^2 + (x(1794,1) - x(1776,1))^2);
+LAMBDA_MATRIX(381,372) = DISTANCE;
+
+DISTANCE = sqrt((x(1793,1) - x(1825,1))^2 + (x(1794,1) - x(1826,1))^2);
+LAMBDA_MATRIX(381,397) = DISTANCE;
+
+DISTANCE = sqrt((x(1825,1) - x(1793,1))^2 + (x(1826,1) - x(1794,1))^2);
+LAMBDA_MATRIX(397,381) = DISTANCE;
+
+DISTANCE = sqrt((x(1825,1) - x(1793,1))^2 + (x(1826,1) - x(1794,1))^2);
+LAMBDA_MATRIX(397,381) = DISTANCE;
+
+DISTANCE = sqrt((x(1793,1) - x(1825,1))^2 + (x(1794,1) - x(1826,1))^2);
+LAMBDA_MATRIX(381,397) = DISTANCE;
+
+DISTANCE = sqrt((x(1793,1) - x(1845,1))^2 + (x(1794,1) - x(1846,1))^2);
+LAMBDA_MATRIX(381,407) = DISTANCE;
+
+DISTANCE = sqrt((x(1845,1) - x(1793,1))^2 + (x(1846,1) - x(1794,1))^2);
+LAMBDA_MATRIX(407,381) = DISTANCE;
+
+DISTANCE = sqrt((x(1845,1) - x(1825,1))^2 + (x(1846,1) - x(1826,1))^2);
+LAMBDA_MATRIX(407,397) = DISTANCE;
+
+DISTANCE = sqrt((x(1825,1) - x(1845,1))^2 + (x(1826,1) - x(1846,1))^2);
+LAMBDA_MATRIX(397,407) = DISTANCE;
+
+DISTANCE = sqrt((x(1825,1) - x(1873,1))^2 + (x(1826,1) - x(1874,1))^2);
+LAMBDA_MATRIX(397,421) = DISTANCE;
+
+DISTANCE = sqrt((x(1873,1) - x(1825,1))^2 + (x(1874,1) - x(1826,1))^2);
+LAMBDA_MATRIX(421,397) = DISTANCE;
+
+DISTANCE = sqrt((x(1873,1) - x(1851,1))^2 + (x(1874,1) - x(1852,1))^2);
+LAMBDA_MATRIX(421,410) = DISTANCE;
+
+DISTANCE = sqrt((x(1851,1) - x(1873,1))^2 + (x(1852,1) - x(1874,1))^2);
+LAMBDA_MATRIX(410,421) = DISTANCE;
+
+DISTANCE = sqrt((x(1851,1) - x(1825,1))^2 + (x(1852,1) - x(1826,1))^2);
+LAMBDA_MATRIX(410,397) = DISTANCE;
+
+DISTANCE = sqrt((x(1825,1) - x(1851,1))^2 + (x(1826,1) - x(1852,1))^2);
+LAMBDA_MATRIX(397,410) = DISTANCE;
+
+DISTANCE = sqrt((x(1845,1) - x(1873,1))^2 + (x(1846,1) - x(1874,1))^2);
+LAMBDA_MATRIX(407,421) = DISTANCE;
+
+DISTANCE = sqrt((x(1873,1) - x(1845,1))^2 + (x(1874,1) - x(1846,1))^2);
+LAMBDA_MATRIX(421,407) = DISTANCE;
+
+DISTANCE = sqrt((x(1873,1) - x(1825,1))^2 + (x(1874,1) - x(1826,1))^2);
+LAMBDA_MATRIX(421,397) = DISTANCE;
+
+DISTANCE = sqrt((x(1825,1) - x(1873,1))^2 + (x(1826,1) - x(1874,1))^2);
+LAMBDA_MATRIX(397,421) = DISTANCE;
+
+DISTANCE = sqrt((x(1825,1) - x(1845,1))^2 + (x(1826,1) - x(1846,1))^2);
+LAMBDA_MATRIX(397,407) = DISTANCE;
+
+DISTANCE = sqrt((x(1845,1) - x(1825,1))^2 + (x(1846,1) - x(1826,1))^2);
+LAMBDA_MATRIX(407,397) = DISTANCE;
+
+DISTANCE = sqrt((x(1969,1) - x(1951,1))^2 + (x(1970,1) - x(1952,1))^2);
+LAMBDA_MATRIX(469,460) = DISTANCE;
+
+DISTANCE = sqrt((x(1951,1) - x(1969,1))^2 + (x(1952,1) - x(1970,1))^2);
+LAMBDA_MATRIX(460,469) = DISTANCE;
+
+DISTANCE = sqrt((x(1951,1) - x(1917,1))^2 + (x(1952,1) - x(1918,1))^2);
+LAMBDA_MATRIX(460,443) = DISTANCE;
+
+DISTANCE = sqrt((x(1917,1) - x(1951,1))^2 + (x(1918,1) - x(1952,1))^2);
+LAMBDA_MATRIX(443,460) = DISTANCE;
+
+DISTANCE = sqrt((x(1917,1) - x(1969,1))^2 + (x(1918,1) - x(1970,1))^2);
+LAMBDA_MATRIX(443,469) = DISTANCE;
+
+DISTANCE = sqrt((x(1969,1) - x(1917,1))^2 + (x(1970,1) - x(1918,1))^2);
+LAMBDA_MATRIX(469,443) = DISTANCE;
+
+DISTANCE = sqrt((x(1933,1) - x(1901,1))^2 + (x(1934,1) - x(1902,1))^2);
+LAMBDA_MATRIX(451,435) = DISTANCE;
+
+DISTANCE = sqrt((x(1901,1) - x(1933,1))^2 + (x(1902,1) - x(1934,1))^2);
+LAMBDA_MATRIX(435,451) = DISTANCE;
+
+DISTANCE = sqrt((x(1901,1) - x(1889,1))^2 + (x(1902,1) - x(1890,1))^2);
+LAMBDA_MATRIX(435,429) = DISTANCE;
+
+DISTANCE = sqrt((x(1889,1) - x(1901,1))^2 + (x(1890,1) - x(1902,1))^2);
+LAMBDA_MATRIX(429,435) = DISTANCE;
+
+DISTANCE = sqrt((x(1889,1) - x(1933,1))^2 + (x(1890,1) - x(1934,1))^2);
+LAMBDA_MATRIX(429,451) = DISTANCE;
+
+DISTANCE = sqrt((x(1933,1) - x(1889,1))^2 + (x(1934,1) - x(1890,1))^2);
+LAMBDA_MATRIX(451,429) = DISTANCE;
+
+DISTANCE = sqrt((x(1523,1) - x(1537,1))^2 + (x(1524,1) - x(1538,1))^2);
+LAMBDA_MATRIX(246,253) = DISTANCE;
+
+DISTANCE = sqrt((x(1537,1) - x(1523,1))^2 + (x(1538,1) - x(1524,1))^2);
+LAMBDA_MATRIX(253,246) = DISTANCE;
+
+DISTANCE = sqrt((x(1537,1) - x(1503,1))^2 + (x(1538,1) - x(1504,1))^2);
+LAMBDA_MATRIX(253,236) = DISTANCE;
+
+DISTANCE = sqrt((x(1503,1) - x(1537,1))^2 + (x(1504,1) - x(1538,1))^2);
+LAMBDA_MATRIX(236,253) = DISTANCE;
+
+DISTANCE = sqrt((x(1503,1) - x(1523,1))^2 + (x(1504,1) - x(1524,1))^2);
+LAMBDA_MATRIX(236,246) = DISTANCE;
+
+DISTANCE = sqrt((x(1523,1) - x(1503,1))^2 + (x(1524,1) - x(1504,1))^2);
+LAMBDA_MATRIX(246,236) = DISTANCE;
+
+DISTANCE = sqrt((x(1513,1) - x(1545,1))^2 + (x(1514,1) - x(1546,1))^2);
+LAMBDA_MATRIX(241,257) = DISTANCE;
+
+DISTANCE = sqrt((x(1545,1) - x(1513,1))^2 + (x(1546,1) - x(1514,1))^2);
+LAMBDA_MATRIX(257,241) = DISTANCE;
+
+DISTANCE = sqrt((x(1545,1) - x(1523,1))^2 + (x(1546,1) - x(1524,1))^2);
+LAMBDA_MATRIX(257,246) = DISTANCE;
+
+DISTANCE = sqrt((x(1523,1) - x(1545,1))^2 + (x(1524,1) - x(1546,1))^2);
+LAMBDA_MATRIX(246,257) = DISTANCE;
+
+DISTANCE = sqrt((x(1523,1) - x(1513,1))^2 + (x(1524,1) - x(1514,1))^2);
+LAMBDA_MATRIX(246,241) = DISTANCE;
+
+DISTANCE = sqrt((x(1513,1) - x(1523,1))^2 + (x(1514,1) - x(1524,1))^2);
+LAMBDA_MATRIX(241,246) = DISTANCE;
+
+DISTANCE = sqrt((x(1523,1) - x(1491,1))^2 + (x(1524,1) - x(1492,1))^2);
+LAMBDA_MATRIX(246,230) = DISTANCE;
+
+DISTANCE = sqrt((x(1491,1) - x(1523,1))^2 + (x(1492,1) - x(1524,1))^2);
+LAMBDA_MATRIX(230,246) = DISTANCE;
+
+DISTANCE = sqrt((x(1491,1) - x(1513,1))^2 + (x(1492,1) - x(1514,1))^2);
+LAMBDA_MATRIX(230,241) = DISTANCE;
+
+DISTANCE = sqrt((x(1513,1) - x(1491,1))^2 + (x(1514,1) - x(1492,1))^2);
+LAMBDA_MATRIX(241,230) = DISTANCE;
+
+DISTANCE = sqrt((x(1513,1) - x(1523,1))^2 + (x(1514,1) - x(1524,1))^2);
+LAMBDA_MATRIX(241,246) = DISTANCE;
+
+DISTANCE = sqrt((x(1523,1) - x(1513,1))^2 + (x(1524,1) - x(1514,1))^2);
+LAMBDA_MATRIX(246,241) = DISTANCE;
+
+DISTANCE = sqrt((x(1503,1) - x(1491,1))^2 + (x(1504,1) - x(1492,1))^2);
+LAMBDA_MATRIX(236,230) = DISTANCE;
+
+DISTANCE = sqrt((x(1491,1) - x(1503,1))^2 + (x(1492,1) - x(1504,1))^2);
+LAMBDA_MATRIX(230,236) = DISTANCE;
+
+DISTANCE = sqrt((x(1491,1) - x(1523,1))^2 + (x(1492,1) - x(1524,1))^2);
+LAMBDA_MATRIX(230,246) = DISTANCE;
+
+DISTANCE = sqrt((x(1523,1) - x(1491,1))^2 + (x(1524,1) - x(1492,1))^2);
+LAMBDA_MATRIX(246,230) = DISTANCE;
+
+DISTANCE = sqrt((x(1523,1) - x(1503,1))^2 + (x(1524,1) - x(1504,1))^2);
+LAMBDA_MATRIX(246,236) = DISTANCE;
+
+DISTANCE = sqrt((x(1503,1) - x(1523,1))^2 + (x(1504,1) - x(1524,1))^2);
+LAMBDA_MATRIX(236,246) = DISTANCE;
+
+DISTANCE = sqrt((x(1675,1) - x(1703,1))^2 + (x(1676,1) - x(1704,1))^2);
+LAMBDA_MATRIX(322,336) = DISTANCE;
+
+DISTANCE = sqrt((x(1703,1) - x(1675,1))^2 + (x(1704,1) - x(1676,1))^2);
+LAMBDA_MATRIX(336,322) = DISTANCE;
+
+DISTANCE = sqrt((x(1703,1) - x(1657,1))^2 + (x(1704,1) - x(1658,1))^2);
+LAMBDA_MATRIX(336,313) = DISTANCE;
+
+DISTANCE = sqrt((x(1657,1) - x(1703,1))^2 + (x(1658,1) - x(1704,1))^2);
+LAMBDA_MATRIX(313,336) = DISTANCE;
+
+DISTANCE = sqrt((x(1657,1) - x(1675,1))^2 + (x(1658,1) - x(1676,1))^2);
+LAMBDA_MATRIX(313,322) = DISTANCE;
+
+DISTANCE = sqrt((x(1675,1) - x(1657,1))^2 + (x(1676,1) - x(1658,1))^2);
+LAMBDA_MATRIX(322,313) = DISTANCE;
+
+DISTANCE = sqrt((x(1615,1) - x(1633,1))^2 + (x(1616,1) - x(1634,1))^2);
+LAMBDA_MATRIX(292,301) = DISTANCE;
+
+DISTANCE = sqrt((x(1633,1) - x(1615,1))^2 + (x(1634,1) - x(1616,1))^2);
+LAMBDA_MATRIX(301,292) = DISTANCE;
+
+DISTANCE = sqrt((x(1633,1) - x(1657,1))^2 + (x(1634,1) - x(1658,1))^2);
+LAMBDA_MATRIX(301,313) = DISTANCE;
+
+DISTANCE = sqrt((x(1657,1) - x(1633,1))^2 + (x(1658,1) - x(1634,1))^2);
+LAMBDA_MATRIX(313,301) = DISTANCE;
+
+DISTANCE = sqrt((x(1657,1) - x(1615,1))^2 + (x(1658,1) - x(1616,1))^2);
+LAMBDA_MATRIX(313,292) = DISTANCE;
+
+DISTANCE = sqrt((x(1615,1) - x(1657,1))^2 + (x(1616,1) - x(1658,1))^2);
+LAMBDA_MATRIX(292,313) = DISTANCE;
+
+DISTANCE = sqrt((x(1657,1) - x(1633,1))^2 + (x(1658,1) - x(1634,1))^2);
+LAMBDA_MATRIX(313,301) = DISTANCE;
+
+DISTANCE = sqrt((x(1633,1) - x(1657,1))^2 + (x(1634,1) - x(1658,1))^2);
+LAMBDA_MATRIX(301,313) = DISTANCE;
+
+DISTANCE = sqrt((x(1633,1) - x(1675,1))^2 + (x(1634,1) - x(1676,1))^2);
+LAMBDA_MATRIX(301,322) = DISTANCE;
+
+DISTANCE = sqrt((x(1675,1) - x(1633,1))^2 + (x(1676,1) - x(1634,1))^2);
+LAMBDA_MATRIX(322,301) = DISTANCE;
+
+DISTANCE = sqrt((x(1675,1) - x(1657,1))^2 + (x(1676,1) - x(1658,1))^2);
+LAMBDA_MATRIX(322,313) = DISTANCE;
+
+DISTANCE = sqrt((x(1657,1) - x(1675,1))^2 + (x(1658,1) - x(1676,1))^2);
+LAMBDA_MATRIX(313,322) = DISTANCE;
+
+DISTANCE = sqrt((x(1317,1) - x(1385,1))^2 + (x(1318,1) - x(1386,1))^2);
+LAMBDA_MATRIX(143,177) = DISTANCE;
+
+DISTANCE = sqrt((x(1385,1) - x(1317,1))^2 + (x(1386,1) - x(1318,1))^2);
+LAMBDA_MATRIX(177,143) = DISTANCE;
+
+DISTANCE = sqrt((x(1385,1) - x(1351,1))^2 + (x(1386,1) - x(1352,1))^2);
+LAMBDA_MATRIX(177,160) = DISTANCE;
+
+DISTANCE = sqrt((x(1351,1) - x(1385,1))^2 + (x(1352,1) - x(1386,1))^2);
+LAMBDA_MATRIX(160,177) = DISTANCE;
+
+DISTANCE = sqrt((x(1351,1) - x(1317,1))^2 + (x(1352,1) - x(1318,1))^2);
+LAMBDA_MATRIX(160,143) = DISTANCE;
+
+DISTANCE = sqrt((x(1317,1) - x(1351,1))^2 + (x(1318,1) - x(1352,1))^2);
+LAMBDA_MATRIX(143,160) = DISTANCE;
+
+DISTANCE = sqrt((x(1375,1) - x(1311,1))^2 + (x(1376,1) - x(1312,1))^2);
+LAMBDA_MATRIX(172,140) = DISTANCE;
+
+DISTANCE = sqrt((x(1311,1) - x(1375,1))^2 + (x(1312,1) - x(1376,1))^2);
+LAMBDA_MATRIX(140,172) = DISTANCE;
+
+DISTANCE = sqrt((x(1311,1) - x(1351,1))^2 + (x(1312,1) - x(1352,1))^2);
+LAMBDA_MATRIX(140,160) = DISTANCE;
+
+DISTANCE = sqrt((x(1351,1) - x(1311,1))^2 + (x(1352,1) - x(1312,1))^2);
+LAMBDA_MATRIX(160,140) = DISTANCE;
+
+DISTANCE = sqrt((x(1351,1) - x(1375,1))^2 + (x(1352,1) - x(1376,1))^2);
+LAMBDA_MATRIX(160,172) = DISTANCE;
+
+DISTANCE = sqrt((x(1375,1) - x(1351,1))^2 + (x(1376,1) - x(1352,1))^2);
+LAMBDA_MATRIX(172,160) = DISTANCE;
+
+DISTANCE = sqrt((x(1285,1) - x(1317,1))^2 + (x(1286,1) - x(1318,1))^2);
+LAMBDA_MATRIX(127,143) = DISTANCE;
+
+DISTANCE = sqrt((x(1317,1) - x(1285,1))^2 + (x(1318,1) - x(1286,1))^2);
+LAMBDA_MATRIX(143,127) = DISTANCE;
+
+DISTANCE = sqrt((x(1317,1) - x(1351,1))^2 + (x(1318,1) - x(1352,1))^2);
+LAMBDA_MATRIX(143,160) = DISTANCE;
+
+DISTANCE = sqrt((x(1351,1) - x(1317,1))^2 + (x(1352,1) - x(1318,1))^2);
+LAMBDA_MATRIX(160,143) = DISTANCE;
+
+DISTANCE = sqrt((x(1351,1) - x(1285,1))^2 + (x(1352,1) - x(1286,1))^2);
+LAMBDA_MATRIX(160,127) = DISTANCE;
+
+DISTANCE = sqrt((x(1285,1) - x(1351,1))^2 + (x(1286,1) - x(1352,1))^2);
+LAMBDA_MATRIX(127,160) = DISTANCE;
+
+DISTANCE = sqrt((x(1351,1) - x(1311,1))^2 + (x(1352,1) - x(1312,1))^2);
+LAMBDA_MATRIX(160,140) = DISTANCE;
+
+DISTANCE = sqrt((x(1311,1) - x(1351,1))^2 + (x(1312,1) - x(1352,1))^2);
+LAMBDA_MATRIX(140,160) = DISTANCE;
+
+DISTANCE = sqrt((x(1311,1) - x(1285,1))^2 + (x(1312,1) - x(1286,1))^2);
+LAMBDA_MATRIX(140,127) = DISTANCE;
+
+DISTANCE = sqrt((x(1285,1) - x(1311,1))^2 + (x(1286,1) - x(1312,1))^2);
+LAMBDA_MATRIX(127,140) = DISTANCE;
+
+DISTANCE = sqrt((x(1285,1) - x(1351,1))^2 + (x(1286,1) - x(1352,1))^2);
+LAMBDA_MATRIX(127,160) = DISTANCE;
+
+DISTANCE = sqrt((x(1351,1) - x(1285,1))^2 + (x(1352,1) - x(1286,1))^2);
+LAMBDA_MATRIX(160,127) = DISTANCE;
+
+DISTANCE = sqrt((x(1473,1) - x(1489,1))^2 + (x(1474,1) - x(1490,1))^2);
+LAMBDA_MATRIX(221,229) = DISTANCE;
+
+DISTANCE = sqrt((x(1489,1) - x(1473,1))^2 + (x(1490,1) - x(1474,1))^2);
+LAMBDA_MATRIX(229,221) = DISTANCE;
+
+DISTANCE = sqrt((x(1489,1) - x(1453,1))^2 + (x(1490,1) - x(1454,1))^2);
+LAMBDA_MATRIX(229,211) = DISTANCE;
+
+DISTANCE = sqrt((x(1453,1) - x(1489,1))^2 + (x(1454,1) - x(1490,1))^2);
+LAMBDA_MATRIX(211,229) = DISTANCE;
+
+DISTANCE = sqrt((x(1453,1) - x(1473,1))^2 + (x(1454,1) - x(1474,1))^2);
+LAMBDA_MATRIX(211,221) = DISTANCE;
+
+DISTANCE = sqrt((x(1473,1) - x(1453,1))^2 + (x(1474,1) - x(1454,1))^2);
+LAMBDA_MATRIX(221,211) = DISTANCE;
+
+DISTANCE = sqrt((x(1453,1) - x(1489,1))^2 + (x(1454,1) - x(1490,1))^2);
+LAMBDA_MATRIX(211,229) = DISTANCE;
+
+DISTANCE = sqrt((x(1489,1) - x(1453,1))^2 + (x(1490,1) - x(1454,1))^2);
+LAMBDA_MATRIX(229,211) = DISTANCE;
+
+DISTANCE = sqrt((x(1489,1) - x(1477,1))^2 + (x(1490,1) - x(1478,1))^2);
+LAMBDA_MATRIX(229,223) = DISTANCE;
+
+DISTANCE = sqrt((x(1477,1) - x(1489,1))^2 + (x(1478,1) - x(1490,1))^2);
+LAMBDA_MATRIX(223,229) = DISTANCE;
+
+DISTANCE = sqrt((x(1477,1) - x(1453,1))^2 + (x(1478,1) - x(1454,1))^2);
+LAMBDA_MATRIX(223,211) = DISTANCE;
+
+DISTANCE = sqrt((x(1453,1) - x(1477,1))^2 + (x(1454,1) - x(1478,1))^2);
+LAMBDA_MATRIX(211,223) = DISTANCE;
+
+DISTANCE = sqrt((x(1477,1) - x(1429,1))^2 + (x(1478,1) - x(1430,1))^2);
+LAMBDA_MATRIX(223,199) = DISTANCE;
+
+DISTANCE = sqrt((x(1429,1) - x(1477,1))^2 + (x(1430,1) - x(1478,1))^2);
+LAMBDA_MATRIX(199,223) = DISTANCE;
+
+DISTANCE = sqrt((x(1429,1) - x(1453,1))^2 + (x(1430,1) - x(1454,1))^2);
+LAMBDA_MATRIX(199,211) = DISTANCE;
+
+DISTANCE = sqrt((x(1453,1) - x(1429,1))^2 + (x(1454,1) - x(1430,1))^2);
+LAMBDA_MATRIX(211,199) = DISTANCE;
+
+DISTANCE = sqrt((x(1453,1) - x(1477,1))^2 + (x(1454,1) - x(1478,1))^2);
+LAMBDA_MATRIX(211,223) = DISTANCE;
+
+DISTANCE = sqrt((x(1477,1) - x(1453,1))^2 + (x(1478,1) - x(1454,1))^2);
+LAMBDA_MATRIX(223,211) = DISTANCE;
+
+DISTANCE = sqrt((x(1171,1) - x(1197,1))^2 + (x(1172,1) - x(1198,1))^2);
+LAMBDA_MATRIX(70,83) = DISTANCE;
+
+DISTANCE = sqrt((x(1197,1) - x(1171,1))^2 + (x(1198,1) - x(1172,1))^2);
+LAMBDA_MATRIX(83,70) = DISTANCE;
+
+DISTANCE = sqrt((x(1197,1) - x(1131,1))^2 + (x(1198,1) - x(1132,1))^2);
+LAMBDA_MATRIX(83,50) = DISTANCE;
+
+DISTANCE = sqrt((x(1131,1) - x(1197,1))^2 + (x(1132,1) - x(1198,1))^2);
+LAMBDA_MATRIX(50,83) = DISTANCE;
+
+DISTANCE = sqrt((x(1131,1) - x(1171,1))^2 + (x(1132,1) - x(1172,1))^2);
+LAMBDA_MATRIX(50,70) = DISTANCE;
+
+DISTANCE = sqrt((x(1171,1) - x(1131,1))^2 + (x(1172,1) - x(1132,1))^2);
+LAMBDA_MATRIX(70,50) = DISTANCE;
+
+DISTANCE = sqrt((x(1171,1) - x(1213,1))^2 + (x(1172,1) - x(1214,1))^2);
+LAMBDA_MATRIX(70,91) = DISTANCE;
+
+DISTANCE = sqrt((x(1213,1) - x(1171,1))^2 + (x(1214,1) - x(1172,1))^2);
+LAMBDA_MATRIX(91,70) = DISTANCE;
+
+DISTANCE = sqrt((x(1213,1) - x(1197,1))^2 + (x(1214,1) - x(1198,1))^2);
+LAMBDA_MATRIX(91,83) = DISTANCE;
+
+DISTANCE = sqrt((x(1197,1) - x(1213,1))^2 + (x(1198,1) - x(1214,1))^2);
+LAMBDA_MATRIX(83,91) = DISTANCE;
+
+DISTANCE = sqrt((x(1197,1) - x(1171,1))^2 + (x(1198,1) - x(1172,1))^2);
+LAMBDA_MATRIX(83,70) = DISTANCE;
+
+DISTANCE = sqrt((x(1171,1) - x(1197,1))^2 + (x(1172,1) - x(1198,1))^2);
+LAMBDA_MATRIX(70,83) = DISTANCE;
+
+DISTANCE = sqrt((x(1131,1) - x(1125,1))^2 + (x(1132,1) - x(1126,1))^2);
+LAMBDA_MATRIX(50,47) = DISTANCE;
+
+DISTANCE = sqrt((x(1125,1) - x(1131,1))^2 + (x(1126,1) - x(1132,1))^2);
+LAMBDA_MATRIX(47,50) = DISTANCE;
+
+DISTANCE = sqrt((x(1125,1) - x(1171,1))^2 + (x(1126,1) - x(1172,1))^2);
+LAMBDA_MATRIX(47,70) = DISTANCE;
+
+DISTANCE = sqrt((x(1171,1) - x(1125,1))^2 + (x(1172,1) - x(1126,1))^2);
+LAMBDA_MATRIX(70,47) = DISTANCE;
+
+DISTANCE = sqrt((x(1171,1) - x(1131,1))^2 + (x(1172,1) - x(1132,1))^2);
+LAMBDA_MATRIX(70,50) = DISTANCE;
+
+DISTANCE = sqrt((x(1131,1) - x(1171,1))^2 + (x(1132,1) - x(1172,1))^2);
+LAMBDA_MATRIX(50,70) = DISTANCE;
+
+DISTANCE = sqrt((x(1125,1) - x(1175,1))^2 + (x(1126,1) - x(1176,1))^2);
+LAMBDA_MATRIX(47,72) = DISTANCE;
+
+DISTANCE = sqrt((x(1175,1) - x(1125,1))^2 + (x(1176,1) - x(1126,1))^2);
+LAMBDA_MATRIX(72,47) = DISTANCE;
+
+DISTANCE = sqrt((x(1175,1) - x(1171,1))^2 + (x(1176,1) - x(1172,1))^2);
+LAMBDA_MATRIX(72,70) = DISTANCE;
+
+DISTANCE = sqrt((x(1171,1) - x(1175,1))^2 + (x(1172,1) - x(1176,1))^2);
+LAMBDA_MATRIX(70,72) = DISTANCE;
+
+DISTANCE = sqrt((x(1171,1) - x(1125,1))^2 + (x(1172,1) - x(1126,1))^2);
+LAMBDA_MATRIX(70,47) = DISTANCE;
+
+DISTANCE = sqrt((x(1125,1) - x(1171,1))^2 + (x(1126,1) - x(1172,1))^2);
+LAMBDA_MATRIX(47,70) = DISTANCE;
+
+DISTANCE = sqrt((x(1171,1) - x(1175,1))^2 + (x(1172,1) - x(1176,1))^2);
+LAMBDA_MATRIX(70,72) = DISTANCE;
+
+DISTANCE = sqrt((x(1175,1) - x(1171,1))^2 + (x(1176,1) - x(1172,1))^2);
+LAMBDA_MATRIX(72,70) = DISTANCE;
+
+DISTANCE = sqrt((x(1175,1) - x(1213,1))^2 + (x(1176,1) - x(1214,1))^2);
+LAMBDA_MATRIX(72,91) = DISTANCE;
+
+DISTANCE = sqrt((x(1213,1) - x(1175,1))^2 + (x(1214,1) - x(1176,1))^2);
+LAMBDA_MATRIX(91,72) = DISTANCE;
+
+DISTANCE = sqrt((x(1213,1) - x(1171,1))^2 + (x(1214,1) - x(1172,1))^2);
+LAMBDA_MATRIX(91,70) = DISTANCE;
+
+DISTANCE = sqrt((x(1171,1) - x(1213,1))^2 + (x(1172,1) - x(1214,1))^2);
+LAMBDA_MATRIX(70,91) = DISTANCE;
+
+DISTANCE = sqrt((x(1131,1) - x(1197,1))^2 + (x(1132,1) - x(1198,1))^2);
+LAMBDA_MATRIX(50,83) = DISTANCE;
+
+DISTANCE = sqrt((x(1197,1) - x(1131,1))^2 + (x(1198,1) - x(1132,1))^2);
+LAMBDA_MATRIX(83,50) = DISTANCE;
+
+DISTANCE = sqrt((x(1197,1) - x(1147,1))^2 + (x(1198,1) - x(1148,1))^2);
+LAMBDA_MATRIX(83,58) = DISTANCE;
+
+DISTANCE = sqrt((x(1147,1) - x(1197,1))^2 + (x(1148,1) - x(1198,1))^2);
+LAMBDA_MATRIX(58,83) = DISTANCE;
+
+DISTANCE = sqrt((x(1147,1) - x(1131,1))^2 + (x(1148,1) - x(1132,1))^2);
+LAMBDA_MATRIX(58,50) = DISTANCE;
+
+DISTANCE = sqrt((x(1131,1) - x(1147,1))^2 + (x(1132,1) - x(1148,1))^2);
+LAMBDA_MATRIX(50,58) = DISTANCE;
+
+DISTANCE = sqrt((x(1147,1) - x(1091,1))^2 + (x(1148,1) - x(1092,1))^2);
+LAMBDA_MATRIX(58,30) = DISTANCE;
+
+DISTANCE = sqrt((x(1091,1) - x(1147,1))^2 + (x(1092,1) - x(1148,1))^2);
+LAMBDA_MATRIX(30,58) = DISTANCE;
+
+DISTANCE = sqrt((x(1091,1) - x(1131,1))^2 + (x(1092,1) - x(1132,1))^2);
+LAMBDA_MATRIX(30,50) = DISTANCE;
+
+DISTANCE = sqrt((x(1131,1) - x(1091,1))^2 + (x(1132,1) - x(1092,1))^2);
+LAMBDA_MATRIX(50,30) = DISTANCE;
+
+DISTANCE = sqrt((x(1131,1) - x(1147,1))^2 + (x(1132,1) - x(1148,1))^2);
+LAMBDA_MATRIX(50,58) = DISTANCE;
+
+DISTANCE = sqrt((x(1147,1) - x(1131,1))^2 + (x(1148,1) - x(1132,1))^2);
+LAMBDA_MATRIX(58,50) = DISTANCE;
+
+DISTANCE = sqrt((x(1333,1) - x(1291,1))^2 + (x(1334,1) - x(1292,1))^2);
+LAMBDA_MATRIX(151,130) = DISTANCE;
+
+DISTANCE = sqrt((x(1291,1) - x(1333,1))^2 + (x(1292,1) - x(1334,1))^2);
+LAMBDA_MATRIX(130,151) = DISTANCE;
+
+DISTANCE = sqrt((x(1291,1) - x(1305,1))^2 + (x(1292,1) - x(1306,1))^2);
+LAMBDA_MATRIX(130,137) = DISTANCE;
+
+DISTANCE = sqrt((x(1305,1) - x(1291,1))^2 + (x(1306,1) - x(1292,1))^2);
+LAMBDA_MATRIX(137,130) = DISTANCE;
+
+DISTANCE = sqrt((x(1305,1) - x(1333,1))^2 + (x(1306,1) - x(1334,1))^2);
+LAMBDA_MATRIX(137,151) = DISTANCE;
+
+DISTANCE = sqrt((x(1333,1) - x(1305,1))^2 + (x(1334,1) - x(1306,1))^2);
+LAMBDA_MATRIX(151,137) = DISTANCE;
+
+DISTANCE = sqrt((x(1333,1) - x(1345,1))^2 + (x(1334,1) - x(1346,1))^2);
+LAMBDA_MATRIX(151,157) = DISTANCE;
+
+DISTANCE = sqrt((x(1345,1) - x(1333,1))^2 + (x(1346,1) - x(1334,1))^2);
+LAMBDA_MATRIX(157,151) = DISTANCE;
+
+DISTANCE = sqrt((x(1345,1) - x(1377,1))^2 + (x(1346,1) - x(1378,1))^2);
+LAMBDA_MATRIX(157,173) = DISTANCE;
+
+DISTANCE = sqrt((x(1377,1) - x(1345,1))^2 + (x(1378,1) - x(1346,1))^2);
+LAMBDA_MATRIX(173,157) = DISTANCE;
+
+DISTANCE = sqrt((x(1377,1) - x(1333,1))^2 + (x(1378,1) - x(1334,1))^2);
+LAMBDA_MATRIX(173,151) = DISTANCE;
+
+DISTANCE = sqrt((x(1333,1) - x(1377,1))^2 + (x(1334,1) - x(1378,1))^2);
+LAMBDA_MATRIX(151,173) = DISTANCE;
+
+DISTANCE = sqrt((x(1305,1) - x(1345,1))^2 + (x(1306,1) - x(1346,1))^2);
+LAMBDA_MATRIX(137,157) = DISTANCE;
+
+DISTANCE = sqrt((x(1345,1) - x(1305,1))^2 + (x(1346,1) - x(1306,1))^2);
+LAMBDA_MATRIX(157,137) = DISTANCE;
+
+DISTANCE = sqrt((x(1345,1) - x(1333,1))^2 + (x(1346,1) - x(1334,1))^2);
+LAMBDA_MATRIX(157,151) = DISTANCE;
+
+DISTANCE = sqrt((x(1333,1) - x(1345,1))^2 + (x(1334,1) - x(1346,1))^2);
+LAMBDA_MATRIX(151,157) = DISTANCE;
+
+DISTANCE = sqrt((x(1333,1) - x(1305,1))^2 + (x(1334,1) - x(1306,1))^2);
+LAMBDA_MATRIX(151,137) = DISTANCE;
+
+DISTANCE = sqrt((x(1305,1) - x(1333,1))^2 + (x(1306,1) - x(1334,1))^2);
+LAMBDA_MATRIX(137,151) = DISTANCE;
+
+DISTANCE = sqrt((x(1331,1) - x(1291,1))^2 + (x(1332,1) - x(1292,1))^2);
+LAMBDA_MATRIX(150,130) = DISTANCE;
+
+DISTANCE = sqrt((x(1291,1) - x(1331,1))^2 + (x(1292,1) - x(1332,1))^2);
+LAMBDA_MATRIX(130,150) = DISTANCE;
+
+DISTANCE = sqrt((x(1291,1) - x(1333,1))^2 + (x(1292,1) - x(1334,1))^2);
+LAMBDA_MATRIX(130,151) = DISTANCE;
+
+DISTANCE = sqrt((x(1333,1) - x(1291,1))^2 + (x(1334,1) - x(1292,1))^2);
+LAMBDA_MATRIX(151,130) = DISTANCE;
+
+DISTANCE = sqrt((x(1333,1) - x(1331,1))^2 + (x(1334,1) - x(1332,1))^2);
+LAMBDA_MATRIX(151,150) = DISTANCE;
+
+DISTANCE = sqrt((x(1331,1) - x(1333,1))^2 + (x(1332,1) - x(1334,1))^2);
+LAMBDA_MATRIX(150,151) = DISTANCE;
+
+DISTANCE = sqrt((x(1279,1) - x(1291,1))^2 + (x(1280,1) - x(1292,1))^2);
+LAMBDA_MATRIX(124,130) = DISTANCE;
+
+DISTANCE = sqrt((x(1291,1) - x(1279,1))^2 + (x(1292,1) - x(1280,1))^2);
+LAMBDA_MATRIX(130,124) = DISTANCE;
+
+DISTANCE = sqrt((x(1291,1) - x(1331,1))^2 + (x(1292,1) - x(1332,1))^2);
+LAMBDA_MATRIX(130,150) = DISTANCE;
+
+DISTANCE = sqrt((x(1331,1) - x(1291,1))^2 + (x(1332,1) - x(1292,1))^2);
+LAMBDA_MATRIX(150,130) = DISTANCE;
+
+DISTANCE = sqrt((x(1331,1) - x(1279,1))^2 + (x(1332,1) - x(1280,1))^2);
+LAMBDA_MATRIX(150,124) = DISTANCE;
+
+DISTANCE = sqrt((x(1279,1) - x(1331,1))^2 + (x(1280,1) - x(1332,1))^2);
+LAMBDA_MATRIX(124,150) = DISTANCE;
+
+DISTANCE = sqrt((x(1233,1) - x(1243,1))^2 + (x(1234,1) - x(1244,1))^2);
+LAMBDA_MATRIX(101,106) = DISTANCE;
+
+DISTANCE = sqrt((x(1243,1) - x(1233,1))^2 + (x(1244,1) - x(1234,1))^2);
+LAMBDA_MATRIX(106,101) = DISTANCE;
+
+DISTANCE = sqrt((x(1243,1) - x(1279,1))^2 + (x(1244,1) - x(1280,1))^2);
+LAMBDA_MATRIX(106,124) = DISTANCE;
+
+DISTANCE = sqrt((x(1279,1) - x(1243,1))^2 + (x(1280,1) - x(1244,1))^2);
+LAMBDA_MATRIX(124,106) = DISTANCE;
+
+DISTANCE = sqrt((x(1279,1) - x(1233,1))^2 + (x(1280,1) - x(1234,1))^2);
+LAMBDA_MATRIX(124,101) = DISTANCE;
+
+DISTANCE = sqrt((x(1233,1) - x(1279,1))^2 + (x(1234,1) - x(1280,1))^2);
+LAMBDA_MATRIX(101,124) = DISTANCE;
+
+DISTANCE = sqrt((x(1243,1) - x(1291,1))^2 + (x(1244,1) - x(1292,1))^2);
+LAMBDA_MATRIX(106,130) = DISTANCE;
+
+DISTANCE = sqrt((x(1291,1) - x(1243,1))^2 + (x(1292,1) - x(1244,1))^2);
+LAMBDA_MATRIX(130,106) = DISTANCE;
+
+DISTANCE = sqrt((x(1291,1) - x(1279,1))^2 + (x(1292,1) - x(1280,1))^2);
+LAMBDA_MATRIX(130,124) = DISTANCE;
+
+DISTANCE = sqrt((x(1279,1) - x(1291,1))^2 + (x(1280,1) - x(1292,1))^2);
+LAMBDA_MATRIX(124,130) = DISTANCE;
+
+DISTANCE = sqrt((x(1279,1) - x(1243,1))^2 + (x(1280,1) - x(1244,1))^2);
+LAMBDA_MATRIX(124,106) = DISTANCE;
+
+DISTANCE = sqrt((x(1243,1) - x(1279,1))^2 + (x(1244,1) - x(1280,1))^2);
+LAMBDA_MATRIX(106,124) = DISTANCE;
+
+DISTANCE = sqrt((x(1061,1) - x(1099,1))^2 + (x(1062,1) - x(1100,1))^2);
+LAMBDA_MATRIX(15,34) = DISTANCE;
+
+DISTANCE = sqrt((x(1099,1) - x(1061,1))^2 + (x(1100,1) - x(1062,1))^2);
+LAMBDA_MATRIX(34,15) = DISTANCE;
+
+DISTANCE = sqrt((x(1099,1) - x(1085,1))^2 + (x(1100,1) - x(1086,1))^2);
+LAMBDA_MATRIX(34,27) = DISTANCE;
+
+DISTANCE = sqrt((x(1085,1) - x(1099,1))^2 + (x(1086,1) - x(1100,1))^2);
+LAMBDA_MATRIX(27,34) = DISTANCE;
+
+DISTANCE = sqrt((x(1085,1) - x(1061,1))^2 + (x(1086,1) - x(1062,1))^2);
+LAMBDA_MATRIX(27,15) = DISTANCE;
+
+DISTANCE = sqrt((x(1061,1) - x(1085,1))^2 + (x(1062,1) - x(1086,1))^2);
+LAMBDA_MATRIX(15,27) = DISTANCE;
+
+DISTANCE = sqrt((x(1063,1) - x(1061,1))^2 + (x(1064,1) - x(1062,1))^2);
+LAMBDA_MATRIX(16,15) = DISTANCE;
+
+DISTANCE = sqrt((x(1061,1) - x(1063,1))^2 + (x(1062,1) - x(1064,1))^2);
+LAMBDA_MATRIX(15,16) = DISTANCE;
+
+DISTANCE = sqrt((x(1061,1) - x(1085,1))^2 + (x(1062,1) - x(1086,1))^2);
+LAMBDA_MATRIX(15,27) = DISTANCE;
+
+DISTANCE = sqrt((x(1085,1) - x(1061,1))^2 + (x(1086,1) - x(1062,1))^2);
+LAMBDA_MATRIX(27,15) = DISTANCE;
+
+DISTANCE = sqrt((x(1085,1) - x(1063,1))^2 + (x(1086,1) - x(1064,1))^2);
+LAMBDA_MATRIX(27,16) = DISTANCE;
+
+DISTANCE = sqrt((x(1063,1) - x(1085,1))^2 + (x(1064,1) - x(1086,1))^2);
+LAMBDA_MATRIX(16,27) = DISTANCE;
+
+DISTANCE = sqrt((x(1085,1) - x(1087,1))^2 + (x(1086,1) - x(1088,1))^2);
+LAMBDA_MATRIX(27,28) = DISTANCE;
+
+DISTANCE = sqrt((x(1087,1) - x(1085,1))^2 + (x(1088,1) - x(1086,1))^2);
+LAMBDA_MATRIX(28,27) = DISTANCE;
+
+DISTANCE = sqrt((x(1087,1) - x(1063,1))^2 + (x(1088,1) - x(1064,1))^2);
+LAMBDA_MATRIX(28,16) = DISTANCE;
+
+DISTANCE = sqrt((x(1063,1) - x(1087,1))^2 + (x(1064,1) - x(1088,1))^2);
+LAMBDA_MATRIX(16,28) = DISTANCE;
+
+DISTANCE = sqrt((x(1063,1) - x(1085,1))^2 + (x(1064,1) - x(1086,1))^2);
+LAMBDA_MATRIX(16,27) = DISTANCE;
+
+DISTANCE = sqrt((x(1085,1) - x(1063,1))^2 + (x(1086,1) - x(1064,1))^2);
+LAMBDA_MATRIX(27,16) = DISTANCE;
+
+DISTANCE = sqrt((x(1085,1) - x(1129,1))^2 + (x(1086,1) - x(1130,1))^2);
+LAMBDA_MATRIX(27,49) = DISTANCE;
+
+DISTANCE = sqrt((x(1129,1) - x(1085,1))^2 + (x(1130,1) - x(1086,1))^2);
+LAMBDA_MATRIX(49,27) = DISTANCE;
+
+DISTANCE = sqrt((x(1129,1) - x(1087,1))^2 + (x(1130,1) - x(1088,1))^2);
+LAMBDA_MATRIX(49,28) = DISTANCE;
+
+DISTANCE = sqrt((x(1087,1) - x(1129,1))^2 + (x(1088,1) - x(1130,1))^2);
+LAMBDA_MATRIX(28,49) = DISTANCE;
+
+DISTANCE = sqrt((x(1087,1) - x(1085,1))^2 + (x(1088,1) - x(1086,1))^2);
+LAMBDA_MATRIX(28,27) = DISTANCE;
+
+DISTANCE = sqrt((x(1085,1) - x(1087,1))^2 + (x(1086,1) - x(1088,1))^2);
+LAMBDA_MATRIX(27,28) = DISTANCE;
+
+DISTANCE = sqrt((x(1133,1) - x(1099,1))^2 + (x(1134,1) - x(1100,1))^2);
+LAMBDA_MATRIX(51,34) = DISTANCE;
+
+DISTANCE = sqrt((x(1099,1) - x(1133,1))^2 + (x(1100,1) - x(1134,1))^2);
+LAMBDA_MATRIX(34,51) = DISTANCE;
+
+DISTANCE = sqrt((x(1099,1) - x(1153,1))^2 + (x(1100,1) - x(1154,1))^2);
+LAMBDA_MATRIX(34,61) = DISTANCE;
+
+DISTANCE = sqrt((x(1153,1) - x(1099,1))^2 + (x(1154,1) - x(1100,1))^2);
+LAMBDA_MATRIX(61,34) = DISTANCE;
+
+DISTANCE = sqrt((x(1153,1) - x(1133,1))^2 + (x(1154,1) - x(1134,1))^2);
+LAMBDA_MATRIX(61,51) = DISTANCE;
+
+DISTANCE = sqrt((x(1133,1) - x(1153,1))^2 + (x(1134,1) - x(1154,1))^2);
+LAMBDA_MATRIX(51,61) = DISTANCE;
+
+DISTANCE = sqrt((x(1129,1) - x(1085,1))^2 + (x(1130,1) - x(1086,1))^2);
+LAMBDA_MATRIX(49,27) = DISTANCE;
+
+DISTANCE = sqrt((x(1085,1) - x(1129,1))^2 + (x(1086,1) - x(1130,1))^2);
+LAMBDA_MATRIX(27,49) = DISTANCE;
+
+DISTANCE = sqrt((x(1085,1) - x(1133,1))^2 + (x(1086,1) - x(1134,1))^2);
+LAMBDA_MATRIX(27,51) = DISTANCE;
+
+DISTANCE = sqrt((x(1133,1) - x(1085,1))^2 + (x(1134,1) - x(1086,1))^2);
+LAMBDA_MATRIX(51,27) = DISTANCE;
+
+DISTANCE = sqrt((x(1133,1) - x(1129,1))^2 + (x(1134,1) - x(1130,1))^2);
+LAMBDA_MATRIX(51,49) = DISTANCE;
+
+DISTANCE = sqrt((x(1129,1) - x(1133,1))^2 + (x(1130,1) - x(1134,1))^2);
+LAMBDA_MATRIX(49,51) = DISTANCE;
+
+DISTANCE = sqrt((x(1133,1) - x(1085,1))^2 + (x(1134,1) - x(1086,1))^2);
+LAMBDA_MATRIX(51,27) = DISTANCE;
+
+DISTANCE = sqrt((x(1085,1) - x(1133,1))^2 + (x(1086,1) - x(1134,1))^2);
+LAMBDA_MATRIX(27,51) = DISTANCE;
+
+DISTANCE = sqrt((x(1085,1) - x(1099,1))^2 + (x(1086,1) - x(1100,1))^2);
+LAMBDA_MATRIX(27,34) = DISTANCE;
+
+DISTANCE = sqrt((x(1099,1) - x(1085,1))^2 + (x(1100,1) - x(1086,1))^2);
+LAMBDA_MATRIX(34,27) = DISTANCE;
+
+DISTANCE = sqrt((x(1099,1) - x(1133,1))^2 + (x(1100,1) - x(1134,1))^2);
+LAMBDA_MATRIX(34,51) = DISTANCE;
+
+DISTANCE = sqrt((x(1133,1) - x(1099,1))^2 + (x(1134,1) - x(1100,1))^2);
+LAMBDA_MATRIX(51,34) = DISTANCE;
+
+DISTANCE = sqrt((x(1299,1) - x(1273,1))^2 + (x(1300,1) - x(1274,1))^2);
+LAMBDA_MATRIX(134,121) = DISTANCE;
+
+DISTANCE = sqrt((x(1273,1) - x(1299,1))^2 + (x(1274,1) - x(1300,1))^2);
+LAMBDA_MATRIX(121,134) = DISTANCE;
+
+DISTANCE = sqrt((x(1273,1) - x(1321,1))^2 + (x(1274,1) - x(1322,1))^2);
+LAMBDA_MATRIX(121,145) = DISTANCE;
+
+DISTANCE = sqrt((x(1321,1) - x(1273,1))^2 + (x(1322,1) - x(1274,1))^2);
+LAMBDA_MATRIX(145,121) = DISTANCE;
+
+DISTANCE = sqrt((x(1321,1) - x(1299,1))^2 + (x(1322,1) - x(1300,1))^2);
+LAMBDA_MATRIX(145,134) = DISTANCE;
+
+DISTANCE = sqrt((x(1299,1) - x(1321,1))^2 + (x(1300,1) - x(1322,1))^2);
+LAMBDA_MATRIX(134,145) = DISTANCE;
+
+DISTANCE = sqrt((x(1321,1) - x(1343,1))^2 + (x(1322,1) - x(1344,1))^2);
+LAMBDA_MATRIX(145,156) = DISTANCE;
+
+DISTANCE = sqrt((x(1343,1) - x(1321,1))^2 + (x(1344,1) - x(1322,1))^2);
+LAMBDA_MATRIX(156,145) = DISTANCE;
+
+DISTANCE = sqrt((x(1343,1) - x(1299,1))^2 + (x(1344,1) - x(1300,1))^2);
+LAMBDA_MATRIX(156,134) = DISTANCE;
+
+DISTANCE = sqrt((x(1299,1) - x(1343,1))^2 + (x(1300,1) - x(1344,1))^2);
+LAMBDA_MATRIX(134,156) = DISTANCE;
+
+DISTANCE = sqrt((x(1299,1) - x(1321,1))^2 + (x(1300,1) - x(1322,1))^2);
+LAMBDA_MATRIX(134,145) = DISTANCE;
+
+DISTANCE = sqrt((x(1321,1) - x(1299,1))^2 + (x(1322,1) - x(1300,1))^2);
+LAMBDA_MATRIX(145,134) = DISTANCE;
+
+DISTANCE = sqrt((x(1273,1) - x(1287,1))^2 + (x(1274,1) - x(1288,1))^2);
+LAMBDA_MATRIX(121,128) = DISTANCE;
+
+DISTANCE = sqrt((x(1287,1) - x(1273,1))^2 + (x(1288,1) - x(1274,1))^2);
+LAMBDA_MATRIX(128,121) = DISTANCE;
+
+DISTANCE = sqrt((x(1287,1) - x(1321,1))^2 + (x(1288,1) - x(1322,1))^2);
+LAMBDA_MATRIX(128,145) = DISTANCE;
+
+DISTANCE = sqrt((x(1321,1) - x(1287,1))^2 + (x(1322,1) - x(1288,1))^2);
+LAMBDA_MATRIX(145,128) = DISTANCE;
+
+DISTANCE = sqrt((x(1321,1) - x(1273,1))^2 + (x(1322,1) - x(1274,1))^2);
+LAMBDA_MATRIX(145,121) = DISTANCE;
+
+DISTANCE = sqrt((x(1273,1) - x(1321,1))^2 + (x(1274,1) - x(1322,1))^2);
+LAMBDA_MATRIX(121,145) = DISTANCE;
+
+DISTANCE = sqrt((x(1323,1) - x(1343,1))^2 + (x(1324,1) - x(1344,1))^2);
+LAMBDA_MATRIX(146,156) = DISTANCE;
+
+DISTANCE = sqrt((x(1343,1) - x(1323,1))^2 + (x(1344,1) - x(1324,1))^2);
+LAMBDA_MATRIX(156,146) = DISTANCE;
+
+DISTANCE = sqrt((x(1343,1) - x(1363,1))^2 + (x(1344,1) - x(1364,1))^2);
+LAMBDA_MATRIX(156,166) = DISTANCE;
+
+DISTANCE = sqrt((x(1363,1) - x(1343,1))^2 + (x(1364,1) - x(1344,1))^2);
+LAMBDA_MATRIX(166,156) = DISTANCE;
+
+DISTANCE = sqrt((x(1363,1) - x(1323,1))^2 + (x(1364,1) - x(1324,1))^2);
+LAMBDA_MATRIX(166,146) = DISTANCE;
+
+DISTANCE = sqrt((x(1323,1) - x(1363,1))^2 + (x(1324,1) - x(1364,1))^2);
+LAMBDA_MATRIX(146,166) = DISTANCE;
+
+DISTANCE = sqrt((x(1391,1) - x(1345,1))^2 + (x(1392,1) - x(1346,1))^2);
+LAMBDA_MATRIX(180,157) = DISTANCE;
+
+DISTANCE = sqrt((x(1345,1) - x(1391,1))^2 + (x(1346,1) - x(1392,1))^2);
+LAMBDA_MATRIX(157,180) = DISTANCE;
+
+DISTANCE = sqrt((x(1345,1) - x(1363,1))^2 + (x(1346,1) - x(1364,1))^2);
+LAMBDA_MATRIX(157,166) = DISTANCE;
+
+DISTANCE = sqrt((x(1363,1) - x(1345,1))^2 + (x(1364,1) - x(1346,1))^2);
+LAMBDA_MATRIX(166,157) = DISTANCE;
+
+DISTANCE = sqrt((x(1363,1) - x(1391,1))^2 + (x(1364,1) - x(1392,1))^2);
+LAMBDA_MATRIX(166,180) = DISTANCE;
+
+DISTANCE = sqrt((x(1391,1) - x(1363,1))^2 + (x(1392,1) - x(1364,1))^2);
+LAMBDA_MATRIX(180,166) = DISTANCE;
+
+DISTANCE = sqrt((x(1345,1) - x(1323,1))^2 + (x(1346,1) - x(1324,1))^2);
+LAMBDA_MATRIX(157,146) = DISTANCE;
+
+DISTANCE = sqrt((x(1323,1) - x(1345,1))^2 + (x(1324,1) - x(1346,1))^2);
+LAMBDA_MATRIX(146,157) = DISTANCE;
+
+DISTANCE = sqrt((x(1323,1) - x(1363,1))^2 + (x(1324,1) - x(1364,1))^2);
+LAMBDA_MATRIX(146,166) = DISTANCE;
+
+DISTANCE = sqrt((x(1363,1) - x(1323,1))^2 + (x(1364,1) - x(1324,1))^2);
+LAMBDA_MATRIX(166,146) = DISTANCE;
+
+DISTANCE = sqrt((x(1363,1) - x(1345,1))^2 + (x(1364,1) - x(1346,1))^2);
+LAMBDA_MATRIX(166,157) = DISTANCE;
+
+DISTANCE = sqrt((x(1345,1) - x(1363,1))^2 + (x(1346,1) - x(1364,1))^2);
+LAMBDA_MATRIX(157,166) = DISTANCE;
+
+DISTANCE = sqrt((x(1181,1) - x(1217,1))^2 + (x(1182,1) - x(1218,1))^2);
+LAMBDA_MATRIX(75,93) = DISTANCE;
+
+DISTANCE = sqrt((x(1217,1) - x(1181,1))^2 + (x(1218,1) - x(1182,1))^2);
+LAMBDA_MATRIX(93,75) = DISTANCE;
+
+DISTANCE = sqrt((x(1217,1) - x(1231,1))^2 + (x(1218,1) - x(1232,1))^2);
+LAMBDA_MATRIX(93,100) = DISTANCE;
+
+DISTANCE = sqrt((x(1231,1) - x(1217,1))^2 + (x(1232,1) - x(1218,1))^2);
+LAMBDA_MATRIX(100,93) = DISTANCE;
+
+DISTANCE = sqrt((x(1231,1) - x(1181,1))^2 + (x(1232,1) - x(1182,1))^2);
+LAMBDA_MATRIX(100,75) = DISTANCE;
+
+DISTANCE = sqrt((x(1181,1) - x(1231,1))^2 + (x(1182,1) - x(1232,1))^2);
+LAMBDA_MATRIX(75,100) = DISTANCE;
+
+DISTANCE = sqrt((x(1231,1) - x(1193,1))^2 + (x(1232,1) - x(1194,1))^2);
+LAMBDA_MATRIX(100,81) = DISTANCE;
+
+DISTANCE = sqrt((x(1193,1) - x(1231,1))^2 + (x(1194,1) - x(1232,1))^2);
+LAMBDA_MATRIX(81,100) = DISTANCE;
+
+DISTANCE = sqrt((x(1193,1) - x(1181,1))^2 + (x(1194,1) - x(1182,1))^2);
+LAMBDA_MATRIX(81,75) = DISTANCE;
+
+DISTANCE = sqrt((x(1181,1) - x(1193,1))^2 + (x(1182,1) - x(1194,1))^2);
+LAMBDA_MATRIX(75,81) = DISTANCE;
+
+DISTANCE = sqrt((x(1181,1) - x(1231,1))^2 + (x(1182,1) - x(1232,1))^2);
+LAMBDA_MATRIX(75,100) = DISTANCE;
+
+DISTANCE = sqrt((x(1231,1) - x(1181,1))^2 + (x(1232,1) - x(1182,1))^2);
+LAMBDA_MATRIX(100,75) = DISTANCE;
+
+DISTANCE = sqrt((x(1181,1) - x(1193,1))^2 + (x(1182,1) - x(1194,1))^2);
+LAMBDA_MATRIX(75,81) = DISTANCE;
+
+DISTANCE = sqrt((x(1193,1) - x(1181,1))^2 + (x(1194,1) - x(1182,1))^2);
+LAMBDA_MATRIX(81,75) = DISTANCE;
+
+DISTANCE = sqrt((x(1193,1) - x(1141,1))^2 + (x(1194,1) - x(1142,1))^2);
+LAMBDA_MATRIX(81,55) = DISTANCE;
+
+DISTANCE = sqrt((x(1141,1) - x(1193,1))^2 + (x(1142,1) - x(1194,1))^2);
+LAMBDA_MATRIX(55,81) = DISTANCE;
+
+DISTANCE = sqrt((x(1141,1) - x(1181,1))^2 + (x(1142,1) - x(1182,1))^2);
+LAMBDA_MATRIX(55,75) = DISTANCE;
+
+DISTANCE = sqrt((x(1181,1) - x(1141,1))^2 + (x(1182,1) - x(1142,1))^2);
+LAMBDA_MATRIX(75,55) = DISTANCE;
+
+DISTANCE = sqrt((x(1141,1) - x(1129,1))^2 + (x(1142,1) - x(1130,1))^2);
+LAMBDA_MATRIX(55,49) = DISTANCE;
+
+DISTANCE = sqrt((x(1129,1) - x(1141,1))^2 + (x(1130,1) - x(1142,1))^2);
+LAMBDA_MATRIX(49,55) = DISTANCE;
+
+DISTANCE = sqrt((x(1129,1) - x(1181,1))^2 + (x(1130,1) - x(1182,1))^2);
+LAMBDA_MATRIX(49,75) = DISTANCE;
+
+DISTANCE = sqrt((x(1181,1) - x(1129,1))^2 + (x(1182,1) - x(1130,1))^2);
+LAMBDA_MATRIX(75,49) = DISTANCE;
+
+DISTANCE = sqrt((x(1181,1) - x(1141,1))^2 + (x(1182,1) - x(1142,1))^2);
+LAMBDA_MATRIX(75,55) = DISTANCE;
+
+DISTANCE = sqrt((x(1141,1) - x(1181,1))^2 + (x(1142,1) - x(1182,1))^2);
+LAMBDA_MATRIX(55,75) = DISTANCE;
+
+DISTANCE = sqrt((x(1281,1) - x(1229,1))^2 + (x(1282,1) - x(1230,1))^2);
+LAMBDA_MATRIX(125,99) = DISTANCE;
+
+DISTANCE = sqrt((x(1229,1) - x(1281,1))^2 + (x(1230,1) - x(1282,1))^2);
+LAMBDA_MATRIX(99,125) = DISTANCE;
+
+DISTANCE = sqrt((x(1229,1) - x(1247,1))^2 + (x(1230,1) - x(1248,1))^2);
+LAMBDA_MATRIX(99,108) = DISTANCE;
+
+DISTANCE = sqrt((x(1247,1) - x(1229,1))^2 + (x(1248,1) - x(1230,1))^2);
+LAMBDA_MATRIX(108,99) = DISTANCE;
+
+DISTANCE = sqrt((x(1247,1) - x(1281,1))^2 + (x(1248,1) - x(1282,1))^2);
+LAMBDA_MATRIX(108,125) = DISTANCE;
+
+DISTANCE = sqrt((x(1281,1) - x(1247,1))^2 + (x(1282,1) - x(1248,1))^2);
+LAMBDA_MATRIX(125,108) = DISTANCE;
+
+DISTANCE = sqrt((x(1247,1) - x(1293,1))^2 + (x(1248,1) - x(1294,1))^2);
+LAMBDA_MATRIX(108,131) = DISTANCE;
+
+DISTANCE = sqrt((x(1293,1) - x(1247,1))^2 + (x(1294,1) - x(1248,1))^2);
+LAMBDA_MATRIX(131,108) = DISTANCE;
+
+DISTANCE = sqrt((x(1293,1) - x(1281,1))^2 + (x(1294,1) - x(1282,1))^2);
+LAMBDA_MATRIX(131,125) = DISTANCE;
+
+DISTANCE = sqrt((x(1281,1) - x(1293,1))^2 + (x(1282,1) - x(1294,1))^2);
+LAMBDA_MATRIX(125,131) = DISTANCE;
+
+DISTANCE = sqrt((x(1281,1) - x(1247,1))^2 + (x(1282,1) - x(1248,1))^2);
+LAMBDA_MATRIX(125,108) = DISTANCE;
+
+DISTANCE = sqrt((x(1247,1) - x(1281,1))^2 + (x(1248,1) - x(1282,1))^2);
+LAMBDA_MATRIX(108,125) = DISTANCE;
+
+DISTANCE = sqrt((x(1267,1) - x(1293,1))^2 + (x(1268,1) - x(1294,1))^2);
+LAMBDA_MATRIX(118,131) = DISTANCE;
+
+DISTANCE = sqrt((x(1293,1) - x(1267,1))^2 + (x(1294,1) - x(1268,1))^2);
+LAMBDA_MATRIX(131,118) = DISTANCE;
+
+DISTANCE = sqrt((x(1293,1) - x(1247,1))^2 + (x(1294,1) - x(1248,1))^2);
+LAMBDA_MATRIX(131,108) = DISTANCE;
+
+DISTANCE = sqrt((x(1247,1) - x(1293,1))^2 + (x(1248,1) - x(1294,1))^2);
+LAMBDA_MATRIX(108,131) = DISTANCE;
+
+DISTANCE = sqrt((x(1247,1) - x(1267,1))^2 + (x(1248,1) - x(1268,1))^2);
+LAMBDA_MATRIX(108,118) = DISTANCE;
+
+DISTANCE = sqrt((x(1267,1) - x(1247,1))^2 + (x(1268,1) - x(1248,1))^2);
+LAMBDA_MATRIX(118,108) = DISTANCE;
+
+DISTANCE = sqrt((x(1247,1) - x(1229,1))^2 + (x(1248,1) - x(1230,1))^2);
+LAMBDA_MATRIX(108,99) = DISTANCE;
+
+DISTANCE = sqrt((x(1229,1) - x(1247,1))^2 + (x(1230,1) - x(1248,1))^2);
+LAMBDA_MATRIX(99,108) = DISTANCE;
+
+DISTANCE = sqrt((x(1229,1) - x(1191,1))^2 + (x(1230,1) - x(1192,1))^2);
+LAMBDA_MATRIX(99,80) = DISTANCE;
+
+DISTANCE = sqrt((x(1191,1) - x(1229,1))^2 + (x(1192,1) - x(1230,1))^2);
+LAMBDA_MATRIX(80,99) = DISTANCE;
+
+DISTANCE = sqrt((x(1191,1) - x(1247,1))^2 + (x(1192,1) - x(1248,1))^2);
+LAMBDA_MATRIX(80,108) = DISTANCE;
+
+DISTANCE = sqrt((x(1247,1) - x(1191,1))^2 + (x(1248,1) - x(1192,1))^2);
+LAMBDA_MATRIX(108,80) = DISTANCE;
+
+DISTANCE = sqrt((x(1511,1) - x(1531,1))^2 + (x(1512,1) - x(1532,1))^2);
+LAMBDA_MATRIX(240,250) = DISTANCE;
+
+DISTANCE = sqrt((x(1531,1) - x(1511,1))^2 + (x(1532,1) - x(1512,1))^2);
+LAMBDA_MATRIX(250,240) = DISTANCE;
+
+DISTANCE = sqrt((x(1531,1) - x(1543,1))^2 + (x(1532,1) - x(1544,1))^2);
+LAMBDA_MATRIX(250,256) = DISTANCE;
+
+DISTANCE = sqrt((x(1543,1) - x(1531,1))^2 + (x(1544,1) - x(1532,1))^2);
+LAMBDA_MATRIX(256,250) = DISTANCE;
+
+DISTANCE = sqrt((x(1543,1) - x(1511,1))^2 + (x(1544,1) - x(1512,1))^2);
+LAMBDA_MATRIX(256,240) = DISTANCE;
+
+DISTANCE = sqrt((x(1511,1) - x(1543,1))^2 + (x(1512,1) - x(1544,1))^2);
+LAMBDA_MATRIX(240,256) = DISTANCE;
+
+DISTANCE = sqrt((x(1575,1) - x(1565,1))^2 + (x(1576,1) - x(1566,1))^2);
+LAMBDA_MATRIX(272,267) = DISTANCE;
+
+DISTANCE = sqrt((x(1565,1) - x(1575,1))^2 + (x(1566,1) - x(1576,1))^2);
+LAMBDA_MATRIX(267,272) = DISTANCE;
+
+DISTANCE = sqrt((x(1565,1) - x(1543,1))^2 + (x(1566,1) - x(1544,1))^2);
+LAMBDA_MATRIX(267,256) = DISTANCE;
+
+DISTANCE = sqrt((x(1543,1) - x(1565,1))^2 + (x(1544,1) - x(1566,1))^2);
+LAMBDA_MATRIX(256,267) = DISTANCE;
+
+DISTANCE = sqrt((x(1543,1) - x(1575,1))^2 + (x(1544,1) - x(1576,1))^2);
+LAMBDA_MATRIX(256,272) = DISTANCE;
+
+DISTANCE = sqrt((x(1575,1) - x(1543,1))^2 + (x(1576,1) - x(1544,1))^2);
+LAMBDA_MATRIX(272,256) = DISTANCE;
+
+DISTANCE = sqrt((x(1563,1) - x(1575,1))^2 + (x(1564,1) - x(1576,1))^2);
+LAMBDA_MATRIX(266,272) = DISTANCE;
+
+DISTANCE = sqrt((x(1575,1) - x(1563,1))^2 + (x(1576,1) - x(1564,1))^2);
+LAMBDA_MATRIX(272,266) = DISTANCE;
+
+DISTANCE = sqrt((x(1575,1) - x(1543,1))^2 + (x(1576,1) - x(1544,1))^2);
+LAMBDA_MATRIX(272,256) = DISTANCE;
+
+DISTANCE = sqrt((x(1543,1) - x(1575,1))^2 + (x(1544,1) - x(1576,1))^2);
+LAMBDA_MATRIX(256,272) = DISTANCE;
+
+DISTANCE = sqrt((x(1543,1) - x(1563,1))^2 + (x(1544,1) - x(1564,1))^2);
+LAMBDA_MATRIX(256,266) = DISTANCE;
+
+DISTANCE = sqrt((x(1563,1) - x(1543,1))^2 + (x(1564,1) - x(1544,1))^2);
+LAMBDA_MATRIX(266,256) = DISTANCE;
+
+DISTANCE = sqrt((x(1543,1) - x(1531,1))^2 + (x(1544,1) - x(1532,1))^2);
+LAMBDA_MATRIX(256,250) = DISTANCE;
+
+DISTANCE = sqrt((x(1531,1) - x(1543,1))^2 + (x(1532,1) - x(1544,1))^2);
+LAMBDA_MATRIX(250,256) = DISTANCE;
+
+DISTANCE = sqrt((x(1531,1) - x(1563,1))^2 + (x(1532,1) - x(1564,1))^2);
+LAMBDA_MATRIX(250,266) = DISTANCE;
+
+DISTANCE = sqrt((x(1563,1) - x(1531,1))^2 + (x(1564,1) - x(1532,1))^2);
+LAMBDA_MATRIX(266,250) = DISTANCE;
+
+DISTANCE = sqrt((x(1563,1) - x(1543,1))^2 + (x(1564,1) - x(1544,1))^2);
+LAMBDA_MATRIX(266,256) = DISTANCE;
+
+DISTANCE = sqrt((x(1543,1) - x(1563,1))^2 + (x(1544,1) - x(1564,1))^2);
+LAMBDA_MATRIX(256,266) = DISTANCE;
+
+DISTANCE = sqrt((x(1527,1) - x(1511,1))^2 + (x(1528,1) - x(1512,1))^2);
+LAMBDA_MATRIX(248,240) = DISTANCE;
+
+DISTANCE = sqrt((x(1511,1) - x(1527,1))^2 + (x(1512,1) - x(1528,1))^2);
+LAMBDA_MATRIX(240,248) = DISTANCE;
+
+DISTANCE = sqrt((x(1511,1) - x(1543,1))^2 + (x(1512,1) - x(1544,1))^2);
+LAMBDA_MATRIX(240,256) = DISTANCE;
+
+DISTANCE = sqrt((x(1543,1) - x(1511,1))^2 + (x(1544,1) - x(1512,1))^2);
+LAMBDA_MATRIX(256,240) = DISTANCE;
+
+DISTANCE = sqrt((x(1543,1) - x(1527,1))^2 + (x(1544,1) - x(1528,1))^2);
+LAMBDA_MATRIX(256,248) = DISTANCE;
+
+DISTANCE = sqrt((x(1527,1) - x(1543,1))^2 + (x(1528,1) - x(1544,1))^2);
+LAMBDA_MATRIX(248,256) = DISTANCE;
+
+DISTANCE = sqrt((x(1543,1) - x(1565,1))^2 + (x(1544,1) - x(1566,1))^2);
+LAMBDA_MATRIX(256,267) = DISTANCE;
+
+DISTANCE = sqrt((x(1565,1) - x(1543,1))^2 + (x(1566,1) - x(1544,1))^2);
+LAMBDA_MATRIX(267,256) = DISTANCE;
+
+DISTANCE = sqrt((x(1565,1) - x(1527,1))^2 + (x(1566,1) - x(1528,1))^2);
+LAMBDA_MATRIX(267,248) = DISTANCE;
+
+DISTANCE = sqrt((x(1527,1) - x(1565,1))^2 + (x(1528,1) - x(1566,1))^2);
+LAMBDA_MATRIX(248,267) = DISTANCE;
+
+DISTANCE = sqrt((x(1527,1) - x(1543,1))^2 + (x(1528,1) - x(1544,1))^2);
+LAMBDA_MATRIX(248,256) = DISTANCE;
+
+DISTANCE = sqrt((x(1543,1) - x(1527,1))^2 + (x(1544,1) - x(1528,1))^2);
+LAMBDA_MATRIX(256,248) = DISTANCE;
+
+DISTANCE = sqrt((x(1471,1) - x(1503,1))^2 + (x(1472,1) - x(1504,1))^2);
+LAMBDA_MATRIX(220,236) = DISTANCE;
+
+DISTANCE = sqrt((x(1503,1) - x(1471,1))^2 + (x(1504,1) - x(1472,1))^2);
+LAMBDA_MATRIX(236,220) = DISTANCE;
+
+DISTANCE = sqrt((x(1503,1) - x(1483,1))^2 + (x(1504,1) - x(1484,1))^2);
+LAMBDA_MATRIX(236,226) = DISTANCE;
+
+DISTANCE = sqrt((x(1483,1) - x(1503,1))^2 + (x(1484,1) - x(1504,1))^2);
+LAMBDA_MATRIX(226,236) = DISTANCE;
+
+DISTANCE = sqrt((x(1483,1) - x(1471,1))^2 + (x(1484,1) - x(1472,1))^2);
+LAMBDA_MATRIX(226,220) = DISTANCE;
+
+DISTANCE = sqrt((x(1471,1) - x(1483,1))^2 + (x(1472,1) - x(1484,1))^2);
+LAMBDA_MATRIX(220,226) = DISTANCE;
+
+DISTANCE = sqrt((x(1483,1) - x(1503,1))^2 + (x(1484,1) - x(1504,1))^2);
+LAMBDA_MATRIX(226,236) = DISTANCE;
+
+DISTANCE = sqrt((x(1503,1) - x(1483,1))^2 + (x(1504,1) - x(1484,1))^2);
+LAMBDA_MATRIX(236,226) = DISTANCE;
+
+DISTANCE = sqrt((x(1503,1) - x(1517,1))^2 + (x(1504,1) - x(1518,1))^2);
+LAMBDA_MATRIX(236,243) = DISTANCE;
+
+DISTANCE = sqrt((x(1517,1) - x(1503,1))^2 + (x(1518,1) - x(1504,1))^2);
+LAMBDA_MATRIX(243,236) = DISTANCE;
+
+DISTANCE = sqrt((x(1517,1) - x(1483,1))^2 + (x(1518,1) - x(1484,1))^2);
+LAMBDA_MATRIX(243,226) = DISTANCE;
+
+DISTANCE = sqrt((x(1483,1) - x(1517,1))^2 + (x(1484,1) - x(1518,1))^2);
+LAMBDA_MATRIX(226,243) = DISTANCE;
+
+DISTANCE = sqrt((x(1517,1) - x(1507,1))^2 + (x(1518,1) - x(1508,1))^2);
+LAMBDA_MATRIX(243,238) = DISTANCE;
+
+DISTANCE = sqrt((x(1507,1) - x(1517,1))^2 + (x(1508,1) - x(1518,1))^2);
+LAMBDA_MATRIX(238,243) = DISTANCE;
+
+DISTANCE = sqrt((x(1507,1) - x(1483,1))^2 + (x(1508,1) - x(1484,1))^2);
+LAMBDA_MATRIX(238,226) = DISTANCE;
+
+DISTANCE = sqrt((x(1483,1) - x(1507,1))^2 + (x(1484,1) - x(1508,1))^2);
+LAMBDA_MATRIX(226,238) = DISTANCE;
+
+DISTANCE = sqrt((x(1483,1) - x(1517,1))^2 + (x(1484,1) - x(1518,1))^2);
+LAMBDA_MATRIX(226,243) = DISTANCE;
+
+DISTANCE = sqrt((x(1517,1) - x(1483,1))^2 + (x(1518,1) - x(1484,1))^2);
+LAMBDA_MATRIX(243,226) = DISTANCE;
+
+DISTANCE = sqrt((x(1507,1) - x(1465,1))^2 + (x(1508,1) - x(1466,1))^2);
+LAMBDA_MATRIX(238,217) = DISTANCE;
+
+DISTANCE = sqrt((x(1465,1) - x(1507,1))^2 + (x(1466,1) - x(1508,1))^2);
+LAMBDA_MATRIX(217,238) = DISTANCE;
+
+DISTANCE = sqrt((x(1465,1) - x(1483,1))^2 + (x(1466,1) - x(1484,1))^2);
+LAMBDA_MATRIX(217,226) = DISTANCE;
+
+DISTANCE = sqrt((x(1483,1) - x(1465,1))^2 + (x(1484,1) - x(1466,1))^2);
+LAMBDA_MATRIX(226,217) = DISTANCE;
+
+DISTANCE = sqrt((x(1483,1) - x(1507,1))^2 + (x(1484,1) - x(1508,1))^2);
+LAMBDA_MATRIX(226,238) = DISTANCE;
+
+DISTANCE = sqrt((x(1507,1) - x(1483,1))^2 + (x(1508,1) - x(1484,1))^2);
+LAMBDA_MATRIX(238,226) = DISTANCE;
+
+DISTANCE = sqrt((x(1435,1) - x(1471,1))^2 + (x(1436,1) - x(1472,1))^2);
+LAMBDA_MATRIX(202,220) = DISTANCE;
+
+DISTANCE = sqrt((x(1471,1) - x(1435,1))^2 + (x(1472,1) - x(1436,1))^2);
+LAMBDA_MATRIX(220,202) = DISTANCE;
+
+DISTANCE = sqrt((x(1471,1) - x(1449,1))^2 + (x(1472,1) - x(1450,1))^2);
+LAMBDA_MATRIX(220,209) = DISTANCE;
+
+DISTANCE = sqrt((x(1449,1) - x(1471,1))^2 + (x(1450,1) - x(1472,1))^2);
+LAMBDA_MATRIX(209,220) = DISTANCE;
+
+DISTANCE = sqrt((x(1449,1) - x(1435,1))^2 + (x(1450,1) - x(1436,1))^2);
+LAMBDA_MATRIX(209,202) = DISTANCE;
+
+DISTANCE = sqrt((x(1435,1) - x(1449,1))^2 + (x(1436,1) - x(1450,1))^2);
+LAMBDA_MATRIX(202,209) = DISTANCE;
+
+DISTANCE = sqrt((x(1471,1) - x(1483,1))^2 + (x(1472,1) - x(1484,1))^2);
+LAMBDA_MATRIX(220,226) = DISTANCE;
+
+DISTANCE = sqrt((x(1483,1) - x(1471,1))^2 + (x(1484,1) - x(1472,1))^2);
+LAMBDA_MATRIX(226,220) = DISTANCE;
+
+DISTANCE = sqrt((x(1483,1) - x(1449,1))^2 + (x(1484,1) - x(1450,1))^2);
+LAMBDA_MATRIX(226,209) = DISTANCE;
+
+DISTANCE = sqrt((x(1449,1) - x(1483,1))^2 + (x(1450,1) - x(1484,1))^2);
+LAMBDA_MATRIX(209,226) = DISTANCE;
+
+DISTANCE = sqrt((x(1449,1) - x(1471,1))^2 + (x(1450,1) - x(1472,1))^2);
+LAMBDA_MATRIX(209,220) = DISTANCE;
+
+DISTANCE = sqrt((x(1471,1) - x(1449,1))^2 + (x(1472,1) - x(1450,1))^2);
+LAMBDA_MATRIX(220,209) = DISTANCE;
+
+DISTANCE = sqrt((x(1465,1) - x(1423,1))^2 + (x(1466,1) - x(1424,1))^2);
+LAMBDA_MATRIX(217,196) = DISTANCE;
+
+DISTANCE = sqrt((x(1423,1) - x(1465,1))^2 + (x(1424,1) - x(1466,1))^2);
+LAMBDA_MATRIX(196,217) = DISTANCE;
+
+DISTANCE = sqrt((x(1423,1) - x(1449,1))^2 + (x(1424,1) - x(1450,1))^2);
+LAMBDA_MATRIX(196,209) = DISTANCE;
+
+DISTANCE = sqrt((x(1449,1) - x(1423,1))^2 + (x(1450,1) - x(1424,1))^2);
+LAMBDA_MATRIX(209,196) = DISTANCE;
+
+DISTANCE = sqrt((x(1449,1) - x(1465,1))^2 + (x(1450,1) - x(1466,1))^2);
+LAMBDA_MATRIX(209,217) = DISTANCE;
+
+DISTANCE = sqrt((x(1465,1) - x(1449,1))^2 + (x(1466,1) - x(1450,1))^2);
+LAMBDA_MATRIX(217,209) = DISTANCE;
+
+DISTANCE = sqrt((x(1449,1) - x(1483,1))^2 + (x(1450,1) - x(1484,1))^2);
+LAMBDA_MATRIX(209,226) = DISTANCE;
+
+DISTANCE = sqrt((x(1483,1) - x(1449,1))^2 + (x(1484,1) - x(1450,1))^2);
+LAMBDA_MATRIX(226,209) = DISTANCE;
+
+DISTANCE = sqrt((x(1483,1) - x(1465,1))^2 + (x(1484,1) - x(1466,1))^2);
+LAMBDA_MATRIX(226,217) = DISTANCE;
+
+DISTANCE = sqrt((x(1465,1) - x(1483,1))^2 + (x(1466,1) - x(1484,1))^2);
+LAMBDA_MATRIX(217,226) = DISTANCE;
+
+DISTANCE = sqrt((x(1465,1) - x(1449,1))^2 + (x(1466,1) - x(1450,1))^2);
+LAMBDA_MATRIX(217,209) = DISTANCE;
+
+DISTANCE = sqrt((x(1449,1) - x(1465,1))^2 + (x(1450,1) - x(1466,1))^2);
+LAMBDA_MATRIX(209,217) = DISTANCE;
+
+DISTANCE = sqrt((x(1337,1) - x(1319,1))^2 + (x(1338,1) - x(1320,1))^2);
+LAMBDA_MATRIX(153,144) = DISTANCE;
+
+DISTANCE = sqrt((x(1319,1) - x(1337,1))^2 + (x(1320,1) - x(1338,1))^2);
+LAMBDA_MATRIX(144,153) = DISTANCE;
+
+DISTANCE = sqrt((x(1319,1) - x(1379,1))^2 + (x(1320,1) - x(1380,1))^2);
+LAMBDA_MATRIX(144,174) = DISTANCE;
+
+DISTANCE = sqrt((x(1379,1) - x(1319,1))^2 + (x(1380,1) - x(1320,1))^2);
+LAMBDA_MATRIX(174,144) = DISTANCE;
+
+DISTANCE = sqrt((x(1379,1) - x(1337,1))^2 + (x(1380,1) - x(1338,1))^2);
+LAMBDA_MATRIX(174,153) = DISTANCE;
+
+DISTANCE = sqrt((x(1337,1) - x(1379,1))^2 + (x(1338,1) - x(1380,1))^2);
+LAMBDA_MATRIX(153,174) = DISTANCE;
+
+DISTANCE = sqrt((x(1319,1) - x(1357,1))^2 + (x(1320,1) - x(1358,1))^2);
+LAMBDA_MATRIX(144,163) = DISTANCE;
+
+DISTANCE = sqrt((x(1357,1) - x(1319,1))^2 + (x(1358,1) - x(1320,1))^2);
+LAMBDA_MATRIX(163,144) = DISTANCE;
+
+DISTANCE = sqrt((x(1357,1) - x(1379,1))^2 + (x(1358,1) - x(1380,1))^2);
+LAMBDA_MATRIX(163,174) = DISTANCE;
+
+DISTANCE = sqrt((x(1379,1) - x(1357,1))^2 + (x(1380,1) - x(1358,1))^2);
+LAMBDA_MATRIX(174,163) = DISTANCE;
+
+DISTANCE = sqrt((x(1379,1) - x(1319,1))^2 + (x(1380,1) - x(1320,1))^2);
+LAMBDA_MATRIX(174,144) = DISTANCE;
+
+DISTANCE = sqrt((x(1319,1) - x(1379,1))^2 + (x(1320,1) - x(1380,1))^2);
+LAMBDA_MATRIX(144,174) = DISTANCE;
+
+DISTANCE = sqrt((x(1473,1) - x(1453,1))^2 + (x(1474,1) - x(1454,1))^2);
+LAMBDA_MATRIX(221,211) = DISTANCE;
+
+DISTANCE = sqrt((x(1453,1) - x(1473,1))^2 + (x(1454,1) - x(1474,1))^2);
+LAMBDA_MATRIX(211,221) = DISTANCE;
+
+DISTANCE = sqrt((x(1453,1) - x(1427,1))^2 + (x(1454,1) - x(1428,1))^2);
+LAMBDA_MATRIX(211,198) = DISTANCE;
+
+DISTANCE = sqrt((x(1427,1) - x(1453,1))^2 + (x(1428,1) - x(1454,1))^2);
+LAMBDA_MATRIX(198,211) = DISTANCE;
+
+DISTANCE = sqrt((x(1427,1) - x(1473,1))^2 + (x(1428,1) - x(1474,1))^2);
+LAMBDA_MATRIX(198,221) = DISTANCE;
+
+DISTANCE = sqrt((x(1473,1) - x(1427,1))^2 + (x(1474,1) - x(1428,1))^2);
+LAMBDA_MATRIX(221,198) = DISTANCE;
+
+DISTANCE = sqrt((x(1335,1) - x(1367,1))^2 + (x(1336,1) - x(1368,1))^2);
+LAMBDA_MATRIX(152,168) = DISTANCE;
+
+DISTANCE = sqrt((x(1367,1) - x(1335,1))^2 + (x(1368,1) - x(1336,1))^2);
+LAMBDA_MATRIX(168,152) = DISTANCE;
+
+DISTANCE = sqrt((x(1367,1) - x(1389,1))^2 + (x(1368,1) - x(1390,1))^2);
+LAMBDA_MATRIX(168,179) = DISTANCE;
+
+DISTANCE = sqrt((x(1389,1) - x(1367,1))^2 + (x(1390,1) - x(1368,1))^2);
+LAMBDA_MATRIX(179,168) = DISTANCE;
+
+DISTANCE = sqrt((x(1389,1) - x(1335,1))^2 + (x(1390,1) - x(1336,1))^2);
+LAMBDA_MATRIX(179,152) = DISTANCE;
+
+DISTANCE = sqrt((x(1335,1) - x(1389,1))^2 + (x(1336,1) - x(1390,1))^2);
+LAMBDA_MATRIX(152,179) = DISTANCE;
+
+DISTANCE = sqrt((x(1389,1) - x(1357,1))^2 + (x(1390,1) - x(1358,1))^2);
+LAMBDA_MATRIX(179,163) = DISTANCE;
+
+DISTANCE = sqrt((x(1357,1) - x(1389,1))^2 + (x(1358,1) - x(1390,1))^2);
+LAMBDA_MATRIX(163,179) = DISTANCE;
+
+DISTANCE = sqrt((x(1357,1) - x(1335,1))^2 + (x(1358,1) - x(1336,1))^2);
+LAMBDA_MATRIX(163,152) = DISTANCE;
+
+DISTANCE = sqrt((x(1335,1) - x(1357,1))^2 + (x(1336,1) - x(1358,1))^2);
+LAMBDA_MATRIX(152,163) = DISTANCE;
+
+DISTANCE = sqrt((x(1335,1) - x(1389,1))^2 + (x(1336,1) - x(1390,1))^2);
+LAMBDA_MATRIX(152,179) = DISTANCE;
+
+DISTANCE = sqrt((x(1389,1) - x(1335,1))^2 + (x(1390,1) - x(1336,1))^2);
+LAMBDA_MATRIX(179,152) = DISTANCE;
+
+DISTANCE = sqrt((x(1417,1) - x(1403,1))^2 + (x(1418,1) - x(1404,1))^2);
+LAMBDA_MATRIX(193,186) = DISTANCE;
+
+DISTANCE = sqrt((x(1403,1) - x(1417,1))^2 + (x(1404,1) - x(1418,1))^2);
+LAMBDA_MATRIX(186,193) = DISTANCE;
+
+DISTANCE = sqrt((x(1403,1) - x(1441,1))^2 + (x(1404,1) - x(1442,1))^2);
+LAMBDA_MATRIX(186,205) = DISTANCE;
+
+DISTANCE = sqrt((x(1441,1) - x(1403,1))^2 + (x(1442,1) - x(1404,1))^2);
+LAMBDA_MATRIX(205,186) = DISTANCE;
+
+DISTANCE = sqrt((x(1441,1) - x(1417,1))^2 + (x(1442,1) - x(1418,1))^2);
+LAMBDA_MATRIX(205,193) = DISTANCE;
+
+DISTANCE = sqrt((x(1417,1) - x(1441,1))^2 + (x(1418,1) - x(1442,1))^2);
+LAMBDA_MATRIX(193,205) = DISTANCE;
+
+DISTANCE = sqrt((x(1417,1) - x(1367,1))^2 + (x(1418,1) - x(1368,1))^2);
+LAMBDA_MATRIX(193,168) = DISTANCE;
+
+DISTANCE = sqrt((x(1367,1) - x(1417,1))^2 + (x(1368,1) - x(1418,1))^2);
+LAMBDA_MATRIX(168,193) = DISTANCE;
+
+DISTANCE = sqrt((x(1367,1) - x(1403,1))^2 + (x(1368,1) - x(1404,1))^2);
+LAMBDA_MATRIX(168,186) = DISTANCE;
+
+DISTANCE = sqrt((x(1403,1) - x(1367,1))^2 + (x(1404,1) - x(1368,1))^2);
+LAMBDA_MATRIX(186,168) = DISTANCE;
+
+DISTANCE = sqrt((x(1403,1) - x(1417,1))^2 + (x(1404,1) - x(1418,1))^2);
+LAMBDA_MATRIX(186,193) = DISTANCE;
+
+DISTANCE = sqrt((x(1417,1) - x(1403,1))^2 + (x(1418,1) - x(1404,1))^2);
+LAMBDA_MATRIX(193,186) = DISTANCE;
+
+DISTANCE = sqrt((x(1417,1) - x(1389,1))^2 + (x(1418,1) - x(1390,1))^2);
+LAMBDA_MATRIX(193,179) = DISTANCE;
+
+DISTANCE = sqrt((x(1389,1) - x(1417,1))^2 + (x(1390,1) - x(1418,1))^2);
+LAMBDA_MATRIX(179,193) = DISTANCE;
+
+DISTANCE = sqrt((x(1389,1) - x(1367,1))^2 + (x(1390,1) - x(1368,1))^2);
+LAMBDA_MATRIX(179,168) = DISTANCE;
+
+DISTANCE = sqrt((x(1367,1) - x(1389,1))^2 + (x(1368,1) - x(1390,1))^2);
+LAMBDA_MATRIX(168,179) = DISTANCE;
+
+DISTANCE = sqrt((x(1367,1) - x(1417,1))^2 + (x(1368,1) - x(1418,1))^2);
+LAMBDA_MATRIX(168,193) = DISTANCE;
+
+DISTANCE = sqrt((x(1417,1) - x(1367,1))^2 + (x(1418,1) - x(1368,1))^2);
+LAMBDA_MATRIX(193,168) = DISTANCE;
+
+DISTANCE = sqrt((x(1435,1) - x(1389,1))^2 + (x(1436,1) - x(1390,1))^2);
+LAMBDA_MATRIX(202,179) = DISTANCE;
+
+DISTANCE = sqrt((x(1389,1) - x(1435,1))^2 + (x(1390,1) - x(1436,1))^2);
+LAMBDA_MATRIX(179,202) = DISTANCE;
+
+DISTANCE = sqrt((x(1389,1) - x(1417,1))^2 + (x(1390,1) - x(1418,1))^2);
+LAMBDA_MATRIX(179,193) = DISTANCE;
+
+DISTANCE = sqrt((x(1417,1) - x(1389,1))^2 + (x(1418,1) - x(1390,1))^2);
+LAMBDA_MATRIX(193,179) = DISTANCE;
+
+DISTANCE = sqrt((x(1417,1) - x(1435,1))^2 + (x(1418,1) - x(1436,1))^2);
+LAMBDA_MATRIX(193,202) = DISTANCE;
+
+DISTANCE = sqrt((x(1435,1) - x(1417,1))^2 + (x(1436,1) - x(1418,1))^2);
+LAMBDA_MATRIX(202,193) = DISTANCE;
+
+DISTANCE = sqrt((x(1417,1) - x(1457,1))^2 + (x(1418,1) - x(1458,1))^2);
+LAMBDA_MATRIX(193,213) = DISTANCE;
+
+DISTANCE = sqrt((x(1457,1) - x(1417,1))^2 + (x(1458,1) - x(1418,1))^2);
+LAMBDA_MATRIX(213,193) = DISTANCE;
+
+DISTANCE = sqrt((x(1457,1) - x(1435,1))^2 + (x(1458,1) - x(1436,1))^2);
+LAMBDA_MATRIX(213,202) = DISTANCE;
+
+DISTANCE = sqrt((x(1435,1) - x(1457,1))^2 + (x(1436,1) - x(1458,1))^2);
+LAMBDA_MATRIX(202,213) = DISTANCE;
+
+DISTANCE = sqrt((x(1435,1) - x(1417,1))^2 + (x(1436,1) - x(1418,1))^2);
+LAMBDA_MATRIX(202,193) = DISTANCE;
+
+DISTANCE = sqrt((x(1417,1) - x(1435,1))^2 + (x(1418,1) - x(1436,1))^2);
+LAMBDA_MATRIX(193,202) = DISTANCE;
+
+DISTANCE = sqrt((x(1441,1) - x(1457,1))^2 + (x(1442,1) - x(1458,1))^2);
+LAMBDA_MATRIX(205,213) = DISTANCE;
+
+DISTANCE = sqrt((x(1457,1) - x(1441,1))^2 + (x(1458,1) - x(1442,1))^2);
+LAMBDA_MATRIX(213,205) = DISTANCE;
+
+DISTANCE = sqrt((x(1457,1) - x(1417,1))^2 + (x(1458,1) - x(1418,1))^2);
+LAMBDA_MATRIX(213,193) = DISTANCE;
+
+DISTANCE = sqrt((x(1417,1) - x(1457,1))^2 + (x(1418,1) - x(1458,1))^2);
+LAMBDA_MATRIX(193,213) = DISTANCE;
+
+DISTANCE = sqrt((x(1417,1) - x(1441,1))^2 + (x(1418,1) - x(1442,1))^2);
+LAMBDA_MATRIX(193,205) = DISTANCE;
+
+DISTANCE = sqrt((x(1441,1) - x(1417,1))^2 + (x(1442,1) - x(1418,1))^2);
+LAMBDA_MATRIX(205,193) = DISTANCE;
+
+DISTANCE = sqrt((x(1929,1) - x(1895,1))^2 + (x(1930,1) - x(1896,1))^2);
+LAMBDA_MATRIX(449,432) = DISTANCE;
+
+DISTANCE = sqrt((x(1895,1) - x(1929,1))^2 + (x(1896,1) - x(1930,1))^2);
+LAMBDA_MATRIX(432,449) = DISTANCE;
+
+DISTANCE = sqrt((x(1895,1) - x(1949,1))^2 + (x(1896,1) - x(1950,1))^2);
+LAMBDA_MATRIX(432,459) = DISTANCE;
+
+DISTANCE = sqrt((x(1949,1) - x(1895,1))^2 + (x(1950,1) - x(1896,1))^2);
+LAMBDA_MATRIX(459,432) = DISTANCE;
+
+DISTANCE = sqrt((x(1949,1) - x(1929,1))^2 + (x(1950,1) - x(1930,1))^2);
+LAMBDA_MATRIX(459,449) = DISTANCE;
+
+DISTANCE = sqrt((x(1929,1) - x(1949,1))^2 + (x(1930,1) - x(1950,1))^2);
+LAMBDA_MATRIX(449,459) = DISTANCE;
+
+DISTANCE = sqrt((x(1949,1) - x(2015,1))^2 + (x(1950,1) - x(2016,1))^2);
+LAMBDA_MATRIX(459,492) = DISTANCE;
+
+DISTANCE = sqrt((x(2015,1) - x(1949,1))^2 + (x(2016,1) - x(1950,1))^2);
+LAMBDA_MATRIX(492,459) = DISTANCE;
+
+DISTANCE = sqrt((x(2015,1) - x(1977,1))^2 + (x(2016,1) - x(1978,1))^2);
+LAMBDA_MATRIX(492,473) = DISTANCE;
+
+DISTANCE = sqrt((x(1977,1) - x(2015,1))^2 + (x(1978,1) - x(2016,1))^2);
+LAMBDA_MATRIX(473,492) = DISTANCE;
+
+DISTANCE = sqrt((x(1977,1) - x(1949,1))^2 + (x(1978,1) - x(1950,1))^2);
+LAMBDA_MATRIX(473,459) = DISTANCE;
+
+DISTANCE = sqrt((x(1949,1) - x(1977,1))^2 + (x(1950,1) - x(1978,1))^2);
+LAMBDA_MATRIX(459,473) = DISTANCE;
+
+DISTANCE = sqrt((x(1977,1) - x(1929,1))^2 + (x(1978,1) - x(1930,1))^2);
+LAMBDA_MATRIX(473,449) = DISTANCE;
+
+DISTANCE = sqrt((x(1929,1) - x(1977,1))^2 + (x(1930,1) - x(1978,1))^2);
+LAMBDA_MATRIX(449,473) = DISTANCE;
+
+DISTANCE = sqrt((x(1929,1) - x(1949,1))^2 + (x(1930,1) - x(1950,1))^2);
+LAMBDA_MATRIX(449,459) = DISTANCE;
+
+DISTANCE = sqrt((x(1949,1) - x(1929,1))^2 + (x(1950,1) - x(1930,1))^2);
+LAMBDA_MATRIX(459,449) = DISTANCE;
+
+DISTANCE = sqrt((x(1949,1) - x(1977,1))^2 + (x(1950,1) - x(1978,1))^2);
+LAMBDA_MATRIX(459,473) = DISTANCE;
+
+DISTANCE = sqrt((x(1977,1) - x(1949,1))^2 + (x(1978,1) - x(1950,1))^2);
+LAMBDA_MATRIX(473,459) = DISTANCE;
+
+DISTANCE = sqrt((x(1975,1) - x(2015,1))^2 + (x(1976,1) - x(2016,1))^2);
+LAMBDA_MATRIX(472,492) = DISTANCE;
+
+DISTANCE = sqrt((x(2015,1) - x(1975,1))^2 + (x(2016,1) - x(1976,1))^2);
+LAMBDA_MATRIX(492,472) = DISTANCE;
+
+DISTANCE = sqrt((x(2015,1) - x(1949,1))^2 + (x(2016,1) - x(1950,1))^2);
+LAMBDA_MATRIX(492,459) = DISTANCE;
+
+DISTANCE = sqrt((x(1949,1) - x(2015,1))^2 + (x(1950,1) - x(2016,1))^2);
+LAMBDA_MATRIX(459,492) = DISTANCE;
+
+DISTANCE = sqrt((x(1949,1) - x(1975,1))^2 + (x(1950,1) - x(1976,1))^2);
+LAMBDA_MATRIX(459,472) = DISTANCE;
+
+DISTANCE = sqrt((x(1975,1) - x(1949,1))^2 + (x(1976,1) - x(1950,1))^2);
+LAMBDA_MATRIX(472,459) = DISTANCE;
+
+DISTANCE = sqrt((x(1891,1) - x(1937,1))^2 + (x(1892,1) - x(1938,1))^2);
+LAMBDA_MATRIX(430,453) = DISTANCE;
+
+DISTANCE = sqrt((x(1937,1) - x(1891,1))^2 + (x(1938,1) - x(1892,1))^2);
+LAMBDA_MATRIX(453,430) = DISTANCE;
+
+DISTANCE = sqrt((x(1937,1) - x(1925,1))^2 + (x(1938,1) - x(1926,1))^2);
+LAMBDA_MATRIX(453,447) = DISTANCE;
+
+DISTANCE = sqrt((x(1925,1) - x(1937,1))^2 + (x(1926,1) - x(1938,1))^2);
+LAMBDA_MATRIX(447,453) = DISTANCE;
+
+DISTANCE = sqrt((x(1925,1) - x(1891,1))^2 + (x(1926,1) - x(1892,1))^2);
+LAMBDA_MATRIX(447,430) = DISTANCE;
+
+DISTANCE = sqrt((x(1891,1) - x(1925,1))^2 + (x(1892,1) - x(1926,1))^2);
+LAMBDA_MATRIX(430,447) = DISTANCE;
+
+DISTANCE = sqrt((x(1925,1) - x(1949,1))^2 + (x(1926,1) - x(1950,1))^2);
+LAMBDA_MATRIX(447,459) = DISTANCE;
+
+DISTANCE = sqrt((x(1949,1) - x(1925,1))^2 + (x(1950,1) - x(1926,1))^2);
+LAMBDA_MATRIX(459,447) = DISTANCE;
+
+DISTANCE = sqrt((x(1949,1) - x(1895,1))^2 + (x(1950,1) - x(1896,1))^2);
+LAMBDA_MATRIX(459,432) = DISTANCE;
+
+DISTANCE = sqrt((x(1895,1) - x(1949,1))^2 + (x(1896,1) - x(1950,1))^2);
+LAMBDA_MATRIX(432,459) = DISTANCE;
+
+DISTANCE = sqrt((x(1895,1) - x(1925,1))^2 + (x(1896,1) - x(1926,1))^2);
+LAMBDA_MATRIX(432,447) = DISTANCE;
+
+DISTANCE = sqrt((x(1925,1) - x(1895,1))^2 + (x(1926,1) - x(1896,1))^2);
+LAMBDA_MATRIX(447,432) = DISTANCE;
+
+DISTANCE = sqrt((x(1925,1) - x(1937,1))^2 + (x(1926,1) - x(1938,1))^2);
+LAMBDA_MATRIX(447,453) = DISTANCE;
+
+DISTANCE = sqrt((x(1937,1) - x(1925,1))^2 + (x(1938,1) - x(1926,1))^2);
+LAMBDA_MATRIX(453,447) = DISTANCE;
+
+DISTANCE = sqrt((x(1937,1) - x(1975,1))^2 + (x(1938,1) - x(1976,1))^2);
+LAMBDA_MATRIX(453,472) = DISTANCE;
+
+DISTANCE = sqrt((x(1975,1) - x(1937,1))^2 + (x(1976,1) - x(1938,1))^2);
+LAMBDA_MATRIX(472,453) = DISTANCE;
+
+DISTANCE = sqrt((x(1975,1) - x(1925,1))^2 + (x(1976,1) - x(1926,1))^2);
+LAMBDA_MATRIX(472,447) = DISTANCE;
+
+DISTANCE = sqrt((x(1925,1) - x(1975,1))^2 + (x(1926,1) - x(1976,1))^2);
+LAMBDA_MATRIX(447,472) = DISTANCE;
+
+DISTANCE = sqrt((x(1975,1) - x(1949,1))^2 + (x(1976,1) - x(1950,1))^2);
+LAMBDA_MATRIX(472,459) = DISTANCE;
+
+DISTANCE = sqrt((x(1949,1) - x(1975,1))^2 + (x(1950,1) - x(1976,1))^2);
+LAMBDA_MATRIX(459,472) = DISTANCE;
+
+DISTANCE = sqrt((x(1949,1) - x(1925,1))^2 + (x(1950,1) - x(1926,1))^2);
+LAMBDA_MATRIX(459,447) = DISTANCE;
+
+DISTANCE = sqrt((x(1925,1) - x(1949,1))^2 + (x(1926,1) - x(1950,1))^2);
+LAMBDA_MATRIX(447,459) = DISTANCE;
+
+DISTANCE = sqrt((x(1925,1) - x(1975,1))^2 + (x(1926,1) - x(1976,1))^2);
+LAMBDA_MATRIX(447,472) = DISTANCE;
+
+DISTANCE = sqrt((x(1975,1) - x(1925,1))^2 + (x(1976,1) - x(1926,1))^2);
+LAMBDA_MATRIX(472,447) = DISTANCE;
+
+DISTANCE = sqrt((x(1867,1) - x(1837,1))^2 + (x(1868,1) - x(1838,1))^2);
+LAMBDA_MATRIX(418,403) = DISTANCE;
+
+DISTANCE = sqrt((x(1837,1) - x(1867,1))^2 + (x(1838,1) - x(1868,1))^2);
+LAMBDA_MATRIX(403,418) = DISTANCE;
+
+DISTANCE = sqrt((x(1837,1) - x(1891,1))^2 + (x(1838,1) - x(1892,1))^2);
+LAMBDA_MATRIX(403,430) = DISTANCE;
+
+DISTANCE = sqrt((x(1891,1) - x(1837,1))^2 + (x(1892,1) - x(1838,1))^2);
+LAMBDA_MATRIX(430,403) = DISTANCE;
+
+DISTANCE = sqrt((x(1891,1) - x(1867,1))^2 + (x(1892,1) - x(1868,1))^2);
+LAMBDA_MATRIX(430,418) = DISTANCE;
+
+DISTANCE = sqrt((x(1867,1) - x(1891,1))^2 + (x(1868,1) - x(1892,1))^2);
+LAMBDA_MATRIX(418,430) = DISTANCE;
+
+DISTANCE = sqrt((x(1895,1) - x(1843,1))^2 + (x(1896,1) - x(1844,1))^2);
+LAMBDA_MATRIX(432,406) = DISTANCE;
+
+DISTANCE = sqrt((x(1843,1) - x(1895,1))^2 + (x(1844,1) - x(1896,1))^2);
+LAMBDA_MATRIX(406,432) = DISTANCE;
+
+DISTANCE = sqrt((x(1843,1) - x(1867,1))^2 + (x(1844,1) - x(1868,1))^2);
+LAMBDA_MATRIX(406,418) = DISTANCE;
+
+DISTANCE = sqrt((x(1867,1) - x(1843,1))^2 + (x(1868,1) - x(1844,1))^2);
+LAMBDA_MATRIX(418,406) = DISTANCE;
+
+DISTANCE = sqrt((x(1867,1) - x(1895,1))^2 + (x(1868,1) - x(1896,1))^2);
+LAMBDA_MATRIX(418,432) = DISTANCE;
+
+DISTANCE = sqrt((x(1895,1) - x(1867,1))^2 + (x(1896,1) - x(1868,1))^2);
+LAMBDA_MATRIX(432,418) = DISTANCE;
+
+DISTANCE = sqrt((x(1891,1) - x(1925,1))^2 + (x(1892,1) - x(1926,1))^2);
+LAMBDA_MATRIX(430,447) = DISTANCE;
+
+DISTANCE = sqrt((x(1925,1) - x(1891,1))^2 + (x(1926,1) - x(1892,1))^2);
+LAMBDA_MATRIX(447,430) = DISTANCE;
+
+DISTANCE = sqrt((x(1925,1) - x(1867,1))^2 + (x(1926,1) - x(1868,1))^2);
+LAMBDA_MATRIX(447,418) = DISTANCE;
+
+DISTANCE = sqrt((x(1867,1) - x(1925,1))^2 + (x(1868,1) - x(1926,1))^2);
+LAMBDA_MATRIX(418,447) = DISTANCE;
+
+DISTANCE = sqrt((x(1867,1) - x(1891,1))^2 + (x(1868,1) - x(1892,1))^2);
+LAMBDA_MATRIX(418,430) = DISTANCE;
+
+DISTANCE = sqrt((x(1891,1) - x(1867,1))^2 + (x(1892,1) - x(1868,1))^2);
+LAMBDA_MATRIX(430,418) = DISTANCE;
+
+DISTANCE = sqrt((x(1867,1) - x(1925,1))^2 + (x(1868,1) - x(1926,1))^2);
+LAMBDA_MATRIX(418,447) = DISTANCE;
+
+DISTANCE = sqrt((x(1925,1) - x(1867,1))^2 + (x(1926,1) - x(1868,1))^2);
+LAMBDA_MATRIX(447,418) = DISTANCE;
+
+DISTANCE = sqrt((x(1925,1) - x(1895,1))^2 + (x(1926,1) - x(1896,1))^2);
+LAMBDA_MATRIX(447,432) = DISTANCE;
+
+DISTANCE = sqrt((x(1895,1) - x(1925,1))^2 + (x(1896,1) - x(1926,1))^2);
+LAMBDA_MATRIX(432,447) = DISTANCE;
+
+DISTANCE = sqrt((x(1895,1) - x(1867,1))^2 + (x(1896,1) - x(1868,1))^2);
+LAMBDA_MATRIX(432,418) = DISTANCE;
+
+DISTANCE = sqrt((x(1867,1) - x(1895,1))^2 + (x(1868,1) - x(1896,1))^2);
+LAMBDA_MATRIX(418,432) = DISTANCE;
+
+DISTANCE = sqrt((x(1779,1) - x(1837,1))^2 + (x(1780,1) - x(1838,1))^2);
+LAMBDA_MATRIX(374,403) = DISTANCE;
+
+DISTANCE = sqrt((x(1837,1) - x(1779,1))^2 + (x(1838,1) - x(1780,1))^2);
+LAMBDA_MATRIX(403,374) = DISTANCE;
+
+DISTANCE = sqrt((x(1837,1) - x(1811,1))^2 + (x(1838,1) - x(1812,1))^2);
+LAMBDA_MATRIX(403,390) = DISTANCE;
+
+DISTANCE = sqrt((x(1811,1) - x(1837,1))^2 + (x(1812,1) - x(1838,1))^2);
+LAMBDA_MATRIX(390,403) = DISTANCE;
+
+DISTANCE = sqrt((x(1811,1) - x(1779,1))^2 + (x(1812,1) - x(1780,1))^2);
+LAMBDA_MATRIX(390,374) = DISTANCE;
+
+DISTANCE = sqrt((x(1779,1) - x(1811,1))^2 + (x(1780,1) - x(1812,1))^2);
+LAMBDA_MATRIX(374,390) = DISTANCE;
+
+DISTANCE = sqrt((x(1811,1) - x(1751,1))^2 + (x(1812,1) - x(1752,1))^2);
+LAMBDA_MATRIX(390,360) = DISTANCE;
+
+DISTANCE = sqrt((x(1751,1) - x(1811,1))^2 + (x(1752,1) - x(1812,1))^2);
+LAMBDA_MATRIX(360,390) = DISTANCE;
+
+DISTANCE = sqrt((x(1751,1) - x(1779,1))^2 + (x(1752,1) - x(1780,1))^2);
+LAMBDA_MATRIX(360,374) = DISTANCE;
+
+DISTANCE = sqrt((x(1779,1) - x(1751,1))^2 + (x(1780,1) - x(1752,1))^2);
+LAMBDA_MATRIX(374,360) = DISTANCE;
+
+DISTANCE = sqrt((x(1779,1) - x(1811,1))^2 + (x(1780,1) - x(1812,1))^2);
+LAMBDA_MATRIX(374,390) = DISTANCE;
+
+DISTANCE = sqrt((x(1811,1) - x(1779,1))^2 + (x(1812,1) - x(1780,1))^2);
+LAMBDA_MATRIX(390,374) = DISTANCE;
+
+DISTANCE = sqrt((x(1783,1) - x(1751,1))^2 + (x(1784,1) - x(1752,1))^2);
+LAMBDA_MATRIX(376,360) = DISTANCE;
+
+DISTANCE = sqrt((x(1751,1) - x(1783,1))^2 + (x(1752,1) - x(1784,1))^2);
+LAMBDA_MATRIX(360,376) = DISTANCE;
+
+DISTANCE = sqrt((x(1751,1) - x(1811,1))^2 + (x(1752,1) - x(1812,1))^2);
+LAMBDA_MATRIX(360,390) = DISTANCE;
+
+DISTANCE = sqrt((x(1811,1) - x(1751,1))^2 + (x(1812,1) - x(1752,1))^2);
+LAMBDA_MATRIX(390,360) = DISTANCE;
+
+DISTANCE = sqrt((x(1811,1) - x(1783,1))^2 + (x(1812,1) - x(1784,1))^2);
+LAMBDA_MATRIX(390,376) = DISTANCE;
+
+DISTANCE = sqrt((x(1783,1) - x(1811,1))^2 + (x(1784,1) - x(1812,1))^2);
+LAMBDA_MATRIX(376,390) = DISTANCE;
+
+DISTANCE = sqrt((x(1811,1) - x(1843,1))^2 + (x(1812,1) - x(1844,1))^2);
+LAMBDA_MATRIX(390,406) = DISTANCE;
+
+DISTANCE = sqrt((x(1843,1) - x(1811,1))^2 + (x(1844,1) - x(1812,1))^2);
+LAMBDA_MATRIX(406,390) = DISTANCE;
+
+DISTANCE = sqrt((x(1843,1) - x(1783,1))^2 + (x(1844,1) - x(1784,1))^2);
+LAMBDA_MATRIX(406,376) = DISTANCE;
+
+DISTANCE = sqrt((x(1783,1) - x(1843,1))^2 + (x(1784,1) - x(1844,1))^2);
+LAMBDA_MATRIX(376,406) = DISTANCE;
+
+DISTANCE = sqrt((x(1783,1) - x(1811,1))^2 + (x(1784,1) - x(1812,1))^2);
+LAMBDA_MATRIX(376,390) = DISTANCE;
+
+DISTANCE = sqrt((x(1811,1) - x(1783,1))^2 + (x(1812,1) - x(1784,1))^2);
+LAMBDA_MATRIX(390,376) = DISTANCE;
+
+DISTANCE = sqrt((x(1811,1) - x(1867,1))^2 + (x(1812,1) - x(1868,1))^2);
+LAMBDA_MATRIX(390,418) = DISTANCE;
+
+DISTANCE = sqrt((x(1867,1) - x(1811,1))^2 + (x(1868,1) - x(1812,1))^2);
+LAMBDA_MATRIX(418,390) = DISTANCE;
+
+DISTANCE = sqrt((x(1867,1) - x(1843,1))^2 + (x(1868,1) - x(1844,1))^2);
+LAMBDA_MATRIX(418,406) = DISTANCE;
+
+DISTANCE = sqrt((x(1843,1) - x(1867,1))^2 + (x(1844,1) - x(1868,1))^2);
+LAMBDA_MATRIX(406,418) = DISTANCE;
+
+DISTANCE = sqrt((x(1843,1) - x(1811,1))^2 + (x(1844,1) - x(1812,1))^2);
+LAMBDA_MATRIX(406,390) = DISTANCE;
+
+DISTANCE = sqrt((x(1811,1) - x(1843,1))^2 + (x(1812,1) - x(1844,1))^2);
+LAMBDA_MATRIX(390,406) = DISTANCE;
+
+DISTANCE = sqrt((x(1837,1) - x(1867,1))^2 + (x(1838,1) - x(1868,1))^2);
+LAMBDA_MATRIX(403,418) = DISTANCE;
+
+DISTANCE = sqrt((x(1867,1) - x(1837,1))^2 + (x(1868,1) - x(1838,1))^2);
+LAMBDA_MATRIX(418,403) = DISTANCE;
+
+DISTANCE = sqrt((x(1867,1) - x(1811,1))^2 + (x(1868,1) - x(1812,1))^2);
+LAMBDA_MATRIX(418,390) = DISTANCE;
+
+DISTANCE = sqrt((x(1811,1) - x(1867,1))^2 + (x(1812,1) - x(1868,1))^2);
+LAMBDA_MATRIX(390,418) = DISTANCE;
+
+DISTANCE = sqrt((x(1811,1) - x(1837,1))^2 + (x(1812,1) - x(1838,1))^2);
+LAMBDA_MATRIX(390,403) = DISTANCE;
+
+DISTANCE = sqrt((x(1837,1) - x(1811,1))^2 + (x(1838,1) - x(1812,1))^2);
+LAMBDA_MATRIX(403,390) = DISTANCE;
+
+DISTANCE = sqrt((x(1855,1) - x(1803,1))^2 + (x(1856,1) - x(1804,1))^2);
+LAMBDA_MATRIX(412,386) = DISTANCE;
+
+DISTANCE = sqrt((x(1803,1) - x(1855,1))^2 + (x(1804,1) - x(1856,1))^2);
+LAMBDA_MATRIX(386,412) = DISTANCE;
+
+DISTANCE = sqrt((x(1803,1) - x(1827,1))^2 + (x(1804,1) - x(1828,1))^2);
+LAMBDA_MATRIX(386,398) = DISTANCE;
+
+DISTANCE = sqrt((x(1827,1) - x(1803,1))^2 + (x(1828,1) - x(1804,1))^2);
+LAMBDA_MATRIX(398,386) = DISTANCE;
+
+DISTANCE = sqrt((x(1827,1) - x(1855,1))^2 + (x(1828,1) - x(1856,1))^2);
+LAMBDA_MATRIX(398,412) = DISTANCE;
+
+DISTANCE = sqrt((x(1855,1) - x(1827,1))^2 + (x(1856,1) - x(1828,1))^2);
+LAMBDA_MATRIX(412,398) = DISTANCE;
+
+DISTANCE = sqrt((x(1855,1) - x(1837,1))^2 + (x(1856,1) - x(1838,1))^2);
+LAMBDA_MATRIX(412,403) = DISTANCE;
+
+DISTANCE = sqrt((x(1837,1) - x(1855,1))^2 + (x(1838,1) - x(1856,1))^2);
+LAMBDA_MATRIX(403,412) = DISTANCE;
+
+DISTANCE = sqrt((x(1837,1) - x(1803,1))^2 + (x(1838,1) - x(1804,1))^2);
+LAMBDA_MATRIX(403,386) = DISTANCE;
+
+DISTANCE = sqrt((x(1803,1) - x(1837,1))^2 + (x(1804,1) - x(1838,1))^2);
+LAMBDA_MATRIX(386,403) = DISTANCE;
+
+DISTANCE = sqrt((x(1803,1) - x(1855,1))^2 + (x(1804,1) - x(1856,1))^2);
+LAMBDA_MATRIX(386,412) = DISTANCE;
+
+DISTANCE = sqrt((x(1855,1) - x(1803,1))^2 + (x(1856,1) - x(1804,1))^2);
+LAMBDA_MATRIX(412,386) = DISTANCE;
+
+DISTANCE = sqrt((x(1827,1) - x(1881,1))^2 + (x(1828,1) - x(1882,1))^2);
+LAMBDA_MATRIX(398,425) = DISTANCE;
+
+DISTANCE = sqrt((x(1881,1) - x(1827,1))^2 + (x(1882,1) - x(1828,1))^2);
+LAMBDA_MATRIX(425,398) = DISTANCE;
+
+DISTANCE = sqrt((x(1881,1) - x(1855,1))^2 + (x(1882,1) - x(1856,1))^2);
+LAMBDA_MATRIX(425,412) = DISTANCE;
+
+DISTANCE = sqrt((x(1855,1) - x(1881,1))^2 + (x(1856,1) - x(1882,1))^2);
+LAMBDA_MATRIX(412,425) = DISTANCE;
+
+DISTANCE = sqrt((x(1855,1) - x(1827,1))^2 + (x(1856,1) - x(1828,1))^2);
+LAMBDA_MATRIX(412,398) = DISTANCE;
+
+DISTANCE = sqrt((x(1827,1) - x(1855,1))^2 + (x(1828,1) - x(1856,1))^2);
+LAMBDA_MATRIX(398,412) = DISTANCE;
+
+DISTANCE = sqrt((x(1881,1) - x(1905,1))^2 + (x(1882,1) - x(1906,1))^2);
+LAMBDA_MATRIX(425,437) = DISTANCE;
+
+DISTANCE = sqrt((x(1905,1) - x(1881,1))^2 + (x(1906,1) - x(1882,1))^2);
+LAMBDA_MATRIX(437,425) = DISTANCE;
+
+DISTANCE = sqrt((x(1905,1) - x(1855,1))^2 + (x(1906,1) - x(1856,1))^2);
+LAMBDA_MATRIX(437,412) = DISTANCE;
+
+DISTANCE = sqrt((x(1855,1) - x(1905,1))^2 + (x(1856,1) - x(1906,1))^2);
+LAMBDA_MATRIX(412,437) = DISTANCE;
+
+DISTANCE = sqrt((x(1855,1) - x(1881,1))^2 + (x(1856,1) - x(1882,1))^2);
+LAMBDA_MATRIX(412,425) = DISTANCE;
+
+DISTANCE = sqrt((x(1881,1) - x(1855,1))^2 + (x(1882,1) - x(1856,1))^2);
+LAMBDA_MATRIX(425,412) = DISTANCE;
+
+DISTANCE = sqrt((x(1891,1) - x(1837,1))^2 + (x(1892,1) - x(1838,1))^2);
+LAMBDA_MATRIX(430,403) = DISTANCE;
+
+DISTANCE = sqrt((x(1837,1) - x(1891,1))^2 + (x(1838,1) - x(1892,1))^2);
+LAMBDA_MATRIX(403,430) = DISTANCE;
+
+DISTANCE = sqrt((x(1837,1) - x(1855,1))^2 + (x(1838,1) - x(1856,1))^2);
+LAMBDA_MATRIX(403,412) = DISTANCE;
+
+DISTANCE = sqrt((x(1855,1) - x(1837,1))^2 + (x(1856,1) - x(1838,1))^2);
+LAMBDA_MATRIX(412,403) = DISTANCE;
+
+DISTANCE = sqrt((x(1855,1) - x(1891,1))^2 + (x(1856,1) - x(1892,1))^2);
+LAMBDA_MATRIX(412,430) = DISTANCE;
+
+DISTANCE = sqrt((x(1891,1) - x(1855,1))^2 + (x(1892,1) - x(1856,1))^2);
+LAMBDA_MATRIX(430,412) = DISTANCE;
+
+DISTANCE = sqrt((x(1855,1) - x(1905,1))^2 + (x(1856,1) - x(1906,1))^2);
+LAMBDA_MATRIX(412,437) = DISTANCE;
+
+DISTANCE = sqrt((x(1905,1) - x(1855,1))^2 + (x(1906,1) - x(1856,1))^2);
+LAMBDA_MATRIX(437,412) = DISTANCE;
+
+DISTANCE = sqrt((x(1905,1) - x(1891,1))^2 + (x(1906,1) - x(1892,1))^2);
+LAMBDA_MATRIX(437,430) = DISTANCE;
+
+DISTANCE = sqrt((x(1891,1) - x(1905,1))^2 + (x(1892,1) - x(1906,1))^2);
+LAMBDA_MATRIX(430,437) = DISTANCE;
+
+DISTANCE = sqrt((x(1891,1) - x(1855,1))^2 + (x(1892,1) - x(1856,1))^2);
+LAMBDA_MATRIX(430,412) = DISTANCE;
+
+DISTANCE = sqrt((x(1855,1) - x(1891,1))^2 + (x(1856,1) - x(1892,1))^2);
+LAMBDA_MATRIX(412,430) = DISTANCE;
+
+DISTANCE = sqrt((x(1711,1) - x(1679,1))^2 + (x(1712,1) - x(1680,1))^2);
+LAMBDA_MATRIX(340,324) = DISTANCE;
+
+DISTANCE = sqrt((x(1679,1) - x(1711,1))^2 + (x(1680,1) - x(1712,1))^2);
+LAMBDA_MATRIX(324,340) = DISTANCE;
+
+DISTANCE = sqrt((x(1679,1) - x(1669,1))^2 + (x(1680,1) - x(1670,1))^2);
+LAMBDA_MATRIX(324,319) = DISTANCE;
+
+DISTANCE = sqrt((x(1669,1) - x(1679,1))^2 + (x(1670,1) - x(1680,1))^2);
+LAMBDA_MATRIX(319,324) = DISTANCE;
+
+DISTANCE = sqrt((x(1669,1) - x(1711,1))^2 + (x(1670,1) - x(1712,1))^2);
+LAMBDA_MATRIX(319,340) = DISTANCE;
+
+DISTANCE = sqrt((x(1711,1) - x(1669,1))^2 + (x(1712,1) - x(1670,1))^2);
+LAMBDA_MATRIX(340,319) = DISTANCE;
+
+DISTANCE = sqrt((x(1711,1) - x(1733,1))^2 + (x(1712,1) - x(1734,1))^2);
+LAMBDA_MATRIX(340,351) = DISTANCE;
+
+DISTANCE = sqrt((x(1733,1) - x(1711,1))^2 + (x(1734,1) - x(1712,1))^2);
+LAMBDA_MATRIX(351,340) = DISTANCE;
+
+DISTANCE = sqrt((x(1733,1) - x(1679,1))^2 + (x(1734,1) - x(1680,1))^2);
+LAMBDA_MATRIX(351,324) = DISTANCE;
+
+DISTANCE = sqrt((x(1679,1) - x(1733,1))^2 + (x(1680,1) - x(1734,1))^2);
+LAMBDA_MATRIX(324,351) = DISTANCE;
+
+DISTANCE = sqrt((x(1679,1) - x(1711,1))^2 + (x(1680,1) - x(1712,1))^2);
+LAMBDA_MATRIX(324,340) = DISTANCE;
+
+DISTANCE = sqrt((x(1711,1) - x(1679,1))^2 + (x(1712,1) - x(1680,1))^2);
+LAMBDA_MATRIX(340,324) = DISTANCE;
+
+DISTANCE = sqrt((x(1711,1) - x(1669,1))^2 + (x(1712,1) - x(1670,1))^2);
+LAMBDA_MATRIX(340,319) = DISTANCE;
+
+DISTANCE = sqrt((x(1669,1) - x(1711,1))^2 + (x(1670,1) - x(1712,1))^2);
+LAMBDA_MATRIX(319,340) = DISTANCE;
+
+DISTANCE = sqrt((x(1669,1) - x(1695,1))^2 + (x(1670,1) - x(1696,1))^2);
+LAMBDA_MATRIX(319,332) = DISTANCE;
+
+DISTANCE = sqrt((x(1695,1) - x(1669,1))^2 + (x(1696,1) - x(1670,1))^2);
+LAMBDA_MATRIX(332,319) = DISTANCE;
+
+DISTANCE = sqrt((x(1695,1) - x(1711,1))^2 + (x(1696,1) - x(1712,1))^2);
+LAMBDA_MATRIX(332,340) = DISTANCE;
+
+DISTANCE = sqrt((x(1711,1) - x(1695,1))^2 + (x(1712,1) - x(1696,1))^2);
+LAMBDA_MATRIX(340,332) = DISTANCE;
+
+DISTANCE = sqrt((x(1767,1) - x(1733,1))^2 + (x(1768,1) - x(1734,1))^2);
+LAMBDA_MATRIX(368,351) = DISTANCE;
+
+DISTANCE = sqrt((x(1733,1) - x(1767,1))^2 + (x(1734,1) - x(1768,1))^2);
+LAMBDA_MATRIX(351,368) = DISTANCE;
+
+DISTANCE = sqrt((x(1733,1) - x(1787,1))^2 + (x(1734,1) - x(1788,1))^2);
+LAMBDA_MATRIX(351,378) = DISTANCE;
+
+DISTANCE = sqrt((x(1787,1) - x(1733,1))^2 + (x(1788,1) - x(1734,1))^2);
+LAMBDA_MATRIX(378,351) = DISTANCE;
+
+DISTANCE = sqrt((x(1787,1) - x(1767,1))^2 + (x(1788,1) - x(1768,1))^2);
+LAMBDA_MATRIX(378,368) = DISTANCE;
+
+DISTANCE = sqrt((x(1767,1) - x(1787,1))^2 + (x(1768,1) - x(1788,1))^2);
+LAMBDA_MATRIX(368,378) = DISTANCE;
+
+DISTANCE = sqrt((x(1817,1) - x(1795,1))^2 + (x(1818,1) - x(1796,1))^2);
+LAMBDA_MATRIX(393,382) = DISTANCE;
+
+DISTANCE = sqrt((x(1795,1) - x(1817,1))^2 + (x(1796,1) - x(1818,1))^2);
+LAMBDA_MATRIX(382,393) = DISTANCE;
+
+DISTANCE = sqrt((x(1795,1) - x(1767,1))^2 + (x(1796,1) - x(1768,1))^2);
+LAMBDA_MATRIX(382,368) = DISTANCE;
+
+DISTANCE = sqrt((x(1767,1) - x(1795,1))^2 + (x(1768,1) - x(1796,1))^2);
+LAMBDA_MATRIX(368,382) = DISTANCE;
+
+DISTANCE = sqrt((x(1767,1) - x(1817,1))^2 + (x(1768,1) - x(1818,1))^2);
+LAMBDA_MATRIX(368,393) = DISTANCE;
+
+DISTANCE = sqrt((x(1817,1) - x(1767,1))^2 + (x(1818,1) - x(1768,1))^2);
+LAMBDA_MATRIX(393,368) = DISTANCE;
+
+DISTANCE = sqrt((x(1817,1) - x(1787,1))^2 + (x(1818,1) - x(1788,1))^2);
+LAMBDA_MATRIX(393,378) = DISTANCE;
+
+DISTANCE = sqrt((x(1787,1) - x(1817,1))^2 + (x(1788,1) - x(1818,1))^2);
+LAMBDA_MATRIX(378,393) = DISTANCE;
+
+DISTANCE = sqrt((x(1787,1) - x(1839,1))^2 + (x(1788,1) - x(1840,1))^2);
+LAMBDA_MATRIX(378,404) = DISTANCE;
+
+DISTANCE = sqrt((x(1839,1) - x(1787,1))^2 + (x(1840,1) - x(1788,1))^2);
+LAMBDA_MATRIX(404,378) = DISTANCE;
+
+DISTANCE = sqrt((x(1839,1) - x(1817,1))^2 + (x(1840,1) - x(1818,1))^2);
+LAMBDA_MATRIX(404,393) = DISTANCE;
+
+DISTANCE = sqrt((x(1817,1) - x(1839,1))^2 + (x(1818,1) - x(1840,1))^2);
+LAMBDA_MATRIX(393,404) = DISTANCE;
+
+DISTANCE = sqrt((x(1767,1) - x(1787,1))^2 + (x(1768,1) - x(1788,1))^2);
+LAMBDA_MATRIX(368,378) = DISTANCE;
+
+DISTANCE = sqrt((x(1787,1) - x(1767,1))^2 + (x(1788,1) - x(1768,1))^2);
+LAMBDA_MATRIX(378,368) = DISTANCE;
+
+DISTANCE = sqrt((x(1787,1) - x(1817,1))^2 + (x(1788,1) - x(1818,1))^2);
+LAMBDA_MATRIX(378,393) = DISTANCE;
+
+DISTANCE = sqrt((x(1817,1) - x(1787,1))^2 + (x(1818,1) - x(1788,1))^2);
+LAMBDA_MATRIX(393,378) = DISTANCE;
+
+DISTANCE = sqrt((x(1817,1) - x(1767,1))^2 + (x(1818,1) - x(1768,1))^2);
+LAMBDA_MATRIX(393,368) = DISTANCE;
+
+DISTANCE = sqrt((x(1767,1) - x(1817,1))^2 + (x(1768,1) - x(1818,1))^2);
+LAMBDA_MATRIX(368,393) = DISTANCE;
+
+DISTANCE = sqrt((x(1847,1) - x(1795,1))^2 + (x(1848,1) - x(1796,1))^2);
+LAMBDA_MATRIX(408,382) = DISTANCE;
+
+DISTANCE = sqrt((x(1795,1) - x(1847,1))^2 + (x(1796,1) - x(1848,1))^2);
+LAMBDA_MATRIX(382,408) = DISTANCE;
+
+DISTANCE = sqrt((x(1795,1) - x(1817,1))^2 + (x(1796,1) - x(1818,1))^2);
+LAMBDA_MATRIX(382,393) = DISTANCE;
+
+DISTANCE = sqrt((x(1817,1) - x(1795,1))^2 + (x(1818,1) - x(1796,1))^2);
+LAMBDA_MATRIX(393,382) = DISTANCE;
+
+DISTANCE = sqrt((x(1817,1) - x(1847,1))^2 + (x(1818,1) - x(1848,1))^2);
+LAMBDA_MATRIX(393,408) = DISTANCE;
+
+DISTANCE = sqrt((x(1847,1) - x(1817,1))^2 + (x(1848,1) - x(1818,1))^2);
+LAMBDA_MATRIX(408,393) = DISTANCE;
+
+DISTANCE = sqrt((x(1921,1) - x(1941,1))^2 + (x(1922,1) - x(1942,1))^2);
+LAMBDA_MATRIX(445,455) = DISTANCE;
+
+DISTANCE = sqrt((x(1941,1) - x(1921,1))^2 + (x(1942,1) - x(1922,1))^2);
+LAMBDA_MATRIX(455,445) = DISTANCE;
+
+DISTANCE = sqrt((x(1941,1) - x(1899,1))^2 + (x(1942,1) - x(1900,1))^2);
+LAMBDA_MATRIX(455,434) = DISTANCE;
+
+DISTANCE = sqrt((x(1899,1) - x(1941,1))^2 + (x(1900,1) - x(1942,1))^2);
+LAMBDA_MATRIX(434,455) = DISTANCE;
+
+DISTANCE = sqrt((x(1899,1) - x(1921,1))^2 + (x(1900,1) - x(1922,1))^2);
+LAMBDA_MATRIX(434,445) = DISTANCE;
+
+DISTANCE = sqrt((x(1921,1) - x(1899,1))^2 + (x(1922,1) - x(1900,1))^2);
+LAMBDA_MATRIX(445,434) = DISTANCE;
+
+DISTANCE = sqrt((x(1863,1) - x(1835,1))^2 + (x(1864,1) - x(1836,1))^2);
+LAMBDA_MATRIX(416,402) = DISTANCE;
+
+DISTANCE = sqrt((x(1835,1) - x(1863,1))^2 + (x(1836,1) - x(1864,1))^2);
+LAMBDA_MATRIX(402,416) = DISTANCE;
+
+DISTANCE = sqrt((x(1835,1) - x(1879,1))^2 + (x(1836,1) - x(1880,1))^2);
+LAMBDA_MATRIX(402,424) = DISTANCE;
+
+DISTANCE = sqrt((x(1879,1) - x(1835,1))^2 + (x(1880,1) - x(1836,1))^2);
+LAMBDA_MATRIX(424,402) = DISTANCE;
+
+DISTANCE = sqrt((x(1879,1) - x(1863,1))^2 + (x(1880,1) - x(1864,1))^2);
+LAMBDA_MATRIX(424,416) = DISTANCE;
+
+DISTANCE = sqrt((x(1863,1) - x(1879,1))^2 + (x(1864,1) - x(1880,1))^2);
+LAMBDA_MATRIX(416,424) = DISTANCE;
+
+DISTANCE = sqrt((x(1879,1) - x(1919,1))^2 + (x(1880,1) - x(1920,1))^2);
+LAMBDA_MATRIX(424,444) = DISTANCE;
+
+DISTANCE = sqrt((x(1919,1) - x(1879,1))^2 + (x(1920,1) - x(1880,1))^2);
+LAMBDA_MATRIX(444,424) = DISTANCE;
+
+DISTANCE = sqrt((x(1919,1) - x(1863,1))^2 + (x(1920,1) - x(1864,1))^2);
+LAMBDA_MATRIX(444,416) = DISTANCE;
+
+DISTANCE = sqrt((x(1863,1) - x(1919,1))^2 + (x(1864,1) - x(1920,1))^2);
+LAMBDA_MATRIX(416,444) = DISTANCE;
+
+DISTANCE = sqrt((x(1863,1) - x(1879,1))^2 + (x(1864,1) - x(1880,1))^2);
+LAMBDA_MATRIX(416,424) = DISTANCE;
+
+DISTANCE = sqrt((x(1879,1) - x(1863,1))^2 + (x(1880,1) - x(1864,1))^2);
+LAMBDA_MATRIX(424,416) = DISTANCE;
+
+DISTANCE = sqrt((x(1863,1) - x(1883,1))^2 + (x(1864,1) - x(1884,1))^2);
+LAMBDA_MATRIX(416,426) = DISTANCE;
+
+DISTANCE = sqrt((x(1883,1) - x(1863,1))^2 + (x(1884,1) - x(1864,1))^2);
+LAMBDA_MATRIX(426,416) = DISTANCE;
+
+DISTANCE = sqrt((x(1883,1) - x(1839,1))^2 + (x(1884,1) - x(1840,1))^2);
+LAMBDA_MATRIX(426,404) = DISTANCE;
+
+DISTANCE = sqrt((x(1839,1) - x(1883,1))^2 + (x(1840,1) - x(1884,1))^2);
+LAMBDA_MATRIX(404,426) = DISTANCE;
+
+DISTANCE = sqrt((x(1839,1) - x(1863,1))^2 + (x(1840,1) - x(1864,1))^2);
+LAMBDA_MATRIX(404,416) = DISTANCE;
+
+DISTANCE = sqrt((x(1863,1) - x(1839,1))^2 + (x(1864,1) - x(1840,1))^2);
+LAMBDA_MATRIX(416,404) = DISTANCE;
+
+DISTANCE = sqrt((x(2009,1) - x(2057,1))^2 + (x(2010,1) - x(2058,1))^2);
+LAMBDA_MATRIX(489,513) = DISTANCE;
+
+DISTANCE = sqrt((x(2057,1) - x(2009,1))^2 + (x(2058,1) - x(2010,1))^2);
+LAMBDA_MATRIX(513,489) = DISTANCE;
+
+DISTANCE = sqrt((x(2057,1) - x(2025,1))^2 + (x(2058,1) - x(2026,1))^2);
+LAMBDA_MATRIX(513,497) = DISTANCE;
+
+DISTANCE = sqrt((x(2025,1) - x(2057,1))^2 + (x(2026,1) - x(2058,1))^2);
+LAMBDA_MATRIX(497,513) = DISTANCE;
+
+DISTANCE = sqrt((x(2025,1) - x(2009,1))^2 + (x(2026,1) - x(2010,1))^2);
+LAMBDA_MATRIX(497,489) = DISTANCE;
+
+DISTANCE = sqrt((x(2009,1) - x(2025,1))^2 + (x(2010,1) - x(2026,1))^2);
+LAMBDA_MATRIX(489,497) = DISTANCE;
+
+DISTANCE = sqrt((x(2009,1) - x(2051,1))^2 + (x(2010,1) - x(2052,1))^2);
+LAMBDA_MATRIX(489,510) = DISTANCE;
+
+DISTANCE = sqrt((x(2051,1) - x(2009,1))^2 + (x(2052,1) - x(2010,1))^2);
+LAMBDA_MATRIX(510,489) = DISTANCE;
+
+DISTANCE = sqrt((x(2051,1) - x(2057,1))^2 + (x(2052,1) - x(2058,1))^2);
+LAMBDA_MATRIX(510,513) = DISTANCE;
+
+DISTANCE = sqrt((x(2057,1) - x(2051,1))^2 + (x(2058,1) - x(2052,1))^2);
+LAMBDA_MATRIX(513,510) = DISTANCE;
+
+DISTANCE = sqrt((x(2057,1) - x(2009,1))^2 + (x(2058,1) - x(2010,1))^2);
+LAMBDA_MATRIX(513,489) = DISTANCE;
+
+DISTANCE = sqrt((x(2009,1) - x(2057,1))^2 + (x(2010,1) - x(2058,1))^2);
+LAMBDA_MATRIX(489,513) = DISTANCE;
+
+DISTANCE = sqrt((x(2011,1) - x(2051,1))^2 + (x(2012,1) - x(2052,1))^2);
+LAMBDA_MATRIX(490,510) = DISTANCE;
+
+DISTANCE = sqrt((x(2051,1) - x(2011,1))^2 + (x(2052,1) - x(2012,1))^2);
+LAMBDA_MATRIX(510,490) = DISTANCE;
+
+DISTANCE = sqrt((x(2051,1) - x(2009,1))^2 + (x(2052,1) - x(2010,1))^2);
+LAMBDA_MATRIX(510,489) = DISTANCE;
+
+DISTANCE = sqrt((x(2009,1) - x(2051,1))^2 + (x(2010,1) - x(2052,1))^2);
+LAMBDA_MATRIX(489,510) = DISTANCE;
+
+DISTANCE = sqrt((x(2009,1) - x(2011,1))^2 + (x(2010,1) - x(2012,1))^2);
+LAMBDA_MATRIX(489,490) = DISTANCE;
+
+DISTANCE = sqrt((x(2011,1) - x(2009,1))^2 + (x(2012,1) - x(2010,1))^2);
+LAMBDA_MATRIX(490,489) = DISTANCE;
+
+DISTANCE = sqrt((x(1961,1) - x(1905,1))^2 + (x(1962,1) - x(1906,1))^2);
+LAMBDA_MATRIX(465,437) = DISTANCE;
+
+DISTANCE = sqrt((x(1905,1) - x(1961,1))^2 + (x(1906,1) - x(1962,1))^2);
+LAMBDA_MATRIX(437,465) = DISTANCE;
+
+DISTANCE = sqrt((x(1905,1) - x(1931,1))^2 + (x(1906,1) - x(1932,1))^2);
+LAMBDA_MATRIX(437,450) = DISTANCE;
+
+DISTANCE = sqrt((x(1931,1) - x(1905,1))^2 + (x(1932,1) - x(1906,1))^2);
+LAMBDA_MATRIX(450,437) = DISTANCE;
+
+DISTANCE = sqrt((x(1931,1) - x(1961,1))^2 + (x(1932,1) - x(1962,1))^2);
+LAMBDA_MATRIX(450,465) = DISTANCE;
+
+DISTANCE = sqrt((x(1961,1) - x(1931,1))^2 + (x(1962,1) - x(1932,1))^2);
+LAMBDA_MATRIX(465,450) = DISTANCE;
+
+DISTANCE = sqrt((x(1931,1) - x(1905,1))^2 + (x(1932,1) - x(1906,1))^2);
+LAMBDA_MATRIX(450,437) = DISTANCE;
+
+DISTANCE = sqrt((x(1905,1) - x(1931,1))^2 + (x(1906,1) - x(1932,1))^2);
+LAMBDA_MATRIX(437,450) = DISTANCE;
+
+DISTANCE = sqrt((x(1905,1) - x(1881,1))^2 + (x(1906,1) - x(1882,1))^2);
+LAMBDA_MATRIX(437,425) = DISTANCE;
+
+DISTANCE = sqrt((x(1881,1) - x(1905,1))^2 + (x(1882,1) - x(1906,1))^2);
+LAMBDA_MATRIX(425,437) = DISTANCE;
+
+DISTANCE = sqrt((x(1881,1) - x(1931,1))^2 + (x(1882,1) - x(1932,1))^2);
+LAMBDA_MATRIX(425,450) = DISTANCE;
+
+DISTANCE = sqrt((x(1931,1) - x(1881,1))^2 + (x(1932,1) - x(1882,1))^2);
+LAMBDA_MATRIX(450,425) = DISTANCE;
+
+DISTANCE = sqrt((x(1881,1) - x(1899,1))^2 + (x(1882,1) - x(1900,1))^2);
+LAMBDA_MATRIX(425,434) = DISTANCE;
+
+DISTANCE = sqrt((x(1899,1) - x(1881,1))^2 + (x(1900,1) - x(1882,1))^2);
+LAMBDA_MATRIX(434,425) = DISTANCE;
+
+DISTANCE = sqrt((x(1899,1) - x(1931,1))^2 + (x(1900,1) - x(1932,1))^2);
+LAMBDA_MATRIX(434,450) = DISTANCE;
+
+DISTANCE = sqrt((x(1931,1) - x(1899,1))^2 + (x(1932,1) - x(1900,1))^2);
+LAMBDA_MATRIX(450,434) = DISTANCE;
+
+DISTANCE = sqrt((x(1931,1) - x(1881,1))^2 + (x(1932,1) - x(1882,1))^2);
+LAMBDA_MATRIX(450,425) = DISTANCE;
+
+DISTANCE = sqrt((x(1881,1) - x(1931,1))^2 + (x(1882,1) - x(1932,1))^2);
+LAMBDA_MATRIX(425,450) = DISTANCE;
+
+DISTANCE = sqrt((x(1899,1) - x(1941,1))^2 + (x(1900,1) - x(1942,1))^2);
+LAMBDA_MATRIX(434,455) = DISTANCE;
+
+DISTANCE = sqrt((x(1941,1) - x(1899,1))^2 + (x(1942,1) - x(1900,1))^2);
+LAMBDA_MATRIX(455,434) = DISTANCE;
+
+DISTANCE = sqrt((x(1941,1) - x(1931,1))^2 + (x(1942,1) - x(1932,1))^2);
+LAMBDA_MATRIX(455,450) = DISTANCE;
+
+DISTANCE = sqrt((x(1931,1) - x(1941,1))^2 + (x(1932,1) - x(1942,1))^2);
+LAMBDA_MATRIX(450,455) = DISTANCE;
+
+DISTANCE = sqrt((x(1931,1) - x(1899,1))^2 + (x(1932,1) - x(1900,1))^2);
+LAMBDA_MATRIX(450,434) = DISTANCE;
+
+DISTANCE = sqrt((x(1899,1) - x(1931,1))^2 + (x(1900,1) - x(1932,1))^2);
+LAMBDA_MATRIX(434,450) = DISTANCE;
+
+DISTANCE = sqrt((x(1959,1) - x(1919,1))^2 + (x(1960,1) - x(1920,1))^2);
+LAMBDA_MATRIX(464,444) = DISTANCE;
+
+DISTANCE = sqrt((x(1919,1) - x(1959,1))^2 + (x(1920,1) - x(1960,1))^2);
+LAMBDA_MATRIX(444,464) = DISTANCE;
+
+DISTANCE = sqrt((x(1919,1) - x(1953,1))^2 + (x(1920,1) - x(1954,1))^2);
+LAMBDA_MATRIX(444,461) = DISTANCE;
+
+DISTANCE = sqrt((x(1953,1) - x(1919,1))^2 + (x(1954,1) - x(1920,1))^2);
+LAMBDA_MATRIX(461,444) = DISTANCE;
+
+DISTANCE = sqrt((x(1953,1) - x(1959,1))^2 + (x(1954,1) - x(1960,1))^2);
+LAMBDA_MATRIX(461,464) = DISTANCE;
+
+DISTANCE = sqrt((x(1959,1) - x(1953,1))^2 + (x(1960,1) - x(1954,1))^2);
+LAMBDA_MATRIX(464,461) = DISTANCE;
+
+DISTANCE = sqrt((x(1959,1) - x(1953,1))^2 + (x(1960,1) - x(1954,1))^2);
+LAMBDA_MATRIX(464,461) = DISTANCE;
+
+DISTANCE = sqrt((x(1953,1) - x(1959,1))^2 + (x(1954,1) - x(1960,1))^2);
+LAMBDA_MATRIX(461,464) = DISTANCE;
+
+DISTANCE = sqrt((x(1953,1) - x(1991,1))^2 + (x(1954,1) - x(1992,1))^2);
+LAMBDA_MATRIX(461,480) = DISTANCE;
+
+DISTANCE = sqrt((x(1991,1) - x(1953,1))^2 + (x(1992,1) - x(1954,1))^2);
+LAMBDA_MATRIX(480,461) = DISTANCE;
+
+DISTANCE = sqrt((x(1991,1) - x(1959,1))^2 + (x(1992,1) - x(1960,1))^2);
+LAMBDA_MATRIX(480,464) = DISTANCE;
+
+DISTANCE = sqrt((x(1959,1) - x(1991,1))^2 + (x(1960,1) - x(1992,1))^2);
+LAMBDA_MATRIX(464,480) = DISTANCE;
+
+DISTANCE = sqrt((x(1991,1) - x(1999,1))^2 + (x(1992,1) - x(2000,1))^2);
+LAMBDA_MATRIX(480,484) = DISTANCE;
+
+DISTANCE = sqrt((x(1999,1) - x(1991,1))^2 + (x(2000,1) - x(1992,1))^2);
+LAMBDA_MATRIX(484,480) = DISTANCE;
+
+DISTANCE = sqrt((x(1999,1) - x(1959,1))^2 + (x(2000,1) - x(1960,1))^2);
+LAMBDA_MATRIX(484,464) = DISTANCE;
+
+DISTANCE = sqrt((x(1959,1) - x(1999,1))^2 + (x(1960,1) - x(2000,1))^2);
+LAMBDA_MATRIX(464,484) = DISTANCE;
+
+DISTANCE = sqrt((x(1959,1) - x(1991,1))^2 + (x(1960,1) - x(1992,1))^2);
+LAMBDA_MATRIX(464,480) = DISTANCE;
+
+DISTANCE = sqrt((x(1991,1) - x(1959,1))^2 + (x(1992,1) - x(1960,1))^2);
+LAMBDA_MATRIX(480,464) = DISTANCE;
+
+DISTANCE = sqrt((x(1959,1) - x(1999,1))^2 + (x(1960,1) - x(2000,1))^2);
+LAMBDA_MATRIX(464,484) = DISTANCE;
+
+DISTANCE = sqrt((x(1999,1) - x(1959,1))^2 + (x(2000,1) - x(1960,1))^2);
+LAMBDA_MATRIX(484,464) = DISTANCE;
+
+DISTANCE = sqrt((x(1999,1) - x(1957,1))^2 + (x(2000,1) - x(1958,1))^2);
+LAMBDA_MATRIX(484,463) = DISTANCE;
+
+DISTANCE = sqrt((x(1957,1) - x(1999,1))^2 + (x(1958,1) - x(2000,1))^2);
+LAMBDA_MATRIX(463,484) = DISTANCE;
+
+DISTANCE = sqrt((x(1957,1) - x(1959,1))^2 + (x(1958,1) - x(1960,1))^2);
+LAMBDA_MATRIX(463,464) = DISTANCE;
+
+DISTANCE = sqrt((x(1959,1) - x(1957,1))^2 + (x(1960,1) - x(1958,1))^2);
+LAMBDA_MATRIX(464,463) = DISTANCE;
+
+DISTANCE = sqrt((x(1081,1) - x(1123,1))^2 + (x(1082,1) - x(1124,1))^2);
+LAMBDA_MATRIX(25,46) = DISTANCE;
+
+DISTANCE = sqrt((x(1123,1) - x(1081,1))^2 + (x(1124,1) - x(1082,1))^2);
+LAMBDA_MATRIX(46,25) = DISTANCE;
+
+DISTANCE = sqrt((x(1123,1) - x(1155,1))^2 + (x(1124,1) - x(1156,1))^2);
+LAMBDA_MATRIX(46,62) = DISTANCE;
+
+DISTANCE = sqrt((x(1155,1) - x(1123,1))^2 + (x(1156,1) - x(1124,1))^2);
+LAMBDA_MATRIX(62,46) = DISTANCE;
+
+DISTANCE = sqrt((x(1155,1) - x(1081,1))^2 + (x(1156,1) - x(1082,1))^2);
+LAMBDA_MATRIX(62,25) = DISTANCE;
+
+DISTANCE = sqrt((x(1081,1) - x(1155,1))^2 + (x(1082,1) - x(1156,1))^2);
+LAMBDA_MATRIX(25,62) = DISTANCE;
+
+DISTANCE = sqrt((x(1155,1) - x(1117,1))^2 + (x(1156,1) - x(1118,1))^2);
+LAMBDA_MATRIX(62,43) = DISTANCE;
+
+DISTANCE = sqrt((x(1117,1) - x(1155,1))^2 + (x(1118,1) - x(1156,1))^2);
+LAMBDA_MATRIX(43,62) = DISTANCE;
+
+DISTANCE = sqrt((x(1117,1) - x(1081,1))^2 + (x(1118,1) - x(1082,1))^2);
+LAMBDA_MATRIX(43,25) = DISTANCE;
+
+DISTANCE = sqrt((x(1081,1) - x(1117,1))^2 + (x(1082,1) - x(1118,1))^2);
+LAMBDA_MATRIX(25,43) = DISTANCE;
+
+DISTANCE = sqrt((x(1081,1) - x(1155,1))^2 + (x(1082,1) - x(1156,1))^2);
+LAMBDA_MATRIX(25,62) = DISTANCE;
+
+DISTANCE = sqrt((x(1155,1) - x(1081,1))^2 + (x(1156,1) - x(1082,1))^2);
+LAMBDA_MATRIX(62,25) = DISTANCE;
+
+DISTANCE = sqrt((x(1081,1) - x(1041,1))^2 + (x(1082,1) - x(1042,1))^2);
+LAMBDA_MATRIX(25,5) = DISTANCE;
+
+DISTANCE = sqrt((x(1041,1) - x(1081,1))^2 + (x(1042,1) - x(1082,1))^2);
+LAMBDA_MATRIX(5,25) = DISTANCE;
+
+DISTANCE = sqrt((x(1041,1) - x(1079,1))^2 + (x(1042,1) - x(1080,1))^2);
+LAMBDA_MATRIX(5,24) = DISTANCE;
+
+DISTANCE = sqrt((x(1079,1) - x(1041,1))^2 + (x(1080,1) - x(1042,1))^2);
+LAMBDA_MATRIX(24,5) = DISTANCE;
+
+DISTANCE = sqrt((x(1079,1) - x(1081,1))^2 + (x(1080,1) - x(1082,1))^2);
+LAMBDA_MATRIX(24,25) = DISTANCE;
+
+DISTANCE = sqrt((x(1081,1) - x(1079,1))^2 + (x(1082,1) - x(1080,1))^2);
+LAMBDA_MATRIX(25,24) = DISTANCE;
+
+DISTANCE = sqrt((x(1079,1) - x(1123,1))^2 + (x(1080,1) - x(1124,1))^2);
+LAMBDA_MATRIX(24,46) = DISTANCE;
+
+DISTANCE = sqrt((x(1123,1) - x(1079,1))^2 + (x(1124,1) - x(1080,1))^2);
+LAMBDA_MATRIX(46,24) = DISTANCE;
+
+DISTANCE = sqrt((x(1123,1) - x(1081,1))^2 + (x(1124,1) - x(1082,1))^2);
+LAMBDA_MATRIX(46,25) = DISTANCE;
+
+DISTANCE = sqrt((x(1081,1) - x(1123,1))^2 + (x(1082,1) - x(1124,1))^2);
+LAMBDA_MATRIX(25,46) = DISTANCE;
+
+DISTANCE = sqrt((x(1081,1) - x(1079,1))^2 + (x(1082,1) - x(1080,1))^2);
+LAMBDA_MATRIX(25,24) = DISTANCE;
+
+DISTANCE = sqrt((x(1079,1) - x(1081,1))^2 + (x(1080,1) - x(1082,1))^2);
+LAMBDA_MATRIX(24,25) = DISTANCE;
+
+DISTANCE = sqrt((x(1081,1) - x(1043,1))^2 + (x(1082,1) - x(1044,1))^2);
+LAMBDA_MATRIX(25,6) = DISTANCE;
+
+DISTANCE = sqrt((x(1043,1) - x(1081,1))^2 + (x(1044,1) - x(1082,1))^2);
+LAMBDA_MATRIX(6,25) = DISTANCE;
+
+DISTANCE = sqrt((x(1043,1) - x(1041,1))^2 + (x(1044,1) - x(1042,1))^2);
+LAMBDA_MATRIX(6,5) = DISTANCE;
+
+DISTANCE = sqrt((x(1041,1) - x(1043,1))^2 + (x(1042,1) - x(1044,1))^2);
+LAMBDA_MATRIX(5,6) = DISTANCE;
+
+DISTANCE = sqrt((x(1041,1) - x(1081,1))^2 + (x(1042,1) - x(1082,1))^2);
+LAMBDA_MATRIX(5,25) = DISTANCE;
+
+DISTANCE = sqrt((x(1081,1) - x(1041,1))^2 + (x(1082,1) - x(1042,1))^2);
+LAMBDA_MATRIX(25,5) = DISTANCE;
+
+DISTANCE = sqrt((x(1081,1) - x(1117,1))^2 + (x(1082,1) - x(1118,1))^2);
+LAMBDA_MATRIX(25,43) = DISTANCE;
+
+DISTANCE = sqrt((x(1117,1) - x(1081,1))^2 + (x(1118,1) - x(1082,1))^2);
+LAMBDA_MATRIX(43,25) = DISTANCE;
+
+DISTANCE = sqrt((x(1117,1) - x(1043,1))^2 + (x(1118,1) - x(1044,1))^2);
+LAMBDA_MATRIX(43,6) = DISTANCE;
+
+DISTANCE = sqrt((x(1043,1) - x(1117,1))^2 + (x(1044,1) - x(1118,1))^2);
+LAMBDA_MATRIX(6,43) = DISTANCE;
+
+DISTANCE = sqrt((x(1043,1) - x(1081,1))^2 + (x(1044,1) - x(1082,1))^2);
+LAMBDA_MATRIX(6,25) = DISTANCE;
+
+DISTANCE = sqrt((x(1081,1) - x(1043,1))^2 + (x(1082,1) - x(1044,1))^2);
+LAMBDA_MATRIX(25,6) = DISTANCE;
+
+DISTANCE = sqrt((x(1149,1) - x(1143,1))^2 + (x(1150,1) - x(1144,1))^2);
+LAMBDA_MATRIX(59,56) = DISTANCE;
+
+DISTANCE = sqrt((x(1143,1) - x(1149,1))^2 + (x(1144,1) - x(1150,1))^2);
+LAMBDA_MATRIX(56,59) = DISTANCE;
+
+DISTANCE = sqrt((x(1143,1) - x(1107,1))^2 + (x(1144,1) - x(1108,1))^2);
+LAMBDA_MATRIX(56,38) = DISTANCE;
+
+DISTANCE = sqrt((x(1107,1) - x(1143,1))^2 + (x(1108,1) - x(1144,1))^2);
+LAMBDA_MATRIX(38,56) = DISTANCE;
+
+DISTANCE = sqrt((x(1107,1) - x(1149,1))^2 + (x(1108,1) - x(1150,1))^2);
+LAMBDA_MATRIX(38,59) = DISTANCE;
+
+DISTANCE = sqrt((x(1149,1) - x(1107,1))^2 + (x(1150,1) - x(1108,1))^2);
+LAMBDA_MATRIX(59,38) = DISTANCE;
+
+DISTANCE = sqrt((x(1107,1) - x(1117,1))^2 + (x(1108,1) - x(1118,1))^2);
+LAMBDA_MATRIX(38,43) = DISTANCE;
+
+DISTANCE = sqrt((x(1117,1) - x(1107,1))^2 + (x(1118,1) - x(1108,1))^2);
+LAMBDA_MATRIX(43,38) = DISTANCE;
+
+DISTANCE = sqrt((x(1117,1) - x(1149,1))^2 + (x(1118,1) - x(1150,1))^2);
+LAMBDA_MATRIX(43,59) = DISTANCE;
+
+DISTANCE = sqrt((x(1149,1) - x(1117,1))^2 + (x(1150,1) - x(1118,1))^2);
+LAMBDA_MATRIX(59,43) = DISTANCE;
+
+DISTANCE = sqrt((x(1149,1) - x(1107,1))^2 + (x(1150,1) - x(1108,1))^2);
+LAMBDA_MATRIX(59,38) = DISTANCE;
+
+DISTANCE = sqrt((x(1107,1) - x(1149,1))^2 + (x(1108,1) - x(1150,1))^2);
+LAMBDA_MATRIX(38,59) = DISTANCE;
+
+DISTANCE = sqrt((x(1069,1) - x(1117,1))^2 + (x(1070,1) - x(1118,1))^2);
+LAMBDA_MATRIX(19,43) = DISTANCE;
+
+DISTANCE = sqrt((x(1117,1) - x(1069,1))^2 + (x(1118,1) - x(1070,1))^2);
+LAMBDA_MATRIX(43,19) = DISTANCE;
+
+DISTANCE = sqrt((x(1117,1) - x(1107,1))^2 + (x(1118,1) - x(1108,1))^2);
+LAMBDA_MATRIX(43,38) = DISTANCE;
+
+DISTANCE = sqrt((x(1107,1) - x(1117,1))^2 + (x(1108,1) - x(1118,1))^2);
+LAMBDA_MATRIX(38,43) = DISTANCE;
+
+DISTANCE = sqrt((x(1107,1) - x(1069,1))^2 + (x(1108,1) - x(1070,1))^2);
+LAMBDA_MATRIX(38,19) = DISTANCE;
+
+DISTANCE = sqrt((x(1069,1) - x(1107,1))^2 + (x(1070,1) - x(1108,1))^2);
+LAMBDA_MATRIX(19,38) = DISTANCE;
+
+DISTANCE = sqrt((x(1107,1) - x(1045,1))^2 + (x(1108,1) - x(1046,1))^2);
+LAMBDA_MATRIX(38,7) = DISTANCE;
+
+DISTANCE = sqrt((x(1045,1) - x(1107,1))^2 + (x(1046,1) - x(1108,1))^2);
+LAMBDA_MATRIX(7,38) = DISTANCE;
+
+DISTANCE = sqrt((x(1045,1) - x(1069,1))^2 + (x(1046,1) - x(1070,1))^2);
+LAMBDA_MATRIX(7,19) = DISTANCE;
+
+DISTANCE = sqrt((x(1069,1) - x(1045,1))^2 + (x(1070,1) - x(1046,1))^2);
+LAMBDA_MATRIX(19,7) = DISTANCE;
+
+DISTANCE = sqrt((x(1069,1) - x(1107,1))^2 + (x(1070,1) - x(1108,1))^2);
+LAMBDA_MATRIX(19,38) = DISTANCE;
+
+DISTANCE = sqrt((x(1107,1) - x(1069,1))^2 + (x(1108,1) - x(1070,1))^2);
+LAMBDA_MATRIX(38,19) = DISTANCE;
+
+DISTANCE = sqrt((x(1903,1) - x(1935,1))^2 + (x(1904,1) - x(1936,1))^2);
+LAMBDA_MATRIX(436,452) = DISTANCE;
+
+DISTANCE = sqrt((x(1935,1) - x(1903,1))^2 + (x(1936,1) - x(1904,1))^2);
+LAMBDA_MATRIX(452,436) = DISTANCE;
+
+DISTANCE = sqrt((x(1935,1) - x(1885,1))^2 + (x(1936,1) - x(1886,1))^2);
+LAMBDA_MATRIX(452,427) = DISTANCE;
+
+DISTANCE = sqrt((x(1885,1) - x(1935,1))^2 + (x(1886,1) - x(1936,1))^2);
+LAMBDA_MATRIX(427,452) = DISTANCE;
+
+DISTANCE = sqrt((x(1885,1) - x(1903,1))^2 + (x(1886,1) - x(1904,1))^2);
+LAMBDA_MATRIX(427,436) = DISTANCE;
+
+DISTANCE = sqrt((x(1903,1) - x(1885,1))^2 + (x(1904,1) - x(1886,1))^2);
+LAMBDA_MATRIX(436,427) = DISTANCE;
+
+DISTANCE = sqrt((x(1885,1) - x(1853,1))^2 + (x(1886,1) - x(1854,1))^2);
+LAMBDA_MATRIX(427,411) = DISTANCE;
+
+DISTANCE = sqrt((x(1853,1) - x(1885,1))^2 + (x(1854,1) - x(1886,1))^2);
+LAMBDA_MATRIX(411,427) = DISTANCE;
+
+DISTANCE = sqrt((x(1853,1) - x(1903,1))^2 + (x(1854,1) - x(1904,1))^2);
+LAMBDA_MATRIX(411,436) = DISTANCE;
+
+DISTANCE = sqrt((x(1903,1) - x(1853,1))^2 + (x(1904,1) - x(1854,1))^2);
+LAMBDA_MATRIX(436,411) = DISTANCE;
+
+DISTANCE = sqrt((x(1903,1) - x(1885,1))^2 + (x(1904,1) - x(1886,1))^2);
+LAMBDA_MATRIX(436,427) = DISTANCE;
+
+DISTANCE = sqrt((x(1885,1) - x(1903,1))^2 + (x(1886,1) - x(1904,1))^2);
+LAMBDA_MATRIX(427,436) = DISTANCE;
+
+DISTANCE = sqrt((x(1829,1) - x(1853,1))^2 + (x(1830,1) - x(1854,1))^2);
+LAMBDA_MATRIX(399,411) = DISTANCE;
+
+DISTANCE = sqrt((x(1853,1) - x(1829,1))^2 + (x(1854,1) - x(1830,1))^2);
+LAMBDA_MATRIX(411,399) = DISTANCE;
+
+DISTANCE = sqrt((x(1853,1) - x(1885,1))^2 + (x(1854,1) - x(1886,1))^2);
+LAMBDA_MATRIX(411,427) = DISTANCE;
+
+DISTANCE = sqrt((x(1885,1) - x(1853,1))^2 + (x(1886,1) - x(1854,1))^2);
+LAMBDA_MATRIX(427,411) = DISTANCE;
+
+DISTANCE = sqrt((x(1885,1) - x(1829,1))^2 + (x(1886,1) - x(1830,1))^2);
+LAMBDA_MATRIX(427,399) = DISTANCE;
+
+DISTANCE = sqrt((x(1829,1) - x(1885,1))^2 + (x(1830,1) - x(1886,1))^2);
+LAMBDA_MATRIX(399,427) = DISTANCE;
+
+DISTANCE = sqrt((x(1833,1) - x(1889,1))^2 + (x(1834,1) - x(1890,1))^2);
+LAMBDA_MATRIX(401,429) = DISTANCE;
+
+DISTANCE = sqrt((x(1889,1) - x(1833,1))^2 + (x(1890,1) - x(1834,1))^2);
+LAMBDA_MATRIX(429,401) = DISTANCE;
+
+DISTANCE = sqrt((x(1889,1) - x(1849,1))^2 + (x(1890,1) - x(1850,1))^2);
+LAMBDA_MATRIX(429,409) = DISTANCE;
+
+DISTANCE = sqrt((x(1849,1) - x(1889,1))^2 + (x(1850,1) - x(1890,1))^2);
+LAMBDA_MATRIX(409,429) = DISTANCE;
+
+DISTANCE = sqrt((x(1849,1) - x(1833,1))^2 + (x(1850,1) - x(1834,1))^2);
+LAMBDA_MATRIX(409,401) = DISTANCE;
+
+DISTANCE = sqrt((x(1833,1) - x(1849,1))^2 + (x(1834,1) - x(1850,1))^2);
+LAMBDA_MATRIX(401,409) = DISTANCE;
+
+DISTANCE = sqrt((x(1769,1) - x(1725,1))^2 + (x(1770,1) - x(1726,1))^2);
+LAMBDA_MATRIX(369,347) = DISTANCE;
+
+DISTANCE = sqrt((x(1725,1) - x(1769,1))^2 + (x(1726,1) - x(1770,1))^2);
+LAMBDA_MATRIX(347,369) = DISTANCE;
+
+DISTANCE = sqrt((x(1725,1) - x(1719,1))^2 + (x(1726,1) - x(1720,1))^2);
+LAMBDA_MATRIX(347,344) = DISTANCE;
+
+DISTANCE = sqrt((x(1719,1) - x(1725,1))^2 + (x(1720,1) - x(1726,1))^2);
+LAMBDA_MATRIX(344,347) = DISTANCE;
+
+DISTANCE = sqrt((x(1719,1) - x(1769,1))^2 + (x(1720,1) - x(1770,1))^2);
+LAMBDA_MATRIX(344,369) = DISTANCE;
+
+DISTANCE = sqrt((x(1769,1) - x(1719,1))^2 + (x(1770,1) - x(1720,1))^2);
+LAMBDA_MATRIX(369,344) = DISTANCE;
+
+DISTANCE = sqrt((x(1909,1) - x(1917,1))^2 + (x(1910,1) - x(1918,1))^2);
+LAMBDA_MATRIX(439,443) = DISTANCE;
+
+DISTANCE = sqrt((x(1917,1) - x(1909,1))^2 + (x(1918,1) - x(1910,1))^2);
+LAMBDA_MATRIX(443,439) = DISTANCE;
+
+DISTANCE = sqrt((x(1917,1) - x(1951,1))^2 + (x(1918,1) - x(1952,1))^2);
+LAMBDA_MATRIX(443,460) = DISTANCE;
+
+DISTANCE = sqrt((x(1951,1) - x(1917,1))^2 + (x(1952,1) - x(1918,1))^2);
+LAMBDA_MATRIX(460,443) = DISTANCE;
+
+DISTANCE = sqrt((x(1951,1) - x(1909,1))^2 + (x(1952,1) - x(1910,1))^2);
+LAMBDA_MATRIX(460,439) = DISTANCE;
+
+DISTANCE = sqrt((x(1909,1) - x(1951,1))^2 + (x(1910,1) - x(1952,1))^2);
+LAMBDA_MATRIX(439,460) = DISTANCE;
+
+DISTANCE = sqrt((x(1909,1) - x(1951,1))^2 + (x(1910,1) - x(1952,1))^2);
+LAMBDA_MATRIX(439,460) = DISTANCE;
+
+DISTANCE = sqrt((x(1951,1) - x(1909,1))^2 + (x(1952,1) - x(1910,1))^2);
+LAMBDA_MATRIX(460,439) = DISTANCE;
+
+DISTANCE = sqrt((x(1951,1) - x(1939,1))^2 + (x(1952,1) - x(1940,1))^2);
+LAMBDA_MATRIX(460,454) = DISTANCE;
+
+DISTANCE = sqrt((x(1939,1) - x(1951,1))^2 + (x(1940,1) - x(1952,1))^2);
+LAMBDA_MATRIX(454,460) = DISTANCE;
+
+DISTANCE = sqrt((x(1939,1) - x(1909,1))^2 + (x(1940,1) - x(1910,1))^2);
+LAMBDA_MATRIX(454,439) = DISTANCE;
+
+DISTANCE = sqrt((x(1909,1) - x(1939,1))^2 + (x(1910,1) - x(1940,1))^2);
+LAMBDA_MATRIX(439,454) = DISTANCE;
+
+DISTANCE = sqrt((x(1939,1) - x(1893,1))^2 + (x(1940,1) - x(1894,1))^2);
+LAMBDA_MATRIX(454,431) = DISTANCE;
+
+DISTANCE = sqrt((x(1893,1) - x(1939,1))^2 + (x(1894,1) - x(1940,1))^2);
+LAMBDA_MATRIX(431,454) = DISTANCE;
+
+DISTANCE = sqrt((x(1893,1) - x(1909,1))^2 + (x(1894,1) - x(1910,1))^2);
+LAMBDA_MATRIX(431,439) = DISTANCE;
+
+DISTANCE = sqrt((x(1909,1) - x(1893,1))^2 + (x(1910,1) - x(1894,1))^2);
+LAMBDA_MATRIX(439,431) = DISTANCE;
+
+DISTANCE = sqrt((x(1909,1) - x(1939,1))^2 + (x(1910,1) - x(1940,1))^2);
+LAMBDA_MATRIX(439,454) = DISTANCE;
+
+DISTANCE = sqrt((x(1939,1) - x(1909,1))^2 + (x(1940,1) - x(1910,1))^2);
+LAMBDA_MATRIX(454,439) = DISTANCE;
+
+DISTANCE = sqrt((x(1849,1) - x(1901,1))^2 + (x(1850,1) - x(1902,1))^2);
+LAMBDA_MATRIX(409,435) = DISTANCE;
+
+DISTANCE = sqrt((x(1901,1) - x(1849,1))^2 + (x(1902,1) - x(1850,1))^2);
+LAMBDA_MATRIX(435,409) = DISTANCE;
+
+DISTANCE = sqrt((x(1901,1) - x(1869,1))^2 + (x(1902,1) - x(1870,1))^2);
+LAMBDA_MATRIX(435,419) = DISTANCE;
+
+DISTANCE = sqrt((x(1869,1) - x(1901,1))^2 + (x(1870,1) - x(1902,1))^2);
+LAMBDA_MATRIX(419,435) = DISTANCE;
+
+DISTANCE = sqrt((x(1869,1) - x(1849,1))^2 + (x(1870,1) - x(1850,1))^2);
+LAMBDA_MATRIX(419,409) = DISTANCE;
+
+DISTANCE = sqrt((x(1849,1) - x(1869,1))^2 + (x(1850,1) - x(1870,1))^2);
+LAMBDA_MATRIX(409,419) = DISTANCE;
+
+DISTANCE = sqrt((x(1901,1) - x(1917,1))^2 + (x(1902,1) - x(1918,1))^2);
+LAMBDA_MATRIX(435,443) = DISTANCE;
+
+DISTANCE = sqrt((x(1917,1) - x(1901,1))^2 + (x(1918,1) - x(1902,1))^2);
+LAMBDA_MATRIX(443,435) = DISTANCE;
+
+DISTANCE = sqrt((x(1917,1) - x(1869,1))^2 + (x(1918,1) - x(1870,1))^2);
+LAMBDA_MATRIX(443,419) = DISTANCE;
+
+DISTANCE = sqrt((x(1869,1) - x(1917,1))^2 + (x(1870,1) - x(1918,1))^2);
+LAMBDA_MATRIX(419,443) = DISTANCE;
+
+DISTANCE = sqrt((x(1869,1) - x(1901,1))^2 + (x(1870,1) - x(1902,1))^2);
+LAMBDA_MATRIX(419,435) = DISTANCE;
+
+DISTANCE = sqrt((x(1901,1) - x(1869,1))^2 + (x(1902,1) - x(1870,1))^2);
+LAMBDA_MATRIX(435,419) = DISTANCE;
+
+DISTANCE = sqrt((x(1943,1) - x(1933,1))^2 + (x(1944,1) - x(1934,1))^2);
+LAMBDA_MATRIX(456,451) = DISTANCE;
+
+DISTANCE = sqrt((x(1933,1) - x(1943,1))^2 + (x(1934,1) - x(1944,1))^2);
+LAMBDA_MATRIX(451,456) = DISTANCE;
+
+DISTANCE = sqrt((x(1933,1) - x(1889,1))^2 + (x(1934,1) - x(1890,1))^2);
+LAMBDA_MATRIX(451,429) = DISTANCE;
+
+DISTANCE = sqrt((x(1889,1) - x(1933,1))^2 + (x(1890,1) - x(1934,1))^2);
+LAMBDA_MATRIX(429,451) = DISTANCE;
+
+DISTANCE = sqrt((x(1889,1) - x(1943,1))^2 + (x(1890,1) - x(1944,1))^2);
+LAMBDA_MATRIX(429,456) = DISTANCE;
+
+DISTANCE = sqrt((x(1943,1) - x(1889,1))^2 + (x(1944,1) - x(1890,1))^2);
+LAMBDA_MATRIX(456,429) = DISTANCE;
+
+DISTANCE = sqrt((x(1981,1) - x(1933,1))^2 + (x(1982,1) - x(1934,1))^2);
+LAMBDA_MATRIX(475,451) = DISTANCE;
+
+DISTANCE = sqrt((x(1933,1) - x(1981,1))^2 + (x(1934,1) - x(1982,1))^2);
+LAMBDA_MATRIX(451,475) = DISTANCE;
+
+DISTANCE = sqrt((x(1933,1) - x(1943,1))^2 + (x(1934,1) - x(1944,1))^2);
+LAMBDA_MATRIX(451,456) = DISTANCE;
+
+DISTANCE = sqrt((x(1943,1) - x(1933,1))^2 + (x(1944,1) - x(1934,1))^2);
+LAMBDA_MATRIX(456,451) = DISTANCE;
+
+DISTANCE = sqrt((x(1943,1) - x(1981,1))^2 + (x(1944,1) - x(1982,1))^2);
+LAMBDA_MATRIX(456,475) = DISTANCE;
+
+DISTANCE = sqrt((x(1981,1) - x(1943,1))^2 + (x(1982,1) - x(1944,1))^2);
+LAMBDA_MATRIX(475,456) = DISTANCE;
+
+DISTANCE = sqrt((x(1901,1) - x(1933,1))^2 + (x(1902,1) - x(1934,1))^2);
+LAMBDA_MATRIX(435,451) = DISTANCE;
+
+DISTANCE = sqrt((x(1933,1) - x(1901,1))^2 + (x(1934,1) - x(1902,1))^2);
+LAMBDA_MATRIX(451,435) = DISTANCE;
+
+DISTANCE = sqrt((x(1933,1) - x(1947,1))^2 + (x(1934,1) - x(1948,1))^2);
+LAMBDA_MATRIX(451,458) = DISTANCE;
+
+DISTANCE = sqrt((x(1947,1) - x(1933,1))^2 + (x(1948,1) - x(1934,1))^2);
+LAMBDA_MATRIX(458,451) = DISTANCE;
+
+DISTANCE = sqrt((x(1947,1) - x(1901,1))^2 + (x(1948,1) - x(1902,1))^2);
+LAMBDA_MATRIX(458,435) = DISTANCE;
+
+DISTANCE = sqrt((x(1901,1) - x(1947,1))^2 + (x(1902,1) - x(1948,1))^2);
+LAMBDA_MATRIX(435,458) = DISTANCE;
+
+DISTANCE = sqrt((x(1969,1) - x(1917,1))^2 + (x(1970,1) - x(1918,1))^2);
+LAMBDA_MATRIX(469,443) = DISTANCE;
+
+DISTANCE = sqrt((x(1917,1) - x(1969,1))^2 + (x(1918,1) - x(1970,1))^2);
+LAMBDA_MATRIX(443,469) = DISTANCE;
+
+DISTANCE = sqrt((x(1917,1) - x(1947,1))^2 + (x(1918,1) - x(1948,1))^2);
+LAMBDA_MATRIX(443,458) = DISTANCE;
+
+DISTANCE = sqrt((x(1947,1) - x(1917,1))^2 + (x(1948,1) - x(1918,1))^2);
+LAMBDA_MATRIX(458,443) = DISTANCE;
+
+DISTANCE = sqrt((x(1947,1) - x(1969,1))^2 + (x(1948,1) - x(1970,1))^2);
+LAMBDA_MATRIX(458,469) = DISTANCE;
+
+DISTANCE = sqrt((x(1969,1) - x(1947,1))^2 + (x(1970,1) - x(1948,1))^2);
+LAMBDA_MATRIX(469,458) = DISTANCE;
+
+DISTANCE = sqrt((x(1947,1) - x(1917,1))^2 + (x(1948,1) - x(1918,1))^2);
+LAMBDA_MATRIX(458,443) = DISTANCE;
+
+DISTANCE = sqrt((x(1917,1) - x(1947,1))^2 + (x(1918,1) - x(1948,1))^2);
+LAMBDA_MATRIX(443,458) = DISTANCE;
+
+DISTANCE = sqrt((x(1917,1) - x(1901,1))^2 + (x(1918,1) - x(1902,1))^2);
+LAMBDA_MATRIX(443,435) = DISTANCE;
+
+DISTANCE = sqrt((x(1901,1) - x(1917,1))^2 + (x(1902,1) - x(1918,1))^2);
+LAMBDA_MATRIX(435,443) = DISTANCE;
+
+DISTANCE = sqrt((x(1901,1) - x(1947,1))^2 + (x(1902,1) - x(1948,1))^2);
+LAMBDA_MATRIX(435,458) = DISTANCE;
+
+DISTANCE = sqrt((x(1947,1) - x(1901,1))^2 + (x(1948,1) - x(1902,1))^2);
+LAMBDA_MATRIX(458,435) = DISTANCE;
+
+DISTANCE = sqrt((x(2003,1) - x(1969,1))^2 + (x(2004,1) - x(1970,1))^2);
+LAMBDA_MATRIX(486,469) = DISTANCE;
+
+DISTANCE = sqrt((x(1969,1) - x(2003,1))^2 + (x(1970,1) - x(2004,1))^2);
+LAMBDA_MATRIX(469,486) = DISTANCE;
+
+DISTANCE = sqrt((x(1969,1) - x(1947,1))^2 + (x(1970,1) - x(1948,1))^2);
+LAMBDA_MATRIX(469,458) = DISTANCE;
+
+DISTANCE = sqrt((x(1947,1) - x(1969,1))^2 + (x(1948,1) - x(1970,1))^2);
+LAMBDA_MATRIX(458,469) = DISTANCE;
+
+DISTANCE = sqrt((x(1947,1) - x(2003,1))^2 + (x(1948,1) - x(2004,1))^2);
+LAMBDA_MATRIX(458,486) = DISTANCE;
+
+DISTANCE = sqrt((x(2003,1) - x(1947,1))^2 + (x(2004,1) - x(1948,1))^2);
+LAMBDA_MATRIX(486,458) = DISTANCE;
+
+DISTANCE = sqrt((x(1947,1) - x(1981,1))^2 + (x(1948,1) - x(1982,1))^2);
+LAMBDA_MATRIX(458,475) = DISTANCE;
+
+DISTANCE = sqrt((x(1981,1) - x(1947,1))^2 + (x(1982,1) - x(1948,1))^2);
+LAMBDA_MATRIX(475,458) = DISTANCE;
+
+DISTANCE = sqrt((x(1981,1) - x(2003,1))^2 + (x(1982,1) - x(2004,1))^2);
+LAMBDA_MATRIX(475,486) = DISTANCE;
+
+DISTANCE = sqrt((x(2003,1) - x(1981,1))^2 + (x(2004,1) - x(1982,1))^2);
+LAMBDA_MATRIX(486,475) = DISTANCE;
+
+DISTANCE = sqrt((x(2003,1) - x(1947,1))^2 + (x(2004,1) - x(1948,1))^2);
+LAMBDA_MATRIX(486,458) = DISTANCE;
+
+DISTANCE = sqrt((x(1947,1) - x(2003,1))^2 + (x(1948,1) - x(2004,1))^2);
+LAMBDA_MATRIX(458,486) = DISTANCE;
+
+DISTANCE = sqrt((x(1947,1) - x(1933,1))^2 + (x(1948,1) - x(1934,1))^2);
+LAMBDA_MATRIX(458,451) = DISTANCE;
+
+DISTANCE = sqrt((x(1933,1) - x(1947,1))^2 + (x(1934,1) - x(1948,1))^2);
+LAMBDA_MATRIX(451,458) = DISTANCE;
+
+DISTANCE = sqrt((x(1933,1) - x(1981,1))^2 + (x(1934,1) - x(1982,1))^2);
+LAMBDA_MATRIX(451,475) = DISTANCE;
+
+DISTANCE = sqrt((x(1981,1) - x(1933,1))^2 + (x(1982,1) - x(1934,1))^2);
+LAMBDA_MATRIX(475,451) = DISTANCE;
+
+DISTANCE = sqrt((x(1981,1) - x(1947,1))^2 + (x(1982,1) - x(1948,1))^2);
+LAMBDA_MATRIX(475,458) = DISTANCE;
+
+DISTANCE = sqrt((x(1947,1) - x(1981,1))^2 + (x(1948,1) - x(1982,1))^2);
+LAMBDA_MATRIX(458,475) = DISTANCE;
+
+DISTANCE = sqrt((x(1557,1) - x(1523,1))^2 + (x(1558,1) - x(1524,1))^2);
+LAMBDA_MATRIX(263,246) = DISTANCE;
+
+DISTANCE = sqrt((x(1523,1) - x(1557,1))^2 + (x(1524,1) - x(1558,1))^2);
+LAMBDA_MATRIX(246,263) = DISTANCE;
+
+DISTANCE = sqrt((x(1523,1) - x(1545,1))^2 + (x(1524,1) - x(1546,1))^2);
+LAMBDA_MATRIX(246,257) = DISTANCE;
+
+DISTANCE = sqrt((x(1545,1) - x(1523,1))^2 + (x(1546,1) - x(1524,1))^2);
+LAMBDA_MATRIX(257,246) = DISTANCE;
+
+DISTANCE = sqrt((x(1545,1) - x(1557,1))^2 + (x(1546,1) - x(1558,1))^2);
+LAMBDA_MATRIX(257,263) = DISTANCE;
+
+DISTANCE = sqrt((x(1557,1) - x(1545,1))^2 + (x(1558,1) - x(1546,1))^2);
+LAMBDA_MATRIX(263,257) = DISTANCE;
+
+DISTANCE = sqrt((x(1537,1) - x(1523,1))^2 + (x(1538,1) - x(1524,1))^2);
+LAMBDA_MATRIX(253,246) = DISTANCE;
+
+DISTANCE = sqrt((x(1523,1) - x(1537,1))^2 + (x(1524,1) - x(1538,1))^2);
+LAMBDA_MATRIX(246,253) = DISTANCE;
+
+DISTANCE = sqrt((x(1523,1) - x(1557,1))^2 + (x(1524,1) - x(1558,1))^2);
+LAMBDA_MATRIX(246,263) = DISTANCE;
+
+DISTANCE = sqrt((x(1557,1) - x(1523,1))^2 + (x(1558,1) - x(1524,1))^2);
+LAMBDA_MATRIX(263,246) = DISTANCE;
+
+DISTANCE = sqrt((x(1557,1) - x(1537,1))^2 + (x(1558,1) - x(1538,1))^2);
+LAMBDA_MATRIX(263,253) = DISTANCE;
+
+DISTANCE = sqrt((x(1537,1) - x(1557,1))^2 + (x(1538,1) - x(1558,1))^2);
+LAMBDA_MATRIX(253,263) = DISTANCE;
+
+DISTANCE = sqrt((x(1545,1) - x(1573,1))^2 + (x(1546,1) - x(1574,1))^2);
+LAMBDA_MATRIX(257,271) = DISTANCE;
+
+DISTANCE = sqrt((x(1573,1) - x(1545,1))^2 + (x(1574,1) - x(1546,1))^2);
+LAMBDA_MATRIX(271,257) = DISTANCE;
+
+DISTANCE = sqrt((x(1573,1) - x(1557,1))^2 + (x(1574,1) - x(1558,1))^2);
+LAMBDA_MATRIX(271,263) = DISTANCE;
+
+DISTANCE = sqrt((x(1557,1) - x(1573,1))^2 + (x(1558,1) - x(1574,1))^2);
+LAMBDA_MATRIX(263,271) = DISTANCE;
+
+DISTANCE = sqrt((x(1557,1) - x(1545,1))^2 + (x(1558,1) - x(1546,1))^2);
+LAMBDA_MATRIX(263,257) = DISTANCE;
+
+DISTANCE = sqrt((x(1545,1) - x(1557,1))^2 + (x(1546,1) - x(1558,1))^2);
+LAMBDA_MATRIX(257,263) = DISTANCE;
+
+DISTANCE = sqrt((x(1573,1) - x(1587,1))^2 + (x(1574,1) - x(1588,1))^2);
+LAMBDA_MATRIX(271,278) = DISTANCE;
+
+DISTANCE = sqrt((x(1587,1) - x(1573,1))^2 + (x(1588,1) - x(1574,1))^2);
+LAMBDA_MATRIX(278,271) = DISTANCE;
+
+DISTANCE = sqrt((x(1587,1) - x(1557,1))^2 + (x(1588,1) - x(1558,1))^2);
+LAMBDA_MATRIX(278,263) = DISTANCE;
+
+DISTANCE = sqrt((x(1557,1) - x(1587,1))^2 + (x(1558,1) - x(1588,1))^2);
+LAMBDA_MATRIX(263,278) = DISTANCE;
+
+DISTANCE = sqrt((x(1557,1) - x(1573,1))^2 + (x(1558,1) - x(1574,1))^2);
+LAMBDA_MATRIX(263,271) = DISTANCE;
+
+DISTANCE = sqrt((x(1573,1) - x(1557,1))^2 + (x(1574,1) - x(1558,1))^2);
+LAMBDA_MATRIX(271,263) = DISTANCE;
+
+DISTANCE = sqrt((x(1557,1) - x(1587,1))^2 + (x(1558,1) - x(1588,1))^2);
+LAMBDA_MATRIX(263,278) = DISTANCE;
+
+DISTANCE = sqrt((x(1587,1) - x(1557,1))^2 + (x(1588,1) - x(1558,1))^2);
+LAMBDA_MATRIX(278,263) = DISTANCE;
+
+DISTANCE = sqrt((x(1587,1) - x(1569,1))^2 + (x(1588,1) - x(1570,1))^2);
+LAMBDA_MATRIX(278,269) = DISTANCE;
+
+DISTANCE = sqrt((x(1569,1) - x(1587,1))^2 + (x(1570,1) - x(1588,1))^2);
+LAMBDA_MATRIX(269,278) = DISTANCE;
+
+DISTANCE = sqrt((x(1569,1) - x(1557,1))^2 + (x(1570,1) - x(1558,1))^2);
+LAMBDA_MATRIX(269,263) = DISTANCE;
+
+DISTANCE = sqrt((x(1557,1) - x(1569,1))^2 + (x(1558,1) - x(1570,1))^2);
+LAMBDA_MATRIX(263,269) = DISTANCE;
+
+DISTANCE = sqrt((x(1569,1) - x(1537,1))^2 + (x(1570,1) - x(1538,1))^2);
+LAMBDA_MATRIX(269,253) = DISTANCE;
+
+DISTANCE = sqrt((x(1537,1) - x(1569,1))^2 + (x(1538,1) - x(1570,1))^2);
+LAMBDA_MATRIX(253,269) = DISTANCE;
+
+DISTANCE = sqrt((x(1537,1) - x(1557,1))^2 + (x(1538,1) - x(1558,1))^2);
+LAMBDA_MATRIX(253,263) = DISTANCE;
+
+DISTANCE = sqrt((x(1557,1) - x(1537,1))^2 + (x(1558,1) - x(1538,1))^2);
+LAMBDA_MATRIX(263,253) = DISTANCE;
+
+DISTANCE = sqrt((x(1557,1) - x(1569,1))^2 + (x(1558,1) - x(1570,1))^2);
+LAMBDA_MATRIX(263,269) = DISTANCE;
+
+DISTANCE = sqrt((x(1569,1) - x(1557,1))^2 + (x(1570,1) - x(1558,1))^2);
+LAMBDA_MATRIX(269,263) = DISTANCE;
+
+DISTANCE = sqrt((x(1375,1) - x(1351,1))^2 + (x(1376,1) - x(1352,1))^2);
+LAMBDA_MATRIX(172,160) = DISTANCE;
+
+DISTANCE = sqrt((x(1351,1) - x(1375,1))^2 + (x(1352,1) - x(1376,1))^2);
+LAMBDA_MATRIX(160,172) = DISTANCE;
+
+DISTANCE = sqrt((x(1351,1) - x(1407,1))^2 + (x(1352,1) - x(1408,1))^2);
+LAMBDA_MATRIX(160,188) = DISTANCE;
+
+DISTANCE = sqrt((x(1407,1) - x(1351,1))^2 + (x(1408,1) - x(1352,1))^2);
+LAMBDA_MATRIX(188,160) = DISTANCE;
+
+DISTANCE = sqrt((x(1407,1) - x(1375,1))^2 + (x(1408,1) - x(1376,1))^2);
+LAMBDA_MATRIX(188,172) = DISTANCE;
+
+DISTANCE = sqrt((x(1375,1) - x(1407,1))^2 + (x(1376,1) - x(1408,1))^2);
+LAMBDA_MATRIX(172,188) = DISTANCE;
+
+DISTANCE = sqrt((x(1407,1) - x(1351,1))^2 + (x(1408,1) - x(1352,1))^2);
+LAMBDA_MATRIX(188,160) = DISTANCE;
+
+DISTANCE = sqrt((x(1351,1) - x(1407,1))^2 + (x(1352,1) - x(1408,1))^2);
+LAMBDA_MATRIX(160,188) = DISTANCE;
+
+DISTANCE = sqrt((x(1351,1) - x(1385,1))^2 + (x(1352,1) - x(1386,1))^2);
+LAMBDA_MATRIX(160,177) = DISTANCE;
+
+DISTANCE = sqrt((x(1385,1) - x(1351,1))^2 + (x(1386,1) - x(1352,1))^2);
+LAMBDA_MATRIX(177,160) = DISTANCE;
+
+DISTANCE = sqrt((x(1385,1) - x(1407,1))^2 + (x(1386,1) - x(1408,1))^2);
+LAMBDA_MATRIX(177,188) = DISTANCE;
+
+DISTANCE = sqrt((x(1407,1) - x(1385,1))^2 + (x(1408,1) - x(1386,1))^2);
+LAMBDA_MATRIX(188,177) = DISTANCE;
+
+DISTANCE = sqrt((x(1407,1) - x(1429,1))^2 + (x(1408,1) - x(1430,1))^2);
+LAMBDA_MATRIX(188,199) = DISTANCE;
+
+DISTANCE = sqrt((x(1429,1) - x(1407,1))^2 + (x(1430,1) - x(1408,1))^2);
+LAMBDA_MATRIX(199,188) = DISTANCE;
+
+DISTANCE = sqrt((x(1429,1) - x(1375,1))^2 + (x(1430,1) - x(1376,1))^2);
+LAMBDA_MATRIX(199,172) = DISTANCE;
+
+DISTANCE = sqrt((x(1375,1) - x(1429,1))^2 + (x(1376,1) - x(1430,1))^2);
+LAMBDA_MATRIX(172,199) = DISTANCE;
+
+DISTANCE = sqrt((x(1375,1) - x(1407,1))^2 + (x(1376,1) - x(1408,1))^2);
+LAMBDA_MATRIX(172,188) = DISTANCE;
+
+DISTANCE = sqrt((x(1407,1) - x(1375,1))^2 + (x(1408,1) - x(1376,1))^2);
+LAMBDA_MATRIX(188,172) = DISTANCE;
+
+DISTANCE = sqrt((x(1407,1) - x(1453,1))^2 + (x(1408,1) - x(1454,1))^2);
+LAMBDA_MATRIX(188,211) = DISTANCE;
+
+DISTANCE = sqrt((x(1453,1) - x(1407,1))^2 + (x(1454,1) - x(1408,1))^2);
+LAMBDA_MATRIX(211,188) = DISTANCE;
+
+DISTANCE = sqrt((x(1453,1) - x(1429,1))^2 + (x(1454,1) - x(1430,1))^2);
+LAMBDA_MATRIX(211,199) = DISTANCE;
+
+DISTANCE = sqrt((x(1429,1) - x(1453,1))^2 + (x(1430,1) - x(1454,1))^2);
+LAMBDA_MATRIX(199,211) = DISTANCE;
+
+DISTANCE = sqrt((x(1429,1) - x(1407,1))^2 + (x(1430,1) - x(1408,1))^2);
+LAMBDA_MATRIX(199,188) = DISTANCE;
+
+DISTANCE = sqrt((x(1407,1) - x(1429,1))^2 + (x(1408,1) - x(1430,1))^2);
+LAMBDA_MATRIX(188,199) = DISTANCE;
+
+DISTANCE = sqrt((x(1385,1) - x(1427,1))^2 + (x(1386,1) - x(1428,1))^2);
+LAMBDA_MATRIX(177,198) = DISTANCE;
+
+DISTANCE = sqrt((x(1427,1) - x(1385,1))^2 + (x(1428,1) - x(1386,1))^2);
+LAMBDA_MATRIX(198,177) = DISTANCE;
+
+DISTANCE = sqrt((x(1427,1) - x(1407,1))^2 + (x(1428,1) - x(1408,1))^2);
+LAMBDA_MATRIX(198,188) = DISTANCE;
+
+DISTANCE = sqrt((x(1407,1) - x(1427,1))^2 + (x(1408,1) - x(1428,1))^2);
+LAMBDA_MATRIX(188,198) = DISTANCE;
+
+DISTANCE = sqrt((x(1407,1) - x(1385,1))^2 + (x(1408,1) - x(1386,1))^2);
+LAMBDA_MATRIX(188,177) = DISTANCE;
+
+DISTANCE = sqrt((x(1385,1) - x(1407,1))^2 + (x(1386,1) - x(1408,1))^2);
+LAMBDA_MATRIX(177,188) = DISTANCE;
+
+DISTANCE = sqrt((x(1407,1) - x(1427,1))^2 + (x(1408,1) - x(1428,1))^2);
+LAMBDA_MATRIX(188,198) = DISTANCE;
+
+DISTANCE = sqrt((x(1427,1) - x(1407,1))^2 + (x(1428,1) - x(1408,1))^2);
+LAMBDA_MATRIX(198,188) = DISTANCE;
+
+DISTANCE = sqrt((x(1427,1) - x(1453,1))^2 + (x(1428,1) - x(1454,1))^2);
+LAMBDA_MATRIX(198,211) = DISTANCE;
+
+DISTANCE = sqrt((x(1453,1) - x(1427,1))^2 + (x(1454,1) - x(1428,1))^2);
+LAMBDA_MATRIX(211,198) = DISTANCE;
+
+DISTANCE = sqrt((x(1453,1) - x(1407,1))^2 + (x(1454,1) - x(1408,1))^2);
+LAMBDA_MATRIX(211,188) = DISTANCE;
+
+DISTANCE = sqrt((x(1407,1) - x(1453,1))^2 + (x(1408,1) - x(1454,1))^2);
+LAMBDA_MATRIX(188,211) = DISTANCE;
+
+DISTANCE = sqrt((x(1191,1) - x(1153,1))^2 + (x(1192,1) - x(1154,1))^2);
+LAMBDA_MATRIX(80,61) = DISTANCE;
+
+DISTANCE = sqrt((x(1153,1) - x(1191,1))^2 + (x(1154,1) - x(1192,1))^2);
+LAMBDA_MATRIX(61,80) = DISTANCE;
+
+DISTANCE = sqrt((x(1153,1) - x(1145,1))^2 + (x(1154,1) - x(1146,1))^2);
+LAMBDA_MATRIX(61,57) = DISTANCE;
+
+DISTANCE = sqrt((x(1145,1) - x(1153,1))^2 + (x(1146,1) - x(1154,1))^2);
+LAMBDA_MATRIX(57,61) = DISTANCE;
+
+DISTANCE = sqrt((x(1145,1) - x(1191,1))^2 + (x(1146,1) - x(1192,1))^2);
+LAMBDA_MATRIX(57,80) = DISTANCE;
+
+DISTANCE = sqrt((x(1191,1) - x(1145,1))^2 + (x(1192,1) - x(1146,1))^2);
+LAMBDA_MATRIX(80,57) = DISTANCE;
+
+DISTANCE = sqrt((x(1153,1) - x(1113,1))^2 + (x(1154,1) - x(1114,1))^2);
+LAMBDA_MATRIX(61,41) = DISTANCE;
+
+DISTANCE = sqrt((x(1113,1) - x(1153,1))^2 + (x(1114,1) - x(1154,1))^2);
+LAMBDA_MATRIX(41,61) = DISTANCE;
+
+DISTANCE = sqrt((x(1113,1) - x(1145,1))^2 + (x(1114,1) - x(1146,1))^2);
+LAMBDA_MATRIX(41,57) = DISTANCE;
+
+DISTANCE = sqrt((x(1145,1) - x(1113,1))^2 + (x(1146,1) - x(1114,1))^2);
+LAMBDA_MATRIX(57,41) = DISTANCE;
+
+DISTANCE = sqrt((x(1145,1) - x(1153,1))^2 + (x(1146,1) - x(1154,1))^2);
+LAMBDA_MATRIX(57,61) = DISTANCE;
+
+DISTANCE = sqrt((x(1153,1) - x(1145,1))^2 + (x(1154,1) - x(1146,1))^2);
+LAMBDA_MATRIX(61,57) = DISTANCE;
+
+DISTANCE = sqrt((x(1095,1) - x(1113,1))^2 + (x(1096,1) - x(1114,1))^2);
+LAMBDA_MATRIX(32,41) = DISTANCE;
+
+DISTANCE = sqrt((x(1113,1) - x(1095,1))^2 + (x(1114,1) - x(1096,1))^2);
+LAMBDA_MATRIX(41,32) = DISTANCE;
+
+DISTANCE = sqrt((x(1113,1) - x(1057,1))^2 + (x(1114,1) - x(1058,1))^2);
+LAMBDA_MATRIX(41,13) = DISTANCE;
+
+DISTANCE = sqrt((x(1057,1) - x(1113,1))^2 + (x(1058,1) - x(1114,1))^2);
+LAMBDA_MATRIX(13,41) = DISTANCE;
+
+DISTANCE = sqrt((x(1057,1) - x(1095,1))^2 + (x(1058,1) - x(1096,1))^2);
+LAMBDA_MATRIX(13,32) = DISTANCE;
+
+DISTANCE = sqrt((x(1095,1) - x(1057,1))^2 + (x(1096,1) - x(1058,1))^2);
+LAMBDA_MATRIX(32,13) = DISTANCE;
+
+DISTANCE = sqrt((x(1095,1) - x(1145,1))^2 + (x(1096,1) - x(1146,1))^2);
+LAMBDA_MATRIX(32,57) = DISTANCE;
+
+DISTANCE = sqrt((x(1145,1) - x(1095,1))^2 + (x(1146,1) - x(1096,1))^2);
+LAMBDA_MATRIX(57,32) = DISTANCE;
+
+DISTANCE = sqrt((x(1145,1) - x(1113,1))^2 + (x(1146,1) - x(1114,1))^2);
+LAMBDA_MATRIX(57,41) = DISTANCE;
+
+DISTANCE = sqrt((x(1113,1) - x(1145,1))^2 + (x(1114,1) - x(1146,1))^2);
+LAMBDA_MATRIX(41,57) = DISTANCE;
+
+DISTANCE = sqrt((x(1113,1) - x(1095,1))^2 + (x(1114,1) - x(1096,1))^2);
+LAMBDA_MATRIX(41,32) = DISTANCE;
+
+DISTANCE = sqrt((x(1095,1) - x(1113,1))^2 + (x(1096,1) - x(1114,1))^2);
+LAMBDA_MATRIX(32,41) = DISTANCE;
+
+DISTANCE = sqrt((x(1139,1) - x(1145,1))^2 + (x(1140,1) - x(1146,1))^2);
+LAMBDA_MATRIX(54,57) = DISTANCE;
+
+DISTANCE = sqrt((x(1145,1) - x(1139,1))^2 + (x(1146,1) - x(1140,1))^2);
+LAMBDA_MATRIX(57,54) = DISTANCE;
+
+DISTANCE = sqrt((x(1145,1) - x(1095,1))^2 + (x(1146,1) - x(1096,1))^2);
+LAMBDA_MATRIX(57,32) = DISTANCE;
+
+DISTANCE = sqrt((x(1095,1) - x(1145,1))^2 + (x(1096,1) - x(1146,1))^2);
+LAMBDA_MATRIX(32,57) = DISTANCE;
+
+DISTANCE = sqrt((x(1095,1) - x(1139,1))^2 + (x(1096,1) - x(1140,1))^2);
+LAMBDA_MATRIX(32,54) = DISTANCE;
+
+DISTANCE = sqrt((x(1139,1) - x(1095,1))^2 + (x(1140,1) - x(1096,1))^2);
+LAMBDA_MATRIX(54,32) = DISTANCE;
+
+DISTANCE = sqrt((x(1387,1) - x(1331,1))^2 + (x(1388,1) - x(1332,1))^2);
+LAMBDA_MATRIX(178,150) = DISTANCE;
+
+DISTANCE = sqrt((x(1331,1) - x(1387,1))^2 + (x(1332,1) - x(1388,1))^2);
+LAMBDA_MATRIX(150,178) = DISTANCE;
+
+DISTANCE = sqrt((x(1331,1) - x(1373,1))^2 + (x(1332,1) - x(1374,1))^2);
+LAMBDA_MATRIX(150,171) = DISTANCE;
+
+DISTANCE = sqrt((x(1373,1) - x(1331,1))^2 + (x(1374,1) - x(1332,1))^2);
+LAMBDA_MATRIX(171,150) = DISTANCE;
+
+DISTANCE = sqrt((x(1373,1) - x(1387,1))^2 + (x(1374,1) - x(1388,1))^2);
+LAMBDA_MATRIX(171,178) = DISTANCE;
+
+DISTANCE = sqrt((x(1387,1) - x(1373,1))^2 + (x(1388,1) - x(1374,1))^2);
+LAMBDA_MATRIX(178,171) = DISTANCE;
+
+DISTANCE = sqrt((x(1331,1) - x(1333,1))^2 + (x(1332,1) - x(1334,1))^2);
+LAMBDA_MATRIX(150,151) = DISTANCE;
+
+DISTANCE = sqrt((x(1333,1) - x(1331,1))^2 + (x(1334,1) - x(1332,1))^2);
+LAMBDA_MATRIX(151,150) = DISTANCE;
+
+DISTANCE = sqrt((x(1333,1) - x(1373,1))^2 + (x(1334,1) - x(1374,1))^2);
+LAMBDA_MATRIX(151,171) = DISTANCE;
+
+DISTANCE = sqrt((x(1373,1) - x(1333,1))^2 + (x(1374,1) - x(1334,1))^2);
+LAMBDA_MATRIX(171,151) = DISTANCE;
+
+DISTANCE = sqrt((x(1373,1) - x(1331,1))^2 + (x(1374,1) - x(1332,1))^2);
+LAMBDA_MATRIX(171,150) = DISTANCE;
+
+DISTANCE = sqrt((x(1331,1) - x(1373,1))^2 + (x(1332,1) - x(1374,1))^2);
+LAMBDA_MATRIX(150,171) = DISTANCE;
+
+DISTANCE = sqrt((x(1373,1) - x(1333,1))^2 + (x(1374,1) - x(1334,1))^2);
+LAMBDA_MATRIX(171,151) = DISTANCE;
+
+DISTANCE = sqrt((x(1333,1) - x(1373,1))^2 + (x(1334,1) - x(1374,1))^2);
+LAMBDA_MATRIX(151,171) = DISTANCE;
+
+DISTANCE = sqrt((x(1333,1) - x(1377,1))^2 + (x(1334,1) - x(1378,1))^2);
+LAMBDA_MATRIX(151,173) = DISTANCE;
+
+DISTANCE = sqrt((x(1377,1) - x(1333,1))^2 + (x(1378,1) - x(1334,1))^2);
+LAMBDA_MATRIX(173,151) = DISTANCE;
+
+DISTANCE = sqrt((x(1377,1) - x(1373,1))^2 + (x(1378,1) - x(1374,1))^2);
+LAMBDA_MATRIX(173,171) = DISTANCE;
+
+DISTANCE = sqrt((x(1373,1) - x(1377,1))^2 + (x(1374,1) - x(1378,1))^2);
+LAMBDA_MATRIX(171,173) = DISTANCE;
+
+DISTANCE = sqrt((x(1355,1) - x(1315,1))^2 + (x(1356,1) - x(1316,1))^2);
+LAMBDA_MATRIX(162,142) = DISTANCE;
+
+DISTANCE = sqrt((x(1315,1) - x(1355,1))^2 + (x(1316,1) - x(1356,1))^2);
+LAMBDA_MATRIX(142,162) = DISTANCE;
+
+DISTANCE = sqrt((x(1315,1) - x(1309,1))^2 + (x(1316,1) - x(1310,1))^2);
+LAMBDA_MATRIX(142,139) = DISTANCE;
+
+DISTANCE = sqrt((x(1309,1) - x(1315,1))^2 + (x(1310,1) - x(1316,1))^2);
+LAMBDA_MATRIX(139,142) = DISTANCE;
+
+DISTANCE = sqrt((x(1309,1) - x(1355,1))^2 + (x(1310,1) - x(1356,1))^2);
+LAMBDA_MATRIX(139,162) = DISTANCE;
+
+DISTANCE = sqrt((x(1355,1) - x(1309,1))^2 + (x(1356,1) - x(1310,1))^2);
+LAMBDA_MATRIX(162,139) = DISTANCE;
+
+DISTANCE = sqrt((x(1309,1) - x(1331,1))^2 + (x(1310,1) - x(1332,1))^2);
+LAMBDA_MATRIX(139,150) = DISTANCE;
+
+DISTANCE = sqrt((x(1331,1) - x(1309,1))^2 + (x(1332,1) - x(1310,1))^2);
+LAMBDA_MATRIX(150,139) = DISTANCE;
+
+DISTANCE = sqrt((x(1331,1) - x(1355,1))^2 + (x(1332,1) - x(1356,1))^2);
+LAMBDA_MATRIX(150,162) = DISTANCE;
+
+DISTANCE = sqrt((x(1355,1) - x(1331,1))^2 + (x(1356,1) - x(1332,1))^2);
+LAMBDA_MATRIX(162,150) = DISTANCE;
+
+DISTANCE = sqrt((x(1355,1) - x(1309,1))^2 + (x(1356,1) - x(1310,1))^2);
+LAMBDA_MATRIX(162,139) = DISTANCE;
+
+DISTANCE = sqrt((x(1309,1) - x(1355,1))^2 + (x(1310,1) - x(1356,1))^2);
+LAMBDA_MATRIX(139,162) = DISTANCE;
+
+DISTANCE = sqrt((x(1309,1) - x(1279,1))^2 + (x(1310,1) - x(1280,1))^2);
+LAMBDA_MATRIX(139,124) = DISTANCE;
+
+DISTANCE = sqrt((x(1279,1) - x(1309,1))^2 + (x(1280,1) - x(1310,1))^2);
+LAMBDA_MATRIX(124,139) = DISTANCE;
+
+DISTANCE = sqrt((x(1279,1) - x(1331,1))^2 + (x(1280,1) - x(1332,1))^2);
+LAMBDA_MATRIX(124,150) = DISTANCE;
+
+DISTANCE = sqrt((x(1331,1) - x(1279,1))^2 + (x(1332,1) - x(1280,1))^2);
+LAMBDA_MATRIX(150,124) = DISTANCE;
+
+DISTANCE = sqrt((x(1331,1) - x(1309,1))^2 + (x(1332,1) - x(1310,1))^2);
+LAMBDA_MATRIX(150,139) = DISTANCE;
+
+DISTANCE = sqrt((x(1309,1) - x(1331,1))^2 + (x(1310,1) - x(1332,1))^2);
+LAMBDA_MATRIX(139,150) = DISTANCE;
+
+DISTANCE = sqrt((x(1199,1) - x(1133,1))^2 + (x(1200,1) - x(1134,1))^2);
+LAMBDA_MATRIX(84,51) = DISTANCE;
+
+DISTANCE = sqrt((x(1133,1) - x(1199,1))^2 + (x(1134,1) - x(1200,1))^2);
+LAMBDA_MATRIX(51,84) = DISTANCE;
+
+DISTANCE = sqrt((x(1133,1) - x(1153,1))^2 + (x(1134,1) - x(1154,1))^2);
+LAMBDA_MATRIX(51,61) = DISTANCE;
+
+DISTANCE = sqrt((x(1153,1) - x(1133,1))^2 + (x(1154,1) - x(1134,1))^2);
+LAMBDA_MATRIX(61,51) = DISTANCE;
+
+DISTANCE = sqrt((x(1153,1) - x(1199,1))^2 + (x(1154,1) - x(1200,1))^2);
+LAMBDA_MATRIX(61,84) = DISTANCE;
+
+DISTANCE = sqrt((x(1199,1) - x(1153,1))^2 + (x(1200,1) - x(1154,1))^2);
+LAMBDA_MATRIX(84,61) = DISTANCE;
+
+DISTANCE = sqrt((x(1199,1) - x(1153,1))^2 + (x(1200,1) - x(1154,1))^2);
+LAMBDA_MATRIX(84,61) = DISTANCE;
+
+DISTANCE = sqrt((x(1153,1) - x(1199,1))^2 + (x(1154,1) - x(1200,1))^2);
+LAMBDA_MATRIX(61,84) = DISTANCE;
+
+DISTANCE = sqrt((x(1153,1) - x(1191,1))^2 + (x(1154,1) - x(1192,1))^2);
+LAMBDA_MATRIX(61,80) = DISTANCE;
+
+DISTANCE = sqrt((x(1191,1) - x(1153,1))^2 + (x(1192,1) - x(1154,1))^2);
+LAMBDA_MATRIX(80,61) = DISTANCE;
+
+DISTANCE = sqrt((x(1191,1) - x(1199,1))^2 + (x(1192,1) - x(1200,1))^2);
+LAMBDA_MATRIX(80,84) = DISTANCE;
+
+DISTANCE = sqrt((x(1199,1) - x(1191,1))^2 + (x(1200,1) - x(1192,1))^2);
+LAMBDA_MATRIX(84,80) = DISTANCE;
+
+DISTANCE = sqrt((x(1191,1) - x(1229,1))^2 + (x(1192,1) - x(1230,1))^2);
+LAMBDA_MATRIX(80,99) = DISTANCE;
+
+DISTANCE = sqrt((x(1229,1) - x(1191,1))^2 + (x(1230,1) - x(1192,1))^2);
+LAMBDA_MATRIX(99,80) = DISTANCE;
+
+DISTANCE = sqrt((x(1229,1) - x(1199,1))^2 + (x(1230,1) - x(1200,1))^2);
+LAMBDA_MATRIX(99,84) = DISTANCE;
+
+DISTANCE = sqrt((x(1199,1) - x(1229,1))^2 + (x(1200,1) - x(1230,1))^2);
+LAMBDA_MATRIX(84,99) = DISTANCE;
+
+DISTANCE = sqrt((x(1199,1) - x(1191,1))^2 + (x(1200,1) - x(1192,1))^2);
+LAMBDA_MATRIX(84,80) = DISTANCE;
+
+DISTANCE = sqrt((x(1191,1) - x(1199,1))^2 + (x(1192,1) - x(1200,1))^2);
+LAMBDA_MATRIX(80,84) = DISTANCE;
+
+DISTANCE = sqrt((x(1199,1) - x(1229,1))^2 + (x(1200,1) - x(1230,1))^2);
+LAMBDA_MATRIX(84,99) = DISTANCE;
+
+DISTANCE = sqrt((x(1229,1) - x(1199,1))^2 + (x(1230,1) - x(1200,1))^2);
+LAMBDA_MATRIX(99,84) = DISTANCE;
+
+DISTANCE = sqrt((x(1229,1) - x(1251,1))^2 + (x(1230,1) - x(1252,1))^2);
+LAMBDA_MATRIX(99,110) = DISTANCE;
+
+DISTANCE = sqrt((x(1251,1) - x(1229,1))^2 + (x(1252,1) - x(1230,1))^2);
+LAMBDA_MATRIX(110,99) = DISTANCE;
+
+DISTANCE = sqrt((x(1251,1) - x(1199,1))^2 + (x(1252,1) - x(1200,1))^2);
+LAMBDA_MATRIX(110,84) = DISTANCE;
+
+DISTANCE = sqrt((x(1199,1) - x(1251,1))^2 + (x(1200,1) - x(1252,1))^2);
+LAMBDA_MATRIX(84,110) = DISTANCE;
+
+DISTANCE = sqrt((x(1251,1) - x(1217,1))^2 + (x(1252,1) - x(1218,1))^2);
+LAMBDA_MATRIX(110,93) = DISTANCE;
+
+DISTANCE = sqrt((x(1217,1) - x(1251,1))^2 + (x(1218,1) - x(1252,1))^2);
+LAMBDA_MATRIX(93,110) = DISTANCE;
+
+DISTANCE = sqrt((x(1217,1) - x(1199,1))^2 + (x(1218,1) - x(1200,1))^2);
+LAMBDA_MATRIX(93,84) = DISTANCE;
+
+DISTANCE = sqrt((x(1199,1) - x(1217,1))^2 + (x(1200,1) - x(1218,1))^2);
+LAMBDA_MATRIX(84,93) = DISTANCE;
+
+DISTANCE = sqrt((x(1199,1) - x(1251,1))^2 + (x(1200,1) - x(1252,1))^2);
+LAMBDA_MATRIX(84,110) = DISTANCE;
+
+DISTANCE = sqrt((x(1251,1) - x(1199,1))^2 + (x(1252,1) - x(1200,1))^2);
+LAMBDA_MATRIX(110,84) = DISTANCE;
+
+DISTANCE = sqrt((x(1217,1) - x(1181,1))^2 + (x(1218,1) - x(1182,1))^2);
+LAMBDA_MATRIX(93,75) = DISTANCE;
+
+DISTANCE = sqrt((x(1181,1) - x(1217,1))^2 + (x(1182,1) - x(1218,1))^2);
+LAMBDA_MATRIX(75,93) = DISTANCE;
+
+DISTANCE = sqrt((x(1181,1) - x(1173,1))^2 + (x(1182,1) - x(1174,1))^2);
+LAMBDA_MATRIX(75,71) = DISTANCE;
+
+DISTANCE = sqrt((x(1173,1) - x(1181,1))^2 + (x(1174,1) - x(1182,1))^2);
+LAMBDA_MATRIX(71,75) = DISTANCE;
+
+DISTANCE = sqrt((x(1173,1) - x(1217,1))^2 + (x(1174,1) - x(1218,1))^2);
+LAMBDA_MATRIX(71,93) = DISTANCE;
+
+DISTANCE = sqrt((x(1217,1) - x(1173,1))^2 + (x(1218,1) - x(1174,1))^2);
+LAMBDA_MATRIX(93,71) = DISTANCE;
+
+DISTANCE = sqrt((x(1173,1) - x(1199,1))^2 + (x(1174,1) - x(1200,1))^2);
+LAMBDA_MATRIX(71,84) = DISTANCE;
+
+DISTANCE = sqrt((x(1199,1) - x(1173,1))^2 + (x(1200,1) - x(1174,1))^2);
+LAMBDA_MATRIX(84,71) = DISTANCE;
+
+DISTANCE = sqrt((x(1199,1) - x(1217,1))^2 + (x(1200,1) - x(1218,1))^2);
+LAMBDA_MATRIX(84,93) = DISTANCE;
+
+DISTANCE = sqrt((x(1217,1) - x(1199,1))^2 + (x(1218,1) - x(1200,1))^2);
+LAMBDA_MATRIX(93,84) = DISTANCE;
+
+DISTANCE = sqrt((x(1217,1) - x(1173,1))^2 + (x(1218,1) - x(1174,1))^2);
+LAMBDA_MATRIX(93,71) = DISTANCE;
+
+DISTANCE = sqrt((x(1173,1) - x(1217,1))^2 + (x(1174,1) - x(1218,1))^2);
+LAMBDA_MATRIX(71,93) = DISTANCE;
+
+DISTANCE = sqrt((x(1133,1) - x(1199,1))^2 + (x(1134,1) - x(1200,1))^2);
+LAMBDA_MATRIX(51,84) = DISTANCE;
+
+DISTANCE = sqrt((x(1199,1) - x(1133,1))^2 + (x(1200,1) - x(1134,1))^2);
+LAMBDA_MATRIX(84,51) = DISTANCE;
+
+DISTANCE = sqrt((x(1199,1) - x(1173,1))^2 + (x(1200,1) - x(1174,1))^2);
+LAMBDA_MATRIX(84,71) = DISTANCE;
+
+DISTANCE = sqrt((x(1173,1) - x(1199,1))^2 + (x(1174,1) - x(1200,1))^2);
+LAMBDA_MATRIX(71,84) = DISTANCE;
+
+DISTANCE = sqrt((x(1173,1) - x(1133,1))^2 + (x(1174,1) - x(1134,1))^2);
+LAMBDA_MATRIX(71,51) = DISTANCE;
+
+DISTANCE = sqrt((x(1133,1) - x(1173,1))^2 + (x(1134,1) - x(1174,1))^2);
+LAMBDA_MATRIX(51,71) = DISTANCE;
+
+DISTANCE = sqrt((x(1129,1) - x(1133,1))^2 + (x(1130,1) - x(1134,1))^2);
+LAMBDA_MATRIX(49,51) = DISTANCE;
+
+DISTANCE = sqrt((x(1133,1) - x(1129,1))^2 + (x(1134,1) - x(1130,1))^2);
+LAMBDA_MATRIX(51,49) = DISTANCE;
+
+DISTANCE = sqrt((x(1133,1) - x(1173,1))^2 + (x(1134,1) - x(1174,1))^2);
+LAMBDA_MATRIX(51,71) = DISTANCE;
+
+DISTANCE = sqrt((x(1173,1) - x(1133,1))^2 + (x(1174,1) - x(1134,1))^2);
+LAMBDA_MATRIX(71,51) = DISTANCE;
+
+DISTANCE = sqrt((x(1173,1) - x(1129,1))^2 + (x(1174,1) - x(1130,1))^2);
+LAMBDA_MATRIX(71,49) = DISTANCE;
+
+DISTANCE = sqrt((x(1129,1) - x(1173,1))^2 + (x(1130,1) - x(1174,1))^2);
+LAMBDA_MATRIX(49,71) = DISTANCE;
+
+DISTANCE = sqrt((x(1173,1) - x(1181,1))^2 + (x(1174,1) - x(1182,1))^2);
+LAMBDA_MATRIX(71,75) = DISTANCE;
+
+DISTANCE = sqrt((x(1181,1) - x(1173,1))^2 + (x(1182,1) - x(1174,1))^2);
+LAMBDA_MATRIX(75,71) = DISTANCE;
+
+DISTANCE = sqrt((x(1181,1) - x(1129,1))^2 + (x(1182,1) - x(1130,1))^2);
+LAMBDA_MATRIX(75,49) = DISTANCE;
+
+DISTANCE = sqrt((x(1129,1) - x(1181,1))^2 + (x(1130,1) - x(1182,1))^2);
+LAMBDA_MATRIX(49,75) = DISTANCE;
+
+DISTANCE = sqrt((x(1129,1) - x(1173,1))^2 + (x(1130,1) - x(1174,1))^2);
+LAMBDA_MATRIX(49,71) = DISTANCE;
+
+DISTANCE = sqrt((x(1173,1) - x(1129,1))^2 + (x(1174,1) - x(1130,1))^2);
+LAMBDA_MATRIX(71,49) = DISTANCE;
+
+DISTANCE = sqrt((x(1401,1) - x(1379,1))^2 + (x(1402,1) - x(1380,1))^2);
+LAMBDA_MATRIX(185,174) = DISTANCE;
+
+DISTANCE = sqrt((x(1379,1) - x(1401,1))^2 + (x(1380,1) - x(1402,1))^2);
+LAMBDA_MATRIX(174,185) = DISTANCE;
+
+DISTANCE = sqrt((x(1379,1) - x(1423,1))^2 + (x(1380,1) - x(1424,1))^2);
+LAMBDA_MATRIX(174,196) = DISTANCE;
+
+DISTANCE = sqrt((x(1423,1) - x(1379,1))^2 + (x(1424,1) - x(1380,1))^2);
+LAMBDA_MATRIX(196,174) = DISTANCE;
+
+DISTANCE = sqrt((x(1423,1) - x(1401,1))^2 + (x(1424,1) - x(1402,1))^2);
+LAMBDA_MATRIX(196,185) = DISTANCE;
+
+DISTANCE = sqrt((x(1401,1) - x(1423,1))^2 + (x(1402,1) - x(1424,1))^2);
+LAMBDA_MATRIX(185,196) = DISTANCE;
+
+DISTANCE = sqrt((x(1353,1) - x(1337,1))^2 + (x(1354,1) - x(1338,1))^2);
+LAMBDA_MATRIX(161,153) = DISTANCE;
+
+DISTANCE = sqrt((x(1337,1) - x(1353,1))^2 + (x(1338,1) - x(1354,1))^2);
+LAMBDA_MATRIX(153,161) = DISTANCE;
+
+DISTANCE = sqrt((x(1337,1) - x(1401,1))^2 + (x(1338,1) - x(1402,1))^2);
+LAMBDA_MATRIX(153,185) = DISTANCE;
+
+DISTANCE = sqrt((x(1401,1) - x(1337,1))^2 + (x(1402,1) - x(1338,1))^2);
+LAMBDA_MATRIX(185,153) = DISTANCE;
+
+DISTANCE = sqrt((x(1401,1) - x(1353,1))^2 + (x(1402,1) - x(1354,1))^2);
+LAMBDA_MATRIX(185,161) = DISTANCE;
+
+DISTANCE = sqrt((x(1353,1) - x(1401,1))^2 + (x(1354,1) - x(1402,1))^2);
+LAMBDA_MATRIX(161,185) = DISTANCE;
+
+DISTANCE = sqrt((x(1337,1) - x(1379,1))^2 + (x(1338,1) - x(1380,1))^2);
+LAMBDA_MATRIX(153,174) = DISTANCE;
+
+DISTANCE = sqrt((x(1379,1) - x(1337,1))^2 + (x(1380,1) - x(1338,1))^2);
+LAMBDA_MATRIX(174,153) = DISTANCE;
+
+DISTANCE = sqrt((x(1379,1) - x(1401,1))^2 + (x(1380,1) - x(1402,1))^2);
+LAMBDA_MATRIX(174,185) = DISTANCE;
+
+DISTANCE = sqrt((x(1401,1) - x(1379,1))^2 + (x(1402,1) - x(1380,1))^2);
+LAMBDA_MATRIX(185,174) = DISTANCE;
+
+DISTANCE = sqrt((x(1401,1) - x(1337,1))^2 + (x(1402,1) - x(1338,1))^2);
+LAMBDA_MATRIX(185,153) = DISTANCE;
+
+DISTANCE = sqrt((x(1337,1) - x(1401,1))^2 + (x(1338,1) - x(1402,1))^2);
+LAMBDA_MATRIX(153,185) = DISTANCE;
+
+DISTANCE = sqrt((x(1401,1) - x(1385,1))^2 + (x(1402,1) - x(1386,1))^2);
+LAMBDA_MATRIX(185,177) = DISTANCE;
+
+DISTANCE = sqrt((x(1385,1) - x(1401,1))^2 + (x(1386,1) - x(1402,1))^2);
+LAMBDA_MATRIX(177,185) = DISTANCE;
+
+DISTANCE = sqrt((x(1385,1) - x(1353,1))^2 + (x(1386,1) - x(1354,1))^2);
+LAMBDA_MATRIX(177,161) = DISTANCE;
+
+DISTANCE = sqrt((x(1353,1) - x(1385,1))^2 + (x(1354,1) - x(1386,1))^2);
+LAMBDA_MATRIX(161,177) = DISTANCE;
+
+DISTANCE = sqrt((x(1353,1) - x(1401,1))^2 + (x(1354,1) - x(1402,1))^2);
+LAMBDA_MATRIX(161,185) = DISTANCE;
+
+DISTANCE = sqrt((x(1401,1) - x(1353,1))^2 + (x(1402,1) - x(1354,1))^2);
+LAMBDA_MATRIX(185,161) = DISTANCE;
+
+DISTANCE = sqrt((x(1401,1) - x(1427,1))^2 + (x(1402,1) - x(1428,1))^2);
+LAMBDA_MATRIX(185,198) = DISTANCE;
+
+DISTANCE = sqrt((x(1427,1) - x(1401,1))^2 + (x(1428,1) - x(1402,1))^2);
+LAMBDA_MATRIX(198,185) = DISTANCE;
+
+DISTANCE = sqrt((x(1427,1) - x(1385,1))^2 + (x(1428,1) - x(1386,1))^2);
+LAMBDA_MATRIX(198,177) = DISTANCE;
+
+DISTANCE = sqrt((x(1385,1) - x(1427,1))^2 + (x(1386,1) - x(1428,1))^2);
+LAMBDA_MATRIX(177,198) = DISTANCE;
+
+DISTANCE = sqrt((x(1385,1) - x(1401,1))^2 + (x(1386,1) - x(1402,1))^2);
+LAMBDA_MATRIX(177,185) = DISTANCE;
+
+DISTANCE = sqrt((x(1401,1) - x(1385,1))^2 + (x(1402,1) - x(1386,1))^2);
+LAMBDA_MATRIX(185,177) = DISTANCE;
+
+DISTANCE = sqrt((x(1409,1) - x(1379,1))^2 + (x(1410,1) - x(1380,1))^2);
+LAMBDA_MATRIX(189,174) = DISTANCE;
+
+DISTANCE = sqrt((x(1379,1) - x(1409,1))^2 + (x(1380,1) - x(1410,1))^2);
+LAMBDA_MATRIX(174,189) = DISTANCE;
+
+DISTANCE = sqrt((x(1379,1) - x(1357,1))^2 + (x(1380,1) - x(1358,1))^2);
+LAMBDA_MATRIX(174,163) = DISTANCE;
+
+DISTANCE = sqrt((x(1357,1) - x(1379,1))^2 + (x(1358,1) - x(1380,1))^2);
+LAMBDA_MATRIX(163,174) = DISTANCE;
+
+DISTANCE = sqrt((x(1357,1) - x(1409,1))^2 + (x(1358,1) - x(1410,1))^2);
+LAMBDA_MATRIX(163,189) = DISTANCE;
+
+DISTANCE = sqrt((x(1409,1) - x(1357,1))^2 + (x(1410,1) - x(1358,1))^2);
+LAMBDA_MATRIX(189,163) = DISTANCE;
+
+DISTANCE = sqrt((x(1409,1) - x(1389,1))^2 + (x(1410,1) - x(1390,1))^2);
+LAMBDA_MATRIX(189,179) = DISTANCE;
+
+DISTANCE = sqrt((x(1389,1) - x(1409,1))^2 + (x(1390,1) - x(1410,1))^2);
+LAMBDA_MATRIX(179,189) = DISTANCE;
+
+DISTANCE = sqrt((x(1389,1) - x(1435,1))^2 + (x(1390,1) - x(1436,1))^2);
+LAMBDA_MATRIX(179,202) = DISTANCE;
+
+DISTANCE = sqrt((x(1435,1) - x(1389,1))^2 + (x(1436,1) - x(1390,1))^2);
+LAMBDA_MATRIX(202,179) = DISTANCE;
+
+DISTANCE = sqrt((x(1435,1) - x(1409,1))^2 + (x(1436,1) - x(1410,1))^2);
+LAMBDA_MATRIX(202,189) = DISTANCE;
+
+DISTANCE = sqrt((x(1409,1) - x(1435,1))^2 + (x(1410,1) - x(1436,1))^2);
+LAMBDA_MATRIX(189,202) = DISTANCE;
+
+DISTANCE = sqrt((x(1357,1) - x(1389,1))^2 + (x(1358,1) - x(1390,1))^2);
+LAMBDA_MATRIX(163,179) = DISTANCE;
+
+DISTANCE = sqrt((x(1389,1) - x(1357,1))^2 + (x(1390,1) - x(1358,1))^2);
+LAMBDA_MATRIX(179,163) = DISTANCE;
+
+DISTANCE = sqrt((x(1389,1) - x(1409,1))^2 + (x(1390,1) - x(1410,1))^2);
+LAMBDA_MATRIX(179,189) = DISTANCE;
+
+DISTANCE = sqrt((x(1409,1) - x(1389,1))^2 + (x(1410,1) - x(1390,1))^2);
+LAMBDA_MATRIX(189,179) = DISTANCE;
+
+DISTANCE = sqrt((x(1409,1) - x(1357,1))^2 + (x(1410,1) - x(1358,1))^2);
+LAMBDA_MATRIX(189,163) = DISTANCE;
+
+DISTANCE = sqrt((x(1357,1) - x(1409,1))^2 + (x(1358,1) - x(1410,1))^2);
+LAMBDA_MATRIX(163,189) = DISTANCE;
+
+DISTANCE = sqrt((x(1435,1) - x(1449,1))^2 + (x(1436,1) - x(1450,1))^2);
+LAMBDA_MATRIX(202,209) = DISTANCE;
+
+DISTANCE = sqrt((x(1449,1) - x(1435,1))^2 + (x(1450,1) - x(1436,1))^2);
+LAMBDA_MATRIX(209,202) = DISTANCE;
+
+DISTANCE = sqrt((x(1449,1) - x(1409,1))^2 + (x(1450,1) - x(1410,1))^2);
+LAMBDA_MATRIX(209,189) = DISTANCE;
+
+DISTANCE = sqrt((x(1409,1) - x(1449,1))^2 + (x(1410,1) - x(1450,1))^2);
+LAMBDA_MATRIX(189,209) = DISTANCE;
+
+DISTANCE = sqrt((x(1409,1) - x(1435,1))^2 + (x(1410,1) - x(1436,1))^2);
+LAMBDA_MATRIX(189,202) = DISTANCE;
+
+DISTANCE = sqrt((x(1435,1) - x(1409,1))^2 + (x(1436,1) - x(1410,1))^2);
+LAMBDA_MATRIX(202,189) = DISTANCE;
+
+DISTANCE = sqrt((x(1409,1) - x(1449,1))^2 + (x(1410,1) - x(1450,1))^2);
+LAMBDA_MATRIX(189,209) = DISTANCE;
+
+DISTANCE = sqrt((x(1449,1) - x(1409,1))^2 + (x(1450,1) - x(1410,1))^2);
+LAMBDA_MATRIX(209,189) = DISTANCE;
+
+DISTANCE = sqrt((x(1449,1) - x(1423,1))^2 + (x(1450,1) - x(1424,1))^2);
+LAMBDA_MATRIX(209,196) = DISTANCE;
+
+DISTANCE = sqrt((x(1423,1) - x(1449,1))^2 + (x(1424,1) - x(1450,1))^2);
+LAMBDA_MATRIX(196,209) = DISTANCE;
+
+DISTANCE = sqrt((x(1423,1) - x(1409,1))^2 + (x(1424,1) - x(1410,1))^2);
+LAMBDA_MATRIX(196,189) = DISTANCE;
+
+DISTANCE = sqrt((x(1409,1) - x(1423,1))^2 + (x(1410,1) - x(1424,1))^2);
+LAMBDA_MATRIX(189,196) = DISTANCE;
+
+DISTANCE = sqrt((x(1423,1) - x(1379,1))^2 + (x(1424,1) - x(1380,1))^2);
+LAMBDA_MATRIX(196,174) = DISTANCE;
+
+DISTANCE = sqrt((x(1379,1) - x(1423,1))^2 + (x(1380,1) - x(1424,1))^2);
+LAMBDA_MATRIX(174,196) = DISTANCE;
+
+DISTANCE = sqrt((x(1379,1) - x(1409,1))^2 + (x(1380,1) - x(1410,1))^2);
+LAMBDA_MATRIX(174,189) = DISTANCE;
+
+DISTANCE = sqrt((x(1409,1) - x(1379,1))^2 + (x(1410,1) - x(1380,1))^2);
+LAMBDA_MATRIX(189,174) = DISTANCE;
+
+DISTANCE = sqrt((x(1409,1) - x(1423,1))^2 + (x(1410,1) - x(1424,1))^2);
+LAMBDA_MATRIX(189,196) = DISTANCE;
+
+DISTANCE = sqrt((x(1423,1) - x(1409,1))^2 + (x(1424,1) - x(1410,1))^2);
+LAMBDA_MATRIX(196,189) = DISTANCE;
+
+DISTANCE = sqrt((x(1739,1) - x(1711,1))^2 + (x(1740,1) - x(1712,1))^2);
+LAMBDA_MATRIX(354,340) = DISTANCE;
+
+DISTANCE = sqrt((x(1711,1) - x(1739,1))^2 + (x(1712,1) - x(1740,1))^2);
+LAMBDA_MATRIX(340,354) = DISTANCE;
+
+DISTANCE = sqrt((x(1711,1) - x(1695,1))^2 + (x(1712,1) - x(1696,1))^2);
+LAMBDA_MATRIX(340,332) = DISTANCE;
+
+DISTANCE = sqrt((x(1695,1) - x(1711,1))^2 + (x(1696,1) - x(1712,1))^2);
+LAMBDA_MATRIX(332,340) = DISTANCE;
+
+DISTANCE = sqrt((x(1695,1) - x(1739,1))^2 + (x(1696,1) - x(1740,1))^2);
+LAMBDA_MATRIX(332,354) = DISTANCE;
+
+DISTANCE = sqrt((x(1739,1) - x(1695,1))^2 + (x(1740,1) - x(1696,1))^2);
+LAMBDA_MATRIX(354,332) = DISTANCE;
+
+DISTANCE = sqrt((x(1695,1) - x(1713,1))^2 + (x(1696,1) - x(1714,1))^2);
+LAMBDA_MATRIX(332,341) = DISTANCE;
+
+DISTANCE = sqrt((x(1713,1) - x(1695,1))^2 + (x(1714,1) - x(1696,1))^2);
+LAMBDA_MATRIX(341,332) = DISTANCE;
+
+DISTANCE = sqrt((x(1713,1) - x(1739,1))^2 + (x(1714,1) - x(1740,1))^2);
+LAMBDA_MATRIX(341,354) = DISTANCE;
+
+DISTANCE = sqrt((x(1739,1) - x(1713,1))^2 + (x(1740,1) - x(1714,1))^2);
+LAMBDA_MATRIX(354,341) = DISTANCE;
+
+DISTANCE = sqrt((x(1739,1) - x(1695,1))^2 + (x(1740,1) - x(1696,1))^2);
+LAMBDA_MATRIX(354,332) = DISTANCE;
+
+DISTANCE = sqrt((x(1695,1) - x(1739,1))^2 + (x(1696,1) - x(1740,1))^2);
+LAMBDA_MATRIX(332,354) = DISTANCE;
+
+DISTANCE = sqrt((x(1713,1) - x(1763,1))^2 + (x(1714,1) - x(1764,1))^2);
+LAMBDA_MATRIX(341,366) = DISTANCE;
+
+DISTANCE = sqrt((x(1763,1) - x(1713,1))^2 + (x(1764,1) - x(1714,1))^2);
+LAMBDA_MATRIX(366,341) = DISTANCE;
+
+DISTANCE = sqrt((x(1763,1) - x(1739,1))^2 + (x(1764,1) - x(1740,1))^2);
+LAMBDA_MATRIX(366,354) = DISTANCE;
+
+DISTANCE = sqrt((x(1739,1) - x(1763,1))^2 + (x(1740,1) - x(1764,1))^2);
+LAMBDA_MATRIX(354,366) = DISTANCE;
+
+DISTANCE = sqrt((x(1739,1) - x(1713,1))^2 + (x(1740,1) - x(1714,1))^2);
+LAMBDA_MATRIX(354,341) = DISTANCE;
+
+DISTANCE = sqrt((x(1713,1) - x(1739,1))^2 + (x(1714,1) - x(1740,1))^2);
+LAMBDA_MATRIX(341,354) = DISTANCE;
+
+DISTANCE = sqrt((x(1839,1) - x(1787,1))^2 + (x(1840,1) - x(1788,1))^2);
+LAMBDA_MATRIX(404,378) = DISTANCE;
+
+DISTANCE = sqrt((x(1787,1) - x(1839,1))^2 + (x(1788,1) - x(1840,1))^2);
+LAMBDA_MATRIX(378,404) = DISTANCE;
+
+DISTANCE = sqrt((x(1787,1) - x(1815,1))^2 + (x(1788,1) - x(1816,1))^2);
+LAMBDA_MATRIX(378,392) = DISTANCE;
+
+DISTANCE = sqrt((x(1815,1) - x(1787,1))^2 + (x(1816,1) - x(1788,1))^2);
+LAMBDA_MATRIX(392,378) = DISTANCE;
+
+DISTANCE = sqrt((x(1815,1) - x(1839,1))^2 + (x(1816,1) - x(1840,1))^2);
+LAMBDA_MATRIX(392,404) = DISTANCE;
+
+DISTANCE = sqrt((x(1839,1) - x(1815,1))^2 + (x(1840,1) - x(1816,1))^2);
+LAMBDA_MATRIX(404,392) = DISTANCE;
+
+DISTANCE = sqrt((x(1815,1) - x(1863,1))^2 + (x(1816,1) - x(1864,1))^2);
+LAMBDA_MATRIX(392,416) = DISTANCE;
+
+DISTANCE = sqrt((x(1863,1) - x(1815,1))^2 + (x(1864,1) - x(1816,1))^2);
+LAMBDA_MATRIX(416,392) = DISTANCE;
+
+DISTANCE = sqrt((x(1863,1) - x(1839,1))^2 + (x(1864,1) - x(1840,1))^2);
+LAMBDA_MATRIX(416,404) = DISTANCE;
+
+DISTANCE = sqrt((x(1839,1) - x(1863,1))^2 + (x(1840,1) - x(1864,1))^2);
+LAMBDA_MATRIX(404,416) = DISTANCE;
+
+DISTANCE = sqrt((x(1839,1) - x(1815,1))^2 + (x(1840,1) - x(1816,1))^2);
+LAMBDA_MATRIX(404,392) = DISTANCE;
+
+DISTANCE = sqrt((x(1815,1) - x(1839,1))^2 + (x(1816,1) - x(1840,1))^2);
+LAMBDA_MATRIX(392,404) = DISTANCE;
+
+DISTANCE = sqrt((x(1835,1) - x(1863,1))^2 + (x(1836,1) - x(1864,1))^2);
+LAMBDA_MATRIX(402,416) = DISTANCE;
+
+DISTANCE = sqrt((x(1863,1) - x(1835,1))^2 + (x(1864,1) - x(1836,1))^2);
+LAMBDA_MATRIX(416,402) = DISTANCE;
+
+DISTANCE = sqrt((x(1863,1) - x(1815,1))^2 + (x(1864,1) - x(1816,1))^2);
+LAMBDA_MATRIX(416,392) = DISTANCE;
+
+DISTANCE = sqrt((x(1815,1) - x(1863,1))^2 + (x(1816,1) - x(1864,1))^2);
+LAMBDA_MATRIX(392,416) = DISTANCE;
+
+DISTANCE = sqrt((x(1815,1) - x(1835,1))^2 + (x(1816,1) - x(1836,1))^2);
+LAMBDA_MATRIX(392,402) = DISTANCE;
+
+DISTANCE = sqrt((x(1835,1) - x(1815,1))^2 + (x(1836,1) - x(1816,1))^2);
+LAMBDA_MATRIX(402,392) = DISTANCE;
+
+DISTANCE = sqrt((x(1733,1) - x(1711,1))^2 + (x(1734,1) - x(1712,1))^2);
+LAMBDA_MATRIX(351,340) = DISTANCE;
+
+DISTANCE = sqrt((x(1711,1) - x(1733,1))^2 + (x(1712,1) - x(1734,1))^2);
+LAMBDA_MATRIX(340,351) = DISTANCE;
+
+DISTANCE = sqrt((x(1711,1) - x(1765,1))^2 + (x(1712,1) - x(1766,1))^2);
+LAMBDA_MATRIX(340,367) = DISTANCE;
+
+DISTANCE = sqrt((x(1765,1) - x(1711,1))^2 + (x(1766,1) - x(1712,1))^2);
+LAMBDA_MATRIX(367,340) = DISTANCE;
+
+DISTANCE = sqrt((x(1765,1) - x(1733,1))^2 + (x(1766,1) - x(1734,1))^2);
+LAMBDA_MATRIX(367,351) = DISTANCE;
+
+DISTANCE = sqrt((x(1733,1) - x(1765,1))^2 + (x(1734,1) - x(1766,1))^2);
+LAMBDA_MATRIX(351,367) = DISTANCE;
+
+DISTANCE = sqrt((x(1765,1) - x(1787,1))^2 + (x(1766,1) - x(1788,1))^2);
+LAMBDA_MATRIX(367,378) = DISTANCE;
+
+DISTANCE = sqrt((x(1787,1) - x(1765,1))^2 + (x(1788,1) - x(1766,1))^2);
+LAMBDA_MATRIX(378,367) = DISTANCE;
+
+DISTANCE = sqrt((x(1787,1) - x(1733,1))^2 + (x(1788,1) - x(1734,1))^2);
+LAMBDA_MATRIX(378,351) = DISTANCE;
+
+DISTANCE = sqrt((x(1733,1) - x(1787,1))^2 + (x(1734,1) - x(1788,1))^2);
+LAMBDA_MATRIX(351,378) = DISTANCE;
+
+DISTANCE = sqrt((x(1733,1) - x(1765,1))^2 + (x(1734,1) - x(1766,1))^2);
+LAMBDA_MATRIX(351,367) = DISTANCE;
+
+DISTANCE = sqrt((x(1765,1) - x(1733,1))^2 + (x(1766,1) - x(1734,1))^2);
+LAMBDA_MATRIX(367,351) = DISTANCE;
+
+DISTANCE = sqrt((x(1711,1) - x(1739,1))^2 + (x(1712,1) - x(1740,1))^2);
+LAMBDA_MATRIX(340,354) = DISTANCE;
+
+DISTANCE = sqrt((x(1739,1) - x(1711,1))^2 + (x(1740,1) - x(1712,1))^2);
+LAMBDA_MATRIX(354,340) = DISTANCE;
+
+DISTANCE = sqrt((x(1739,1) - x(1765,1))^2 + (x(1740,1) - x(1766,1))^2);
+LAMBDA_MATRIX(354,367) = DISTANCE;
+
+DISTANCE = sqrt((x(1765,1) - x(1739,1))^2 + (x(1766,1) - x(1740,1))^2);
+LAMBDA_MATRIX(367,354) = DISTANCE;
+
+DISTANCE = sqrt((x(1765,1) - x(1711,1))^2 + (x(1766,1) - x(1712,1))^2);
+LAMBDA_MATRIX(367,340) = DISTANCE;
+
+DISTANCE = sqrt((x(1711,1) - x(1765,1))^2 + (x(1712,1) - x(1766,1))^2);
+LAMBDA_MATRIX(340,367) = DISTANCE;
+
+DISTANCE = sqrt((x(1765,1) - x(1815,1))^2 + (x(1766,1) - x(1816,1))^2);
+LAMBDA_MATRIX(367,392) = DISTANCE;
+
+DISTANCE = sqrt((x(1815,1) - x(1765,1))^2 + (x(1816,1) - x(1766,1))^2);
+LAMBDA_MATRIX(392,367) = DISTANCE;
+
+DISTANCE = sqrt((x(1815,1) - x(1787,1))^2 + (x(1816,1) - x(1788,1))^2);
+LAMBDA_MATRIX(392,378) = DISTANCE;
+
+DISTANCE = sqrt((x(1787,1) - x(1815,1))^2 + (x(1788,1) - x(1816,1))^2);
+LAMBDA_MATRIX(378,392) = DISTANCE;
+
+DISTANCE = sqrt((x(1787,1) - x(1765,1))^2 + (x(1788,1) - x(1766,1))^2);
+LAMBDA_MATRIX(378,367) = DISTANCE;
+
+DISTANCE = sqrt((x(1765,1) - x(1787,1))^2 + (x(1766,1) - x(1788,1))^2);
+LAMBDA_MATRIX(367,378) = DISTANCE;
+
+DISTANCE = sqrt((x(1847,1) - x(1817,1))^2 + (x(1848,1) - x(1818,1))^2);
+LAMBDA_MATRIX(408,393) = DISTANCE;
+
+DISTANCE = sqrt((x(1817,1) - x(1847,1))^2 + (x(1818,1) - x(1848,1))^2);
+LAMBDA_MATRIX(393,408) = DISTANCE;
+
+DISTANCE = sqrt((x(1817,1) - x(1865,1))^2 + (x(1818,1) - x(1866,1))^2);
+LAMBDA_MATRIX(393,417) = DISTANCE;
+
+DISTANCE = sqrt((x(1865,1) - x(1817,1))^2 + (x(1866,1) - x(1818,1))^2);
+LAMBDA_MATRIX(417,393) = DISTANCE;
+
+DISTANCE = sqrt((x(1865,1) - x(1847,1))^2 + (x(1866,1) - x(1848,1))^2);
+LAMBDA_MATRIX(417,408) = DISTANCE;
+
+DISTANCE = sqrt((x(1847,1) - x(1865,1))^2 + (x(1848,1) - x(1866,1))^2);
+LAMBDA_MATRIX(408,417) = DISTANCE;
+
+DISTANCE = sqrt((x(1899,1) - x(1847,1))^2 + (x(1900,1) - x(1848,1))^2);
+LAMBDA_MATRIX(434,408) = DISTANCE;
+
+DISTANCE = sqrt((x(1847,1) - x(1899,1))^2 + (x(1848,1) - x(1900,1))^2);
+LAMBDA_MATRIX(408,434) = DISTANCE;
+
+DISTANCE = sqrt((x(1847,1) - x(1865,1))^2 + (x(1848,1) - x(1866,1))^2);
+LAMBDA_MATRIX(408,417) = DISTANCE;
+
+DISTANCE = sqrt((x(1865,1) - x(1847,1))^2 + (x(1866,1) - x(1848,1))^2);
+LAMBDA_MATRIX(417,408) = DISTANCE;
+
+DISTANCE = sqrt((x(1865,1) - x(1899,1))^2 + (x(1866,1) - x(1900,1))^2);
+LAMBDA_MATRIX(417,434) = DISTANCE;
+
+DISTANCE = sqrt((x(1899,1) - x(1865,1))^2 + (x(1900,1) - x(1866,1))^2);
+LAMBDA_MATRIX(434,417) = DISTANCE;
+
+DISTANCE = sqrt((x(1839,1) - x(1883,1))^2 + (x(1840,1) - x(1884,1))^2);
+LAMBDA_MATRIX(404,426) = DISTANCE;
+
+DISTANCE = sqrt((x(1883,1) - x(1839,1))^2 + (x(1884,1) - x(1840,1))^2);
+LAMBDA_MATRIX(426,404) = DISTANCE;
+
+DISTANCE = sqrt((x(1883,1) - x(1865,1))^2 + (x(1884,1) - x(1866,1))^2);
+LAMBDA_MATRIX(426,417) = DISTANCE;
+
+DISTANCE = sqrt((x(1865,1) - x(1883,1))^2 + (x(1866,1) - x(1884,1))^2);
+LAMBDA_MATRIX(417,426) = DISTANCE;
+
+DISTANCE = sqrt((x(1865,1) - x(1839,1))^2 + (x(1866,1) - x(1840,1))^2);
+LAMBDA_MATRIX(417,404) = DISTANCE;
+
+DISTANCE = sqrt((x(1839,1) - x(1865,1))^2 + (x(1840,1) - x(1866,1))^2);
+LAMBDA_MATRIX(404,417) = DISTANCE;
+
+DISTANCE = sqrt((x(1865,1) - x(1817,1))^2 + (x(1866,1) - x(1818,1))^2);
+LAMBDA_MATRIX(417,393) = DISTANCE;
+
+DISTANCE = sqrt((x(1817,1) - x(1865,1))^2 + (x(1818,1) - x(1866,1))^2);
+LAMBDA_MATRIX(393,417) = DISTANCE;
+
+DISTANCE = sqrt((x(1817,1) - x(1839,1))^2 + (x(1818,1) - x(1840,1))^2);
+LAMBDA_MATRIX(393,404) = DISTANCE;
+
+DISTANCE = sqrt((x(1839,1) - x(1817,1))^2 + (x(1840,1) - x(1818,1))^2);
+LAMBDA_MATRIX(404,393) = DISTANCE;
+
+DISTANCE = sqrt((x(1839,1) - x(1865,1))^2 + (x(1840,1) - x(1866,1))^2);
+LAMBDA_MATRIX(404,417) = DISTANCE;
+
+DISTANCE = sqrt((x(1865,1) - x(1839,1))^2 + (x(1866,1) - x(1840,1))^2);
+LAMBDA_MATRIX(417,404) = DISTANCE;
+
+DISTANCE = sqrt((x(1865,1) - x(1921,1))^2 + (x(1866,1) - x(1922,1))^2);
+LAMBDA_MATRIX(417,445) = DISTANCE;
+
+DISTANCE = sqrt((x(1921,1) - x(1865,1))^2 + (x(1922,1) - x(1866,1))^2);
+LAMBDA_MATRIX(445,417) = DISTANCE;
+
+DISTANCE = sqrt((x(1921,1) - x(1899,1))^2 + (x(1922,1) - x(1900,1))^2);
+LAMBDA_MATRIX(445,434) = DISTANCE;
+
+DISTANCE = sqrt((x(1899,1) - x(1921,1))^2 + (x(1900,1) - x(1922,1))^2);
+LAMBDA_MATRIX(434,445) = DISTANCE;
+
+DISTANCE = sqrt((x(1899,1) - x(1865,1))^2 + (x(1900,1) - x(1866,1))^2);
+LAMBDA_MATRIX(434,417) = DISTANCE;
+
+DISTANCE = sqrt((x(1865,1) - x(1899,1))^2 + (x(1866,1) - x(1900,1))^2);
+LAMBDA_MATRIX(417,434) = DISTANCE;
+
+DISTANCE = sqrt((x(1883,1) - x(1921,1))^2 + (x(1884,1) - x(1922,1))^2);
+LAMBDA_MATRIX(426,445) = DISTANCE;
+
+DISTANCE = sqrt((x(1921,1) - x(1883,1))^2 + (x(1922,1) - x(1884,1))^2);
+LAMBDA_MATRIX(445,426) = DISTANCE;
+
+DISTANCE = sqrt((x(1921,1) - x(1865,1))^2 + (x(1922,1) - x(1866,1))^2);
+LAMBDA_MATRIX(445,417) = DISTANCE;
+
+DISTANCE = sqrt((x(1865,1) - x(1921,1))^2 + (x(1866,1) - x(1922,1))^2);
+LAMBDA_MATRIX(417,445) = DISTANCE;
+
+DISTANCE = sqrt((x(1865,1) - x(1883,1))^2 + (x(1866,1) - x(1884,1))^2);
+LAMBDA_MATRIX(417,426) = DISTANCE;
+
+DISTANCE = sqrt((x(1883,1) - x(1865,1))^2 + (x(1884,1) - x(1866,1))^2);
+LAMBDA_MATRIX(426,417) = DISTANCE;
+
+DISTANCE = sqrt((x(1883,1) - x(1863,1))^2 + (x(1884,1) - x(1864,1))^2);
+LAMBDA_MATRIX(426,416) = DISTANCE;
+
+DISTANCE = sqrt((x(1863,1) - x(1883,1))^2 + (x(1864,1) - x(1884,1))^2);
+LAMBDA_MATRIX(416,426) = DISTANCE;
+
+DISTANCE = sqrt((x(1863,1) - x(1915,1))^2 + (x(1864,1) - x(1916,1))^2);
+LAMBDA_MATRIX(416,442) = DISTANCE;
+
+DISTANCE = sqrt((x(1915,1) - x(1863,1))^2 + (x(1916,1) - x(1864,1))^2);
+LAMBDA_MATRIX(442,416) = DISTANCE;
+
+DISTANCE = sqrt((x(1915,1) - x(1883,1))^2 + (x(1916,1) - x(1884,1))^2);
+LAMBDA_MATRIX(442,426) = DISTANCE;
+
+DISTANCE = sqrt((x(1883,1) - x(1915,1))^2 + (x(1884,1) - x(1916,1))^2);
+LAMBDA_MATRIX(426,442) = DISTANCE;
+
+DISTANCE = sqrt((x(1915,1) - x(1863,1))^2 + (x(1916,1) - x(1864,1))^2);
+LAMBDA_MATRIX(442,416) = DISTANCE;
+
+DISTANCE = sqrt((x(1863,1) - x(1915,1))^2 + (x(1864,1) - x(1916,1))^2);
+LAMBDA_MATRIX(416,442) = DISTANCE;
+
+DISTANCE = sqrt((x(1863,1) - x(1919,1))^2 + (x(1864,1) - x(1920,1))^2);
+LAMBDA_MATRIX(416,444) = DISTANCE;
+
+DISTANCE = sqrt((x(1919,1) - x(1863,1))^2 + (x(1920,1) - x(1864,1))^2);
+LAMBDA_MATRIX(444,416) = DISTANCE;
+
+DISTANCE = sqrt((x(1919,1) - x(1915,1))^2 + (x(1920,1) - x(1916,1))^2);
+LAMBDA_MATRIX(444,442) = DISTANCE;
+
+DISTANCE = sqrt((x(1915,1) - x(1919,1))^2 + (x(1916,1) - x(1920,1))^2);
+LAMBDA_MATRIX(442,444) = DISTANCE;
+
+DISTANCE = sqrt((x(1957,1) - x(1921,1))^2 + (x(1958,1) - x(1922,1))^2);
+LAMBDA_MATRIX(463,445) = DISTANCE;
+
+DISTANCE = sqrt((x(1921,1) - x(1957,1))^2 + (x(1922,1) - x(1958,1))^2);
+LAMBDA_MATRIX(445,463) = DISTANCE;
+
+DISTANCE = sqrt((x(1921,1) - x(1915,1))^2 + (x(1922,1) - x(1916,1))^2);
+LAMBDA_MATRIX(445,442) = DISTANCE;
+
+DISTANCE = sqrt((x(1915,1) - x(1921,1))^2 + (x(1916,1) - x(1922,1))^2);
+LAMBDA_MATRIX(442,445) = DISTANCE;
+
+DISTANCE = sqrt((x(1915,1) - x(1957,1))^2 + (x(1916,1) - x(1958,1))^2);
+LAMBDA_MATRIX(442,463) = DISTANCE;
+
+DISTANCE = sqrt((x(1957,1) - x(1915,1))^2 + (x(1958,1) - x(1916,1))^2);
+LAMBDA_MATRIX(463,442) = DISTANCE;
+
+DISTANCE = sqrt((x(1915,1) - x(1921,1))^2 + (x(1916,1) - x(1922,1))^2);
+LAMBDA_MATRIX(442,445) = DISTANCE;
+
+DISTANCE = sqrt((x(1921,1) - x(1915,1))^2 + (x(1922,1) - x(1916,1))^2);
+LAMBDA_MATRIX(445,442) = DISTANCE;
+
+DISTANCE = sqrt((x(1921,1) - x(1883,1))^2 + (x(1922,1) - x(1884,1))^2);
+LAMBDA_MATRIX(445,426) = DISTANCE;
+
+DISTANCE = sqrt((x(1883,1) - x(1921,1))^2 + (x(1884,1) - x(1922,1))^2);
+LAMBDA_MATRIX(426,445) = DISTANCE;
+
+DISTANCE = sqrt((x(1883,1) - x(1915,1))^2 + (x(1884,1) - x(1916,1))^2);
+LAMBDA_MATRIX(426,442) = DISTANCE;
+
+DISTANCE = sqrt((x(1915,1) - x(1883,1))^2 + (x(1916,1) - x(1884,1))^2);
+LAMBDA_MATRIX(442,426) = DISTANCE;
+
+DISTANCE = sqrt((x(1915,1) - x(1959,1))^2 + (x(1916,1) - x(1960,1))^2);
+LAMBDA_MATRIX(442,464) = DISTANCE;
+
+DISTANCE = sqrt((x(1959,1) - x(1915,1))^2 + (x(1960,1) - x(1916,1))^2);
+LAMBDA_MATRIX(464,442) = DISTANCE;
+
+DISTANCE = sqrt((x(1959,1) - x(1957,1))^2 + (x(1960,1) - x(1958,1))^2);
+LAMBDA_MATRIX(464,463) = DISTANCE;
+
+DISTANCE = sqrt((x(1957,1) - x(1959,1))^2 + (x(1958,1) - x(1960,1))^2);
+LAMBDA_MATRIX(463,464) = DISTANCE;
+
+DISTANCE = sqrt((x(1957,1) - x(1915,1))^2 + (x(1958,1) - x(1916,1))^2);
+LAMBDA_MATRIX(463,442) = DISTANCE;
+
+DISTANCE = sqrt((x(1915,1) - x(1957,1))^2 + (x(1916,1) - x(1958,1))^2);
+LAMBDA_MATRIX(442,463) = DISTANCE;
+
+DISTANCE = sqrt((x(1919,1) - x(1959,1))^2 + (x(1920,1) - x(1960,1))^2);
+LAMBDA_MATRIX(444,464) = DISTANCE;
+
+DISTANCE = sqrt((x(1959,1) - x(1919,1))^2 + (x(1960,1) - x(1920,1))^2);
+LAMBDA_MATRIX(464,444) = DISTANCE;
+
+DISTANCE = sqrt((x(1959,1) - x(1915,1))^2 + (x(1960,1) - x(1916,1))^2);
+LAMBDA_MATRIX(464,442) = DISTANCE;
+
+DISTANCE = sqrt((x(1915,1) - x(1959,1))^2 + (x(1916,1) - x(1960,1))^2);
+LAMBDA_MATRIX(442,464) = DISTANCE;
+
+DISTANCE = sqrt((x(1915,1) - x(1919,1))^2 + (x(1916,1) - x(1920,1))^2);
+LAMBDA_MATRIX(442,444) = DISTANCE;
+
+DISTANCE = sqrt((x(1919,1) - x(1915,1))^2 + (x(1920,1) - x(1916,1))^2);
+LAMBDA_MATRIX(444,442) = DISTANCE;
+
+DISTANCE = sqrt((x(2025,1) - x(2017,1))^2 + (x(2026,1) - x(2018,1))^2);
+LAMBDA_MATRIX(497,493) = DISTANCE;
+
+DISTANCE = sqrt((x(2017,1) - x(2025,1))^2 + (x(2018,1) - x(2026,1))^2);
+LAMBDA_MATRIX(493,497) = DISTANCE;
+
+DISTANCE = sqrt((x(2017,1) - x(1979,1))^2 + (x(2018,1) - x(1980,1))^2);
+LAMBDA_MATRIX(493,474) = DISTANCE;
+
+DISTANCE = sqrt((x(1979,1) - x(2017,1))^2 + (x(1980,1) - x(2018,1))^2);
+LAMBDA_MATRIX(474,493) = DISTANCE;
+
+DISTANCE = sqrt((x(1979,1) - x(2025,1))^2 + (x(1980,1) - x(2026,1))^2);
+LAMBDA_MATRIX(474,497) = DISTANCE;
+
+DISTANCE = sqrt((x(2025,1) - x(1979,1))^2 + (x(2026,1) - x(1980,1))^2);
+LAMBDA_MATRIX(497,474) = DISTANCE;
+
+DISTANCE = sqrt((x(1979,1) - x(2009,1))^2 + (x(1980,1) - x(2010,1))^2);
+LAMBDA_MATRIX(474,489) = DISTANCE;
+
+DISTANCE = sqrt((x(2009,1) - x(1979,1))^2 + (x(2010,1) - x(1980,1))^2);
+LAMBDA_MATRIX(489,474) = DISTANCE;
+
+DISTANCE = sqrt((x(2009,1) - x(2025,1))^2 + (x(2010,1) - x(2026,1))^2);
+LAMBDA_MATRIX(489,497) = DISTANCE;
+
+DISTANCE = sqrt((x(2025,1) - x(2009,1))^2 + (x(2026,1) - x(2010,1))^2);
+LAMBDA_MATRIX(497,489) = DISTANCE;
+
+DISTANCE = sqrt((x(2025,1) - x(1979,1))^2 + (x(2026,1) - x(1980,1))^2);
+LAMBDA_MATRIX(497,474) = DISTANCE;
+
+DISTANCE = sqrt((x(1979,1) - x(2025,1))^2 + (x(1980,1) - x(2026,1))^2);
+LAMBDA_MATRIX(474,497) = DISTANCE;
+
+DISTANCE = sqrt((x(1941,1) - x(2009,1))^2 + (x(1942,1) - x(2010,1))^2);
+LAMBDA_MATRIX(455,489) = DISTANCE;
+
+DISTANCE = sqrt((x(2009,1) - x(1941,1))^2 + (x(2010,1) - x(1942,1))^2);
+LAMBDA_MATRIX(489,455) = DISTANCE;
+
+DISTANCE = sqrt((x(2009,1) - x(1979,1))^2 + (x(2010,1) - x(1980,1))^2);
+LAMBDA_MATRIX(489,474) = DISTANCE;
+
+DISTANCE = sqrt((x(1979,1) - x(2009,1))^2 + (x(1980,1) - x(2010,1))^2);
+LAMBDA_MATRIX(474,489) = DISTANCE;
+
+DISTANCE = sqrt((x(1979,1) - x(1941,1))^2 + (x(1980,1) - x(1942,1))^2);
+LAMBDA_MATRIX(474,455) = DISTANCE;
+
+DISTANCE = sqrt((x(1941,1) - x(1979,1))^2 + (x(1942,1) - x(1980,1))^2);
+LAMBDA_MATRIX(455,474) = DISTANCE;
+
+DISTANCE = sqrt((x(1979,1) - x(1931,1))^2 + (x(1980,1) - x(1932,1))^2);
+LAMBDA_MATRIX(474,450) = DISTANCE;
+
+DISTANCE = sqrt((x(1931,1) - x(1979,1))^2 + (x(1932,1) - x(1980,1))^2);
+LAMBDA_MATRIX(450,474) = DISTANCE;
+
+DISTANCE = sqrt((x(1931,1) - x(1941,1))^2 + (x(1932,1) - x(1942,1))^2);
+LAMBDA_MATRIX(450,455) = DISTANCE;
+
+DISTANCE = sqrt((x(1941,1) - x(1931,1))^2 + (x(1942,1) - x(1932,1))^2);
+LAMBDA_MATRIX(455,450) = DISTANCE;
+
+DISTANCE = sqrt((x(1941,1) - x(1979,1))^2 + (x(1942,1) - x(1980,1))^2);
+LAMBDA_MATRIX(455,474) = DISTANCE;
+
+DISTANCE = sqrt((x(1979,1) - x(1941,1))^2 + (x(1980,1) - x(1942,1))^2);
+LAMBDA_MATRIX(474,455) = DISTANCE;
+
+DISTANCE = sqrt((x(1979,1) - x(2017,1))^2 + (x(1980,1) - x(2018,1))^2);
+LAMBDA_MATRIX(474,493) = DISTANCE;
+
+DISTANCE = sqrt((x(2017,1) - x(1979,1))^2 + (x(2018,1) - x(1980,1))^2);
+LAMBDA_MATRIX(493,474) = DISTANCE;
+
+DISTANCE = sqrt((x(2017,1) - x(1961,1))^2 + (x(2018,1) - x(1962,1))^2);
+LAMBDA_MATRIX(493,465) = DISTANCE;
+
+DISTANCE = sqrt((x(1961,1) - x(2017,1))^2 + (x(1962,1) - x(2018,1))^2);
+LAMBDA_MATRIX(465,493) = DISTANCE;
+
+DISTANCE = sqrt((x(1961,1) - x(1979,1))^2 + (x(1962,1) - x(1980,1))^2);
+LAMBDA_MATRIX(465,474) = DISTANCE;
+
+DISTANCE = sqrt((x(1979,1) - x(1961,1))^2 + (x(1980,1) - x(1962,1))^2);
+LAMBDA_MATRIX(474,465) = DISTANCE;
+
+DISTANCE = sqrt((x(1961,1) - x(1931,1))^2 + (x(1962,1) - x(1932,1))^2);
+LAMBDA_MATRIX(465,450) = DISTANCE;
+
+DISTANCE = sqrt((x(1931,1) - x(1961,1))^2 + (x(1932,1) - x(1962,1))^2);
+LAMBDA_MATRIX(450,465) = DISTANCE;
+
+DISTANCE = sqrt((x(1931,1) - x(1979,1))^2 + (x(1932,1) - x(1980,1))^2);
+LAMBDA_MATRIX(450,474) = DISTANCE;
+
+DISTANCE = sqrt((x(1979,1) - x(1931,1))^2 + (x(1980,1) - x(1932,1))^2);
+LAMBDA_MATRIX(474,450) = DISTANCE;
+
+DISTANCE = sqrt((x(1979,1) - x(1961,1))^2 + (x(1980,1) - x(1962,1))^2);
+LAMBDA_MATRIX(474,465) = DISTANCE;
+
+DISTANCE = sqrt((x(1961,1) - x(1979,1))^2 + (x(1962,1) - x(1980,1))^2);
+LAMBDA_MATRIX(465,474) = DISTANCE;
+
+DISTANCE = sqrt((x(2011,1) - x(2009,1))^2 + (x(2012,1) - x(2010,1))^2);
+LAMBDA_MATRIX(490,489) = DISTANCE;
+
+DISTANCE = sqrt((x(2009,1) - x(2011,1))^2 + (x(2010,1) - x(2012,1))^2);
+LAMBDA_MATRIX(489,490) = DISTANCE;
+
+DISTANCE = sqrt((x(2009,1) - x(1973,1))^2 + (x(2010,1) - x(1974,1))^2);
+LAMBDA_MATRIX(489,471) = DISTANCE;
+
+DISTANCE = sqrt((x(1973,1) - x(2009,1))^2 + (x(1974,1) - x(2010,1))^2);
+LAMBDA_MATRIX(471,489) = DISTANCE;
+
+DISTANCE = sqrt((x(1973,1) - x(2011,1))^2 + (x(1974,1) - x(2012,1))^2);
+LAMBDA_MATRIX(471,490) = DISTANCE;
+
+DISTANCE = sqrt((x(2011,1) - x(1973,1))^2 + (x(2012,1) - x(1974,1))^2);
+LAMBDA_MATRIX(490,471) = DISTANCE;
+
+DISTANCE = sqrt((x(1973,1) - x(2009,1))^2 + (x(1974,1) - x(2010,1))^2);
+LAMBDA_MATRIX(471,489) = DISTANCE;
+
+DISTANCE = sqrt((x(2009,1) - x(1973,1))^2 + (x(2010,1) - x(1974,1))^2);
+LAMBDA_MATRIX(489,471) = DISTANCE;
+
+DISTANCE = sqrt((x(2009,1) - x(1941,1))^2 + (x(2010,1) - x(1942,1))^2);
+LAMBDA_MATRIX(489,455) = DISTANCE;
+
+DISTANCE = sqrt((x(1941,1) - x(2009,1))^2 + (x(1942,1) - x(2010,1))^2);
+LAMBDA_MATRIX(455,489) = DISTANCE;
+
+DISTANCE = sqrt((x(1941,1) - x(1973,1))^2 + (x(1942,1) - x(1974,1))^2);
+LAMBDA_MATRIX(455,471) = DISTANCE;
+
+DISTANCE = sqrt((x(1973,1) - x(1941,1))^2 + (x(1974,1) - x(1942,1))^2);
+LAMBDA_MATRIX(471,455) = DISTANCE;
+
+DISTANCE = sqrt((x(1957,1) - x(2011,1))^2 + (x(1958,1) - x(2012,1))^2);
+LAMBDA_MATRIX(463,490) = DISTANCE;
+
+DISTANCE = sqrt((x(2011,1) - x(1957,1))^2 + (x(2012,1) - x(1958,1))^2);
+LAMBDA_MATRIX(490,463) = DISTANCE;
+
+DISTANCE = sqrt((x(2011,1) - x(1973,1))^2 + (x(2012,1) - x(1974,1))^2);
+LAMBDA_MATRIX(490,471) = DISTANCE;
+
+DISTANCE = sqrt((x(1973,1) - x(2011,1))^2 + (x(1974,1) - x(2012,1))^2);
+LAMBDA_MATRIX(471,490) = DISTANCE;
+
+DISTANCE = sqrt((x(1973,1) - x(1957,1))^2 + (x(1974,1) - x(1958,1))^2);
+LAMBDA_MATRIX(471,463) = DISTANCE;
+
+DISTANCE = sqrt((x(1957,1) - x(1973,1))^2 + (x(1958,1) - x(1974,1))^2);
+LAMBDA_MATRIX(463,471) = DISTANCE;
+
+DISTANCE = sqrt((x(1973,1) - x(1921,1))^2 + (x(1974,1) - x(1922,1))^2);
+LAMBDA_MATRIX(471,445) = DISTANCE;
+
+DISTANCE = sqrt((x(1921,1) - x(1973,1))^2 + (x(1922,1) - x(1974,1))^2);
+LAMBDA_MATRIX(445,471) = DISTANCE;
+
+DISTANCE = sqrt((x(1921,1) - x(1957,1))^2 + (x(1922,1) - x(1958,1))^2);
+LAMBDA_MATRIX(445,463) = DISTANCE;
+
+DISTANCE = sqrt((x(1957,1) - x(1921,1))^2 + (x(1958,1) - x(1922,1))^2);
+LAMBDA_MATRIX(463,445) = DISTANCE;
+
+DISTANCE = sqrt((x(1957,1) - x(1973,1))^2 + (x(1958,1) - x(1974,1))^2);
+LAMBDA_MATRIX(463,471) = DISTANCE;
+
+DISTANCE = sqrt((x(1973,1) - x(1957,1))^2 + (x(1974,1) - x(1958,1))^2);
+LAMBDA_MATRIX(471,463) = DISTANCE;
+
+DISTANCE = sqrt((x(1941,1) - x(1921,1))^2 + (x(1942,1) - x(1922,1))^2);
+LAMBDA_MATRIX(455,445) = DISTANCE;
+
+DISTANCE = sqrt((x(1921,1) - x(1941,1))^2 + (x(1922,1) - x(1942,1))^2);
+LAMBDA_MATRIX(445,455) = DISTANCE;
+
+DISTANCE = sqrt((x(1921,1) - x(1973,1))^2 + (x(1922,1) - x(1974,1))^2);
+LAMBDA_MATRIX(445,471) = DISTANCE;
+
+DISTANCE = sqrt((x(1973,1) - x(1921,1))^2 + (x(1974,1) - x(1922,1))^2);
+LAMBDA_MATRIX(471,445) = DISTANCE;
+
+DISTANCE = sqrt((x(1973,1) - x(1941,1))^2 + (x(1974,1) - x(1942,1))^2);
+LAMBDA_MATRIX(471,455) = DISTANCE;
+
+DISTANCE = sqrt((x(1941,1) - x(1973,1))^2 + (x(1942,1) - x(1974,1))^2);
+LAMBDA_MATRIX(455,471) = DISTANCE;
+
+DISTANCE = sqrt((x(1089,1) - x(1143,1))^2 + (x(1090,1) - x(1144,1))^2);
+LAMBDA_MATRIX(29,56) = DISTANCE;
+
+DISTANCE = sqrt((x(1143,1) - x(1089,1))^2 + (x(1144,1) - x(1090,1))^2);
+LAMBDA_MATRIX(56,29) = DISTANCE;
+
+DISTANCE = sqrt((x(1143,1) - x(1125,1))^2 + (x(1144,1) - x(1126,1))^2);
+LAMBDA_MATRIX(56,47) = DISTANCE;
+
+DISTANCE = sqrt((x(1125,1) - x(1143,1))^2 + (x(1126,1) - x(1144,1))^2);
+LAMBDA_MATRIX(47,56) = DISTANCE;
+
+DISTANCE = sqrt((x(1125,1) - x(1089,1))^2 + (x(1126,1) - x(1090,1))^2);
+LAMBDA_MATRIX(47,29) = DISTANCE;
+
+DISTANCE = sqrt((x(1089,1) - x(1125,1))^2 + (x(1090,1) - x(1126,1))^2);
+LAMBDA_MATRIX(29,47) = DISTANCE;
+
+DISTANCE = sqrt((x(1089,1) - x(1107,1))^2 + (x(1090,1) - x(1108,1))^2);
+LAMBDA_MATRIX(29,38) = DISTANCE;
+
+DISTANCE = sqrt((x(1107,1) - x(1089,1))^2 + (x(1108,1) - x(1090,1))^2);
+LAMBDA_MATRIX(38,29) = DISTANCE;
+
+DISTANCE = sqrt((x(1107,1) - x(1143,1))^2 + (x(1108,1) - x(1144,1))^2);
+LAMBDA_MATRIX(38,56) = DISTANCE;
+
+DISTANCE = sqrt((x(1143,1) - x(1107,1))^2 + (x(1144,1) - x(1108,1))^2);
+LAMBDA_MATRIX(56,38) = DISTANCE;
+
+DISTANCE = sqrt((x(1143,1) - x(1089,1))^2 + (x(1144,1) - x(1090,1))^2);
+LAMBDA_MATRIX(56,29) = DISTANCE;
+
+DISTANCE = sqrt((x(1089,1) - x(1143,1))^2 + (x(1090,1) - x(1144,1))^2);
+LAMBDA_MATRIX(29,56) = DISTANCE;
+
+DISTANCE = sqrt((x(1125,1) - x(1083,1))^2 + (x(1126,1) - x(1084,1))^2);
+LAMBDA_MATRIX(47,26) = DISTANCE;
+
+DISTANCE = sqrt((x(1083,1) - x(1125,1))^2 + (x(1084,1) - x(1126,1))^2);
+LAMBDA_MATRIX(26,47) = DISTANCE;
+
+DISTANCE = sqrt((x(1083,1) - x(1089,1))^2 + (x(1084,1) - x(1090,1))^2);
+LAMBDA_MATRIX(26,29) = DISTANCE;
+
+DISTANCE = sqrt((x(1089,1) - x(1083,1))^2 + (x(1090,1) - x(1084,1))^2);
+LAMBDA_MATRIX(29,26) = DISTANCE;
+
+DISTANCE = sqrt((x(1089,1) - x(1125,1))^2 + (x(1090,1) - x(1126,1))^2);
+LAMBDA_MATRIX(29,47) = DISTANCE;
+
+DISTANCE = sqrt((x(1125,1) - x(1089,1))^2 + (x(1126,1) - x(1090,1))^2);
+LAMBDA_MATRIX(47,29) = DISTANCE;
+
+DISTANCE = sqrt((x(1045,1) - x(1107,1))^2 + (x(1046,1) - x(1108,1))^2);
+LAMBDA_MATRIX(7,38) = DISTANCE;
+
+DISTANCE = sqrt((x(1107,1) - x(1045,1))^2 + (x(1108,1) - x(1046,1))^2);
+LAMBDA_MATRIX(38,7) = DISTANCE;
+
+DISTANCE = sqrt((x(1107,1) - x(1089,1))^2 + (x(1108,1) - x(1090,1))^2);
+LAMBDA_MATRIX(38,29) = DISTANCE;
+
+DISTANCE = sqrt((x(1089,1) - x(1107,1))^2 + (x(1090,1) - x(1108,1))^2);
+LAMBDA_MATRIX(29,38) = DISTANCE;
+
+DISTANCE = sqrt((x(1089,1) - x(1045,1))^2 + (x(1090,1) - x(1046,1))^2);
+LAMBDA_MATRIX(29,7) = DISTANCE;
+
+DISTANCE = sqrt((x(1045,1) - x(1089,1))^2 + (x(1046,1) - x(1090,1))^2);
+LAMBDA_MATRIX(7,29) = DISTANCE;
+
+DISTANCE = sqrt((x(1089,1) - x(1083,1))^2 + (x(1090,1) - x(1084,1))^2);
+LAMBDA_MATRIX(29,26) = DISTANCE;
+
+DISTANCE = sqrt((x(1083,1) - x(1089,1))^2 + (x(1084,1) - x(1090,1))^2);
+LAMBDA_MATRIX(26,29) = DISTANCE;
+
+DISTANCE = sqrt((x(1083,1) - x(1047,1))^2 + (x(1084,1) - x(1048,1))^2);
+LAMBDA_MATRIX(26,8) = DISTANCE;
+
+DISTANCE = sqrt((x(1047,1) - x(1083,1))^2 + (x(1048,1) - x(1084,1))^2);
+LAMBDA_MATRIX(8,26) = DISTANCE;
+
+DISTANCE = sqrt((x(1047,1) - x(1089,1))^2 + (x(1048,1) - x(1090,1))^2);
+LAMBDA_MATRIX(8,29) = DISTANCE;
+
+DISTANCE = sqrt((x(1089,1) - x(1047,1))^2 + (x(1090,1) - x(1048,1))^2);
+LAMBDA_MATRIX(29,8) = DISTANCE;
+
+DISTANCE = sqrt((x(1047,1) - x(1045,1))^2 + (x(1048,1) - x(1046,1))^2);
+LAMBDA_MATRIX(8,7) = DISTANCE;
+
+DISTANCE = sqrt((x(1045,1) - x(1047,1))^2 + (x(1046,1) - x(1048,1))^2);
+LAMBDA_MATRIX(7,8) = DISTANCE;
+
+DISTANCE = sqrt((x(1045,1) - x(1089,1))^2 + (x(1046,1) - x(1090,1))^2);
+LAMBDA_MATRIX(7,29) = DISTANCE;
+
+DISTANCE = sqrt((x(1089,1) - x(1045,1))^2 + (x(1090,1) - x(1046,1))^2);
+LAMBDA_MATRIX(29,7) = DISTANCE;
+
+DISTANCE = sqrt((x(1089,1) - x(1047,1))^2 + (x(1090,1) - x(1048,1))^2);
+LAMBDA_MATRIX(29,8) = DISTANCE;
+
+DISTANCE = sqrt((x(1047,1) - x(1089,1))^2 + (x(1048,1) - x(1090,1))^2);
+LAMBDA_MATRIX(8,29) = DISTANCE;
+
+DISTANCE = sqrt((x(1645,1) - x(1625,1))^2 + (x(1646,1) - x(1626,1))^2);
+LAMBDA_MATRIX(307,297) = DISTANCE;
+
+DISTANCE = sqrt((x(1625,1) - x(1645,1))^2 + (x(1626,1) - x(1646,1))^2);
+LAMBDA_MATRIX(297,307) = DISTANCE;
+
+DISTANCE = sqrt((x(1625,1) - x(1605,1))^2 + (x(1626,1) - x(1606,1))^2);
+LAMBDA_MATRIX(297,287) = DISTANCE;
+
+DISTANCE = sqrt((x(1605,1) - x(1625,1))^2 + (x(1606,1) - x(1626,1))^2);
+LAMBDA_MATRIX(287,297) = DISTANCE;
+
+DISTANCE = sqrt((x(1605,1) - x(1645,1))^2 + (x(1606,1) - x(1646,1))^2);
+LAMBDA_MATRIX(287,307) = DISTANCE;
+
+DISTANCE = sqrt((x(1645,1) - x(1605,1))^2 + (x(1646,1) - x(1606,1))^2);
+LAMBDA_MATRIX(307,287) = DISTANCE;
+
+DISTANCE = sqrt((x(1723,1) - x(1691,1))^2 + (x(1724,1) - x(1692,1))^2);
+LAMBDA_MATRIX(346,330) = DISTANCE;
+
+DISTANCE = sqrt((x(1691,1) - x(1723,1))^2 + (x(1692,1) - x(1724,1))^2);
+LAMBDA_MATRIX(330,346) = DISTANCE;
+
+DISTANCE = sqrt((x(1691,1) - x(1749,1))^2 + (x(1692,1) - x(1750,1))^2);
+LAMBDA_MATRIX(330,359) = DISTANCE;
+
+DISTANCE = sqrt((x(1749,1) - x(1691,1))^2 + (x(1750,1) - x(1692,1))^2);
+LAMBDA_MATRIX(359,330) = DISTANCE;
+
+DISTANCE = sqrt((x(1749,1) - x(1723,1))^2 + (x(1750,1) - x(1724,1))^2);
+LAMBDA_MATRIX(359,346) = DISTANCE;
+
+DISTANCE = sqrt((x(1723,1) - x(1749,1))^2 + (x(1724,1) - x(1750,1))^2);
+LAMBDA_MATRIX(346,359) = DISTANCE;
+
+DISTANCE = sqrt((x(1801,1) - x(1853,1))^2 + (x(1802,1) - x(1854,1))^2);
+LAMBDA_MATRIX(385,411) = DISTANCE;
+
+DISTANCE = sqrt((x(1853,1) - x(1801,1))^2 + (x(1854,1) - x(1802,1))^2);
+LAMBDA_MATRIX(411,385) = DISTANCE;
+
+DISTANCE = sqrt((x(1853,1) - x(1829,1))^2 + (x(1854,1) - x(1830,1))^2);
+LAMBDA_MATRIX(411,399) = DISTANCE;
+
+DISTANCE = sqrt((x(1829,1) - x(1853,1))^2 + (x(1830,1) - x(1854,1))^2);
+LAMBDA_MATRIX(399,411) = DISTANCE;
+
+DISTANCE = sqrt((x(1829,1) - x(1801,1))^2 + (x(1830,1) - x(1802,1))^2);
+LAMBDA_MATRIX(399,385) = DISTANCE;
+
+DISTANCE = sqrt((x(1801,1) - x(1829,1))^2 + (x(1802,1) - x(1830,1))^2);
+LAMBDA_MATRIX(385,399) = DISTANCE;
+
+DISTANCE = sqrt((x(1829,1) - x(1885,1))^2 + (x(1830,1) - x(1886,1))^2);
+LAMBDA_MATRIX(399,427) = DISTANCE;
+
+DISTANCE = sqrt((x(1885,1) - x(1829,1))^2 + (x(1886,1) - x(1830,1))^2);
+LAMBDA_MATRIX(427,399) = DISTANCE;
+
+DISTANCE = sqrt((x(1885,1) - x(1857,1))^2 + (x(1886,1) - x(1858,1))^2);
+LAMBDA_MATRIX(427,413) = DISTANCE;
+
+DISTANCE = sqrt((x(1857,1) - x(1885,1))^2 + (x(1858,1) - x(1886,1))^2);
+LAMBDA_MATRIX(413,427) = DISTANCE;
+
+DISTANCE = sqrt((x(1857,1) - x(1829,1))^2 + (x(1858,1) - x(1830,1))^2);
+LAMBDA_MATRIX(413,399) = DISTANCE;
+
+DISTANCE = sqrt((x(1829,1) - x(1857,1))^2 + (x(1830,1) - x(1858,1))^2);
+LAMBDA_MATRIX(399,413) = DISTANCE;
+
+DISTANCE = sqrt((x(1889,1) - x(1833,1))^2 + (x(1890,1) - x(1834,1))^2);
+LAMBDA_MATRIX(429,401) = DISTANCE;
+
+DISTANCE = sqrt((x(1833,1) - x(1889,1))^2 + (x(1834,1) - x(1890,1))^2);
+LAMBDA_MATRIX(401,429) = DISTANCE;
+
+DISTANCE = sqrt((x(1833,1) - x(1857,1))^2 + (x(1834,1) - x(1858,1))^2);
+LAMBDA_MATRIX(401,413) = DISTANCE;
+
+DISTANCE = sqrt((x(1857,1) - x(1833,1))^2 + (x(1858,1) - x(1834,1))^2);
+LAMBDA_MATRIX(413,401) = DISTANCE;
+
+DISTANCE = sqrt((x(1857,1) - x(1889,1))^2 + (x(1858,1) - x(1890,1))^2);
+LAMBDA_MATRIX(413,429) = DISTANCE;
+
+DISTANCE = sqrt((x(1889,1) - x(1857,1))^2 + (x(1890,1) - x(1858,1))^2);
+LAMBDA_MATRIX(429,413) = DISTANCE;
+
+DISTANCE = sqrt((x(1525,1) - x(1505,1))^2 + (x(1526,1) - x(1506,1))^2);
+LAMBDA_MATRIX(247,237) = DISTANCE;
+
+DISTANCE = sqrt((x(1505,1) - x(1525,1))^2 + (x(1506,1) - x(1526,1))^2);
+LAMBDA_MATRIX(237,247) = DISTANCE;
+
+DISTANCE = sqrt((x(1505,1) - x(1539,1))^2 + (x(1506,1) - x(1540,1))^2);
+LAMBDA_MATRIX(237,254) = DISTANCE;
+
+DISTANCE = sqrt((x(1539,1) - x(1505,1))^2 + (x(1540,1) - x(1506,1))^2);
+LAMBDA_MATRIX(254,237) = DISTANCE;
+
+DISTANCE = sqrt((x(1539,1) - x(1525,1))^2 + (x(1540,1) - x(1526,1))^2);
+LAMBDA_MATRIX(254,247) = DISTANCE;
+
+DISTANCE = sqrt((x(1525,1) - x(1539,1))^2 + (x(1526,1) - x(1540,1))^2);
+LAMBDA_MATRIX(247,254) = DISTANCE;
+
+DISTANCE = sqrt((x(1487,1) - x(1445,1))^2 + (x(1488,1) - x(1446,1))^2);
+LAMBDA_MATRIX(228,207) = DISTANCE;
+
+DISTANCE = sqrt((x(1445,1) - x(1487,1))^2 + (x(1446,1) - x(1488,1))^2);
+LAMBDA_MATRIX(207,228) = DISTANCE;
+
+DISTANCE = sqrt((x(1445,1) - x(1459,1))^2 + (x(1446,1) - x(1460,1))^2);
+LAMBDA_MATRIX(207,214) = DISTANCE;
+
+DISTANCE = sqrt((x(1459,1) - x(1445,1))^2 + (x(1460,1) - x(1446,1))^2);
+LAMBDA_MATRIX(214,207) = DISTANCE;
+
+DISTANCE = sqrt((x(1459,1) - x(1487,1))^2 + (x(1460,1) - x(1488,1))^2);
+LAMBDA_MATRIX(214,228) = DISTANCE;
+
+DISTANCE = sqrt((x(1487,1) - x(1459,1))^2 + (x(1488,1) - x(1460,1))^2);
+LAMBDA_MATRIX(228,214) = DISTANCE;
+
+DISTANCE = sqrt((x(1497,1) - x(1487,1))^2 + (x(1498,1) - x(1488,1))^2);
+LAMBDA_MATRIX(233,228) = DISTANCE;
+
+DISTANCE = sqrt((x(1487,1) - x(1497,1))^2 + (x(1488,1) - x(1498,1))^2);
+LAMBDA_MATRIX(228,233) = DISTANCE;
+
+DISTANCE = sqrt((x(1487,1) - x(1459,1))^2 + (x(1488,1) - x(1460,1))^2);
+LAMBDA_MATRIX(228,214) = DISTANCE;
+
+DISTANCE = sqrt((x(1459,1) - x(1487,1))^2 + (x(1460,1) - x(1488,1))^2);
+LAMBDA_MATRIX(214,228) = DISTANCE;
+
+DISTANCE = sqrt((x(1459,1) - x(1497,1))^2 + (x(1460,1) - x(1498,1))^2);
+LAMBDA_MATRIX(214,233) = DISTANCE;
+
+DISTANCE = sqrt((x(1497,1) - x(1459,1))^2 + (x(1498,1) - x(1460,1))^2);
+LAMBDA_MATRIX(233,214) = DISTANCE;
+
+DISTANCE = sqrt((x(1519,1) - x(1487,1))^2 + (x(1520,1) - x(1488,1))^2);
+LAMBDA_MATRIX(244,228) = DISTANCE;
+
+DISTANCE = sqrt((x(1487,1) - x(1519,1))^2 + (x(1488,1) - x(1520,1))^2);
+LAMBDA_MATRIX(228,244) = DISTANCE;
+
+DISTANCE = sqrt((x(1487,1) - x(1497,1))^2 + (x(1488,1) - x(1498,1))^2);
+LAMBDA_MATRIX(228,233) = DISTANCE;
+
+DISTANCE = sqrt((x(1497,1) - x(1487,1))^2 + (x(1498,1) - x(1488,1))^2);
+LAMBDA_MATRIX(233,228) = DISTANCE;
+
+DISTANCE = sqrt((x(1497,1) - x(1519,1))^2 + (x(1498,1) - x(1520,1))^2);
+LAMBDA_MATRIX(233,244) = DISTANCE;
+
+DISTANCE = sqrt((x(1519,1) - x(1497,1))^2 + (x(1520,1) - x(1498,1))^2);
+LAMBDA_MATRIX(244,233) = DISTANCE;
+
+DISTANCE = sqrt((x(1501,1) - x(1487,1))^2 + (x(1502,1) - x(1488,1))^2);
+LAMBDA_MATRIX(235,228) = DISTANCE;
+
+DISTANCE = sqrt((x(1487,1) - x(1501,1))^2 + (x(1488,1) - x(1502,1))^2);
+LAMBDA_MATRIX(228,235) = DISTANCE;
+
+DISTANCE = sqrt((x(1487,1) - x(1529,1))^2 + (x(1488,1) - x(1530,1))^2);
+LAMBDA_MATRIX(228,249) = DISTANCE;
+
+DISTANCE = sqrt((x(1529,1) - x(1487,1))^2 + (x(1530,1) - x(1488,1))^2);
+LAMBDA_MATRIX(249,228) = DISTANCE;
+
+DISTANCE = sqrt((x(1529,1) - x(1501,1))^2 + (x(1530,1) - x(1502,1))^2);
+LAMBDA_MATRIX(249,235) = DISTANCE;
+
+DISTANCE = sqrt((x(1501,1) - x(1529,1))^2 + (x(1502,1) - x(1530,1))^2);
+LAMBDA_MATRIX(235,249) = DISTANCE;
+
+DISTANCE = sqrt((x(1529,1) - x(1487,1))^2 + (x(1530,1) - x(1488,1))^2);
+LAMBDA_MATRIX(249,228) = DISTANCE;
+
+DISTANCE = sqrt((x(1487,1) - x(1529,1))^2 + (x(1488,1) - x(1530,1))^2);
+LAMBDA_MATRIX(228,249) = DISTANCE;
+
+DISTANCE = sqrt((x(1487,1) - x(1519,1))^2 + (x(1488,1) - x(1520,1))^2);
+LAMBDA_MATRIX(228,244) = DISTANCE;
+
+DISTANCE = sqrt((x(1519,1) - x(1487,1))^2 + (x(1520,1) - x(1488,1))^2);
+LAMBDA_MATRIX(244,228) = DISTANCE;
+
+DISTANCE = sqrt((x(1519,1) - x(1529,1))^2 + (x(1520,1) - x(1530,1))^2);
+LAMBDA_MATRIX(244,249) = DISTANCE;
+
+DISTANCE = sqrt((x(1529,1) - x(1519,1))^2 + (x(1530,1) - x(1520,1))^2);
+LAMBDA_MATRIX(249,244) = DISTANCE;
+
+DISTANCE = sqrt((x(1405,1) - x(1431,1))^2 + (x(1406,1) - x(1432,1))^2);
+LAMBDA_MATRIX(187,200) = DISTANCE;
+
+DISTANCE = sqrt((x(1431,1) - x(1405,1))^2 + (x(1432,1) - x(1406,1))^2);
+LAMBDA_MATRIX(200,187) = DISTANCE;
+
+DISTANCE = sqrt((x(1431,1) - x(1381,1))^2 + (x(1432,1) - x(1382,1))^2);
+LAMBDA_MATRIX(200,175) = DISTANCE;
+
+DISTANCE = sqrt((x(1381,1) - x(1431,1))^2 + (x(1382,1) - x(1432,1))^2);
+LAMBDA_MATRIX(175,200) = DISTANCE;
+
+DISTANCE = sqrt((x(1381,1) - x(1405,1))^2 + (x(1382,1) - x(1406,1))^2);
+LAMBDA_MATRIX(175,187) = DISTANCE;
+
+DISTANCE = sqrt((x(1405,1) - x(1381,1))^2 + (x(1406,1) - x(1382,1))^2);
+LAMBDA_MATRIX(187,175) = DISTANCE;
+
+DISTANCE = sqrt((x(1381,1) - x(1359,1))^2 + (x(1382,1) - x(1360,1))^2);
+LAMBDA_MATRIX(175,164) = DISTANCE;
+
+DISTANCE = sqrt((x(1359,1) - x(1381,1))^2 + (x(1360,1) - x(1382,1))^2);
+LAMBDA_MATRIX(164,175) = DISTANCE;
+
+DISTANCE = sqrt((x(1359,1) - x(1325,1))^2 + (x(1360,1) - x(1326,1))^2);
+LAMBDA_MATRIX(164,147) = DISTANCE;
+
+DISTANCE = sqrt((x(1325,1) - x(1359,1))^2 + (x(1326,1) - x(1360,1))^2);
+LAMBDA_MATRIX(147,164) = DISTANCE;
+
+DISTANCE = sqrt((x(1325,1) - x(1381,1))^2 + (x(1326,1) - x(1382,1))^2);
+LAMBDA_MATRIX(147,175) = DISTANCE;
+
+DISTANCE = sqrt((x(1381,1) - x(1325,1))^2 + (x(1382,1) - x(1326,1))^2);
+LAMBDA_MATRIX(175,147) = DISTANCE;
+
+DISTANCE = sqrt((x(1325,1) - x(1349,1))^2 + (x(1326,1) - x(1350,1))^2);
+LAMBDA_MATRIX(147,159) = DISTANCE;
+
+DISTANCE = sqrt((x(1349,1) - x(1325,1))^2 + (x(1350,1) - x(1326,1))^2);
+LAMBDA_MATRIX(159,147) = DISTANCE;
+
+DISTANCE = sqrt((x(1349,1) - x(1381,1))^2 + (x(1350,1) - x(1382,1))^2);
+LAMBDA_MATRIX(159,175) = DISTANCE;
+
+DISTANCE = sqrt((x(1381,1) - x(1349,1))^2 + (x(1382,1) - x(1350,1))^2);
+LAMBDA_MATRIX(175,159) = DISTANCE;
+
+DISTANCE = sqrt((x(1381,1) - x(1325,1))^2 + (x(1382,1) - x(1326,1))^2);
+LAMBDA_MATRIX(175,147) = DISTANCE;
+
+DISTANCE = sqrt((x(1325,1) - x(1381,1))^2 + (x(1326,1) - x(1382,1))^2);
+LAMBDA_MATRIX(147,175) = DISTANCE;
+
+DISTANCE = sqrt((x(1381,1) - x(1349,1))^2 + (x(1382,1) - x(1350,1))^2);
+LAMBDA_MATRIX(175,159) = DISTANCE;
+
+DISTANCE = sqrt((x(1349,1) - x(1381,1))^2 + (x(1350,1) - x(1382,1))^2);
+LAMBDA_MATRIX(159,175) = DISTANCE;
+
+DISTANCE = sqrt((x(1349,1) - x(1405,1))^2 + (x(1350,1) - x(1406,1))^2);
+LAMBDA_MATRIX(159,187) = DISTANCE;
+
+DISTANCE = sqrt((x(1405,1) - x(1349,1))^2 + (x(1406,1) - x(1350,1))^2);
+LAMBDA_MATRIX(187,159) = DISTANCE;
+
+DISTANCE = sqrt((x(1405,1) - x(1381,1))^2 + (x(1406,1) - x(1382,1))^2);
+LAMBDA_MATRIX(187,175) = DISTANCE;
+
+DISTANCE = sqrt((x(1381,1) - x(1405,1))^2 + (x(1382,1) - x(1406,1))^2);
+LAMBDA_MATRIX(175,187) = DISTANCE;
+
+DISTANCE = sqrt((x(1607,1) - x(1617,1))^2 + (x(1608,1) - x(1618,1))^2);
+LAMBDA_MATRIX(288,293) = DISTANCE;
+
+DISTANCE = sqrt((x(1617,1) - x(1607,1))^2 + (x(1618,1) - x(1608,1))^2);
+LAMBDA_MATRIX(293,288) = DISTANCE;
+
+DISTANCE = sqrt((x(1617,1) - x(1643,1))^2 + (x(1618,1) - x(1644,1))^2);
+LAMBDA_MATRIX(293,306) = DISTANCE;
+
+DISTANCE = sqrt((x(1643,1) - x(1617,1))^2 + (x(1644,1) - x(1618,1))^2);
+LAMBDA_MATRIX(306,293) = DISTANCE;
+
+DISTANCE = sqrt((x(1643,1) - x(1607,1))^2 + (x(1644,1) - x(1608,1))^2);
+LAMBDA_MATRIX(306,288) = DISTANCE;
+
+DISTANCE = sqrt((x(1607,1) - x(1643,1))^2 + (x(1608,1) - x(1644,1))^2);
+LAMBDA_MATRIX(288,306) = DISTANCE;
+
+DISTANCE = sqrt((x(1583,1) - x(1617,1))^2 + (x(1584,1) - x(1618,1))^2);
+LAMBDA_MATRIX(276,293) = DISTANCE;
+
+DISTANCE = sqrt((x(1617,1) - x(1583,1))^2 + (x(1618,1) - x(1584,1))^2);
+LAMBDA_MATRIX(293,276) = DISTANCE;
+
+DISTANCE = sqrt((x(1617,1) - x(1607,1))^2 + (x(1618,1) - x(1608,1))^2);
+LAMBDA_MATRIX(293,288) = DISTANCE;
+
+DISTANCE = sqrt((x(1607,1) - x(1617,1))^2 + (x(1608,1) - x(1618,1))^2);
+LAMBDA_MATRIX(288,293) = DISTANCE;
+
+DISTANCE = sqrt((x(1607,1) - x(1583,1))^2 + (x(1608,1) - x(1584,1))^2);
+LAMBDA_MATRIX(288,276) = DISTANCE;
+
+DISTANCE = sqrt((x(1583,1) - x(1607,1))^2 + (x(1584,1) - x(1608,1))^2);
+LAMBDA_MATRIX(276,288) = DISTANCE;
+
+DISTANCE = sqrt((x(1583,1) - x(1607,1))^2 + (x(1584,1) - x(1608,1))^2);
+LAMBDA_MATRIX(276,288) = DISTANCE;
+
+DISTANCE = sqrt((x(1607,1) - x(1583,1))^2 + (x(1608,1) - x(1584,1))^2);
+LAMBDA_MATRIX(288,276) = DISTANCE;
+
+DISTANCE = sqrt((x(1607,1) - x(1589,1))^2 + (x(1608,1) - x(1590,1))^2);
+LAMBDA_MATRIX(288,279) = DISTANCE;
+
+DISTANCE = sqrt((x(1589,1) - x(1607,1))^2 + (x(1590,1) - x(1608,1))^2);
+LAMBDA_MATRIX(279,288) = DISTANCE;
+
+DISTANCE = sqrt((x(1589,1) - x(1583,1))^2 + (x(1590,1) - x(1584,1))^2);
+LAMBDA_MATRIX(279,276) = DISTANCE;
+
+DISTANCE = sqrt((x(1583,1) - x(1589,1))^2 + (x(1584,1) - x(1590,1))^2);
+LAMBDA_MATRIX(276,279) = DISTANCE;
+
+DISTANCE = sqrt((x(1589,1) - x(1607,1))^2 + (x(1590,1) - x(1608,1))^2);
+LAMBDA_MATRIX(279,288) = DISTANCE;
+
+DISTANCE = sqrt((x(1607,1) - x(1589,1))^2 + (x(1608,1) - x(1590,1))^2);
+LAMBDA_MATRIX(288,279) = DISTANCE;
+
+DISTANCE = sqrt((x(1607,1) - x(1621,1))^2 + (x(1608,1) - x(1622,1))^2);
+LAMBDA_MATRIX(288,295) = DISTANCE;
+
+DISTANCE = sqrt((x(1621,1) - x(1607,1))^2 + (x(1622,1) - x(1608,1))^2);
+LAMBDA_MATRIX(295,288) = DISTANCE;
+
+DISTANCE = sqrt((x(1621,1) - x(1589,1))^2 + (x(1622,1) - x(1590,1))^2);
+LAMBDA_MATRIX(295,279) = DISTANCE;
+
+DISTANCE = sqrt((x(1589,1) - x(1621,1))^2 + (x(1590,1) - x(1622,1))^2);
+LAMBDA_MATRIX(279,295) = DISTANCE;
+
+DISTANCE = sqrt((x(1793,1) - x(1775,1))^2 + (x(1794,1) - x(1776,1))^2);
+LAMBDA_MATRIX(381,372) = DISTANCE;
+
+DISTANCE = sqrt((x(1775,1) - x(1793,1))^2 + (x(1776,1) - x(1794,1))^2);
+LAMBDA_MATRIX(372,381) = DISTANCE;
+
+DISTANCE = sqrt((x(1775,1) - x(1737,1))^2 + (x(1776,1) - x(1738,1))^2);
+LAMBDA_MATRIX(372,353) = DISTANCE;
+
+DISTANCE = sqrt((x(1737,1) - x(1775,1))^2 + (x(1738,1) - x(1776,1))^2);
+LAMBDA_MATRIX(353,372) = DISTANCE;
+
+DISTANCE = sqrt((x(1737,1) - x(1793,1))^2 + (x(1738,1) - x(1794,1))^2);
+LAMBDA_MATRIX(353,381) = DISTANCE;
+
+DISTANCE = sqrt((x(1793,1) - x(1737,1))^2 + (x(1794,1) - x(1738,1))^2);
+LAMBDA_MATRIX(381,353) = DISTANCE;
+
+DISTANCE = sqrt((x(1737,1) - x(1753,1))^2 + (x(1738,1) - x(1754,1))^2);
+LAMBDA_MATRIX(353,361) = DISTANCE;
+
+DISTANCE = sqrt((x(1753,1) - x(1737,1))^2 + (x(1754,1) - x(1738,1))^2);
+LAMBDA_MATRIX(361,353) = DISTANCE;
+
+DISTANCE = sqrt((x(1753,1) - x(1793,1))^2 + (x(1754,1) - x(1794,1))^2);
+LAMBDA_MATRIX(361,381) = DISTANCE;
+
+DISTANCE = sqrt((x(1793,1) - x(1753,1))^2 + (x(1794,1) - x(1754,1))^2);
+LAMBDA_MATRIX(381,361) = DISTANCE;
+
+DISTANCE = sqrt((x(1793,1) - x(1737,1))^2 + (x(1794,1) - x(1738,1))^2);
+LAMBDA_MATRIX(381,353) = DISTANCE;
+
+DISTANCE = sqrt((x(1737,1) - x(1793,1))^2 + (x(1738,1) - x(1794,1))^2);
+LAMBDA_MATRIX(353,381) = DISTANCE;
+
+DISTANCE = sqrt((x(1341,1) - x(1287,1))^2 + (x(1342,1) - x(1288,1))^2);
+LAMBDA_MATRIX(155,128) = DISTANCE;
+
+DISTANCE = sqrt((x(1287,1) - x(1341,1))^2 + (x(1288,1) - x(1342,1))^2);
+LAMBDA_MATRIX(128,155) = DISTANCE;
+
+DISTANCE = sqrt((x(1287,1) - x(1307,1))^2 + (x(1288,1) - x(1308,1))^2);
+LAMBDA_MATRIX(128,138) = DISTANCE;
+
+DISTANCE = sqrt((x(1307,1) - x(1287,1))^2 + (x(1308,1) - x(1288,1))^2);
+LAMBDA_MATRIX(138,128) = DISTANCE;
+
+DISTANCE = sqrt((x(1307,1) - x(1341,1))^2 + (x(1308,1) - x(1342,1))^2);
+LAMBDA_MATRIX(138,155) = DISTANCE;
+
+DISTANCE = sqrt((x(1341,1) - x(1307,1))^2 + (x(1342,1) - x(1308,1))^2);
+LAMBDA_MATRIX(155,138) = DISTANCE;
+
+DISTANCE = sqrt((x(1341,1) - x(1321,1))^2 + (x(1342,1) - x(1322,1))^2);
+LAMBDA_MATRIX(155,145) = DISTANCE;
+
+DISTANCE = sqrt((x(1321,1) - x(1341,1))^2 + (x(1322,1) - x(1342,1))^2);
+LAMBDA_MATRIX(145,155) = DISTANCE;
+
+DISTANCE = sqrt((x(1321,1) - x(1287,1))^2 + (x(1322,1) - x(1288,1))^2);
+LAMBDA_MATRIX(145,128) = DISTANCE;
+
+DISTANCE = sqrt((x(1287,1) - x(1321,1))^2 + (x(1288,1) - x(1322,1))^2);
+LAMBDA_MATRIX(128,145) = DISTANCE;
+
+DISTANCE = sqrt((x(1287,1) - x(1341,1))^2 + (x(1288,1) - x(1342,1))^2);
+LAMBDA_MATRIX(128,155) = DISTANCE;
+
+DISTANCE = sqrt((x(1341,1) - x(1287,1))^2 + (x(1342,1) - x(1288,1))^2);
+LAMBDA_MATRIX(155,128) = DISTANCE;
+
+DISTANCE = sqrt((x(1391,1) - x(1363,1))^2 + (x(1392,1) - x(1364,1))^2);
+LAMBDA_MATRIX(180,166) = DISTANCE;
+
+DISTANCE = sqrt((x(1363,1) - x(1391,1))^2 + (x(1364,1) - x(1392,1))^2);
+LAMBDA_MATRIX(166,180) = DISTANCE;
+
+DISTANCE = sqrt((x(1363,1) - x(1411,1))^2 + (x(1364,1) - x(1412,1))^2);
+LAMBDA_MATRIX(166,190) = DISTANCE;
+
+DISTANCE = sqrt((x(1411,1) - x(1363,1))^2 + (x(1412,1) - x(1364,1))^2);
+LAMBDA_MATRIX(190,166) = DISTANCE;
+
+DISTANCE = sqrt((x(1411,1) - x(1391,1))^2 + (x(1412,1) - x(1392,1))^2);
+LAMBDA_MATRIX(190,180) = DISTANCE;
+
+DISTANCE = sqrt((x(1391,1) - x(1411,1))^2 + (x(1392,1) - x(1412,1))^2);
+LAMBDA_MATRIX(180,190) = DISTANCE;
+
+DISTANCE = sqrt((x(1755,1) - x(1799,1))^2 + (x(1756,1) - x(1800,1))^2);
+LAMBDA_MATRIX(362,384) = DISTANCE;
+
+DISTANCE = sqrt((x(1799,1) - x(1755,1))^2 + (x(1800,1) - x(1756,1))^2);
+LAMBDA_MATRIX(384,362) = DISTANCE;
+
+DISTANCE = sqrt((x(1799,1) - x(1769,1))^2 + (x(1800,1) - x(1770,1))^2);
+LAMBDA_MATRIX(384,369) = DISTANCE;
+
+DISTANCE = sqrt((x(1769,1) - x(1799,1))^2 + (x(1770,1) - x(1800,1))^2);
+LAMBDA_MATRIX(369,384) = DISTANCE;
+
+DISTANCE = sqrt((x(1769,1) - x(1755,1))^2 + (x(1770,1) - x(1756,1))^2);
+LAMBDA_MATRIX(369,362) = DISTANCE;
+
+DISTANCE = sqrt((x(1755,1) - x(1769,1))^2 + (x(1756,1) - x(1770,1))^2);
+LAMBDA_MATRIX(362,369) = DISTANCE;
+
+DISTANCE = sqrt((x(1769,1) - x(1719,1))^2 + (x(1770,1) - x(1720,1))^2);
+LAMBDA_MATRIX(369,344) = DISTANCE;
+
+DISTANCE = sqrt((x(1719,1) - x(1769,1))^2 + (x(1720,1) - x(1770,1))^2);
+LAMBDA_MATRIX(344,369) = DISTANCE;
+
+DISTANCE = sqrt((x(1719,1) - x(1755,1))^2 + (x(1720,1) - x(1756,1))^2);
+LAMBDA_MATRIX(344,362) = DISTANCE;
+
+DISTANCE = sqrt((x(1755,1) - x(1719,1))^2 + (x(1756,1) - x(1720,1))^2);
+LAMBDA_MATRIX(362,344) = DISTANCE;
+
+DISTANCE = sqrt((x(1755,1) - x(1769,1))^2 + (x(1756,1) - x(1770,1))^2);
+LAMBDA_MATRIX(362,369) = DISTANCE;
+
+DISTANCE = sqrt((x(1769,1) - x(1755,1))^2 + (x(1770,1) - x(1756,1))^2);
+LAMBDA_MATRIX(369,362) = DISTANCE;
+
+DISTANCE = sqrt((x(1755,1) - x(1719,1))^2 + (x(1756,1) - x(1720,1))^2);
+LAMBDA_MATRIX(362,344) = DISTANCE;
+
+DISTANCE = sqrt((x(1719,1) - x(1755,1))^2 + (x(1720,1) - x(1756,1))^2);
+LAMBDA_MATRIX(344,362) = DISTANCE;
+
+DISTANCE = sqrt((x(1719,1) - x(1707,1))^2 + (x(1720,1) - x(1708,1))^2);
+LAMBDA_MATRIX(344,338) = DISTANCE;
+
+DISTANCE = sqrt((x(1707,1) - x(1719,1))^2 + (x(1708,1) - x(1720,1))^2);
+LAMBDA_MATRIX(338,344) = DISTANCE;
+
+DISTANCE = sqrt((x(1707,1) - x(1755,1))^2 + (x(1708,1) - x(1756,1))^2);
+LAMBDA_MATRIX(338,362) = DISTANCE;
+
+DISTANCE = sqrt((x(1755,1) - x(1707,1))^2 + (x(1756,1) - x(1708,1))^2);
+LAMBDA_MATRIX(362,338) = DISTANCE;
+
+DISTANCE = sqrt((x(1755,1) - x(1775,1))^2 + (x(1756,1) - x(1776,1))^2);
+LAMBDA_MATRIX(362,372) = DISTANCE;
+
+DISTANCE = sqrt((x(1775,1) - x(1755,1))^2 + (x(1776,1) - x(1756,1))^2);
+LAMBDA_MATRIX(372,362) = DISTANCE;
+
+DISTANCE = sqrt((x(1775,1) - x(1799,1))^2 + (x(1776,1) - x(1800,1))^2);
+LAMBDA_MATRIX(372,384) = DISTANCE;
+
+DISTANCE = sqrt((x(1799,1) - x(1775,1))^2 + (x(1800,1) - x(1776,1))^2);
+LAMBDA_MATRIX(384,372) = DISTANCE;
+
+DISTANCE = sqrt((x(1799,1) - x(1755,1))^2 + (x(1800,1) - x(1756,1))^2);
+LAMBDA_MATRIX(384,362) = DISTANCE;
+
+DISTANCE = sqrt((x(1755,1) - x(1799,1))^2 + (x(1756,1) - x(1800,1))^2);
+LAMBDA_MATRIX(362,384) = DISTANCE;
+
+DISTANCE = sqrt((x(1861,1) - x(1893,1))^2 + (x(1862,1) - x(1894,1))^2);
+LAMBDA_MATRIX(415,431) = DISTANCE;
+
+DISTANCE = sqrt((x(1893,1) - x(1861,1))^2 + (x(1894,1) - x(1862,1))^2);
+LAMBDA_MATRIX(431,415) = DISTANCE;
+
+DISTANCE = sqrt((x(1893,1) - x(1845,1))^2 + (x(1894,1) - x(1846,1))^2);
+LAMBDA_MATRIX(431,407) = DISTANCE;
+
+DISTANCE = sqrt((x(1845,1) - x(1893,1))^2 + (x(1846,1) - x(1894,1))^2);
+LAMBDA_MATRIX(407,431) = DISTANCE;
+
+DISTANCE = sqrt((x(1845,1) - x(1861,1))^2 + (x(1846,1) - x(1862,1))^2);
+LAMBDA_MATRIX(407,415) = DISTANCE;
+
+DISTANCE = sqrt((x(1861,1) - x(1845,1))^2 + (x(1862,1) - x(1846,1))^2);
+LAMBDA_MATRIX(415,407) = DISTANCE;
+
+DISTANCE = sqrt((x(1861,1) - x(1909,1))^2 + (x(1862,1) - x(1910,1))^2);
+LAMBDA_MATRIX(415,439) = DISTANCE;
+
+DISTANCE = sqrt((x(1909,1) - x(1861,1))^2 + (x(1910,1) - x(1862,1))^2);
+LAMBDA_MATRIX(439,415) = DISTANCE;
+
+DISTANCE = sqrt((x(1909,1) - x(1893,1))^2 + (x(1910,1) - x(1894,1))^2);
+LAMBDA_MATRIX(439,431) = DISTANCE;
+
+DISTANCE = sqrt((x(1893,1) - x(1909,1))^2 + (x(1894,1) - x(1910,1))^2);
+LAMBDA_MATRIX(431,439) = DISTANCE;
+
+DISTANCE = sqrt((x(1893,1) - x(1861,1))^2 + (x(1894,1) - x(1862,1))^2);
+LAMBDA_MATRIX(431,415) = DISTANCE;
+
+DISTANCE = sqrt((x(1861,1) - x(1893,1))^2 + (x(1862,1) - x(1894,1))^2);
+LAMBDA_MATRIX(415,431) = DISTANCE;
+
+DISTANCE = sqrt((x(1917,1) - x(1909,1))^2 + (x(1918,1) - x(1910,1))^2);
+LAMBDA_MATRIX(443,439) = DISTANCE;
+
+DISTANCE = sqrt((x(1909,1) - x(1917,1))^2 + (x(1910,1) - x(1918,1))^2);
+LAMBDA_MATRIX(439,443) = DISTANCE;
+
+DISTANCE = sqrt((x(1909,1) - x(1877,1))^2 + (x(1910,1) - x(1878,1))^2);
+LAMBDA_MATRIX(439,423) = DISTANCE;
+
+DISTANCE = sqrt((x(1877,1) - x(1909,1))^2 + (x(1878,1) - x(1910,1))^2);
+LAMBDA_MATRIX(423,439) = DISTANCE;
+
+DISTANCE = sqrt((x(1877,1) - x(1917,1))^2 + (x(1878,1) - x(1918,1))^2);
+LAMBDA_MATRIX(423,443) = DISTANCE;
+
+DISTANCE = sqrt((x(1917,1) - x(1877,1))^2 + (x(1918,1) - x(1878,1))^2);
+LAMBDA_MATRIX(443,423) = DISTANCE;
+
+DISTANCE = sqrt((x(1877,1) - x(1869,1))^2 + (x(1878,1) - x(1870,1))^2);
+LAMBDA_MATRIX(423,419) = DISTANCE;
+
+DISTANCE = sqrt((x(1869,1) - x(1877,1))^2 + (x(1870,1) - x(1878,1))^2);
+LAMBDA_MATRIX(419,423) = DISTANCE;
+
+DISTANCE = sqrt((x(1869,1) - x(1917,1))^2 + (x(1870,1) - x(1918,1))^2);
+LAMBDA_MATRIX(419,443) = DISTANCE;
+
+DISTANCE = sqrt((x(1917,1) - x(1869,1))^2 + (x(1918,1) - x(1870,1))^2);
+LAMBDA_MATRIX(443,419) = DISTANCE;
+
+DISTANCE = sqrt((x(1917,1) - x(1877,1))^2 + (x(1918,1) - x(1878,1))^2);
+LAMBDA_MATRIX(443,423) = DISTANCE;
+
+DISTANCE = sqrt((x(1877,1) - x(1917,1))^2 + (x(1878,1) - x(1918,1))^2);
+LAMBDA_MATRIX(423,443) = DISTANCE;
+
+DISTANCE = sqrt((x(1909,1) - x(1861,1))^2 + (x(1910,1) - x(1862,1))^2);
+LAMBDA_MATRIX(439,415) = DISTANCE;
+
+DISTANCE = sqrt((x(1861,1) - x(1909,1))^2 + (x(1862,1) - x(1910,1))^2);
+LAMBDA_MATRIX(415,439) = DISTANCE;
+
+DISTANCE = sqrt((x(1861,1) - x(1877,1))^2 + (x(1862,1) - x(1878,1))^2);
+LAMBDA_MATRIX(415,423) = DISTANCE;
+
+DISTANCE = sqrt((x(1877,1) - x(1861,1))^2 + (x(1878,1) - x(1862,1))^2);
+LAMBDA_MATRIX(423,415) = DISTANCE;
+
+DISTANCE = sqrt((x(1877,1) - x(1909,1))^2 + (x(1878,1) - x(1910,1))^2);
+LAMBDA_MATRIX(423,439) = DISTANCE;
+
+DISTANCE = sqrt((x(1909,1) - x(1877,1))^2 + (x(1910,1) - x(1878,1))^2);
+LAMBDA_MATRIX(439,423) = DISTANCE;
+
+DISTANCE = sqrt((x(1965,1) - x(1935,1))^2 + (x(1966,1) - x(1936,1))^2);
+LAMBDA_MATRIX(467,452) = DISTANCE;
+
+DISTANCE = sqrt((x(1935,1) - x(1965,1))^2 + (x(1936,1) - x(1966,1))^2);
+LAMBDA_MATRIX(452,467) = DISTANCE;
+
+DISTANCE = sqrt((x(1935,1) - x(1985,1))^2 + (x(1936,1) - x(1986,1))^2);
+LAMBDA_MATRIX(452,477) = DISTANCE;
+
+DISTANCE = sqrt((x(1985,1) - x(1935,1))^2 + (x(1986,1) - x(1936,1))^2);
+LAMBDA_MATRIX(477,452) = DISTANCE;
+
+DISTANCE = sqrt((x(1985,1) - x(1965,1))^2 + (x(1986,1) - x(1966,1))^2);
+LAMBDA_MATRIX(477,467) = DISTANCE;
+
+DISTANCE = sqrt((x(1965,1) - x(1985,1))^2 + (x(1966,1) - x(1986,1))^2);
+LAMBDA_MATRIX(467,477) = DISTANCE;
+
+DISTANCE = sqrt((x(1191,1) - x(1145,1))^2 + (x(1192,1) - x(1146,1))^2);
+LAMBDA_MATRIX(80,57) = DISTANCE;
+
+DISTANCE = sqrt((x(1145,1) - x(1191,1))^2 + (x(1146,1) - x(1192,1))^2);
+LAMBDA_MATRIX(57,80) = DISTANCE;
+
+DISTANCE = sqrt((x(1145,1) - x(1189,1))^2 + (x(1146,1) - x(1190,1))^2);
+LAMBDA_MATRIX(57,79) = DISTANCE;
+
+DISTANCE = sqrt((x(1189,1) - x(1145,1))^2 + (x(1190,1) - x(1146,1))^2);
+LAMBDA_MATRIX(79,57) = DISTANCE;
+
+DISTANCE = sqrt((x(1189,1) - x(1191,1))^2 + (x(1190,1) - x(1192,1))^2);
+LAMBDA_MATRIX(79,80) = DISTANCE;
+
+DISTANCE = sqrt((x(1191,1) - x(1189,1))^2 + (x(1192,1) - x(1190,1))^2);
+LAMBDA_MATRIX(80,79) = DISTANCE;
+
+DISTANCE = sqrt((x(1189,1) - x(1145,1))^2 + (x(1190,1) - x(1146,1))^2);
+LAMBDA_MATRIX(79,57) = DISTANCE;
+
+DISTANCE = sqrt((x(1145,1) - x(1189,1))^2 + (x(1146,1) - x(1190,1))^2);
+LAMBDA_MATRIX(57,79) = DISTANCE;
+
+DISTANCE = sqrt((x(1145,1) - x(1139,1))^2 + (x(1146,1) - x(1140,1))^2);
+LAMBDA_MATRIX(57,54) = DISTANCE;
+
+DISTANCE = sqrt((x(1139,1) - x(1145,1))^2 + (x(1140,1) - x(1146,1))^2);
+LAMBDA_MATRIX(54,57) = DISTANCE;
+
+DISTANCE = sqrt((x(1139,1) - x(1189,1))^2 + (x(1140,1) - x(1190,1))^2);
+LAMBDA_MATRIX(54,79) = DISTANCE;
+
+DISTANCE = sqrt((x(1189,1) - x(1139,1))^2 + (x(1190,1) - x(1140,1))^2);
+LAMBDA_MATRIX(79,54) = DISTANCE;
+
+DISTANCE = sqrt((x(1189,1) - x(1247,1))^2 + (x(1190,1) - x(1248,1))^2);
+LAMBDA_MATRIX(79,108) = DISTANCE;
+
+DISTANCE = sqrt((x(1247,1) - x(1189,1))^2 + (x(1248,1) - x(1190,1))^2);
+LAMBDA_MATRIX(108,79) = DISTANCE;
+
+DISTANCE = sqrt((x(1247,1) - x(1191,1))^2 + (x(1248,1) - x(1192,1))^2);
+LAMBDA_MATRIX(108,80) = DISTANCE;
+
+DISTANCE = sqrt((x(1191,1) - x(1247,1))^2 + (x(1192,1) - x(1248,1))^2);
+LAMBDA_MATRIX(80,108) = DISTANCE;
+
+DISTANCE = sqrt((x(1191,1) - x(1189,1))^2 + (x(1192,1) - x(1190,1))^2);
+LAMBDA_MATRIX(80,79) = DISTANCE;
+
+DISTANCE = sqrt((x(1189,1) - x(1191,1))^2 + (x(1190,1) - x(1192,1))^2);
+LAMBDA_MATRIX(79,80) = DISTANCE;
+
+DISTANCE = sqrt((x(1137,1) - x(1147,1))^2 + (x(1138,1) - x(1148,1))^2);
+LAMBDA_MATRIX(53,58) = DISTANCE;
+
+DISTANCE = sqrt((x(1147,1) - x(1137,1))^2 + (x(1148,1) - x(1138,1))^2);
+LAMBDA_MATRIX(58,53) = DISTANCE;
+
+DISTANCE = sqrt((x(1147,1) - x(1185,1))^2 + (x(1148,1) - x(1186,1))^2);
+LAMBDA_MATRIX(58,77) = DISTANCE;
+
+DISTANCE = sqrt((x(1185,1) - x(1147,1))^2 + (x(1186,1) - x(1148,1))^2);
+LAMBDA_MATRIX(77,58) = DISTANCE;
+
+DISTANCE = sqrt((x(1185,1) - x(1137,1))^2 + (x(1186,1) - x(1138,1))^2);
+LAMBDA_MATRIX(77,53) = DISTANCE;
+
+DISTANCE = sqrt((x(1137,1) - x(1185,1))^2 + (x(1138,1) - x(1186,1))^2);
+LAMBDA_MATRIX(53,77) = DISTANCE;
+
+DISTANCE = sqrt((x(1233,1) - x(1227,1))^2 + (x(1234,1) - x(1228,1))^2);
+LAMBDA_MATRIX(101,98) = DISTANCE;
+
+DISTANCE = sqrt((x(1227,1) - x(1233,1))^2 + (x(1228,1) - x(1234,1))^2);
+LAMBDA_MATRIX(98,101) = DISTANCE;
+
+DISTANCE = sqrt((x(1227,1) - x(1185,1))^2 + (x(1228,1) - x(1186,1))^2);
+LAMBDA_MATRIX(98,77) = DISTANCE;
+
+DISTANCE = sqrt((x(1185,1) - x(1227,1))^2 + (x(1186,1) - x(1228,1))^2);
+LAMBDA_MATRIX(77,98) = DISTANCE;
+
+DISTANCE = sqrt((x(1185,1) - x(1233,1))^2 + (x(1186,1) - x(1234,1))^2);
+LAMBDA_MATRIX(77,101) = DISTANCE;
+
+DISTANCE = sqrt((x(1233,1) - x(1185,1))^2 + (x(1234,1) - x(1186,1))^2);
+LAMBDA_MATRIX(101,77) = DISTANCE;
+
+DISTANCE = sqrt((x(1185,1) - x(1197,1))^2 + (x(1186,1) - x(1198,1))^2);
+LAMBDA_MATRIX(77,83) = DISTANCE;
+
+DISTANCE = sqrt((x(1197,1) - x(1185,1))^2 + (x(1198,1) - x(1186,1))^2);
+LAMBDA_MATRIX(83,77) = DISTANCE;
+
+DISTANCE = sqrt((x(1197,1) - x(1233,1))^2 + (x(1198,1) - x(1234,1))^2);
+LAMBDA_MATRIX(83,101) = DISTANCE;
+
+DISTANCE = sqrt((x(1233,1) - x(1197,1))^2 + (x(1234,1) - x(1198,1))^2);
+LAMBDA_MATRIX(101,83) = DISTANCE;
+
+DISTANCE = sqrt((x(1233,1) - x(1185,1))^2 + (x(1234,1) - x(1186,1))^2);
+LAMBDA_MATRIX(101,77) = DISTANCE;
+
+DISTANCE = sqrt((x(1185,1) - x(1233,1))^2 + (x(1186,1) - x(1234,1))^2);
+LAMBDA_MATRIX(77,101) = DISTANCE;
+
+DISTANCE = sqrt((x(1185,1) - x(1147,1))^2 + (x(1186,1) - x(1148,1))^2);
+LAMBDA_MATRIX(77,58) = DISTANCE;
+
+DISTANCE = sqrt((x(1147,1) - x(1185,1))^2 + (x(1148,1) - x(1186,1))^2);
+LAMBDA_MATRIX(58,77) = DISTANCE;
+
+DISTANCE = sqrt((x(1147,1) - x(1197,1))^2 + (x(1148,1) - x(1198,1))^2);
+LAMBDA_MATRIX(58,83) = DISTANCE;
+
+DISTANCE = sqrt((x(1197,1) - x(1147,1))^2 + (x(1198,1) - x(1148,1))^2);
+LAMBDA_MATRIX(83,58) = DISTANCE;
+
+DISTANCE = sqrt((x(1197,1) - x(1185,1))^2 + (x(1198,1) - x(1186,1))^2);
+LAMBDA_MATRIX(83,77) = DISTANCE;
+
+DISTANCE = sqrt((x(1185,1) - x(1197,1))^2 + (x(1186,1) - x(1198,1))^2);
+LAMBDA_MATRIX(77,83) = DISTANCE;
+
+DISTANCE = sqrt((x(1055,1) - x(1095,1))^2 + (x(1056,1) - x(1096,1))^2);
+LAMBDA_MATRIX(12,32) = DISTANCE;
+
+DISTANCE = sqrt((x(1095,1) - x(1055,1))^2 + (x(1096,1) - x(1056,1))^2);
+LAMBDA_MATRIX(32,12) = DISTANCE;
+
+DISTANCE = sqrt((x(1095,1) - x(1057,1))^2 + (x(1096,1) - x(1058,1))^2);
+LAMBDA_MATRIX(32,13) = DISTANCE;
+
+DISTANCE = sqrt((x(1057,1) - x(1095,1))^2 + (x(1058,1) - x(1096,1))^2);
+LAMBDA_MATRIX(13,32) = DISTANCE;
+
+DISTANCE = sqrt((x(1057,1) - x(1055,1))^2 + (x(1058,1) - x(1056,1))^2);
+LAMBDA_MATRIX(13,12) = DISTANCE;
+
+DISTANCE = sqrt((x(1055,1) - x(1057,1))^2 + (x(1056,1) - x(1058,1))^2);
+LAMBDA_MATRIX(12,13) = DISTANCE;
+
+DISTANCE = sqrt((x(1271,1) - x(1315,1))^2 + (x(1272,1) - x(1316,1))^2);
+LAMBDA_MATRIX(120,142) = DISTANCE;
+
+DISTANCE = sqrt((x(1315,1) - x(1271,1))^2 + (x(1316,1) - x(1272,1))^2);
+LAMBDA_MATRIX(142,120) = DISTANCE;
+
+DISTANCE = sqrt((x(1315,1) - x(1267,1))^2 + (x(1316,1) - x(1268,1))^2);
+LAMBDA_MATRIX(142,118) = DISTANCE;
+
+DISTANCE = sqrt((x(1267,1) - x(1315,1))^2 + (x(1268,1) - x(1316,1))^2);
+LAMBDA_MATRIX(118,142) = DISTANCE;
+
+DISTANCE = sqrt((x(1267,1) - x(1271,1))^2 + (x(1268,1) - x(1272,1))^2);
+LAMBDA_MATRIX(118,120) = DISTANCE;
+
+DISTANCE = sqrt((x(1271,1) - x(1267,1))^2 + (x(1272,1) - x(1268,1))^2);
+LAMBDA_MATRIX(120,118) = DISTANCE;
+
+DISTANCE = sqrt((x(1271,1) - x(1309,1))^2 + (x(1272,1) - x(1310,1))^2);
+LAMBDA_MATRIX(120,139) = DISTANCE;
+
+DISTANCE = sqrt((x(1309,1) - x(1271,1))^2 + (x(1310,1) - x(1272,1))^2);
+LAMBDA_MATRIX(139,120) = DISTANCE;
+
+DISTANCE = sqrt((x(1309,1) - x(1315,1))^2 + (x(1310,1) - x(1316,1))^2);
+LAMBDA_MATRIX(139,142) = DISTANCE;
+
+DISTANCE = sqrt((x(1315,1) - x(1309,1))^2 + (x(1316,1) - x(1310,1))^2);
+LAMBDA_MATRIX(142,139) = DISTANCE;
+
+DISTANCE = sqrt((x(1315,1) - x(1271,1))^2 + (x(1316,1) - x(1272,1))^2);
+LAMBDA_MATRIX(142,120) = DISTANCE;
+
+DISTANCE = sqrt((x(1271,1) - x(1315,1))^2 + (x(1272,1) - x(1316,1))^2);
+LAMBDA_MATRIX(120,142) = DISTANCE;
+
+DISTANCE = sqrt((x(1267,1) - x(1227,1))^2 + (x(1268,1) - x(1228,1))^2);
+LAMBDA_MATRIX(118,98) = DISTANCE;
+
+DISTANCE = sqrt((x(1227,1) - x(1267,1))^2 + (x(1228,1) - x(1268,1))^2);
+LAMBDA_MATRIX(98,118) = DISTANCE;
+
+DISTANCE = sqrt((x(1227,1) - x(1271,1))^2 + (x(1228,1) - x(1272,1))^2);
+LAMBDA_MATRIX(98,120) = DISTANCE;
+
+DISTANCE = sqrt((x(1271,1) - x(1227,1))^2 + (x(1272,1) - x(1228,1))^2);
+LAMBDA_MATRIX(120,98) = DISTANCE;
+
+DISTANCE = sqrt((x(1271,1) - x(1267,1))^2 + (x(1272,1) - x(1268,1))^2);
+LAMBDA_MATRIX(120,118) = DISTANCE;
+
+DISTANCE = sqrt((x(1267,1) - x(1271,1))^2 + (x(1268,1) - x(1272,1))^2);
+LAMBDA_MATRIX(118,120) = DISTANCE;
+
+DISTANCE = sqrt((x(1279,1) - x(1309,1))^2 + (x(1280,1) - x(1310,1))^2);
+LAMBDA_MATRIX(124,139) = DISTANCE;
+
+DISTANCE = sqrt((x(1309,1) - x(1279,1))^2 + (x(1310,1) - x(1280,1))^2);
+LAMBDA_MATRIX(139,124) = DISTANCE;
+
+DISTANCE = sqrt((x(1309,1) - x(1271,1))^2 + (x(1310,1) - x(1272,1))^2);
+LAMBDA_MATRIX(139,120) = DISTANCE;
+
+DISTANCE = sqrt((x(1271,1) - x(1309,1))^2 + (x(1272,1) - x(1310,1))^2);
+LAMBDA_MATRIX(120,139) = DISTANCE;
+
+DISTANCE = sqrt((x(1271,1) - x(1279,1))^2 + (x(1272,1) - x(1280,1))^2);
+LAMBDA_MATRIX(120,124) = DISTANCE;
+
+DISTANCE = sqrt((x(1279,1) - x(1271,1))^2 + (x(1280,1) - x(1272,1))^2);
+LAMBDA_MATRIX(124,120) = DISTANCE;
+
+DISTANCE = sqrt((x(1233,1) - x(1279,1))^2 + (x(1234,1) - x(1280,1))^2);
+LAMBDA_MATRIX(101,124) = DISTANCE;
+
+DISTANCE = sqrt((x(1279,1) - x(1233,1))^2 + (x(1280,1) - x(1234,1))^2);
+LAMBDA_MATRIX(124,101) = DISTANCE;
+
+DISTANCE = sqrt((x(1279,1) - x(1271,1))^2 + (x(1280,1) - x(1272,1))^2);
+LAMBDA_MATRIX(124,120) = DISTANCE;
+
+DISTANCE = sqrt((x(1271,1) - x(1279,1))^2 + (x(1272,1) - x(1280,1))^2);
+LAMBDA_MATRIX(120,124) = DISTANCE;
+
+DISTANCE = sqrt((x(1271,1) - x(1233,1))^2 + (x(1272,1) - x(1234,1))^2);
+LAMBDA_MATRIX(120,101) = DISTANCE;
+
+DISTANCE = sqrt((x(1233,1) - x(1271,1))^2 + (x(1234,1) - x(1272,1))^2);
+LAMBDA_MATRIX(101,120) = DISTANCE;
+
+DISTANCE = sqrt((x(1271,1) - x(1227,1))^2 + (x(1272,1) - x(1228,1))^2);
+LAMBDA_MATRIX(120,98) = DISTANCE;
+
+DISTANCE = sqrt((x(1227,1) - x(1271,1))^2 + (x(1228,1) - x(1272,1))^2);
+LAMBDA_MATRIX(98,120) = DISTANCE;
+
+DISTANCE = sqrt((x(1227,1) - x(1233,1))^2 + (x(1228,1) - x(1234,1))^2);
+LAMBDA_MATRIX(98,101) = DISTANCE;
+
+DISTANCE = sqrt((x(1233,1) - x(1227,1))^2 + (x(1234,1) - x(1228,1))^2);
+LAMBDA_MATRIX(101,98) = DISTANCE;
+
+DISTANCE = sqrt((x(1233,1) - x(1271,1))^2 + (x(1234,1) - x(1272,1))^2);
+LAMBDA_MATRIX(101,120) = DISTANCE;
+
+DISTANCE = sqrt((x(1271,1) - x(1233,1))^2 + (x(1272,1) - x(1234,1))^2);
+LAMBDA_MATRIX(120,101) = DISTANCE;
+
+DISTANCE = sqrt((x(1447,1) - x(1401,1))^2 + (x(1448,1) - x(1402,1))^2);
+LAMBDA_MATRIX(208,185) = DISTANCE;
+
+DISTANCE = sqrt((x(1401,1) - x(1447,1))^2 + (x(1402,1) - x(1448,1))^2);
+LAMBDA_MATRIX(185,208) = DISTANCE;
+
+DISTANCE = sqrt((x(1401,1) - x(1423,1))^2 + (x(1402,1) - x(1424,1))^2);
+LAMBDA_MATRIX(185,196) = DISTANCE;
+
+DISTANCE = sqrt((x(1423,1) - x(1401,1))^2 + (x(1424,1) - x(1402,1))^2);
+LAMBDA_MATRIX(196,185) = DISTANCE;
+
+DISTANCE = sqrt((x(1423,1) - x(1447,1))^2 + (x(1424,1) - x(1448,1))^2);
+LAMBDA_MATRIX(196,208) = DISTANCE;
+
+DISTANCE = sqrt((x(1447,1) - x(1423,1))^2 + (x(1448,1) - x(1424,1))^2);
+LAMBDA_MATRIX(208,196) = DISTANCE;
+
+DISTANCE = sqrt((x(1427,1) - x(1401,1))^2 + (x(1428,1) - x(1402,1))^2);
+LAMBDA_MATRIX(198,185) = DISTANCE;
+
+DISTANCE = sqrt((x(1401,1) - x(1427,1))^2 + (x(1402,1) - x(1428,1))^2);
+LAMBDA_MATRIX(185,198) = DISTANCE;
+
+DISTANCE = sqrt((x(1401,1) - x(1447,1))^2 + (x(1402,1) - x(1448,1))^2);
+LAMBDA_MATRIX(185,208) = DISTANCE;
+
+DISTANCE = sqrt((x(1447,1) - x(1401,1))^2 + (x(1448,1) - x(1402,1))^2);
+LAMBDA_MATRIX(208,185) = DISTANCE;
+
+DISTANCE = sqrt((x(1447,1) - x(1427,1))^2 + (x(1448,1) - x(1428,1))^2);
+LAMBDA_MATRIX(208,198) = DISTANCE;
+
+DISTANCE = sqrt((x(1427,1) - x(1447,1))^2 + (x(1428,1) - x(1448,1))^2);
+LAMBDA_MATRIX(198,208) = DISTANCE;
+
+DISTANCE = sqrt((x(1447,1) - x(1423,1))^2 + (x(1448,1) - x(1424,1))^2);
+LAMBDA_MATRIX(208,196) = DISTANCE;
+
+DISTANCE = sqrt((x(1423,1) - x(1447,1))^2 + (x(1424,1) - x(1448,1))^2);
+LAMBDA_MATRIX(196,208) = DISTANCE;
+
+DISTANCE = sqrt((x(1423,1) - x(1465,1))^2 + (x(1424,1) - x(1466,1))^2);
+LAMBDA_MATRIX(196,217) = DISTANCE;
+
+DISTANCE = sqrt((x(1465,1) - x(1423,1))^2 + (x(1466,1) - x(1424,1))^2);
+LAMBDA_MATRIX(217,196) = DISTANCE;
+
+DISTANCE = sqrt((x(1465,1) - x(1447,1))^2 + (x(1466,1) - x(1448,1))^2);
+LAMBDA_MATRIX(217,208) = DISTANCE;
+
+DISTANCE = sqrt((x(1447,1) - x(1465,1))^2 + (x(1448,1) - x(1466,1))^2);
+LAMBDA_MATRIX(208,217) = DISTANCE;
+
+DISTANCE = sqrt((x(1473,1) - x(1427,1))^2 + (x(1474,1) - x(1428,1))^2);
+LAMBDA_MATRIX(221,198) = DISTANCE;
+
+DISTANCE = sqrt((x(1427,1) - x(1473,1))^2 + (x(1428,1) - x(1474,1))^2);
+LAMBDA_MATRIX(198,221) = DISTANCE;
+
+DISTANCE = sqrt((x(1427,1) - x(1447,1))^2 + (x(1428,1) - x(1448,1))^2);
+LAMBDA_MATRIX(198,208) = DISTANCE;
+
+DISTANCE = sqrt((x(1447,1) - x(1427,1))^2 + (x(1448,1) - x(1428,1))^2);
+LAMBDA_MATRIX(208,198) = DISTANCE;
+
+DISTANCE = sqrt((x(1447,1) - x(1473,1))^2 + (x(1448,1) - x(1474,1))^2);
+LAMBDA_MATRIX(208,221) = DISTANCE;
+
+DISTANCE = sqrt((x(1473,1) - x(1447,1))^2 + (x(1474,1) - x(1448,1))^2);
+LAMBDA_MATRIX(221,208) = DISTANCE;
+
+DISTANCE = sqrt((x(1447,1) - x(1485,1))^2 + (x(1448,1) - x(1486,1))^2);
+LAMBDA_MATRIX(208,227) = DISTANCE;
+
+DISTANCE = sqrt((x(1485,1) - x(1447,1))^2 + (x(1486,1) - x(1448,1))^2);
+LAMBDA_MATRIX(227,208) = DISTANCE;
+
+DISTANCE = sqrt((x(1485,1) - x(1473,1))^2 + (x(1486,1) - x(1474,1))^2);
+LAMBDA_MATRIX(227,221) = DISTANCE;
+
+DISTANCE = sqrt((x(1473,1) - x(1485,1))^2 + (x(1474,1) - x(1486,1))^2);
+LAMBDA_MATRIX(221,227) = DISTANCE;
+
+DISTANCE = sqrt((x(1473,1) - x(1447,1))^2 + (x(1474,1) - x(1448,1))^2);
+LAMBDA_MATRIX(221,208) = DISTANCE;
+
+DISTANCE = sqrt((x(1447,1) - x(1473,1))^2 + (x(1448,1) - x(1474,1))^2);
+LAMBDA_MATRIX(208,221) = DISTANCE;
+
+DISTANCE = sqrt((x(1465,1) - x(1485,1))^2 + (x(1466,1) - x(1486,1))^2);
+LAMBDA_MATRIX(217,227) = DISTANCE;
+
+DISTANCE = sqrt((x(1485,1) - x(1465,1))^2 + (x(1486,1) - x(1466,1))^2);
+LAMBDA_MATRIX(227,217) = DISTANCE;
+
+DISTANCE = sqrt((x(1485,1) - x(1447,1))^2 + (x(1486,1) - x(1448,1))^2);
+LAMBDA_MATRIX(227,208) = DISTANCE;
+
+DISTANCE = sqrt((x(1447,1) - x(1485,1))^2 + (x(1448,1) - x(1486,1))^2);
+LAMBDA_MATRIX(208,227) = DISTANCE;
+
+DISTANCE = sqrt((x(1447,1) - x(1465,1))^2 + (x(1448,1) - x(1466,1))^2);
+LAMBDA_MATRIX(208,217) = DISTANCE;
+
+DISTANCE = sqrt((x(1465,1) - x(1447,1))^2 + (x(1466,1) - x(1448,1))^2);
+LAMBDA_MATRIX(217,208) = DISTANCE;
+
+DISTANCE = sqrt((x(1815,1) - x(1765,1))^2 + (x(1816,1) - x(1766,1))^2);
+LAMBDA_MATRIX(392,367) = DISTANCE;
+
+DISTANCE = sqrt((x(1765,1) - x(1815,1))^2 + (x(1766,1) - x(1816,1))^2);
+LAMBDA_MATRIX(367,392) = DISTANCE;
+
+DISTANCE = sqrt((x(1765,1) - x(1791,1))^2 + (x(1766,1) - x(1792,1))^2);
+LAMBDA_MATRIX(367,380) = DISTANCE;
+
+DISTANCE = sqrt((x(1791,1) - x(1765,1))^2 + (x(1792,1) - x(1766,1))^2);
+LAMBDA_MATRIX(380,367) = DISTANCE;
+
+DISTANCE = sqrt((x(1791,1) - x(1815,1))^2 + (x(1792,1) - x(1816,1))^2);
+LAMBDA_MATRIX(380,392) = DISTANCE;
+
+DISTANCE = sqrt((x(1815,1) - x(1791,1))^2 + (x(1816,1) - x(1792,1))^2);
+LAMBDA_MATRIX(392,380) = DISTANCE;
+
+DISTANCE = sqrt((x(1835,1) - x(1815,1))^2 + (x(1836,1) - x(1816,1))^2);
+LAMBDA_MATRIX(402,392) = DISTANCE;
+
+DISTANCE = sqrt((x(1815,1) - x(1835,1))^2 + (x(1816,1) - x(1836,1))^2);
+LAMBDA_MATRIX(392,402) = DISTANCE;
+
+DISTANCE = sqrt((x(1815,1) - x(1791,1))^2 + (x(1816,1) - x(1792,1))^2);
+LAMBDA_MATRIX(392,380) = DISTANCE;
+
+DISTANCE = sqrt((x(1791,1) - x(1815,1))^2 + (x(1792,1) - x(1816,1))^2);
+LAMBDA_MATRIX(380,392) = DISTANCE;
+
+DISTANCE = sqrt((x(1791,1) - x(1835,1))^2 + (x(1792,1) - x(1836,1))^2);
+LAMBDA_MATRIX(380,402) = DISTANCE;
+
+DISTANCE = sqrt((x(1835,1) - x(1791,1))^2 + (x(1836,1) - x(1792,1))^2);
+LAMBDA_MATRIX(402,380) = DISTANCE;
+
+DISTANCE = sqrt((x(1791,1) - x(1739,1))^2 + (x(1792,1) - x(1740,1))^2);
+LAMBDA_MATRIX(380,354) = DISTANCE;
+
+DISTANCE = sqrt((x(1739,1) - x(1791,1))^2 + (x(1740,1) - x(1792,1))^2);
+LAMBDA_MATRIX(354,380) = DISTANCE;
+
+DISTANCE = sqrt((x(1739,1) - x(1763,1))^2 + (x(1740,1) - x(1764,1))^2);
+LAMBDA_MATRIX(354,366) = DISTANCE;
+
+DISTANCE = sqrt((x(1763,1) - x(1739,1))^2 + (x(1764,1) - x(1740,1))^2);
+LAMBDA_MATRIX(366,354) = DISTANCE;
+
+DISTANCE = sqrt((x(1763,1) - x(1791,1))^2 + (x(1764,1) - x(1792,1))^2);
+LAMBDA_MATRIX(366,380) = DISTANCE;
+
+DISTANCE = sqrt((x(1791,1) - x(1763,1))^2 + (x(1792,1) - x(1764,1))^2);
+LAMBDA_MATRIX(380,366) = DISTANCE;
+
+DISTANCE = sqrt((x(1791,1) - x(1765,1))^2 + (x(1792,1) - x(1766,1))^2);
+LAMBDA_MATRIX(380,367) = DISTANCE;
+
+DISTANCE = sqrt((x(1765,1) - x(1791,1))^2 + (x(1766,1) - x(1792,1))^2);
+LAMBDA_MATRIX(367,380) = DISTANCE;
+
+DISTANCE = sqrt((x(1765,1) - x(1739,1))^2 + (x(1766,1) - x(1740,1))^2);
+LAMBDA_MATRIX(367,354) = DISTANCE;
+
+DISTANCE = sqrt((x(1739,1) - x(1765,1))^2 + (x(1740,1) - x(1766,1))^2);
+LAMBDA_MATRIX(354,367) = DISTANCE;
+
+DISTANCE = sqrt((x(1739,1) - x(1791,1))^2 + (x(1740,1) - x(1792,1))^2);
+LAMBDA_MATRIX(354,380) = DISTANCE;
+
+DISTANCE = sqrt((x(1791,1) - x(1739,1))^2 + (x(1792,1) - x(1740,1))^2);
+LAMBDA_MATRIX(380,354) = DISTANCE;
+
+DISTANCE = sqrt((x(1791,1) - x(1763,1))^2 + (x(1792,1) - x(1764,1))^2);
+LAMBDA_MATRIX(380,366) = DISTANCE;
+
+DISTANCE = sqrt((x(1763,1) - x(1791,1))^2 + (x(1764,1) - x(1792,1))^2);
+LAMBDA_MATRIX(366,380) = DISTANCE;
+
+DISTANCE = sqrt((x(1763,1) - x(1809,1))^2 + (x(1764,1) - x(1810,1))^2);
+LAMBDA_MATRIX(366,389) = DISTANCE;
+
+DISTANCE = sqrt((x(1809,1) - x(1763,1))^2 + (x(1810,1) - x(1764,1))^2);
+LAMBDA_MATRIX(389,366) = DISTANCE;
+
+DISTANCE = sqrt((x(1809,1) - x(1791,1))^2 + (x(1810,1) - x(1792,1))^2);
+LAMBDA_MATRIX(389,380) = DISTANCE;
+
+DISTANCE = sqrt((x(1791,1) - x(1809,1))^2 + (x(1792,1) - x(1810,1))^2);
+LAMBDA_MATRIX(380,389) = DISTANCE;
+
+DISTANCE = sqrt((x(1809,1) - x(1835,1))^2 + (x(1810,1) - x(1836,1))^2);
+LAMBDA_MATRIX(389,402) = DISTANCE;
+
+DISTANCE = sqrt((x(1835,1) - x(1809,1))^2 + (x(1836,1) - x(1810,1))^2);
+LAMBDA_MATRIX(402,389) = DISTANCE;
+
+DISTANCE = sqrt((x(1835,1) - x(1791,1))^2 + (x(1836,1) - x(1792,1))^2);
+LAMBDA_MATRIX(402,380) = DISTANCE;
+
+DISTANCE = sqrt((x(1791,1) - x(1835,1))^2 + (x(1792,1) - x(1836,1))^2);
+LAMBDA_MATRIX(380,402) = DISTANCE;
+
+DISTANCE = sqrt((x(1791,1) - x(1809,1))^2 + (x(1792,1) - x(1810,1))^2);
+LAMBDA_MATRIX(380,389) = DISTANCE;
+
+DISTANCE = sqrt((x(1809,1) - x(1791,1))^2 + (x(1810,1) - x(1792,1))^2);
+LAMBDA_MATRIX(389,380) = DISTANCE;
+
+DISTANCE = sqrt((x(1643,1) - x(1617,1))^2 + (x(1644,1) - x(1618,1))^2);
+LAMBDA_MATRIX(306,293) = DISTANCE;
+
+DISTANCE = sqrt((x(1617,1) - x(1643,1))^2 + (x(1618,1) - x(1644,1))^2);
+LAMBDA_MATRIX(293,306) = DISTANCE;
+
+DISTANCE = sqrt((x(1617,1) - x(1651,1))^2 + (x(1618,1) - x(1652,1))^2);
+LAMBDA_MATRIX(293,310) = DISTANCE;
+
+DISTANCE = sqrt((x(1651,1) - x(1617,1))^2 + (x(1652,1) - x(1618,1))^2);
+LAMBDA_MATRIX(310,293) = DISTANCE;
+
+DISTANCE = sqrt((x(1651,1) - x(1643,1))^2 + (x(1652,1) - x(1644,1))^2);
+LAMBDA_MATRIX(310,306) = DISTANCE;
+
+DISTANCE = sqrt((x(1643,1) - x(1651,1))^2 + (x(1644,1) - x(1652,1))^2);
+LAMBDA_MATRIX(306,310) = DISTANCE;
+
+DISTANCE = sqrt((x(1691,1) - x(1723,1))^2 + (x(1692,1) - x(1724,1))^2);
+LAMBDA_MATRIX(330,346) = DISTANCE;
+
+DISTANCE = sqrt((x(1723,1) - x(1691,1))^2 + (x(1724,1) - x(1692,1))^2);
+LAMBDA_MATRIX(346,330) = DISTANCE;
+
+DISTANCE = sqrt((x(1723,1) - x(1663,1))^2 + (x(1724,1) - x(1664,1))^2);
+LAMBDA_MATRIX(346,316) = DISTANCE;
+
+DISTANCE = sqrt((x(1663,1) - x(1723,1))^2 + (x(1664,1) - x(1724,1))^2);
+LAMBDA_MATRIX(316,346) = DISTANCE;
+
+DISTANCE = sqrt((x(1663,1) - x(1691,1))^2 + (x(1664,1) - x(1692,1))^2);
+LAMBDA_MATRIX(316,330) = DISTANCE;
+
+DISTANCE = sqrt((x(1691,1) - x(1663,1))^2 + (x(1692,1) - x(1664,1))^2);
+LAMBDA_MATRIX(330,316) = DISTANCE;
+
+DISTANCE = sqrt((x(1663,1) - x(1645,1))^2 + (x(1664,1) - x(1646,1))^2);
+LAMBDA_MATRIX(316,307) = DISTANCE;
+
+DISTANCE = sqrt((x(1645,1) - x(1663,1))^2 + (x(1646,1) - x(1664,1))^2);
+LAMBDA_MATRIX(307,316) = DISTANCE;
+
+DISTANCE = sqrt((x(1645,1) - x(1691,1))^2 + (x(1646,1) - x(1692,1))^2);
+LAMBDA_MATRIX(307,330) = DISTANCE;
+
+DISTANCE = sqrt((x(1691,1) - x(1645,1))^2 + (x(1692,1) - x(1646,1))^2);
+LAMBDA_MATRIX(330,307) = DISTANCE;
+
+DISTANCE = sqrt((x(1691,1) - x(1663,1))^2 + (x(1692,1) - x(1664,1))^2);
+LAMBDA_MATRIX(330,316) = DISTANCE;
+
+DISTANCE = sqrt((x(1663,1) - x(1691,1))^2 + (x(1664,1) - x(1692,1))^2);
+LAMBDA_MATRIX(316,330) = DISTANCE;
+
+DISTANCE = sqrt((x(1625,1) - x(1645,1))^2 + (x(1626,1) - x(1646,1))^2);
+LAMBDA_MATRIX(297,307) = DISTANCE;
+
+DISTANCE = sqrt((x(1645,1) - x(1625,1))^2 + (x(1646,1) - x(1626,1))^2);
+LAMBDA_MATRIX(307,297) = DISTANCE;
+
+DISTANCE = sqrt((x(1645,1) - x(1663,1))^2 + (x(1646,1) - x(1664,1))^2);
+LAMBDA_MATRIX(307,316) = DISTANCE;
+
+DISTANCE = sqrt((x(1663,1) - x(1645,1))^2 + (x(1664,1) - x(1646,1))^2);
+LAMBDA_MATRIX(316,307) = DISTANCE;
+
+DISTANCE = sqrt((x(1663,1) - x(1625,1))^2 + (x(1664,1) - x(1626,1))^2);
+LAMBDA_MATRIX(316,297) = DISTANCE;
+
+DISTANCE = sqrt((x(1625,1) - x(1663,1))^2 + (x(1626,1) - x(1664,1))^2);
+LAMBDA_MATRIX(297,316) = DISTANCE;
+
+DISTANCE = sqrt((x(1777,1) - x(1801,1))^2 + (x(1778,1) - x(1802,1))^2);
+LAMBDA_MATRIX(373,385) = DISTANCE;
+
+DISTANCE = sqrt((x(1801,1) - x(1777,1))^2 + (x(1802,1) - x(1778,1))^2);
+LAMBDA_MATRIX(385,373) = DISTANCE;
+
+DISTANCE = sqrt((x(1801,1) - x(1829,1))^2 + (x(1802,1) - x(1830,1))^2);
+LAMBDA_MATRIX(385,399) = DISTANCE;
+
+DISTANCE = sqrt((x(1829,1) - x(1801,1))^2 + (x(1830,1) - x(1802,1))^2);
+LAMBDA_MATRIX(399,385) = DISTANCE;
+
+DISTANCE = sqrt((x(1829,1) - x(1777,1))^2 + (x(1830,1) - x(1778,1))^2);
+LAMBDA_MATRIX(399,373) = DISTANCE;
+
+DISTANCE = sqrt((x(1777,1) - x(1829,1))^2 + (x(1778,1) - x(1830,1))^2);
+LAMBDA_MATRIX(373,399) = DISTANCE;
+
+DISTANCE = sqrt((x(1777,1) - x(1747,1))^2 + (x(1778,1) - x(1748,1))^2);
+LAMBDA_MATRIX(373,358) = DISTANCE;
+
+DISTANCE = sqrt((x(1747,1) - x(1777,1))^2 + (x(1748,1) - x(1778,1))^2);
+LAMBDA_MATRIX(358,373) = DISTANCE;
+
+DISTANCE = sqrt((x(1747,1) - x(1723,1))^2 + (x(1748,1) - x(1724,1))^2);
+LAMBDA_MATRIX(358,346) = DISTANCE;
+
+DISTANCE = sqrt((x(1723,1) - x(1747,1))^2 + (x(1724,1) - x(1748,1))^2);
+LAMBDA_MATRIX(346,358) = DISTANCE;
+
+DISTANCE = sqrt((x(1723,1) - x(1777,1))^2 + (x(1724,1) - x(1778,1))^2);
+LAMBDA_MATRIX(346,373) = DISTANCE;
+
+DISTANCE = sqrt((x(1777,1) - x(1723,1))^2 + (x(1778,1) - x(1724,1))^2);
+LAMBDA_MATRIX(373,346) = DISTANCE;
+
+DISTANCE = sqrt((x(1777,1) - x(1723,1))^2 + (x(1778,1) - x(1724,1))^2);
+LAMBDA_MATRIX(373,346) = DISTANCE;
+
+DISTANCE = sqrt((x(1723,1) - x(1777,1))^2 + (x(1724,1) - x(1778,1))^2);
+LAMBDA_MATRIX(346,373) = DISTANCE;
+
+DISTANCE = sqrt((x(1723,1) - x(1749,1))^2 + (x(1724,1) - x(1750,1))^2);
+LAMBDA_MATRIX(346,359) = DISTANCE;
+
+DISTANCE = sqrt((x(1749,1) - x(1723,1))^2 + (x(1750,1) - x(1724,1))^2);
+LAMBDA_MATRIX(359,346) = DISTANCE;
+
+DISTANCE = sqrt((x(1749,1) - x(1777,1))^2 + (x(1750,1) - x(1778,1))^2);
+LAMBDA_MATRIX(359,373) = DISTANCE;
+
+DISTANCE = sqrt((x(1777,1) - x(1749,1))^2 + (x(1778,1) - x(1750,1))^2);
+LAMBDA_MATRIX(373,359) = DISTANCE;
+
+DISTANCE = sqrt((x(1749,1) - x(1801,1))^2 + (x(1750,1) - x(1802,1))^2);
+LAMBDA_MATRIX(359,385) = DISTANCE;
+
+DISTANCE = sqrt((x(1801,1) - x(1749,1))^2 + (x(1802,1) - x(1750,1))^2);
+LAMBDA_MATRIX(385,359) = DISTANCE;
+
+DISTANCE = sqrt((x(1801,1) - x(1777,1))^2 + (x(1802,1) - x(1778,1))^2);
+LAMBDA_MATRIX(385,373) = DISTANCE;
+
+DISTANCE = sqrt((x(1777,1) - x(1801,1))^2 + (x(1778,1) - x(1802,1))^2);
+LAMBDA_MATRIX(373,385) = DISTANCE;
+
+DISTANCE = sqrt((x(1777,1) - x(1749,1))^2 + (x(1778,1) - x(1750,1))^2);
+LAMBDA_MATRIX(373,359) = DISTANCE;
+
+DISTANCE = sqrt((x(1749,1) - x(1777,1))^2 + (x(1750,1) - x(1778,1))^2);
+LAMBDA_MATRIX(359,373) = DISTANCE;
+
+DISTANCE = sqrt((x(1643,1) - x(1651,1))^2 + (x(1644,1) - x(1652,1))^2);
+LAMBDA_MATRIX(306,310) = DISTANCE;
+
+DISTANCE = sqrt((x(1651,1) - x(1643,1))^2 + (x(1652,1) - x(1644,1))^2);
+LAMBDA_MATRIX(310,306) = DISTANCE;
+
+DISTANCE = sqrt((x(1651,1) - x(1685,1))^2 + (x(1652,1) - x(1686,1))^2);
+LAMBDA_MATRIX(310,327) = DISTANCE;
+
+DISTANCE = sqrt((x(1685,1) - x(1651,1))^2 + (x(1686,1) - x(1652,1))^2);
+LAMBDA_MATRIX(327,310) = DISTANCE;
+
+DISTANCE = sqrt((x(1685,1) - x(1643,1))^2 + (x(1686,1) - x(1644,1))^2);
+LAMBDA_MATRIX(327,306) = DISTANCE;
+
+DISTANCE = sqrt((x(1643,1) - x(1685,1))^2 + (x(1644,1) - x(1686,1))^2);
+LAMBDA_MATRIX(306,327) = DISTANCE;
+
+DISTANCE = sqrt((x(1685,1) - x(1651,1))^2 + (x(1686,1) - x(1652,1))^2);
+LAMBDA_MATRIX(327,310) = DISTANCE;
+
+DISTANCE = sqrt((x(1651,1) - x(1685,1))^2 + (x(1652,1) - x(1686,1))^2);
+LAMBDA_MATRIX(310,327) = DISTANCE;
+
+DISTANCE = sqrt((x(1651,1) - x(1693,1))^2 + (x(1652,1) - x(1694,1))^2);
+LAMBDA_MATRIX(310,331) = DISTANCE;
+
+DISTANCE = sqrt((x(1693,1) - x(1651,1))^2 + (x(1694,1) - x(1652,1))^2);
+LAMBDA_MATRIX(331,310) = DISTANCE;
+
+DISTANCE = sqrt((x(1693,1) - x(1685,1))^2 + (x(1694,1) - x(1686,1))^2);
+LAMBDA_MATRIX(331,327) = DISTANCE;
+
+DISTANCE = sqrt((x(1685,1) - x(1693,1))^2 + (x(1686,1) - x(1694,1))^2);
+LAMBDA_MATRIX(327,331) = DISTANCE;
+
+DISTANCE = sqrt((x(1849,1) - x(1869,1))^2 + (x(1850,1) - x(1870,1))^2);
+LAMBDA_MATRIX(409,419) = DISTANCE;
+
+DISTANCE = sqrt((x(1869,1) - x(1849,1))^2 + (x(1870,1) - x(1850,1))^2);
+LAMBDA_MATRIX(419,409) = DISTANCE;
+
+DISTANCE = sqrt((x(1869,1) - x(1813,1))^2 + (x(1870,1) - x(1814,1))^2);
+LAMBDA_MATRIX(419,391) = DISTANCE;
+
+DISTANCE = sqrt((x(1813,1) - x(1869,1))^2 + (x(1814,1) - x(1870,1))^2);
+LAMBDA_MATRIX(391,419) = DISTANCE;
+
+DISTANCE = sqrt((x(1813,1) - x(1849,1))^2 + (x(1814,1) - x(1850,1))^2);
+LAMBDA_MATRIX(391,409) = DISTANCE;
+
+DISTANCE = sqrt((x(1849,1) - x(1813,1))^2 + (x(1850,1) - x(1814,1))^2);
+LAMBDA_MATRIX(409,391) = DISTANCE;
+
+DISTANCE = sqrt((x(1519,1) - x(1497,1))^2 + (x(1520,1) - x(1498,1))^2);
+LAMBDA_MATRIX(244,233) = DISTANCE;
+
+DISTANCE = sqrt((x(1497,1) - x(1519,1))^2 + (x(1498,1) - x(1520,1))^2);
+LAMBDA_MATRIX(233,244) = DISTANCE;
+
+DISTANCE = sqrt((x(1497,1) - x(1521,1))^2 + (x(1498,1) - x(1522,1))^2);
+LAMBDA_MATRIX(233,245) = DISTANCE;
+
+DISTANCE = sqrt((x(1521,1) - x(1497,1))^2 + (x(1522,1) - x(1498,1))^2);
+LAMBDA_MATRIX(245,233) = DISTANCE;
+
+DISTANCE = sqrt((x(1521,1) - x(1519,1))^2 + (x(1522,1) - x(1520,1))^2);
+LAMBDA_MATRIX(245,244) = DISTANCE;
+
+DISTANCE = sqrt((x(1519,1) - x(1521,1))^2 + (x(1520,1) - x(1522,1))^2);
+LAMBDA_MATRIX(244,245) = DISTANCE;
+
+DISTANCE = sqrt((x(1459,1) - x(1431,1))^2 + (x(1460,1) - x(1432,1))^2);
+LAMBDA_MATRIX(214,200) = DISTANCE;
+
+DISTANCE = sqrt((x(1431,1) - x(1459,1))^2 + (x(1432,1) - x(1460,1))^2);
+LAMBDA_MATRIX(200,214) = DISTANCE;
+
+DISTANCE = sqrt((x(1431,1) - x(1467,1))^2 + (x(1432,1) - x(1468,1))^2);
+LAMBDA_MATRIX(200,218) = DISTANCE;
+
+DISTANCE = sqrt((x(1467,1) - x(1431,1))^2 + (x(1468,1) - x(1432,1))^2);
+LAMBDA_MATRIX(218,200) = DISTANCE;
+
+DISTANCE = sqrt((x(1467,1) - x(1459,1))^2 + (x(1468,1) - x(1460,1))^2);
+LAMBDA_MATRIX(218,214) = DISTANCE;
+
+DISTANCE = sqrt((x(1459,1) - x(1467,1))^2 + (x(1460,1) - x(1468,1))^2);
+LAMBDA_MATRIX(214,218) = DISTANCE;
+
+DISTANCE = sqrt((x(1467,1) - x(1497,1))^2 + (x(1468,1) - x(1498,1))^2);
+LAMBDA_MATRIX(218,233) = DISTANCE;
+
+DISTANCE = sqrt((x(1497,1) - x(1467,1))^2 + (x(1498,1) - x(1468,1))^2);
+LAMBDA_MATRIX(233,218) = DISTANCE;
+
+DISTANCE = sqrt((x(1497,1) - x(1459,1))^2 + (x(1498,1) - x(1460,1))^2);
+LAMBDA_MATRIX(233,214) = DISTANCE;
+
+DISTANCE = sqrt((x(1459,1) - x(1497,1))^2 + (x(1460,1) - x(1498,1))^2);
+LAMBDA_MATRIX(214,233) = DISTANCE;
+
+DISTANCE = sqrt((x(1459,1) - x(1467,1))^2 + (x(1460,1) - x(1468,1))^2);
+LAMBDA_MATRIX(214,218) = DISTANCE;
+
+DISTANCE = sqrt((x(1467,1) - x(1459,1))^2 + (x(1468,1) - x(1460,1))^2);
+LAMBDA_MATRIX(218,214) = DISTANCE;
+
+DISTANCE = sqrt((x(1553,1) - x(1529,1))^2 + (x(1554,1) - x(1530,1))^2);
+LAMBDA_MATRIX(261,249) = DISTANCE;
+
+DISTANCE = sqrt((x(1529,1) - x(1553,1))^2 + (x(1530,1) - x(1554,1))^2);
+LAMBDA_MATRIX(249,261) = DISTANCE;
+
+DISTANCE = sqrt((x(1529,1) - x(1519,1))^2 + (x(1530,1) - x(1520,1))^2);
+LAMBDA_MATRIX(249,244) = DISTANCE;
+
+DISTANCE = sqrt((x(1519,1) - x(1529,1))^2 + (x(1520,1) - x(1530,1))^2);
+LAMBDA_MATRIX(244,249) = DISTANCE;
+
+DISTANCE = sqrt((x(1519,1) - x(1553,1))^2 + (x(1520,1) - x(1554,1))^2);
+LAMBDA_MATRIX(244,261) = DISTANCE;
+
+DISTANCE = sqrt((x(1553,1) - x(1519,1))^2 + (x(1554,1) - x(1520,1))^2);
+LAMBDA_MATRIX(261,244) = DISTANCE;
+
+DISTANCE = sqrt((x(1359,1) - x(1397,1))^2 + (x(1360,1) - x(1398,1))^2);
+LAMBDA_MATRIX(164,183) = DISTANCE;
+
+DISTANCE = sqrt((x(1397,1) - x(1359,1))^2 + (x(1398,1) - x(1360,1))^2);
+LAMBDA_MATRIX(183,164) = DISTANCE;
+
+DISTANCE = sqrt((x(1397,1) - x(1339,1))^2 + (x(1398,1) - x(1340,1))^2);
+LAMBDA_MATRIX(183,154) = DISTANCE;
+
+DISTANCE = sqrt((x(1339,1) - x(1397,1))^2 + (x(1340,1) - x(1398,1))^2);
+LAMBDA_MATRIX(154,183) = DISTANCE;
+
+DISTANCE = sqrt((x(1339,1) - x(1359,1))^2 + (x(1340,1) - x(1360,1))^2);
+LAMBDA_MATRIX(154,164) = DISTANCE;
+
+DISTANCE = sqrt((x(1359,1) - x(1339,1))^2 + (x(1360,1) - x(1340,1))^2);
+LAMBDA_MATRIX(164,154) = DISTANCE;
+
+DISTANCE = sqrt((x(1339,1) - x(1329,1))^2 + (x(1340,1) - x(1330,1))^2);
+LAMBDA_MATRIX(154,149) = DISTANCE;
+
+DISTANCE = sqrt((x(1329,1) - x(1339,1))^2 + (x(1330,1) - x(1340,1))^2);
+LAMBDA_MATRIX(149,154) = DISTANCE;
+
+DISTANCE = sqrt((x(1329,1) - x(1295,1))^2 + (x(1330,1) - x(1296,1))^2);
+LAMBDA_MATRIX(149,132) = DISTANCE;
+
+DISTANCE = sqrt((x(1295,1) - x(1329,1))^2 + (x(1296,1) - x(1330,1))^2);
+LAMBDA_MATRIX(132,149) = DISTANCE;
+
+DISTANCE = sqrt((x(1295,1) - x(1339,1))^2 + (x(1296,1) - x(1340,1))^2);
+LAMBDA_MATRIX(132,154) = DISTANCE;
+
+DISTANCE = sqrt((x(1339,1) - x(1295,1))^2 + (x(1340,1) - x(1296,1))^2);
+LAMBDA_MATRIX(154,132) = DISTANCE;
+
+DISTANCE = sqrt((x(1295,1) - x(1301,1))^2 + (x(1296,1) - x(1302,1))^2);
+LAMBDA_MATRIX(132,135) = DISTANCE;
+
+DISTANCE = sqrt((x(1301,1) - x(1295,1))^2 + (x(1302,1) - x(1296,1))^2);
+LAMBDA_MATRIX(135,132) = DISTANCE;
+
+DISTANCE = sqrt((x(1301,1) - x(1339,1))^2 + (x(1302,1) - x(1340,1))^2);
+LAMBDA_MATRIX(135,154) = DISTANCE;
+
+DISTANCE = sqrt((x(1339,1) - x(1301,1))^2 + (x(1340,1) - x(1302,1))^2);
+LAMBDA_MATRIX(154,135) = DISTANCE;
+
+DISTANCE = sqrt((x(1339,1) - x(1295,1))^2 + (x(1340,1) - x(1296,1))^2);
+LAMBDA_MATRIX(154,132) = DISTANCE;
+
+DISTANCE = sqrt((x(1295,1) - x(1339,1))^2 + (x(1296,1) - x(1340,1))^2);
+LAMBDA_MATRIX(132,154) = DISTANCE;
+
+DISTANCE = sqrt((x(1301,1) - x(1359,1))^2 + (x(1302,1) - x(1360,1))^2);
+LAMBDA_MATRIX(135,164) = DISTANCE;
+
+DISTANCE = sqrt((x(1359,1) - x(1301,1))^2 + (x(1360,1) - x(1302,1))^2);
+LAMBDA_MATRIX(164,135) = DISTANCE;
+
+DISTANCE = sqrt((x(1359,1) - x(1339,1))^2 + (x(1360,1) - x(1340,1))^2);
+LAMBDA_MATRIX(164,154) = DISTANCE;
+
+DISTANCE = sqrt((x(1339,1) - x(1359,1))^2 + (x(1340,1) - x(1360,1))^2);
+LAMBDA_MATRIX(154,164) = DISTANCE;
+
+DISTANCE = sqrt((x(1339,1) - x(1301,1))^2 + (x(1340,1) - x(1302,1))^2);
+LAMBDA_MATRIX(154,135) = DISTANCE;
+
+DISTANCE = sqrt((x(1301,1) - x(1339,1))^2 + (x(1302,1) - x(1340,1))^2);
+LAMBDA_MATRIX(135,154) = DISTANCE;
+
+DISTANCE = sqrt((x(1459,1) - x(1445,1))^2 + (x(1460,1) - x(1446,1))^2);
+LAMBDA_MATRIX(214,207) = DISTANCE;
+
+DISTANCE = sqrt((x(1445,1) - x(1459,1))^2 + (x(1446,1) - x(1460,1))^2);
+LAMBDA_MATRIX(207,214) = DISTANCE;
+
+DISTANCE = sqrt((x(1445,1) - x(1415,1))^2 + (x(1446,1) - x(1416,1))^2);
+LAMBDA_MATRIX(207,192) = DISTANCE;
+
+DISTANCE = sqrt((x(1415,1) - x(1445,1))^2 + (x(1416,1) - x(1446,1))^2);
+LAMBDA_MATRIX(192,207) = DISTANCE;
+
+DISTANCE = sqrt((x(1415,1) - x(1459,1))^2 + (x(1416,1) - x(1460,1))^2);
+LAMBDA_MATRIX(192,214) = DISTANCE;
+
+DISTANCE = sqrt((x(1459,1) - x(1415,1))^2 + (x(1460,1) - x(1416,1))^2);
+LAMBDA_MATRIX(214,192) = DISTANCE;
+
+DISTANCE = sqrt((x(1445,1) - x(1397,1))^2 + (x(1446,1) - x(1398,1))^2);
+LAMBDA_MATRIX(207,183) = DISTANCE;
+
+DISTANCE = sqrt((x(1397,1) - x(1445,1))^2 + (x(1398,1) - x(1446,1))^2);
+LAMBDA_MATRIX(183,207) = DISTANCE;
+
+DISTANCE = sqrt((x(1397,1) - x(1415,1))^2 + (x(1398,1) - x(1416,1))^2);
+LAMBDA_MATRIX(183,192) = DISTANCE;
+
+DISTANCE = sqrt((x(1415,1) - x(1397,1))^2 + (x(1416,1) - x(1398,1))^2);
+LAMBDA_MATRIX(192,183) = DISTANCE;
+
+DISTANCE = sqrt((x(1415,1) - x(1445,1))^2 + (x(1416,1) - x(1446,1))^2);
+LAMBDA_MATRIX(192,207) = DISTANCE;
+
+DISTANCE = sqrt((x(1445,1) - x(1415,1))^2 + (x(1446,1) - x(1416,1))^2);
+LAMBDA_MATRIX(207,192) = DISTANCE;
+
+DISTANCE = sqrt((x(1415,1) - x(1431,1))^2 + (x(1416,1) - x(1432,1))^2);
+LAMBDA_MATRIX(192,200) = DISTANCE;
+
+DISTANCE = sqrt((x(1431,1) - x(1415,1))^2 + (x(1432,1) - x(1416,1))^2);
+LAMBDA_MATRIX(200,192) = DISTANCE;
+
+DISTANCE = sqrt((x(1431,1) - x(1459,1))^2 + (x(1432,1) - x(1460,1))^2);
+LAMBDA_MATRIX(200,214) = DISTANCE;
+
+DISTANCE = sqrt((x(1459,1) - x(1431,1))^2 + (x(1460,1) - x(1432,1))^2);
+LAMBDA_MATRIX(214,200) = DISTANCE;
+
+DISTANCE = sqrt((x(1459,1) - x(1415,1))^2 + (x(1460,1) - x(1416,1))^2);
+LAMBDA_MATRIX(214,192) = DISTANCE;
+
+DISTANCE = sqrt((x(1415,1) - x(1459,1))^2 + (x(1416,1) - x(1460,1))^2);
+LAMBDA_MATRIX(192,214) = DISTANCE;
+
+DISTANCE = sqrt((x(1415,1) - x(1397,1))^2 + (x(1416,1) - x(1398,1))^2);
+LAMBDA_MATRIX(192,183) = DISTANCE;
+
+DISTANCE = sqrt((x(1397,1) - x(1415,1))^2 + (x(1398,1) - x(1416,1))^2);
+LAMBDA_MATRIX(183,192) = DISTANCE;
+
+DISTANCE = sqrt((x(1397,1) - x(1359,1))^2 + (x(1398,1) - x(1360,1))^2);
+LAMBDA_MATRIX(183,164) = DISTANCE;
+
+DISTANCE = sqrt((x(1359,1) - x(1397,1))^2 + (x(1360,1) - x(1398,1))^2);
+LAMBDA_MATRIX(164,183) = DISTANCE;
+
+DISTANCE = sqrt((x(1359,1) - x(1415,1))^2 + (x(1360,1) - x(1416,1))^2);
+LAMBDA_MATRIX(164,192) = DISTANCE;
+
+DISTANCE = sqrt((x(1415,1) - x(1359,1))^2 + (x(1416,1) - x(1360,1))^2);
+LAMBDA_MATRIX(192,164) = DISTANCE;
+
+DISTANCE = sqrt((x(1359,1) - x(1381,1))^2 + (x(1360,1) - x(1382,1))^2);
+LAMBDA_MATRIX(164,175) = DISTANCE;
+
+DISTANCE = sqrt((x(1381,1) - x(1359,1))^2 + (x(1382,1) - x(1360,1))^2);
+LAMBDA_MATRIX(175,164) = DISTANCE;
+
+DISTANCE = sqrt((x(1381,1) - x(1415,1))^2 + (x(1382,1) - x(1416,1))^2);
+LAMBDA_MATRIX(175,192) = DISTANCE;
+
+DISTANCE = sqrt((x(1415,1) - x(1381,1))^2 + (x(1416,1) - x(1382,1))^2);
+LAMBDA_MATRIX(192,175) = DISTANCE;
+
+DISTANCE = sqrt((x(1415,1) - x(1359,1))^2 + (x(1416,1) - x(1360,1))^2);
+LAMBDA_MATRIX(192,164) = DISTANCE;
+
+DISTANCE = sqrt((x(1359,1) - x(1415,1))^2 + (x(1360,1) - x(1416,1))^2);
+LAMBDA_MATRIX(164,192) = DISTANCE;
+
+DISTANCE = sqrt((x(1415,1) - x(1381,1))^2 + (x(1416,1) - x(1382,1))^2);
+LAMBDA_MATRIX(192,175) = DISTANCE;
+
+DISTANCE = sqrt((x(1381,1) - x(1415,1))^2 + (x(1382,1) - x(1416,1))^2);
+LAMBDA_MATRIX(175,192) = DISTANCE;
+
+DISTANCE = sqrt((x(1381,1) - x(1431,1))^2 + (x(1382,1) - x(1432,1))^2);
+LAMBDA_MATRIX(175,200) = DISTANCE;
+
+DISTANCE = sqrt((x(1431,1) - x(1381,1))^2 + (x(1432,1) - x(1382,1))^2);
+LAMBDA_MATRIX(200,175) = DISTANCE;
+
+DISTANCE = sqrt((x(1431,1) - x(1415,1))^2 + (x(1432,1) - x(1416,1))^2);
+LAMBDA_MATRIX(200,192) = DISTANCE;
+
+DISTANCE = sqrt((x(1415,1) - x(1431,1))^2 + (x(1416,1) - x(1432,1))^2);
+LAMBDA_MATRIX(192,200) = DISTANCE;
+
+DISTANCE = sqrt((x(1637,1) - x(1607,1))^2 + (x(1638,1) - x(1608,1))^2);
+LAMBDA_MATRIX(303,288) = DISTANCE;
+
+DISTANCE = sqrt((x(1607,1) - x(1637,1))^2 + (x(1608,1) - x(1638,1))^2);
+LAMBDA_MATRIX(288,303) = DISTANCE;
+
+DISTANCE = sqrt((x(1607,1) - x(1643,1))^2 + (x(1608,1) - x(1644,1))^2);
+LAMBDA_MATRIX(288,306) = DISTANCE;
+
+DISTANCE = sqrt((x(1643,1) - x(1607,1))^2 + (x(1644,1) - x(1608,1))^2);
+LAMBDA_MATRIX(306,288) = DISTANCE;
+
+DISTANCE = sqrt((x(1643,1) - x(1637,1))^2 + (x(1644,1) - x(1638,1))^2);
+LAMBDA_MATRIX(306,303) = DISTANCE;
+
+DISTANCE = sqrt((x(1637,1) - x(1643,1))^2 + (x(1638,1) - x(1644,1))^2);
+LAMBDA_MATRIX(303,306) = DISTANCE;
+
+DISTANCE = sqrt((x(1621,1) - x(1607,1))^2 + (x(1622,1) - x(1608,1))^2);
+LAMBDA_MATRIX(295,288) = DISTANCE;
+
+DISTANCE = sqrt((x(1607,1) - x(1621,1))^2 + (x(1608,1) - x(1622,1))^2);
+LAMBDA_MATRIX(288,295) = DISTANCE;
+
+DISTANCE = sqrt((x(1607,1) - x(1637,1))^2 + (x(1608,1) - x(1638,1))^2);
+LAMBDA_MATRIX(288,303) = DISTANCE;
+
+DISTANCE = sqrt((x(1637,1) - x(1607,1))^2 + (x(1638,1) - x(1608,1))^2);
+LAMBDA_MATRIX(303,288) = DISTANCE;
+
+DISTANCE = sqrt((x(1637,1) - x(1621,1))^2 + (x(1638,1) - x(1622,1))^2);
+LAMBDA_MATRIX(303,295) = DISTANCE;
+
+DISTANCE = sqrt((x(1621,1) - x(1637,1))^2 + (x(1622,1) - x(1638,1))^2);
+LAMBDA_MATRIX(295,303) = DISTANCE;
+
+DISTANCE = sqrt((x(1729,1) - x(1737,1))^2 + (x(1730,1) - x(1738,1))^2);
+LAMBDA_MATRIX(349,353) = DISTANCE;
+
+DISTANCE = sqrt((x(1737,1) - x(1729,1))^2 + (x(1738,1) - x(1730,1))^2);
+LAMBDA_MATRIX(353,349) = DISTANCE;
+
+DISTANCE = sqrt((x(1737,1) - x(1775,1))^2 + (x(1738,1) - x(1776,1))^2);
+LAMBDA_MATRIX(353,372) = DISTANCE;
+
+DISTANCE = sqrt((x(1775,1) - x(1737,1))^2 + (x(1776,1) - x(1738,1))^2);
+LAMBDA_MATRIX(372,353) = DISTANCE;
+
+DISTANCE = sqrt((x(1775,1) - x(1729,1))^2 + (x(1776,1) - x(1730,1))^2);
+LAMBDA_MATRIX(372,349) = DISTANCE;
+
+DISTANCE = sqrt((x(1729,1) - x(1775,1))^2 + (x(1730,1) - x(1776,1))^2);
+LAMBDA_MATRIX(349,372) = DISTANCE;
+
+DISTANCE = sqrt((x(1775,1) - x(1755,1))^2 + (x(1776,1) - x(1756,1))^2);
+LAMBDA_MATRIX(372,362) = DISTANCE;
+
+DISTANCE = sqrt((x(1755,1) - x(1775,1))^2 + (x(1756,1) - x(1776,1))^2);
+LAMBDA_MATRIX(362,372) = DISTANCE;
+
+DISTANCE = sqrt((x(1755,1) - x(1729,1))^2 + (x(1756,1) - x(1730,1))^2);
+LAMBDA_MATRIX(362,349) = DISTANCE;
+
+DISTANCE = sqrt((x(1729,1) - x(1755,1))^2 + (x(1730,1) - x(1756,1))^2);
+LAMBDA_MATRIX(349,362) = DISTANCE;
+
+DISTANCE = sqrt((x(1729,1) - x(1775,1))^2 + (x(1730,1) - x(1776,1))^2);
+LAMBDA_MATRIX(349,372) = DISTANCE;
+
+DISTANCE = sqrt((x(1775,1) - x(1729,1))^2 + (x(1776,1) - x(1730,1))^2);
+LAMBDA_MATRIX(372,349) = DISTANCE;
+
+DISTANCE = sqrt((x(1729,1) - x(1755,1))^2 + (x(1730,1) - x(1756,1))^2);
+LAMBDA_MATRIX(349,362) = DISTANCE;
+
+DISTANCE = sqrt((x(1755,1) - x(1729,1))^2 + (x(1756,1) - x(1730,1))^2);
+LAMBDA_MATRIX(362,349) = DISTANCE;
+
+DISTANCE = sqrt((x(1755,1) - x(1707,1))^2 + (x(1756,1) - x(1708,1))^2);
+LAMBDA_MATRIX(362,338) = DISTANCE;
+
+DISTANCE = sqrt((x(1707,1) - x(1755,1))^2 + (x(1708,1) - x(1756,1))^2);
+LAMBDA_MATRIX(338,362) = DISTANCE;
+
+DISTANCE = sqrt((x(1707,1) - x(1729,1))^2 + (x(1708,1) - x(1730,1))^2);
+LAMBDA_MATRIX(338,349) = DISTANCE;
+
+DISTANCE = sqrt((x(1729,1) - x(1707,1))^2 + (x(1730,1) - x(1708,1))^2);
+LAMBDA_MATRIX(349,338) = DISTANCE;
+
+DISTANCE = sqrt((x(1549,1) - x(1567,1))^2 + (x(1550,1) - x(1568,1))^2);
+LAMBDA_MATRIX(259,268) = DISTANCE;
+
+DISTANCE = sqrt((x(1567,1) - x(1549,1))^2 + (x(1568,1) - x(1550,1))^2);
+LAMBDA_MATRIX(268,259) = DISTANCE;
+
+DISTANCE = sqrt((x(1567,1) - x(1535,1))^2 + (x(1568,1) - x(1536,1))^2);
+LAMBDA_MATRIX(268,252) = DISTANCE;
+
+DISTANCE = sqrt((x(1535,1) - x(1567,1))^2 + (x(1536,1) - x(1568,1))^2);
+LAMBDA_MATRIX(252,268) = DISTANCE;
+
+DISTANCE = sqrt((x(1535,1) - x(1549,1))^2 + (x(1536,1) - x(1550,1))^2);
+LAMBDA_MATRIX(252,259) = DISTANCE;
+
+DISTANCE = sqrt((x(1549,1) - x(1535,1))^2 + (x(1550,1) - x(1536,1))^2);
+LAMBDA_MATRIX(259,252) = DISTANCE;
+
+DISTANCE = sqrt((x(1535,1) - x(1515,1))^2 + (x(1536,1) - x(1516,1))^2);
+LAMBDA_MATRIX(252,242) = DISTANCE;
+
+DISTANCE = sqrt((x(1515,1) - x(1535,1))^2 + (x(1516,1) - x(1536,1))^2);
+LAMBDA_MATRIX(242,252) = DISTANCE;
+
+DISTANCE = sqrt((x(1515,1) - x(1549,1))^2 + (x(1516,1) - x(1550,1))^2);
+LAMBDA_MATRIX(242,259) = DISTANCE;
+
+DISTANCE = sqrt((x(1549,1) - x(1515,1))^2 + (x(1550,1) - x(1516,1))^2);
+LAMBDA_MATRIX(259,242) = DISTANCE;
+
+DISTANCE = sqrt((x(1549,1) - x(1535,1))^2 + (x(1550,1) - x(1536,1))^2);
+LAMBDA_MATRIX(259,252) = DISTANCE;
+
+DISTANCE = sqrt((x(1535,1) - x(1549,1))^2 + (x(1536,1) - x(1550,1))^2);
+LAMBDA_MATRIX(252,259) = DISTANCE;
+
+DISTANCE = sqrt((x(1393,1) - x(1363,1))^2 + (x(1394,1) - x(1364,1))^2);
+LAMBDA_MATRIX(181,166) = DISTANCE;
+
+DISTANCE = sqrt((x(1363,1) - x(1393,1))^2 + (x(1364,1) - x(1394,1))^2);
+LAMBDA_MATRIX(166,181) = DISTANCE;
+
+DISTANCE = sqrt((x(1363,1) - x(1343,1))^2 + (x(1364,1) - x(1344,1))^2);
+LAMBDA_MATRIX(166,156) = DISTANCE;
+
+DISTANCE = sqrt((x(1343,1) - x(1363,1))^2 + (x(1344,1) - x(1364,1))^2);
+LAMBDA_MATRIX(156,166) = DISTANCE;
+
+DISTANCE = sqrt((x(1343,1) - x(1393,1))^2 + (x(1344,1) - x(1394,1))^2);
+LAMBDA_MATRIX(156,181) = DISTANCE;
+
+DISTANCE = sqrt((x(1393,1) - x(1343,1))^2 + (x(1394,1) - x(1344,1))^2);
+LAMBDA_MATRIX(181,156) = DISTANCE;
+
+DISTANCE = sqrt((x(1393,1) - x(1411,1))^2 + (x(1394,1) - x(1412,1))^2);
+LAMBDA_MATRIX(181,190) = DISTANCE;
+
+DISTANCE = sqrt((x(1411,1) - x(1393,1))^2 + (x(1412,1) - x(1394,1))^2);
+LAMBDA_MATRIX(190,181) = DISTANCE;
+
+DISTANCE = sqrt((x(1411,1) - x(1363,1))^2 + (x(1412,1) - x(1364,1))^2);
+LAMBDA_MATRIX(190,166) = DISTANCE;
+
+DISTANCE = sqrt((x(1363,1) - x(1411,1))^2 + (x(1364,1) - x(1412,1))^2);
+LAMBDA_MATRIX(166,190) = DISTANCE;
+
+DISTANCE = sqrt((x(1363,1) - x(1393,1))^2 + (x(1364,1) - x(1394,1))^2);
+LAMBDA_MATRIX(166,181) = DISTANCE;
+
+DISTANCE = sqrt((x(1393,1) - x(1363,1))^2 + (x(1394,1) - x(1364,1))^2);
+LAMBDA_MATRIX(181,166) = DISTANCE;
+
+DISTANCE = sqrt((x(1907,1) - x(1965,1))^2 + (x(1908,1) - x(1966,1))^2);
+LAMBDA_MATRIX(438,467) = DISTANCE;
+
+DISTANCE = sqrt((x(1965,1) - x(1907,1))^2 + (x(1966,1) - x(1908,1))^2);
+LAMBDA_MATRIX(467,438) = DISTANCE;
+
+DISTANCE = sqrt((x(1965,1) - x(1943,1))^2 + (x(1966,1) - x(1944,1))^2);
+LAMBDA_MATRIX(467,456) = DISTANCE;
+
+DISTANCE = sqrt((x(1943,1) - x(1965,1))^2 + (x(1944,1) - x(1966,1))^2);
+LAMBDA_MATRIX(456,467) = DISTANCE;
+
+DISTANCE = sqrt((x(1943,1) - x(1907,1))^2 + (x(1944,1) - x(1908,1))^2);
+LAMBDA_MATRIX(456,438) = DISTANCE;
+
+DISTANCE = sqrt((x(1907,1) - x(1943,1))^2 + (x(1908,1) - x(1944,1))^2);
+LAMBDA_MATRIX(438,456) = DISTANCE;
+
+DISTANCE = sqrt((x(1907,1) - x(1943,1))^2 + (x(1908,1) - x(1944,1))^2);
+LAMBDA_MATRIX(438,456) = DISTANCE;
+
+DISTANCE = sqrt((x(1943,1) - x(1907,1))^2 + (x(1944,1) - x(1908,1))^2);
+LAMBDA_MATRIX(456,438) = DISTANCE;
+
+DISTANCE = sqrt((x(1943,1) - x(1889,1))^2 + (x(1944,1) - x(1890,1))^2);
+LAMBDA_MATRIX(456,429) = DISTANCE;
+
+DISTANCE = sqrt((x(1889,1) - x(1943,1))^2 + (x(1890,1) - x(1944,1))^2);
+LAMBDA_MATRIX(429,456) = DISTANCE;
+
+DISTANCE = sqrt((x(1889,1) - x(1907,1))^2 + (x(1890,1) - x(1908,1))^2);
+LAMBDA_MATRIX(429,438) = DISTANCE;
+
+DISTANCE = sqrt((x(1907,1) - x(1889,1))^2 + (x(1908,1) - x(1890,1))^2);
+LAMBDA_MATRIX(438,429) = DISTANCE;
+
+DISTANCE = sqrt((x(1889,1) - x(1857,1))^2 + (x(1890,1) - x(1858,1))^2);
+LAMBDA_MATRIX(429,413) = DISTANCE;
+
+DISTANCE = sqrt((x(1857,1) - x(1889,1))^2 + (x(1858,1) - x(1890,1))^2);
+LAMBDA_MATRIX(413,429) = DISTANCE;
+
+DISTANCE = sqrt((x(1857,1) - x(1907,1))^2 + (x(1858,1) - x(1908,1))^2);
+LAMBDA_MATRIX(413,438) = DISTANCE;
+
+DISTANCE = sqrt((x(1907,1) - x(1857,1))^2 + (x(1908,1) - x(1858,1))^2);
+LAMBDA_MATRIX(438,413) = DISTANCE;
+
+DISTANCE = sqrt((x(1907,1) - x(1889,1))^2 + (x(1908,1) - x(1890,1))^2);
+LAMBDA_MATRIX(438,429) = DISTANCE;
+
+DISTANCE = sqrt((x(1889,1) - x(1907,1))^2 + (x(1890,1) - x(1908,1))^2);
+LAMBDA_MATRIX(429,438) = DISTANCE;
+
+DISTANCE = sqrt((x(1907,1) - x(1857,1))^2 + (x(1908,1) - x(1858,1))^2);
+LAMBDA_MATRIX(438,413) = DISTANCE;
+
+DISTANCE = sqrt((x(1857,1) - x(1907,1))^2 + (x(1858,1) - x(1908,1))^2);
+LAMBDA_MATRIX(413,438) = DISTANCE;
+
+DISTANCE = sqrt((x(1857,1) - x(1885,1))^2 + (x(1858,1) - x(1886,1))^2);
+LAMBDA_MATRIX(413,427) = DISTANCE;
+
+DISTANCE = sqrt((x(1885,1) - x(1857,1))^2 + (x(1886,1) - x(1858,1))^2);
+LAMBDA_MATRIX(427,413) = DISTANCE;
+
+DISTANCE = sqrt((x(1885,1) - x(1907,1))^2 + (x(1886,1) - x(1908,1))^2);
+LAMBDA_MATRIX(427,438) = DISTANCE;
+
+DISTANCE = sqrt((x(1907,1) - x(1885,1))^2 + (x(1908,1) - x(1886,1))^2);
+LAMBDA_MATRIX(438,427) = DISTANCE;
+
+DISTANCE = sqrt((x(1907,1) - x(1885,1))^2 + (x(1908,1) - x(1886,1))^2);
+LAMBDA_MATRIX(438,427) = DISTANCE;
+
+DISTANCE = sqrt((x(1885,1) - x(1907,1))^2 + (x(1886,1) - x(1908,1))^2);
+LAMBDA_MATRIX(427,438) = DISTANCE;
+
+DISTANCE = sqrt((x(1885,1) - x(1935,1))^2 + (x(1886,1) - x(1936,1))^2);
+LAMBDA_MATRIX(427,452) = DISTANCE;
+
+DISTANCE = sqrt((x(1935,1) - x(1885,1))^2 + (x(1936,1) - x(1886,1))^2);
+LAMBDA_MATRIX(452,427) = DISTANCE;
+
+DISTANCE = sqrt((x(1935,1) - x(1907,1))^2 + (x(1936,1) - x(1908,1))^2);
+LAMBDA_MATRIX(452,438) = DISTANCE;
+
+DISTANCE = sqrt((x(1907,1) - x(1935,1))^2 + (x(1908,1) - x(1936,1))^2);
+LAMBDA_MATRIX(438,452) = DISTANCE;
+
+DISTANCE = sqrt((x(1935,1) - x(1965,1))^2 + (x(1936,1) - x(1966,1))^2);
+LAMBDA_MATRIX(452,467) = DISTANCE;
+
+DISTANCE = sqrt((x(1965,1) - x(1935,1))^2 + (x(1966,1) - x(1936,1))^2);
+LAMBDA_MATRIX(467,452) = DISTANCE;
+
+DISTANCE = sqrt((x(1965,1) - x(1907,1))^2 + (x(1966,1) - x(1908,1))^2);
+LAMBDA_MATRIX(467,438) = DISTANCE;
+
+DISTANCE = sqrt((x(1907,1) - x(1965,1))^2 + (x(1908,1) - x(1966,1))^2);
+LAMBDA_MATRIX(438,467) = DISTANCE;
+
+DISTANCE = sqrt((x(1907,1) - x(1935,1))^2 + (x(1908,1) - x(1936,1))^2);
+LAMBDA_MATRIX(438,452) = DISTANCE;
+
+DISTANCE = sqrt((x(1935,1) - x(1907,1))^2 + (x(1936,1) - x(1908,1))^2);
+LAMBDA_MATRIX(452,438) = DISTANCE;
+
+DISTANCE = sqrt((x(2001,1) - x(1985,1))^2 + (x(2002,1) - x(1986,1))^2);
+LAMBDA_MATRIX(485,477) = DISTANCE;
+
+DISTANCE = sqrt((x(1985,1) - x(2001,1))^2 + (x(1986,1) - x(2002,1))^2);
+LAMBDA_MATRIX(477,485) = DISTANCE;
+
+DISTANCE = sqrt((x(1985,1) - x(2033,1))^2 + (x(1986,1) - x(2034,1))^2);
+LAMBDA_MATRIX(477,501) = DISTANCE;
+
+DISTANCE = sqrt((x(2033,1) - x(1985,1))^2 + (x(2034,1) - x(1986,1))^2);
+LAMBDA_MATRIX(501,477) = DISTANCE;
+
+DISTANCE = sqrt((x(2033,1) - x(2001,1))^2 + (x(2034,1) - x(2002,1))^2);
+LAMBDA_MATRIX(501,485) = DISTANCE;
+
+DISTANCE = sqrt((x(2001,1) - x(2033,1))^2 + (x(2002,1) - x(2034,1))^2);
+LAMBDA_MATRIX(485,501) = DISTANCE;
+
+DISTANCE = sqrt((x(2001,1) - x(1965,1))^2 + (x(2002,1) - x(1966,1))^2);
+LAMBDA_MATRIX(485,467) = DISTANCE;
+
+DISTANCE = sqrt((x(1965,1) - x(2001,1))^2 + (x(1966,1) - x(2002,1))^2);
+LAMBDA_MATRIX(467,485) = DISTANCE;
+
+DISTANCE = sqrt((x(1965,1) - x(1985,1))^2 + (x(1966,1) - x(1986,1))^2);
+LAMBDA_MATRIX(467,477) = DISTANCE;
+
+DISTANCE = sqrt((x(1985,1) - x(1965,1))^2 + (x(1986,1) - x(1966,1))^2);
+LAMBDA_MATRIX(477,467) = DISTANCE;
+
+DISTANCE = sqrt((x(1985,1) - x(2001,1))^2 + (x(1986,1) - x(2002,1))^2);
+LAMBDA_MATRIX(477,485) = DISTANCE;
+
+DISTANCE = sqrt((x(2001,1) - x(1985,1))^2 + (x(2002,1) - x(1986,1))^2);
+LAMBDA_MATRIX(485,477) = DISTANCE;
+
+DISTANCE = sqrt((x(2001,1) - x(2033,1))^2 + (x(2002,1) - x(2034,1))^2);
+LAMBDA_MATRIX(485,501) = DISTANCE;
+
+DISTANCE = sqrt((x(2033,1) - x(2001,1))^2 + (x(2034,1) - x(2002,1))^2);
+LAMBDA_MATRIX(501,485) = DISTANCE;
+
+DISTANCE = sqrt((x(2033,1) - x(2027,1))^2 + (x(2034,1) - x(2028,1))^2);
+LAMBDA_MATRIX(501,498) = DISTANCE;
+
+DISTANCE = sqrt((x(2027,1) - x(2033,1))^2 + (x(2028,1) - x(2034,1))^2);
+LAMBDA_MATRIX(498,501) = DISTANCE;
+
+DISTANCE = sqrt((x(2027,1) - x(2001,1))^2 + (x(2028,1) - x(2002,1))^2);
+LAMBDA_MATRIX(498,485) = DISTANCE;
+
+DISTANCE = sqrt((x(2001,1) - x(2027,1))^2 + (x(2002,1) - x(2028,1))^2);
+LAMBDA_MATRIX(485,498) = DISTANCE;
+
+DISTANCE = sqrt((x(2027,1) - x(1981,1))^2 + (x(2028,1) - x(1982,1))^2);
+LAMBDA_MATRIX(498,475) = DISTANCE;
+
+DISTANCE = sqrt((x(1981,1) - x(2027,1))^2 + (x(1982,1) - x(2028,1))^2);
+LAMBDA_MATRIX(475,498) = DISTANCE;
+
+DISTANCE = sqrt((x(1981,1) - x(2001,1))^2 + (x(1982,1) - x(2002,1))^2);
+LAMBDA_MATRIX(475,485) = DISTANCE;
+
+DISTANCE = sqrt((x(2001,1) - x(1981,1))^2 + (x(2002,1) - x(1982,1))^2);
+LAMBDA_MATRIX(485,475) = DISTANCE;
+
+DISTANCE = sqrt((x(2001,1) - x(2027,1))^2 + (x(2002,1) - x(2028,1))^2);
+LAMBDA_MATRIX(485,498) = DISTANCE;
+
+DISTANCE = sqrt((x(2027,1) - x(2001,1))^2 + (x(2028,1) - x(2002,1))^2);
+LAMBDA_MATRIX(498,485) = DISTANCE;
+
+DISTANCE = sqrt((x(1981,1) - x(1943,1))^2 + (x(1982,1) - x(1944,1))^2);
+LAMBDA_MATRIX(475,456) = DISTANCE;
+
+DISTANCE = sqrt((x(1943,1) - x(1981,1))^2 + (x(1944,1) - x(1982,1))^2);
+LAMBDA_MATRIX(456,475) = DISTANCE;
+
+DISTANCE = sqrt((x(1943,1) - x(2001,1))^2 + (x(1944,1) - x(2002,1))^2);
+LAMBDA_MATRIX(456,485) = DISTANCE;
+
+DISTANCE = sqrt((x(2001,1) - x(1943,1))^2 + (x(2002,1) - x(1944,1))^2);
+LAMBDA_MATRIX(485,456) = DISTANCE;
+
+DISTANCE = sqrt((x(2001,1) - x(1981,1))^2 + (x(2002,1) - x(1982,1))^2);
+LAMBDA_MATRIX(485,475) = DISTANCE;
+
+DISTANCE = sqrt((x(1981,1) - x(2001,1))^2 + (x(1982,1) - x(2002,1))^2);
+LAMBDA_MATRIX(475,485) = DISTANCE;
+
+DISTANCE = sqrt((x(1943,1) - x(1965,1))^2 + (x(1944,1) - x(1966,1))^2);
+LAMBDA_MATRIX(456,467) = DISTANCE;
+
+DISTANCE = sqrt((x(1965,1) - x(1943,1))^2 + (x(1966,1) - x(1944,1))^2);
+LAMBDA_MATRIX(467,456) = DISTANCE;
+
+DISTANCE = sqrt((x(1965,1) - x(2001,1))^2 + (x(1966,1) - x(2002,1))^2);
+LAMBDA_MATRIX(467,485) = DISTANCE;
+
+DISTANCE = sqrt((x(2001,1) - x(1965,1))^2 + (x(2002,1) - x(1966,1))^2);
+LAMBDA_MATRIX(485,467) = DISTANCE;
+
+DISTANCE = sqrt((x(2001,1) - x(1943,1))^2 + (x(2002,1) - x(1944,1))^2);
+LAMBDA_MATRIX(485,456) = DISTANCE;
+
+DISTANCE = sqrt((x(1943,1) - x(2001,1))^2 + (x(1944,1) - x(2002,1))^2);
+LAMBDA_MATRIX(456,485) = DISTANCE;
+
+DISTANCE = sqrt((x(1177,1) - x(1189,1))^2 + (x(1178,1) - x(1190,1))^2);
+LAMBDA_MATRIX(73,79) = DISTANCE;
+
+DISTANCE = sqrt((x(1189,1) - x(1177,1))^2 + (x(1190,1) - x(1178,1))^2);
+LAMBDA_MATRIX(79,73) = DISTANCE;
+
+DISTANCE = sqrt((x(1189,1) - x(1139,1))^2 + (x(1190,1) - x(1140,1))^2);
+LAMBDA_MATRIX(79,54) = DISTANCE;
+
+DISTANCE = sqrt((x(1139,1) - x(1189,1))^2 + (x(1140,1) - x(1190,1))^2);
+LAMBDA_MATRIX(54,79) = DISTANCE;
+
+DISTANCE = sqrt((x(1139,1) - x(1177,1))^2 + (x(1140,1) - x(1178,1))^2);
+LAMBDA_MATRIX(54,73) = DISTANCE;
+
+DISTANCE = sqrt((x(1177,1) - x(1139,1))^2 + (x(1178,1) - x(1140,1))^2);
+LAMBDA_MATRIX(73,54) = DISTANCE;
+
+DISTANCE = sqrt((x(1177,1) - x(1139,1))^2 + (x(1178,1) - x(1140,1))^2);
+LAMBDA_MATRIX(73,54) = DISTANCE;
+
+DISTANCE = sqrt((x(1139,1) - x(1177,1))^2 + (x(1140,1) - x(1178,1))^2);
+LAMBDA_MATRIX(54,73) = DISTANCE;
+
+DISTANCE = sqrt((x(1139,1) - x(1137,1))^2 + (x(1140,1) - x(1138,1))^2);
+LAMBDA_MATRIX(54,53) = DISTANCE;
+
+DISTANCE = sqrt((x(1137,1) - x(1139,1))^2 + (x(1138,1) - x(1140,1))^2);
+LAMBDA_MATRIX(53,54) = DISTANCE;
+
+DISTANCE = sqrt((x(1137,1) - x(1177,1))^2 + (x(1138,1) - x(1178,1))^2);
+LAMBDA_MATRIX(53,73) = DISTANCE;
+
+DISTANCE = sqrt((x(1177,1) - x(1137,1))^2 + (x(1178,1) - x(1138,1))^2);
+LAMBDA_MATRIX(73,53) = DISTANCE;
+
+DISTANCE = sqrt((x(1137,1) - x(1185,1))^2 + (x(1138,1) - x(1186,1))^2);
+LAMBDA_MATRIX(53,77) = DISTANCE;
+
+DISTANCE = sqrt((x(1185,1) - x(1137,1))^2 + (x(1186,1) - x(1138,1))^2);
+LAMBDA_MATRIX(77,53) = DISTANCE;
+
+DISTANCE = sqrt((x(1185,1) - x(1177,1))^2 + (x(1186,1) - x(1178,1))^2);
+LAMBDA_MATRIX(77,73) = DISTANCE;
+
+DISTANCE = sqrt((x(1177,1) - x(1185,1))^2 + (x(1178,1) - x(1186,1))^2);
+LAMBDA_MATRIX(73,77) = DISTANCE;
+
+DISTANCE = sqrt((x(1177,1) - x(1137,1))^2 + (x(1178,1) - x(1138,1))^2);
+LAMBDA_MATRIX(73,53) = DISTANCE;
+
+DISTANCE = sqrt((x(1137,1) - x(1177,1))^2 + (x(1138,1) - x(1178,1))^2);
+LAMBDA_MATRIX(53,73) = DISTANCE;
+
+DISTANCE = sqrt((x(1177,1) - x(1185,1))^2 + (x(1178,1) - x(1186,1))^2);
+LAMBDA_MATRIX(73,77) = DISTANCE;
+
+DISTANCE = sqrt((x(1185,1) - x(1177,1))^2 + (x(1186,1) - x(1178,1))^2);
+LAMBDA_MATRIX(77,73) = DISTANCE;
+
+DISTANCE = sqrt((x(1185,1) - x(1227,1))^2 + (x(1186,1) - x(1228,1))^2);
+LAMBDA_MATRIX(77,98) = DISTANCE;
+
+DISTANCE = sqrt((x(1227,1) - x(1185,1))^2 + (x(1228,1) - x(1186,1))^2);
+LAMBDA_MATRIX(98,77) = DISTANCE;
+
+DISTANCE = sqrt((x(1227,1) - x(1177,1))^2 + (x(1228,1) - x(1178,1))^2);
+LAMBDA_MATRIX(98,73) = DISTANCE;
+
+DISTANCE = sqrt((x(1177,1) - x(1227,1))^2 + (x(1178,1) - x(1228,1))^2);
+LAMBDA_MATRIX(73,98) = DISTANCE;
+
+DISTANCE = sqrt((x(1221,1) - x(1227,1))^2 + (x(1222,1) - x(1228,1))^2);
+LAMBDA_MATRIX(95,98) = DISTANCE;
+
+DISTANCE = sqrt((x(1227,1) - x(1221,1))^2 + (x(1228,1) - x(1222,1))^2);
+LAMBDA_MATRIX(98,95) = DISTANCE;
+
+DISTANCE = sqrt((x(1227,1) - x(1267,1))^2 + (x(1228,1) - x(1268,1))^2);
+LAMBDA_MATRIX(98,118) = DISTANCE;
+
+DISTANCE = sqrt((x(1267,1) - x(1227,1))^2 + (x(1268,1) - x(1228,1))^2);
+LAMBDA_MATRIX(118,98) = DISTANCE;
+
+DISTANCE = sqrt((x(1267,1) - x(1221,1))^2 + (x(1268,1) - x(1222,1))^2);
+LAMBDA_MATRIX(118,95) = DISTANCE;
+
+DISTANCE = sqrt((x(1221,1) - x(1267,1))^2 + (x(1222,1) - x(1268,1))^2);
+LAMBDA_MATRIX(95,118) = DISTANCE;
+
+DISTANCE = sqrt((x(1267,1) - x(1247,1))^2 + (x(1268,1) - x(1248,1))^2);
+LAMBDA_MATRIX(118,108) = DISTANCE;
+
+DISTANCE = sqrt((x(1247,1) - x(1267,1))^2 + (x(1248,1) - x(1268,1))^2);
+LAMBDA_MATRIX(108,118) = DISTANCE;
+
+DISTANCE = sqrt((x(1247,1) - x(1221,1))^2 + (x(1248,1) - x(1222,1))^2);
+LAMBDA_MATRIX(108,95) = DISTANCE;
+
+DISTANCE = sqrt((x(1221,1) - x(1247,1))^2 + (x(1222,1) - x(1248,1))^2);
+LAMBDA_MATRIX(95,108) = DISTANCE;
+
+DISTANCE = sqrt((x(1221,1) - x(1267,1))^2 + (x(1222,1) - x(1268,1))^2);
+LAMBDA_MATRIX(95,118) = DISTANCE;
+
+DISTANCE = sqrt((x(1267,1) - x(1221,1))^2 + (x(1268,1) - x(1222,1))^2);
+LAMBDA_MATRIX(118,95) = DISTANCE;
+
+DISTANCE = sqrt((x(1247,1) - x(1189,1))^2 + (x(1248,1) - x(1190,1))^2);
+LAMBDA_MATRIX(108,79) = DISTANCE;
+
+DISTANCE = sqrt((x(1189,1) - x(1247,1))^2 + (x(1190,1) - x(1248,1))^2);
+LAMBDA_MATRIX(79,108) = DISTANCE;
+
+DISTANCE = sqrt((x(1189,1) - x(1221,1))^2 + (x(1190,1) - x(1222,1))^2);
+LAMBDA_MATRIX(79,95) = DISTANCE;
+
+DISTANCE = sqrt((x(1221,1) - x(1189,1))^2 + (x(1222,1) - x(1190,1))^2);
+LAMBDA_MATRIX(95,79) = DISTANCE;
+
+DISTANCE = sqrt((x(1221,1) - x(1247,1))^2 + (x(1222,1) - x(1248,1))^2);
+LAMBDA_MATRIX(95,108) = DISTANCE;
+
+DISTANCE = sqrt((x(1247,1) - x(1221,1))^2 + (x(1248,1) - x(1222,1))^2);
+LAMBDA_MATRIX(108,95) = DISTANCE;
+
+DISTANCE = sqrt((x(1221,1) - x(1177,1))^2 + (x(1222,1) - x(1178,1))^2);
+LAMBDA_MATRIX(95,73) = DISTANCE;
+
+DISTANCE = sqrt((x(1177,1) - x(1221,1))^2 + (x(1178,1) - x(1222,1))^2);
+LAMBDA_MATRIX(73,95) = DISTANCE;
+
+DISTANCE = sqrt((x(1177,1) - x(1227,1))^2 + (x(1178,1) - x(1228,1))^2);
+LAMBDA_MATRIX(73,98) = DISTANCE;
+
+DISTANCE = sqrt((x(1227,1) - x(1177,1))^2 + (x(1228,1) - x(1178,1))^2);
+LAMBDA_MATRIX(98,73) = DISTANCE;
+
+DISTANCE = sqrt((x(1227,1) - x(1221,1))^2 + (x(1228,1) - x(1222,1))^2);
+LAMBDA_MATRIX(98,95) = DISTANCE;
+
+DISTANCE = sqrt((x(1221,1) - x(1227,1))^2 + (x(1222,1) - x(1228,1))^2);
+LAMBDA_MATRIX(95,98) = DISTANCE;
+
+DISTANCE = sqrt((x(1189,1) - x(1177,1))^2 + (x(1190,1) - x(1178,1))^2);
+LAMBDA_MATRIX(79,73) = DISTANCE;
+
+DISTANCE = sqrt((x(1177,1) - x(1189,1))^2 + (x(1178,1) - x(1190,1))^2);
+LAMBDA_MATRIX(73,79) = DISTANCE;
+
+DISTANCE = sqrt((x(1177,1) - x(1221,1))^2 + (x(1178,1) - x(1222,1))^2);
+LAMBDA_MATRIX(73,95) = DISTANCE;
+
+DISTANCE = sqrt((x(1221,1) - x(1177,1))^2 + (x(1222,1) - x(1178,1))^2);
+LAMBDA_MATRIX(95,73) = DISTANCE;
+
+DISTANCE = sqrt((x(1221,1) - x(1189,1))^2 + (x(1222,1) - x(1190,1))^2);
+LAMBDA_MATRIX(95,79) = DISTANCE;
+
+DISTANCE = sqrt((x(1189,1) - x(1221,1))^2 + (x(1190,1) - x(1222,1))^2);
+LAMBDA_MATRIX(79,95) = DISTANCE;
+
+DISTANCE = sqrt((x(1095,1) - x(1055,1))^2 + (x(1096,1) - x(1056,1))^2);
+LAMBDA_MATRIX(32,12) = DISTANCE;
+
+DISTANCE = sqrt((x(1055,1) - x(1095,1))^2 + (x(1056,1) - x(1096,1))^2);
+LAMBDA_MATRIX(12,32) = DISTANCE;
+
+DISTANCE = sqrt((x(1055,1) - x(1097,1))^2 + (x(1056,1) - x(1098,1))^2);
+LAMBDA_MATRIX(12,33) = DISTANCE;
+
+DISTANCE = sqrt((x(1097,1) - x(1055,1))^2 + (x(1098,1) - x(1056,1))^2);
+LAMBDA_MATRIX(33,12) = DISTANCE;
+
+DISTANCE = sqrt((x(1097,1) - x(1095,1))^2 + (x(1098,1) - x(1096,1))^2);
+LAMBDA_MATRIX(33,32) = DISTANCE;
+
+DISTANCE = sqrt((x(1095,1) - x(1097,1))^2 + (x(1096,1) - x(1098,1))^2);
+LAMBDA_MATRIX(32,33) = DISTANCE;
+
+DISTANCE = sqrt((x(1137,1) - x(1139,1))^2 + (x(1138,1) - x(1140,1))^2);
+LAMBDA_MATRIX(53,54) = DISTANCE;
+
+DISTANCE = sqrt((x(1139,1) - x(1137,1))^2 + (x(1140,1) - x(1138,1))^2);
+LAMBDA_MATRIX(54,53) = DISTANCE;
+
+DISTANCE = sqrt((x(1139,1) - x(1097,1))^2 + (x(1140,1) - x(1098,1))^2);
+LAMBDA_MATRIX(54,33) = DISTANCE;
+
+DISTANCE = sqrt((x(1097,1) - x(1139,1))^2 + (x(1098,1) - x(1140,1))^2);
+LAMBDA_MATRIX(33,54) = DISTANCE;
+
+DISTANCE = sqrt((x(1097,1) - x(1137,1))^2 + (x(1098,1) - x(1138,1))^2);
+LAMBDA_MATRIX(33,53) = DISTANCE;
+
+DISTANCE = sqrt((x(1137,1) - x(1097,1))^2 + (x(1138,1) - x(1098,1))^2);
+LAMBDA_MATRIX(53,33) = DISTANCE;
+
+DISTANCE = sqrt((x(1139,1) - x(1095,1))^2 + (x(1140,1) - x(1096,1))^2);
+LAMBDA_MATRIX(54,32) = DISTANCE;
+
+DISTANCE = sqrt((x(1095,1) - x(1139,1))^2 + (x(1096,1) - x(1140,1))^2);
+LAMBDA_MATRIX(32,54) = DISTANCE;
+
+DISTANCE = sqrt((x(1095,1) - x(1097,1))^2 + (x(1096,1) - x(1098,1))^2);
+LAMBDA_MATRIX(32,33) = DISTANCE;
+
+DISTANCE = sqrt((x(1097,1) - x(1095,1))^2 + (x(1098,1) - x(1096,1))^2);
+LAMBDA_MATRIX(33,32) = DISTANCE;
+
+DISTANCE = sqrt((x(1097,1) - x(1139,1))^2 + (x(1098,1) - x(1140,1))^2);
+LAMBDA_MATRIX(33,54) = DISTANCE;
+
+DISTANCE = sqrt((x(1139,1) - x(1097,1))^2 + (x(1140,1) - x(1098,1))^2);
+LAMBDA_MATRIX(54,33) = DISTANCE;
+
+DISTANCE = sqrt((x(1623,1) - x(1591,1))^2 + (x(1624,1) - x(1592,1))^2);
+LAMBDA_MATRIX(296,280) = DISTANCE;
+
+DISTANCE = sqrt((x(1591,1) - x(1623,1))^2 + (x(1592,1) - x(1624,1))^2);
+LAMBDA_MATRIX(280,296) = DISTANCE;
+
+DISTANCE = sqrt((x(1591,1) - x(1625,1))^2 + (x(1592,1) - x(1626,1))^2);
+LAMBDA_MATRIX(280,297) = DISTANCE;
+
+DISTANCE = sqrt((x(1625,1) - x(1591,1))^2 + (x(1626,1) - x(1592,1))^2);
+LAMBDA_MATRIX(297,280) = DISTANCE;
+
+DISTANCE = sqrt((x(1625,1) - x(1623,1))^2 + (x(1626,1) - x(1624,1))^2);
+LAMBDA_MATRIX(297,296) = DISTANCE;
+
+DISTANCE = sqrt((x(1623,1) - x(1625,1))^2 + (x(1624,1) - x(1626,1))^2);
+LAMBDA_MATRIX(296,297) = DISTANCE;
+
+DISTANCE = sqrt((x(1623,1) - x(1651,1))^2 + (x(1624,1) - x(1652,1))^2);
+LAMBDA_MATRIX(296,310) = DISTANCE;
+
+DISTANCE = sqrt((x(1651,1) - x(1623,1))^2 + (x(1652,1) - x(1624,1))^2);
+LAMBDA_MATRIX(310,296) = DISTANCE;
+
+DISTANCE = sqrt((x(1651,1) - x(1617,1))^2 + (x(1652,1) - x(1618,1))^2);
+LAMBDA_MATRIX(310,293) = DISTANCE;
+
+DISTANCE = sqrt((x(1617,1) - x(1651,1))^2 + (x(1618,1) - x(1652,1))^2);
+LAMBDA_MATRIX(293,310) = DISTANCE;
+
+DISTANCE = sqrt((x(1617,1) - x(1623,1))^2 + (x(1618,1) - x(1624,1))^2);
+LAMBDA_MATRIX(293,296) = DISTANCE;
+
+DISTANCE = sqrt((x(1623,1) - x(1617,1))^2 + (x(1624,1) - x(1618,1))^2);
+LAMBDA_MATRIX(296,293) = DISTANCE;
+
+DISTANCE = sqrt((x(1625,1) - x(1591,1))^2 + (x(1626,1) - x(1592,1))^2);
+LAMBDA_MATRIX(297,280) = DISTANCE;
+
+DISTANCE = sqrt((x(1591,1) - x(1625,1))^2 + (x(1592,1) - x(1626,1))^2);
+LAMBDA_MATRIX(280,297) = DISTANCE;
+
+DISTANCE = sqrt((x(1591,1) - x(1593,1))^2 + (x(1592,1) - x(1594,1))^2);
+LAMBDA_MATRIX(280,281) = DISTANCE;
+
+DISTANCE = sqrt((x(1593,1) - x(1591,1))^2 + (x(1594,1) - x(1592,1))^2);
+LAMBDA_MATRIX(281,280) = DISTANCE;
+
+DISTANCE = sqrt((x(1593,1) - x(1625,1))^2 + (x(1594,1) - x(1626,1))^2);
+LAMBDA_MATRIX(281,297) = DISTANCE;
+
+DISTANCE = sqrt((x(1625,1) - x(1593,1))^2 + (x(1626,1) - x(1594,1))^2);
+LAMBDA_MATRIX(297,281) = DISTANCE;
+
+DISTANCE = sqrt((x(1605,1) - x(1625,1))^2 + (x(1606,1) - x(1626,1))^2);
+LAMBDA_MATRIX(287,297) = DISTANCE;
+
+DISTANCE = sqrt((x(1625,1) - x(1605,1))^2 + (x(1626,1) - x(1606,1))^2);
+LAMBDA_MATRIX(297,287) = DISTANCE;
+
+DISTANCE = sqrt((x(1625,1) - x(1593,1))^2 + (x(1626,1) - x(1594,1))^2);
+LAMBDA_MATRIX(297,281) = DISTANCE;
+
+DISTANCE = sqrt((x(1593,1) - x(1625,1))^2 + (x(1594,1) - x(1626,1))^2);
+LAMBDA_MATRIX(281,297) = DISTANCE;
+
+DISTANCE = sqrt((x(1593,1) - x(1605,1))^2 + (x(1594,1) - x(1606,1))^2);
+LAMBDA_MATRIX(281,287) = DISTANCE;
+
+DISTANCE = sqrt((x(1605,1) - x(1593,1))^2 + (x(1606,1) - x(1594,1))^2);
+LAMBDA_MATRIX(287,281) = DISTANCE;
+
+DISTANCE = sqrt((x(1593,1) - x(1571,1))^2 + (x(1594,1) - x(1572,1))^2);
+LAMBDA_MATRIX(281,270) = DISTANCE;
+
+DISTANCE = sqrt((x(1571,1) - x(1593,1))^2 + (x(1572,1) - x(1594,1))^2);
+LAMBDA_MATRIX(270,281) = DISTANCE;
+
+DISTANCE = sqrt((x(1571,1) - x(1605,1))^2 + (x(1572,1) - x(1606,1))^2);
+LAMBDA_MATRIX(270,287) = DISTANCE;
+
+DISTANCE = sqrt((x(1605,1) - x(1571,1))^2 + (x(1606,1) - x(1572,1))^2);
+LAMBDA_MATRIX(287,270) = DISTANCE;
+
+DISTANCE = sqrt((x(1605,1) - x(1593,1))^2 + (x(1606,1) - x(1594,1))^2);
+LAMBDA_MATRIX(287,281) = DISTANCE;
+
+DISTANCE = sqrt((x(1593,1) - x(1605,1))^2 + (x(1594,1) - x(1606,1))^2);
+LAMBDA_MATRIX(281,287) = DISTANCE;
+
+DISTANCE = sqrt((x(1697,1) - x(1663,1))^2 + (x(1698,1) - x(1664,1))^2);
+LAMBDA_MATRIX(333,316) = DISTANCE;
+
+DISTANCE = sqrt((x(1663,1) - x(1697,1))^2 + (x(1664,1) - x(1698,1))^2);
+LAMBDA_MATRIX(316,333) = DISTANCE;
+
+DISTANCE = sqrt((x(1663,1) - x(1723,1))^2 + (x(1664,1) - x(1724,1))^2);
+LAMBDA_MATRIX(316,346) = DISTANCE;
+
+DISTANCE = sqrt((x(1723,1) - x(1663,1))^2 + (x(1724,1) - x(1664,1))^2);
+LAMBDA_MATRIX(346,316) = DISTANCE;
+
+DISTANCE = sqrt((x(1723,1) - x(1697,1))^2 + (x(1724,1) - x(1698,1))^2);
+LAMBDA_MATRIX(346,333) = DISTANCE;
+
+DISTANCE = sqrt((x(1697,1) - x(1723,1))^2 + (x(1698,1) - x(1724,1))^2);
+LAMBDA_MATRIX(333,346) = DISTANCE;
+
+DISTANCE = sqrt((x(1697,1) - x(1747,1))^2 + (x(1698,1) - x(1748,1))^2);
+LAMBDA_MATRIX(333,358) = DISTANCE;
+
+DISTANCE = sqrt((x(1747,1) - x(1697,1))^2 + (x(1748,1) - x(1698,1))^2);
+LAMBDA_MATRIX(358,333) = DISTANCE;
+
+DISTANCE = sqrt((x(1747,1) - x(1693,1))^2 + (x(1748,1) - x(1694,1))^2);
+LAMBDA_MATRIX(358,331) = DISTANCE;
+
+DISTANCE = sqrt((x(1693,1) - x(1747,1))^2 + (x(1694,1) - x(1748,1))^2);
+LAMBDA_MATRIX(331,358) = DISTANCE;
+
+DISTANCE = sqrt((x(1693,1) - x(1697,1))^2 + (x(1694,1) - x(1698,1))^2);
+LAMBDA_MATRIX(331,333) = DISTANCE;
+
+DISTANCE = sqrt((x(1697,1) - x(1693,1))^2 + (x(1698,1) - x(1694,1))^2);
+LAMBDA_MATRIX(333,331) = DISTANCE;
+
+DISTANCE = sqrt((x(1723,1) - x(1747,1))^2 + (x(1724,1) - x(1748,1))^2);
+LAMBDA_MATRIX(346,358) = DISTANCE;
+
+DISTANCE = sqrt((x(1747,1) - x(1723,1))^2 + (x(1748,1) - x(1724,1))^2);
+LAMBDA_MATRIX(358,346) = DISTANCE;
+
+DISTANCE = sqrt((x(1747,1) - x(1697,1))^2 + (x(1748,1) - x(1698,1))^2);
+LAMBDA_MATRIX(358,333) = DISTANCE;
+
+DISTANCE = sqrt((x(1697,1) - x(1747,1))^2 + (x(1698,1) - x(1748,1))^2);
+LAMBDA_MATRIX(333,358) = DISTANCE;
+
+DISTANCE = sqrt((x(1697,1) - x(1723,1))^2 + (x(1698,1) - x(1724,1))^2);
+LAMBDA_MATRIX(333,346) = DISTANCE;
+
+DISTANCE = sqrt((x(1723,1) - x(1697,1))^2 + (x(1724,1) - x(1698,1))^2);
+LAMBDA_MATRIX(346,333) = DISTANCE;
+
+DISTANCE = sqrt((x(1693,1) - x(1747,1))^2 + (x(1694,1) - x(1748,1))^2);
+LAMBDA_MATRIX(331,358) = DISTANCE;
+
+DISTANCE = sqrt((x(1747,1) - x(1693,1))^2 + (x(1748,1) - x(1694,1))^2);
+LAMBDA_MATRIX(358,331) = DISTANCE;
+
+DISTANCE = sqrt((x(1747,1) - x(1741,1))^2 + (x(1748,1) - x(1742,1))^2);
+LAMBDA_MATRIX(358,355) = DISTANCE;
+
+DISTANCE = sqrt((x(1741,1) - x(1747,1))^2 + (x(1742,1) - x(1748,1))^2);
+LAMBDA_MATRIX(355,358) = DISTANCE;
+
+DISTANCE = sqrt((x(1741,1) - x(1693,1))^2 + (x(1742,1) - x(1694,1))^2);
+LAMBDA_MATRIX(355,331) = DISTANCE;
+
+DISTANCE = sqrt((x(1693,1) - x(1741,1))^2 + (x(1694,1) - x(1742,1))^2);
+LAMBDA_MATRIX(331,355) = DISTANCE;
+
+DISTANCE = sqrt((x(1741,1) - x(1685,1))^2 + (x(1742,1) - x(1686,1))^2);
+LAMBDA_MATRIX(355,327) = DISTANCE;
+
+DISTANCE = sqrt((x(1685,1) - x(1741,1))^2 + (x(1686,1) - x(1742,1))^2);
+LAMBDA_MATRIX(327,355) = DISTANCE;
+
+DISTANCE = sqrt((x(1685,1) - x(1693,1))^2 + (x(1686,1) - x(1694,1))^2);
+LAMBDA_MATRIX(327,331) = DISTANCE;
+
+DISTANCE = sqrt((x(1693,1) - x(1685,1))^2 + (x(1694,1) - x(1686,1))^2);
+LAMBDA_MATRIX(331,327) = DISTANCE;
+
+DISTANCE = sqrt((x(1693,1) - x(1741,1))^2 + (x(1694,1) - x(1742,1))^2);
+LAMBDA_MATRIX(331,355) = DISTANCE;
+
+DISTANCE = sqrt((x(1741,1) - x(1693,1))^2 + (x(1742,1) - x(1694,1))^2);
+LAMBDA_MATRIX(355,331) = DISTANCE;
+
+DISTANCE = sqrt((x(1731,1) - x(1685,1))^2 + (x(1732,1) - x(1686,1))^2);
+LAMBDA_MATRIX(350,327) = DISTANCE;
+
+DISTANCE = sqrt((x(1685,1) - x(1731,1))^2 + (x(1686,1) - x(1732,1))^2);
+LAMBDA_MATRIX(327,350) = DISTANCE;
+
+DISTANCE = sqrt((x(1685,1) - x(1741,1))^2 + (x(1686,1) - x(1742,1))^2);
+LAMBDA_MATRIX(327,355) = DISTANCE;
+
+DISTANCE = sqrt((x(1741,1) - x(1685,1))^2 + (x(1742,1) - x(1686,1))^2);
+LAMBDA_MATRIX(355,327) = DISTANCE;
+
+DISTANCE = sqrt((x(1741,1) - x(1731,1))^2 + (x(1742,1) - x(1732,1))^2);
+LAMBDA_MATRIX(355,350) = DISTANCE;
+
+DISTANCE = sqrt((x(1731,1) - x(1741,1))^2 + (x(1732,1) - x(1742,1))^2);
+LAMBDA_MATRIX(350,355) = DISTANCE;
+
+DISTANCE = sqrt((x(1747,1) - x(1777,1))^2 + (x(1748,1) - x(1778,1))^2);
+LAMBDA_MATRIX(358,373) = DISTANCE;
+
+DISTANCE = sqrt((x(1777,1) - x(1747,1))^2 + (x(1778,1) - x(1748,1))^2);
+LAMBDA_MATRIX(373,358) = DISTANCE;
+
+DISTANCE = sqrt((x(1777,1) - x(1805,1))^2 + (x(1778,1) - x(1806,1))^2);
+LAMBDA_MATRIX(373,387) = DISTANCE;
+
+DISTANCE = sqrt((x(1805,1) - x(1777,1))^2 + (x(1806,1) - x(1778,1))^2);
+LAMBDA_MATRIX(387,373) = DISTANCE;
+
+DISTANCE = sqrt((x(1805,1) - x(1747,1))^2 + (x(1806,1) - x(1748,1))^2);
+LAMBDA_MATRIX(387,358) = DISTANCE;
+
+DISTANCE = sqrt((x(1747,1) - x(1805,1))^2 + (x(1748,1) - x(1806,1))^2);
+LAMBDA_MATRIX(358,387) = DISTANCE;
+
+DISTANCE = sqrt((x(1805,1) - x(1857,1))^2 + (x(1806,1) - x(1858,1))^2);
+LAMBDA_MATRIX(387,413) = DISTANCE;
+
+DISTANCE = sqrt((x(1857,1) - x(1805,1))^2 + (x(1858,1) - x(1806,1))^2);
+LAMBDA_MATRIX(413,387) = DISTANCE;
+
+DISTANCE = sqrt((x(1857,1) - x(1833,1))^2 + (x(1858,1) - x(1834,1))^2);
+LAMBDA_MATRIX(413,401) = DISTANCE;
+
+DISTANCE = sqrt((x(1833,1) - x(1857,1))^2 + (x(1834,1) - x(1858,1))^2);
+LAMBDA_MATRIX(401,413) = DISTANCE;
+
+DISTANCE = sqrt((x(1833,1) - x(1805,1))^2 + (x(1834,1) - x(1806,1))^2);
+LAMBDA_MATRIX(401,387) = DISTANCE;
+
+DISTANCE = sqrt((x(1805,1) - x(1833,1))^2 + (x(1806,1) - x(1834,1))^2);
+LAMBDA_MATRIX(387,401) = DISTANCE;
+
+DISTANCE = sqrt((x(1829,1) - x(1857,1))^2 + (x(1830,1) - x(1858,1))^2);
+LAMBDA_MATRIX(399,413) = DISTANCE;
+
+DISTANCE = sqrt((x(1857,1) - x(1829,1))^2 + (x(1858,1) - x(1830,1))^2);
+LAMBDA_MATRIX(413,399) = DISTANCE;
+
+DISTANCE = sqrt((x(1857,1) - x(1805,1))^2 + (x(1858,1) - x(1806,1))^2);
+LAMBDA_MATRIX(413,387) = DISTANCE;
+
+DISTANCE = sqrt((x(1805,1) - x(1857,1))^2 + (x(1806,1) - x(1858,1))^2);
+LAMBDA_MATRIX(387,413) = DISTANCE;
+
+DISTANCE = sqrt((x(1805,1) - x(1829,1))^2 + (x(1806,1) - x(1830,1))^2);
+LAMBDA_MATRIX(387,399) = DISTANCE;
+
+DISTANCE = sqrt((x(1829,1) - x(1805,1))^2 + (x(1830,1) - x(1806,1))^2);
+LAMBDA_MATRIX(399,387) = DISTANCE;
+
+DISTANCE = sqrt((x(1805,1) - x(1777,1))^2 + (x(1806,1) - x(1778,1))^2);
+LAMBDA_MATRIX(387,373) = DISTANCE;
+
+DISTANCE = sqrt((x(1777,1) - x(1805,1))^2 + (x(1778,1) - x(1806,1))^2);
+LAMBDA_MATRIX(373,387) = DISTANCE;
+
+DISTANCE = sqrt((x(1777,1) - x(1829,1))^2 + (x(1778,1) - x(1830,1))^2);
+LAMBDA_MATRIX(373,399) = DISTANCE;
+
+DISTANCE = sqrt((x(1829,1) - x(1777,1))^2 + (x(1830,1) - x(1778,1))^2);
+LAMBDA_MATRIX(399,373) = DISTANCE;
+
+DISTANCE = sqrt((x(1829,1) - x(1805,1))^2 + (x(1830,1) - x(1806,1))^2);
+LAMBDA_MATRIX(399,387) = DISTANCE;
+
+DISTANCE = sqrt((x(1805,1) - x(1829,1))^2 + (x(1806,1) - x(1830,1))^2);
+LAMBDA_MATRIX(387,399) = DISTANCE;
+
+DISTANCE = sqrt((x(1731,1) - x(1705,1))^2 + (x(1732,1) - x(1706,1))^2);
+LAMBDA_MATRIX(350,337) = DISTANCE;
+
+DISTANCE = sqrt((x(1705,1) - x(1731,1))^2 + (x(1706,1) - x(1732,1))^2);
+LAMBDA_MATRIX(337,350) = DISTANCE;
+
+DISTANCE = sqrt((x(1705,1) - x(1677,1))^2 + (x(1706,1) - x(1678,1))^2);
+LAMBDA_MATRIX(337,323) = DISTANCE;
+
+DISTANCE = sqrt((x(1677,1) - x(1705,1))^2 + (x(1678,1) - x(1706,1))^2);
+LAMBDA_MATRIX(323,337) = DISTANCE;
+
+DISTANCE = sqrt((x(1677,1) - x(1731,1))^2 + (x(1678,1) - x(1732,1))^2);
+LAMBDA_MATRIX(323,350) = DISTANCE;
+
+DISTANCE = sqrt((x(1731,1) - x(1677,1))^2 + (x(1732,1) - x(1678,1))^2);
+LAMBDA_MATRIX(350,323) = DISTANCE;
+
+DISTANCE = sqrt((x(1677,1) - x(1685,1))^2 + (x(1678,1) - x(1686,1))^2);
+LAMBDA_MATRIX(323,327) = DISTANCE;
+
+DISTANCE = sqrt((x(1685,1) - x(1677,1))^2 + (x(1686,1) - x(1678,1))^2);
+LAMBDA_MATRIX(327,323) = DISTANCE;
+
+DISTANCE = sqrt((x(1685,1) - x(1731,1))^2 + (x(1686,1) - x(1732,1))^2);
+LAMBDA_MATRIX(327,350) = DISTANCE;
+
+DISTANCE = sqrt((x(1731,1) - x(1685,1))^2 + (x(1732,1) - x(1686,1))^2);
+LAMBDA_MATRIX(350,327) = DISTANCE;
+
+DISTANCE = sqrt((x(1731,1) - x(1677,1))^2 + (x(1732,1) - x(1678,1))^2);
+LAMBDA_MATRIX(350,323) = DISTANCE;
+
+DISTANCE = sqrt((x(1677,1) - x(1731,1))^2 + (x(1678,1) - x(1732,1))^2);
+LAMBDA_MATRIX(323,350) = DISTANCE;
+
+DISTANCE = sqrt((x(1643,1) - x(1685,1))^2 + (x(1644,1) - x(1686,1))^2);
+LAMBDA_MATRIX(306,327) = DISTANCE;
+
+DISTANCE = sqrt((x(1685,1) - x(1643,1))^2 + (x(1686,1) - x(1644,1))^2);
+LAMBDA_MATRIX(327,306) = DISTANCE;
+
+DISTANCE = sqrt((x(1685,1) - x(1677,1))^2 + (x(1686,1) - x(1678,1))^2);
+LAMBDA_MATRIX(327,323) = DISTANCE;
+
+DISTANCE = sqrt((x(1677,1) - x(1685,1))^2 + (x(1678,1) - x(1686,1))^2);
+LAMBDA_MATRIX(323,327) = DISTANCE;
+
+DISTANCE = sqrt((x(1677,1) - x(1643,1))^2 + (x(1678,1) - x(1644,1))^2);
+LAMBDA_MATRIX(323,306) = DISTANCE;
+
+DISTANCE = sqrt((x(1643,1) - x(1677,1))^2 + (x(1644,1) - x(1678,1))^2);
+LAMBDA_MATRIX(306,323) = DISTANCE;
+
+DISTANCE = sqrt((x(1677,1) - x(1637,1))^2 + (x(1678,1) - x(1638,1))^2);
+LAMBDA_MATRIX(323,303) = DISTANCE;
+
+DISTANCE = sqrt((x(1637,1) - x(1677,1))^2 + (x(1638,1) - x(1678,1))^2);
+LAMBDA_MATRIX(303,323) = DISTANCE;
+
+DISTANCE = sqrt((x(1637,1) - x(1643,1))^2 + (x(1638,1) - x(1644,1))^2);
+LAMBDA_MATRIX(303,306) = DISTANCE;
+
+DISTANCE = sqrt((x(1643,1) - x(1637,1))^2 + (x(1644,1) - x(1638,1))^2);
+LAMBDA_MATRIX(306,303) = DISTANCE;
+
+DISTANCE = sqrt((x(1643,1) - x(1677,1))^2 + (x(1644,1) - x(1678,1))^2);
+LAMBDA_MATRIX(306,323) = DISTANCE;
+
+DISTANCE = sqrt((x(1677,1) - x(1643,1))^2 + (x(1678,1) - x(1644,1))^2);
+LAMBDA_MATRIX(323,306) = DISTANCE;
+
+DISTANCE = sqrt((x(1869,1) - x(1877,1))^2 + (x(1870,1) - x(1878,1))^2);
+LAMBDA_MATRIX(419,423) = DISTANCE;
+
+DISTANCE = sqrt((x(1877,1) - x(1869,1))^2 + (x(1878,1) - x(1870,1))^2);
+LAMBDA_MATRIX(423,419) = DISTANCE;
+
+DISTANCE = sqrt((x(1877,1) - x(1831,1))^2 + (x(1878,1) - x(1832,1))^2);
+LAMBDA_MATRIX(423,400) = DISTANCE;
+
+DISTANCE = sqrt((x(1831,1) - x(1877,1))^2 + (x(1832,1) - x(1878,1))^2);
+LAMBDA_MATRIX(400,423) = DISTANCE;
+
+DISTANCE = sqrt((x(1831,1) - x(1869,1))^2 + (x(1832,1) - x(1870,1))^2);
+LAMBDA_MATRIX(400,419) = DISTANCE;
+
+DISTANCE = sqrt((x(1869,1) - x(1831,1))^2 + (x(1870,1) - x(1832,1))^2);
+LAMBDA_MATRIX(419,400) = DISTANCE;
+
+DISTANCE = sqrt((x(1831,1) - x(1813,1))^2 + (x(1832,1) - x(1814,1))^2);
+LAMBDA_MATRIX(400,391) = DISTANCE;
+
+DISTANCE = sqrt((x(1813,1) - x(1831,1))^2 + (x(1814,1) - x(1832,1))^2);
+LAMBDA_MATRIX(391,400) = DISTANCE;
+
+DISTANCE = sqrt((x(1813,1) - x(1869,1))^2 + (x(1814,1) - x(1870,1))^2);
+LAMBDA_MATRIX(391,419) = DISTANCE;
+
+DISTANCE = sqrt((x(1869,1) - x(1813,1))^2 + (x(1870,1) - x(1814,1))^2);
+LAMBDA_MATRIX(419,391) = DISTANCE;
+
+DISTANCE = sqrt((x(1869,1) - x(1831,1))^2 + (x(1870,1) - x(1832,1))^2);
+LAMBDA_MATRIX(419,400) = DISTANCE;
+
+DISTANCE = sqrt((x(1831,1) - x(1869,1))^2 + (x(1832,1) - x(1870,1))^2);
+LAMBDA_MATRIX(400,419) = DISTANCE;
+
+DISTANCE = sqrt((x(1785,1) - x(1813,1))^2 + (x(1786,1) - x(1814,1))^2);
+LAMBDA_MATRIX(377,391) = DISTANCE;
+
+DISTANCE = sqrt((x(1813,1) - x(1785,1))^2 + (x(1814,1) - x(1786,1))^2);
+LAMBDA_MATRIX(391,377) = DISTANCE;
+
+DISTANCE = sqrt((x(1813,1) - x(1831,1))^2 + (x(1814,1) - x(1832,1))^2);
+LAMBDA_MATRIX(391,400) = DISTANCE;
+
+DISTANCE = sqrt((x(1831,1) - x(1813,1))^2 + (x(1832,1) - x(1814,1))^2);
+LAMBDA_MATRIX(400,391) = DISTANCE;
+
+DISTANCE = sqrt((x(1831,1) - x(1785,1))^2 + (x(1832,1) - x(1786,1))^2);
+LAMBDA_MATRIX(400,377) = DISTANCE;
+
+DISTANCE = sqrt((x(1785,1) - x(1831,1))^2 + (x(1786,1) - x(1832,1))^2);
+LAMBDA_MATRIX(377,400) = DISTANCE;
+
+DISTANCE = sqrt((x(1793,1) - x(1753,1))^2 + (x(1794,1) - x(1754,1))^2);
+LAMBDA_MATRIX(381,361) = DISTANCE;
+
+DISTANCE = sqrt((x(1753,1) - x(1793,1))^2 + (x(1754,1) - x(1794,1))^2);
+LAMBDA_MATRIX(361,381) = DISTANCE;
+
+DISTANCE = sqrt((x(1753,1) - x(1807,1))^2 + (x(1754,1) - x(1808,1))^2);
+LAMBDA_MATRIX(361,388) = DISTANCE;
+
+DISTANCE = sqrt((x(1807,1) - x(1753,1))^2 + (x(1808,1) - x(1754,1))^2);
+LAMBDA_MATRIX(388,361) = DISTANCE;
+
+DISTANCE = sqrt((x(1807,1) - x(1793,1))^2 + (x(1808,1) - x(1794,1))^2);
+LAMBDA_MATRIX(388,381) = DISTANCE;
+
+DISTANCE = sqrt((x(1793,1) - x(1807,1))^2 + (x(1794,1) - x(1808,1))^2);
+LAMBDA_MATRIX(381,388) = DISTANCE;
+
+DISTANCE = sqrt((x(1845,1) - x(1793,1))^2 + (x(1846,1) - x(1794,1))^2);
+LAMBDA_MATRIX(407,381) = DISTANCE;
+
+DISTANCE = sqrt((x(1793,1) - x(1845,1))^2 + (x(1794,1) - x(1846,1))^2);
+LAMBDA_MATRIX(381,407) = DISTANCE;
+
+DISTANCE = sqrt((x(1793,1) - x(1807,1))^2 + (x(1794,1) - x(1808,1))^2);
+LAMBDA_MATRIX(381,388) = DISTANCE;
+
+DISTANCE = sqrt((x(1807,1) - x(1793,1))^2 + (x(1808,1) - x(1794,1))^2);
+LAMBDA_MATRIX(388,381) = DISTANCE;
+
+DISTANCE = sqrt((x(1807,1) - x(1845,1))^2 + (x(1808,1) - x(1846,1))^2);
+LAMBDA_MATRIX(388,407) = DISTANCE;
+
+DISTANCE = sqrt((x(1845,1) - x(1807,1))^2 + (x(1846,1) - x(1808,1))^2);
+LAMBDA_MATRIX(407,388) = DISTANCE;
+
+DISTANCE = sqrt((x(1807,1) - x(1861,1))^2 + (x(1808,1) - x(1862,1))^2);
+LAMBDA_MATRIX(388,415) = DISTANCE;
+
+DISTANCE = sqrt((x(1861,1) - x(1807,1))^2 + (x(1862,1) - x(1808,1))^2);
+LAMBDA_MATRIX(415,388) = DISTANCE;
+
+DISTANCE = sqrt((x(1861,1) - x(1845,1))^2 + (x(1862,1) - x(1846,1))^2);
+LAMBDA_MATRIX(415,407) = DISTANCE;
+
+DISTANCE = sqrt((x(1845,1) - x(1861,1))^2 + (x(1846,1) - x(1862,1))^2);
+LAMBDA_MATRIX(407,415) = DISTANCE;
+
+DISTANCE = sqrt((x(1845,1) - x(1807,1))^2 + (x(1846,1) - x(1808,1))^2);
+LAMBDA_MATRIX(407,388) = DISTANCE;
+
+DISTANCE = sqrt((x(1807,1) - x(1845,1))^2 + (x(1808,1) - x(1846,1))^2);
+LAMBDA_MATRIX(388,407) = DISTANCE;
+
+DISTANCE = sqrt((x(1761,1) - x(1813,1))^2 + (x(1762,1) - x(1814,1))^2);
+LAMBDA_MATRIX(365,391) = DISTANCE;
+
+DISTANCE = sqrt((x(1813,1) - x(1761,1))^2 + (x(1814,1) - x(1762,1))^2);
+LAMBDA_MATRIX(391,365) = DISTANCE;
+
+DISTANCE = sqrt((x(1813,1) - x(1785,1))^2 + (x(1814,1) - x(1786,1))^2);
+LAMBDA_MATRIX(391,377) = DISTANCE;
+
+DISTANCE = sqrt((x(1785,1) - x(1813,1))^2 + (x(1786,1) - x(1814,1))^2);
+LAMBDA_MATRIX(377,391) = DISTANCE;
+
+DISTANCE = sqrt((x(1785,1) - x(1761,1))^2 + (x(1786,1) - x(1762,1))^2);
+LAMBDA_MATRIX(377,365) = DISTANCE;
+
+DISTANCE = sqrt((x(1761,1) - x(1785,1))^2 + (x(1762,1) - x(1786,1))^2);
+LAMBDA_MATRIX(365,377) = DISTANCE;
+
+DISTANCE = sqrt((x(1761,1) - x(1705,1))^2 + (x(1762,1) - x(1706,1))^2);
+LAMBDA_MATRIX(365,337) = DISTANCE;
+
+DISTANCE = sqrt((x(1705,1) - x(1761,1))^2 + (x(1706,1) - x(1762,1))^2);
+LAMBDA_MATRIX(337,365) = DISTANCE;
+
+DISTANCE = sqrt((x(1705,1) - x(1731,1))^2 + (x(1706,1) - x(1732,1))^2);
+LAMBDA_MATRIX(337,350) = DISTANCE;
+
+DISTANCE = sqrt((x(1731,1) - x(1705,1))^2 + (x(1732,1) - x(1706,1))^2);
+LAMBDA_MATRIX(350,337) = DISTANCE;
+
+DISTANCE = sqrt((x(1731,1) - x(1761,1))^2 + (x(1732,1) - x(1762,1))^2);
+LAMBDA_MATRIX(350,365) = DISTANCE;
+
+DISTANCE = sqrt((x(1761,1) - x(1731,1))^2 + (x(1762,1) - x(1732,1))^2);
+LAMBDA_MATRIX(365,350) = DISTANCE;
+
+DISTANCE = sqrt((x(1735,1) - x(1705,1))^2 + (x(1736,1) - x(1706,1))^2);
+LAMBDA_MATRIX(352,337) = DISTANCE;
+
+DISTANCE = sqrt((x(1705,1) - x(1735,1))^2 + (x(1706,1) - x(1736,1))^2);
+LAMBDA_MATRIX(337,352) = DISTANCE;
+
+DISTANCE = sqrt((x(1705,1) - x(1761,1))^2 + (x(1706,1) - x(1762,1))^2);
+LAMBDA_MATRIX(337,365) = DISTANCE;
+
+DISTANCE = sqrt((x(1761,1) - x(1705,1))^2 + (x(1762,1) - x(1706,1))^2);
+LAMBDA_MATRIX(365,337) = DISTANCE;
+
+DISTANCE = sqrt((x(1761,1) - x(1735,1))^2 + (x(1762,1) - x(1736,1))^2);
+LAMBDA_MATRIX(365,352) = DISTANCE;
+
+DISTANCE = sqrt((x(1735,1) - x(1761,1))^2 + (x(1736,1) - x(1762,1))^2);
+LAMBDA_MATRIX(352,365) = DISTANCE;
+
+DISTANCE = sqrt((x(1761,1) - x(1785,1))^2 + (x(1762,1) - x(1786,1))^2);
+LAMBDA_MATRIX(365,377) = DISTANCE;
+
+DISTANCE = sqrt((x(1785,1) - x(1761,1))^2 + (x(1786,1) - x(1762,1))^2);
+LAMBDA_MATRIX(377,365) = DISTANCE;
+
+DISTANCE = sqrt((x(1785,1) - x(1735,1))^2 + (x(1786,1) - x(1736,1))^2);
+LAMBDA_MATRIX(377,352) = DISTANCE;
+
+DISTANCE = sqrt((x(1735,1) - x(1785,1))^2 + (x(1736,1) - x(1786,1))^2);
+LAMBDA_MATRIX(352,377) = DISTANCE;
+
+DISTANCE = sqrt((x(1735,1) - x(1761,1))^2 + (x(1736,1) - x(1762,1))^2);
+LAMBDA_MATRIX(352,365) = DISTANCE;
+
+DISTANCE = sqrt((x(1761,1) - x(1735,1))^2 + (x(1762,1) - x(1736,1))^2);
+LAMBDA_MATRIX(365,352) = DISTANCE;
+
+DISTANCE = sqrt((x(1559,1) - x(1521,1))^2 + (x(1560,1) - x(1522,1))^2);
+LAMBDA_MATRIX(264,245) = DISTANCE;
+
+DISTANCE = sqrt((x(1521,1) - x(1559,1))^2 + (x(1522,1) - x(1560,1))^2);
+LAMBDA_MATRIX(245,264) = DISTANCE;
+
+DISTANCE = sqrt((x(1521,1) - x(1525,1))^2 + (x(1522,1) - x(1526,1))^2);
+LAMBDA_MATRIX(245,247) = DISTANCE;
+
+DISTANCE = sqrt((x(1525,1) - x(1521,1))^2 + (x(1526,1) - x(1522,1))^2);
+LAMBDA_MATRIX(247,245) = DISTANCE;
+
+DISTANCE = sqrt((x(1525,1) - x(1559,1))^2 + (x(1526,1) - x(1560,1))^2);
+LAMBDA_MATRIX(247,264) = DISTANCE;
+
+DISTANCE = sqrt((x(1559,1) - x(1525,1))^2 + (x(1560,1) - x(1526,1))^2);
+LAMBDA_MATRIX(264,247) = DISTANCE;
+
+DISTANCE = sqrt((x(1559,1) - x(1593,1))^2 + (x(1560,1) - x(1594,1))^2);
+LAMBDA_MATRIX(264,281) = DISTANCE;
+
+DISTANCE = sqrt((x(1593,1) - x(1559,1))^2 + (x(1594,1) - x(1560,1))^2);
+LAMBDA_MATRIX(281,264) = DISTANCE;
+
+DISTANCE = sqrt((x(1593,1) - x(1591,1))^2 + (x(1594,1) - x(1592,1))^2);
+LAMBDA_MATRIX(281,280) = DISTANCE;
+
+DISTANCE = sqrt((x(1591,1) - x(1593,1))^2 + (x(1592,1) - x(1594,1))^2);
+LAMBDA_MATRIX(280,281) = DISTANCE;
+
+DISTANCE = sqrt((x(1591,1) - x(1559,1))^2 + (x(1592,1) - x(1560,1))^2);
+LAMBDA_MATRIX(280,264) = DISTANCE;
+
+DISTANCE = sqrt((x(1559,1) - x(1591,1))^2 + (x(1560,1) - x(1592,1))^2);
+LAMBDA_MATRIX(264,280) = DISTANCE;
+
+DISTANCE = sqrt((x(1571,1) - x(1593,1))^2 + (x(1572,1) - x(1594,1))^2);
+LAMBDA_MATRIX(270,281) = DISTANCE;
+
+DISTANCE = sqrt((x(1593,1) - x(1571,1))^2 + (x(1594,1) - x(1572,1))^2);
+LAMBDA_MATRIX(281,270) = DISTANCE;
+
+DISTANCE = sqrt((x(1593,1) - x(1559,1))^2 + (x(1594,1) - x(1560,1))^2);
+LAMBDA_MATRIX(281,264) = DISTANCE;
+
+DISTANCE = sqrt((x(1559,1) - x(1593,1))^2 + (x(1560,1) - x(1594,1))^2);
+LAMBDA_MATRIX(264,281) = DISTANCE;
+
+DISTANCE = sqrt((x(1559,1) - x(1571,1))^2 + (x(1560,1) - x(1572,1))^2);
+LAMBDA_MATRIX(264,270) = DISTANCE;
+
+DISTANCE = sqrt((x(1571,1) - x(1559,1))^2 + (x(1572,1) - x(1560,1))^2);
+LAMBDA_MATRIX(270,264) = DISTANCE;
+
+DISTANCE = sqrt((x(1525,1) - x(1539,1))^2 + (x(1526,1) - x(1540,1))^2);
+LAMBDA_MATRIX(247,254) = DISTANCE;
+
+DISTANCE = sqrt((x(1539,1) - x(1525,1))^2 + (x(1540,1) - x(1526,1))^2);
+LAMBDA_MATRIX(254,247) = DISTANCE;
+
+DISTANCE = sqrt((x(1539,1) - x(1559,1))^2 + (x(1540,1) - x(1560,1))^2);
+LAMBDA_MATRIX(254,264) = DISTANCE;
+
+DISTANCE = sqrt((x(1559,1) - x(1539,1))^2 + (x(1560,1) - x(1540,1))^2);
+LAMBDA_MATRIX(264,254) = DISTANCE;
+
+DISTANCE = sqrt((x(1559,1) - x(1525,1))^2 + (x(1560,1) - x(1526,1))^2);
+LAMBDA_MATRIX(264,247) = DISTANCE;
+
+DISTANCE = sqrt((x(1525,1) - x(1559,1))^2 + (x(1526,1) - x(1560,1))^2);
+LAMBDA_MATRIX(247,264) = DISTANCE;
+
+DISTANCE = sqrt((x(1559,1) - x(1539,1))^2 + (x(1560,1) - x(1540,1))^2);
+LAMBDA_MATRIX(264,254) = DISTANCE;
+
+DISTANCE = sqrt((x(1539,1) - x(1559,1))^2 + (x(1540,1) - x(1560,1))^2);
+LAMBDA_MATRIX(254,264) = DISTANCE;
+
+DISTANCE = sqrt((x(1539,1) - x(1571,1))^2 + (x(1540,1) - x(1572,1))^2);
+LAMBDA_MATRIX(254,270) = DISTANCE;
+
+DISTANCE = sqrt((x(1571,1) - x(1539,1))^2 + (x(1572,1) - x(1540,1))^2);
+LAMBDA_MATRIX(270,254) = DISTANCE;
+
+DISTANCE = sqrt((x(1571,1) - x(1559,1))^2 + (x(1572,1) - x(1560,1))^2);
+LAMBDA_MATRIX(270,264) = DISTANCE;
+
+DISTANCE = sqrt((x(1559,1) - x(1571,1))^2 + (x(1560,1) - x(1572,1))^2);
+LAMBDA_MATRIX(264,270) = DISTANCE;
+
+DISTANCE = sqrt((x(1493,1) - x(1505,1))^2 + (x(1494,1) - x(1506,1))^2);
+LAMBDA_MATRIX(231,237) = DISTANCE;
+
+DISTANCE = sqrt((x(1505,1) - x(1493,1))^2 + (x(1506,1) - x(1494,1))^2);
+LAMBDA_MATRIX(237,231) = DISTANCE;
+
+DISTANCE = sqrt((x(1505,1) - x(1525,1))^2 + (x(1506,1) - x(1526,1))^2);
+LAMBDA_MATRIX(237,247) = DISTANCE;
+
+DISTANCE = sqrt((x(1525,1) - x(1505,1))^2 + (x(1526,1) - x(1506,1))^2);
+LAMBDA_MATRIX(247,237) = DISTANCE;
+
+DISTANCE = sqrt((x(1525,1) - x(1493,1))^2 + (x(1526,1) - x(1494,1))^2);
+LAMBDA_MATRIX(247,231) = DISTANCE;
+
+DISTANCE = sqrt((x(1493,1) - x(1525,1))^2 + (x(1494,1) - x(1526,1))^2);
+LAMBDA_MATRIX(231,247) = DISTANCE;
+
+DISTANCE = sqrt((x(1525,1) - x(1521,1))^2 + (x(1526,1) - x(1522,1))^2);
+LAMBDA_MATRIX(247,245) = DISTANCE;
+
+DISTANCE = sqrt((x(1521,1) - x(1525,1))^2 + (x(1522,1) - x(1526,1))^2);
+LAMBDA_MATRIX(245,247) = DISTANCE;
+
+DISTANCE = sqrt((x(1521,1) - x(1493,1))^2 + (x(1522,1) - x(1494,1))^2);
+LAMBDA_MATRIX(245,231) = DISTANCE;
+
+DISTANCE = sqrt((x(1493,1) - x(1521,1))^2 + (x(1494,1) - x(1522,1))^2);
+LAMBDA_MATRIX(231,245) = DISTANCE;
+
+DISTANCE = sqrt((x(1493,1) - x(1525,1))^2 + (x(1494,1) - x(1526,1))^2);
+LAMBDA_MATRIX(231,247) = DISTANCE;
+
+DISTANCE = sqrt((x(1525,1) - x(1493,1))^2 + (x(1526,1) - x(1494,1))^2);
+LAMBDA_MATRIX(247,231) = DISTANCE;
+
+DISTANCE = sqrt((x(1493,1) - x(1475,1))^2 + (x(1494,1) - x(1476,1))^2);
+LAMBDA_MATRIX(231,222) = DISTANCE;
+
+DISTANCE = sqrt((x(1475,1) - x(1493,1))^2 + (x(1476,1) - x(1494,1))^2);
+LAMBDA_MATRIX(222,231) = DISTANCE;
+
+DISTANCE = sqrt((x(1475,1) - x(1505,1))^2 + (x(1476,1) - x(1506,1))^2);
+LAMBDA_MATRIX(222,237) = DISTANCE;
+
+DISTANCE = sqrt((x(1505,1) - x(1475,1))^2 + (x(1506,1) - x(1476,1))^2);
+LAMBDA_MATRIX(237,222) = DISTANCE;
+
+DISTANCE = sqrt((x(1505,1) - x(1493,1))^2 + (x(1506,1) - x(1494,1))^2);
+LAMBDA_MATRIX(237,231) = DISTANCE;
+
+DISTANCE = sqrt((x(1493,1) - x(1505,1))^2 + (x(1494,1) - x(1506,1))^2);
+LAMBDA_MATRIX(231,237) = DISTANCE;
+
+DISTANCE = sqrt((x(1493,1) - x(1521,1))^2 + (x(1494,1) - x(1522,1))^2);
+LAMBDA_MATRIX(231,245) = DISTANCE;
+
+DISTANCE = sqrt((x(1521,1) - x(1493,1))^2 + (x(1522,1) - x(1494,1))^2);
+LAMBDA_MATRIX(245,231) = DISTANCE;
+
+DISTANCE = sqrt((x(1521,1) - x(1497,1))^2 + (x(1522,1) - x(1498,1))^2);
+LAMBDA_MATRIX(245,233) = DISTANCE;
+
+DISTANCE = sqrt((x(1497,1) - x(1521,1))^2 + (x(1498,1) - x(1522,1))^2);
+LAMBDA_MATRIX(233,245) = DISTANCE;
+
+DISTANCE = sqrt((x(1497,1) - x(1493,1))^2 + (x(1498,1) - x(1494,1))^2);
+LAMBDA_MATRIX(233,231) = DISTANCE;
+
+DISTANCE = sqrt((x(1493,1) - x(1497,1))^2 + (x(1494,1) - x(1498,1))^2);
+LAMBDA_MATRIX(231,233) = DISTANCE;
+
+DISTANCE = sqrt((x(1497,1) - x(1467,1))^2 + (x(1498,1) - x(1468,1))^2);
+LAMBDA_MATRIX(233,218) = DISTANCE;
+
+DISTANCE = sqrt((x(1467,1) - x(1497,1))^2 + (x(1468,1) - x(1498,1))^2);
+LAMBDA_MATRIX(218,233) = DISTANCE;
+
+DISTANCE = sqrt((x(1467,1) - x(1493,1))^2 + (x(1468,1) - x(1494,1))^2);
+LAMBDA_MATRIX(218,231) = DISTANCE;
+
+DISTANCE = sqrt((x(1493,1) - x(1467,1))^2 + (x(1494,1) - x(1468,1))^2);
+LAMBDA_MATRIX(231,218) = DISTANCE;
+
+DISTANCE = sqrt((x(1493,1) - x(1497,1))^2 + (x(1494,1) - x(1498,1))^2);
+LAMBDA_MATRIX(231,233) = DISTANCE;
+
+DISTANCE = sqrt((x(1497,1) - x(1493,1))^2 + (x(1498,1) - x(1494,1))^2);
+LAMBDA_MATRIX(233,231) = DISTANCE;
+
+DISTANCE = sqrt((x(1585,1) - x(1617,1))^2 + (x(1586,1) - x(1618,1))^2);
+LAMBDA_MATRIX(277,293) = DISTANCE;
+
+DISTANCE = sqrt((x(1617,1) - x(1585,1))^2 + (x(1618,1) - x(1586,1))^2);
+LAMBDA_MATRIX(293,277) = DISTANCE;
+
+DISTANCE = sqrt((x(1617,1) - x(1583,1))^2 + (x(1618,1) - x(1584,1))^2);
+LAMBDA_MATRIX(293,276) = DISTANCE;
+
+DISTANCE = sqrt((x(1583,1) - x(1617,1))^2 + (x(1584,1) - x(1618,1))^2);
+LAMBDA_MATRIX(276,293) = DISTANCE;
+
+DISTANCE = sqrt((x(1583,1) - x(1585,1))^2 + (x(1584,1) - x(1586,1))^2);
+LAMBDA_MATRIX(276,277) = DISTANCE;
+
+DISTANCE = sqrt((x(1585,1) - x(1583,1))^2 + (x(1586,1) - x(1584,1))^2);
+LAMBDA_MATRIX(277,276) = DISTANCE;
+
+DISTANCE = sqrt((x(1583,1) - x(1553,1))^2 + (x(1584,1) - x(1554,1))^2);
+LAMBDA_MATRIX(276,261) = DISTANCE;
+
+DISTANCE = sqrt((x(1553,1) - x(1583,1))^2 + (x(1554,1) - x(1584,1))^2);
+LAMBDA_MATRIX(261,276) = DISTANCE;
+
+DISTANCE = sqrt((x(1553,1) - x(1585,1))^2 + (x(1554,1) - x(1586,1))^2);
+LAMBDA_MATRIX(261,277) = DISTANCE;
+
+DISTANCE = sqrt((x(1585,1) - x(1553,1))^2 + (x(1586,1) - x(1554,1))^2);
+LAMBDA_MATRIX(277,261) = DISTANCE;
+
+DISTANCE = sqrt((x(1585,1) - x(1583,1))^2 + (x(1586,1) - x(1584,1))^2);
+LAMBDA_MATRIX(277,276) = DISTANCE;
+
+DISTANCE = sqrt((x(1583,1) - x(1585,1))^2 + (x(1584,1) - x(1586,1))^2);
+LAMBDA_MATRIX(276,277) = DISTANCE;
+
+DISTANCE = sqrt((x(1585,1) - x(1623,1))^2 + (x(1586,1) - x(1624,1))^2);
+LAMBDA_MATRIX(277,296) = DISTANCE;
+
+DISTANCE = sqrt((x(1623,1) - x(1585,1))^2 + (x(1624,1) - x(1586,1))^2);
+LAMBDA_MATRIX(296,277) = DISTANCE;
+
+DISTANCE = sqrt((x(1623,1) - x(1617,1))^2 + (x(1624,1) - x(1618,1))^2);
+LAMBDA_MATRIX(296,293) = DISTANCE;
+
+DISTANCE = sqrt((x(1617,1) - x(1623,1))^2 + (x(1618,1) - x(1624,1))^2);
+LAMBDA_MATRIX(293,296) = DISTANCE;
+
+DISTANCE = sqrt((x(1617,1) - x(1585,1))^2 + (x(1618,1) - x(1586,1))^2);
+LAMBDA_MATRIX(293,277) = DISTANCE;
+
+DISTANCE = sqrt((x(1585,1) - x(1617,1))^2 + (x(1586,1) - x(1618,1))^2);
+LAMBDA_MATRIX(277,293) = DISTANCE;
+
+DISTANCE = sqrt((x(1591,1) - x(1623,1))^2 + (x(1592,1) - x(1624,1))^2);
+LAMBDA_MATRIX(280,296) = DISTANCE;
+
+DISTANCE = sqrt((x(1623,1) - x(1591,1))^2 + (x(1624,1) - x(1592,1))^2);
+LAMBDA_MATRIX(296,280) = DISTANCE;
+
+DISTANCE = sqrt((x(1623,1) - x(1585,1))^2 + (x(1624,1) - x(1586,1))^2);
+LAMBDA_MATRIX(296,277) = DISTANCE;
+
+DISTANCE = sqrt((x(1585,1) - x(1623,1))^2 + (x(1586,1) - x(1624,1))^2);
+LAMBDA_MATRIX(277,296) = DISTANCE;
+
+DISTANCE = sqrt((x(1585,1) - x(1591,1))^2 + (x(1586,1) - x(1592,1))^2);
+LAMBDA_MATRIX(277,280) = DISTANCE;
+
+DISTANCE = sqrt((x(1591,1) - x(1585,1))^2 + (x(1592,1) - x(1586,1))^2);
+LAMBDA_MATRIX(280,277) = DISTANCE;
+
+DISTANCE = sqrt((x(1621,1) - x(1637,1))^2 + (x(1622,1) - x(1638,1))^2);
+LAMBDA_MATRIX(295,303) = DISTANCE;
+
+DISTANCE = sqrt((x(1637,1) - x(1621,1))^2 + (x(1638,1) - x(1622,1))^2);
+LAMBDA_MATRIX(303,295) = DISTANCE;
+
+DISTANCE = sqrt((x(1637,1) - x(1661,1))^2 + (x(1638,1) - x(1662,1))^2);
+LAMBDA_MATRIX(303,315) = DISTANCE;
+
+DISTANCE = sqrt((x(1661,1) - x(1637,1))^2 + (x(1662,1) - x(1638,1))^2);
+LAMBDA_MATRIX(315,303) = DISTANCE;
+
+DISTANCE = sqrt((x(1661,1) - x(1621,1))^2 + (x(1662,1) - x(1622,1))^2);
+LAMBDA_MATRIX(315,295) = DISTANCE;
+
+DISTANCE = sqrt((x(1621,1) - x(1661,1))^2 + (x(1622,1) - x(1662,1))^2);
+LAMBDA_MATRIX(295,315) = DISTANCE;
+
+DISTANCE = sqrt((x(1661,1) - x(1677,1))^2 + (x(1662,1) - x(1678,1))^2);
+LAMBDA_MATRIX(315,323) = DISTANCE;
+
+DISTANCE = sqrt((x(1677,1) - x(1661,1))^2 + (x(1678,1) - x(1662,1))^2);
+LAMBDA_MATRIX(323,315) = DISTANCE;
+
+DISTANCE = sqrt((x(1677,1) - x(1705,1))^2 + (x(1678,1) - x(1706,1))^2);
+LAMBDA_MATRIX(323,337) = DISTANCE;
+
+DISTANCE = sqrt((x(1705,1) - x(1677,1))^2 + (x(1706,1) - x(1678,1))^2);
+LAMBDA_MATRIX(337,323) = DISTANCE;
+
+DISTANCE = sqrt((x(1705,1) - x(1661,1))^2 + (x(1706,1) - x(1662,1))^2);
+LAMBDA_MATRIX(337,315) = DISTANCE;
+
+DISTANCE = sqrt((x(1661,1) - x(1705,1))^2 + (x(1662,1) - x(1706,1))^2);
+LAMBDA_MATRIX(315,337) = DISTANCE;
+
+DISTANCE = sqrt((x(1637,1) - x(1677,1))^2 + (x(1638,1) - x(1678,1))^2);
+LAMBDA_MATRIX(303,323) = DISTANCE;
+
+DISTANCE = sqrt((x(1677,1) - x(1637,1))^2 + (x(1678,1) - x(1638,1))^2);
+LAMBDA_MATRIX(323,303) = DISTANCE;
+
+DISTANCE = sqrt((x(1677,1) - x(1661,1))^2 + (x(1678,1) - x(1662,1))^2);
+LAMBDA_MATRIX(323,315) = DISTANCE;
+
+DISTANCE = sqrt((x(1661,1) - x(1677,1))^2 + (x(1662,1) - x(1678,1))^2);
+LAMBDA_MATRIX(315,323) = DISTANCE;
+
+DISTANCE = sqrt((x(1661,1) - x(1637,1))^2 + (x(1662,1) - x(1638,1))^2);
+LAMBDA_MATRIX(315,303) = DISTANCE;
+
+DISTANCE = sqrt((x(1637,1) - x(1661,1))^2 + (x(1638,1) - x(1662,1))^2);
+LAMBDA_MATRIX(303,315) = DISTANCE;
+
+DISTANCE = sqrt((x(1595,1) - x(1613,1))^2 + (x(1596,1) - x(1614,1))^2);
+LAMBDA_MATRIX(282,291) = DISTANCE;
+
+DISTANCE = sqrt((x(1613,1) - x(1595,1))^2 + (x(1614,1) - x(1596,1))^2);
+LAMBDA_MATRIX(291,282) = DISTANCE;
+
+DISTANCE = sqrt((x(1613,1) - x(1627,1))^2 + (x(1614,1) - x(1628,1))^2);
+LAMBDA_MATRIX(291,298) = DISTANCE;
+
+DISTANCE = sqrt((x(1627,1) - x(1613,1))^2 + (x(1628,1) - x(1614,1))^2);
+LAMBDA_MATRIX(298,291) = DISTANCE;
+
+DISTANCE = sqrt((x(1627,1) - x(1595,1))^2 + (x(1628,1) - x(1596,1))^2);
+LAMBDA_MATRIX(298,282) = DISTANCE;
+
+DISTANCE = sqrt((x(1595,1) - x(1627,1))^2 + (x(1596,1) - x(1628,1))^2);
+LAMBDA_MATRIX(282,298) = DISTANCE;
+
+DISTANCE = sqrt((x(1555,1) - x(1553,1))^2 + (x(1556,1) - x(1554,1))^2);
+LAMBDA_MATRIX(262,261) = DISTANCE;
+
+DISTANCE = sqrt((x(1553,1) - x(1555,1))^2 + (x(1554,1) - x(1556,1))^2);
+LAMBDA_MATRIX(261,262) = DISTANCE;
+
+DISTANCE = sqrt((x(1553,1) - x(1583,1))^2 + (x(1554,1) - x(1584,1))^2);
+LAMBDA_MATRIX(261,276) = DISTANCE;
+
+DISTANCE = sqrt((x(1583,1) - x(1553,1))^2 + (x(1584,1) - x(1554,1))^2);
+LAMBDA_MATRIX(276,261) = DISTANCE;
+
+DISTANCE = sqrt((x(1583,1) - x(1555,1))^2 + (x(1584,1) - x(1556,1))^2);
+LAMBDA_MATRIX(276,262) = DISTANCE;
+
+DISTANCE = sqrt((x(1555,1) - x(1583,1))^2 + (x(1556,1) - x(1584,1))^2);
+LAMBDA_MATRIX(262,276) = DISTANCE;
+
+DISTANCE = sqrt((x(1529,1) - x(1553,1))^2 + (x(1530,1) - x(1554,1))^2);
+LAMBDA_MATRIX(249,261) = DISTANCE;
+
+DISTANCE = sqrt((x(1553,1) - x(1529,1))^2 + (x(1554,1) - x(1530,1))^2);
+LAMBDA_MATRIX(261,249) = DISTANCE;
+
+DISTANCE = sqrt((x(1553,1) - x(1555,1))^2 + (x(1554,1) - x(1556,1))^2);
+LAMBDA_MATRIX(261,262) = DISTANCE;
+
+DISTANCE = sqrt((x(1555,1) - x(1553,1))^2 + (x(1556,1) - x(1554,1))^2);
+LAMBDA_MATRIX(262,261) = DISTANCE;
+
+DISTANCE = sqrt((x(1555,1) - x(1529,1))^2 + (x(1556,1) - x(1530,1))^2);
+LAMBDA_MATRIX(262,249) = DISTANCE;
+
+DISTANCE = sqrt((x(1529,1) - x(1555,1))^2 + (x(1530,1) - x(1556,1))^2);
+LAMBDA_MATRIX(249,262) = DISTANCE;
+
+DISTANCE = sqrt((x(1583,1) - x(1589,1))^2 + (x(1584,1) - x(1590,1))^2);
+LAMBDA_MATRIX(276,279) = DISTANCE;
+
+DISTANCE = sqrt((x(1589,1) - x(1583,1))^2 + (x(1590,1) - x(1584,1))^2);
+LAMBDA_MATRIX(279,276) = DISTANCE;
+
+DISTANCE = sqrt((x(1589,1) - x(1555,1))^2 + (x(1590,1) - x(1556,1))^2);
+LAMBDA_MATRIX(279,262) = DISTANCE;
+
+DISTANCE = sqrt((x(1555,1) - x(1589,1))^2 + (x(1556,1) - x(1590,1))^2);
+LAMBDA_MATRIX(262,279) = DISTANCE;
+
+DISTANCE = sqrt((x(1555,1) - x(1583,1))^2 + (x(1556,1) - x(1584,1))^2);
+LAMBDA_MATRIX(262,276) = DISTANCE;
+
+DISTANCE = sqrt((x(1583,1) - x(1555,1))^2 + (x(1584,1) - x(1556,1))^2);
+LAMBDA_MATRIX(276,262) = DISTANCE;
+
+DISTANCE = sqrt((x(1589,1) - x(1561,1))^2 + (x(1590,1) - x(1562,1))^2);
+LAMBDA_MATRIX(279,265) = DISTANCE;
+
+DISTANCE = sqrt((x(1561,1) - x(1589,1))^2 + (x(1562,1) - x(1590,1))^2);
+LAMBDA_MATRIX(265,279) = DISTANCE;
+
+DISTANCE = sqrt((x(1561,1) - x(1555,1))^2 + (x(1562,1) - x(1556,1))^2);
+LAMBDA_MATRIX(265,262) = DISTANCE;
+
+DISTANCE = sqrt((x(1555,1) - x(1561,1))^2 + (x(1556,1) - x(1562,1))^2);
+LAMBDA_MATRIX(262,265) = DISTANCE;
+
+DISTANCE = sqrt((x(1555,1) - x(1589,1))^2 + (x(1556,1) - x(1590,1))^2);
+LAMBDA_MATRIX(262,279) = DISTANCE;
+
+DISTANCE = sqrt((x(1589,1) - x(1555,1))^2 + (x(1590,1) - x(1556,1))^2);
+LAMBDA_MATRIX(279,262) = DISTANCE;
+
+DISTANCE = sqrt((x(1581,1) - x(1567,1))^2 + (x(1582,1) - x(1568,1))^2);
+LAMBDA_MATRIX(275,268) = DISTANCE;
+
+DISTANCE = sqrt((x(1567,1) - x(1581,1))^2 + (x(1568,1) - x(1582,1))^2);
+LAMBDA_MATRIX(268,275) = DISTANCE;
+
+DISTANCE = sqrt((x(1567,1) - x(1549,1))^2 + (x(1568,1) - x(1550,1))^2);
+LAMBDA_MATRIX(268,259) = DISTANCE;
+
+DISTANCE = sqrt((x(1549,1) - x(1567,1))^2 + (x(1550,1) - x(1568,1))^2);
+LAMBDA_MATRIX(259,268) = DISTANCE;
+
+DISTANCE = sqrt((x(1549,1) - x(1581,1))^2 + (x(1550,1) - x(1582,1))^2);
+LAMBDA_MATRIX(259,275) = DISTANCE;
+
+DISTANCE = sqrt((x(1581,1) - x(1549,1))^2 + (x(1582,1) - x(1550,1))^2);
+LAMBDA_MATRIX(275,259) = DISTANCE;
+
+DISTANCE = sqrt((x(1549,1) - x(1561,1))^2 + (x(1550,1) - x(1562,1))^2);
+LAMBDA_MATRIX(259,265) = DISTANCE;
+
+DISTANCE = sqrt((x(1561,1) - x(1549,1))^2 + (x(1562,1) - x(1550,1))^2);
+LAMBDA_MATRIX(265,259) = DISTANCE;
+
+DISTANCE = sqrt((x(1561,1) - x(1581,1))^2 + (x(1562,1) - x(1582,1))^2);
+LAMBDA_MATRIX(265,275) = DISTANCE;
+
+DISTANCE = sqrt((x(1581,1) - x(1561,1))^2 + (x(1582,1) - x(1562,1))^2);
+LAMBDA_MATRIX(275,265) = DISTANCE;
+
+DISTANCE = sqrt((x(1581,1) - x(1549,1))^2 + (x(1582,1) - x(1550,1))^2);
+LAMBDA_MATRIX(275,259) = DISTANCE;
+
+DISTANCE = sqrt((x(1549,1) - x(1581,1))^2 + (x(1550,1) - x(1582,1))^2);
+LAMBDA_MATRIX(259,275) = DISTANCE;
+
+DISTANCE = sqrt((x(1595,1) - x(1567,1))^2 + (x(1596,1) - x(1568,1))^2);
+LAMBDA_MATRIX(282,268) = DISTANCE;
+
+DISTANCE = sqrt((x(1567,1) - x(1595,1))^2 + (x(1568,1) - x(1596,1))^2);
+LAMBDA_MATRIX(268,282) = DISTANCE;
+
+DISTANCE = sqrt((x(1567,1) - x(1581,1))^2 + (x(1568,1) - x(1582,1))^2);
+LAMBDA_MATRIX(268,275) = DISTANCE;
+
+DISTANCE = sqrt((x(1581,1) - x(1567,1))^2 + (x(1582,1) - x(1568,1))^2);
+LAMBDA_MATRIX(275,268) = DISTANCE;
+
+DISTANCE = sqrt((x(1581,1) - x(1595,1))^2 + (x(1582,1) - x(1596,1))^2);
+LAMBDA_MATRIX(275,282) = DISTANCE;
+
+DISTANCE = sqrt((x(1595,1) - x(1581,1))^2 + (x(1596,1) - x(1582,1))^2);
+LAMBDA_MATRIX(282,275) = DISTANCE;
+
+DISTANCE = sqrt((x(1581,1) - x(1613,1))^2 + (x(1582,1) - x(1614,1))^2);
+LAMBDA_MATRIX(275,291) = DISTANCE;
+
+DISTANCE = sqrt((x(1613,1) - x(1581,1))^2 + (x(1614,1) - x(1582,1))^2);
+LAMBDA_MATRIX(291,275) = DISTANCE;
+
+DISTANCE = sqrt((x(1613,1) - x(1595,1))^2 + (x(1614,1) - x(1596,1))^2);
+LAMBDA_MATRIX(291,282) = DISTANCE;
+
+DISTANCE = sqrt((x(1595,1) - x(1613,1))^2 + (x(1596,1) - x(1614,1))^2);
+LAMBDA_MATRIX(282,291) = DISTANCE;
+
+DISTANCE = sqrt((x(1595,1) - x(1581,1))^2 + (x(1596,1) - x(1582,1))^2);
+LAMBDA_MATRIX(282,275) = DISTANCE;
+
+DISTANCE = sqrt((x(1581,1) - x(1595,1))^2 + (x(1582,1) - x(1596,1))^2);
+LAMBDA_MATRIX(275,282) = DISTANCE;
+
+DISTANCE = sqrt((x(1581,1) - x(1561,1))^2 + (x(1582,1) - x(1562,1))^2);
+LAMBDA_MATRIX(275,265) = DISTANCE;
+
+DISTANCE = sqrt((x(1561,1) - x(1581,1))^2 + (x(1562,1) - x(1582,1))^2);
+LAMBDA_MATRIX(265,275) = DISTANCE;
+
+DISTANCE = sqrt((x(1561,1) - x(1589,1))^2 + (x(1562,1) - x(1590,1))^2);
+LAMBDA_MATRIX(265,279) = DISTANCE;
+
+DISTANCE = sqrt((x(1589,1) - x(1561,1))^2 + (x(1590,1) - x(1562,1))^2);
+LAMBDA_MATRIX(279,265) = DISTANCE;
+
+DISTANCE = sqrt((x(1589,1) - x(1581,1))^2 + (x(1590,1) - x(1582,1))^2);
+LAMBDA_MATRIX(279,275) = DISTANCE;
+
+DISTANCE = sqrt((x(1581,1) - x(1589,1))^2 + (x(1582,1) - x(1590,1))^2);
+LAMBDA_MATRIX(275,279) = DISTANCE;
+
+DISTANCE = sqrt((x(1581,1) - x(1589,1))^2 + (x(1582,1) - x(1590,1))^2);
+LAMBDA_MATRIX(275,279) = DISTANCE;
+
+DISTANCE = sqrt((x(1589,1) - x(1581,1))^2 + (x(1590,1) - x(1582,1))^2);
+LAMBDA_MATRIX(279,275) = DISTANCE;
+
+DISTANCE = sqrt((x(1589,1) - x(1621,1))^2 + (x(1590,1) - x(1622,1))^2);
+LAMBDA_MATRIX(279,295) = DISTANCE;
+
+DISTANCE = sqrt((x(1621,1) - x(1589,1))^2 + (x(1622,1) - x(1590,1))^2);
+LAMBDA_MATRIX(295,279) = DISTANCE;
+
+DISTANCE = sqrt((x(1621,1) - x(1581,1))^2 + (x(1622,1) - x(1582,1))^2);
+LAMBDA_MATRIX(295,275) = DISTANCE;
+
+DISTANCE = sqrt((x(1581,1) - x(1621,1))^2 + (x(1582,1) - x(1622,1))^2);
+LAMBDA_MATRIX(275,295) = DISTANCE;
+
+DISTANCE = sqrt((x(1621,1) - x(1613,1))^2 + (x(1622,1) - x(1614,1))^2);
+LAMBDA_MATRIX(295,291) = DISTANCE;
+
+DISTANCE = sqrt((x(1613,1) - x(1621,1))^2 + (x(1614,1) - x(1622,1))^2);
+LAMBDA_MATRIX(291,295) = DISTANCE;
+
+DISTANCE = sqrt((x(1613,1) - x(1581,1))^2 + (x(1614,1) - x(1582,1))^2);
+LAMBDA_MATRIX(291,275) = DISTANCE;
+
+DISTANCE = sqrt((x(1581,1) - x(1613,1))^2 + (x(1582,1) - x(1614,1))^2);
+LAMBDA_MATRIX(275,291) = DISTANCE;
+
+DISTANCE = sqrt((x(1581,1) - x(1621,1))^2 + (x(1582,1) - x(1622,1))^2);
+LAMBDA_MATRIX(275,295) = DISTANCE;
+
+DISTANCE = sqrt((x(1621,1) - x(1581,1))^2 + (x(1622,1) - x(1582,1))^2);
+LAMBDA_MATRIX(295,275) = DISTANCE;
+
+DISTANCE = sqrt((x(1549,1) - x(1515,1))^2 + (x(1550,1) - x(1516,1))^2);
+LAMBDA_MATRIX(259,242) = DISTANCE;
+
+DISTANCE = sqrt((x(1515,1) - x(1549,1))^2 + (x(1516,1) - x(1550,1))^2);
+LAMBDA_MATRIX(242,259) = DISTANCE;
+
+DISTANCE = sqrt((x(1515,1) - x(1533,1))^2 + (x(1516,1) - x(1534,1))^2);
+LAMBDA_MATRIX(242,251) = DISTANCE;
+
+DISTANCE = sqrt((x(1533,1) - x(1515,1))^2 + (x(1534,1) - x(1516,1))^2);
+LAMBDA_MATRIX(251,242) = DISTANCE;
+
+DISTANCE = sqrt((x(1533,1) - x(1549,1))^2 + (x(1534,1) - x(1550,1))^2);
+LAMBDA_MATRIX(251,259) = DISTANCE;
+
+DISTANCE = sqrt((x(1549,1) - x(1533,1))^2 + (x(1550,1) - x(1534,1))^2);
+LAMBDA_MATRIX(259,251) = DISTANCE;
+
+DISTANCE = sqrt((x(1533,1) - x(1561,1))^2 + (x(1534,1) - x(1562,1))^2);
+LAMBDA_MATRIX(251,265) = DISTANCE;
+
+DISTANCE = sqrt((x(1561,1) - x(1533,1))^2 + (x(1562,1) - x(1534,1))^2);
+LAMBDA_MATRIX(265,251) = DISTANCE;
+
+DISTANCE = sqrt((x(1561,1) - x(1549,1))^2 + (x(1562,1) - x(1550,1))^2);
+LAMBDA_MATRIX(265,259) = DISTANCE;
+
+DISTANCE = sqrt((x(1549,1) - x(1561,1))^2 + (x(1550,1) - x(1562,1))^2);
+LAMBDA_MATRIX(259,265) = DISTANCE;
+
+DISTANCE = sqrt((x(1549,1) - x(1533,1))^2 + (x(1550,1) - x(1534,1))^2);
+LAMBDA_MATRIX(259,251) = DISTANCE;
+
+DISTANCE = sqrt((x(1533,1) - x(1549,1))^2 + (x(1534,1) - x(1550,1))^2);
+LAMBDA_MATRIX(251,259) = DISTANCE;
+
+DISTANCE = sqrt((x(1515,1) - x(1495,1))^2 + (x(1516,1) - x(1496,1))^2);
+LAMBDA_MATRIX(242,232) = DISTANCE;
+
+DISTANCE = sqrt((x(1495,1) - x(1515,1))^2 + (x(1496,1) - x(1516,1))^2);
+LAMBDA_MATRIX(232,242) = DISTANCE;
+
+DISTANCE = sqrt((x(1495,1) - x(1533,1))^2 + (x(1496,1) - x(1534,1))^2);
+LAMBDA_MATRIX(232,251) = DISTANCE;
+
+DISTANCE = sqrt((x(1533,1) - x(1495,1))^2 + (x(1534,1) - x(1496,1))^2);
+LAMBDA_MATRIX(251,232) = DISTANCE;
+
+DISTANCE = sqrt((x(1533,1) - x(1515,1))^2 + (x(1534,1) - x(1516,1))^2);
+LAMBDA_MATRIX(251,242) = DISTANCE;
+
+DISTANCE = sqrt((x(1515,1) - x(1533,1))^2 + (x(1516,1) - x(1534,1))^2);
+LAMBDA_MATRIX(242,251) = DISTANCE;
+
+DISTANCE = sqrt((x(1533,1) - x(1495,1))^2 + (x(1534,1) - x(1496,1))^2);
+LAMBDA_MATRIX(251,232) = DISTANCE;
+
+DISTANCE = sqrt((x(1495,1) - x(1533,1))^2 + (x(1496,1) - x(1534,1))^2);
+LAMBDA_MATRIX(232,251) = DISTANCE;
+
+DISTANCE = sqrt((x(1495,1) - x(1501,1))^2 + (x(1496,1) - x(1502,1))^2);
+LAMBDA_MATRIX(232,235) = DISTANCE;
+
+DISTANCE = sqrt((x(1501,1) - x(1495,1))^2 + (x(1502,1) - x(1496,1))^2);
+LAMBDA_MATRIX(235,232) = DISTANCE;
+
+DISTANCE = sqrt((x(1501,1) - x(1533,1))^2 + (x(1502,1) - x(1534,1))^2);
+LAMBDA_MATRIX(235,251) = DISTANCE;
+
+DISTANCE = sqrt((x(1533,1) - x(1501,1))^2 + (x(1534,1) - x(1502,1))^2);
+LAMBDA_MATRIX(251,235) = DISTANCE;
+
+DISTANCE = sqrt((x(1533,1) - x(1555,1))^2 + (x(1534,1) - x(1556,1))^2);
+LAMBDA_MATRIX(251,262) = DISTANCE;
+
+DISTANCE = sqrt((x(1555,1) - x(1533,1))^2 + (x(1556,1) - x(1534,1))^2);
+LAMBDA_MATRIX(262,251) = DISTANCE;
+
+DISTANCE = sqrt((x(1555,1) - x(1561,1))^2 + (x(1556,1) - x(1562,1))^2);
+LAMBDA_MATRIX(262,265) = DISTANCE;
+
+DISTANCE = sqrt((x(1561,1) - x(1555,1))^2 + (x(1562,1) - x(1556,1))^2);
+LAMBDA_MATRIX(265,262) = DISTANCE;
+
+DISTANCE = sqrt((x(1561,1) - x(1533,1))^2 + (x(1562,1) - x(1534,1))^2);
+LAMBDA_MATRIX(265,251) = DISTANCE;
+
+DISTANCE = sqrt((x(1533,1) - x(1561,1))^2 + (x(1534,1) - x(1562,1))^2);
+LAMBDA_MATRIX(251,265) = DISTANCE;
+
+DISTANCE = sqrt((x(1501,1) - x(1529,1))^2 + (x(1502,1) - x(1530,1))^2);
+LAMBDA_MATRIX(235,249) = DISTANCE;
+
+DISTANCE = sqrt((x(1529,1) - x(1501,1))^2 + (x(1530,1) - x(1502,1))^2);
+LAMBDA_MATRIX(249,235) = DISTANCE;
+
+DISTANCE = sqrt((x(1529,1) - x(1533,1))^2 + (x(1530,1) - x(1534,1))^2);
+LAMBDA_MATRIX(249,251) = DISTANCE;
+
+DISTANCE = sqrt((x(1533,1) - x(1529,1))^2 + (x(1534,1) - x(1530,1))^2);
+LAMBDA_MATRIX(251,249) = DISTANCE;
+
+DISTANCE = sqrt((x(1533,1) - x(1501,1))^2 + (x(1534,1) - x(1502,1))^2);
+LAMBDA_MATRIX(251,235) = DISTANCE;
+
+DISTANCE = sqrt((x(1501,1) - x(1533,1))^2 + (x(1502,1) - x(1534,1))^2);
+LAMBDA_MATRIX(235,251) = DISTANCE;
+
+DISTANCE = sqrt((x(1529,1) - x(1555,1))^2 + (x(1530,1) - x(1556,1))^2);
+LAMBDA_MATRIX(249,262) = DISTANCE;
+
+DISTANCE = sqrt((x(1555,1) - x(1529,1))^2 + (x(1556,1) - x(1530,1))^2);
+LAMBDA_MATRIX(262,249) = DISTANCE;
+
+DISTANCE = sqrt((x(1555,1) - x(1533,1))^2 + (x(1556,1) - x(1534,1))^2);
+LAMBDA_MATRIX(262,251) = DISTANCE;
+
+DISTANCE = sqrt((x(1533,1) - x(1555,1))^2 + (x(1534,1) - x(1556,1))^2);
+LAMBDA_MATRIX(251,262) = DISTANCE;
+
+DISTANCE = sqrt((x(1533,1) - x(1529,1))^2 + (x(1534,1) - x(1530,1))^2);
+LAMBDA_MATRIX(251,249) = DISTANCE;
+
+DISTANCE = sqrt((x(1529,1) - x(1533,1))^2 + (x(1530,1) - x(1534,1))^2);
+LAMBDA_MATRIX(249,251) = DISTANCE;
+
+DISTANCE = sqrt((x(1737,1) - x(1729,1))^2 + (x(1738,1) - x(1730,1))^2);
+LAMBDA_MATRIX(353,349) = DISTANCE;
+
+DISTANCE = sqrt((x(1729,1) - x(1737,1))^2 + (x(1730,1) - x(1738,1))^2);
+LAMBDA_MATRIX(349,353) = DISTANCE;
+
+DISTANCE = sqrt((x(1729,1) - x(1681,1))^2 + (x(1730,1) - x(1682,1))^2);
+LAMBDA_MATRIX(349,325) = DISTANCE;
+
+DISTANCE = sqrt((x(1681,1) - x(1729,1))^2 + (x(1682,1) - x(1730,1))^2);
+LAMBDA_MATRIX(325,349) = DISTANCE;
+
+DISTANCE = sqrt((x(1681,1) - x(1737,1))^2 + (x(1682,1) - x(1738,1))^2);
+LAMBDA_MATRIX(325,353) = DISTANCE;
+
+DISTANCE = sqrt((x(1737,1) - x(1681,1))^2 + (x(1738,1) - x(1682,1))^2);
+LAMBDA_MATRIX(353,325) = DISTANCE;
+
+DISTANCE = sqrt((x(1681,1) - x(1729,1))^2 + (x(1682,1) - x(1730,1))^2);
+LAMBDA_MATRIX(325,349) = DISTANCE;
+
+DISTANCE = sqrt((x(1729,1) - x(1681,1))^2 + (x(1730,1) - x(1682,1))^2);
+LAMBDA_MATRIX(349,325) = DISTANCE;
+
+DISTANCE = sqrt((x(1729,1) - x(1707,1))^2 + (x(1730,1) - x(1708,1))^2);
+LAMBDA_MATRIX(349,338) = DISTANCE;
+
+DISTANCE = sqrt((x(1707,1) - x(1729,1))^2 + (x(1708,1) - x(1730,1))^2);
+LAMBDA_MATRIX(338,349) = DISTANCE;
+
+DISTANCE = sqrt((x(1707,1) - x(1681,1))^2 + (x(1708,1) - x(1682,1))^2);
+LAMBDA_MATRIX(338,325) = DISTANCE;
+
+DISTANCE = sqrt((x(1681,1) - x(1707,1))^2 + (x(1682,1) - x(1708,1))^2);
+LAMBDA_MATRIX(325,338) = DISTANCE;
+
+DISTANCE = sqrt((x(1515,1) - x(1535,1))^2 + (x(1516,1) - x(1536,1))^2);
+LAMBDA_MATRIX(242,252) = DISTANCE;
+
+DISTANCE = sqrt((x(1535,1) - x(1515,1))^2 + (x(1536,1) - x(1516,1))^2);
+LAMBDA_MATRIX(252,242) = DISTANCE;
+
+DISTANCE = sqrt((x(1535,1) - x(1499,1))^2 + (x(1536,1) - x(1500,1))^2);
+LAMBDA_MATRIX(252,234) = DISTANCE;
+
+DISTANCE = sqrt((x(1499,1) - x(1535,1))^2 + (x(1500,1) - x(1536,1))^2);
+LAMBDA_MATRIX(234,252) = DISTANCE;
+
+DISTANCE = sqrt((x(1499,1) - x(1515,1))^2 + (x(1500,1) - x(1516,1))^2);
+LAMBDA_MATRIX(234,242) = DISTANCE;
+
+DISTANCE = sqrt((x(1515,1) - x(1499,1))^2 + (x(1516,1) - x(1500,1))^2);
+LAMBDA_MATRIX(242,234) = DISTANCE;
+
+DISTANCE = sqrt((x(1329,1) - x(1339,1))^2 + (x(1330,1) - x(1340,1))^2);
+LAMBDA_MATRIX(149,154) = DISTANCE;
+
+DISTANCE = sqrt((x(1339,1) - x(1329,1))^2 + (x(1340,1) - x(1330,1))^2);
+LAMBDA_MATRIX(154,149) = DISTANCE;
+
+DISTANCE = sqrt((x(1339,1) - x(1383,1))^2 + (x(1340,1) - x(1384,1))^2);
+LAMBDA_MATRIX(154,176) = DISTANCE;
+
+DISTANCE = sqrt((x(1383,1) - x(1339,1))^2 + (x(1384,1) - x(1340,1))^2);
+LAMBDA_MATRIX(176,154) = DISTANCE;
+
+DISTANCE = sqrt((x(1383,1) - x(1329,1))^2 + (x(1384,1) - x(1330,1))^2);
+LAMBDA_MATRIX(176,149) = DISTANCE;
+
+DISTANCE = sqrt((x(1329,1) - x(1383,1))^2 + (x(1330,1) - x(1384,1))^2);
+LAMBDA_MATRIX(149,176) = DISTANCE;
+
+DISTANCE = sqrt((x(1383,1) - x(1339,1))^2 + (x(1384,1) - x(1340,1))^2);
+LAMBDA_MATRIX(176,154) = DISTANCE;
+
+DISTANCE = sqrt((x(1339,1) - x(1383,1))^2 + (x(1340,1) - x(1384,1))^2);
+LAMBDA_MATRIX(154,176) = DISTANCE;
+
+DISTANCE = sqrt((x(1339,1) - x(1397,1))^2 + (x(1340,1) - x(1398,1))^2);
+LAMBDA_MATRIX(154,183) = DISTANCE;
+
+DISTANCE = sqrt((x(1397,1) - x(1339,1))^2 + (x(1398,1) - x(1340,1))^2);
+LAMBDA_MATRIX(183,154) = DISTANCE;
+
+DISTANCE = sqrt((x(1397,1) - x(1383,1))^2 + (x(1398,1) - x(1384,1))^2);
+LAMBDA_MATRIX(183,176) = DISTANCE;
+
+DISTANCE = sqrt((x(1383,1) - x(1397,1))^2 + (x(1384,1) - x(1398,1))^2);
+LAMBDA_MATRIX(176,183) = DISTANCE;
+
+DISTANCE = sqrt((x(1053,1) - x(1097,1))^2 + (x(1054,1) - x(1098,1))^2);
+LAMBDA_MATRIX(11,33) = DISTANCE;
+
+DISTANCE = sqrt((x(1097,1) - x(1053,1))^2 + (x(1098,1) - x(1054,1))^2);
+LAMBDA_MATRIX(33,11) = DISTANCE;
+
+DISTANCE = sqrt((x(1097,1) - x(1055,1))^2 + (x(1098,1) - x(1056,1))^2);
+LAMBDA_MATRIX(33,12) = DISTANCE;
+
+DISTANCE = sqrt((x(1055,1) - x(1097,1))^2 + (x(1056,1) - x(1098,1))^2);
+LAMBDA_MATRIX(12,33) = DISTANCE;
+
+DISTANCE = sqrt((x(1055,1) - x(1053,1))^2 + (x(1056,1) - x(1054,1))^2);
+LAMBDA_MATRIX(12,11) = DISTANCE;
+
+DISTANCE = sqrt((x(1053,1) - x(1055,1))^2 + (x(1054,1) - x(1056,1))^2);
+LAMBDA_MATRIX(11,12) = DISTANCE;
+
+DISTANCE = sqrt((x(1137,1) - x(1097,1))^2 + (x(1138,1) - x(1098,1))^2);
+LAMBDA_MATRIX(53,33) = DISTANCE;
+
+DISTANCE = sqrt((x(1097,1) - x(1137,1))^2 + (x(1098,1) - x(1138,1))^2);
+LAMBDA_MATRIX(33,53) = DISTANCE;
+
+DISTANCE = sqrt((x(1097,1) - x(1103,1))^2 + (x(1098,1) - x(1104,1))^2);
+LAMBDA_MATRIX(33,36) = DISTANCE;
+
+DISTANCE = sqrt((x(1103,1) - x(1097,1))^2 + (x(1104,1) - x(1098,1))^2);
+LAMBDA_MATRIX(36,33) = DISTANCE;
+
+DISTANCE = sqrt((x(1103,1) - x(1137,1))^2 + (x(1104,1) - x(1138,1))^2);
+LAMBDA_MATRIX(36,53) = DISTANCE;
+
+DISTANCE = sqrt((x(1137,1) - x(1103,1))^2 + (x(1138,1) - x(1104,1))^2);
+LAMBDA_MATRIX(53,36) = DISTANCE;
+
+DISTANCE = sqrt((x(1091,1) - x(1147,1))^2 + (x(1092,1) - x(1148,1))^2);
+LAMBDA_MATRIX(30,58) = DISTANCE;
+
+DISTANCE = sqrt((x(1147,1) - x(1091,1))^2 + (x(1148,1) - x(1092,1))^2);
+LAMBDA_MATRIX(58,30) = DISTANCE;
+
+DISTANCE = sqrt((x(1147,1) - x(1103,1))^2 + (x(1148,1) - x(1104,1))^2);
+LAMBDA_MATRIX(58,36) = DISTANCE;
+
+DISTANCE = sqrt((x(1103,1) - x(1147,1))^2 + (x(1104,1) - x(1148,1))^2);
+LAMBDA_MATRIX(36,58) = DISTANCE;
+
+DISTANCE = sqrt((x(1103,1) - x(1091,1))^2 + (x(1104,1) - x(1092,1))^2);
+LAMBDA_MATRIX(36,30) = DISTANCE;
+
+DISTANCE = sqrt((x(1091,1) - x(1103,1))^2 + (x(1092,1) - x(1104,1))^2);
+LAMBDA_MATRIX(30,36) = DISTANCE;
+
+DISTANCE = sqrt((x(1103,1) - x(1147,1))^2 + (x(1104,1) - x(1148,1))^2);
+LAMBDA_MATRIX(36,58) = DISTANCE;
+
+DISTANCE = sqrt((x(1147,1) - x(1103,1))^2 + (x(1148,1) - x(1104,1))^2);
+LAMBDA_MATRIX(58,36) = DISTANCE;
+
+DISTANCE = sqrt((x(1147,1) - x(1137,1))^2 + (x(1148,1) - x(1138,1))^2);
+LAMBDA_MATRIX(58,53) = DISTANCE;
+
+DISTANCE = sqrt((x(1137,1) - x(1147,1))^2 + (x(1138,1) - x(1148,1))^2);
+LAMBDA_MATRIX(53,58) = DISTANCE;
+
+DISTANCE = sqrt((x(1137,1) - x(1103,1))^2 + (x(1138,1) - x(1104,1))^2);
+LAMBDA_MATRIX(53,36) = DISTANCE;
+
+DISTANCE = sqrt((x(1103,1) - x(1137,1))^2 + (x(1104,1) - x(1138,1))^2);
+LAMBDA_MATRIX(36,53) = DISTANCE;
+
+DISTANCE = sqrt((x(1097,1) - x(1053,1))^2 + (x(1098,1) - x(1054,1))^2);
+LAMBDA_MATRIX(33,11) = DISTANCE;
+
+DISTANCE = sqrt((x(1053,1) - x(1097,1))^2 + (x(1054,1) - x(1098,1))^2);
+LAMBDA_MATRIX(11,33) = DISTANCE;
+
+DISTANCE = sqrt((x(1053,1) - x(1103,1))^2 + (x(1054,1) - x(1104,1))^2);
+LAMBDA_MATRIX(11,36) = DISTANCE;
+
+DISTANCE = sqrt((x(1103,1) - x(1053,1))^2 + (x(1104,1) - x(1054,1))^2);
+LAMBDA_MATRIX(36,11) = DISTANCE;
+
+DISTANCE = sqrt((x(1103,1) - x(1097,1))^2 + (x(1104,1) - x(1098,1))^2);
+LAMBDA_MATRIX(36,33) = DISTANCE;
+
+DISTANCE = sqrt((x(1097,1) - x(1103,1))^2 + (x(1098,1) - x(1104,1))^2);
+LAMBDA_MATRIX(33,36) = DISTANCE;
+
+DISTANCE = sqrt((x(1103,1) - x(1051,1))^2 + (x(1104,1) - x(1052,1))^2);
+LAMBDA_MATRIX(36,10) = DISTANCE;
+
+DISTANCE = sqrt((x(1051,1) - x(1103,1))^2 + (x(1052,1) - x(1104,1))^2);
+LAMBDA_MATRIX(10,36) = DISTANCE;
+
+DISTANCE = sqrt((x(1051,1) - x(1091,1))^2 + (x(1052,1) - x(1092,1))^2);
+LAMBDA_MATRIX(10,30) = DISTANCE;
+
+DISTANCE = sqrt((x(1091,1) - x(1051,1))^2 + (x(1092,1) - x(1052,1))^2);
+LAMBDA_MATRIX(30,10) = DISTANCE;
+
+DISTANCE = sqrt((x(1091,1) - x(1103,1))^2 + (x(1092,1) - x(1104,1))^2);
+LAMBDA_MATRIX(30,36) = DISTANCE;
+
+DISTANCE = sqrt((x(1103,1) - x(1091,1))^2 + (x(1104,1) - x(1092,1))^2);
+LAMBDA_MATRIX(36,30) = DISTANCE;
+
+DISTANCE = sqrt((x(1103,1) - x(1053,1))^2 + (x(1104,1) - x(1054,1))^2);
+LAMBDA_MATRIX(36,11) = DISTANCE;
+
+DISTANCE = sqrt((x(1053,1) - x(1103,1))^2 + (x(1054,1) - x(1104,1))^2);
+LAMBDA_MATRIX(11,36) = DISTANCE;
+
+DISTANCE = sqrt((x(1053,1) - x(1051,1))^2 + (x(1054,1) - x(1052,1))^2);
+LAMBDA_MATRIX(11,10) = DISTANCE;
+
+DISTANCE = sqrt((x(1051,1) - x(1053,1))^2 + (x(1052,1) - x(1054,1))^2);
+LAMBDA_MATRIX(10,11) = DISTANCE;
+
+DISTANCE = sqrt((x(1051,1) - x(1103,1))^2 + (x(1052,1) - x(1104,1))^2);
+LAMBDA_MATRIX(10,36) = DISTANCE;
+
+DISTANCE = sqrt((x(1103,1) - x(1051,1))^2 + (x(1104,1) - x(1052,1))^2);
+LAMBDA_MATRIX(36,10) = DISTANCE;
+
+DISTANCE = sqrt((x(1663,1) - x(1697,1))^2 + (x(1664,1) - x(1698,1))^2);
+LAMBDA_MATRIX(316,333) = DISTANCE;
+
+DISTANCE = sqrt((x(1697,1) - x(1663,1))^2 + (x(1698,1) - x(1664,1))^2);
+LAMBDA_MATRIX(333,316) = DISTANCE;
+
+DISTANCE = sqrt((x(1697,1) - x(1655,1))^2 + (x(1698,1) - x(1656,1))^2);
+LAMBDA_MATRIX(333,312) = DISTANCE;
+
+DISTANCE = sqrt((x(1655,1) - x(1697,1))^2 + (x(1656,1) - x(1698,1))^2);
+LAMBDA_MATRIX(312,333) = DISTANCE;
+
+DISTANCE = sqrt((x(1655,1) - x(1663,1))^2 + (x(1656,1) - x(1664,1))^2);
+LAMBDA_MATRIX(312,316) = DISTANCE;
+
+DISTANCE = sqrt((x(1663,1) - x(1655,1))^2 + (x(1664,1) - x(1656,1))^2);
+LAMBDA_MATRIX(316,312) = DISTANCE;
+
+DISTANCE = sqrt((x(1625,1) - x(1663,1))^2 + (x(1626,1) - x(1664,1))^2);
+LAMBDA_MATRIX(297,316) = DISTANCE;
+
+DISTANCE = sqrt((x(1663,1) - x(1625,1))^2 + (x(1664,1) - x(1626,1))^2);
+LAMBDA_MATRIX(316,297) = DISTANCE;
+
+DISTANCE = sqrt((x(1663,1) - x(1655,1))^2 + (x(1664,1) - x(1656,1))^2);
+LAMBDA_MATRIX(316,312) = DISTANCE;
+
+DISTANCE = sqrt((x(1655,1) - x(1663,1))^2 + (x(1656,1) - x(1664,1))^2);
+LAMBDA_MATRIX(312,316) = DISTANCE;
+
+DISTANCE = sqrt((x(1655,1) - x(1625,1))^2 + (x(1656,1) - x(1626,1))^2);
+LAMBDA_MATRIX(312,297) = DISTANCE;
+
+DISTANCE = sqrt((x(1625,1) - x(1655,1))^2 + (x(1626,1) - x(1656,1))^2);
+LAMBDA_MATRIX(297,312) = DISTANCE;
+
+DISTANCE = sqrt((x(1655,1) - x(1623,1))^2 + (x(1656,1) - x(1624,1))^2);
+LAMBDA_MATRIX(312,296) = DISTANCE;
+
+DISTANCE = sqrt((x(1623,1) - x(1655,1))^2 + (x(1624,1) - x(1656,1))^2);
+LAMBDA_MATRIX(296,312) = DISTANCE;
+
+DISTANCE = sqrt((x(1623,1) - x(1625,1))^2 + (x(1624,1) - x(1626,1))^2);
+LAMBDA_MATRIX(296,297) = DISTANCE;
+
+DISTANCE = sqrt((x(1625,1) - x(1623,1))^2 + (x(1626,1) - x(1624,1))^2);
+LAMBDA_MATRIX(297,296) = DISTANCE;
+
+DISTANCE = sqrt((x(1625,1) - x(1655,1))^2 + (x(1626,1) - x(1656,1))^2);
+LAMBDA_MATRIX(297,312) = DISTANCE;
+
+DISTANCE = sqrt((x(1655,1) - x(1625,1))^2 + (x(1656,1) - x(1626,1))^2);
+LAMBDA_MATRIX(312,297) = DISTANCE;
+
+DISTANCE = sqrt((x(1651,1) - x(1623,1))^2 + (x(1652,1) - x(1624,1))^2);
+LAMBDA_MATRIX(310,296) = DISTANCE;
+
+DISTANCE = sqrt((x(1623,1) - x(1651,1))^2 + (x(1624,1) - x(1652,1))^2);
+LAMBDA_MATRIX(296,310) = DISTANCE;
+
+DISTANCE = sqrt((x(1623,1) - x(1655,1))^2 + (x(1624,1) - x(1656,1))^2);
+LAMBDA_MATRIX(296,312) = DISTANCE;
+
+DISTANCE = sqrt((x(1655,1) - x(1623,1))^2 + (x(1656,1) - x(1624,1))^2);
+LAMBDA_MATRIX(312,296) = DISTANCE;
+
+DISTANCE = sqrt((x(1655,1) - x(1651,1))^2 + (x(1656,1) - x(1652,1))^2);
+LAMBDA_MATRIX(312,310) = DISTANCE;
+
+DISTANCE = sqrt((x(1651,1) - x(1655,1))^2 + (x(1652,1) - x(1656,1))^2);
+LAMBDA_MATRIX(310,312) = DISTANCE;
+
+DISTANCE = sqrt((x(1693,1) - x(1651,1))^2 + (x(1694,1) - x(1652,1))^2);
+LAMBDA_MATRIX(331,310) = DISTANCE;
+
+DISTANCE = sqrt((x(1651,1) - x(1693,1))^2 + (x(1652,1) - x(1694,1))^2);
+LAMBDA_MATRIX(310,331) = DISTANCE;
+
+DISTANCE = sqrt((x(1651,1) - x(1655,1))^2 + (x(1652,1) - x(1656,1))^2);
+LAMBDA_MATRIX(310,312) = DISTANCE;
+
+DISTANCE = sqrt((x(1655,1) - x(1651,1))^2 + (x(1656,1) - x(1652,1))^2);
+LAMBDA_MATRIX(312,310) = DISTANCE;
+
+DISTANCE = sqrt((x(1655,1) - x(1693,1))^2 + (x(1656,1) - x(1694,1))^2);
+LAMBDA_MATRIX(312,331) = DISTANCE;
+
+DISTANCE = sqrt((x(1693,1) - x(1655,1))^2 + (x(1694,1) - x(1656,1))^2);
+LAMBDA_MATRIX(331,312) = DISTANCE;
+
+DISTANCE = sqrt((x(1655,1) - x(1697,1))^2 + (x(1656,1) - x(1698,1))^2);
+LAMBDA_MATRIX(312,333) = DISTANCE;
+
+DISTANCE = sqrt((x(1697,1) - x(1655,1))^2 + (x(1698,1) - x(1656,1))^2);
+LAMBDA_MATRIX(333,312) = DISTANCE;
+
+DISTANCE = sqrt((x(1697,1) - x(1693,1))^2 + (x(1698,1) - x(1694,1))^2);
+LAMBDA_MATRIX(333,331) = DISTANCE;
+
+DISTANCE = sqrt((x(1693,1) - x(1697,1))^2 + (x(1694,1) - x(1698,1))^2);
+LAMBDA_MATRIX(331,333) = DISTANCE;
+
+DISTANCE = sqrt((x(1693,1) - x(1655,1))^2 + (x(1694,1) - x(1656,1))^2);
+LAMBDA_MATRIX(331,312) = DISTANCE;
+
+DISTANCE = sqrt((x(1655,1) - x(1693,1))^2 + (x(1656,1) - x(1694,1))^2);
+LAMBDA_MATRIX(312,331) = DISTANCE;
+
+DISTANCE = sqrt((x(1789,1) - x(1833,1))^2 + (x(1790,1) - x(1834,1))^2);
+LAMBDA_MATRIX(379,401) = DISTANCE;
+
+DISTANCE = sqrt((x(1833,1) - x(1789,1))^2 + (x(1834,1) - x(1790,1))^2);
+LAMBDA_MATRIX(401,379) = DISTANCE;
+
+DISTANCE = sqrt((x(1833,1) - x(1849,1))^2 + (x(1834,1) - x(1850,1))^2);
+LAMBDA_MATRIX(401,409) = DISTANCE;
+
+DISTANCE = sqrt((x(1849,1) - x(1833,1))^2 + (x(1850,1) - x(1834,1))^2);
+LAMBDA_MATRIX(409,401) = DISTANCE;
+
+DISTANCE = sqrt((x(1849,1) - x(1789,1))^2 + (x(1850,1) - x(1790,1))^2);
+LAMBDA_MATRIX(409,379) = DISTANCE;
+
+DISTANCE = sqrt((x(1789,1) - x(1849,1))^2 + (x(1790,1) - x(1850,1))^2);
+LAMBDA_MATRIX(379,409) = DISTANCE;
+
+DISTANCE = sqrt((x(1849,1) - x(1813,1))^2 + (x(1850,1) - x(1814,1))^2);
+LAMBDA_MATRIX(409,391) = DISTANCE;
+
+DISTANCE = sqrt((x(1813,1) - x(1849,1))^2 + (x(1814,1) - x(1850,1))^2);
+LAMBDA_MATRIX(391,409) = DISTANCE;
+
+DISTANCE = sqrt((x(1813,1) - x(1789,1))^2 + (x(1814,1) - x(1790,1))^2);
+LAMBDA_MATRIX(391,379) = DISTANCE;
+
+DISTANCE = sqrt((x(1789,1) - x(1813,1))^2 + (x(1790,1) - x(1814,1))^2);
+LAMBDA_MATRIX(379,391) = DISTANCE;
+
+DISTANCE = sqrt((x(1789,1) - x(1849,1))^2 + (x(1790,1) - x(1850,1))^2);
+LAMBDA_MATRIX(379,409) = DISTANCE;
+
+DISTANCE = sqrt((x(1849,1) - x(1789,1))^2 + (x(1850,1) - x(1790,1))^2);
+LAMBDA_MATRIX(409,379) = DISTANCE;
+
+DISTANCE = sqrt((x(1731,1) - x(1741,1))^2 + (x(1732,1) - x(1742,1))^2);
+LAMBDA_MATRIX(350,355) = DISTANCE;
+
+DISTANCE = sqrt((x(1741,1) - x(1731,1))^2 + (x(1742,1) - x(1732,1))^2);
+LAMBDA_MATRIX(355,350) = DISTANCE;
+
+DISTANCE = sqrt((x(1741,1) - x(1789,1))^2 + (x(1742,1) - x(1790,1))^2);
+LAMBDA_MATRIX(355,379) = DISTANCE;
+
+DISTANCE = sqrt((x(1789,1) - x(1741,1))^2 + (x(1790,1) - x(1742,1))^2);
+LAMBDA_MATRIX(379,355) = DISTANCE;
+
+DISTANCE = sqrt((x(1789,1) - x(1731,1))^2 + (x(1790,1) - x(1732,1))^2);
+LAMBDA_MATRIX(379,350) = DISTANCE;
+
+DISTANCE = sqrt((x(1731,1) - x(1789,1))^2 + (x(1732,1) - x(1790,1))^2);
+LAMBDA_MATRIX(350,379) = DISTANCE;
+
+DISTANCE = sqrt((x(1789,1) - x(1761,1))^2 + (x(1790,1) - x(1762,1))^2);
+LAMBDA_MATRIX(379,365) = DISTANCE;
+
+DISTANCE = sqrt((x(1761,1) - x(1789,1))^2 + (x(1762,1) - x(1790,1))^2);
+LAMBDA_MATRIX(365,379) = DISTANCE;
+
+DISTANCE = sqrt((x(1761,1) - x(1731,1))^2 + (x(1762,1) - x(1732,1))^2);
+LAMBDA_MATRIX(365,350) = DISTANCE;
+
+DISTANCE = sqrt((x(1731,1) - x(1761,1))^2 + (x(1732,1) - x(1762,1))^2);
+LAMBDA_MATRIX(350,365) = DISTANCE;
+
+DISTANCE = sqrt((x(1731,1) - x(1789,1))^2 + (x(1732,1) - x(1790,1))^2);
+LAMBDA_MATRIX(350,379) = DISTANCE;
+
+DISTANCE = sqrt((x(1789,1) - x(1731,1))^2 + (x(1790,1) - x(1732,1))^2);
+LAMBDA_MATRIX(379,350) = DISTANCE;
+
+DISTANCE = sqrt((x(1813,1) - x(1761,1))^2 + (x(1814,1) - x(1762,1))^2);
+LAMBDA_MATRIX(391,365) = DISTANCE;
+
+DISTANCE = sqrt((x(1761,1) - x(1813,1))^2 + (x(1762,1) - x(1814,1))^2);
+LAMBDA_MATRIX(365,391) = DISTANCE;
+
+DISTANCE = sqrt((x(1761,1) - x(1789,1))^2 + (x(1762,1) - x(1790,1))^2);
+LAMBDA_MATRIX(365,379) = DISTANCE;
+
+DISTANCE = sqrt((x(1789,1) - x(1761,1))^2 + (x(1790,1) - x(1762,1))^2);
+LAMBDA_MATRIX(379,365) = DISTANCE;
+
+DISTANCE = sqrt((x(1789,1) - x(1813,1))^2 + (x(1790,1) - x(1814,1))^2);
+LAMBDA_MATRIX(379,391) = DISTANCE;
+
+DISTANCE = sqrt((x(1813,1) - x(1789,1))^2 + (x(1814,1) - x(1790,1))^2);
+LAMBDA_MATRIX(391,379) = DISTANCE;
+
+DISTANCE = sqrt((x(1781,1) - x(1741,1))^2 + (x(1782,1) - x(1742,1))^2);
+LAMBDA_MATRIX(375,355) = DISTANCE;
+
+DISTANCE = sqrt((x(1741,1) - x(1781,1))^2 + (x(1742,1) - x(1782,1))^2);
+LAMBDA_MATRIX(355,375) = DISTANCE;
+
+DISTANCE = sqrt((x(1741,1) - x(1747,1))^2 + (x(1742,1) - x(1748,1))^2);
+LAMBDA_MATRIX(355,358) = DISTANCE;
+
+DISTANCE = sqrt((x(1747,1) - x(1741,1))^2 + (x(1748,1) - x(1742,1))^2);
+LAMBDA_MATRIX(358,355) = DISTANCE;
+
+DISTANCE = sqrt((x(1747,1) - x(1781,1))^2 + (x(1748,1) - x(1782,1))^2);
+LAMBDA_MATRIX(358,375) = DISTANCE;
+
+DISTANCE = sqrt((x(1781,1) - x(1747,1))^2 + (x(1782,1) - x(1748,1))^2);
+LAMBDA_MATRIX(375,358) = DISTANCE;
+
+DISTANCE = sqrt((x(1747,1) - x(1805,1))^2 + (x(1748,1) - x(1806,1))^2);
+LAMBDA_MATRIX(358,387) = DISTANCE;
+
+DISTANCE = sqrt((x(1805,1) - x(1747,1))^2 + (x(1806,1) - x(1748,1))^2);
+LAMBDA_MATRIX(387,358) = DISTANCE;
+
+DISTANCE = sqrt((x(1805,1) - x(1781,1))^2 + (x(1806,1) - x(1782,1))^2);
+LAMBDA_MATRIX(387,375) = DISTANCE;
+
+DISTANCE = sqrt((x(1781,1) - x(1805,1))^2 + (x(1782,1) - x(1806,1))^2);
+LAMBDA_MATRIX(375,387) = DISTANCE;
+
+DISTANCE = sqrt((x(1781,1) - x(1747,1))^2 + (x(1782,1) - x(1748,1))^2);
+LAMBDA_MATRIX(375,358) = DISTANCE;
+
+DISTANCE = sqrt((x(1747,1) - x(1781,1))^2 + (x(1748,1) - x(1782,1))^2);
+LAMBDA_MATRIX(358,375) = DISTANCE;
+
+DISTANCE = sqrt((x(1781,1) - x(1805,1))^2 + (x(1782,1) - x(1806,1))^2);
+LAMBDA_MATRIX(375,387) = DISTANCE;
+
+DISTANCE = sqrt((x(1805,1) - x(1781,1))^2 + (x(1806,1) - x(1782,1))^2);
+LAMBDA_MATRIX(387,375) = DISTANCE;
+
+DISTANCE = sqrt((x(1805,1) - x(1833,1))^2 + (x(1806,1) - x(1834,1))^2);
+LAMBDA_MATRIX(387,401) = DISTANCE;
+
+DISTANCE = sqrt((x(1833,1) - x(1805,1))^2 + (x(1834,1) - x(1806,1))^2);
+LAMBDA_MATRIX(401,387) = DISTANCE;
+
+DISTANCE = sqrt((x(1833,1) - x(1781,1))^2 + (x(1834,1) - x(1782,1))^2);
+LAMBDA_MATRIX(401,375) = DISTANCE;
+
+DISTANCE = sqrt((x(1781,1) - x(1833,1))^2 + (x(1782,1) - x(1834,1))^2);
+LAMBDA_MATRIX(375,401) = DISTANCE;
+
+DISTANCE = sqrt((x(1833,1) - x(1789,1))^2 + (x(1834,1) - x(1790,1))^2);
+LAMBDA_MATRIX(401,379) = DISTANCE;
+
+DISTANCE = sqrt((x(1789,1) - x(1833,1))^2 + (x(1790,1) - x(1834,1))^2);
+LAMBDA_MATRIX(379,401) = DISTANCE;
+
+DISTANCE = sqrt((x(1789,1) - x(1781,1))^2 + (x(1790,1) - x(1782,1))^2);
+LAMBDA_MATRIX(379,375) = DISTANCE;
+
+DISTANCE = sqrt((x(1781,1) - x(1789,1))^2 + (x(1782,1) - x(1790,1))^2);
+LAMBDA_MATRIX(375,379) = DISTANCE;
+
+DISTANCE = sqrt((x(1781,1) - x(1833,1))^2 + (x(1782,1) - x(1834,1))^2);
+LAMBDA_MATRIX(375,401) = DISTANCE;
+
+DISTANCE = sqrt((x(1833,1) - x(1781,1))^2 + (x(1834,1) - x(1782,1))^2);
+LAMBDA_MATRIX(401,375) = DISTANCE;
+
+DISTANCE = sqrt((x(1781,1) - x(1789,1))^2 + (x(1782,1) - x(1790,1))^2);
+LAMBDA_MATRIX(375,379) = DISTANCE;
+
+DISTANCE = sqrt((x(1789,1) - x(1781,1))^2 + (x(1790,1) - x(1782,1))^2);
+LAMBDA_MATRIX(379,375) = DISTANCE;
+
+DISTANCE = sqrt((x(1789,1) - x(1741,1))^2 + (x(1790,1) - x(1742,1))^2);
+LAMBDA_MATRIX(379,355) = DISTANCE;
+
+DISTANCE = sqrt((x(1741,1) - x(1789,1))^2 + (x(1742,1) - x(1790,1))^2);
+LAMBDA_MATRIX(355,379) = DISTANCE;
+
+DISTANCE = sqrt((x(1741,1) - x(1781,1))^2 + (x(1742,1) - x(1782,1))^2);
+LAMBDA_MATRIX(355,375) = DISTANCE;
+
+DISTANCE = sqrt((x(1781,1) - x(1741,1))^2 + (x(1782,1) - x(1742,1))^2);
+LAMBDA_MATRIX(375,355) = DISTANCE;
+
+DISTANCE = sqrt((x(1771,1) - x(1807,1))^2 + (x(1772,1) - x(1808,1))^2);
+LAMBDA_MATRIX(370,388) = DISTANCE;
+
+DISTANCE = sqrt((x(1807,1) - x(1771,1))^2 + (x(1808,1) - x(1772,1))^2);
+LAMBDA_MATRIX(388,370) = DISTANCE;
+
+DISTANCE = sqrt((x(1807,1) - x(1753,1))^2 + (x(1808,1) - x(1754,1))^2);
+LAMBDA_MATRIX(388,361) = DISTANCE;
+
+DISTANCE = sqrt((x(1753,1) - x(1807,1))^2 + (x(1754,1) - x(1808,1))^2);
+LAMBDA_MATRIX(361,388) = DISTANCE;
+
+DISTANCE = sqrt((x(1753,1) - x(1771,1))^2 + (x(1754,1) - x(1772,1))^2);
+LAMBDA_MATRIX(361,370) = DISTANCE;
+
+DISTANCE = sqrt((x(1771,1) - x(1753,1))^2 + (x(1772,1) - x(1754,1))^2);
+LAMBDA_MATRIX(370,361) = DISTANCE;
+
+DISTANCE = sqrt((x(1735,1) - x(1785,1))^2 + (x(1736,1) - x(1786,1))^2);
+LAMBDA_MATRIX(352,377) = DISTANCE;
+
+DISTANCE = sqrt((x(1785,1) - x(1735,1))^2 + (x(1786,1) - x(1736,1))^2);
+LAMBDA_MATRIX(377,352) = DISTANCE;
+
+DISTANCE = sqrt((x(1785,1) - x(1771,1))^2 + (x(1786,1) - x(1772,1))^2);
+LAMBDA_MATRIX(377,370) = DISTANCE;
+
+DISTANCE = sqrt((x(1771,1) - x(1785,1))^2 + (x(1772,1) - x(1786,1))^2);
+LAMBDA_MATRIX(370,377) = DISTANCE;
+
+DISTANCE = sqrt((x(1771,1) - x(1735,1))^2 + (x(1772,1) - x(1736,1))^2);
+LAMBDA_MATRIX(370,352) = DISTANCE;
+
+DISTANCE = sqrt((x(1735,1) - x(1771,1))^2 + (x(1736,1) - x(1772,1))^2);
+LAMBDA_MATRIX(352,370) = DISTANCE;
+
+DISTANCE = sqrt((x(1771,1) - x(1715,1))^2 + (x(1772,1) - x(1716,1))^2);
+LAMBDA_MATRIX(370,342) = DISTANCE;
+
+DISTANCE = sqrt((x(1715,1) - x(1771,1))^2 + (x(1716,1) - x(1772,1))^2);
+LAMBDA_MATRIX(342,370) = DISTANCE;
+
+DISTANCE = sqrt((x(1715,1) - x(1735,1))^2 + (x(1716,1) - x(1736,1))^2);
+LAMBDA_MATRIX(342,352) = DISTANCE;
+
+DISTANCE = sqrt((x(1735,1) - x(1715,1))^2 + (x(1736,1) - x(1716,1))^2);
+LAMBDA_MATRIX(352,342) = DISTANCE;
+
+DISTANCE = sqrt((x(1735,1) - x(1771,1))^2 + (x(1736,1) - x(1772,1))^2);
+LAMBDA_MATRIX(352,370) = DISTANCE;
+
+DISTANCE = sqrt((x(1771,1) - x(1735,1))^2 + (x(1772,1) - x(1736,1))^2);
+LAMBDA_MATRIX(370,352) = DISTANCE;
+
+DISTANCE = sqrt((x(1753,1) - x(1715,1))^2 + (x(1754,1) - x(1716,1))^2);
+LAMBDA_MATRIX(361,342) = DISTANCE;
+
+DISTANCE = sqrt((x(1715,1) - x(1753,1))^2 + (x(1716,1) - x(1754,1))^2);
+LAMBDA_MATRIX(342,361) = DISTANCE;
+
+DISTANCE = sqrt((x(1715,1) - x(1771,1))^2 + (x(1716,1) - x(1772,1))^2);
+LAMBDA_MATRIX(342,370) = DISTANCE;
+
+DISTANCE = sqrt((x(1771,1) - x(1715,1))^2 + (x(1772,1) - x(1716,1))^2);
+LAMBDA_MATRIX(370,342) = DISTANCE;
+
+DISTANCE = sqrt((x(1771,1) - x(1753,1))^2 + (x(1772,1) - x(1754,1))^2);
+LAMBDA_MATRIX(370,361) = DISTANCE;
+
+DISTANCE = sqrt((x(1753,1) - x(1771,1))^2 + (x(1754,1) - x(1772,1))^2);
+LAMBDA_MATRIX(361,370) = DISTANCE;
+
+DISTANCE = sqrt((x(1475,1) - x(1493,1))^2 + (x(1476,1) - x(1494,1))^2);
+LAMBDA_MATRIX(222,231) = DISTANCE;
+
+DISTANCE = sqrt((x(1493,1) - x(1475,1))^2 + (x(1494,1) - x(1476,1))^2);
+LAMBDA_MATRIX(231,222) = DISTANCE;
+
+DISTANCE = sqrt((x(1493,1) - x(1451,1))^2 + (x(1494,1) - x(1452,1))^2);
+LAMBDA_MATRIX(231,210) = DISTANCE;
+
+DISTANCE = sqrt((x(1451,1) - x(1493,1))^2 + (x(1452,1) - x(1494,1))^2);
+LAMBDA_MATRIX(210,231) = DISTANCE;
+
+DISTANCE = sqrt((x(1451,1) - x(1475,1))^2 + (x(1452,1) - x(1476,1))^2);
+LAMBDA_MATRIX(210,222) = DISTANCE;
+
+DISTANCE = sqrt((x(1475,1) - x(1451,1))^2 + (x(1476,1) - x(1452,1))^2);
+LAMBDA_MATRIX(222,210) = DISTANCE;
+
+DISTANCE = sqrt((x(1451,1) - x(1493,1))^2 + (x(1452,1) - x(1494,1))^2);
+LAMBDA_MATRIX(210,231) = DISTANCE;
+
+DISTANCE = sqrt((x(1493,1) - x(1451,1))^2 + (x(1494,1) - x(1452,1))^2);
+LAMBDA_MATRIX(231,210) = DISTANCE;
+
+DISTANCE = sqrt((x(1493,1) - x(1467,1))^2 + (x(1494,1) - x(1468,1))^2);
+LAMBDA_MATRIX(231,218) = DISTANCE;
+
+DISTANCE = sqrt((x(1467,1) - x(1493,1))^2 + (x(1468,1) - x(1494,1))^2);
+LAMBDA_MATRIX(218,231) = DISTANCE;
+
+DISTANCE = sqrt((x(1467,1) - x(1451,1))^2 + (x(1468,1) - x(1452,1))^2);
+LAMBDA_MATRIX(218,210) = DISTANCE;
+
+DISTANCE = sqrt((x(1451,1) - x(1467,1))^2 + (x(1452,1) - x(1468,1))^2);
+LAMBDA_MATRIX(210,218) = DISTANCE;
+
+DISTANCE = sqrt((x(1425,1) - x(1475,1))^2 + (x(1426,1) - x(1476,1))^2);
+LAMBDA_MATRIX(197,222) = DISTANCE;
+
+DISTANCE = sqrt((x(1475,1) - x(1425,1))^2 + (x(1476,1) - x(1426,1))^2);
+LAMBDA_MATRIX(222,197) = DISTANCE;
+
+DISTANCE = sqrt((x(1475,1) - x(1451,1))^2 + (x(1476,1) - x(1452,1))^2);
+LAMBDA_MATRIX(222,210) = DISTANCE;
+
+DISTANCE = sqrt((x(1451,1) - x(1475,1))^2 + (x(1452,1) - x(1476,1))^2);
+LAMBDA_MATRIX(210,222) = DISTANCE;
+
+DISTANCE = sqrt((x(1451,1) - x(1425,1))^2 + (x(1452,1) - x(1426,1))^2);
+LAMBDA_MATRIX(210,197) = DISTANCE;
+
+DISTANCE = sqrt((x(1425,1) - x(1451,1))^2 + (x(1426,1) - x(1452,1))^2);
+LAMBDA_MATRIX(197,210) = DISTANCE;
+
+DISTANCE = sqrt((x(1451,1) - x(1405,1))^2 + (x(1452,1) - x(1406,1))^2);
+LAMBDA_MATRIX(210,187) = DISTANCE;
+
+DISTANCE = sqrt((x(1405,1) - x(1451,1))^2 + (x(1406,1) - x(1452,1))^2);
+LAMBDA_MATRIX(187,210) = DISTANCE;
+
+DISTANCE = sqrt((x(1405,1) - x(1425,1))^2 + (x(1406,1) - x(1426,1))^2);
+LAMBDA_MATRIX(187,197) = DISTANCE;
+
+DISTANCE = sqrt((x(1425,1) - x(1405,1))^2 + (x(1426,1) - x(1406,1))^2);
+LAMBDA_MATRIX(197,187) = DISTANCE;
+
+DISTANCE = sqrt((x(1425,1) - x(1451,1))^2 + (x(1426,1) - x(1452,1))^2);
+LAMBDA_MATRIX(197,210) = DISTANCE;
+
+DISTANCE = sqrt((x(1451,1) - x(1425,1))^2 + (x(1452,1) - x(1426,1))^2);
+LAMBDA_MATRIX(210,197) = DISTANCE;
+
+DISTANCE = sqrt((x(1451,1) - x(1431,1))^2 + (x(1452,1) - x(1432,1))^2);
+LAMBDA_MATRIX(210,200) = DISTANCE;
+
+DISTANCE = sqrt((x(1431,1) - x(1451,1))^2 + (x(1432,1) - x(1452,1))^2);
+LAMBDA_MATRIX(200,210) = DISTANCE;
+
+DISTANCE = sqrt((x(1431,1) - x(1405,1))^2 + (x(1432,1) - x(1406,1))^2);
+LAMBDA_MATRIX(200,187) = DISTANCE;
+
+DISTANCE = sqrt((x(1405,1) - x(1431,1))^2 + (x(1406,1) - x(1432,1))^2);
+LAMBDA_MATRIX(187,200) = DISTANCE;
+
+DISTANCE = sqrt((x(1405,1) - x(1451,1))^2 + (x(1406,1) - x(1452,1))^2);
+LAMBDA_MATRIX(187,210) = DISTANCE;
+
+DISTANCE = sqrt((x(1451,1) - x(1405,1))^2 + (x(1452,1) - x(1406,1))^2);
+LAMBDA_MATRIX(210,187) = DISTANCE;
+
+DISTANCE = sqrt((x(1451,1) - x(1467,1))^2 + (x(1452,1) - x(1468,1))^2);
+LAMBDA_MATRIX(210,218) = DISTANCE;
+
+DISTANCE = sqrt((x(1467,1) - x(1451,1))^2 + (x(1468,1) - x(1452,1))^2);
+LAMBDA_MATRIX(218,210) = DISTANCE;
+
+DISTANCE = sqrt((x(1467,1) - x(1431,1))^2 + (x(1468,1) - x(1432,1))^2);
+LAMBDA_MATRIX(218,200) = DISTANCE;
+
+DISTANCE = sqrt((x(1431,1) - x(1467,1))^2 + (x(1432,1) - x(1468,1))^2);
+LAMBDA_MATRIX(200,218) = DISTANCE;
+
+DISTANCE = sqrt((x(1431,1) - x(1451,1))^2 + (x(1432,1) - x(1452,1))^2);
+LAMBDA_MATRIX(200,210) = DISTANCE;
+
+DISTANCE = sqrt((x(1451,1) - x(1431,1))^2 + (x(1452,1) - x(1432,1))^2);
+LAMBDA_MATRIX(210,200) = DISTANCE;
+
+DISTANCE = sqrt((x(1551,1) - x(1585,1))^2 + (x(1552,1) - x(1586,1))^2);
+LAMBDA_MATRIX(260,277) = DISTANCE;
+
+DISTANCE = sqrt((x(1585,1) - x(1551,1))^2 + (x(1586,1) - x(1552,1))^2);
+LAMBDA_MATRIX(277,260) = DISTANCE;
+
+DISTANCE = sqrt((x(1585,1) - x(1553,1))^2 + (x(1586,1) - x(1554,1))^2);
+LAMBDA_MATRIX(277,261) = DISTANCE;
+
+DISTANCE = sqrt((x(1553,1) - x(1585,1))^2 + (x(1554,1) - x(1586,1))^2);
+LAMBDA_MATRIX(261,277) = DISTANCE;
+
+DISTANCE = sqrt((x(1553,1) - x(1551,1))^2 + (x(1554,1) - x(1552,1))^2);
+LAMBDA_MATRIX(261,260) = DISTANCE;
+
+DISTANCE = sqrt((x(1551,1) - x(1553,1))^2 + (x(1552,1) - x(1554,1))^2);
+LAMBDA_MATRIX(260,261) = DISTANCE;
+
+DISTANCE = sqrt((x(1519,1) - x(1521,1))^2 + (x(1520,1) - x(1522,1))^2);
+LAMBDA_MATRIX(244,245) = DISTANCE;
+
+DISTANCE = sqrt((x(1521,1) - x(1519,1))^2 + (x(1522,1) - x(1520,1))^2);
+LAMBDA_MATRIX(245,244) = DISTANCE;
+
+DISTANCE = sqrt((x(1521,1) - x(1551,1))^2 + (x(1522,1) - x(1552,1))^2);
+LAMBDA_MATRIX(245,260) = DISTANCE;
+
+DISTANCE = sqrt((x(1551,1) - x(1521,1))^2 + (x(1552,1) - x(1522,1))^2);
+LAMBDA_MATRIX(260,245) = DISTANCE;
+
+DISTANCE = sqrt((x(1551,1) - x(1519,1))^2 + (x(1552,1) - x(1520,1))^2);
+LAMBDA_MATRIX(260,244) = DISTANCE;
+
+DISTANCE = sqrt((x(1519,1) - x(1551,1))^2 + (x(1520,1) - x(1552,1))^2);
+LAMBDA_MATRIX(244,260) = DISTANCE;
+
+DISTANCE = sqrt((x(1551,1) - x(1553,1))^2 + (x(1552,1) - x(1554,1))^2);
+LAMBDA_MATRIX(260,261) = DISTANCE;
+
+DISTANCE = sqrt((x(1553,1) - x(1551,1))^2 + (x(1554,1) - x(1552,1))^2);
+LAMBDA_MATRIX(261,260) = DISTANCE;
+
+DISTANCE = sqrt((x(1553,1) - x(1519,1))^2 + (x(1554,1) - x(1520,1))^2);
+LAMBDA_MATRIX(261,244) = DISTANCE;
+
+DISTANCE = sqrt((x(1519,1) - x(1553,1))^2 + (x(1520,1) - x(1554,1))^2);
+LAMBDA_MATRIX(244,261) = DISTANCE;
+
+DISTANCE = sqrt((x(1519,1) - x(1551,1))^2 + (x(1520,1) - x(1552,1))^2);
+LAMBDA_MATRIX(244,260) = DISTANCE;
+
+DISTANCE = sqrt((x(1551,1) - x(1519,1))^2 + (x(1552,1) - x(1520,1))^2);
+LAMBDA_MATRIX(260,244) = DISTANCE;
+
+DISTANCE = sqrt((x(1591,1) - x(1585,1))^2 + (x(1592,1) - x(1586,1))^2);
+LAMBDA_MATRIX(280,277) = DISTANCE;
+
+DISTANCE = sqrt((x(1585,1) - x(1591,1))^2 + (x(1586,1) - x(1592,1))^2);
+LAMBDA_MATRIX(277,280) = DISTANCE;
+
+DISTANCE = sqrt((x(1585,1) - x(1551,1))^2 + (x(1586,1) - x(1552,1))^2);
+LAMBDA_MATRIX(277,260) = DISTANCE;
+
+DISTANCE = sqrt((x(1551,1) - x(1585,1))^2 + (x(1552,1) - x(1586,1))^2);
+LAMBDA_MATRIX(260,277) = DISTANCE;
+
+DISTANCE = sqrt((x(1551,1) - x(1591,1))^2 + (x(1552,1) - x(1592,1))^2);
+LAMBDA_MATRIX(260,280) = DISTANCE;
+
+DISTANCE = sqrt((x(1591,1) - x(1551,1))^2 + (x(1592,1) - x(1552,1))^2);
+LAMBDA_MATRIX(280,260) = DISTANCE;
+
+DISTANCE = sqrt((x(1551,1) - x(1559,1))^2 + (x(1552,1) - x(1560,1))^2);
+LAMBDA_MATRIX(260,264) = DISTANCE;
+
+DISTANCE = sqrt((x(1559,1) - x(1551,1))^2 + (x(1560,1) - x(1552,1))^2);
+LAMBDA_MATRIX(264,260) = DISTANCE;
+
+DISTANCE = sqrt((x(1559,1) - x(1591,1))^2 + (x(1560,1) - x(1592,1))^2);
+LAMBDA_MATRIX(264,280) = DISTANCE;
+
+DISTANCE = sqrt((x(1591,1) - x(1559,1))^2 + (x(1592,1) - x(1560,1))^2);
+LAMBDA_MATRIX(280,264) = DISTANCE;
+
+DISTANCE = sqrt((x(1591,1) - x(1551,1))^2 + (x(1592,1) - x(1552,1))^2);
+LAMBDA_MATRIX(280,260) = DISTANCE;
+
+DISTANCE = sqrt((x(1551,1) - x(1591,1))^2 + (x(1552,1) - x(1592,1))^2);
+LAMBDA_MATRIX(260,280) = DISTANCE;
+
+DISTANCE = sqrt((x(1521,1) - x(1559,1))^2 + (x(1522,1) - x(1560,1))^2);
+LAMBDA_MATRIX(245,264) = DISTANCE;
+
+DISTANCE = sqrt((x(1559,1) - x(1521,1))^2 + (x(1560,1) - x(1522,1))^2);
+LAMBDA_MATRIX(264,245) = DISTANCE;
+
+DISTANCE = sqrt((x(1559,1) - x(1551,1))^2 + (x(1560,1) - x(1552,1))^2);
+LAMBDA_MATRIX(264,260) = DISTANCE;
+
+DISTANCE = sqrt((x(1551,1) - x(1559,1))^2 + (x(1552,1) - x(1560,1))^2);
+LAMBDA_MATRIX(260,264) = DISTANCE;
+
+DISTANCE = sqrt((x(1551,1) - x(1521,1))^2 + (x(1552,1) - x(1522,1))^2);
+LAMBDA_MATRIX(260,245) = DISTANCE;
+
+DISTANCE = sqrt((x(1521,1) - x(1551,1))^2 + (x(1522,1) - x(1552,1))^2);
+LAMBDA_MATRIX(245,260) = DISTANCE;
+
+DISTANCE = sqrt((x(1683,1) - x(1715,1))^2 + (x(1684,1) - x(1716,1))^2);
+LAMBDA_MATRIX(326,342) = DISTANCE;
+
+DISTANCE = sqrt((x(1715,1) - x(1683,1))^2 + (x(1716,1) - x(1684,1))^2);
+LAMBDA_MATRIX(342,326) = DISTANCE;
+
+DISTANCE = sqrt((x(1715,1) - x(1665,1))^2 + (x(1716,1) - x(1666,1))^2);
+LAMBDA_MATRIX(342,317) = DISTANCE;
+
+DISTANCE = sqrt((x(1665,1) - x(1715,1))^2 + (x(1666,1) - x(1716,1))^2);
+LAMBDA_MATRIX(317,342) = DISTANCE;
+
+DISTANCE = sqrt((x(1665,1) - x(1683,1))^2 + (x(1666,1) - x(1684,1))^2);
+LAMBDA_MATRIX(317,326) = DISTANCE;
+
+DISTANCE = sqrt((x(1683,1) - x(1665,1))^2 + (x(1684,1) - x(1666,1))^2);
+LAMBDA_MATRIX(326,317) = DISTANCE;
+
+DISTANCE = sqrt((x(1735,1) - x(1715,1))^2 + (x(1736,1) - x(1716,1))^2);
+LAMBDA_MATRIX(352,342) = DISTANCE;
+
+DISTANCE = sqrt((x(1715,1) - x(1735,1))^2 + (x(1716,1) - x(1736,1))^2);
+LAMBDA_MATRIX(342,352) = DISTANCE;
+
+DISTANCE = sqrt((x(1715,1) - x(1683,1))^2 + (x(1716,1) - x(1684,1))^2);
+LAMBDA_MATRIX(342,326) = DISTANCE;
+
+DISTANCE = sqrt((x(1683,1) - x(1715,1))^2 + (x(1684,1) - x(1716,1))^2);
+LAMBDA_MATRIX(326,342) = DISTANCE;
+
+DISTANCE = sqrt((x(1683,1) - x(1735,1))^2 + (x(1684,1) - x(1736,1))^2);
+LAMBDA_MATRIX(326,352) = DISTANCE;
+
+DISTANCE = sqrt((x(1735,1) - x(1683,1))^2 + (x(1736,1) - x(1684,1))^2);
+LAMBDA_MATRIX(352,326) = DISTANCE;
+
+DISTANCE = sqrt((x(1683,1) - x(1705,1))^2 + (x(1684,1) - x(1706,1))^2);
+LAMBDA_MATRIX(326,337) = DISTANCE;
+
+DISTANCE = sqrt((x(1705,1) - x(1683,1))^2 + (x(1706,1) - x(1684,1))^2);
+LAMBDA_MATRIX(337,326) = DISTANCE;
+
+DISTANCE = sqrt((x(1705,1) - x(1735,1))^2 + (x(1706,1) - x(1736,1))^2);
+LAMBDA_MATRIX(337,352) = DISTANCE;
+
+DISTANCE = sqrt((x(1735,1) - x(1705,1))^2 + (x(1736,1) - x(1706,1))^2);
+LAMBDA_MATRIX(352,337) = DISTANCE;
+
+DISTANCE = sqrt((x(1735,1) - x(1683,1))^2 + (x(1736,1) - x(1684,1))^2);
+LAMBDA_MATRIX(352,326) = DISTANCE;
+
+DISTANCE = sqrt((x(1683,1) - x(1735,1))^2 + (x(1684,1) - x(1736,1))^2);
+LAMBDA_MATRIX(326,352) = DISTANCE;
+
+DISTANCE = sqrt((x(1683,1) - x(1661,1))^2 + (x(1684,1) - x(1662,1))^2);
+LAMBDA_MATRIX(326,315) = DISTANCE;
+
+DISTANCE = sqrt((x(1661,1) - x(1683,1))^2 + (x(1662,1) - x(1684,1))^2);
+LAMBDA_MATRIX(315,326) = DISTANCE;
+
+DISTANCE = sqrt((x(1661,1) - x(1705,1))^2 + (x(1662,1) - x(1706,1))^2);
+LAMBDA_MATRIX(315,337) = DISTANCE;
+
+DISTANCE = sqrt((x(1705,1) - x(1661,1))^2 + (x(1706,1) - x(1662,1))^2);
+LAMBDA_MATRIX(337,315) = DISTANCE;
+
+DISTANCE = sqrt((x(1705,1) - x(1683,1))^2 + (x(1706,1) - x(1684,1))^2);
+LAMBDA_MATRIX(337,326) = DISTANCE;
+
+DISTANCE = sqrt((x(1683,1) - x(1705,1))^2 + (x(1684,1) - x(1706,1))^2);
+LAMBDA_MATRIX(326,337) = DISTANCE;
+
+DISTANCE = sqrt((x(1665,1) - x(1627,1))^2 + (x(1666,1) - x(1628,1))^2);
+LAMBDA_MATRIX(317,298) = DISTANCE;
+
+DISTANCE = sqrt((x(1627,1) - x(1665,1))^2 + (x(1628,1) - x(1666,1))^2);
+LAMBDA_MATRIX(298,317) = DISTANCE;
+
+DISTANCE = sqrt((x(1627,1) - x(1641,1))^2 + (x(1628,1) - x(1642,1))^2);
+LAMBDA_MATRIX(298,305) = DISTANCE;
+
+DISTANCE = sqrt((x(1641,1) - x(1627,1))^2 + (x(1642,1) - x(1628,1))^2);
+LAMBDA_MATRIX(305,298) = DISTANCE;
+
+DISTANCE = sqrt((x(1641,1) - x(1665,1))^2 + (x(1642,1) - x(1666,1))^2);
+LAMBDA_MATRIX(305,317) = DISTANCE;
+
+DISTANCE = sqrt((x(1665,1) - x(1641,1))^2 + (x(1666,1) - x(1642,1))^2);
+LAMBDA_MATRIX(317,305) = DISTANCE;
+
+DISTANCE = sqrt((x(1641,1) - x(1627,1))^2 + (x(1642,1) - x(1628,1))^2);
+LAMBDA_MATRIX(305,298) = DISTANCE;
+
+DISTANCE = sqrt((x(1627,1) - x(1641,1))^2 + (x(1628,1) - x(1642,1))^2);
+LAMBDA_MATRIX(298,305) = DISTANCE;
+
+DISTANCE = sqrt((x(1627,1) - x(1613,1))^2 + (x(1628,1) - x(1614,1))^2);
+LAMBDA_MATRIX(298,291) = DISTANCE;
+
+DISTANCE = sqrt((x(1613,1) - x(1627,1))^2 + (x(1614,1) - x(1628,1))^2);
+LAMBDA_MATRIX(291,298) = DISTANCE;
+
+DISTANCE = sqrt((x(1613,1) - x(1641,1))^2 + (x(1614,1) - x(1642,1))^2);
+LAMBDA_MATRIX(291,305) = DISTANCE;
+
+DISTANCE = sqrt((x(1641,1) - x(1613,1))^2 + (x(1642,1) - x(1614,1))^2);
+LAMBDA_MATRIX(305,291) = DISTANCE;
+
+DISTANCE = sqrt((x(1641,1) - x(1683,1))^2 + (x(1642,1) - x(1684,1))^2);
+LAMBDA_MATRIX(305,326) = DISTANCE;
+
+DISTANCE = sqrt((x(1683,1) - x(1641,1))^2 + (x(1684,1) - x(1642,1))^2);
+LAMBDA_MATRIX(326,305) = DISTANCE;
+
+DISTANCE = sqrt((x(1683,1) - x(1665,1))^2 + (x(1684,1) - x(1666,1))^2);
+LAMBDA_MATRIX(326,317) = DISTANCE;
+
+DISTANCE = sqrt((x(1665,1) - x(1683,1))^2 + (x(1666,1) - x(1684,1))^2);
+LAMBDA_MATRIX(317,326) = DISTANCE;
+
+DISTANCE = sqrt((x(1665,1) - x(1641,1))^2 + (x(1666,1) - x(1642,1))^2);
+LAMBDA_MATRIX(317,305) = DISTANCE;
+
+DISTANCE = sqrt((x(1641,1) - x(1665,1))^2 + (x(1642,1) - x(1666,1))^2);
+LAMBDA_MATRIX(305,317) = DISTANCE;
+
+DISTANCE = sqrt((x(1661,1) - x(1683,1))^2 + (x(1662,1) - x(1684,1))^2);
+LAMBDA_MATRIX(315,326) = DISTANCE;
+
+DISTANCE = sqrt((x(1683,1) - x(1661,1))^2 + (x(1684,1) - x(1662,1))^2);
+LAMBDA_MATRIX(326,315) = DISTANCE;
+
+DISTANCE = sqrt((x(1683,1) - x(1641,1))^2 + (x(1684,1) - x(1642,1))^2);
+LAMBDA_MATRIX(326,305) = DISTANCE;
+
+DISTANCE = sqrt((x(1641,1) - x(1683,1))^2 + (x(1642,1) - x(1684,1))^2);
+LAMBDA_MATRIX(305,326) = DISTANCE;
+
+DISTANCE = sqrt((x(1641,1) - x(1661,1))^2 + (x(1642,1) - x(1662,1))^2);
+LAMBDA_MATRIX(305,315) = DISTANCE;
+
+DISTANCE = sqrt((x(1661,1) - x(1641,1))^2 + (x(1662,1) - x(1642,1))^2);
+LAMBDA_MATRIX(315,305) = DISTANCE;
+
+DISTANCE = sqrt((x(1641,1) - x(1613,1))^2 + (x(1642,1) - x(1614,1))^2);
+LAMBDA_MATRIX(305,291) = DISTANCE;
+
+DISTANCE = sqrt((x(1613,1) - x(1641,1))^2 + (x(1614,1) - x(1642,1))^2);
+LAMBDA_MATRIX(291,305) = DISTANCE;
+
+DISTANCE = sqrt((x(1613,1) - x(1621,1))^2 + (x(1614,1) - x(1622,1))^2);
+LAMBDA_MATRIX(291,295) = DISTANCE;
+
+DISTANCE = sqrt((x(1621,1) - x(1613,1))^2 + (x(1622,1) - x(1614,1))^2);
+LAMBDA_MATRIX(295,291) = DISTANCE;
+
+DISTANCE = sqrt((x(1621,1) - x(1641,1))^2 + (x(1622,1) - x(1642,1))^2);
+LAMBDA_MATRIX(295,305) = DISTANCE;
+
+DISTANCE = sqrt((x(1641,1) - x(1621,1))^2 + (x(1642,1) - x(1622,1))^2);
+LAMBDA_MATRIX(305,295) = DISTANCE;
+
+DISTANCE = sqrt((x(1621,1) - x(1661,1))^2 + (x(1622,1) - x(1662,1))^2);
+LAMBDA_MATRIX(295,315) = DISTANCE;
+
+DISTANCE = sqrt((x(1661,1) - x(1621,1))^2 + (x(1662,1) - x(1622,1))^2);
+LAMBDA_MATRIX(315,295) = DISTANCE;
+
+DISTANCE = sqrt((x(1661,1) - x(1641,1))^2 + (x(1662,1) - x(1642,1))^2);
+LAMBDA_MATRIX(315,305) = DISTANCE;
+
+DISTANCE = sqrt((x(1641,1) - x(1661,1))^2 + (x(1642,1) - x(1662,1))^2);
+LAMBDA_MATRIX(305,315) = DISTANCE;
+
+DISTANCE = sqrt((x(1641,1) - x(1621,1))^2 + (x(1642,1) - x(1622,1))^2);
+LAMBDA_MATRIX(305,295) = DISTANCE;
+
+DISTANCE = sqrt((x(1621,1) - x(1641,1))^2 + (x(1622,1) - x(1642,1))^2);
+LAMBDA_MATRIX(295,305) = DISTANCE;
+
+DISTANCE = sqrt((x(1737,1) - x(1681,1))^2 + (x(1738,1) - x(1682,1))^2);
+LAMBDA_MATRIX(353,325) = DISTANCE;
+
+DISTANCE = sqrt((x(1681,1) - x(1737,1))^2 + (x(1682,1) - x(1738,1))^2);
+LAMBDA_MATRIX(325,353) = DISTANCE;
+
+DISTANCE = sqrt((x(1681,1) - x(1701,1))^2 + (x(1682,1) - x(1702,1))^2);
+LAMBDA_MATRIX(325,335) = DISTANCE;
+
+DISTANCE = sqrt((x(1701,1) - x(1681,1))^2 + (x(1702,1) - x(1682,1))^2);
+LAMBDA_MATRIX(335,325) = DISTANCE;
+
+DISTANCE = sqrt((x(1701,1) - x(1737,1))^2 + (x(1702,1) - x(1738,1))^2);
+LAMBDA_MATRIX(335,353) = DISTANCE;
+
+DISTANCE = sqrt((x(1737,1) - x(1701,1))^2 + (x(1738,1) - x(1702,1))^2);
+LAMBDA_MATRIX(353,335) = DISTANCE;
+
+DISTANCE = sqrt((x(1665,1) - x(1715,1))^2 + (x(1666,1) - x(1716,1))^2);
+LAMBDA_MATRIX(317,342) = DISTANCE;
+
+DISTANCE = sqrt((x(1715,1) - x(1665,1))^2 + (x(1716,1) - x(1666,1))^2);
+LAMBDA_MATRIX(342,317) = DISTANCE;
+
+DISTANCE = sqrt((x(1715,1) - x(1701,1))^2 + (x(1716,1) - x(1702,1))^2);
+LAMBDA_MATRIX(342,335) = DISTANCE;
+
+DISTANCE = sqrt((x(1701,1) - x(1715,1))^2 + (x(1702,1) - x(1716,1))^2);
+LAMBDA_MATRIX(335,342) = DISTANCE;
+
+DISTANCE = sqrt((x(1701,1) - x(1665,1))^2 + (x(1702,1) - x(1666,1))^2);
+LAMBDA_MATRIX(335,317) = DISTANCE;
+
+DISTANCE = sqrt((x(1665,1) - x(1701,1))^2 + (x(1666,1) - x(1702,1))^2);
+LAMBDA_MATRIX(317,335) = DISTANCE;
+
+DISTANCE = sqrt((x(1753,1) - x(1737,1))^2 + (x(1754,1) - x(1738,1))^2);
+LAMBDA_MATRIX(361,353) = DISTANCE;
+
+DISTANCE = sqrt((x(1737,1) - x(1753,1))^2 + (x(1738,1) - x(1754,1))^2);
+LAMBDA_MATRIX(353,361) = DISTANCE;
+
+DISTANCE = sqrt((x(1737,1) - x(1701,1))^2 + (x(1738,1) - x(1702,1))^2);
+LAMBDA_MATRIX(353,335) = DISTANCE;
+
+DISTANCE = sqrt((x(1701,1) - x(1737,1))^2 + (x(1702,1) - x(1738,1))^2);
+LAMBDA_MATRIX(335,353) = DISTANCE;
+
+DISTANCE = sqrt((x(1701,1) - x(1753,1))^2 + (x(1702,1) - x(1754,1))^2);
+LAMBDA_MATRIX(335,361) = DISTANCE;
+
+DISTANCE = sqrt((x(1753,1) - x(1701,1))^2 + (x(1754,1) - x(1702,1))^2);
+LAMBDA_MATRIX(361,335) = DISTANCE;
+
+DISTANCE = sqrt((x(1701,1) - x(1715,1))^2 + (x(1702,1) - x(1716,1))^2);
+LAMBDA_MATRIX(335,342) = DISTANCE;
+
+DISTANCE = sqrt((x(1715,1) - x(1701,1))^2 + (x(1716,1) - x(1702,1))^2);
+LAMBDA_MATRIX(342,335) = DISTANCE;
+
+DISTANCE = sqrt((x(1715,1) - x(1753,1))^2 + (x(1716,1) - x(1754,1))^2);
+LAMBDA_MATRIX(342,361) = DISTANCE;
+
+DISTANCE = sqrt((x(1753,1) - x(1715,1))^2 + (x(1754,1) - x(1716,1))^2);
+LAMBDA_MATRIX(361,342) = DISTANCE;
+
+DISTANCE = sqrt((x(1753,1) - x(1701,1))^2 + (x(1754,1) - x(1702,1))^2);
+LAMBDA_MATRIX(361,335) = DISTANCE;
+
+DISTANCE = sqrt((x(1701,1) - x(1753,1))^2 + (x(1702,1) - x(1754,1))^2);
+LAMBDA_MATRIX(335,361) = DISTANCE;
+
+DISTANCE = sqrt((x(1461,1) - x(1499,1))^2 + (x(1462,1) - x(1500,1))^2);
+LAMBDA_MATRIX(215,234) = DISTANCE;
+
+DISTANCE = sqrt((x(1499,1) - x(1461,1))^2 + (x(1500,1) - x(1462,1))^2);
+LAMBDA_MATRIX(234,215) = DISTANCE;
+
+DISTANCE = sqrt((x(1499,1) - x(1463,1))^2 + (x(1500,1) - x(1464,1))^2);
+LAMBDA_MATRIX(234,216) = DISTANCE;
+
+DISTANCE = sqrt((x(1463,1) - x(1499,1))^2 + (x(1464,1) - x(1500,1))^2);
+LAMBDA_MATRIX(216,234) = DISTANCE;
+
+DISTANCE = sqrt((x(1463,1) - x(1461,1))^2 + (x(1464,1) - x(1462,1))^2);
+LAMBDA_MATRIX(216,215) = DISTANCE;
+
+DISTANCE = sqrt((x(1461,1) - x(1463,1))^2 + (x(1462,1) - x(1464,1))^2);
+LAMBDA_MATRIX(215,216) = DISTANCE;
+
+DISTANCE = sqrt((x(1341,1) - x(1395,1))^2 + (x(1342,1) - x(1396,1))^2);
+LAMBDA_MATRIX(155,182) = DISTANCE;
+
+DISTANCE = sqrt((x(1395,1) - x(1341,1))^2 + (x(1396,1) - x(1342,1))^2);
+LAMBDA_MATRIX(182,155) = DISTANCE;
+
+DISTANCE = sqrt((x(1395,1) - x(1369,1))^2 + (x(1396,1) - x(1370,1))^2);
+LAMBDA_MATRIX(182,169) = DISTANCE;
+
+DISTANCE = sqrt((x(1369,1) - x(1395,1))^2 + (x(1370,1) - x(1396,1))^2);
+LAMBDA_MATRIX(169,182) = DISTANCE;
+
+DISTANCE = sqrt((x(1369,1) - x(1341,1))^2 + (x(1370,1) - x(1342,1))^2);
+LAMBDA_MATRIX(169,155) = DISTANCE;
+
+DISTANCE = sqrt((x(1341,1) - x(1369,1))^2 + (x(1342,1) - x(1370,1))^2);
+LAMBDA_MATRIX(155,169) = DISTANCE;
+
+DISTANCE = sqrt((x(1321,1) - x(1341,1))^2 + (x(1322,1) - x(1342,1))^2);
+LAMBDA_MATRIX(145,155) = DISTANCE;
+
+DISTANCE = sqrt((x(1341,1) - x(1321,1))^2 + (x(1342,1) - x(1322,1))^2);
+LAMBDA_MATRIX(155,145) = DISTANCE;
+
+DISTANCE = sqrt((x(1341,1) - x(1369,1))^2 + (x(1342,1) - x(1370,1))^2);
+LAMBDA_MATRIX(155,169) = DISTANCE;
+
+DISTANCE = sqrt((x(1369,1) - x(1341,1))^2 + (x(1370,1) - x(1342,1))^2);
+LAMBDA_MATRIX(169,155) = DISTANCE;
+
+DISTANCE = sqrt((x(1369,1) - x(1321,1))^2 + (x(1370,1) - x(1322,1))^2);
+LAMBDA_MATRIX(169,145) = DISTANCE;
+
+DISTANCE = sqrt((x(1321,1) - x(1369,1))^2 + (x(1322,1) - x(1370,1))^2);
+LAMBDA_MATRIX(145,169) = DISTANCE;
+
+DISTANCE = sqrt((x(1343,1) - x(1321,1))^2 + (x(1344,1) - x(1322,1))^2);
+LAMBDA_MATRIX(156,145) = DISTANCE;
+
+DISTANCE = sqrt((x(1321,1) - x(1343,1))^2 + (x(1322,1) - x(1344,1))^2);
+LAMBDA_MATRIX(145,156) = DISTANCE;
+
+DISTANCE = sqrt((x(1321,1) - x(1369,1))^2 + (x(1322,1) - x(1370,1))^2);
+LAMBDA_MATRIX(145,169) = DISTANCE;
+
+DISTANCE = sqrt((x(1369,1) - x(1321,1))^2 + (x(1370,1) - x(1322,1))^2);
+LAMBDA_MATRIX(169,145) = DISTANCE;
+
+DISTANCE = sqrt((x(1369,1) - x(1343,1))^2 + (x(1370,1) - x(1344,1))^2);
+LAMBDA_MATRIX(169,156) = DISTANCE;
+
+DISTANCE = sqrt((x(1343,1) - x(1369,1))^2 + (x(1344,1) - x(1370,1))^2);
+LAMBDA_MATRIX(156,169) = DISTANCE;
+
+DISTANCE = sqrt((x(1369,1) - x(1393,1))^2 + (x(1370,1) - x(1394,1))^2);
+LAMBDA_MATRIX(169,181) = DISTANCE;
+
+DISTANCE = sqrt((x(1393,1) - x(1369,1))^2 + (x(1394,1) - x(1370,1))^2);
+LAMBDA_MATRIX(181,169) = DISTANCE;
+
+DISTANCE = sqrt((x(1393,1) - x(1343,1))^2 + (x(1394,1) - x(1344,1))^2);
+LAMBDA_MATRIX(181,156) = DISTANCE;
+
+DISTANCE = sqrt((x(1343,1) - x(1393,1))^2 + (x(1344,1) - x(1394,1))^2);
+LAMBDA_MATRIX(156,181) = DISTANCE;
+
+DISTANCE = sqrt((x(1343,1) - x(1369,1))^2 + (x(1344,1) - x(1370,1))^2);
+LAMBDA_MATRIX(156,169) = DISTANCE;
+
+DISTANCE = sqrt((x(1369,1) - x(1343,1))^2 + (x(1370,1) - x(1344,1))^2);
+LAMBDA_MATRIX(169,156) = DISTANCE;
+
+DISTANCE = sqrt((x(1439,1) - x(1395,1))^2 + (x(1440,1) - x(1396,1))^2);
+LAMBDA_MATRIX(204,182) = DISTANCE;
+
+DISTANCE = sqrt((x(1395,1) - x(1439,1))^2 + (x(1396,1) - x(1440,1))^2);
+LAMBDA_MATRIX(182,204) = DISTANCE;
+
+DISTANCE = sqrt((x(1395,1) - x(1413,1))^2 + (x(1396,1) - x(1414,1))^2);
+LAMBDA_MATRIX(182,191) = DISTANCE;
+
+DISTANCE = sqrt((x(1413,1) - x(1395,1))^2 + (x(1414,1) - x(1396,1))^2);
+LAMBDA_MATRIX(191,182) = DISTANCE;
+
+DISTANCE = sqrt((x(1413,1) - x(1439,1))^2 + (x(1414,1) - x(1440,1))^2);
+LAMBDA_MATRIX(191,204) = DISTANCE;
+
+DISTANCE = sqrt((x(1439,1) - x(1413,1))^2 + (x(1440,1) - x(1414,1))^2);
+LAMBDA_MATRIX(204,191) = DISTANCE;
+
+DISTANCE = sqrt((x(1413,1) - x(1455,1))^2 + (x(1414,1) - x(1456,1))^2);
+LAMBDA_MATRIX(191,212) = DISTANCE;
+
+DISTANCE = sqrt((x(1455,1) - x(1413,1))^2 + (x(1456,1) - x(1414,1))^2);
+LAMBDA_MATRIX(212,191) = DISTANCE;
+
+DISTANCE = sqrt((x(1455,1) - x(1439,1))^2 + (x(1456,1) - x(1440,1))^2);
+LAMBDA_MATRIX(212,204) = DISTANCE;
+
+DISTANCE = sqrt((x(1439,1) - x(1455,1))^2 + (x(1440,1) - x(1456,1))^2);
+LAMBDA_MATRIX(204,212) = DISTANCE;
+
+DISTANCE = sqrt((x(1439,1) - x(1413,1))^2 + (x(1440,1) - x(1414,1))^2);
+LAMBDA_MATRIX(204,191) = DISTANCE;
+
+DISTANCE = sqrt((x(1413,1) - x(1439,1))^2 + (x(1414,1) - x(1440,1))^2);
+LAMBDA_MATRIX(191,204) = DISTANCE;
+
+DISTANCE = sqrt((x(1413,1) - x(1395,1))^2 + (x(1414,1) - x(1396,1))^2);
+LAMBDA_MATRIX(191,182) = DISTANCE;
+
+DISTANCE = sqrt((x(1395,1) - x(1413,1))^2 + (x(1396,1) - x(1414,1))^2);
+LAMBDA_MATRIX(182,191) = DISTANCE;
+
+DISTANCE = sqrt((x(1395,1) - x(1361,1))^2 + (x(1396,1) - x(1362,1))^2);
+LAMBDA_MATRIX(182,165) = DISTANCE;
+
+DISTANCE = sqrt((x(1361,1) - x(1395,1))^2 + (x(1362,1) - x(1396,1))^2);
+LAMBDA_MATRIX(165,182) = DISTANCE;
+
+DISTANCE = sqrt((x(1361,1) - x(1413,1))^2 + (x(1362,1) - x(1414,1))^2);
+LAMBDA_MATRIX(165,191) = DISTANCE;
+
+DISTANCE = sqrt((x(1413,1) - x(1361,1))^2 + (x(1414,1) - x(1362,1))^2);
+LAMBDA_MATRIX(191,165) = DISTANCE;
+
+DISTANCE = sqrt((x(1329,1) - x(1383,1))^2 + (x(1330,1) - x(1384,1))^2);
+LAMBDA_MATRIX(149,176) = DISTANCE;
+
+DISTANCE = sqrt((x(1383,1) - x(1329,1))^2 + (x(1384,1) - x(1330,1))^2);
+LAMBDA_MATRIX(176,149) = DISTANCE;
+
+DISTANCE = sqrt((x(1383,1) - x(1361,1))^2 + (x(1384,1) - x(1362,1))^2);
+LAMBDA_MATRIX(176,165) = DISTANCE;
+
+DISTANCE = sqrt((x(1361,1) - x(1383,1))^2 + (x(1362,1) - x(1384,1))^2);
+LAMBDA_MATRIX(165,176) = DISTANCE;
+
+DISTANCE = sqrt((x(1361,1) - x(1329,1))^2 + (x(1362,1) - x(1330,1))^2);
+LAMBDA_MATRIX(165,149) = DISTANCE;
+
+DISTANCE = sqrt((x(1329,1) - x(1361,1))^2 + (x(1330,1) - x(1362,1))^2);
+LAMBDA_MATRIX(149,165) = DISTANCE;
+
+DISTANCE = sqrt((x(1361,1) - x(1383,1))^2 + (x(1362,1) - x(1384,1))^2);
+LAMBDA_MATRIX(165,176) = DISTANCE;
+
+DISTANCE = sqrt((x(1383,1) - x(1361,1))^2 + (x(1384,1) - x(1362,1))^2);
+LAMBDA_MATRIX(176,165) = DISTANCE;
+
+DISTANCE = sqrt((x(1383,1) - x(1413,1))^2 + (x(1384,1) - x(1414,1))^2);
+LAMBDA_MATRIX(176,191) = DISTANCE;
+
+DISTANCE = sqrt((x(1413,1) - x(1383,1))^2 + (x(1414,1) - x(1384,1))^2);
+LAMBDA_MATRIX(191,176) = DISTANCE;
+
+DISTANCE = sqrt((x(1413,1) - x(1361,1))^2 + (x(1414,1) - x(1362,1))^2);
+LAMBDA_MATRIX(191,165) = DISTANCE;
+
+DISTANCE = sqrt((x(1361,1) - x(1413,1))^2 + (x(1362,1) - x(1414,1))^2);
+LAMBDA_MATRIX(165,191) = DISTANCE;
+
+DISTANCE = sqrt((x(1361,1) - x(1395,1))^2 + (x(1362,1) - x(1396,1))^2);
+LAMBDA_MATRIX(165,182) = DISTANCE;
+
+DISTANCE = sqrt((x(1395,1) - x(1361,1))^2 + (x(1396,1) - x(1362,1))^2);
+LAMBDA_MATRIX(182,165) = DISTANCE;
+
+DISTANCE = sqrt((x(1395,1) - x(1341,1))^2 + (x(1396,1) - x(1342,1))^2);
+LAMBDA_MATRIX(182,155) = DISTANCE;
+
+DISTANCE = sqrt((x(1341,1) - x(1395,1))^2 + (x(1342,1) - x(1396,1))^2);
+LAMBDA_MATRIX(155,182) = DISTANCE;
+
+DISTANCE = sqrt((x(1341,1) - x(1361,1))^2 + (x(1342,1) - x(1362,1))^2);
+LAMBDA_MATRIX(155,165) = DISTANCE;
+
+DISTANCE = sqrt((x(1361,1) - x(1341,1))^2 + (x(1362,1) - x(1342,1))^2);
+LAMBDA_MATRIX(165,155) = DISTANCE;
+
+DISTANCE = sqrt((x(1307,1) - x(1329,1))^2 + (x(1308,1) - x(1330,1))^2);
+LAMBDA_MATRIX(138,149) = DISTANCE;
+
+DISTANCE = sqrt((x(1329,1) - x(1307,1))^2 + (x(1330,1) - x(1308,1))^2);
+LAMBDA_MATRIX(149,138) = DISTANCE;
+
+DISTANCE = sqrt((x(1329,1) - x(1361,1))^2 + (x(1330,1) - x(1362,1))^2);
+LAMBDA_MATRIX(149,165) = DISTANCE;
+
+DISTANCE = sqrt((x(1361,1) - x(1329,1))^2 + (x(1362,1) - x(1330,1))^2);
+LAMBDA_MATRIX(165,149) = DISTANCE;
+
+DISTANCE = sqrt((x(1361,1) - x(1307,1))^2 + (x(1362,1) - x(1308,1))^2);
+LAMBDA_MATRIX(165,138) = DISTANCE;
+
+DISTANCE = sqrt((x(1307,1) - x(1361,1))^2 + (x(1308,1) - x(1362,1))^2);
+LAMBDA_MATRIX(138,165) = DISTANCE;
+
+DISTANCE = sqrt((x(1361,1) - x(1341,1))^2 + (x(1362,1) - x(1342,1))^2);
+LAMBDA_MATRIX(165,155) = DISTANCE;
+
+DISTANCE = sqrt((x(1341,1) - x(1361,1))^2 + (x(1342,1) - x(1362,1))^2);
+LAMBDA_MATRIX(155,165) = DISTANCE;
+
+DISTANCE = sqrt((x(1341,1) - x(1307,1))^2 + (x(1342,1) - x(1308,1))^2);
+LAMBDA_MATRIX(155,138) = DISTANCE;
+
+DISTANCE = sqrt((x(1307,1) - x(1341,1))^2 + (x(1308,1) - x(1342,1))^2);
+LAMBDA_MATRIX(138,155) = DISTANCE;
+
+DISTANCE = sqrt((x(1307,1) - x(1361,1))^2 + (x(1308,1) - x(1362,1))^2);
+LAMBDA_MATRIX(138,165) = DISTANCE;
+
+DISTANCE = sqrt((x(1361,1) - x(1307,1))^2 + (x(1362,1) - x(1308,1))^2);
+LAMBDA_MATRIX(165,138) = DISTANCE;
+
+DISTANCE = sqrt((x(1481,1) - x(1455,1))^2 + (x(1482,1) - x(1456,1))^2);
+LAMBDA_MATRIX(225,212) = DISTANCE;
+
+DISTANCE = sqrt((x(1455,1) - x(1481,1))^2 + (x(1456,1) - x(1482,1))^2);
+LAMBDA_MATRIX(212,225) = DISTANCE;
+
+DISTANCE = sqrt((x(1455,1) - x(1495,1))^2 + (x(1456,1) - x(1496,1))^2);
+LAMBDA_MATRIX(212,232) = DISTANCE;
+
+DISTANCE = sqrt((x(1495,1) - x(1455,1))^2 + (x(1496,1) - x(1456,1))^2);
+LAMBDA_MATRIX(232,212) = DISTANCE;
+
+DISTANCE = sqrt((x(1495,1) - x(1481,1))^2 + (x(1496,1) - x(1482,1))^2);
+LAMBDA_MATRIX(232,225) = DISTANCE;
+
+DISTANCE = sqrt((x(1481,1) - x(1495,1))^2 + (x(1482,1) - x(1496,1))^2);
+LAMBDA_MATRIX(225,232) = DISTANCE;
+
+DISTANCE = sqrt((x(1481,1) - x(1495,1))^2 + (x(1482,1) - x(1496,1))^2);
+LAMBDA_MATRIX(225,232) = DISTANCE;
+
+DISTANCE = sqrt((x(1495,1) - x(1481,1))^2 + (x(1496,1) - x(1482,1))^2);
+LAMBDA_MATRIX(232,225) = DISTANCE;
+
+DISTANCE = sqrt((x(1495,1) - x(1515,1))^2 + (x(1496,1) - x(1516,1))^2);
+LAMBDA_MATRIX(232,242) = DISTANCE;
+
+DISTANCE = sqrt((x(1515,1) - x(1495,1))^2 + (x(1516,1) - x(1496,1))^2);
+LAMBDA_MATRIX(242,232) = DISTANCE;
+
+DISTANCE = sqrt((x(1515,1) - x(1481,1))^2 + (x(1516,1) - x(1482,1))^2);
+LAMBDA_MATRIX(242,225) = DISTANCE;
+
+DISTANCE = sqrt((x(1481,1) - x(1515,1))^2 + (x(1482,1) - x(1516,1))^2);
+LAMBDA_MATRIX(225,242) = DISTANCE;
+
+DISTANCE = sqrt((x(1461,1) - x(1439,1))^2 + (x(1462,1) - x(1440,1))^2);
+LAMBDA_MATRIX(215,204) = DISTANCE;
+
+DISTANCE = sqrt((x(1439,1) - x(1461,1))^2 + (x(1440,1) - x(1462,1))^2);
+LAMBDA_MATRIX(204,215) = DISTANCE;
+
+DISTANCE = sqrt((x(1439,1) - x(1481,1))^2 + (x(1440,1) - x(1482,1))^2);
+LAMBDA_MATRIX(204,225) = DISTANCE;
+
+DISTANCE = sqrt((x(1481,1) - x(1439,1))^2 + (x(1482,1) - x(1440,1))^2);
+LAMBDA_MATRIX(225,204) = DISTANCE;
+
+DISTANCE = sqrt((x(1481,1) - x(1461,1))^2 + (x(1482,1) - x(1462,1))^2);
+LAMBDA_MATRIX(225,215) = DISTANCE;
+
+DISTANCE = sqrt((x(1461,1) - x(1481,1))^2 + (x(1462,1) - x(1482,1))^2);
+LAMBDA_MATRIX(215,225) = DISTANCE;
+
+DISTANCE = sqrt((x(1481,1) - x(1439,1))^2 + (x(1482,1) - x(1440,1))^2);
+LAMBDA_MATRIX(225,204) = DISTANCE;
+
+DISTANCE = sqrt((x(1439,1) - x(1481,1))^2 + (x(1440,1) - x(1482,1))^2);
+LAMBDA_MATRIX(204,225) = DISTANCE;
+
+DISTANCE = sqrt((x(1439,1) - x(1455,1))^2 + (x(1440,1) - x(1456,1))^2);
+LAMBDA_MATRIX(204,212) = DISTANCE;
+
+DISTANCE = sqrt((x(1455,1) - x(1439,1))^2 + (x(1456,1) - x(1440,1))^2);
+LAMBDA_MATRIX(212,204) = DISTANCE;
+
+DISTANCE = sqrt((x(1455,1) - x(1481,1))^2 + (x(1456,1) - x(1482,1))^2);
+LAMBDA_MATRIX(212,225) = DISTANCE;
+
+DISTANCE = sqrt((x(1481,1) - x(1455,1))^2 + (x(1482,1) - x(1456,1))^2);
+LAMBDA_MATRIX(225,212) = DISTANCE;
+
+DISTANCE = sqrt((x(1481,1) - x(1499,1))^2 + (x(1482,1) - x(1500,1))^2);
+LAMBDA_MATRIX(225,234) = DISTANCE;
+
+DISTANCE = sqrt((x(1499,1) - x(1481,1))^2 + (x(1500,1) - x(1482,1))^2);
+LAMBDA_MATRIX(234,225) = DISTANCE;
+
+DISTANCE = sqrt((x(1499,1) - x(1461,1))^2 + (x(1500,1) - x(1462,1))^2);
+LAMBDA_MATRIX(234,215) = DISTANCE;
+
+DISTANCE = sqrt((x(1461,1) - x(1499,1))^2 + (x(1462,1) - x(1500,1))^2);
+LAMBDA_MATRIX(215,234) = DISTANCE;
+
+DISTANCE = sqrt((x(1461,1) - x(1481,1))^2 + (x(1462,1) - x(1482,1))^2);
+LAMBDA_MATRIX(215,225) = DISTANCE;
+
+DISTANCE = sqrt((x(1481,1) - x(1461,1))^2 + (x(1482,1) - x(1462,1))^2);
+LAMBDA_MATRIX(225,215) = DISTANCE;
+
+DISTANCE = sqrt((x(1515,1) - x(1499,1))^2 + (x(1516,1) - x(1500,1))^2);
+LAMBDA_MATRIX(242,234) = DISTANCE;
+
+DISTANCE = sqrt((x(1499,1) - x(1515,1))^2 + (x(1500,1) - x(1516,1))^2);
+LAMBDA_MATRIX(234,242) = DISTANCE;
+
+DISTANCE = sqrt((x(1499,1) - x(1481,1))^2 + (x(1500,1) - x(1482,1))^2);
+LAMBDA_MATRIX(234,225) = DISTANCE;
+
+DISTANCE = sqrt((x(1481,1) - x(1499,1))^2 + (x(1482,1) - x(1500,1))^2);
+LAMBDA_MATRIX(225,234) = DISTANCE;
+
+DISTANCE = sqrt((x(1481,1) - x(1515,1))^2 + (x(1482,1) - x(1516,1))^2);
+LAMBDA_MATRIX(225,242) = DISTANCE;
+
+DISTANCE = sqrt((x(1515,1) - x(1481,1))^2 + (x(1516,1) - x(1482,1))^2);
+LAMBDA_MATRIX(242,225) = DISTANCE;
+
+DISTANCE = sqrt((x(1433,1) - x(1455,1))^2 + (x(1434,1) - x(1456,1))^2);
+LAMBDA_MATRIX(201,212) = DISTANCE;
+
+DISTANCE = sqrt((x(1455,1) - x(1433,1))^2 + (x(1456,1) - x(1434,1))^2);
+LAMBDA_MATRIX(212,201) = DISTANCE;
+
+DISTANCE = sqrt((x(1455,1) - x(1413,1))^2 + (x(1456,1) - x(1414,1))^2);
+LAMBDA_MATRIX(212,191) = DISTANCE;
+
+DISTANCE = sqrt((x(1413,1) - x(1455,1))^2 + (x(1414,1) - x(1456,1))^2);
+LAMBDA_MATRIX(191,212) = DISTANCE;
+
+DISTANCE = sqrt((x(1413,1) - x(1433,1))^2 + (x(1414,1) - x(1434,1))^2);
+LAMBDA_MATRIX(191,201) = DISTANCE;
+
+DISTANCE = sqrt((x(1433,1) - x(1413,1))^2 + (x(1434,1) - x(1414,1))^2);
+LAMBDA_MATRIX(201,191) = DISTANCE;
+
+DISTANCE = sqrt((x(1433,1) - x(1397,1))^2 + (x(1434,1) - x(1398,1))^2);
+LAMBDA_MATRIX(201,183) = DISTANCE;
+
+DISTANCE = sqrt((x(1397,1) - x(1433,1))^2 + (x(1398,1) - x(1434,1))^2);
+LAMBDA_MATRIX(183,201) = DISTANCE;
+
+DISTANCE = sqrt((x(1397,1) - x(1445,1))^2 + (x(1398,1) - x(1446,1))^2);
+LAMBDA_MATRIX(183,207) = DISTANCE;
+
+DISTANCE = sqrt((x(1445,1) - x(1397,1))^2 + (x(1446,1) - x(1398,1))^2);
+LAMBDA_MATRIX(207,183) = DISTANCE;
+
+DISTANCE = sqrt((x(1445,1) - x(1433,1))^2 + (x(1446,1) - x(1434,1))^2);
+LAMBDA_MATRIX(207,201) = DISTANCE;
+
+DISTANCE = sqrt((x(1433,1) - x(1445,1))^2 + (x(1434,1) - x(1446,1))^2);
+LAMBDA_MATRIX(201,207) = DISTANCE;
+
+DISTANCE = sqrt((x(1433,1) - x(1383,1))^2 + (x(1434,1) - x(1384,1))^2);
+LAMBDA_MATRIX(201,176) = DISTANCE;
+
+DISTANCE = sqrt((x(1383,1) - x(1433,1))^2 + (x(1384,1) - x(1434,1))^2);
+LAMBDA_MATRIX(176,201) = DISTANCE;
+
+DISTANCE = sqrt((x(1383,1) - x(1397,1))^2 + (x(1384,1) - x(1398,1))^2);
+LAMBDA_MATRIX(176,183) = DISTANCE;
+
+DISTANCE = sqrt((x(1397,1) - x(1383,1))^2 + (x(1398,1) - x(1384,1))^2);
+LAMBDA_MATRIX(183,176) = DISTANCE;
+
+DISTANCE = sqrt((x(1397,1) - x(1433,1))^2 + (x(1398,1) - x(1434,1))^2);
+LAMBDA_MATRIX(183,201) = DISTANCE;
+
+DISTANCE = sqrt((x(1433,1) - x(1397,1))^2 + (x(1434,1) - x(1398,1))^2);
+LAMBDA_MATRIX(201,183) = DISTANCE;
+
+DISTANCE = sqrt((x(1413,1) - x(1383,1))^2 + (x(1414,1) - x(1384,1))^2);
+LAMBDA_MATRIX(191,176) = DISTANCE;
+
+DISTANCE = sqrt((x(1383,1) - x(1413,1))^2 + (x(1384,1) - x(1414,1))^2);
+LAMBDA_MATRIX(176,191) = DISTANCE;
+
+DISTANCE = sqrt((x(1383,1) - x(1433,1))^2 + (x(1384,1) - x(1434,1))^2);
+LAMBDA_MATRIX(176,201) = DISTANCE;
+
+DISTANCE = sqrt((x(1433,1) - x(1383,1))^2 + (x(1434,1) - x(1384,1))^2);
+LAMBDA_MATRIX(201,176) = DISTANCE;
+
+DISTANCE = sqrt((x(1433,1) - x(1413,1))^2 + (x(1434,1) - x(1414,1))^2);
+LAMBDA_MATRIX(201,191) = DISTANCE;
+
+DISTANCE = sqrt((x(1413,1) - x(1433,1))^2 + (x(1414,1) - x(1434,1))^2);
+LAMBDA_MATRIX(191,201) = DISTANCE;
+
+DISTANCE = sqrt((x(1807,1) - x(1771,1))^2 + (x(1808,1) - x(1772,1))^2);
+LAMBDA_MATRIX(388,370) = DISTANCE;
+
+DISTANCE = sqrt((x(1771,1) - x(1807,1))^2 + (x(1772,1) - x(1808,1))^2);
+LAMBDA_MATRIX(370,388) = DISTANCE;
+
+DISTANCE = sqrt((x(1771,1) - x(1823,1))^2 + (x(1772,1) - x(1824,1))^2);
+LAMBDA_MATRIX(370,396) = DISTANCE;
+
+DISTANCE = sqrt((x(1823,1) - x(1771,1))^2 + (x(1824,1) - x(1772,1))^2);
+LAMBDA_MATRIX(396,370) = DISTANCE;
+
+DISTANCE = sqrt((x(1823,1) - x(1807,1))^2 + (x(1824,1) - x(1808,1))^2);
+LAMBDA_MATRIX(396,388) = DISTANCE;
+
+DISTANCE = sqrt((x(1807,1) - x(1823,1))^2 + (x(1808,1) - x(1824,1))^2);
+LAMBDA_MATRIX(388,396) = DISTANCE;
+
+DISTANCE = sqrt((x(1861,1) - x(1807,1))^2 + (x(1862,1) - x(1808,1))^2);
+LAMBDA_MATRIX(415,388) = DISTANCE;
+
+DISTANCE = sqrt((x(1807,1) - x(1861,1))^2 + (x(1808,1) - x(1862,1))^2);
+LAMBDA_MATRIX(388,415) = DISTANCE;
+
+DISTANCE = sqrt((x(1807,1) - x(1823,1))^2 + (x(1808,1) - x(1824,1))^2);
+LAMBDA_MATRIX(388,396) = DISTANCE;
+
+DISTANCE = sqrt((x(1823,1) - x(1807,1))^2 + (x(1824,1) - x(1808,1))^2);
+LAMBDA_MATRIX(396,388) = DISTANCE;
+
+DISTANCE = sqrt((x(1823,1) - x(1861,1))^2 + (x(1824,1) - x(1862,1))^2);
+LAMBDA_MATRIX(396,415) = DISTANCE;
+
+DISTANCE = sqrt((x(1861,1) - x(1823,1))^2 + (x(1862,1) - x(1824,1))^2);
+LAMBDA_MATRIX(415,396) = DISTANCE;
+
+DISTANCE = sqrt((x(1785,1) - x(1831,1))^2 + (x(1786,1) - x(1832,1))^2);
+LAMBDA_MATRIX(377,400) = DISTANCE;
+
+DISTANCE = sqrt((x(1831,1) - x(1785,1))^2 + (x(1832,1) - x(1786,1))^2);
+LAMBDA_MATRIX(400,377) = DISTANCE;
+
+DISTANCE = sqrt((x(1831,1) - x(1823,1))^2 + (x(1832,1) - x(1824,1))^2);
+LAMBDA_MATRIX(400,396) = DISTANCE;
+
+DISTANCE = sqrt((x(1823,1) - x(1831,1))^2 + (x(1824,1) - x(1832,1))^2);
+LAMBDA_MATRIX(396,400) = DISTANCE;
+
+DISTANCE = sqrt((x(1823,1) - x(1785,1))^2 + (x(1824,1) - x(1786,1))^2);
+LAMBDA_MATRIX(396,377) = DISTANCE;
+
+DISTANCE = sqrt((x(1785,1) - x(1823,1))^2 + (x(1786,1) - x(1824,1))^2);
+LAMBDA_MATRIX(377,396) = DISTANCE;
+
+DISTANCE = sqrt((x(1823,1) - x(1771,1))^2 + (x(1824,1) - x(1772,1))^2);
+LAMBDA_MATRIX(396,370) = DISTANCE;
+
+DISTANCE = sqrt((x(1771,1) - x(1823,1))^2 + (x(1772,1) - x(1824,1))^2);
+LAMBDA_MATRIX(370,396) = DISTANCE;
+
+DISTANCE = sqrt((x(1771,1) - x(1785,1))^2 + (x(1772,1) - x(1786,1))^2);
+LAMBDA_MATRIX(370,377) = DISTANCE;
+
+DISTANCE = sqrt((x(1785,1) - x(1771,1))^2 + (x(1786,1) - x(1772,1))^2);
+LAMBDA_MATRIX(377,370) = DISTANCE;
+
+DISTANCE = sqrt((x(1785,1) - x(1823,1))^2 + (x(1786,1) - x(1824,1))^2);
+LAMBDA_MATRIX(377,396) = DISTANCE;
+
+DISTANCE = sqrt((x(1823,1) - x(1785,1))^2 + (x(1824,1) - x(1786,1))^2);
+LAMBDA_MATRIX(396,377) = DISTANCE;
+
+DISTANCE = sqrt((x(1823,1) - x(1877,1))^2 + (x(1824,1) - x(1878,1))^2);
+LAMBDA_MATRIX(396,423) = DISTANCE;
+
+DISTANCE = sqrt((x(1877,1) - x(1823,1))^2 + (x(1878,1) - x(1824,1))^2);
+LAMBDA_MATRIX(423,396) = DISTANCE;
+
+DISTANCE = sqrt((x(1877,1) - x(1861,1))^2 + (x(1878,1) - x(1862,1))^2);
+LAMBDA_MATRIX(423,415) = DISTANCE;
+
+DISTANCE = sqrt((x(1861,1) - x(1877,1))^2 + (x(1862,1) - x(1878,1))^2);
+LAMBDA_MATRIX(415,423) = DISTANCE;
+
+DISTANCE = sqrt((x(1861,1) - x(1823,1))^2 + (x(1862,1) - x(1824,1))^2);
+LAMBDA_MATRIX(415,396) = DISTANCE;
+
+DISTANCE = sqrt((x(1823,1) - x(1861,1))^2 + (x(1824,1) - x(1862,1))^2);
+LAMBDA_MATRIX(396,415) = DISTANCE;
+
+DISTANCE = sqrt((x(1823,1) - x(1831,1))^2 + (x(1824,1) - x(1832,1))^2);
+LAMBDA_MATRIX(396,400) = DISTANCE;
+
+DISTANCE = sqrt((x(1831,1) - x(1823,1))^2 + (x(1832,1) - x(1824,1))^2);
+LAMBDA_MATRIX(400,396) = DISTANCE;
+
+DISTANCE = sqrt((x(1831,1) - x(1877,1))^2 + (x(1832,1) - x(1878,1))^2);
+LAMBDA_MATRIX(400,423) = DISTANCE;
+
+DISTANCE = sqrt((x(1877,1) - x(1831,1))^2 + (x(1878,1) - x(1832,1))^2);
+LAMBDA_MATRIX(423,400) = DISTANCE;
+
+DISTANCE = sqrt((x(1877,1) - x(1823,1))^2 + (x(1878,1) - x(1824,1))^2);
+LAMBDA_MATRIX(423,396) = DISTANCE;
+
+DISTANCE = sqrt((x(1823,1) - x(1877,1))^2 + (x(1824,1) - x(1878,1))^2);
+LAMBDA_MATRIX(396,423) = DISTANCE;
+
+DISTANCE = sqrt((x(1665,1) - x(1701,1))^2 + (x(1666,1) - x(1702,1))^2);
+LAMBDA_MATRIX(317,335) = DISTANCE;
+
+DISTANCE = sqrt((x(1701,1) - x(1665,1))^2 + (x(1702,1) - x(1666,1))^2);
+LAMBDA_MATRIX(335,317) = DISTANCE;
+
+DISTANCE = sqrt((x(1701,1) - x(1659,1))^2 + (x(1702,1) - x(1660,1))^2);
+LAMBDA_MATRIX(335,314) = DISTANCE;
+
+DISTANCE = sqrt((x(1659,1) - x(1701,1))^2 + (x(1660,1) - x(1702,1))^2);
+LAMBDA_MATRIX(314,335) = DISTANCE;
+
+DISTANCE = sqrt((x(1659,1) - x(1665,1))^2 + (x(1660,1) - x(1666,1))^2);
+LAMBDA_MATRIX(314,317) = DISTANCE;
+
+DISTANCE = sqrt((x(1665,1) - x(1659,1))^2 + (x(1666,1) - x(1660,1))^2);
+LAMBDA_MATRIX(317,314) = DISTANCE;
+
+DISTANCE = sqrt((x(1659,1) - x(1701,1))^2 + (x(1660,1) - x(1702,1))^2);
+LAMBDA_MATRIX(314,335) = DISTANCE;
+
+DISTANCE = sqrt((x(1701,1) - x(1659,1))^2 + (x(1702,1) - x(1660,1))^2);
+LAMBDA_MATRIX(335,314) = DISTANCE;
+
+DISTANCE = sqrt((x(1701,1) - x(1681,1))^2 + (x(1702,1) - x(1682,1))^2);
+LAMBDA_MATRIX(335,325) = DISTANCE;
+
+DISTANCE = sqrt((x(1681,1) - x(1701,1))^2 + (x(1682,1) - x(1702,1))^2);
+LAMBDA_MATRIX(325,335) = DISTANCE;
+
+DISTANCE = sqrt((x(1681,1) - x(1659,1))^2 + (x(1682,1) - x(1660,1))^2);
+LAMBDA_MATRIX(325,314) = DISTANCE;
+
+DISTANCE = sqrt((x(1659,1) - x(1681,1))^2 + (x(1660,1) - x(1682,1))^2);
+LAMBDA_MATRIX(314,325) = DISTANCE;
+
+DISTANCE = sqrt((x(1659,1) - x(1627,1))^2 + (x(1660,1) - x(1628,1))^2);
+LAMBDA_MATRIX(314,298) = DISTANCE;
+
+DISTANCE = sqrt((x(1627,1) - x(1659,1))^2 + (x(1628,1) - x(1660,1))^2);
+LAMBDA_MATRIX(298,314) = DISTANCE;
+
+DISTANCE = sqrt((x(1627,1) - x(1665,1))^2 + (x(1628,1) - x(1666,1))^2);
+LAMBDA_MATRIX(298,317) = DISTANCE;
+
+DISTANCE = sqrt((x(1665,1) - x(1627,1))^2 + (x(1666,1) - x(1628,1))^2);
+LAMBDA_MATRIX(317,298) = DISTANCE;
+
+DISTANCE = sqrt((x(1665,1) - x(1659,1))^2 + (x(1666,1) - x(1660,1))^2);
+LAMBDA_MATRIX(317,314) = DISTANCE;
+
+DISTANCE = sqrt((x(1659,1) - x(1665,1))^2 + (x(1660,1) - x(1666,1))^2);
+LAMBDA_MATRIX(314,317) = DISTANCE;
+
+DISTANCE = sqrt((x(1411,1) - x(1393,1))^2 + (x(1412,1) - x(1394,1))^2);
+LAMBDA_MATRIX(190,181) = DISTANCE;
+
+DISTANCE = sqrt((x(1393,1) - x(1411,1))^2 + (x(1394,1) - x(1412,1))^2);
+LAMBDA_MATRIX(181,190) = DISTANCE;
+
+DISTANCE = sqrt((x(1393,1) - x(1437,1))^2 + (x(1394,1) - x(1438,1))^2);
+LAMBDA_MATRIX(181,203) = DISTANCE;
+
+DISTANCE = sqrt((x(1437,1) - x(1393,1))^2 + (x(1438,1) - x(1394,1))^2);
+LAMBDA_MATRIX(203,181) = DISTANCE;
+
+DISTANCE = sqrt((x(1437,1) - x(1411,1))^2 + (x(1438,1) - x(1412,1))^2);
+LAMBDA_MATRIX(203,190) = DISTANCE;
+
+DISTANCE = sqrt((x(1411,1) - x(1437,1))^2 + (x(1412,1) - x(1438,1))^2);
+LAMBDA_MATRIX(190,203) = DISTANCE;
+
+DISTANCE = sqrt((x(1469,1) - x(1433,1))^2 + (x(1470,1) - x(1434,1))^2);
+LAMBDA_MATRIX(219,201) = DISTANCE;
+
+DISTANCE = sqrt((x(1433,1) - x(1469,1))^2 + (x(1434,1) - x(1470,1))^2);
+LAMBDA_MATRIX(201,219) = DISTANCE;
+
+DISTANCE = sqrt((x(1433,1) - x(1445,1))^2 + (x(1434,1) - x(1446,1))^2);
+LAMBDA_MATRIX(201,207) = DISTANCE;
+
+DISTANCE = sqrt((x(1445,1) - x(1433,1))^2 + (x(1446,1) - x(1434,1))^2);
+LAMBDA_MATRIX(207,201) = DISTANCE;
+
+DISTANCE = sqrt((x(1445,1) - x(1469,1))^2 + (x(1446,1) - x(1470,1))^2);
+LAMBDA_MATRIX(207,219) = DISTANCE;
+
+DISTANCE = sqrt((x(1469,1) - x(1445,1))^2 + (x(1470,1) - x(1446,1))^2);
+LAMBDA_MATRIX(219,207) = DISTANCE;
+
+DISTANCE = sqrt((x(1455,1) - x(1433,1))^2 + (x(1456,1) - x(1434,1))^2);
+LAMBDA_MATRIX(212,201) = DISTANCE;
+
+DISTANCE = sqrt((x(1433,1) - x(1455,1))^2 + (x(1434,1) - x(1456,1))^2);
+LAMBDA_MATRIX(201,212) = DISTANCE;
+
+DISTANCE = sqrt((x(1433,1) - x(1469,1))^2 + (x(1434,1) - x(1470,1))^2);
+LAMBDA_MATRIX(201,219) = DISTANCE;
+
+DISTANCE = sqrt((x(1469,1) - x(1433,1))^2 + (x(1470,1) - x(1434,1))^2);
+LAMBDA_MATRIX(219,201) = DISTANCE;
+
+DISTANCE = sqrt((x(1469,1) - x(1455,1))^2 + (x(1470,1) - x(1456,1))^2);
+LAMBDA_MATRIX(219,212) = DISTANCE;
+
+DISTANCE = sqrt((x(1455,1) - x(1469,1))^2 + (x(1456,1) - x(1470,1))^2);
+LAMBDA_MATRIX(212,219) = DISTANCE;
+
+DISTANCE = sqrt((x(1469,1) - x(1487,1))^2 + (x(1470,1) - x(1488,1))^2);
+LAMBDA_MATRIX(219,228) = DISTANCE;
+
+DISTANCE = sqrt((x(1487,1) - x(1469,1))^2 + (x(1488,1) - x(1470,1))^2);
+LAMBDA_MATRIX(228,219) = DISTANCE;
+
+DISTANCE = sqrt((x(1487,1) - x(1501,1))^2 + (x(1488,1) - x(1502,1))^2);
+LAMBDA_MATRIX(228,235) = DISTANCE;
+
+DISTANCE = sqrt((x(1501,1) - x(1487,1))^2 + (x(1502,1) - x(1488,1))^2);
+LAMBDA_MATRIX(235,228) = DISTANCE;
+
+DISTANCE = sqrt((x(1501,1) - x(1469,1))^2 + (x(1502,1) - x(1470,1))^2);
+LAMBDA_MATRIX(235,219) = DISTANCE;
+
+DISTANCE = sqrt((x(1469,1) - x(1501,1))^2 + (x(1470,1) - x(1502,1))^2);
+LAMBDA_MATRIX(219,235) = DISTANCE;
+
+DISTANCE = sqrt((x(1445,1) - x(1487,1))^2 + (x(1446,1) - x(1488,1))^2);
+LAMBDA_MATRIX(207,228) = DISTANCE;
+
+DISTANCE = sqrt((x(1487,1) - x(1445,1))^2 + (x(1488,1) - x(1446,1))^2);
+LAMBDA_MATRIX(228,207) = DISTANCE;
+
+DISTANCE = sqrt((x(1487,1) - x(1469,1))^2 + (x(1488,1) - x(1470,1))^2);
+LAMBDA_MATRIX(228,219) = DISTANCE;
+
+DISTANCE = sqrt((x(1469,1) - x(1487,1))^2 + (x(1470,1) - x(1488,1))^2);
+LAMBDA_MATRIX(219,228) = DISTANCE;
+
+DISTANCE = sqrt((x(1469,1) - x(1445,1))^2 + (x(1470,1) - x(1446,1))^2);
+LAMBDA_MATRIX(219,207) = DISTANCE;
+
+DISTANCE = sqrt((x(1445,1) - x(1469,1))^2 + (x(1446,1) - x(1470,1))^2);
+LAMBDA_MATRIX(207,219) = DISTANCE;
+
+DISTANCE = sqrt((x(1501,1) - x(1495,1))^2 + (x(1502,1) - x(1496,1))^2);
+LAMBDA_MATRIX(235,232) = DISTANCE;
+
+DISTANCE = sqrt((x(1495,1) - x(1501,1))^2 + (x(1496,1) - x(1502,1))^2);
+LAMBDA_MATRIX(232,235) = DISTANCE;
+
+DISTANCE = sqrt((x(1495,1) - x(1469,1))^2 + (x(1496,1) - x(1470,1))^2);
+LAMBDA_MATRIX(232,219) = DISTANCE;
+
+DISTANCE = sqrt((x(1469,1) - x(1495,1))^2 + (x(1470,1) - x(1496,1))^2);
+LAMBDA_MATRIX(219,232) = DISTANCE;
+
+DISTANCE = sqrt((x(1469,1) - x(1501,1))^2 + (x(1470,1) - x(1502,1))^2);
+LAMBDA_MATRIX(219,235) = DISTANCE;
+
+DISTANCE = sqrt((x(1501,1) - x(1469,1))^2 + (x(1502,1) - x(1470,1))^2);
+LAMBDA_MATRIX(235,219) = DISTANCE;
+
+DISTANCE = sqrt((x(1495,1) - x(1455,1))^2 + (x(1496,1) - x(1456,1))^2);
+LAMBDA_MATRIX(232,212) = DISTANCE;
+
+DISTANCE = sqrt((x(1455,1) - x(1495,1))^2 + (x(1456,1) - x(1496,1))^2);
+LAMBDA_MATRIX(212,232) = DISTANCE;
+
+DISTANCE = sqrt((x(1455,1) - x(1469,1))^2 + (x(1456,1) - x(1470,1))^2);
+LAMBDA_MATRIX(212,219) = DISTANCE;
+
+DISTANCE = sqrt((x(1469,1) - x(1455,1))^2 + (x(1470,1) - x(1456,1))^2);
+LAMBDA_MATRIX(219,212) = DISTANCE;
+
+DISTANCE = sqrt((x(1469,1) - x(1495,1))^2 + (x(1470,1) - x(1496,1))^2);
+LAMBDA_MATRIX(219,232) = DISTANCE;
+
+DISTANCE = sqrt((x(1495,1) - x(1469,1))^2 + (x(1496,1) - x(1470,1))^2);
+LAMBDA_MATRIX(232,219) = DISTANCE;
+
+DISTANCE = sqrt((x(1421,1) - x(1439,1))^2 + (x(1422,1) - x(1440,1))^2);
+LAMBDA_MATRIX(195,204) = DISTANCE;
+
+DISTANCE = sqrt((x(1439,1) - x(1421,1))^2 + (x(1440,1) - x(1422,1))^2);
+LAMBDA_MATRIX(204,195) = DISTANCE;
+
+DISTANCE = sqrt((x(1439,1) - x(1461,1))^2 + (x(1440,1) - x(1462,1))^2);
+LAMBDA_MATRIX(204,215) = DISTANCE;
+
+DISTANCE = sqrt((x(1461,1) - x(1439,1))^2 + (x(1462,1) - x(1440,1))^2);
+LAMBDA_MATRIX(215,204) = DISTANCE;
+
+DISTANCE = sqrt((x(1461,1) - x(1421,1))^2 + (x(1462,1) - x(1422,1))^2);
+LAMBDA_MATRIX(215,195) = DISTANCE;
+
+DISTANCE = sqrt((x(1421,1) - x(1461,1))^2 + (x(1422,1) - x(1462,1))^2);
+LAMBDA_MATRIX(195,215) = DISTANCE;
+
+DISTANCE = sqrt((x(1395,1) - x(1439,1))^2 + (x(1396,1) - x(1440,1))^2);
+LAMBDA_MATRIX(182,204) = DISTANCE;
+
+DISTANCE = sqrt((x(1439,1) - x(1395,1))^2 + (x(1440,1) - x(1396,1))^2);
+LAMBDA_MATRIX(204,182) = DISTANCE;
+
+DISTANCE = sqrt((x(1439,1) - x(1421,1))^2 + (x(1440,1) - x(1422,1))^2);
+LAMBDA_MATRIX(204,195) = DISTANCE;
+
+DISTANCE = sqrt((x(1421,1) - x(1439,1))^2 + (x(1422,1) - x(1440,1))^2);
+LAMBDA_MATRIX(195,204) = DISTANCE;
+
+DISTANCE = sqrt((x(1421,1) - x(1395,1))^2 + (x(1422,1) - x(1396,1))^2);
+LAMBDA_MATRIX(195,182) = DISTANCE;
+
+DISTANCE = sqrt((x(1395,1) - x(1421,1))^2 + (x(1396,1) - x(1422,1))^2);
+LAMBDA_MATRIX(182,195) = DISTANCE;
+
+DISTANCE = sqrt((x(1461,1) - x(1463,1))^2 + (x(1462,1) - x(1464,1))^2);
+LAMBDA_MATRIX(215,216) = DISTANCE;
+
+DISTANCE = sqrt((x(1463,1) - x(1461,1))^2 + (x(1464,1) - x(1462,1))^2);
+LAMBDA_MATRIX(216,215) = DISTANCE;
+
+DISTANCE = sqrt((x(1463,1) - x(1421,1))^2 + (x(1464,1) - x(1422,1))^2);
+LAMBDA_MATRIX(216,195) = DISTANCE;
+
+DISTANCE = sqrt((x(1421,1) - x(1463,1))^2 + (x(1422,1) - x(1464,1))^2);
+LAMBDA_MATRIX(195,216) = DISTANCE;
+
+DISTANCE = sqrt((x(1421,1) - x(1461,1))^2 + (x(1422,1) - x(1462,1))^2);
+LAMBDA_MATRIX(195,215) = DISTANCE;
+
+DISTANCE = sqrt((x(1461,1) - x(1421,1))^2 + (x(1462,1) - x(1422,1))^2);
+LAMBDA_MATRIX(215,195) = DISTANCE;
+
+DISTANCE = sqrt((x(1463,1) - x(1437,1))^2 + (x(1464,1) - x(1438,1))^2);
+LAMBDA_MATRIX(216,203) = DISTANCE;
+
+DISTANCE = sqrt((x(1437,1) - x(1463,1))^2 + (x(1438,1) - x(1464,1))^2);
+LAMBDA_MATRIX(203,216) = DISTANCE;
+
+DISTANCE = sqrt((x(1437,1) - x(1421,1))^2 + (x(1438,1) - x(1422,1))^2);
+LAMBDA_MATRIX(203,195) = DISTANCE;
+
+DISTANCE = sqrt((x(1421,1) - x(1437,1))^2 + (x(1422,1) - x(1438,1))^2);
+LAMBDA_MATRIX(195,203) = DISTANCE;
+
+DISTANCE = sqrt((x(1421,1) - x(1463,1))^2 + (x(1422,1) - x(1464,1))^2);
+LAMBDA_MATRIX(195,216) = DISTANCE;
+
+DISTANCE = sqrt((x(1463,1) - x(1421,1))^2 + (x(1464,1) - x(1422,1))^2);
+LAMBDA_MATRIX(216,195) = DISTANCE;
+
+DISTANCE = sqrt((x(1421,1) - x(1369,1))^2 + (x(1422,1) - x(1370,1))^2);
+LAMBDA_MATRIX(195,169) = DISTANCE;
+
+DISTANCE = sqrt((x(1369,1) - x(1421,1))^2 + (x(1370,1) - x(1422,1))^2);
+LAMBDA_MATRIX(169,195) = DISTANCE;
+
+DISTANCE = sqrt((x(1369,1) - x(1395,1))^2 + (x(1370,1) - x(1396,1))^2);
+LAMBDA_MATRIX(169,182) = DISTANCE;
+
+DISTANCE = sqrt((x(1395,1) - x(1369,1))^2 + (x(1396,1) - x(1370,1))^2);
+LAMBDA_MATRIX(182,169) = DISTANCE;
+
+DISTANCE = sqrt((x(1395,1) - x(1421,1))^2 + (x(1396,1) - x(1422,1))^2);
+LAMBDA_MATRIX(182,195) = DISTANCE;
+
+DISTANCE = sqrt((x(1421,1) - x(1395,1))^2 + (x(1422,1) - x(1396,1))^2);
+LAMBDA_MATRIX(195,182) = DISTANCE;
+
+DISTANCE = sqrt((x(1393,1) - x(1369,1))^2 + (x(1394,1) - x(1370,1))^2);
+LAMBDA_MATRIX(181,169) = DISTANCE;
+
+DISTANCE = sqrt((x(1369,1) - x(1393,1))^2 + (x(1370,1) - x(1394,1))^2);
+LAMBDA_MATRIX(169,181) = DISTANCE;
+
+DISTANCE = sqrt((x(1369,1) - x(1421,1))^2 + (x(1370,1) - x(1422,1))^2);
+LAMBDA_MATRIX(169,195) = DISTANCE;
+
+DISTANCE = sqrt((x(1421,1) - x(1369,1))^2 + (x(1422,1) - x(1370,1))^2);
+LAMBDA_MATRIX(195,169) = DISTANCE;
+
+DISTANCE = sqrt((x(1421,1) - x(1393,1))^2 + (x(1422,1) - x(1394,1))^2);
+LAMBDA_MATRIX(195,181) = DISTANCE;
+
+DISTANCE = sqrt((x(1393,1) - x(1421,1))^2 + (x(1394,1) - x(1422,1))^2);
+LAMBDA_MATRIX(181,195) = DISTANCE;
+
+DISTANCE = sqrt((x(1421,1) - x(1437,1))^2 + (x(1422,1) - x(1438,1))^2);
+LAMBDA_MATRIX(195,203) = DISTANCE;
+
+DISTANCE = sqrt((x(1437,1) - x(1421,1))^2 + (x(1438,1) - x(1422,1))^2);
+LAMBDA_MATRIX(203,195) = DISTANCE;
+
+DISTANCE = sqrt((x(1437,1) - x(1393,1))^2 + (x(1438,1) - x(1394,1))^2);
+LAMBDA_MATRIX(203,181) = DISTANCE;
+
+DISTANCE = sqrt((x(1393,1) - x(1437,1))^2 + (x(1394,1) - x(1438,1))^2);
+LAMBDA_MATRIX(181,203) = DISTANCE;
+
+DISTANCE = sqrt((x(1393,1) - x(1421,1))^2 + (x(1394,1) - x(1422,1))^2);
+LAMBDA_MATRIX(181,195) = DISTANCE;
+
+DISTANCE = sqrt((x(1421,1) - x(1393,1))^2 + (x(1422,1) - x(1394,1))^2);
+LAMBDA_MATRIX(195,181) = DISTANCE;
+
+return;
