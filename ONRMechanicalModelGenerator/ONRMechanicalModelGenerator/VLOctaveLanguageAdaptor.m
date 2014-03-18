@@ -23,6 +23,212 @@
 @implementation VLOctaveLanguageAdaptor
 
 #pragma mark - main methods
+
+// This function will create maximum and minimum constraints that will be imposed on the nodes
+-(NSString *)generateNodeConstraintFunctionBufferWithOptions:(NSDictionary *)options
+{
+    // get the options from the dictionary -
+    __unused NSXMLDocument *model_tree = [options objectForKey:kXMLModelTree];
+    __unused NSXMLDocument *transformation_tree = [options objectForKey:kXMLTransformationTree];
+    
+    // header -
+    NSMutableString *buffer = [NSMutableString string];
+    [buffer appendString:@"function [new_state_vector] = CalculateNodeConstraints(t,x,DF)\n"];
+    [buffer appendString:@"% ------------------------------------------------------------------------------------- %\n"];
+    [buffer appendString:@"% Copyright (c) 2013 Varnerlab,\n"];
+    [buffer appendString:@"% School of Chemical and Biomolecular Engineering,\n"];
+    [buffer appendString:@"% Cornell University, Ithaca NY 14853 USA.\n"];
+    [buffer appendString:@"%\n"];
+    [buffer appendString:@"% Permission is hereby granted, free of charge, to any person obtaining a copy\n"];
+    [buffer appendString:@"% of this software and associated documentation files (the \"Software\"), to deal\n"];
+    [buffer appendString:@"% in the Software without restriction, including without limitation the rights\n"];
+    [buffer appendString:@"% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n"];
+    [buffer appendString:@"% copies of the Software, and to permit persons to whom the Software is\n"];
+    [buffer appendString:@"% furnished to do so, subject to the following conditions:\n"];
+    [buffer appendString:@"% The above copyright notice and this permission notice shall be included in\n"];
+    [buffer appendString:@"% all copies or substantial portions of the Software.\n"];
+    [buffer appendString:@"%\n"];
+    [buffer appendString:@"% THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n"];
+    [buffer appendString:@"% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n"];
+    [buffer appendString:@"% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n"];
+    [buffer appendString:@"% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n"];
+    [buffer appendString:@"% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n"];
+    [buffer appendString:@"% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n"];
+    [buffer appendString:@"% THE SOFTWARE.\n"];
+    [buffer appendString:@"%\n"];
+    [buffer appendString:@"% CalculateNodeConstraints.m \n"];
+    [buffer appendString:@"% CalculateExternalForcing external forces added to the ssystem.\n"];
+    [buffer appendString:@"% Time, state and DF are passed in, external force vector is returned. \n"];
+    [buffer appendString:@"% ------------------------------------------------------------------------------------- %\n"];
+    [buffer appendString:@"\n"];
+    
+    // build the buffer
+    [buffer appendString:@"% Initialize new state vector with old state - \n"];
+    [buffer appendString:@"new_state_vector = x;\n"];
+    [buffer appendString:@"\n"];
+    [buffer appendString:@"% Get the nominal length and spring matrix - \n"];
+    [buffer appendString:@"LAMBDA_MATRIX = DF.LAMBDA_PARAMETER_MATRIX;\n"];
+    [buffer appendString:@"SPRING_MATRIX = DF.SPRING_PARAMETER_MATRIX;\n"];
+    [buffer appendString:@"IC = DF.INITIAL_CONDITION_VECTOR;\n"];
+    [buffer appendString:@"NUMBER_OF_NODES = DF.NUMBER_OF_NODES;\n"];
+    [buffer appendString:@"MESH = DF.MESH_ADJANCEY_STRUCT;\n"];
+    [buffer appendString:@"% where do the positions start in the state vector? \n"];
+    [buffer appendString:@"INDEX_START_POSITIONS = 2*NUMBER_OF_NODES;\n"];
+    [buffer appendString:@"\n"];
+    [buffer appendString:@"% Width of window - \n"];
+    [buffer appendString:@"ALPHA = 0.3;       % Alpha*rest length is the minimum distance\n"];
+    [buffer appendString:@"BETA = 1.5;        % Beta*rest length is the maximum distance\n"];
+    [buffer appendString:@"GAMMA = 0.55;\n"];
+    [buffer appendString:@"NCONSTRAINT_TRIALS = 10;\n"];
+    [buffer appendString:@"\n"];
+    [buffer appendString:@"for trial_index = 1:NCONSTRAINT_TRIALS\n"];
+    [buffer appendString:@"for node_index = 1:NUMBER_OF_NODES\n"];
+    [buffer appendString:@"\n"];
+    
+    [buffer appendString:@"% Get the connections -\n"];
+    [buffer appendString:@"connection_array = MESH.NODE(node_index).edge_array;\n"];
+    [buffer appendString:@"\n"];
+    [buffer appendString:@"% How many edges do we have?\n"];
+    [buffer appendString:@"NUMBER_OF_LOCAL_EDGES = length(connection_array);\n"];
+    [buffer appendString:@"\n"];
+    [buffer appendString:@"% what is my node position?\n"];
+    [buffer appendString:@"x_coordinate_index_parent_node = 2*node_index + INDEX_START_POSITIONS - 1;\n"];
+    [buffer appendString:@"y_coordinate_index_parent_node = 2*node_index + INDEX_START_POSITIONS;\n"];
+    [buffer appendString:@"\n"];
+    [buffer appendString:@"my_parent_x_position = new_state_vector(x_coordinate_index_parent_node,1);\n"];
+    [buffer appendString:@"my_parent_y_position = new_state_vector(y_coordinate_index_parent_node,1);\n"];
+    [buffer appendString:@"\n"];
+    
+    [buffer appendString:@"% iterate through each edge to check if we violate the length constraints?\n"];
+    [buffer appendString:@"for local_edge_counter = 1:NUMBER_OF_LOCAL_EDGES\n"];
+    [buffer appendString:@"\n"];
+    [buffer appendString:@"% Get the index of the node we are connected to -\n"];
+    [buffer appendString:@"index_connected_node = connection_array(local_edge_counter);\n"];
+    [buffer appendString:@"\n"];
+    [buffer appendString:@"% if atleast one node is not free, then no need to continue- \n"];
+    [buffer appendString:@" if ((MESH.NODE(index_connected_node).fixed==0 || MESH.NODE(node_index).fixed ==0))\n"];
+    [buffer appendString:@"\n"];
+    
+    // assign weight of parent and child node
+    [buffer appendString:@"% assign weight of parent and child\n"];
+    
+    [buffer appendString:@"if ((MESH.NODE(index_connected_node).fixed==0 && MESH.NODE(node_index).fixed ==0))\n"];
+    [buffer appendString:@"my_parent_weight = 0.5;\n"];
+    [buffer appendString:@"my_child_weight = 0.5;\n"];
+    [buffer appendString:@"\n"];
+    
+    [buffer appendString:@"elseif ((MESH.NODE(index_connected_node).fixed==1 || MESH.NODE(node_index).fixed ==0))\n"];
+    [buffer appendString:@"my_parent_weight = 1;\n"];
+    [buffer appendString:@"my_child_weight = 0;\n"];
+    [buffer appendString:@"\n"];
+    
+    [buffer appendString:@"elseif ((MESH.NODE(index_connected_node).fixed==0 || MESH.NODE(node_index).fixed ==1))\n"];
+    [buffer appendString:@"my_parent_weight = 0;\n"];
+    [buffer appendString:@"my_child_weight = 1;\n"];
+    [buffer appendString:@"\n"];
+    [buffer appendString:@"end;\n"];
+    
+    [buffer appendString:@"\n"];
+    
+    
+    // Calculate the distance
+    
+    [buffer appendString:@"% Calculate the distance - \n"];
+    [buffer appendString:@"x_coordinate_index_child_node = 2*index_connected_node + INDEX_START_POSITIONS - 1;\n"];
+    [buffer appendString:@"y_coordinate_index_child_node = 2*index_connected_node + INDEX_START_POSITIONS;\n"];
+    [buffer appendString:@"\n"];
+    [buffer appendString:@"my_child_x_position = new_state_vector(x_coordinate_index_child_node,1);\n"];
+    [buffer appendString:@"my_child_y_position = new_state_vector(y_coordinate_index_child_node,1);\n"];
+    [buffer appendString:@"\n"];
+    [buffer appendString:@"distance = sqrt((my_parent_x_position - my_child_x_position)^2 + (my_parent_y_position - my_child_y_position)^2);\n"];
+    
+    // LEVEL 1 Minimum Constraint
+    
+    [buffer appendString:@"\n"];
+    [buffer appendString:@"MINIMUM_DISTANCE_CONSTRAINT = ALPHA*LAMBDA_MATRIX(node_index,index_connected_node);\n"];
+    [buffer appendString:@"\n"];
+    [buffer appendString:@"% Do we violate the edge constraint?\n"];
+    [buffer appendString:@"if (distance<MINIMUM_DISTANCE_CONSTRAINT)\n"];
+    [buffer appendString:@"\n"];
+    
+    // move each point in the line connecting them so that distance between them is minimum distance
+    
+    [buffer appendString:@"d1x = my_child_x_position - my_parent_x_position;\n"];
+    [buffer appendString:@"d1y = my_child_y_position - my_parent_y_position;\n"];
+    [buffer appendString:@"\n"];
+    [buffer appendString:@"d2=sqrt(d1x^2+d1y^2);\n"];
+    [buffer appendString:@"d3=(d2-MINIMUM_DISTANCE_CONSTRAINT)/d2;\n"];
+    [buffer appendString:@"\n"];
+    [buffer appendString:@"% adjust the nodes\n"];
+    [buffer appendString:@"my_parent_x_new = my_parent_x_position + my_parent_weight*d1x*d3;\n"];
+    [buffer appendString:@"my_child_x_new = my_child_x_position - my_child_weight*d1x*d3;\n"];
+    [buffer appendString:@"\n"];
+    [buffer appendString:@"my_parent_y_new= my_parent_y_position + my_parent_weight *d1y*d3;\n"];
+    [buffer appendString:@"my_child_y_new= my_child_y_position - my_child_weight *d1y*d3;\n"];
+    [buffer appendString:@"\n"];
+    
+    
+    [buffer appendString:@"% update the state vector -\n"];
+    [buffer appendString:@"new_state_vector(x_coordinate_index_parent_node,1) = my_parent_x_new;\n"];
+    [buffer appendString:@"new_state_vector(y_coordinate_index_parent_node,1) = my_parent_y_new;\n"];
+    [buffer appendString:@"new_state_vector(x_coordinate_index_child_node,1) =  my_child_x_new;\n"];
+    [buffer appendString:@"new_state_vector(y_coordinate_index_child_node,1) =  my_child_y_new;\n"];
+    [buffer appendString:@"\n"];
+    [buffer appendString:@"end;\n"];
+    
+    
+    // LEVEL 1 Maximum Constraint
+    [buffer appendString:@"\n"];
+    [buffer appendString:@"% Level 1 MAXIMUM CONSTRAINT\n"];
+    [buffer appendString:@"\n"];
+    [buffer appendString:@"MAXIMUM_DISTANCE_CONSTRAINT = BETA*LAMBDA_MATRIX(node_index,index_connected_node);\n"];
+    [buffer appendString:@"\n"];
+    [buffer appendString:@"% Do we violate the edge constraint?\n"];
+    [buffer appendString:@"if (distance > MINIMUM_DISTANCE_CONSTRAINT)\n"];
+    [buffer appendString:@"\n"];
+    
+    // move each point in the line connecting them so that distance between them is maximum distance
+    
+    [buffer appendString:@"d1x = my_child_x_position - my_parent_x_position;\n"];
+    [buffer appendString:@"d1y = my_child_y_position - my_parent_y_position;\n"];
+    [buffer appendString:@"\n"];
+    [buffer appendString:@"d2=sqrt(d1x^2+d1y^2);\n"];
+    [buffer appendString:@"d3=(d2-MAXIMUM_DISTANCE_CONSTRAINT)/d2;\n"];
+    [buffer appendString:@"\n"];
+    [buffer appendString:@"% adjust the nodes\n"];
+    [buffer appendString:@"my_parent_x_new = my_parent_x_position + my_parent_weight*d1x*d3;\n"];
+    [buffer appendString:@"my_child_x_new = my_child_x_position - my_child_weight*d1x*d3;\n"];
+    [buffer appendString:@"\n"];
+    [buffer appendString:@"my_parent_y_new= my_parent_y_position + my_parent_weight *d1y*d3;\n"];
+    [buffer appendString:@"my_child_y_new= my_child_y_position - my_child_weight *d1y*d3;\n"];
+    [buffer appendString:@"\n"];
+    
+    //update state vector
+    [buffer appendString:@"% update the state vector -\n"];
+    [buffer appendString:@"new_state_vector(x_coordinate_index_parent_node,1) = my_parent_x_new;\n"];
+    [buffer appendString:@"new_state_vector(y_coordinate_index_parent_node,1) = my_parent_y_new;\n"];
+    [buffer appendString:@"new_state_vector(x_coordinate_index_child_node,1) =  my_child_x_new;\n"];
+    [buffer appendString:@"new_state_vector(y_coordinate_index_child_node,1) =  my_child_y_new;\n"];
+    [buffer appendString:@"\n"];
+    [buffer appendString:@"end;\n"];
+    
+    // LEVEL 2 Constraints
+    [buffer appendString:@"% Level 2 constrains will go here\n"];
+    
+    [buffer appendString:@"end;\n"];
+    [buffer appendString:@"end;\n"];
+    [buffer appendString:@"end;\n"];
+    [buffer appendString:@"end;\n"];
+    [buffer appendString:@"\n"];
+    
+    // footer
+    [buffer appendString:@"return;\n"];
+    
+    // return -
+    return [NSString stringWithString:buffer];
+}
+
+
 -(NSString *)generatePositionConstraintFunctionBufferWithOptions:(NSDictionary *)options
 {
     // get the options from the dictionary -
@@ -118,13 +324,15 @@
         // update the counter -
         local_counter = local_counter + 1;
     }
-
+    
     // footer -
     [buffer appendString:@"return;\n"];
     
     // return -
     return [NSString stringWithString:buffer];
 }
+
+
 
 -(NSString *)generateExternalForcingBufferWithOptions:(NSDictionary *)options
 {
@@ -174,7 +382,7 @@
     
     // footer -
     [buffer appendString:@"return;\n"];
-
+    
     // return -
     return [NSString stringWithString:buffer];
 }
@@ -299,7 +507,7 @@
     [buffer appendString:@"% Define the system - \n"];
     [buffer appendString:@"SPRING_MATRIX = zeros(NUMBER_OF_NODES,NUMBER_OF_NODES);\n"];
     [buffer appendFormat:@"\n"];
-
+    
     
     
     NSInteger NUMBER_OF_EDGES;
@@ -346,7 +554,7 @@
     // get the options from the dictionary -
     NSXMLDocument *model_tree = [options objectForKey:kXMLModelTree];
     __unused NSXMLDocument *transformation_tree = [options objectForKey:kXMLTransformationTree];
-
+    
     // build the buffer -
     NSMutableString *buffer = [NSMutableString string];
     
@@ -383,7 +591,7 @@
     [buffer appendString:@"NUMBER_OF_STATES = DF.NUMBER_OF_STATES;\n"];
     [buffer appendString:@"delta_state_vector = zeros(NUMBER_OF_STATES,1);\n"];
     [buffer appendString:@"\n"];
-        
+    
     // alpha's
     [buffer appendString:@"% Get the parameter matricies - \n"];
     [buffer appendString:@"SPRING_MATRIX = DF.SPRING_PARAMETER_MATRIX;\n"];
@@ -535,7 +743,7 @@
     
     // footer line -
     [buffer appendString:@"return;\n"];
-
+    
     // return -
     return [NSString stringWithString:buffer];
 }
@@ -630,7 +838,7 @@
                 [buffer appendFormat:@"\n"];
             }
         }
-    
+        
         // update the counter -
         local_counter = local_counter + 1;
     }
@@ -660,7 +868,7 @@
     {
         
         @autoreleasepool {
-        
+            
             // What are my index's?
             NSInteger velocity_start_x_component_index = 2*start_node_index - 1;
             NSInteger velocity_start_y_component_index = 2*start_node_index;
@@ -1059,7 +1267,7 @@
     [buffer appendFormat:@"NUMBER_OF_EDGES = %ld;\n",[edges count]];
     [buffer appendFormat:@"NUMBER_OF_STATES = %ld;\n",4*[node_vector count]];
     [buffer appendString:@"\n"];
-        
+    
     // return buffer
     return [NSString stringWithString:buffer];
 }
@@ -1079,7 +1287,7 @@
         [buffer appendString:@"\n"];
         [buffer appendString:@"% Calculate MESH struct - \n"];
         
-         
+        
         for (NSXMLElement *node in node_array)
         {
             // Get the index -
@@ -1113,7 +1321,7 @@
         [buffer appendString:@"\n"];
     }
     
-
+    
     // return buffer
     return [NSString stringWithString:buffer];
 }

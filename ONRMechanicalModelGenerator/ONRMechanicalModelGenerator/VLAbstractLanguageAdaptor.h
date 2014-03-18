@@ -1,3 +1,4 @@
+
 //
 //  VLAbstractLanguageAdaptor.h
 //  CFLGenerator
@@ -22,5 +23,6 @@
 -(NSString *)generateDampingConstantMatrixBufferWithOptions:(NSDictionary *)options;
 -(NSString *)generateExternalForcingBufferWithOptions:(NSDictionary *)options;
 -(NSString *)generatePositionConstraintFunctionBufferWithOptions:(NSDictionary *)options;
+-(NSString *)generateNodeConstraintFunctionBufferWithOptions:(NSDictionary *)options;
 
 @end
